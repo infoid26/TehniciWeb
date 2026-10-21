@@ -30,6 +30,7 @@ jobs:
           npm run check
           npm run check:learning
           npm run check:azure
+          npm run check:evaluator
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v6

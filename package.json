@@ -17,6 +17,7 @@
     "check:browser-labs": "node scripts/check_browser_labs.mjs",
     "check:server": "node scripts/check_server.mjs",
     "check:azure": "node scripts/check_azure.mjs",
+    "check:evaluator": "node scripts/check_evaluator.mjs",
     "check:coverage": "node scripts/check_coverage.mjs"
   },
   "dependencies": {

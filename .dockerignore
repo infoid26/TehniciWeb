@@ -1,0 +1,7 @@
+**
+!evaluator/
+!evaluator/server.mjs
+!evaluator/package.json
+!scripts/
+!scripts/lab-worker.mjs
+!scripts/inject.mjs

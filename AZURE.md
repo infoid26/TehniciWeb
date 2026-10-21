@@ -17,6 +17,8 @@ Serverul folosește `PORT` furnizat de Azure și ascultă pe `0.0.0.0` în mediu
 
 ## Evaluarea Node și Express
 
+Implementarea pregătită pentru sesiuni izolate, configurația propusă și pașii care necesită verificare înainte de publicare sunt în [evaluator/README.md](evaluator/README.md). Adaptorul se activează numai după configurarea `LAB_AZURE_SESSION_ENDPOINT`; nu s-au creat resurse Azure. Verificare locală: `npm run check:evaluator`.
+
 **Publicarea interfeței nu activează automat evaluatorul Node/Express.** În Azure și în modul production, `/api/check` răspunde 503 până este configurat un serviciu separat care izolează execuțiile codului utilizatorilor. Evaluarea SQL, Sass și EJS din browser funcționează independent de acest serviciu.
 
 Evaluatorul folosit în dezvoltare utilizează `node:vm` și Worker threads. Acestea nu reprezintă o graniță de securitate pentru cod trimis de utilizatori. Nu activa acea execuție direct în aplicația publică și nu îi transmite credențialele bazei de date sau identitatea Azure.

@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 import {Worker} from 'node:worker_threads';
 import vm from 'node:vm';
 import {createRequire} from 'node:module';
+import {createSessionEvaluator} from './azure-sessions.mjs';
 
 const require=createRequire(import.meta.url);
 let projectPromise;
@@ -19,7 +20,10 @@ export function runtimeSettings(env=process.env,portArgument) {
 const types = {'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.gif':'image/gif','.svg':'image/svg+xml','.webp':'image/webp','.wasm':'application/wasm'};
 export function createServer(options={}) {
   const production=options.production??runtimeSettings().production;
-  const evaluatorUrl=options.evaluatorUrl??process.env.LAB_EVALUATOR_URL;
+  const sessionEndpoint=options.sessionEndpoint??process.env.LAB_AZURE_SESSION_ENDPOINT;
+  if(sessionEndpoint&&(options.evaluatorUrl||process.env.LAB_EVALUATOR_URL))throw new Error('Configure only one lab evaluator.');
+  const evaluatorUrl=sessionEndpoint||options.evaluatorUrl||process.env.LAB_EVALUATOR_URL;
+  const evaluatorFetch=sessionEndpoint?createSessionEvaluator({endpoint:sessionEndpoint,env:options.env||process.env,fetchImpl:options.fetch||fetch,onCleanupError:()=>console.warn('Lab session cleanup failed; pool cooldown must reclaim it.')}):(options.fetch||fetch);
   const evaluatorToken=options.evaluatorToken??process.env.LAB_EVALUATOR_TOKEN;
   if(evaluatorUrl){const url=new URL(evaluatorUrl);if(url.protocol!=='https:'||url.username||url.password)throw new Error('LAB_EVALUATOR_URL must be an HTTPS URL without embedded credentials.');}
   const maxChecks=2;
@@ -51,7 +55,7 @@ export function createServer(options={}) {
         if(evaluatorUrl){
           // This endpoint belongs to a separately isolated execution service.
           // The App Service itself never executes student code in production.
-          const response=await (options.fetch||fetch)(evaluatorUrl,{method:'POST',redirect:'error',headers:{'Content-Type':'application/json',...(evaluatorToken?{Authorization:'Bearer '+evaluatorToken}:{})},body:JSON.stringify({task,code:input.code}),signal:AbortSignal.timeout(15000)});
+          const response=await evaluatorFetch(evaluatorUrl,{method:'POST',redirect:'error',headers:{'Content-Type':'application/json',...(evaluatorToken?{Authorization:'Bearer '+evaluatorToken}:{})},body:JSON.stringify({task,code:input.code}),signal:AbortSignal.timeout(15000)});
           if(!response.ok){json(res,502,{error:'Evaluatorul nu este disponibil momentan.'});return;}
           const chunks=[];let size=0;for await(const chunk of response.body){size+=chunk.byteLength;if(size>1048576)throw new Error('Evaluator response too large');chunks.push(Buffer.from(chunk));}
           const value=JSON.parse(Buffer.concat(chunks).toString('utf8'));

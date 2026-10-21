@@ -1,5 +1,4 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
+# Azure CLI ZIP deployment: https://learn.microsoft.com/azure/app-service/deploy-zip
 
 name: Build and deploy Node.js app to Azure Web App - infoid26
 
@@ -74,11 +73,22 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_95A1994BA35C4C3F835B32AEEBA6E7A3 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_AFBC12824B654B14B0AE85C81F57CE50 }}
 
-      - name: 'Deploy to Azure Web App'
+      - name: Package deployment ZIP
+        run: zip -q -r "$RUNNER_TEMP/tehnici-web.zip" index.html package.json pnpm-lock.yaml site scripts project-reference evaluator node_modules tools
+
+      - name: Deploy to Azure Web App with Azure CLI
         id: deploy-to-webapp
-        uses: azure/webapps-deploy@v3
-        with:
-          app-name: 'infoid26'
-          slot-name: 'Production'
-          startup-command: 'npm start'
-          package: .
+        run: |
+          az webapp config set \
+            --resource-group infoid_group \
+            --name infoid26 \
+            --startup-file "npm start" \
+            --output none
+          az webapp deploy \
+            --resource-group infoid_group \
+            --name infoid26 \
+            --src-path "$RUNNER_TEMP/tehnici-web.zip" \
+            --type zip \
+            --clean true \
+            --restart true \
+            --output none

@@ -1,0 +1,38 @@
+{
+  "name": "tehnici-web-infoid26",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Platform\u0103 de studiu pentru Tehnici Web, dup\u0103 materialele Irinei Ciocan.",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "check": "node scripts/check.mjs",
+    "check:browser": "node scripts/check_complete.mjs",
+    "build:course": "python scripts/build_course.py",
+    "build:editor": "node scripts/build_editor.mjs",
+    "check:server": "node scripts/check_server.mjs",
+    "check:coverage": "node scripts/check_coverage.mjs"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "ejs": "^3.1.10",
+    "pg": "^8.16.3",
+    "sass": "^1.93.2",
+    "sharp": "^0.34.4",
+    "bootstrap": "^5.3.8",
+    "@electric-sql/pglite": "latest",
+    "jszip": "^3.10.1",
+    "codemirror": "^6.0.2",
+    "@codemirror/lang-html": "latest",
+    "@codemirror/lang-css": "latest",
+    "@codemirror/lang-javascript": "latest",
+    "@codemirror/lang-json": "latest",
+    "@codemirror/legacy-modes": "latest",
+    "esbuild": "^0.28.2",
+    "acorn": "^8.15.0",
+    "@codemirror/view": "latest",
+    "@codemirror/state": "latest",
+    "@codemirror/commands": "latest",
+    "@codemirror/language": "latest",
+    "@lezer/highlight": "latest"
+  }
+}

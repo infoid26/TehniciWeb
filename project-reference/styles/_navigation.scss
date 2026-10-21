@@ -1,0 +1,17 @@
+.site-nav {
+  position: sticky; top: 0; z-index: 20; padding: .7rem 1rem; border-bottom: 1px solid var(--line); background: var(--panel);
+  .menu { display: flex; gap: 1rem; list-style: none; margin: 0; padding: 0; }
+  li { position: relative; }
+  a, summary { display: block; color: var(--text); padding: .6rem .8rem; text-decoration: none; cursor: pointer; border-radius: .5rem; }
+  a:hover, a:focus-visible { background: var(--accent); color: #1c1530; }
+  .submenu { position: absolute; min-width: 190px; list-style: none; margin: 0; padding: .3rem; background: var(--panel); border: 1px solid var(--line); border-radius: .6rem; box-shadow: 0 10px 30px #0004; animation: reveal .18s ease; }
+}
+#menuToggle, .menu-toggle { display: none; }
+@media (max-width: 700px) {
+  .menu-toggle { display: inline-block; padding: .5rem; cursor: pointer; }
+  #menuToggle { position: absolute; width: 1px; height: 1px; opacity: 0; display: block; }
+  #menuToggle:focus-visible + .menu-toggle { outline: 3px solid orange; }
+  .site-nav .menu { display: none; flex-direction: column; }
+  #menuToggle:checked ~ .menu { display: flex; }
+  .site-nav .submenu { position: static; }
+}

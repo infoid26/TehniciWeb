@@ -1,0 +1,37 @@
+@use 'tokens';
+@use 'navigation';
+:root { color-scheme: dark; --background: #10131c; --panel: #{tokens.$surface}; --text: #eef0f9; --muted: #aeb7cb; --accent: #{tokens.$accent}; --line: #394258; }
+body.light { color-scheme: light; --background: #f8f5ff; --panel: white; --text: #272139; --muted: #665f77; --accent: #7056c9; --line: #d8d2e4; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background); color: var(--text); font: 16px/1.7 system-ui, sans-serif; }
+a { color: var(--accent); } img { max-width: 100%; height: auto; }
+.skip-link { position: absolute; top: -100px; left: 1rem; } .skip-link:focus { top: 1rem; z-index: 30; background: var(--panel); padding: .7rem; }
+.site-header, main, .site-footer { width: min(1120px, calc(100% - 2rem)); margin-inline: auto; }
+.site-header { padding-block: 3rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+h1 { font-size: clamp(2rem, 5vw, 3.3rem); } h2 { color: var(--accent); }
+.home-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-areas: 'welcome welcome welcome' 'offers offers news' 'hours hours hours' 'gallery gallery gallery' 'faq faq recipes'; gap: 1.5rem; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 1rem; padding: 1.5rem; }
+@each $area in welcome, offers, news, hours, gallery, faq, recipes { ##{$area} { grid-area: $area; } }
+.hero-layout { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2rem; align-items: center; }
+.hero-photo { border-radius: 1rem; mask-image: linear-gradient(transparent, black 7%, black 93%, transparent); }
+.offer-tags { display: flex; gap: .6rem; flex-wrap: wrap; } .offer-tags span { padding: .3rem .7rem; border-radius: 2rem; border: 1px solid var(--line); }
+.table-wrapper { overflow-x: auto; } table { width: 100%; border-collapse: collapse; } caption { color: var(--muted); } th, td { padding: .65rem; border: 1px solid var(--line); text-align: left; } tbody tr:hover { background: #8870be20; }
+.gallery-grid, .product-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.gallery-grid { counter-reset: photo; } figure { margin: 0; } .gallery-grid figure { counter-increment: photo; } figcaption::before { content: counter(photo) '. '; }
+.gallery-grid img { width: 100%; height: 180px; object-fit: cover; border-radius: .8rem; transition: transform .2s ease; } .gallery-grid img:hover { transform: scale(1.03); }
+.video-frame { max-width: 520px; margin: 2rem auto; border: 5px solid var(--accent); border-radius: 1rem; overflow: hidden; } video { display: block; width: 100%; height: auto; }
+.recipe-links { display: flex; gap: .5rem; flex-wrap: wrap; } .recipe-links a { border: 1px solid var(--line); padding: .4rem .7rem; border-radius: .5rem; } iframe { width: 100%; min-height: 200px; border: 0; margin-top: 1rem; }
+details { padding: .75rem 0; border-bottom: 1px solid var(--line); } summary { cursor: pointer; font-weight: 650; }
+.filter-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; } label { display: grid; gap: .4rem; } fieldset { border: 1px solid var(--line); border-radius: .6rem; padding: .7rem; } fieldset label, .cart-label { display: inline-flex; gap: .6rem; align-items: center; margin-right: .7rem; }
+input, select, button { font: inherit; } input:not([type=checkbox]):not([type=radio]), select { width: 100%; border: 1px solid var(--line); border-radius: .5rem; padding: .5rem; background: var(--background); color: var(--text); } button { cursor: pointer; } .actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-block: 1rem; }
+.btn-primary { --bs-btn-bg: #7959be; --bs-btn-border-color: #7959be; } .btn-outline-light { --bs-btn-color: var(--text); --bs-btn-border-color: var(--line); }
+.product-card { padding: 1rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--panel); } .product-card img { height: 170px; width: 100%; object-fit: cover; border-radius: .6rem; } .product-card h3 { font-size: 1.2rem; } .product-card p { margin: .4rem 0; } .product-card[hidden] { display: none; }
+.product-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; } .product-detail img { border-radius: 1rem; }
+.toast { display: block; position: fixed; bottom: 1rem; right: 1rem; background: var(--panel); color: var(--text); padding: 1rem; border: 1px solid var(--accent); z-index: 50; } .toast[hidden] { display: none; }
+#cookieBanner { position: fixed; bottom: 1rem; left: 1rem; max-width: min(420px, calc(100% - 2rem)); background: var(--panel); padding: 1rem; border: 1px solid var(--line); border-radius: .8rem; box-shadow: 0 5px 25px #0005; z-index: 40; } #cookieBanner[hidden] { display: none; }
+.site-footer { margin-top: 3rem; padding-block: 2rem; border-top: 1px solid var(--line); color: var(--muted); } .error-page { text-align: center; padding: 4rem 1rem; } .error-code { font-size: 5rem; color: var(--accent); }
+@keyframes reveal { from { transform: scaleY(.8); opacity: 0; } to { transform: scaleY(1); opacity: 1; } }
+@media (max-width: 1000px) { .gallery-grid, .product-grid { grid-template-columns: 1fr 1fr; } .home-grid { grid-template-columns: 1fr 1fr; grid-template-areas: 'welcome welcome' 'offers news' 'hours hours' 'gallery gallery' 'faq recipes'; } }
+@media (max-width: 700px) { .home-grid { display: flex; flex-direction: column; } .hero-layout, .filter-form, .product-detail { grid-template-columns: 1fr; } .gallery-grid, .product-grid { grid-template-columns: 1fr; } .site-header { padding-block: 1.5rem; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+@media print { .site-nav, #themeButton, #cookieBanner, .actions, video, iframe { display: none; } body { background: white; color: black; } .home-grid { display: block; } .panel { border: 1px solid #777; margin-bottom: 1rem; break-inside: avoid; } }

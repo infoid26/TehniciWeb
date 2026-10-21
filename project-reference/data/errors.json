@@ -1,0 +1,14 @@
+{
+  "400": {
+    "title": "Invalid request",
+    "message": "Please check the address."
+  },
+  "404": {
+    "title": "Page not found",
+    "message": "This page does not exist."
+  },
+  "500": {
+    "title": "Server error",
+    "message": "The page could not be loaded."
+  }
+}

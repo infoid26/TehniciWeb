@@ -1,0 +1,16 @@
+{
+  "images": [
+    {
+      "file": "cake",
+      "caption": "Chocolate cake"
+    },
+    {
+      "file": "tea",
+      "caption": "Fresh fruit pastry"
+    },
+    {
+      "file": "icecream",
+      "caption": "Vanilla ice cream"
+    }
+  ]
+}

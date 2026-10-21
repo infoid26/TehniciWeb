@@ -18,7 +18,8 @@ const course=context.window.TW_COURSE;
 let count=0;
 for(const chapter of course.chapters)for(const lesson of chapter.lessons) {
  assert(!lesson.reading,'Original files must not be compulsory learning tasks');
- assert(!/profesoarei|din exemplu|exemplul afișat|structura afișată/i.test(lesson.task.prompt),lesson.id);
+ assert(!/profesoarei/i.test(lesson.task.prompt),lesson.id);
+ if(/din exemplu|exemplul afișat|structura afișată/i.test(lesson.task.prompt))assert(lesson.task.contextCode||lesson.task.fixture,lesson.id);
  context.lesson=lesson;
  const html=vm.runInContext('taskHTML(lesson,{code:lesson.task.starter})',context);
  assert(html.includes('>Indiciu</button>')&&html.includes('>Rezolvare</button>'),lesson.id);

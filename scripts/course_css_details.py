@@ -96,6 +96,16 @@ properties={
 for prefix,meaning in [('padding','Spațiu interior între conținut și contur'),('margin','Spațiu exterior conturului')]:
  properties[prefix]=('16px',meaning+'. Forma scurtă acceptă 1–4 valori în ordinea sus, dreapta, jos, stânga.')
  for side,ro in [('top','sus'),('right','dreapta'),('bottom','jos'),('left','stânga')]:properties[prefix+'-'+side]=('16px',meaning+', numai pe latura '+ro+'.')
+properties.update({
+ 'list-style-image':('none','Alege imaginea markerului listei. none permite folosirea markerului dat de list-style-type.'),
+ 'list-style-position':('inside','inside include markerul în cutia conținutului; outside îl plasează în exterior.'),
+ 'transition-property':('color','Alege proprietățile animate prin tranziție; nu toate proprietățile CSS se interpolează.'),
+ 'transition-duration':('0.3s','Stabilește durata unei tranziții, separat de întârzierea pornirii.'),
+ 'transition-delay':('0.2s','Amână începutul tranziției; nu stabilește durata mișcării.'),
+ 'transition-timing-function':('ease-in-out','Controlează variația vitezei pe durata tranziției.'),
+ 'flex-flow':('row wrap','Prescurtare pentru flex-direction și flex-wrap: aici rânduri cu trecere pe rând nou.'),
+ 'mask-size':('cover','Dimensionează imaginea măștii. Masca controlează vizibilitatea, nu culoarea de fundal.'),
+})
 for name,(value,explanation) in properties.items():
  selector='.sample::before' if name=='content' else '.sample'
  code=selector+' {\n  '+name+': '+value+';\n}'

@@ -2,6 +2,22 @@
 (() => {
   'use strict';
   const nonce = 'tw-preview';
+  const workerBase = new URL('.', document.currentScript?.src || new URL('site/runner.js', location.href));
+  function browserLab(task, code, onCancel) {
+    return new Promise(resolve => {
+      let worker, timer, settled=false;
+      const finish=value=>{if(settled)return;settled=true;clearTimeout(timer);worker?.terminate();resolve(value);};
+      const fail=error=>finish({results:[{label:task.mode.toUpperCase(),passed:false,error}]});
+      try {
+        worker=new Worker(new URL(task.mode==='sql'?'sql-worker.js':'template-worker.js',workerBase),{type:'module'});
+        timer=setTimeout(()=>fail('Verificarea a depășit timpul disponibil. Verifică buclele și încearcă din nou după încărcarea componentelor.'),45000);
+        worker.onmessage=event=>finish(event.data);
+        worker.onerror=event=>{event.preventDefault();fail(event.message||'Componenta de evaluare nu s-a putut încărca.');};
+        onCancel?.(()=>fail('Verificare oprită.'));
+        worker.postMessage({task,code});
+      } catch(e) { fail(e.message); }
+    });
+  }
   const stable = value => {
     if (Array.isArray(value)) return '[' + value.map(stable).join(',') + ']';
     if (value && typeof value === 'object') return '{' + Object.keys(value).sort().map(k => JSON.stringify(k) + ':' + stable(value[k])).join(',') + '}';
@@ -83,9 +99,7 @@
   }
   async function preview(task, code, frame) {
     if (['scss','ejs'].includes(task.mode)) {
-      const response=await fetch('/api/check',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:task.id,code})});
-      if(!response.ok)throw new Error('Laborator indisponibil: HTTP '+response.status);
-      const result=await response.json();
+      const result=await browserLab(task,code);
       if(typeof result.compiled==='string')frame.srcdoc=sourceDoc({...task,mode:'css'},result.compiled,null,'');
       else if(typeof result.rendered==='string')frame.srcdoc=sourceDoc({...task,mode:'html'},result.rendered,null,'');
       else throw new Error(result.results?.[0]?.error || 'Codul nu a putut fi previzualizat.');
@@ -94,10 +108,16 @@
     frame.srcdoc = sourceDoc(task, code, null, '');
   }
   async function checkWeb(task, code, onCancel) {
-    const widths = [...new Set(task.tests.map(t => t.viewport || 800))];
     const results = [];
+    const rawTests=task.tests.filter(t=>t.kind.startsWith('source'));
+    if(rawTests.length){
+      const raw=new DOMParser().parseFromString(code,'text/html');
+      for(const test of rawTests){const el=raw.querySelector(test.selector);results.push({label:test.label,passed:test.kind==='sourceAttr'?!!el&&el.getAttribute(test.name)===test.value:!!el&&el.textContent.trim()===test.value});}
+    }
+    const frameTests=task.tests.filter(t=>!t.kind.startsWith('source'));
+    const widths = [...new Set(frameTests.map(t => t.viewport || 800))];
     for (const width of widths) {
-      const group = task.tests.filter(t => (t.viewport || 800) === width);
+      const group = frameTests.filter(t => (t.viewport || 800) === width);
       const frame = document.createElement('iframe');
       frame.setAttribute('sandbox','allow-scripts');
       frame.title = 'Verificare temporară';
@@ -185,12 +205,18 @@
   async function check(task, code, onCancel) {
     if (['html','css','dom'].includes(task.mode)) return checkWeb(task, code, onCancel);
     if (task.mode === 'js') return checkJS(task, code, onCancel);
-    if(['scss','ejs','sql','node','express'].includes(task.mode)){
+    if (['sql','scss','ejs'].includes(task.mode)) {
+      const result=await browserLab(task,code,onCancel);
+      if(typeof result.compiled==='string')return checkWeb({...task,mode:'css'},result.compiled,onCancel);
+      if(typeof result.rendered==='string')return checkWeb({...task,mode:'html'},result.rendered,onCancel);
+      return Array.isArray(result)?result:result.results;
+    }
+    if(['node','express'].includes(task.mode)){
       if(location.protocol==='file:')return [{label:'Laborator local',passed:false,error:'Pornește serverul cu node scripts/serve.mjs și deschide http://127.0.0.1:8088 pentru acest exercițiu.'}];
       const controller=new AbortController();onCancel?.(()=>controller.abort());
       try{
         const response=await fetch('/api/check',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:task.id,code}),signal:controller.signal});
-        if(!response.ok)throw new Error('Laboratorul nu este disponibil: HTTP '+response.status);
+        if(!response.ok){let message;try{message=(await response.json()).error;}catch{}throw new Error(message||'Laboratorul nu este disponibil: HTTP '+response.status);}
         const result=await response.json();
         if(typeof result.compiled==='string')return checkWeb({...task,mode:'css'},result.compiled,onCancel);
         if(typeof result.rendered==='string')return checkWeb({...task,mode:'html'},result.rendered,onCancel);

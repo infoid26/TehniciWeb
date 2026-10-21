@@ -96,7 +96,12 @@ for source in inventory['items']:
  source['lessons']=ids+source['lessons'];seen[source['sha256']]=source['lessons']
 
 Path('site/sources.js').write_text('window.TW_SOURCES = '+json.dumps(inventory,ensure_ascii=False)+';\n',encoding='utf8')
-report=['# Inventarul materialelor','',f"{len(inventory['files'])} fișiere inventariate; {len(inventory['items'])} surse text/slide-uri.",'','Dana nu este parcurs. Recordings nu este transcris. Bibliotecile instalate și metadatele Git nu sunt parcurse.','', 'Lecțiile introductive și cele de detaliu au exerciții practice. Lecțiile «Aprofundare» și «Codul profesoarei» sunt de lectură/recunoaștere și păstrează sursa; nu reprezintă teste de stăpânire a fiecărei instrucțiuni.','', 'Fișierele generate Bootstrap, source maps și package-lock sunt în biblioteca de surse; nu sunt transformate în mii de lecții repetitive.','', '| Sursă | Tip | Lecții asociate |','| --- | --- | --- |']
+report=['# Inventarul materialelor','',f"{len(inventory['files'])} fișiere inventariate; {len(inventory['items'])} surse text/slide-uri.",'',
+ 'Traseul de învățare este enumerat în [CURRICULUM.md](CURRICULUM.md). Corespondențele dintre sintaxa detectată și lecțiile active sunt în [SYNTAX.md](SYNTAX.md).','',
+ 'Dana nu este parcurs. Recordings nu este transcris. Bibliotecile instalate și metadatele Git nu sunt parcurse.','',
+ 'Materialele originale sunt referințe opționale, separate de capitole și progres. Tabelul de mai jos dovedește păstrarea surselor și oferă asocieri de consultare; simpla prezență a unui fișier în bibliotecă nu înseamnă că fiecare noțiune a fost exersată.','',
+ 'Fișierele generate Bootstrap, source maps și package-lock sunt păstrate în biblioteca de surse. Sintaxa se învață prin exercițiile de HTML, CSS, SCSS și JSON, fără multiplicarea lecțiilor pentru fiecare regulă generată.','',
+ '| Sursa | Tip | Referințe și lecții asociate |','| --- | --- | --- |']
 for x in inventory['items']:
  report.append('| '+x['title'].replace('|','\\|')+' | '+x.get('classification',x['kind'])+' | '+', '.join(x['lessons'])+' |')
 Path('COVERAGE.md').write_text('\n'.join(report),encoding='utf8')

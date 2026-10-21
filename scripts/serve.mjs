@@ -10,11 +10,27 @@ const require=createRequire(import.meta.url);
 let projectPromise;
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const types = {'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.gif':'image/gif','.svg':'image/svg+xml','.webp':'image/webp'};
-export function createServer() {
+export function runtimeSettings(env=process.env,portArgument) {
+  const production=env.NODE_ENV==='production'||Boolean(env.WEBSITE_INSTANCE_ID||env.WEBSITE_SITE_NAME);
+  const port=Number(env.PORT||portArgument||8088);
+  if(!Number.isInteger(port)||port<0||port>65535)throw new Error('PORT must be an integer between 0 and 65535.');
+  return {port,host:env.HOST||(production?'0.0.0.0':'127.0.0.1'),production};
+}
+const types = {'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.gif':'image/gif','.svg':'image/svg+xml','.webp':'image/webp','.wasm':'application/wasm'};
+export function createServer(options={}) {
+  const production=options.production??runtimeSettings().production;
+  const evaluatorUrl=options.evaluatorUrl??process.env.LAB_EVALUATOR_URL;
+  const evaluatorToken=options.evaluatorToken??process.env.LAB_EVALUATOR_TOKEN;
+  if(evaluatorUrl){const url=new URL(evaluatorUrl);if(url.protocol!=='https:'||url.username||url.password)throw new Error('LAB_EVALUATOR_URL must be an HTTPS URL without embedded credentials.');}
+  const maxChecks=2;
+  let activeChecks=0;
+  let tasksPromise;
+  const tasks=()=>tasksPromise??=(async()=>{const context={window:{}};vm.runInNewContext(await fs.readFile(path.join(root,'site/course.js'),'utf8'),context);return new Map(context.window.TW_COURSE.chapters.flatMap(c=>c.lessons).map(l=>[l.id,JSON.parse(JSON.stringify(l.task))]));})();
+  const json=(res,status,value)=>{res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});res.end(JSON.stringify(value));};
   return http.createServer(async (req,res) => {
     try {
       const pathname = decodeURIComponent(new URL(req.url,'http://localhost').pathname);
+      if(pathname==='/api/health'&&req.method==='GET'){json(res,200,{status:'ok',service:'tehnici-web',labs:evaluatorUrl?'remote':production?'not-configured':'development'});return;}
       if(pathname==='/project' || pathname.startsWith('/project/')) {
         if(pathname==='/project') { res.writeHead(302,{Location:'/project/'});res.end();return; }
         projectPromise ||= require('../project-reference/app.js').createApp().then(app=>{app.locals.basePath='/project';return app;});
@@ -24,19 +40,34 @@ export function createServer() {
         return;
       }
       if(pathname==='/api/check' && req.method==='POST'){
-        let body='';for await(const chunk of req){body+=chunk;if(body.length>120000){res.writeHead(413);res.end();return;}}
-        const input=JSON.parse(body);const context={window:{}};
-        vm.runInNewContext(await fs.readFile(path.join(root,'site/course.js'),'utf8'),context);
-        const task=context.window.TW_COURSE.chapters.flatMap(c=>c.lessons).find(l=>l.id===input.id)?.task;
-        if(!task||!['scss','ejs','sql','node','express'].includes(task.mode)||typeof input.code!=='string'){res.writeHead(400);res.end('{}');return;}
-        const worker=new Worker(new URL('./lab-worker.mjs',import.meta.url),{workerData:{task:JSON.parse(JSON.stringify(task)),code:input.code}});
+        const parts=[];let bytes=0;for await(const chunk of req){bytes+=Buffer.byteLength(chunk);if(bytes>120000){json(res,413,{error:'Codul depășește dimensiunea permisă.'});return;}parts.push(Buffer.from(chunk));}const body=Buffer.concat(parts).toString('utf8');
+        let input;try{input=JSON.parse(body);}catch{json(res,400,{error:'Cererea trebuie să conțină JSON valid.'});return;}
+        const task=(await tasks()).get(input?.id);
+        if(!task||!['scss','ejs','sql','node','express'].includes(task.mode)||typeof input.code!=='string'){json(res,400,{error:'Exercițiu sau cod invalid.'});return;}
+        if(production&&!evaluatorUrl){json(res,503,{error:'Evaluatorul Node/Express nu este încă activat pe platformă.'});return;}
+        if(activeChecks>=maxChecks){res.setHeader('Retry-After','3');json(res,429,{error:'Evaluatorul este ocupat. Încearcă din nou în câteva secunde.'});return;}
+        activeChecks++;
+        try{
+        if(evaluatorUrl){
+          // This endpoint belongs to a separately isolated execution service.
+          // The App Service itself never executes student code in production.
+          const response=await (options.fetch||fetch)(evaluatorUrl,{method:'POST',redirect:'error',headers:{'Content-Type':'application/json',...(evaluatorToken?{Authorization:'Bearer '+evaluatorToken}:{})},body:JSON.stringify({task,code:input.code}),signal:AbortSignal.timeout(15000)});
+          if(!response.ok){json(res,502,{error:'Evaluatorul nu este disponibil momentan.'});return;}
+          const chunks=[];let size=0;for await(const chunk of response.body){size+=chunk.byteLength;if(size>1048576)throw new Error('Evaluator response too large');chunks.push(Buffer.from(chunk));}
+          const value=JSON.parse(Buffer.concat(chunks).toString('utf8'));
+          if(!value||!((Array.isArray(value.results)&&value.results.length>0&&value.results.every(r=>r&&typeof r.passed==='boolean'))||typeof value.compiled==='string'||typeof value.rendered==='string'))throw new Error('Invalid evaluator response');
+          json(res,200,value);return;
+        }
+        const worker=new Worker(new URL('./lab-worker.mjs',import.meta.url),{workerData:{task,code:input.code},resourceLimits:{maxOldGenerationSizeMb:192}});
         const result=await new Promise(resolve=>{
           let done=false;const finish=value=>{if(done)return;done=true;clearTimeout(timer);worker.terminate();resolve(value);};
           const timer=setTimeout(()=>finish({results:[{label:'Limită de execuție',passed:false,error:'Execuția a fost oprită după 12 secunde. Verifică buclele și cerința.'}]}),12000);
           worker.on('message',finish);worker.on('error',e=>finish({results:[{label:'Laborator',passed:false,error:e.message}]}));
           worker.on('exit',code=>{if(code!==0&&!done)finish({results:[{label:'Laborator',passed:false,error:'Procesul de verificare s-a oprit.'}]});});
         });
-        res.writeHead(200,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});res.end(JSON.stringify(result));return;
+        json(res,200,result);return;
+        }catch{json(res,502,{error:'Evaluatorul nu a putut finaliza verificarea.'});return;}
+        finally{activeChecks--;}
       }
       const relative = pathname === '/' ? 'index.html' : pathname.slice(1);
       if (relative !== 'index.html' && !/^site\/[a-zA-Z0-9._-]+$/.test(relative)) { res.writeHead(404); res.end('Pagina nu există.'); return; }
@@ -49,6 +80,10 @@ export function createServer() {
   });
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  const port = Number(process.argv[2] || 8088);
-  createServer().listen(port,'127.0.0.1',() => console.log(`Tehnici Web: http://127.0.0.1:${port}`));
+  const {port,host}=runtimeSettings(process.env,process.argv[2]);
+  const server=createServer();
+  server.requestTimeout=20000;server.headersTimeout=10000;server.keepAliveTimeout=5000;
+  server.listen(port,host,() => console.log(`Tehnici Web listening on ${host}:${port}`));
+  const stop=()=>{server.close(()=>process.exit(0));setTimeout(()=>process.exit(1),15000).unref();};
+  process.once('SIGTERM',stop);process.once('SIGINT',stop);
 }

@@ -1,65 +1,45 @@
+"""Generate learner documentation for the published course."""
+import json
 from pathlib import Path
-Path('README.md').write_text('''# Tehnici Web · INFO ID 26
 
-Platformă de studiu după materialele Irinei Ciocan. Explicații în română, codul exercițiilor în engleză, interfață dark și traseu central inspirat de PA. Noduri mari, editor CodeMirror cu sintaxă colorată, numere de linie și completare; numele de cod sunt evidențiate în cerințe.
+course=json.loads(Path('site/course.js').read_text(encoding='utf8').split(' = ',1)[1].rstrip(';\n'))
+chapters=course['chapters']
+total=sum(len(c['lessons']) for c in chapters)
+readings=sum(len(c['lessons']) for c in course['references'])
+Path('README.md').write_text(f'''# Tehnici Web · INFO ID 26
 
-## Pornire
+Cursul este disponibil la **[tw.infoid26.ro](https://tw.infoid26.ro/)**.
 
-Din acest folder rulează `npm start`, apoi deschide http://127.0.0.1:8088/ pentru curs și http://127.0.0.1:8088/project/ pentru proiectul de referință. Dependențele sunt deja instalate. Pe alt calculator folosește `pnpm install --frozen-lockfile` înainte de pornire.
+{total} de lecții în {len(chapters)} de capitole, cu explicații în română și cod în engleză. Înveți să construiești un site de la documentul HTML până la pagini generate din date. Nu ai nevoie de proiectul profesoarei: exercițiile includ structura, fișierele, datele și schemele SQL necesare.
 
-Serverul local este necesar pentru laboratoarele SCSS, EJS, Node, Express și SQL. Deschiderea directă a index.html permite numai partea de browser. Prima deschidere a proiectului poate dura câteva secunde pentru compilarea SCSS, generarea imaginilor și inițializarea bazei de antrenament.
+Materia include HTML, formulare, media, MathML, CSS, responsive, animații, JavaScript, expresii regulate, date calendaristice, DOM, stocare, JSON, SCSS, Node, HTTP, Express, EJS și PostgreSQL. SQL include crearea tabelelor și tipurilor, constrângeri, chei străine, vectori, filtrare, agregare, relații între tabele și modificarea datelor.
 
-## Conținut
+Fiecare lecție are explicație, exemplu, întrebare și exercițiu. **Indiciu** și **Rezolvare** sunt deasupra editorului și se deschid independent, ca în PA. Progresul și codul se păstrează în browser; exportul și importul permit transferul lor între dispozitive.
 
-21 de capitole și 476 de lecții. Cursul se parcurge integral fără proiectul profesoarei sau alte fișiere externe. Fiecare cerință include structura, datele, schema SQL sau fragmentele necesare.
+Cele {readings} materiale de referință sunt separate de traseul de învățare. Biblioteca păstrează slide-urile și codul original pentru consultare; citirea lor nu înlocuiește exercițiile practice.
 
-- **476 de lecții de bază, detaliu și proiect**: fișiere, browser, HTML, CSS, MathML, JavaScript, DOM, stocare, JSON, SCSS, Node, Express, EJS și PostgreSQL. Cerința indică dacă scrii cod executat, o declarație CSS verificată sau un răspuns de interpretare.
-- **604 materiale opționale de referință** sunt păstrate separat de traseu și de progres. Nu au întrebări de memorare a fișierelor și nu trebuie parcurse pentru finalizarea cursului.
+[CURRICULUM.md](CURRICULUM.md) enumeră capitolele și lecțiile. [SYNTAX.md](SYNTAX.md) leagă sintaxa identificată în materiale de exemplele lecțiilor active. [COVERAGE.md](COVERAGE.md) inventariază materialele originale și legăturile lor către curs. Folderul Dana este exclus.
 
-Fiecare lecție are explicație, exemplu, întrebare, exercițiu, indiciu și soluție. Butoanele „Indiciu” și „Rezolvare” sunt deasupra editorului, se deschid independent și folosesc comportamentul din PA. Codul de lucru și proiectul nou folosesc nume în engleză.
+SQL folosește PostgreSQL prin PGlite, într-un worker din browser, cu date de antrenament resetate pentru fiecare verificare. SCSS și EJS sunt compilate tot în browser. Laboratoarele Node și Express au nevoie de serviciul de evaluare al platformei; găzduirea statică singură nu execută un server Node.
 
-Biblioteca de surse permite căutarea în prezentări și fișiere. Păstrează cele **435 de slide-uri**, cu ilustrațiile extrase, și include integral în lecții **68 de fișiere de studiu**, inclusiv copii identice, backup, variante din `lectiile_urmatoare`, resursele pentru examen, SQL și WebVTT. `COVERAGE.md` leagă materialele de lecții.
-
-**Dana nu este parcurs.** `Recordings` nu este transcris. Implementările bibliotecilor din `node_modules` nu sunt transformate în lecții. Fișierele generate Bootstrap, source maps și package-lock sunt păstrate în biblioteca de surse, fără mii de lecții repetitive despre aceleași reguli CSS/JSON.
-
-Inventarul verifică păstrarea surselor fără linii lipsă. Acest lucru nu demonstrează singur stăpânirea fiecărei construcții; lecțiile de lectură și cele practice sunt diferențiate explicit.
-
-## Editor, evaluare și progres
-
-- HTML/CSS: elemente și stiluri calculate în iframe; lățimi distincte pentru responsive. Nu este un validator HTML complet.
-- JavaScript: `solve(input)` într-un Web Worker cu limită de timp.
-- DOM: iframe separat, acțiuni simulate și limitarea iterațiilor buclelor prin AST.
-- JSON: parsare reală și comparare structurală.
-- SCSS/EJS: compilare Sass și randare EJS reale, inclusiv previzualizare.
-- Node: modulele laboratorului și fișiere virtuale, fără scriere în documentele personale.
-- Express: aplicația reală primește obiecte HTTP Node pentru testarea rutelor, fără un port separat pentru fiecare exercițiu.
-- SQL: PostgreSQL în memorie prin PGlite, cu bază nouă pentru fiecare verificare.
-
-Lecțiile de detaliu CSS precizează când verifică declarația, nu layout-ul combinat. Exercițiile pentru extensii MathML istorice verifică structura fără să pretindă redare nativă completă.
-
-Progresul, codul și ultima lecție se salvează în localStorage, separat de PA. Editarea codului invalidează verificarea anterioară. Exportul/importul oferă o copie de siguranță; nu există sincronizare între dispozitive.
-
-## Proiectul de referință
-
-`project-reference/` conține Sweet Corner: pagini Express/EJS, produse și detalii din PostgreSQL, galerie și imagini responsive generate prin sharp, video și subtitrări, meniu cu submeniu și variantă mobilă, FAQ, tabel de program, filtre combinate, sortare, totalul produselor vizibile, coș local, temă și banner de preferințe.
-
-Implicit folosește PostgreSQL în memorie, cu date resetate la repornire. Pentru PostgreSQL separat pregătește o bază de antrenament cu `project-reference/data/products.sql` și setează `DATABASE_URL`. Schema utilizatorilor/accesărilor din material este inclusă în engleză; nu este adăugat un sistem de autentificare care nu există în exemplul studiat.
-
-## Generare și verificare
-
-```powershell
-python scripts/build_course.py
-npm run check
-npm run check:coverage
-npm run check:server
-npm run check:browser
-```
-
-Python este folosit numai pentru generarea conținutului. Regenerarea inventarului necesită acces la folderul original al materialelor.
-
-Verificat în această sesiune: structura și sintaxa cursului, **275 de cazuri JavaScript**, **68 de exerciții de server cu controale negative**, integrarea paginilor, datelor, template-urilor, compilării, imaginilor și API-ului, precum și integritatea celor 435 de slide-uri și a fragmentelor celor 68 de fișiere. Testele HTTP au rulat cu obiecte HTTP Node în proces: mediul blochează conexiunile TCP locale.
-
-**Verificarea finală în browser rămâne neexecutată:** mediul nu permite pornirea Edge. `check:browser` este disponibil pentru verificarea soluțiilor HTML/CSS/DOM, aspectului desktop/mobil, navigării, editorului, persistenței și interacțiunilor proiectului. Aceste verificări nu sunt declarate ca trecute.
-
-Nu s-a creat niciun commit și nu s-a făcut deploy. Materialele originale sunt incluse pentru studiul local; verifică dreptul de redistribuire înaintea publicării.
+Configurarea aplicației existente pe Azure și starea evaluatorului Node/Express sunt descrise în [AZURE.md](AZURE.md).
 ''',encoding='utf8')
+
+lines=['# Programa cursului','',f'{len(chapters)} de capitole; {total} de lecții cu exerciții.','',
+       'Fiecare legătură deschide o lecție din curs. Materialele originale sunt disponibile separat, pentru consultare.','']
+for c in chapters:
+ lines.extend([f"## {c['title']} · {len(c['lessons'])} lecții",'',c['subtitle'],''])
+ for l in c['lessons']:
+  lines.append(f"- [{l['title']}](https://tw.infoid26.ro/#lectie/{l['id']}/0)")
+ lines.append('')
+Path('CURRICULUM.md').write_text('\n'.join(lines),encoding='utf8')
+
+project='''# Sweet Corner
+
+Proiect educațional pentru [cursul Tehnici Web](https://tw.infoid26.ro/), cu nume de fișiere și identificatori în engleză.
+
+Exemplele arată cum construiești pagini cu produse, filtre, sortare, coș, galerie, temă și preferințe. Interfața folosește HTML, CSS/SCSS și JavaScript; paginile dinamice folosesc Node, Express, EJS și PostgreSQL.
+
+Datele de antrenament sunt în `data/products.sql`, iar structura pentru utilizatori și accesări este în `data/users.sql`. Lecțiile oferă propriile date și cerințe, astfel încât proiectul nu este necesar pentru parcurgerea cursului.
+'''
+Path('project-reference/README.md').write_text(project,encoding='utf8')

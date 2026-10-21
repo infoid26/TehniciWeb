@@ -2,6 +2,7 @@
   "name": "tehnici-web-infoid26",
   "version": "1.0.0",
   "private": true,
+  "engines": { "node": "24.x" },
   "description": "Platform\u0103 de studiu pentru Tehnici Web, dup\u0103 materialele Irinei Ciocan.",
   "scripts": {
     "start": "node scripts/serve.mjs",
@@ -9,7 +10,13 @@
     "check:browser": "node scripts/check_complete.mjs",
     "build:course": "python scripts/build_course.py",
     "build:editor": "node scripts/build_editor.mjs",
+    "build:sql": "node scripts/build_sql.mjs",
+    "build:templates": "node scripts/build_templates.mjs",
+    "check:learning": "node scripts/check_learning.mjs",
+    "check:curriculum": "node scripts/check_curriculum.mjs",
+    "check:browser-labs": "node scripts/check_browser_labs.mjs",
     "check:server": "node scripts/check_server.mjs",
+    "check:azure": "node scripts/check_azure.mjs",
     "check:coverage": "node scripts/check_coverage.mjs"
   },
   "dependencies": {

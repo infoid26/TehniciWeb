@@ -17,7 +17,7 @@ J('trimStart','trimStart · doar la început','Elimină numai spațiile din stâ
 J('trimEnd','trimEnd · doar la sfârșit','Elimină numai spațiile din dreapta textului input, păstrând spațiile inițiale.','input.trimEnd()',[('  Tea  ','  Tea'),('Cake','Cake')])
 J('substring','substring · două poziții','Returnează caracterele dintre pozițiile 1 inclusiv și 4 exclusiv cu substring. Nu trata al doilea argument drept lungime.','input.substring(1,4)',[('Chocolate','hoc'),('Tea','ea')])
 J('substr','substr · sintaxă veche din prezentare','Recunoaște substr(start,length): al doilea argument este o lungime. Pentru cod nou preferă slice. Returnează trei caractere de la poziția 1 folosind slice(1,4).','input.slice(1,4)',[('Chocolate','hoc'),('Tea','ea')])
-J('match','match · toate potrivirile','Returnează toate grupurile consecutive de cifre din input cu /\\d+/g și match; când nu există potriviri returnează [].','input.match(/\d+/g) || []',[('A12 B3',['12','3']),('Cake',[])])
+J('match','match · toate potrivirile','Returnează toate grupurile consecutive de cifre din input cu /\\d+/g și match; când nu există potriviri returnează [].',r'input.match(/\d+/g) || []',[('A12 B3',['12','3']),('Cake',[])])
 J('localeUpper','toLocaleUpperCase · reguli de limbă','Transformă input în litere mari folosind explicit limba en. Metoda întoarce text nou.','input.toLocaleUpperCase("en")',[('cake','CAKE'),('Tea','TEA')])
 J('localeLower','toLocaleLowerCase · reguli de limbă','Transformă input în litere mici folosind explicit limba en.','input.toLocaleLowerCase("en")',[('CAKE','cake'),('Tea','tea')])
 J('array-fill','fill · umple o copie','Copiază input și înlocuiește toate elementele copiei cu zero folosind fill. Nu modifica input.','[...input].fill(0)',[([1,2,3],[0,0,0]),([],[])])
@@ -81,6 +81,7 @@ math_tags={
 'mlongdiv':('Împărțire desfășurată: divizor, cât, deîmpărțit','<mlongdiv longdivstyle="lefttop"><mn>4</mn><mn>3</mn><mn>12</mn></mlongdiv>'),
 'maction':('Interactivitate: sintaxă MathML istorică','<maction actiontype="toggle"><mn>1</mn><mn>2</mn></maction>'),
 }
+math_tags['cn']=('Număr în Content MathML','<semantics><mn>2</mn><annotation-xml encoding="MathML-Content"><cn>2</cn></annotation-xml></semantics>')
 for tag,(meaning,fragment) in math_tags.items():
  code='<math xmlns="http://www.w3.org/1998/Math/MathML">'+fragment+'</math>'
  note='Tagurile din MathML complet și configurațiile MathJax vechi din slide-uri nu au toate redare nativă. Aici verificăm prezența și structura, fără să pretindem că extensia este randată de browser.'

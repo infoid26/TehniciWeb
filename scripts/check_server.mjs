@@ -15,14 +15,16 @@ async function run(task,code) {
  });
 }
 const integrationOnly=process.argv.includes('--integration-only');
-const results=integrationOnly?JSON.parse(await fs.readFile('.audit/server-results.json','utf8')):[];
-for(const lesson of (integrationOnly?[]:lessons.filter(l=>['scss','ejs','sql','node','express'].includes(l.task.mode)))) {
+const newOnly=process.argv.includes('--new');
+const results=integrationOnly||newOnly?JSON.parse(await fs.readFile('.audit/server-results.json','utf8')).filter(r=>r.passed&&r.negativeRejected&&(!process.argv.includes('--refresh-runtime')||!['node','express'].includes(r.mode))):[];
+const existing=new Set(results.filter(r=>r.passed&&r.negativeRejected).map(r=>r.id));
+for(const lesson of (integrationOnly?[]:lessons.filter(l=>['scss','ejs','sql','node','express'].includes(l.task.mode)&&(!newOnly||!existing.has(l.id))))) {
  const good=await run(lesson.task,lesson.task.solution);
  const bad=await run(lesson.task,'');
  const success=typeof good.compiled==='string' || typeof good.rendered==='string' || (good.results?.length && good.results.every(t=>t.passed));
  const negative=typeof bad.compiled==='string'?bad.compiled==='':typeof bad.rendered==='string'?bad.rendered==='':!bad.results?.every(t=>t.passed);
  results.push({id:lesson.id,mode:lesson.task.mode,passed:!!success,negativeRejected:negative,detail:success?undefined:good,compiled:good.compiled,rendered:good.rendered});
- if(results.length%10===0)console.log('Checked',results.length,'server exercises');
+ if(results.length%5===0){await fs.writeFile('.audit/server-results.json',JSON.stringify(results,null,2));console.log('Checked',results.length,'server exercises');}
 }
 await fs.writeFile('.audit/server-results.json',JSON.stringify(results,null,2));
 console.log('Failures:',JSON.stringify(results.filter(r=>!r.passed||!r.negativeRejected),null,2));

@@ -175,14 +175,5 @@ write('public/js/site.js','''(() => {
 for name,color,label in [('cake','#9463ad','CAKE'),('tea','#d49a69','PASTRY'),('icecream','#6fa5a3','ICE CREAM')]:
  write('public/images/'+name+'.svg',f'<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450"><rect width="600" height="450" rx="30" fill="#252237"/><ellipse cx="300" cy="345" rx="180" ry="28" fill="#151521"/><path d="M150 220 Q300 110 450 220 V310 Q300 380 150 310Z" fill="{color}"/><ellipse cx="300" cy="220" rx="150" ry="65" fill="#e8c7b4"/><path d="M155 225 Q300 280 445 225" fill="none" stroke="#6a3c51" stroke-width="18"/><circle cx="300" cy="170" r="20" fill="#b34874"/><text x="300" y="410" text-anchor="middle" fill="#e8daef" font-family="sans-serif" font-size="18" letter-spacing="6">{label}</text></svg>')
 write('public/media/captions.vtt','WEBVTT\n\n00:00:00.000 --> 00:00:05.000\nWelcome to Sweet Corner.\n\n00:00:05.000 --> 00:00:15.000\nFresh cakes, one small step at a time.\n')
-write('README.md','''# Sweet Corner
-
-Referință educațională cu identificatori în engleză, construită după funcționalitățile exemplului profesoarei.
-Pornește din proiectul TehniciWeb cu `npm start` și deschide `/project/`.
-Pentru rulare separată: instalează dependențele declarate și rulează `node app.js`.
-Fără DATABASE_URL folosește PostgreSQL în memorie prin PGlite. Datele revin la seed la repornire.
-Pentru PostgreSQL extern pregătește o bază de antrenament cu `data/products.sql` și setează DATABASE_URL.
-Schema `users.sql` reproduce structura de utilizatori/accesări din material, fără a inventa autentificare care nu este implementată în exemplu.
-SCSS este compilat cu Sass, iar imaginile WebP sunt generate cu sharp.
-''')
+write('README.md',Path('project-reference/README.md').read_text(encoding='utf8'))
 print('Reference project sources written.')

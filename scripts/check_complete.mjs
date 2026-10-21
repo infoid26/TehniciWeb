@@ -43,8 +43,7 @@ try {
  await page.locator('#check').click();await page.waitForSelector('#task-status.good');
  await page.reload();await page.waitForSelector('.cm-editor');assert(!await page.locator('#continue').isDisabled());
  await page.evaluate(()=>{const input=document.querySelector('#code');input.value+=' ';input.dispatchEvent(new Event('input',{bubbles:true}));});assert(await page.locator('#continue').isDisabled());
- await page.evaluate(()=>{location.hash='surse';});await page.waitForSelector('#source-search');
- await page.locator('#source-search').fill('oferte.json');assert(await page.locator('.source-item').count()>0);
+ assert.equal(await page.locator('a[href="#surse"]').count(),0);
  await page.evaluate(()=>{location.hash='acasa';});await page.waitForSelector('.path-node');
  await page.locator('#search').fill('no-such-lesson-xyz');assert.equal(await page.locator('.no-result').count(),1);
  await page.locator('#search').fill('');await page.screenshot({path:'.audit/desktop-v2.png'});
@@ -54,10 +53,10 @@ try {
  assert.equal(await page.locator('.node-bubble').first().evaluate(el=>Math.round(el.getBoundingClientRect().width)),70);
  // Reference project: route/data/template chain and browser interactions.
  await page.goto(url+'/project/products');await page.waitForSelector('.product-card');
- assert.equal(await page.locator('.product-card').count(),4);
+ assert.equal(await page.locator('.product-card').count(),8);
  await page.locator('#dismiss-cookies').click();
- await page.locator('#search-name').fill('Chocolate');assert.equal(await page.locator('.product-card:visible').count(),1);
- await page.locator('.product-card:visible .cart-choice').check();assert.equal(await page.locator('#cart-count').textContent(),'1');
+ await page.locator('#search-name').fill('Chocolate');assert.equal(await page.locator('.product-card:visible').count(),2);
+ await page.locator('.product-card:visible .cart-choice').first().check();assert.equal(await page.locator('#cart-count').textContent(),'1');
  await page.reload();assert.equal(await page.locator('#cart-count').textContent(),'1');
  await page.locator('#dismiss-cookies').click();
  await page.locator('#theme-toggle').click();assert(await page.locator('body').evaluate(el=>el.classList.contains('light')));
@@ -72,5 +71,5 @@ try {
  await page.screenshot({path:'.audit/project-mobile.png'});
  assert.deepEqual(errors,[]);
  assert.equal(failed.length,0,'Reference solutions or negative controls failed: see .audit/complete-results.json');
- console.log('PASS: all solutions, negative controls, navigation, CodeMirror, progress, source search, desktop/mobile, project routes and interactions.');
+ console.log('PASS: all solutions, negative controls, navigation, CodeMirror, progress, removed references, desktop/mobile, project routes and interactions.');
 } finally { await browser.close(); server.closeAllConnections(); await new Promise(resolve=>server.close(resolve)); }

@@ -31,12 +31,23 @@ jobs:
           npm run check:learning
           npm run check:azure
           npm run check:evaluator
+          npm run check:sandboxes
+          npm run check:coverage
+          npm run check:curriculum
+          npm run check:project
+
+      - name: Bundle verified Azure Sandbox CLI
+        run: node scripts/install_aca.mjs
+
+      - name: Package Linux application preserving executable permissions
+        run: tar -czf node-app.tar.gz index.html package.json pnpm-lock.yaml site scripts project-reference evaluator node_modules tools
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v6
         with:
           name: node-app
-          path: .
+          path: node-app.tar.gz
+          compression-level: 0
 
   deploy:
     runs-on: ubuntu-24.04
@@ -50,6 +61,11 @@ jobs:
         uses: actions/download-artifact@v7
         with:
           name: node-app
+
+      - name: Extract Linux application
+        run: |
+          tar -xzf node-app.tar.gz
+          rm node-app.tar.gz
 
       - name: Login to Azure
         uses: azure/login@v3

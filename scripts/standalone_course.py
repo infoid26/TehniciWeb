@@ -45,6 +45,21 @@ def adapt():
   # Source citations remain available, but the chapter introduces a transferable skill.
   chapter['subtitle']=chapter['subtitle'].replace('folosite în filtre, sortare și coș','utile pentru filtre, sortare și coș')
  lessons={l['id']:l for c in chapters for l in c['lessons']}
+ # Keep the final-project media examples aligned with our own published assets.
+ video=lessons['project-video']
+ for field in ['intro','example','explain','hint']:
+  video[field]=video[field].replace('bakery.mp4','bakery.webm').replace('video/mp4','video/webm')
+ for field in ['prompt','solution','starter']:
+  video['task'][field]=video['task'][field].replace('bakery.mp4','bakery.webm').replace('video/mp4','video/webm')
+ for test in video['task']['tests']:
+  if test.get('value')=='video/mp4':test['value']='video/webm'
+  test['label']=test['label'].replace('video/mp4','video/webm')
+ video['task']['requirements']=[item.replace('video/mp4','video/webm') for item in video['task']['requirements']]
+ video['task']['revision']=2
+ picture=lessons['project-picture']
+ for field in ['example']:
+  picture[field]=picture[field].replace('cake-small.webp','cake-300.webp').replace('cake.webp','cake-600.webp')
+ picture['task']['solution']=picture['task']['solution'].replace('cake-small.webp','cake-300.webp').replace('cake.webp','cake-600.webp')
  folder=lessons['start-folder']
  folder.update(intro='O cale relativă spune browserului unde găsește o resursă pornind de la fișierul paginii. Numele folderelor sunt alegeri ale autorului site-ului, nu nume obligatorii de memorat.',example='my-website/\n  index.html\n  images/\n    logo.svg\n\n<!-- Inside index.html -->\n<img src="images/logo.svg" alt="Site logo">',explain='Pagina index.html și folderul images sunt în același director. De aceea src începe cu images/. Pentru o altă organizare a folderelor, se schimbă și calea.',hint='Pornește din folderul lui index.html, intră în images și indică fișierul logo.svg. Atributul src conține calea relativă, iar alt descrie imaginea.')
  folder['task']=html('În site-ul imaginar de mai jos, adaugă în index.html o imagine pentru logo. Folosește calea relativă corectă și textul alternativ `Site logo`. Nu trebuie să ai aceste fișiere pe calculator; exersăm scrierea tagului.', '<img src="images/logo.svg" alt="Site logo">',[attr('img','src','images/logo.svg'),attr('img','alt','Site logo')])

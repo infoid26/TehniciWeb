@@ -6,9 +6,16 @@ import {Worker} from 'node:worker_threads';
 import vm from 'node:vm';
 import {createRequire} from 'node:module';
 import {createSessionEvaluator} from './azure-sessions.mjs';
+import {createSandboxEvaluator,sandboxSettings} from './azure-sandboxes.mjs';
 
 const require=createRequire(import.meta.url);
 let projectPromise;
+export async function closeProject(){
+  if(!projectPromise)return;
+  const pending=projectPromise;projectPromise=undefined;
+  const app=await pending;
+  await app.locals.close();
+}
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export function runtimeSettings(env=process.env,portArgument) {
@@ -20,10 +27,12 @@ export function runtimeSettings(env=process.env,portArgument) {
 const types = {'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.gif':'image/gif','.svg':'image/svg+xml','.webp':'image/webp','.wasm':'application/wasm'};
 export function createServer(options={}) {
   const production=options.production??runtimeSettings().production;
+  const env=options.env||process.env;
+  const sandbox=sandboxSettings(env);
   const sessionEndpoint=options.sessionEndpoint??process.env.LAB_AZURE_SESSION_ENDPOINT;
-  if(sessionEndpoint&&(options.evaluatorUrl||process.env.LAB_EVALUATOR_URL))throw new Error('Configure only one lab evaluator.');
-  const evaluatorUrl=sessionEndpoint||options.evaluatorUrl||process.env.LAB_EVALUATOR_URL;
-  const evaluatorFetch=sessionEndpoint?createSessionEvaluator({endpoint:sessionEndpoint,env:options.env||process.env,fetchImpl:options.fetch||fetch,onCleanupError:()=>console.warn('Lab session cleanup failed; pool cooldown must reclaim it.')}):(options.fetch||fetch);
+  if([sandbox,sessionEndpoint,options.evaluatorUrl||process.env.LAB_EVALUATOR_URL].filter(Boolean).length>1)throw new Error('Configure only one lab evaluator.');
+  const evaluatorUrl=sandbox?'https://sandbox.internal/evaluate':sessionEndpoint||options.evaluatorUrl||process.env.LAB_EVALUATOR_URL;
+  const evaluatorFetch=sandbox?createSandboxEvaluator({env,runCommand:options.sandboxCommand,onCleanupError:()=>console.warn('Lab sandbox cleanup failed; evaluator paused. Check tw-eval sandboxes before restart.')}):sessionEndpoint?createSessionEvaluator({endpoint:sessionEndpoint,env,fetchImpl:options.fetch||fetch,onCleanupError:()=>console.warn('Lab session cleanup failed; pool cooldown must reclaim it.')}):(options.fetch||fetch);
   const evaluatorToken=options.evaluatorToken??process.env.LAB_EVALUATOR_TOKEN;
   if(evaluatorUrl){const url=new URL(evaluatorUrl);if(url.protocol!=='https:'||url.username||url.password)throw new Error('LAB_EVALUATOR_URL must be an HTTPS URL without embedded credentials.');}
   const maxChecks=2;
@@ -48,6 +57,7 @@ export function createServer(options={}) {
         let input;try{input=JSON.parse(body);}catch{json(res,400,{error:'Cererea trebuie să conțină JSON valid.'});return;}
         const task=(await tasks()).get(input?.id);
         if(!task||!['scss','ejs','sql','node','express'].includes(task.mode)||typeof input.code!=='string'){json(res,400,{error:'Exercițiu sau cod invalid.'});return;}
+        if(production&&!['node','express'].includes(task.mode)){json(res,400,{error:'Acest exercițiu se verifică în browser.'});return;}
         if(production&&!evaluatorUrl){json(res,503,{error:'Evaluatorul Node/Express nu este încă activat pe platformă.'});return;}
         if(activeChecks>=maxChecks){res.setHeader('Retry-After','3');json(res,429,{error:'Evaluatorul este ocupat. Încearcă din nou în câteva secunde.'});return;}
         activeChecks++;
@@ -55,7 +65,7 @@ export function createServer(options={}) {
         if(evaluatorUrl){
           // This endpoint belongs to a separately isolated execution service.
           // The App Service itself never executes student code in production.
-          const response=await evaluatorFetch(evaluatorUrl,{method:'POST',redirect:'error',headers:{'Content-Type':'application/json',...(evaluatorToken?{Authorization:'Bearer '+evaluatorToken}:{})},body:JSON.stringify({task,code:input.code}),signal:AbortSignal.timeout(15000)});
+          const response=await evaluatorFetch(evaluatorUrl,{method:'POST',redirect:'error',headers:{'Content-Type':'application/json',...(evaluatorToken?{Authorization:'Bearer '+evaluatorToken}:{})},body:JSON.stringify({task,code:input.code}),signal:AbortSignal.timeout(sandbox?40000:15000)});
           if(!response.ok){json(res,502,{error:'Evaluatorul nu este disponibil momentan.'});return;}
           const chunks=[];let size=0;for await(const chunk of response.body){size+=chunk.byteLength;if(size>1048576)throw new Error('Evaluator response too large');chunks.push(Buffer.from(chunk));}
           const value=JSON.parse(Buffer.concat(chunks).toString('utf8'));
@@ -74,6 +84,7 @@ export function createServer(options={}) {
         finally{activeChecks--;}
       }
       const relative = pathname === '/' ? 'index.html' : pathname.slice(1);
+      if (/^site\/(?:sources\.js|source-)/.test(relative)) { res.writeHead(404); res.end('Pagina nu exista.'); return; }
       if (relative !== 'index.html' && !/^site\/[a-zA-Z0-9._-]+$/.test(relative)) { res.writeHead(404); res.end('Pagina nu există.'); return; }
       const target = path.resolve(root,relative);
       if (!target.startsWith(root + path.sep)) { res.writeHead(403); res.end(); return; }

@@ -10,5 +10,9 @@
   "500": {
     "title": "Server error",
     "message": "The page could not be loaded."
+  },
+  "403": {
+    "title": "Access denied",
+    "message": "Directories cannot be browsed. Open a page or a specific asset instead."
   }
 }

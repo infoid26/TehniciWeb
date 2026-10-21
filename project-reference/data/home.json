@@ -1,0 +1,58 @@
+{
+  "announcements": [
+    {
+      "date": "2026-10-01",
+      "title": "The autumn collection",
+      "text": "Fruit pastries join our seasonal selection."
+    },
+    {
+      "date": "2026-10-15",
+      "title": "A lighter option",
+      "text": "Look for sugar-free cakes in our catalog."
+    }
+  ],
+  "hours": [
+    {
+      "day": "Monday",
+      "morning": "09:00–12:00",
+      "break": "12:00–13:00",
+      "afternoon": "13:00–18:00"
+    },
+    {
+      "day": "Tuesday",
+      "morning": "09:00–12:00",
+      "break": "12:00–13:00",
+      "afternoon": "13:00–18:00"
+    },
+    {
+      "day": "Wednesday",
+      "morning": "09:00–12:00",
+      "break": "12:00–13:00",
+      "afternoon": "13:00–18:00"
+    },
+    {
+      "day": "Thursday",
+      "morning": "09:00–12:00",
+      "break": "12:00–13:00",
+      "afternoon": "13:00–18:00"
+    },
+    {
+      "day": "Friday",
+      "morning": "09:00–12:00",
+      "break": "12:00–13:00",
+      "afternoon": "13:00–18:00"
+    },
+    {
+      "day": "Saturday",
+      "morning": "10:00–12:00",
+      "break": "12:00–13:00",
+      "afternoon": "13:00–16:00"
+    },
+    {
+      "day": "Sunday",
+      "morning": "Closed",
+      "break": "—",
+      "afternoon": "Closed"
+    }
+  ]
+}

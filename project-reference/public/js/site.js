@@ -39,26 +39,40 @@
   function filterProducts() {
     const search = document.querySelector('#search-name').value.trim().toLowerCase();
     const maxPrice = Number(document.querySelector('#max-price').value);
+    const minPrice = Number(document.querySelector('#min-price').value);
+    const calories = document.querySelector('input[name="calories"]:checked').value;
+    const [minCalories,maxCalories] = calories === 'all' ? [0,Infinity] : calories.split(':').map(Number);
     const category = document.querySelector('#category').value;
     const ingredient = document.querySelector('#ingredients').value.trim().toLowerCase();
     const diet = document.querySelector('input[name="diet"]:checked').value;
     let total = 0, count = 0;
     for (const card of cards) {
-      const visible = card.dataset.name.includes(search) && Number(card.dataset.price) <= maxPrice && (category === 'all' || card.dataset.category === category) && card.dataset.ingredients.includes(ingredient) && (diet === 'all' || card.dataset.diabetic === 'true');
+      const visible = card.dataset.name.startsWith(search) && Number(card.dataset.price) >= minPrice && Number(card.dataset.price) <= maxPrice && Number(card.dataset.calories) >= minCalories && Number(card.dataset.calories) < maxCalories && (category === 'all' || card.dataset.category === category) && card.dataset.ingredients.includes(ingredient) && (diet === 'all' || card.dataset.diabetic === 'true');
       card.hidden = !visible;
       if (visible) { total += Number(card.dataset.price); count++; }
     }
     document.querySelector('#summary').textContent = `${count} products · visible total: ${total.toFixed(2)} EUR`;
     document.querySelector('#empty-state').hidden = count !== 0;
     document.querySelector('#price-value').textContent = String(maxPrice);
+    document.querySelector('#min-price-value').textContent = String(minPrice);
     const order = document.querySelector('#sort').value;
-    const sorted = order === 'default' ? cards : [...cards].sort((a,b) => (order === 'asc' ? 1 : -1) * (Number(a.dataset.price) - Number(b.dataset.price)) || a.dataset.name.localeCompare(b.dataset.name));
+    const sorted = order === 'default' ? cards : [...cards].sort((a,b) => (order === 'asc' ? 1 : -1) * ((Number(a.dataset.price) - Number(b.dataset.price)) || a.dataset.name.localeCompare(b.dataset.name,'en')));
     for (const card of sorted) list.appendChild(card);
   }
   form.addEventListener('submit', event => { event.preventDefault(); filterProducts(); });
   form.addEventListener('input', filterProducts);
   form.addEventListener('change', filterProducts);
   form.addEventListener('reset', () => setTimeout(filterProducts, 0));
-  document.addEventListener('keydown', event => { if (event.altKey && event.key.toLowerCase() === 'c') { document.querySelector('#summary').textContent = `Cart: ${cart.length} products`; } });
+  let totalTimer;
+  function showTotal() {
+    const total=cards.filter(card=>!card.hidden).reduce((sum,card)=>sum+Number(card.dataset.price),0);
+    const notice=document.querySelector('#total-notice');
+    notice.textContent=`Visible total: ${total.toFixed(2)} EUR`;
+    notice.hidden=false;
+    clearTimeout(totalTimer);
+    totalTimer=setTimeout(()=>{notice.hidden=true;},2000);
+  }
+  document.querySelector('#calculate-total').addEventListener('click',showTotal);
+  document.addEventListener('keydown', event => { if (event.altKey && event.key.toLowerCase() === 'c') { event.preventDefault(); showTotal(); } });
   filterProducts();
 })();

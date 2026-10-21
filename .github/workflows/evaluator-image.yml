@@ -1,0 +1,32 @@
+name: Build evaluator image (manual)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  packages: write
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24.x'
+      - name: Test evaluator and sandbox adapter
+        run: |
+          npm install
+          npm run check:evaluator
+          npm run check:sandboxes
+      - name: Build, smoke test and publish revision
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          image="ghcr.io/${GITHUB_REPOSITORY,,}-evaluator:${GITHUB_SHA}"
+          docker build -f evaluator/Dockerfile -t "$image" .
+          printf '%s' '{"task":{"mode":"node","cases":[{"input":4,"expected":8}]},"code":"function solve(input){return input*2;}"}' | docker run --rm -i --network none --memory 512m --cpus 0.25 "$image" node /app/evaluator/run.mjs > result.json
+          node -e 'const r=JSON.parse(require("fs").readFileSync("result.json","utf8"));if(!r.results?.length||!r.results.every(x=>x.passed))process.exit(1)'
+          printf '%s' "$GH_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+          docker push "$image"
+          printf 'Evaluator image: `%s`\n' "$image" >> "$GITHUB_STEP_SUMMARY"
+          docker inspect --format '{{join .RepoDigests "\n"}}' "$image" >> "$GITHUB_STEP_SUMMARY"

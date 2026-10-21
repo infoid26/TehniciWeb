@@ -14,7 +14,7 @@ for (const chapter of course.chapters) {
   for (const lesson of chapter.lessons) {
     assert(!ids.has(lesson.id),`ID duplicat: ${lesson.id}`);
     ids.add(lesson.id);
-    assert(lesson.source && lesson.intro && Array.isArray(lesson.points) && lesson.hint && lesson.task.solution,lesson.id);
+    assert(lesson.intro && Array.isArray(lesson.points) && lesson.hint && lesson.task.solution,lesson.id);
     assert(lesson.quiz.correct >= 0 && lesson.quiz.correct < lesson.quiz.options.length);
     assert(new Set(lesson.quiz.options).size === lesson.quiz.options.length);
     const task = lesson.task;

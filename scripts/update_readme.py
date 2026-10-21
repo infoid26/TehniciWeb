@@ -5,7 +5,7 @@ from pathlib import Path
 course=json.loads(Path('site/course.js').read_text(encoding='utf8').split(' = ',1)[1].rstrip(';\n'))
 chapters=course['chapters']
 total=sum(len(c['lessons']) for c in chapters)
-readings=sum(len(c['lessons']) for c in course['references'])
+
 Path('README.md').write_text(f'''# Tehnici Web · INFO ID 26
 
 Cursul este disponibil la **[tw.infoid26.ro](https://tw.infoid26.ro/)**.
@@ -16,9 +16,7 @@ Materia include HTML, formulare, media, MathML, CSS, responsive, animații, Java
 
 Fiecare lecție are explicație, exemplu, întrebare și exercițiu. **Indiciu** și **Rezolvare** sunt deasupra editorului și se deschid independent, ca în PA. Progresul și codul se păstrează în browser; exportul și importul permit transferul lor între dispozitive.
 
-Cele {readings} materiale de referință sunt separate de traseul de învățare. Biblioteca păstrează slide-urile și codul original pentru consultare; citirea lor nu înlocuiește exercițiile practice.
-
-[CURRICULUM.md](CURRICULUM.md) enumeră capitolele și lecțiile. [SYNTAX.md](SYNTAX.md) leagă sintaxa identificată în materiale de exemplele lecțiilor active. [COVERAGE.md](COVERAGE.md) inventariază materialele originale și legăturile lor către curs. Folderul Dana este exclus.
+[CURRICULUM.md](CURRICULUM.md) enumeră capitolele și lecțiile. [SYNTAX.md](SYNTAX.md) leagă sintaxa identificată în materiale de exemplele lecțiilor active. Platforma conține explicații și exerciții independente, fără slide-uri, fișiere sau imagini din materialele profesoarei.
 
 SQL folosește PostgreSQL prin PGlite, într-un worker din browser, cu date de antrenament resetate pentru fiecare verificare. SCSS și EJS sunt compilate tot în browser. Laboratoarele Node și Express au nevoie de serviciul de evaluare al platformei; găzduirea statică singură nu execută un server Node.
 
@@ -26,7 +24,7 @@ Configurarea aplicației existente pe Azure și starea evaluatorului Node/Expres
 ''',encoding='utf8')
 
 lines=['# Programa cursului','',f'{len(chapters)} de capitole; {total} de lecții cu exerciții.','',
-       'Fiecare legătură deschide o lecție din curs. Materialele originale sunt disponibile separat, pentru consultare.','']
+       'Fiecare legătură deschide o lecție din curs.','']
 for c in chapters:
  lines.extend([f"## {c['title']} · {len(c['lessons'])} lecții",'',c['subtitle'],''])
  for l in c['lessons']:

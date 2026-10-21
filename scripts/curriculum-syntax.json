@@ -1,0 +1,1578 @@
+[
+  {
+    "kind": "element",
+    "token": "p"
+  },
+  {
+    "kind": "element",
+    "token": "br"
+  },
+  {
+    "kind": "element",
+    "token": "hr"
+  },
+  {
+    "kind": "element",
+    "token": "menu"
+  },
+  {
+    "kind": "element",
+    "token": "b"
+  },
+  {
+    "kind": "element",
+    "token": "head"
+  },
+  {
+    "kind": "element",
+    "token": "meta"
+  },
+  {
+    "kind": "element",
+    "token": "title"
+  },
+  {
+    "kind": "element",
+    "token": "body"
+  },
+  {
+    "kind": "element",
+    "token": "header"
+  },
+  {
+    "kind": "element",
+    "token": "h1"
+  },
+  {
+    "kind": "element",
+    "token": "img"
+  },
+  {
+    "kind": "element",
+    "token": "main"
+  },
+  {
+    "kind": "element",
+    "token": "em"
+  },
+  {
+    "kind": "element",
+    "token": "section"
+  },
+  {
+    "kind": "element",
+    "token": "h2"
+  },
+  {
+    "kind": "element",
+    "token": "footer"
+  },
+  {
+    "kind": "element",
+    "token": "small"
+  },
+  {
+    "kind": "element",
+    "token": "link"
+  },
+  {
+    "kind": "element",
+    "token": "a"
+  },
+  {
+    "kind": "element",
+    "token": "base"
+  },
+  {
+    "kind": "element",
+    "token": "style"
+  },
+  {
+    "kind": "element",
+    "token": "nav"
+  },
+  {
+    "kind": "element",
+    "token": "ul"
+  },
+  {
+    "kind": "element",
+    "token": "li"
+  },
+  {
+    "kind": "element",
+    "token": "article"
+  },
+  {
+    "kind": "element",
+    "token": "aside"
+  },
+  {
+    "kind": "element",
+    "token": "h3"
+  },
+  {
+    "kind": "element",
+    "token": "blockquote"
+  },
+  {
+    "kind": "element",
+    "token": "pre"
+  },
+  {
+    "kind": "element",
+    "token": "code"
+  },
+  {
+    "kind": "element",
+    "token": "samp"
+  },
+  {
+    "kind": "element",
+    "token": "figure"
+  },
+  {
+    "kind": "element",
+    "token": "figcaption"
+  },
+  {
+    "kind": "element",
+    "token": "ol"
+  },
+  {
+    "kind": "element",
+    "token": "dl"
+  },
+  {
+    "kind": "element",
+    "token": "dt"
+  },
+  {
+    "kind": "element",
+    "token": "dd"
+  },
+  {
+    "kind": "element",
+    "token": "i"
+  },
+  {
+    "kind": "element",
+    "token": "u"
+  },
+  {
+    "kind": "element",
+    "token": "sup"
+  },
+  {
+    "kind": "element",
+    "token": "strong"
+  },
+  {
+    "kind": "element",
+    "token": "span"
+  },
+  {
+    "kind": "element",
+    "token": "q"
+  },
+  {
+    "kind": "element",
+    "token": "mark"
+  },
+  {
+    "kind": "element",
+    "token": "kbd"
+  },
+  {
+    "kind": "element",
+    "token": "var"
+  },
+  {
+    "kind": "element",
+    "token": "time"
+  },
+  {
+    "kind": "element",
+    "token": "data"
+  },
+  {
+    "kind": "element",
+    "token": "sub"
+  },
+  {
+    "kind": "element",
+    "token": "s"
+  },
+  {
+    "kind": "element",
+    "token": "del"
+  },
+  {
+    "kind": "element",
+    "token": "ins"
+  },
+  {
+    "kind": "element",
+    "token": "wbr"
+  },
+  {
+    "kind": "element",
+    "token": "table"
+  },
+  {
+    "kind": "element",
+    "token": "caption"
+  },
+  {
+    "kind": "element",
+    "token": "thead"
+  },
+  {
+    "kind": "element",
+    "token": "tr"
+  },
+  {
+    "kind": "element",
+    "token": "th"
+  },
+  {
+    "kind": "element",
+    "token": "tbody"
+  },
+  {
+    "kind": "element",
+    "token": "td"
+  },
+  {
+    "kind": "element",
+    "token": "tfoot"
+  },
+  {
+    "kind": "element",
+    "token": "colgroup"
+  },
+  {
+    "kind": "element",
+    "token": "col"
+  },
+  {
+    "kind": "element",
+    "token": "script"
+  },
+  {
+    "kind": "element",
+    "token": "video"
+  },
+  {
+    "kind": "element",
+    "token": "audio"
+  },
+  {
+    "kind": "element",
+    "token": "canvas"
+  },
+  {
+    "kind": "element",
+    "token": "object"
+  },
+  {
+    "kind": "element",
+    "token": "iframe"
+  },
+  {
+    "kind": "element",
+    "token": "picture"
+  },
+  {
+    "kind": "element",
+    "token": "source"
+  },
+  {
+    "kind": "element",
+    "token": "track"
+  },
+  {
+    "kind": "element",
+    "token": "input"
+  },
+  {
+    "kind": "element",
+    "token": "select"
+  },
+  {
+    "kind": "element",
+    "token": "option"
+  },
+  {
+    "kind": "element",
+    "token": "button"
+  },
+  {
+    "kind": "element",
+    "token": "textarea"
+  },
+  {
+    "kind": "element",
+    "token": "details"
+  },
+  {
+    "kind": "element",
+    "token": "summary"
+  },
+  {
+    "kind": "element",
+    "token": "meter"
+  },
+  {
+    "kind": "element",
+    "token": "form"
+  },
+  {
+    "kind": "element",
+    "token": "template"
+  },
+  {
+    "kind": "element",
+    "token": "progress"
+  },
+  {
+    "kind": "element",
+    "token": "acronym"
+  },
+  {
+    "kind": "element",
+    "token": "applet"
+  },
+  {
+    "kind": "element",
+    "token": "basefont"
+  },
+  {
+    "kind": "element",
+    "token": "big"
+  },
+  {
+    "kind": "element",
+    "token": "center"
+  },
+  {
+    "kind": "element",
+    "token": "dir"
+  },
+  {
+    "kind": "element",
+    "token": "font"
+  },
+  {
+    "kind": "element",
+    "token": "frameset"
+  },
+  {
+    "kind": "element",
+    "token": "noframes"
+  },
+  {
+    "kind": "element",
+    "token": "frame"
+  },
+  {
+    "kind": "element",
+    "token": "strike"
+  },
+  {
+    "kind": "element",
+    "token": "tt"
+  },
+  {
+    "kind": "method",
+    "token": "parse"
+  },
+  {
+    "kind": "method",
+    "token": "log"
+  },
+  {
+    "kind": "method",
+    "token": "random"
+  },
+  {
+    "kind": "method",
+    "token": "round"
+  },
+  {
+    "kind": "method",
+    "token": "from"
+  },
+  {
+    "kind": "method",
+    "token": "entries"
+  },
+  {
+    "kind": "method",
+    "token": "stringify"
+  },
+  {
+    "kind": "method",
+    "token": "toString"
+  },
+  {
+    "kind": "method",
+    "token": "isArray"
+  },
+  {
+    "kind": "method",
+    "token": "keys"
+  },
+  {
+    "kind": "method",
+    "token": "push"
+  },
+  {
+    "kind": "method",
+    "token": "unshift"
+  },
+  {
+    "kind": "method",
+    "token": "fill"
+  },
+  {
+    "kind": "method",
+    "token": "copyWithin"
+  },
+  {
+    "kind": "method",
+    "token": "pop"
+  },
+  {
+    "kind": "method",
+    "token": "shift"
+  },
+  {
+    "kind": "method",
+    "token": "splice"
+  },
+  {
+    "kind": "method",
+    "token": "join"
+  },
+  {
+    "kind": "method",
+    "token": "indexOf"
+  },
+  {
+    "kind": "method",
+    "token": "lastIndexOf"
+  },
+  {
+    "kind": "method",
+    "token": "includes"
+  },
+  {
+    "kind": "method",
+    "token": "find"
+  },
+  {
+    "kind": "method",
+    "token": "findIndex"
+  },
+  {
+    "kind": "method",
+    "token": "slice"
+  },
+  {
+    "kind": "method",
+    "token": "concat"
+  },
+  {
+    "kind": "method",
+    "token": "filter"
+  },
+  {
+    "kind": "method",
+    "token": "map"
+  },
+  {
+    "kind": "method",
+    "token": "some"
+  },
+  {
+    "kind": "method",
+    "token": "sqrt"
+  },
+  {
+    "kind": "method",
+    "token": "every"
+  },
+  {
+    "kind": "method",
+    "token": "reduce"
+  },
+  {
+    "kind": "method",
+    "token": "reduceRight"
+  },
+  {
+    "kind": "method",
+    "token": "reverse"
+  },
+  {
+    "kind": "method",
+    "token": "sort"
+  },
+  {
+    "kind": "method",
+    "token": "forEach"
+  },
+  {
+    "kind": "method",
+    "token": "flat"
+  },
+  {
+    "kind": "method",
+    "token": "flatMap"
+  },
+  {
+    "kind": "method",
+    "token": "charAt"
+  },
+  {
+    "kind": "method",
+    "token": "fromCharCode"
+  },
+  {
+    "kind": "method",
+    "token": "fromCodePoint"
+  },
+  {
+    "kind": "method",
+    "token": "charCodeAt"
+  },
+  {
+    "kind": "method",
+    "token": "codePointAt"
+  },
+  {
+    "kind": "method",
+    "token": "startsWith"
+  },
+  {
+    "kind": "method",
+    "token": "endsWith"
+  },
+  {
+    "kind": "method",
+    "token": "toLowerCase"
+  },
+  {
+    "kind": "method",
+    "token": "toUpperCase"
+  },
+  {
+    "kind": "method",
+    "token": "toLocaleUpperCase"
+  },
+  {
+    "kind": "method",
+    "token": "toLocaleLowerCase"
+  },
+  {
+    "kind": "method",
+    "token": "substring"
+  },
+  {
+    "kind": "method",
+    "token": "substr"
+  },
+  {
+    "kind": "method",
+    "token": "localeCompare"
+  },
+  {
+    "kind": "method",
+    "token": "split"
+  },
+  {
+    "kind": "method",
+    "token": "trimStart"
+  },
+  {
+    "kind": "method",
+    "token": "trimEnd"
+  },
+  {
+    "kind": "method",
+    "token": "trim"
+  },
+  {
+    "kind": "method",
+    "token": "padStart"
+  },
+  {
+    "kind": "method",
+    "token": "padEnd"
+  },
+  {
+    "kind": "method",
+    "token": "match"
+  },
+  {
+    "kind": "method",
+    "token": "test"
+  },
+  {
+    "kind": "method",
+    "token": "sin"
+  },
+  {
+    "kind": "method",
+    "token": "cos"
+  },
+  {
+    "kind": "method",
+    "token": "tan"
+  },
+  {
+    "kind": "method",
+    "token": "asin"
+  },
+  {
+    "kind": "method",
+    "token": "acos"
+  },
+  {
+    "kind": "method",
+    "token": "pow"
+  },
+  {
+    "kind": "method",
+    "token": "cbrt"
+  },
+  {
+    "kind": "method",
+    "token": "exp"
+  },
+  {
+    "kind": "method",
+    "token": "min"
+  },
+  {
+    "kind": "method",
+    "token": "max"
+  },
+  {
+    "kind": "method",
+    "token": "floor"
+  },
+  {
+    "kind": "method",
+    "token": "ceil"
+  },
+  {
+    "kind": "method",
+    "token": "trunc"
+  },
+  {
+    "kind": "method",
+    "token": "abs"
+  },
+  {
+    "kind": "element",
+    "token": "math"
+  },
+  {
+    "kind": "element",
+    "token": "mrow"
+  },
+  {
+    "kind": "element",
+    "token": "mo"
+  },
+  {
+    "kind": "element",
+    "token": "mtable"
+  },
+  {
+    "kind": "element",
+    "token": "mtr"
+  },
+  {
+    "kind": "element",
+    "token": "mtd"
+  },
+  {
+    "kind": "element",
+    "token": "msqrt"
+  },
+  {
+    "kind": "element",
+    "token": "mi"
+  },
+  {
+    "kind": "element",
+    "token": "mn"
+  },
+  {
+    "kind": "element",
+    "token": "msup"
+  },
+  {
+    "kind": "element",
+    "token": "cn"
+  },
+  {
+    "kind": "element",
+    "token": "mglyph"
+  },
+  {
+    "kind": "element",
+    "token": "mtext"
+  },
+  {
+    "kind": "element",
+    "token": "mspace"
+  },
+  {
+    "kind": "element",
+    "token": "ms"
+  },
+  {
+    "kind": "element",
+    "token": "msub"
+  },
+  {
+    "kind": "element",
+    "token": "mfrac"
+  },
+  {
+    "kind": "element",
+    "token": "mroot"
+  },
+  {
+    "kind": "element",
+    "token": "mstyle"
+  },
+  {
+    "kind": "element",
+    "token": "merror"
+  },
+  {
+    "kind": "element",
+    "token": "mpadded"
+  },
+  {
+    "kind": "element",
+    "token": "mphantom"
+  },
+  {
+    "kind": "element",
+    "token": "mfenced"
+  },
+  {
+    "kind": "element",
+    "token": "menclosed"
+  },
+  {
+    "kind": "element",
+    "token": "msubsup"
+  },
+  {
+    "kind": "element",
+    "token": "munder"
+  },
+  {
+    "kind": "element",
+    "token": "mover"
+  },
+  {
+    "kind": "element",
+    "token": "munderover"
+  },
+  {
+    "kind": "element",
+    "token": "mmultiscripts"
+  },
+  {
+    "kind": "element",
+    "token": "mprescripts"
+  },
+  {
+    "kind": "element",
+    "token": "none"
+  },
+  {
+    "kind": "element",
+    "token": "mlabeledtr"
+  },
+  {
+    "kind": "element",
+    "token": "maligngroup"
+  },
+  {
+    "kind": "element",
+    "token": "malignmark"
+  },
+  {
+    "kind": "element",
+    "token": "mstack"
+  },
+  {
+    "kind": "element",
+    "token": "mlongdiv"
+  },
+  {
+    "kind": "element",
+    "token": "msrow"
+  },
+  {
+    "kind": "element",
+    "token": "msgroup"
+  },
+  {
+    "kind": "element",
+    "token": "mscarries"
+  },
+  {
+    "kind": "element",
+    "token": "mscarry"
+  },
+  {
+    "kind": "method",
+    "token": "Config"
+  },
+  {
+    "kind": "element",
+    "token": "msline"
+  },
+  {
+    "kind": "element",
+    "token": "maction"
+  },
+  {
+    "kind": "property",
+    "token": "color"
+  },
+  {
+    "kind": "property",
+    "token": "font-weight"
+  },
+  {
+    "kind": "property",
+    "token": "background"
+  },
+  {
+    "kind": "property",
+    "token": "font-size"
+  },
+  {
+    "kind": "property",
+    "token": "border"
+  },
+  {
+    "kind": "property",
+    "token": "text-decoration"
+  },
+  {
+    "kind": "element",
+    "token": "address"
+  },
+  {
+    "kind": "property",
+    "token": "p"
+  },
+  {
+    "kind": "property",
+    "token": "a"
+  },
+  {
+    "kind": "property",
+    "token": "counter-reset"
+  },
+  {
+    "kind": "property",
+    "token": "counter-increment"
+  },
+  {
+    "kind": "property",
+    "token": "content"
+  },
+  {
+    "kind": "property",
+    "token": "opacity"
+  },
+  {
+    "kind": "property",
+    "token": "background-image"
+  },
+  {
+    "kind": "property",
+    "token": "http"
+  },
+  {
+    "kind": "property",
+    "token": "list-style-type"
+  },
+  {
+    "kind": "property",
+    "token": "list-style-image"
+  },
+  {
+    "kind": "property",
+    "token": "list-style-position"
+  },
+  {
+    "kind": "property",
+    "token": "https"
+  },
+  {
+    "kind": "property",
+    "token": "font-family"
+  },
+  {
+    "kind": "property",
+    "token": "transform"
+  },
+  {
+    "kind": "property",
+    "token": "transition-property"
+  },
+  {
+    "kind": "property",
+    "token": "transition-duration"
+  },
+  {
+    "kind": "property",
+    "token": "transition-delay"
+  },
+  {
+    "kind": "property",
+    "token": "transition-timing-function"
+  },
+  {
+    "kind": "property",
+    "token": "transition"
+  },
+  {
+    "kind": "property",
+    "token": "animation-name"
+  },
+  {
+    "kind": "property",
+    "token": "animation-duration"
+  },
+  {
+    "kind": "property",
+    "token": "animation-delay"
+  },
+  {
+    "kind": "property",
+    "token": "animation-timing-function"
+  },
+  {
+    "kind": "property",
+    "token": "animation-iteration-count"
+  },
+  {
+    "kind": "property",
+    "token": "animation-direction"
+  },
+  {
+    "kind": "property",
+    "token": "animation-play-state"
+  },
+  {
+    "kind": "property",
+    "token": "animation-fill-mode"
+  },
+  {
+    "kind": "property",
+    "token": "width"
+  },
+  {
+    "kind": "property",
+    "token": "height"
+  },
+  {
+    "kind": "property",
+    "token": "display"
+  },
+  {
+    "kind": "property",
+    "token": "outline"
+  },
+  {
+    "kind": "property",
+    "token": "padding"
+  },
+  {
+    "kind": "property",
+    "token": "flex-direction"
+  },
+  {
+    "kind": "property",
+    "token": "flex-wrap"
+  },
+  {
+    "kind": "property",
+    "token": "flex-flow"
+  },
+  {
+    "kind": "property",
+    "token": "justify-content"
+  },
+  {
+    "kind": "property",
+    "token": "align-items"
+  },
+  {
+    "kind": "property",
+    "token": "grid-template-columns"
+  },
+  {
+    "kind": "property",
+    "token": "grid-area"
+  },
+  {
+    "kind": "property",
+    "token": "grid-template-areas"
+  },
+  {
+    "kind": "property",
+    "token": "background-color"
+  },
+  {
+    "kind": "property",
+    "token": "align"
+  },
+  {
+    "kind": "property",
+    "token": "line"
+  },
+  {
+    "kind": "property",
+    "token": "position"
+  },
+  {
+    "kind": "property",
+    "token": "size"
+  },
+  {
+    "kind": "property",
+    "token": "font-style"
+  },
+  {
+    "kind": "property",
+    "token": "padding-left"
+  },
+  {
+    "kind": "property",
+    "token": "padding-right"
+  },
+  {
+    "kind": "property",
+    "token": "padding-top"
+  },
+  {
+    "kind": "method",
+    "token": "nth"
+  },
+  {
+    "kind": "method",
+    "token": "index"
+  },
+  {
+    "kind": "method",
+    "token": "append"
+  },
+  {
+    "kind": "method",
+    "token": "length"
+  },
+  {
+    "kind": "method",
+    "token": "write"
+  },
+  {
+    "kind": "method",
+    "token": "exit"
+  },
+  {
+    "kind": "method",
+    "token": "lstatSync"
+  },
+  {
+    "kind": "method",
+    "token": "lstat"
+  },
+  {
+    "kind": "method",
+    "token": "isDirectory"
+  },
+  {
+    "kind": "method",
+    "token": "isFile"
+  },
+  {
+    "kind": "method",
+    "token": "existsSync"
+  },
+  {
+    "kind": "method",
+    "token": "mkdirSync"
+  },
+  {
+    "kind": "method",
+    "token": "mkdir"
+  },
+  {
+    "kind": "method",
+    "token": "scryptSync"
+  },
+  {
+    "kind": "method",
+    "token": "dirname"
+  },
+  {
+    "kind": "method",
+    "token": "extname"
+  },
+  {
+    "kind": "method",
+    "token": "isAbsolute"
+  },
+  {
+    "kind": "method",
+    "token": "createServer"
+  },
+  {
+    "kind": "method",
+    "token": "writeHead"
+  },
+  {
+    "kind": "method",
+    "token": "readFileSync"
+  },
+  {
+    "kind": "method",
+    "token": "end"
+  },
+  {
+    "kind": "method",
+    "token": "listen"
+  },
+  {
+    "kind": "method",
+    "token": "use"
+  },
+  {
+    "kind": "method",
+    "token": "all"
+  },
+  {
+    "kind": "method",
+    "token": "get"
+  },
+  {
+    "kind": "method",
+    "token": "put"
+  },
+  {
+    "kind": "method",
+    "token": "delete"
+  },
+  {
+    "kind": "method",
+    "token": "post"
+  },
+  {
+    "kind": "method",
+    "token": "route"
+  },
+  {
+    "kind": "method",
+    "token": "send"
+  },
+  {
+    "kind": "method",
+    "token": "status"
+  },
+  {
+    "kind": "method",
+    "token": "sendFile"
+  },
+  {
+    "kind": "method",
+    "token": "redirect"
+  },
+  {
+    "kind": "method",
+    "token": "render"
+  },
+  {
+    "kind": "method",
+    "token": "static"
+  },
+  {
+    "kind": "element",
+    "token": "label"
+  },
+  {
+    "kind": "element",
+    "token": "hgroup"
+  },
+  {
+    "kind": "element",
+    "token": "abbr"
+  },
+  {
+    "kind": "method",
+    "token": "connect"
+  },
+  {
+    "kind": "method",
+    "token": "query"
+  },
+  {
+    "kind": "method",
+    "token": "set"
+  },
+  {
+    "kind": "method",
+    "token": "cwd"
+  },
+  {
+    "kind": "method",
+    "token": "basename"
+  },
+  {
+    "kind": "method",
+    "token": "copyFileSync"
+  },
+  {
+    "kind": "method",
+    "token": "getTime"
+  },
+  {
+    "kind": "method",
+    "token": "compile"
+  },
+  {
+    "kind": "method",
+    "token": "writeFileSync"
+  },
+  {
+    "kind": "method",
+    "token": "readdirSync"
+  },
+  {
+    "kind": "method",
+    "token": "watch"
+  },
+  {
+    "kind": "method",
+    "token": "resize"
+  },
+  {
+    "kind": "method",
+    "token": "toFile"
+  },
+  {
+    "kind": "property",
+    "token": "margin"
+  },
+  {
+    "kind": "property",
+    "token": "z-index"
+  },
+  {
+    "kind": "property",
+    "token": "margin-left"
+  },
+  {
+    "kind": "property",
+    "token": "transform-origin"
+  },
+  {
+    "kind": "property",
+    "token": "line-height"
+  },
+  {
+    "kind": "property",
+    "token": "text-align"
+  },
+  {
+    "kind": "property",
+    "token": "box-sizing"
+  },
+  {
+    "kind": "property",
+    "token": "cursor"
+  },
+  {
+    "kind": "property",
+    "token": "grid-gap"
+  },
+  {
+    "kind": "property",
+    "token": "background-size"
+  },
+  {
+    "kind": "property",
+    "token": "background-position"
+  },
+  {
+    "kind": "property",
+    "token": "background-repeat"
+  },
+  {
+    "kind": "property",
+    "token": "border-radius"
+  },
+  {
+    "kind": "property",
+    "token": "border-bottom-left-radius"
+  },
+  {
+    "kind": "property",
+    "token": "margin-bottom"
+  },
+  {
+    "kind": "property",
+    "token": "border-left"
+  },
+  {
+    "kind": "property",
+    "token": "top"
+  },
+  {
+    "kind": "property",
+    "token": "left"
+  },
+  {
+    "kind": "property",
+    "token": "margin-right"
+  },
+  {
+    "kind": "property",
+    "token": "grid-row-gap"
+  },
+  {
+    "kind": "property",
+    "token": "grid-column-gap"
+  },
+  {
+    "kind": "property",
+    "token": "margin-top"
+  },
+  {
+    "kind": "property",
+    "token": "background-attachment"
+  },
+  {
+    "kind": "property",
+    "token": "padding-bottom"
+  },
+  {
+    "kind": "property",
+    "token": "min-width"
+  },
+  {
+    "kind": "property",
+    "token": "text-shadow"
+  },
+  {
+    "kind": "property",
+    "token": "border-right"
+  },
+  {
+    "kind": "property",
+    "token": "border-image"
+  },
+  {
+    "kind": "property",
+    "token": "border-top-right-radius"
+  },
+  {
+    "kind": "property",
+    "token": "border-top-left-radius"
+  },
+  {
+    "kind": "property",
+    "token": "text-align-last"
+  },
+  {
+    "kind": "property",
+    "token": "mask-repeat"
+  },
+  {
+    "kind": "property",
+    "token": "mask-size"
+  },
+  {
+    "kind": "property",
+    "token": "mask-image"
+  },
+  {
+    "kind": "property",
+    "token": "-webkit-mask-image"
+  },
+  {
+    "kind": "property",
+    "token": "float"
+  },
+  {
+    "kind": "property",
+    "token": "clear"
+  },
+  {
+    "kind": "property",
+    "token": "min-height"
+  },
+  {
+    "kind": "property",
+    "token": "border-width"
+  },
+  {
+    "kind": "property",
+    "token": "border-style"
+  },
+  {
+    "kind": "property",
+    "token": "border-color"
+  },
+  {
+    "kind": "property",
+    "token": "box-shadow"
+  },
+  {
+    "kind": "property",
+    "token": "bottom"
+  },
+  {
+    "kind": "property",
+    "token": "right"
+  },
+  {
+    "kind": "property",
+    "token": "border-bottom-right-radius"
+  },
+  {
+    "kind": "property",
+    "token": "overflow"
+  },
+  {
+    "kind": "property",
+    "token": "border-bottom"
+  },
+  {
+    "kind": "property",
+    "token": "border-top"
+  },
+  {
+    "kind": "property",
+    "token": "background-clip"
+  },
+  {
+    "kind": "property",
+    "token": "max-height"
+  },
+  {
+    "kind": "property",
+    "token": "max-width"
+  },
+  {
+    "kind": "property",
+    "token": "border-collapse"
+  },
+  {
+    "kind": "property",
+    "token": "-webkit-transform"
+  },
+  {
+    "kind": "method",
+    "token": "setTime"
+  },
+  {
+    "kind": "method",
+    "token": "toUTCString"
+  },
+  {
+    "kind": "method",
+    "token": "addEventListener"
+  },
+  {
+    "kind": "method",
+    "token": "getElementById"
+  },
+  {
+    "kind": "method",
+    "token": "getItem"
+  },
+  {
+    "kind": "method",
+    "token": "querySelector"
+  },
+  {
+    "kind": "method",
+    "token": "getElementsByClassName"
+  },
+  {
+    "kind": "method",
+    "token": "setItem"
+  },
+  {
+    "kind": "method",
+    "token": "getElementsByName"
+  },
+  {
+    "kind": "method",
+    "token": "appendChild"
+  },
+  {
+    "kind": "method",
+    "token": "createElement"
+  },
+  {
+    "kind": "method",
+    "token": "insertBefore"
+  },
+  {
+    "kind": "method",
+    "token": "remove"
+  },
+  {
+    "kind": "method",
+    "token": "toggle"
+  },
+  {
+    "kind": "method",
+    "token": "removeItem"
+  },
+  {
+    "kind": "method",
+    "token": "add"
+  },
+  {
+    "kind": "property",
+    "token": "gap"
+  },
+  {
+    "kind": "property",
+    "token": "row-gap"
+  },
+  {
+    "kind": "property",
+    "token": "vertical-align"
+  },
+  {
+    "kind": "property",
+    "token": "overflow-x"
+  },
+  {
+    "kind": "method",
+    "token": "contains"
+  },
+  {
+    "kind": "method",
+    "token": "getMonth"
+  }
+]

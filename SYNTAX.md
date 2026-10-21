@@ -2,9 +2,9 @@
 
 394 de construcții extrase din materialele didactice; 775 de lecții active.
 
-Această verificare caută elemente HTML/MathML, apeluri de metode și declarații CSS în exemplele, soluțiile și fișierele furnizate de lecțiile active. Materialele originale opționale nu pot satisface verificarea.
+Această verificare caută elemente HTML/MathML, apeluri de metode și declarații CSS în exemplele, soluțiile și fișierele furnizate de lecțiile active. Fișierele originale nu sunt incluse în platformă.
 
-Este o verificare a prezenței sintaxei, nu o dovadă automată a calității explicațiilor sau a funcționării în fiecare browser. Inventarul complet al surselor este în [COVERAGE.md](COVERAGE.md), iar programa în [CURRICULUM.md](CURRICULUM.md).
+Este o verificare a prezenței sintaxei, nu o dovadă automată a calității explicațiilor sau a funcționării în fiecare browser. Programa este în [CURRICULUM.md](CURRICULUM.md).
 
 Sunt excluse ieșirile generate ale bibliotecilor, copiile identice, numele de variabile folosite ca substituenți, greșelile intenționate din exemplele de validare și potrivirile care sunt adrese web sau text explicativ. Construcțiile istorice apar în lecții care explică și alternativa modernă.
 

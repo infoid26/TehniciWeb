@@ -2,7 +2,7 @@
 
 40 de capitole; 775 de lecții cu exerciții.
 
-Fiecare legătură deschide o lecție din curs. Materialele originale sunt disponibile separat, pentru consultare.
+Fiecare legătură deschide o lecție din curs.
 
 ## Primii pași · 9 lecții
 

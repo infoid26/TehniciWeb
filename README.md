@@ -8,9 +8,7 @@ Materia include HTML, formulare, media, MathML, CSS, responsive, animații, Java
 
 Fiecare lecție are explicație, exemplu, întrebare și exercițiu. **Indiciu** și **Rezolvare** sunt deasupra editorului și se deschid independent, ca în PA. Progresul și codul se păstrează în browser; exportul și importul permit transferul lor între dispozitive.
 
-Cele 604 materiale de referință sunt separate de traseul de învățare. Biblioteca păstrează slide-urile și codul original pentru consultare; citirea lor nu înlocuiește exercițiile practice.
-
-[CURRICULUM.md](CURRICULUM.md) enumeră capitolele și lecțiile. [SYNTAX.md](SYNTAX.md) leagă sintaxa identificată în materiale de exemplele lecțiilor active. [COVERAGE.md](COVERAGE.md) inventariază materialele originale și legăturile lor către curs. Folderul Dana este exclus.
+[CURRICULUM.md](CURRICULUM.md) enumeră capitolele și lecțiile. [SYNTAX.md](SYNTAX.md) leagă sintaxa identificată în materiale de exemplele lecțiilor active. Platforma conține explicații și exerciții independente, fără slide-uri, fișiere sau imagini din materialele profesoarei.
 
 SQL folosește PostgreSQL prin PGlite, într-un worker din browser, cu date de antrenament resetate pentru fiecare verificare. SCSS și EJS sunt compilate tot în browser. Laboratoarele Node și Express au nevoie de serviciul de evaluare al platformei; găzduirea statică singură nu execută un server Node.
 

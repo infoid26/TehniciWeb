@@ -2,6 +2,9 @@
 (() => {
   'use strict';
   const nonce = 'tw-preview';
+  // Sandboxed srcdoc frames have an opaque origin: allow the site's explicit
+  // HTTP(S) origin for images instead of relying on 'self' inside the frame.
+  const imageOrigin = /^https?:$/.test(location.protocol) ? location.origin : '';
   const workerBase = new URL('.', document.currentScript?.src || new URL('site/runner.js', location.href));
   function browserLab(task, code, onCancel) {
     return new Promise(resolve => {
@@ -67,7 +70,7 @@
     const doc = cleanDocument(markup);
     const policy = doc.createElement('meta');
     policy.httpEquiv = 'Content-Security-Policy';
-    policy.content = `default-src 'none'; style-src 'unsafe-inline'; img-src data:; script-src 'nonce-${nonce}'; connect-src 'none'; form-action 'none'; base-uri 'none'`;
+    policy.content = `default-src 'none'; style-src 'unsafe-inline'; img-src data: ${imageOrigin}; script-src 'nonce-${nonce}'; connect-src 'none'; form-action 'none'; base-uri 'none'`;
     doc.head.prepend(policy);
     const base = doc.createElement('style');
     base.textContent = (tests ? 'body{color:black;background:white;' : 'html{background:#000;color:#fff;color-scheme:dark}body{color:#fff;background:#000;') + 'font:16px/1.6 system-ui,sans-serif;margin:20px}*{overflow-wrap:break-word}';

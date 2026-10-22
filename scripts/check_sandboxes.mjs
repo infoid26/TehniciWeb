@@ -54,6 +54,30 @@ for(const output of ['{}',`Created sandbox: invalid`,`Unexpected ${id}`,`Created
  await assert.rejects(()=>invalid('',{body:payload}),/Missing sandbox ID/);
  assert.deepEqual(steps,['create','delete']);
 }
+// Real exec output is the evaluator JSON itself, including ordinary failed tests.
+for(const passed of [true,false]){
+ const body=JSON.stringify({results:[{label:'Testul 1',input:'app.js',expected:'.js',actual:passed?'.js':'.txt',passed}]});
+ const steps=[];
+ const direct=createSandboxEvaluator({env,runCommand:async(args,options)=>{
+  steps.push(args[1]);
+  if(args[1]==='create')return `Created sandbox: ${id}\n`;
+  if(args[1]==='exec')return body;
+  return fake(args,options);
+ }});
+ assert.equal(await (await direct('',{body:payload})).text(),body);
+ assert.deepEqual(steps,['create','lifecycle','fs','exec','delete']);
+ await assert.rejects(()=>fs.access(inputFile));
+}
+for(const output of ['null','{}','not json','{"results":[{"passed":"true"}]}',JSON.stringify({exitCode:1,stdout:'{"results":[{"passed":true}]}'}),JSON.stringify({exit_code:2,results:[{passed:true}]})]){
+ let deleted=false;
+ const invalid=createSandboxEvaluator({env,runCommand:async(args,options)=>{
+  if(args[1]==='exec')return output;
+  if(args[1]==='delete')deleted=true;
+  return fake(args,options);
+ }});
+ await assert.rejects(()=>invalid('',{body:payload}));
+ assert(deleted,'Invalid exec output must still delete sandbox');
+}
 for(const failAt of ['create','exec','fs']){
  let deleted=false;
  const broken=createSandboxEvaluator({env,runCommand:async args=>{

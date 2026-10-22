@@ -67,8 +67,14 @@ export function createSandboxEvaluator({env=process.env,runCommand,onCleanupErro
       const output=await command(['sandbox','exec',...selector,'--command',shell],{timeout:12000,signal:options.signal});
       if(Buffer.byteLength(output)>1400000)throw new Error('Sandbox output too large.');
       const result=JSON.parse(output);
-      if((result.exitCode??result.exit_code)!==0||typeof result.stdout!=='string'||Buffer.byteLength(result.stdout)>1048576)throw new Error('Sandbox evaluation failed.');
-      return new Response(result.stdout,{headers:{'Content-Type':'application/json'}});
+      // ACA preview.4 emits the remote stdout directly; also accept JSON envelopes.
+      const wrapped=result&&typeof result==='object'&&['exitCode','exit_code','stdout'].some(key=>Object.hasOwn(result,key));
+      if(wrapped&&((result.exitCode??result.exit_code)!==0||typeof result.stdout!=='string'))throw new Error('Sandbox evaluation failed.');
+      const body=wrapped?result.stdout:output;
+      if(Buffer.byteLength(body)>1048576)throw new Error('Sandbox output too large.');
+      const evaluation=wrapped?JSON.parse(body):result;
+      if(!Array.isArray(evaluation?.results)||evaluation.results.some(item=>!item||typeof item.passed!=='boolean'))throw new Error('Sandbox evaluation failed.');
+      return new Response(body,{headers:{'Content-Type':'application/json'}});
     }finally{
       // Unique label permits cleanup even if create timed out before returning an ID.
       // Cleanup has its own timeout; a canceled evaluation must still be destroyed.

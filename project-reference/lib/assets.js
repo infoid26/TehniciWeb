@@ -2,6 +2,7 @@ const fs = require('fs/promises');
 const path = require('path');
 const sass = require('sass');
 const sharp = require('sharp');
+// Build-time only: the web application serves the prepared files directly.
 async function prepareAssets() {
   const publicFolder = path.join(__dirname, '../public');
   await fs.mkdir(path.join(publicFolder, 'css'), { recursive: true });

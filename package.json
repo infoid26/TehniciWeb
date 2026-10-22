@@ -14,6 +14,7 @@
     "build:editor": "node scripts/build_editor.mjs",
     "build:sql": "node scripts/build_sql.mjs",
     "build:templates": "node scripts/build_templates.mjs",
+    "build:project": "node scripts/build_project_assets.mjs",
     "check:learning": "node scripts/check_learning.mjs",
     "check:curriculum": "node scripts/check_curriculum.mjs",
     "check:browser-labs": "node scripts/check_browser_labs.mjs",

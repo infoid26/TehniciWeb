@@ -1,5 +1,7 @@
 # Tehnici Web pe Azure
 
+CSS-ul și imaginile responsive pentru Sweet Corner se pregătesc cu `npm run build:project` în GitHub Actions, înainte de teste și împachetare. După modificarea SCSS-ului sau imaginilor sursă, aceeași comandă regenerează fișierele local. Pornirea serverului de curs și accesarea `/project/` folosesc fișierele deja pregătite, fără compilare Sass sau procesare Sharp. Aplicația demonstrativă și baza ei de antrenament se inițializează în continuare numai la prima accesare a `/project/`.
+
 Cursul este la [tw.infoid26.ro](https://tw.infoid26.ro/), pe App Service Linux `infoid26`, în `infoid_group`, regiunea Italy North. Repository: `infoid26/TehniciWeb`, ramura `main`.
 
 Aplicația folosește Node 24, `npm start`, `NODE_ENV=production`, portul `PORT` furnizat de Azure și bind `0.0.0.0`. Health check: `/api/health`. Build-ul se face în Linux; nu publica `node_modules` de Windows.

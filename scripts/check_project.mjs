@@ -1,12 +1,18 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import vm from 'node:vm';
+import {createRequire} from 'node:module';
 import {createServer,closeProject} from './serve.mjs';
 import {inject} from './inject.mjs';
 
 const server=createServer({production:true});
 const handler=server.listeners('request')[0];
 const request=path=>inject(handler,{path,timeout:30000});
+const require=createRequire(import.meta.url);
+assert(!require.cache[require.resolve('../project-reference/app.js')],'Starting the course must not initialize the demo project');
+const preparedFiles=['css/site.css',...['cake','tea','icecream'].flatMap(name=>[300,600].map(width=>`images/${name}-${width}.webp`))];
+const assetStats=()=>Promise.all(preparedFiles.map(async file=>{const stat=await fs.stat('project-reference/public/'+file);return {size:stat.size,mtime:stat.mtimeMs};}));
+const beforeAssets=await assetStats();
 try{
  for(const [route,status,text] of [
   ['/project/',200,'Fresh notes'],['/project/home',200,'A little sweetness'],['/project/about',200,'Our collection'],['/project/contact',200,'hello@example.com'],
@@ -14,6 +20,8 @@ try{
   ['/project/products?type=pastry',200,'Almond pastry'],['/project/product/1',200,'Added on'],['/project/product/abc',400,'Invalid request'],['/project/product/999',404,'Page not found'],['/project/products?type=bad',400,'Invalid request'],['/project/missing',404,'Page not found'],['/project/home.ejs',400,'Invalid request'],['/project/assets',403,'Access denied'],['/project/assets/images',403,'Access denied'],
   ['/site/sources.js',404,null],['/site/source-old.png',404,null],['/project/assets/css/site.css',200,'.product-card'],
  ]){const response=await request(route);assert.equal(response.status,status,route);if(text)assert(response.body.includes(text),route);}
+ assert.deepEqual(await assetStats(),beforeAssets,'Opening the demo must use prepared assets without recompiling or rewriting them');
+ assert(!require.cache[require.resolve('../project-reference/lib/assets.js')],'Runtime must not load the Sass/Sharp build module');
  const products=(await request('/project/products')).body;
  const cards=[...products.matchAll(/<article class="product-card"([^>]+)>/g)].map(match=>{
   const dataset={};for(const attr of match[1].matchAll(/data-([\w-]+)="([^"]*)"/g))dataset[attr[1]]=attr[2];

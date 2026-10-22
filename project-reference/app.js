@@ -1,11 +1,9 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-const { prepareAssets } = require('./lib/assets');
 const { createProductStore } = require('./lib/products');
 
 async function createApp(options = {}) {
-  await prepareAssets();
   const app = express();
   app.locals.basePath = '';
   const store = await createProductStore(options.databaseUrl ?? process.env.DATABASE_URL);

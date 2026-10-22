@@ -34,6 +34,26 @@ for(const create of calls.filter(c=>c.args[1]==='create')){
  assert(calls.some(c=>c.args[1]==='delete'&&c.args.includes(label)));
 }
 await assert.rejects(()=>fs.access(inputFile));
+// Regression: real ACA preview.4 creation output is text despite --output json.
+for(const output of [`Created sandbox: ${id}\n`,`Created sandbox: ${id}\r\n`]){
+ const steps=[];
+ const textEvaluator=createSandboxEvaluator({env,runCommand:async(args,options)=>{
+  steps.push(args[1]);
+  return args[1]==='create'?output:fake(args,options);
+ }});
+ const response=await textEvaluator('',{body:payload});
+ assert(JSON.parse(await response.text()).results[0].passed);
+ assert.deepEqual(steps,['create','lifecycle','fs','exec','delete']);
+ await assert.rejects(()=>fs.access(inputFile));
+}
+for(const output of ['{}',`Created sandbox: invalid`,`Unexpected ${id}`,`Created sandbox: ${id}\nextra output`]){
+ const steps=[];
+ const invalid=createSandboxEvaluator({env,runCommand:async args=>{
+  steps.push(args[1]);return args[1]==='create'?output:'{}';
+ }});
+ await assert.rejects(()=>invalid('',{body:payload}),/Missing sandbox ID/);
+ assert.deepEqual(steps,['create','delete']);
+}
 for(const failAt of ['create','exec','fs']){
  let deleted=false;
  const broken=createSandboxEvaluator({env,runCommand:async args=>{

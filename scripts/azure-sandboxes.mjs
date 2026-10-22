@@ -7,6 +7,17 @@ import path from 'node:path';
 
 const uuid=/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i;
 
+function createdSandboxId(output){
+  let id;
+  try{id=JSON.parse(output)?.id;}
+  catch{
+    // ACA preview.4 prints this confirmation even with --output json.
+    id=/^Created sandbox: ([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})$/i.exec(output.trim())?.[1];
+  }
+  if(typeof id!=='string'||!uuid.test(id))throw new Error('Missing sandbox ID.');
+  return id;
+}
+
 // The CLI stays on the trusted App Service, never in the evaluator image.
 // Pin/version/hash and supported flags are checked by install_aca.mjs in CI.
 export function sandboxSettings(env=process.env){
@@ -46,13 +57,12 @@ export function createSandboxEvaluator({env=process.env,runCommand,onCleanupErro
     const selector=['--selector','name='+name];
     const folder=await fs.mkdtemp(path.join(os.tmpdir(),'tw-eval-'));
     try{
-      const created=JSON.parse(await command(['sandbox','create','--disk-id',config.diskId,'--cpu','250m','--memory','512Mi','--label','name='+name,'--label','service=tehnici-web','--egress-default','Deny','--traffic-inspection','Full'],{timeout:20000,signal:options.signal}));
-      if(!uuid.test(created.id||''))throw new Error('Missing sandbox ID.');
+      const id=createdSandboxId(await command(['sandbox','create','--disk-id',config.diskId,'--cpu','250m','--memory','512Mi','--label','name='+name,'--label','service=tehnici-web','--egress-default','Deny','--traffic-inspection','Full'],{timeout:20000,signal:options.signal}));
       await command(['sandbox','lifecycle','set',...selector,'--auto-suspend','enable','--mode','Disk','--idle-timeout-seconds','60'],{timeout:5000,signal:options.signal});
       // Upload data as a file, avoiding shell injection and OS argument-size limits.
       const inputFile=path.join(folder,'input.json');
       await fs.writeFile(inputFile,options.body,{mode:0o600});
-      await command(['sandbox','fs','cp',inputFile,created.id+':/tmp/tw-input.json'],{timeout:8000,signal:options.signal});
+      await command(['sandbox','fs','cp',inputFile,id+':/tmp/tw-input.json'],{timeout:8000,signal:options.signal});
       const shell='env -i PATH=/usr/local/bin:/usr/bin:/bin NODE_ENV=production node /app/evaluator/run.mjs < /tmp/tw-input.json';
       const output=await command(['sandbox','exec',...selector,'--command',shell],{timeout:12000,signal:options.signal});
       if(Buffer.byteLength(output)>1400000)throw new Error('Sandbox output too large.');

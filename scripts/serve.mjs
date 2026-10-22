@@ -10,6 +10,7 @@ import {gzip} from 'node:zlib';
 import {promisify} from 'node:util';
 import {createSessionEvaluator} from './azure-sessions.mjs';
 import {createSandboxEvaluator,sandboxSettings} from './azure-sandboxes.mjs';
+import {createAccountHandler,createProgressStore,progressDatabaseSettings} from './accounts.mjs';
 
 const require=createRequire(import.meta.url);
 let projectPromise;
@@ -53,11 +54,14 @@ export function createServer(options={}) {
   };
   let activeChecks=0;
   let tasksPromise;
-  const tasks=()=>tasksPromise??=(async()=>{const context={window:{}};vm.runInNewContext(await fs.readFile(path.join(root,'site/course.js'),'utf8'),context);return new Map(context.window.TW_COURSE.chapters.flatMap(c=>c.lessons).map(l=>[l.id,JSON.parse(JSON.stringify(l.task))]));})();
+  const lessons=()=>tasksPromise??=(async()=>{const context={window:{}};vm.runInNewContext(await fs.readFile(path.join(root,'site/course.js'),'utf8'),context);return new Map(context.window.TW_COURSE.chapters.flatMap(c=>c.lessons).map(l=>[l.id,JSON.parse(JSON.stringify(l))]));})();
+  const progressStore=options.progressStore||createProgressStore(progressDatabaseSettings(env));
+  const accountHandler=createAccountHandler({env,lessons,store:progressStore});
   const json=(res,status,value)=>{res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});res.end(JSON.stringify(value));};
-  return http.createServer(async (req,res) => {
+  const server=http.createServer(async (req,res) => {
     try {
       const pathname = decodeURIComponent(new URL(req.url,'http://localhost').pathname);
+      if(await accountHandler(req,res,pathname))return;
       if(pathname==='/api/health'&&req.method==='GET'){json(res,200,{status:'ok',service:'tehnici-web',labs:evaluatorUrl?'remote':production?'not-configured':'development'});return;}
       if(pathname==='/project' || pathname.startsWith('/project/')) {
         if(pathname==='/project') { res.writeHead(302,{Location:'/project/'});res.end();return; }
@@ -70,7 +74,7 @@ export function createServer(options={}) {
       if(pathname==='/api/check' && req.method==='POST'){
         const parts=[];let bytes=0;for await(const chunk of req){bytes+=Buffer.byteLength(chunk);if(bytes>120000){json(res,413,{error:'Codul depășește dimensiunea permisă.'});return;}parts.push(Buffer.from(chunk));}const body=Buffer.concat(parts).toString('utf8');
         let input;try{input=JSON.parse(body);}catch{json(res,400,{error:'Cererea trebuie să conțină JSON valid.'});return;}
-        const task=(await tasks()).get(input?.id);
+        const task=(await lessons()).get(input?.id)?.task;
         if(!task||!['scss','ejs','sql','node','express'].includes(task.mode)||typeof input.code!=='string'){json(res,400,{error:'Exercițiu sau cod invalid.'});return;}
         if(production&&!['node','express'].includes(task.mode)){json(res,400,{error:'Acest exercițiu se verifică în browser.'});return;}
         if(production&&!evaluatorUrl){json(res,503,{error:'Evaluatorul Node/Express nu este încă activat pe platformă.'});return;}
@@ -123,6 +127,9 @@ export function createServer(options={}) {
       res.end(req.method==='HEAD'?undefined:content);
     } catch { res.writeHead(404); res.end('Pagina nu există.'); }
   });
+  server.closeProgress=()=>progressStore.close();
+  server.on('close',()=>{server.closeProgress().catch(()=>{});});
+  return server;
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const {port,host}=runtimeSettings(process.env,process.argv[2]);

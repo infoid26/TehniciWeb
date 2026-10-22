@@ -14,6 +14,8 @@
   let routeGeneration = 0;
   let running = false;
   let editorPromise;
+  let account;
+  let viewReady=false;
   function loadEditor(){
     if(window.TW_EDITOR)return Promise.resolve();
     return editorPromise??=new Promise((resolve,reject)=>{
@@ -47,8 +49,9 @@
     el.hidden = false;
   }
   function save() {
+    if(account){account.save();return;}
     try { localStorage.setItem(storageKey,JSON.stringify(state)); }
-    catch { storageWarning('Browserul nu permite salvarea progresului sau spațiul este plin. Descarcă progresul înainte să închizi pagina.'); }
+    catch { storageWarning('Browserul nu permite salvarea progresului sau spațiul este plin. Reconectează-te pentru a sincroniza progresul.'); }
   }
   function record(lesson) {
     return state.records[lesson.id] ||= { revision:lesson.task.revision || 1, code:lesson.task.starter, quiz:null, verified:null };
@@ -74,11 +77,9 @@
       <div class="chapter-heading"><h2>Traseul tău de învățare</h2><span>${course.chapters.length} capitole · ${lessons.length} lecții · ${lessons.length} exerciții</span></div>
       <div class="course-shortcuts"><a class="secondary" href="/project/" target="_blank" rel="noopener">Deschide proiectul complet ↗</a></div><div class="toolbar"><label for="search">Găsește o lecție<input id="search" type="search" placeholder="De exemplu: grid, JSON, funcții" autocomplete="off"></label></div>
       <div id="chapter-list" class="chapter-list" style="margin-top:20px"></div>
-      <details class="tools"><summary>Progres și alte opțiuni</summary><p>Codul și progresul se păstrează în acest browser, separat pentru acest traseu extins. Nu există cont sau sincronizare între dispozitive. Folosește exportul înainte de a șterge datele browserului.</p><div class="tool-actions"><button class="secondary" id="export">Descarcă progresul</button></div><label class="backup-label">Restaurează un export JSON<input id="import" type="file" accept=".json,application/json"></label><p id="backup-status" role="status"></p><p>Procentul numără întrebările corecte și exercițiile verificate. Modificarea unei soluții cere o nouă verificare. Lecțiile sunt accesibile pentru recapitulare, în ordinea recomandată din traseu.</p><p>Cursul explică tehnicile necesare pentru propriul site și include toate datele de lucru. Exercițiile și întrebările sunt create pentru platformă, nu sunt subiecte oficiale de examen.</p><p>HTML/CSS rulează în previzualizare; JavaScript în teste izolate cu limită de timp. SQL, SCSS și EJS rulează în browser. Node și Express folosesc evaluatorul platformei. Fișierele din exercițiile fs sunt virtuale; nu modifică fișierele tale personale. Proiectul final leagă tehnologiile într-un site funcțional. Traseul nu confirmă un barem de examen.</p><p>Verificările urmăresc cerința exercițiului, nu sunt un validator HTML complet și nu demonstrează corectitudinea pentru orice intrare. Pentru o pagină proprie folosește și <a href="https://validator.w3.org/nu/" target="_blank" rel="noopener noreferrer">validatorul HTML</a> și <a href="https://jigsaw.w3.org/css-validator/" target="_blank" rel="noopener noreferrer">validatorul CSS</a>.</p></details>`;
+      <details class="tools"><summary>Progres și alte opțiuni</summary><p>Procentul numără întrebările corecte și exercițiile verificate. Modificarea unei soluții cere o nouă verificare. Lecțiile sunt accesibile pentru recapitulare, în ordinea recomandată din traseu.</p><p>Cursul explică tehnicile necesare pentru propriul site și include toate datele de lucru. Exercițiile și întrebările sunt create pentru platformă, nu sunt subiecte oficiale de examen.</p><p>HTML/CSS rulează în previzualizare; JavaScript în teste izolate cu limită de timp. SQL, SCSS și EJS rulează în browser. Node și Express folosesc evaluatorul platformei. Fișierele din exercițiile fs sunt virtuale; nu modifică fișierele tale personale. Proiectul final leagă tehnologiile într-un site funcțional. Traseul nu confirmă un barem de examen.</p><p>Verificările urmăresc cerința exercițiului, nu sunt un validator HTML complet și nu demonstrează corectitudinea pentru orice intrare. Pentru o pagină proprie folosește și <a href="https://validator.w3.org/nu/" target="_blank" rel="noopener noreferrer">validatorul HTML</a> și <a href="https://jigsaw.w3.org/css-validator/" target="_blank" rel="noopener noreferrer">validatorul CSS</a>.</p></details>`;
     renderChapters('');
     document.querySelector('#search').addEventListener('input',e => renderChapters(e.target.value));
-    document.querySelector('#export').addEventListener('click',() => download('TehniciWeb-progres.json',JSON.stringify({ ...state, exportedAt:new Date().toISOString() },null,2),'application/json'));
-    document.querySelector('#import').addEventListener('change',importProgress);
   }
   function renderChapters(query) {
     const fold = value => value.toLocaleLowerCase('ro').normalize('NFD').replace(/[\u0300-\u036f]/g,'');
@@ -247,34 +248,6 @@
     a.click();
     setTimeout(() => URL.revokeObjectURL(url),1000);
   }
-  async function importProgress(event) {
-    const file = event.target.files[0];
-    const status = document.querySelector('#backup-status');
-    if (!file) return;
-    try {
-      if (file.size > 6000000) throw new Error('Exportul este prea mare (maximum 6 MB).');
-      const imported = normalize(JSON.parse(await file.text()));
-      if (!confirm('Restaurezi acest export? Progresul local va fi înlocuit. Descarcă întâi o copie dacă vrei să-l păstrezi.')) return;
-      status.textContent = 'Verific soluțiile din export…';
-      event.target.disabled = true;
-      for (const l of lessons) {
-        const r = imported.records[l.id];
-        if (r && r.verified !== null) {
-          const results = await window.TW_RUNNER.check(l.task,r.code);
-          if (!results.length || !results.every(t => t.passed)) r.verified = null;
-        }
-      }
-      state = imported;
-      save();
-      updateProgress();
-      if (!document.querySelector('#chapter-list')) location.hash = 'acasa';
-      else {
-        renderChapters(document.querySelector('#search').value);
-        status.textContent = 'Progres restaurat. Soluțiile finalizate au fost reverificate.';
-      }
-    } catch (e) { if (status.isConnected) status.textContent = 'Nu am restaurat exportul: ' + e.message; }
-    finally { event.target.disabled = false; event.target.value = ''; }
-  }
   async function route() {
 
     cancelRun?.();
@@ -304,6 +277,11 @@
     window.scrollTo(0,0);
     main.focus({preventScroll:true});
   }
-  window.addEventListener('hashchange',route);
-  route();
+  window.addEventListener('hashchange',()=>{if(viewReady)void route();});
+  account=window.TW_ACCOUNTS.create({getState:()=>state,setState:value=>{state=normalize(value);},normalize,storageKey,
+    refresh:()=>{if(viewReady)void route();},download});
+  // Show the course immediately; editing starts after the account has been identified.
+  home();
+  updateProgress();
+  account.start().finally(()=>{viewReady=true;void route();});
 })();

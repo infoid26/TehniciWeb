@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="site/journey.css">
   <script src="site/course.js" defer></script>
   <script src="site/runner.js" defer></script>
+  <script src="site/account.js" defer></script>
   <script src="site/app.js" defer></script>
 </head>
 <body>
@@ -18,8 +19,15 @@
   <div class="shell">
     <header class="topbar">
       <a class="brand" href="#acasa" aria-label="Tehnici Web — înapoi la traseu"><strong>TW<span>.</span></strong><span class="brand-meta">INFO ID 26<br><b>Învață prin practică</b></span></a>
-      <div class="total"><div><span>Progres total</span><strong id="percent">0%</strong></div><progress id="total-progress" aria-label="Progres total" max="100" value="0"></progress></div>
+      <div class="topbar-actions">
+        <div class="total"><div><span>Progres total</span><strong id="percent">0%</strong></div><progress id="total-progress" aria-label="Progres total" max="100" value="0"></progress></div>
+        <div id="account-controls" class="account-controls" aria-label="Cont Microsoft"></div>
+      </div>
     </header>
+    <section id="account-panel" class="account-panel" aria-label="Cont și sincronizare">
+      <p id="account-status" role="status">Progres salvat în acest browser.</p>
+      <div id="account-actions" class="account-actions"></div>
+    </section>
     <p id="storage-warning" class="notice" role="status" hidden></p>
     <main id="content" tabindex="-1"></main>
     <footer><span>Tehnici Web · INFO ID 26</span><span>Învață prin practică</span></footer>

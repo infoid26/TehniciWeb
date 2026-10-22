@@ -6,7 +6,7 @@ Cursul este disponibil la **[tw.infoid26.ro](https://tw.infoid26.ro/)**.
 
 Materia include HTML, formulare, media, MathML, CSS, responsive, animații, JavaScript, expresii regulate, date calendaristice, DOM, stocare, JSON, SCSS, Node, HTTP, Express, EJS și PostgreSQL. SQL include crearea tabelelor și tipurilor, constrângeri, chei străine, vectori, filtrare, agregare, relații între tabele și modificarea datelor.
 
-Fiecare lecție are explicație, exemplu, întrebare și exercițiu. **Indiciu** și **Rezolvare** sunt deasupra editorului și se deschid independent, ca în PA. Progresul și codul se păstrează în browser; exportul și importul permit transferul lor între dispozitive.
+Fiecare lecție are explicație, exemplu, întrebare și exercițiu. **Indiciu** și **Rezolvare** sunt deasupra editorului și se deschid independent, ca în PA. Progresul și codul se păstrează în browser. Conectarea Microsoft universitară și sincronizarea automată sunt pregătite în cod; activarea este descrisă în [ACCOUNTS.md](ACCOUNTS.md).
 
 [CURRICULUM.md](CURRICULUM.md) enumeră capitolele și lecțiile. [SYNTAX.md](SYNTAX.md) leagă sintaxa identificată în materiale de exemplele lecțiilor active. Platforma conține explicații și exerciții independente, fără slide-uri, fișiere sau imagini din materialele profesoarei.
 

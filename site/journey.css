@@ -1,4 +1,12 @@
 /* Spacious central path, with the same lesson flow as PA. */
+.account-panel { padding:16px 0; border-bottom:1px solid var(--line); }
+.topbar-actions { display:flex; align-items:center; justify-content:flex-end; flex-wrap:wrap; gap:20px; min-width:0; }
+.account-controls { display:flex; align-items:center; flex-wrap:wrap; gap:12px; }
+.account-name { font-size:13px; font-weight:650; overflow-wrap:anywhere; min-width:0; max-width:200px; }
+.account-actions { display:flex; flex-wrap:wrap; gap:12px; }
+.account-actions:not(:empty) { margin-top:12px; }
+.account-panel p { margin:8px 0 0; color:var(--muted); font-size:12px; line-height:1.7; }
+.account-panel .secondary,.account-controls .secondary { font-size:12px; padding:8px 12px; }
 :root { --bg:#10141f; --paper:#191f2e; --accent:#a995ff; --button:#7356d9; --line:#30394f; }
 body { background:radial-gradient(ellipse at 50% 0,#24213c55,transparent 650px),var(--bg); }
 .shell { max-width:1240px; padding:0 40px; }
@@ -97,6 +105,10 @@ main { padding-top:42px; }
  .screen,.player-controls { padding:26px; }
 }
 @media(max-width:600px) {
+ .topbar { flex-wrap:wrap; padding-block:18px; }
+ .topbar-actions { width:100%; justify-content:space-between; gap:14px; }
+ .account-controls { justify-content:flex-end; flex:1; min-width:0; gap:8px; }
+ .account-name { max-width:100%; }
  .shell { padding:0 16px; }
  .topbar { min-height:88px; }
  .total { width:140px; padding:10px; }

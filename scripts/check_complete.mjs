@@ -19,6 +19,7 @@ try {
  const errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto(url);await page.waitForSelector('.path-node');
  const report=await page.evaluate(async()=>{
+   await window.TW_LOAD_EDITOR();
    const results=[];
    for(const chapter of TW_COURSE.chapters)for(const lesson of chapter.lessons) {
     const good=await TW_RUNNER.check(lesson.task,lesson.task.solution);

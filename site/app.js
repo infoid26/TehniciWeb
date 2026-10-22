@@ -13,6 +13,18 @@
   let cancelRun = null;
   let routeGeneration = 0;
   let running = false;
+  let editorPromise;
+  function loadEditor(){
+    if(window.TW_EDITOR)return Promise.resolve();
+    return editorPromise??=new Promise((resolve,reject)=>{
+      const script=document.createElement('script');
+      script.src='site/editor.js';
+      script.onload=()=>window.TW_EDITOR?resolve():reject(new Error('Editor unavailable'));
+      script.onerror=()=>{script.remove();editorPromise=undefined;reject(new Error('Editor unavailable'));};
+      document.head.append(script);
+    });
+  }
+  window.TW_LOAD_EDITOR=loadEditor;
   function normalize(value) {
     if (!value || value.version !== 2 || !value.records || typeof value.records !== 'object' || Array.isArray(value.records)) throw new Error('Fișierul nu este un export compatibil cu noul traseu Tehnici Web.');
     const records = {};
@@ -263,15 +275,22 @@
     } catch (e) { if (status.isConnected) status.textContent = 'Nu am restaurat exportul: ' + e.message; }
     finally { event.target.disabled = false; event.target.value = ''; }
   }
-  function route() {
+  async function route() {
 
     cancelRun?.();
     window.TW_EDITOR?.clear();
     cancelRun = null;
     running = false;
     routeGeneration++;
+    const generation=routeGeneration;
     const [page,id,requested] = location.hash.slice(1).split('/');
     if (page === 'lectie' && byId.has(id)) {
+      if(!window.TW_EDITOR){
+        main.textContent='Se încarcă lecția…';
+        try{await loadEditor();}
+        catch{if(generation===routeGeneration)main.textContent='Editorul nu s-a putut încărca. Reîncarcă pagina pentru a încerca din nou.';return;}
+        if(generation!==routeGeneration)return;
+      }
       const l = byId.get(id);
       let step = /^\d$/.test(requested || '') ? Math.min(4,Number(requested)) : startStep(l);
       if (step >= 3 && !quizDone(l)) step = 2;

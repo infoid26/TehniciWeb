@@ -56,15 +56,21 @@ export function createSandboxEvaluator({env=process.env,runCommand,onCleanupErro
     const name='tw-eval-'+randomUUID();
     const selector=['--selector','name='+name];
     const folder=await fs.mkdtemp(path.join(os.tmpdir(),'tw-eval-'));
+    let sandboxId;
     try{
       const id=createdSandboxId(await command(['sandbox','create','--disk-id',config.diskId,'--cpu','250m','--memory','512Mi','--label','name='+name,'--label','service=tehnici-web','--egress-default','Deny','--traffic-inspection','Full'],{timeout:20000,signal:options.signal}));
-      await command(['sandbox','lifecycle','set',...selector,'--auto-suspend','enable','--mode','Disk','--idle-timeout-seconds','60'],{timeout:5000,signal:options.signal});
+      sandboxId=id;
       // Upload data as a file, avoiding shell injection and OS argument-size limits.
       const inputFile=path.join(folder,'input.json');
       await fs.writeFile(inputFile,options.body,{mode:0o600});
-      await command(['sandbox','fs','cp',inputFile,id+':/tmp/tw-input.json'],{timeout:8000,signal:options.signal});
+      // Independent setup calls overlap; wait for both before executing or deleting.
+      const setup=await Promise.allSettled([
+        command(['sandbox','lifecycle','set','--id',id,'--auto-suspend','enable','--mode','Disk','--idle-timeout-seconds','60'],{timeout:5000,signal:options.signal}),
+        command(['sandbox','fs','cp',inputFile,id+':/tmp/tw-input.json'],{timeout:8000,signal:options.signal})
+      ]);
+      for(const result of setup)if(result.status==='rejected')throw result.reason;
       const shell='env -i PATH=/usr/local/bin:/usr/bin:/bin NODE_ENV=production node /app/evaluator/run.mjs < /tmp/tw-input.json';
-      const output=await command(['sandbox','exec',...selector,'--command',shell],{timeout:12000,signal:options.signal});
+      const output=await command(['sandbox','exec','--id',id,'--command',shell],{timeout:12000,signal:options.signal});
       if(Buffer.byteLength(output)>1400000)throw new Error('Sandbox output too large.');
       const result=JSON.parse(output);
       // ACA preview.4 emits the remote stdout directly; also accept JSON envelopes.
@@ -78,7 +84,7 @@ export function createSandboxEvaluator({env=process.env,runCommand,onCleanupErro
     }finally{
       // Unique label permits cleanup even if create timed out before returning an ID.
       // Cleanup has its own timeout; a canceled evaluation must still be destroyed.
-      try{await command(['sandbox','delete',...selector,'--yes'],{timeout:10000});}
+      try{await command(['sandbox','delete',...(sandboxId?['--id',sandboxId]:selector),'--yes'],{timeout:10000});}
       catch{cleanupFailed=true;onCleanupError();}
       await fs.rm(folder,{recursive:true,force:true});
     }

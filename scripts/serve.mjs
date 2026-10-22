@@ -5,6 +5,9 @@ import { fileURLToPath } from 'node:url';
 import {Worker} from 'node:worker_threads';
 import vm from 'node:vm';
 import {createRequire} from 'node:module';
+import {createHash} from 'node:crypto';
+import {gzip} from 'node:zlib';
+import {promisify} from 'node:util';
 import {createSessionEvaluator} from './azure-sessions.mjs';
 import {createSandboxEvaluator,sandboxSettings} from './azure-sandboxes.mjs';
 
@@ -36,6 +39,18 @@ export function createServer(options={}) {
   const evaluatorToken=options.evaluatorToken??process.env.LAB_EVALUATOR_TOKEN;
   if(evaluatorUrl){const url=new URL(evaluatorUrl);if(url.protocol!=='https:'||url.username||url.password)throw new Error('LAB_EVALUATOR_URL must be an HTTPS URL without embedded credentials.');}
   const maxChecks=2;
+  const staticFiles=new Map();
+  const compress=promisify(gzip);
+  const loadStatic=async target=>{
+    const load=async()=>{
+      const content=await fs.readFile(target);
+      const etag='"'+createHash('sha256').update(content).digest('hex')+'"';
+      return {content,etag,compressed:undefined};
+    };
+    if(!production)return load();
+    if(!staticFiles.has(target))staticFiles.set(target,load().catch(error=>{staticFiles.delete(target);throw error;}));
+    return staticFiles.get(target);
+  };
   let activeChecks=0;
   let tasksPromise;
   const tasks=()=>tasksPromise??=(async()=>{const context={window:{}};vm.runInNewContext(await fs.readFile(path.join(root,'site/course.js'),'utf8'),context);return new Map(context.window.TW_COURSE.chapters.flatMap(c=>c.lessons).map(l=>[l.id,JSON.parse(JSON.stringify(l.task))]));})();
@@ -88,9 +103,24 @@ export function createServer(options={}) {
       if (relative !== 'index.html' && !/^site\/[a-zA-Z0-9._-]+$/.test(relative)) { res.writeHead(404); res.end('Pagina nu există.'); return; }
       const target = path.resolve(root,relative);
       if (!target.startsWith(root + path.sep)) { res.writeHead(403); res.end(); return; }
-      const content = await fs.readFile(target);
-      res.writeHead(200,{'Content-Type':types[path.extname(target)] || 'application/octet-stream','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});
-      res.end(content);
+      const file=await loadStatic(target);
+      const headers={'Content-Type':types[path.extname(target)] || 'application/octet-stream','Cache-Control':production?'public, no-cache':'no-store','X-Content-Type-Options':'nosniff','ETag':'W/'+file.etag,'Vary':'Accept-Encoding'};
+      if(production&&(req.method==='GET'||req.method==='HEAD')&&(req.headers['if-none-match']||'').split(',').some(tag=>tag.trim().replace(/^W\//,'')===file.etag||tag.trim()==='*')){
+        res.writeHead(304,headers);res.end();return;
+      }
+      let content=file.content;
+      const acceptsGzip=(req.headers['accept-encoding']||'').split(',').some(entry=>{
+        const [encoding,...parameters]=entry.trim().toLowerCase().split(';');
+        const quality=parameters.map(value=>value.trim()).find(value=>value.startsWith('q='));
+        return encoding==='gzip'&&(quality===undefined||Number(quality.slice(2))>0);
+      });
+      if(content.length>=1024&&/\.(?:html|css|js|json|svg|wasm|data)$/.test(target)&&acceptsGzip){
+        file.compressed??=compress(content).catch(error=>{file.compressed=undefined;throw error;});
+        content=await file.compressed;headers['Content-Encoding']='gzip';
+      }
+      headers['Content-Length']=content.length;
+      res.writeHead(200,headers);
+      res.end(req.method==='HEAD'?undefined:content);
     } catch { res.writeHead(404); res.end('Pagina nu există.'); }
   });
 }

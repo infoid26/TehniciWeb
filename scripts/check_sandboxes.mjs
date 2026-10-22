@@ -19,6 +19,7 @@ const fake=async(args,options)=>{
   inputFile=args[3];assert.equal(await fs.readFile(inputFile,'utf8'),payload);assert.equal(args[4],id+':/tmp/tw-input.json');
  }
  if(args[1]==='exec'){
+  assert(args.includes('--id')&&args.includes(id));assert(!args.includes('--selector'));
   assert(!args.join(' ').includes('process.exit'));assert(!args.join(' ').includes('$(touch'));
   return JSON.stringify({exitCode:0,stdout:'{"results":[{"passed":true}]}'});
  }
@@ -31,7 +32,7 @@ for(let i=0;i<2;i++)assert.equal((await evaluate('',{body:payload})).status,200)
 assert.notEqual(calls.filter(c=>c.args[1]==='create')[0].args.find(x=>x.startsWith('name=')),calls.filter(c=>c.args[1]==='create')[1].args.find(x=>x.startsWith('name=')));
 for(const create of calls.filter(c=>c.args[1]==='create')){
  const label=create.args.find(x=>x.startsWith('name='));
- assert(calls.some(c=>c.args[1]==='delete'&&c.args.includes(label)));
+ assert(calls.some(c=>c.args[1]==='delete'&&c.args.includes('--id')&&c.args.includes(id)));
 }
 await assert.rejects(()=>fs.access(inputFile));
 // Regression: real ACA preview.4 creation output is text despite --output json.
@@ -87,6 +88,20 @@ for(const failAt of ['create','exec','fs']){
  }});
  await assert.rejects(()=>broken('',{body:payload}));assert(deleted,failAt);
 }
+// A failed setup call must not delete the sandbox while its sibling still runs.
+let finishUpload;let uploadFinished=false;let setupFailed;
+const failedSetup=new Promise(resolve=>{setupFailed=resolve;});
+const overlapping=createSandboxEvaluator({env,runCommand:async(args)=>{
+ if(args[1]==='create')return JSON.stringify({id});
+ if(args[1]==='lifecycle'){assert(args.includes('--id'));setupFailed();throw new Error('Setup failure');}
+ if(args[1]==='fs')return new Promise(resolve=>{finishUpload=()=>{uploadFinished=true;resolve('{}');};});
+ if(args[1]==='exec')assert.fail('Do not execute after setup failure');
+ if(args[1]==='delete'){assert(uploadFinished,'Wait for upload before deleting');return '{}';}
+}});
+const failedEvaluation=overlapping('',{body:payload});
+const rejected=assert.rejects(()=>failedEvaluation,/Setup failure/);
+await failedSetup;assert.equal(uploadFinished,false);assert.equal(typeof finishUpload,'function');
+finishUpload();await rejected;
 let failures=0;
 const cleanupBroken=createSandboxEvaluator({env,runCommand:async args=>{
  if(args[1]==='delete')throw new Error('Delete failed');return fake(args,{});

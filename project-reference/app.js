@@ -18,8 +18,6 @@ async function createApp(options = {}) {
   app.use('/assets', express.static(path.join(__dirname, 'public'), {redirect:false,index:false}));
   app.use('/vendor', express.static(path.join(__dirname, '../node_modules/bootstrap/dist')));
   app.use((req, res, next) => {
-    res.locals.siteName = 'Sweet Corner';
-    res.locals.currentPath = req.path;
     res.locals.dataMode = store.mode;
     next();
   });

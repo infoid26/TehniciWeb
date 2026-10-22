@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {createServer,runtimeSettings} from './serve.mjs';
 import {inject} from './inject.mjs';
+import './check_performance.mjs';
 assert.deepEqual(runtimeSettings({}),{port:8088,host:'127.0.0.1',production:false});
 assert.deepEqual(runtimeSettings({PORT:'8123',WEBSITE_SITE_NAME:'infoid26'}),{port:8123,host:'0.0.0.0',production:true});
 assert.equal(runtimeSettings({PORT:'8123'},'9999').port,8123);

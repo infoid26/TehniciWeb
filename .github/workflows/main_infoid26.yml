@@ -83,6 +83,7 @@ jobs:
             --resource-group infoid_group \
             --name infoid26 \
             --startup-file "npm start" \
+            --always-on true \
             --output none
           az webapp deploy \
             --resource-group infoid_group \

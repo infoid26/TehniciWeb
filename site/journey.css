@@ -1,5 +1,5 @@
 /* Spacious central path, with the same lesson flow as PA. */
-.account-panel { padding:16px 0; border-bottom:1px solid var(--line); }
+.account-panel { padding:16px 0; }
 .topbar-actions { display:flex; align-items:center; justify-content:flex-end; flex-wrap:wrap; gap:20px; min-width:0; }
 .account-controls { display:flex; align-items:center; flex-wrap:wrap; gap:12px; }
 .account-name { font-size:13px; font-weight:650; overflow-wrap:anywhere; min-width:0; max-width:200px; }

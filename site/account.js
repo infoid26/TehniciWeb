@@ -127,7 +127,7 @@
         const account=await request('/api/account');
         if(!account.enabled){message('Progres salvat în acest browser.');return;}
         user=account.user;
-        if(!user){render();message('Conectează-te cu @s.unibuc.ro sau @unibuc.ro pentru a păstra progresul între dispozitive.');return;}
+        if(!user){render();message('');return;}
         // Restore this account's pending edits before loading and merging cloud data.
         let local;
         try{local=JSON.parse(localStorage.getItem(cacheKey())||'null');}catch{}

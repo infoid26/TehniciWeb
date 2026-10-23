@@ -166,7 +166,7 @@ window.TW_COURSE = {
         {
           "id": "start-three",
           "title": "HTML, CSS și JavaScript au roluri diferite",
-          "intro": "Gândește-te la un magazin: `HTML` așază etichetele și produsele, `CSS` stabilește aspectul, iar `JavaScript` reacționează la acțiuni precum filtrarea produselor.",
+          "intro": "Gândește-te la un magazin: `HTML` așează etichetele și produsele, `CSS` stabilește aspectul, iar `JavaScript` reacționează la acțiuni precum filtrarea produselor.",
           "example": "<!-- HTML: content -->\n<h1>Sweet Corner</h1>\n\n/* CSS: appearance */\nh1 { color: purple; }\n\n// JavaScript: behavior\nconsole.log(\"Website ready\");",
           "explain": "HTML, CSS și JavaScript se scriu în fișiere separate și se leagă din pagina HTML. Nu pune declarații CSS în corpul unui fișier JavaScript.",
           "points": [],

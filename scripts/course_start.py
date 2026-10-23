@@ -12,7 +12,7 @@ lesson(c,'start-folder','Foldere și căi relative','Un folder grupează fișier
 lesson(c,'start-save','Salvare și reîncărcare','Editorul schimbă un fișier, iar browserul arată o versiune a paginii. Într-un proiect local salvezi cu `Ctrl+S`, apoi reîncarci browserul. Aici editorul salvează automat progresul, iar butonul de previzualizare actualizează rezultatul.',
  '<p>First version</p>\n<!-- Change the text, save, then reload. -->','Nu confunda salvarea cu verificarea. Poți salva un cod care conține greșeli; testele verifică separat cerința.',
  q('Salvarea fișierului demonstrează că soluția este corectă?','Nu; verificarea este separată','Da, întotdeauna','Da, dacă numele e în engleză'),html('Schimbă textul paragrafului în Second version.','<p>Second version</p>',[exact('p','Second version')],'<p>First version</p>'))
-lesson(c,'start-three','HTML, CSS și JavaScript au roluri diferite','Gândește-te la un magazin: `HTML` așază etichetele și produsele, `CSS` stabilește aspectul, iar `JavaScript` reacționează la acțiuni precum filtrarea produselor.',
+lesson(c,'start-three','HTML, CSS și JavaScript au roluri diferite','Gândește-te la un magazin: `HTML` așează etichetele și produsele, `CSS` stabilește aspectul, iar `JavaScript` reacționează la acțiuni precum filtrarea produselor.',
  '<!-- HTML: content -->\n<h1>Sweet Corner</h1>\n\n/* CSS: appearance */\nh1 { color: purple; }\n\n// JavaScript: behavior\nconsole.log("Website ready");',
  'Aceste fragmente apar în fișiere diferite. În următoarele capitole le construim pe rând; nu pune declarații CSS direct în corpul unui fișier JavaScript.',
  q('Ce tehnologie controlează culoarea unui titlu?','CSS','JSON','SQL'),text('Scrie extensia fișierului folosit pentru aspect, inclusiv punctul.','.css'))

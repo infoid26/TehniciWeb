@@ -12,7 +12,7 @@ window.TW_COURSE = {
           "id": "start-browser",
           "title": "Ce construim și unde îl vedem",
           "intro": "Un `website` este un set de pagini legate între ele. `Browser` înseamnă programul care deschide paginile: Edge, Chrome sau Firefox. Începem cu un fișier foarte mic, fără server și fără bază de date.",
-          "example": "<h1>Cofetăria Dulcelind</h1>",
+          "example": "<h1>Demo Catalog</h1>",
           "explain": "Browserul interpretează tagul `h1` și afișează un titlu. Nu trebuie să înțelegi încă toate simbolurile: le înveți în următoarele lecții.",
           "points": [],
           "quiz": {
@@ -27,20 +27,20 @@ window.TW_COURSE = {
           },
           "task": {
             "mode": "html",
-            "prompt": "Scrie exact un titlu h1 cu textul Cofetăria Dulcelind.",
-            "solution": "<h1>Cofetăria Dulcelind</h1>",
+            "prompt": "Scrie exact un titlu h1 cu textul Demo Catalog.",
+            "solution": "<h1>Demo Catalog</h1>",
             "tests": [
               {
                 "kind": "text",
                 "selector": "h1",
-                "value": "Cofetăria Dulcelind",
-                "label": "h1: textul trebuie să fie Cofetăria Dulcelind."
+                "value": "Demo Catalog",
+                "label": "h1: textul trebuie să fie Demo Catalog."
               }
             ],
             "starter": "",
             "id": "start-browser",
             "requirements": [
-              "`h1`: textul trebuie să fie `Cofetăria Dulcelind`."
+              "`h1`: textul trebuie să fie `Demo Catalog`."
             ]
           },
           "hint": "Browserul interpretează tagul `h1` și afișează un titlu. Nu trebuie să înțelegi încă toate simbolurile: le înveți în următoarele lecții.",
@@ -167,7 +167,7 @@ window.TW_COURSE = {
           "id": "start-three",
           "title": "HTML, CSS și JavaScript au roluri diferite",
           "intro": "Gândește-te la un magazin: `HTML` așează etichetele și produsele, `CSS` stabilește aspectul, iar `JavaScript` reacționează la acțiuni precum filtrarea produselor.",
-          "example": "<!-- HTML: content -->\n<h1>Cofetăria Dulcelind</h1>\n\n/* CSS: appearance */\nh1 { color: purple; }\n\n// JavaScript: behavior\nconsole.log(\"Website ready\");",
+          "example": "<!-- HTML: content -->\n<h1>Demo Catalog</h1>\n\n/* CSS: appearance */\nh1 { color: purple; }\n\n// JavaScript: behavior\nconsole.log(\"Website ready\");",
           "explain": "HTML, CSS și JavaScript se scriu în fișiere separate și se leagă din pagina HTML. Nu pune declarații CSS în corpul unui fișier JavaScript.",
           "points": [],
           "quiz": {
@@ -659,7 +659,7 @@ window.TW_COURSE = {
           "id": "web-seo-title",
           "title": "Titlu și descriere utile",
           "intro": "Un titlu descrie pagina, iar meta description o rezumă. Ele nu înlocuiesc conținutul relevant sau linkurile funcționale.",
-          "example": "<!doctype html><html lang=\"en\"><head><title>Handmade cakes | Cofetăria Dulcelind</title><meta name=\"description\" content=\"Explore handmade cakes and pastries.\"></head><body><h1>Handmade cakes</h1></body></html>",
+          "example": "<!doctype html><html lang=\"en\"><head><title>Handmade cakes | Demo Catalog</title><meta name=\"description\" content=\"Explore handmade cakes and pastries.\"></head><body><h1>Handmade cakes</h1></body></html>",
           "explain": "Un titlu descrie pagina, iar meta description o rezumă. Ele nu înlocuiesc conținutul relevant sau linkurile funcționale.",
           "points": [],
           "quiz": {
@@ -674,14 +674,14 @@ window.TW_COURSE = {
           },
           "task": {
             "mode": "html",
-            "prompt": "Creează o pagină cu titlul `Handmade cakes | Cofetăria Dulcelind`, descrierea `Explore handmade cakes and pastries.` și un h1 `Handmade cakes`.",
-            "solution": "<!doctype html><html lang=\"en\"><head><title>Handmade cakes | Cofetăria Dulcelind</title><meta name=\"description\" content=\"Explore handmade cakes and pastries.\"></head><body><h1>Handmade cakes</h1></body></html>",
+            "prompt": "Creează o pagină cu titlul `Handmade cakes | Demo Catalog`, descrierea `Explore handmade cakes and pastries.` și un h1 `Handmade cakes`.",
+            "solution": "<!doctype html><html lang=\"en\"><head><title>Handmade cakes | Demo Catalog</title><meta name=\"description\" content=\"Explore handmade cakes and pastries.\"></head><body><h1>Handmade cakes</h1></body></html>",
             "tests": [
               {
                 "kind": "text",
                 "selector": "title",
-                "value": "Handmade cakes | Cofetăria Dulcelind",
-                "label": "title: textul trebuie să fie Handmade cakes | Cofetăria Dulcelind."
+                "value": "Handmade cakes | Demo Catalog",
+                "label": "title: textul trebuie să fie Handmade cakes | Demo Catalog."
               },
               {
                 "kind": "attr",
@@ -700,7 +700,7 @@ window.TW_COURSE = {
             "starter": "",
             "id": "web-seo-title",
             "requirements": [
-              "`title`: textul trebuie să fie `Handmade cakes | Cofetăria Dulcelind`.",
+              "`title`: textul trebuie să fie `Handmade cakes | Demo Catalog`.",
               "`meta[name=\"description\"]`: atributul `content` are valoarea `Explore handmade cakes and pastries.`.",
               "`h1`: textul trebuie să fie `Handmade cakes`."
             ]
@@ -840,7 +840,7 @@ window.TW_COURSE = {
           "id": "html-head-body",
           "title": "Separă informațiile de conținut",
           "intro": "`head` conține metadate; `body` conține conținutul paginii. Ele sunt copii ai elementului `html`. Nu scriem paragrafele vizibile în head.",
-          "example": "<!doctype html>\n<html lang=\"en\">\n<head><title>Cofetăria Dulcelind</title></head>\n<body><h1>Cofetăria Dulcelind</h1></body>\n</html>",
+          "example": "<!doctype html>\n<html lang=\"en\">\n<head><title>Demo Catalog</title></head>\n<body><h1>Demo Catalog</h1></body>\n</html>",
           "explain": "Titlul filei este în `title`; titlul din pagină este în `h1`.",
           "points": [],
           "quiz": {
@@ -855,14 +855,14 @@ window.TW_COURSE = {
           },
           "task": {
             "mode": "html",
-            "prompt": "Creează title Cofetăria Dulcelind și h1 Fresh cakes în zonele potrivite.",
-            "solution": "<!doctype html><html lang=\"en\"><head><title>Cofetăria Dulcelind</title></head><body><h1>Fresh cakes</h1></body></html>",
+            "prompt": "Creează title Demo Catalog și h1 Fresh cakes în zonele potrivite.",
+            "solution": "<!doctype html><html lang=\"en\"><head><title>Demo Catalog</title></head><body><h1>Fresh cakes</h1></body></html>",
             "tests": [
               {
                 "kind": "text",
                 "selector": "head title",
-                "value": "Cofetăria Dulcelind",
-                "label": "head title: textul trebuie să fie Cofetăria Dulcelind."
+                "value": "Demo Catalog",
+                "label": "head title: textul trebuie să fie Demo Catalog."
               },
               {
                 "kind": "text",
@@ -874,7 +874,7 @@ window.TW_COURSE = {
             "starter": "",
             "id": "html-head-body",
             "requirements": [
-              "`head title`: textul trebuie să fie `Cofetăria Dulcelind`.",
+              "`head title`: textul trebuie să fie `Demo Catalog`.",
               "`body h1`: textul trebuie să fie `Fresh cakes`."
             ]
           },
@@ -1100,7 +1100,7 @@ window.TW_COURSE = {
           "id": "html-headings",
           "title": "Titluri și ierarhie",
           "intro": "h1 este titlul principal; h2 deschide o secțiune, iar h3 o subsecțiune. Alege nivelul după structură, nu după dimensiunea fontului.",
-          "example": "<h1>Cofetăria Dulcelind</h1>\n<h2>Products</h2>\n<h3>Cakes</h3>",
+          "example": "<h1>Demo Catalog</h1>\n<h2>Products</h2>\n<h3>Cakes</h3>",
           "explain": "Folosește CSS pentru mărime. Ierarhia titlurilor explică organizarea paginii.",
           "points": [],
           "quiz": {
@@ -1116,13 +1116,13 @@ window.TW_COURSE = {
           "task": {
             "mode": "html",
             "prompt": "Construiește structura HTML descrisă în cerințele de mai jos. Alege tagurile potrivite pentru rolul fiecărui element.",
-            "solution": "<h1>Cofetăria Dulcelind</h1><h2>Products</h2><h3>Cakes</h3>",
+            "solution": "<h1>Demo Catalog</h1><h2>Products</h2><h3>Cakes</h3>",
             "tests": [
               {
                 "kind": "text",
                 "selector": "h1",
-                "value": "Cofetăria Dulcelind",
-                "label": "h1: textul trebuie să fie Cofetăria Dulcelind."
+                "value": "Demo Catalog",
+                "label": "h1: textul trebuie să fie Demo Catalog."
               },
               {
                 "kind": "text",
@@ -1140,7 +1140,7 @@ window.TW_COURSE = {
             "starter": "",
             "id": "html-headings",
             "requirements": [
-              "`h1`: textul trebuie să fie `Cofetăria Dulcelind`.",
+              "`h1`: textul trebuie să fie `Demo Catalog`.",
               "`h2`: textul trebuie să fie `Products`.",
               "`h3`: textul trebuie să fie `Cakes`."
             ]
@@ -1152,7 +1152,7 @@ window.TW_COURSE = {
           "id": "html-header-footer",
           "title": "Antet și subsol",
           "intro": "header introduce o pagină sau secțiune. footer conține informațiile de încheiere. Același tip de element poate apărea în mai multe secțiuni.",
-          "example": "<header><h1>Cofetăria Dulcelind</h1></header>\n<footer><p>Made by students</p></footer>",
+          "example": "<header><h1>Demo Catalog</h1></header>\n<footer><p>Made by students</p></footer>",
           "explain": "header nu este același lucru cu head. Primul este o zonă de conținut, al doilea conține metadate.",
           "points": [],
           "quiz": {
@@ -1168,13 +1168,13 @@ window.TW_COURSE = {
           "task": {
             "mode": "html",
             "prompt": "Construiește structura HTML descrisă în cerințele de mai jos. Alege tagurile potrivite pentru rolul fiecărui element.",
-            "solution": "<header><h1>Cofetăria Dulcelind</h1></header><footer><p>Made by students</p></footer>",
+            "solution": "<header><h1>Demo Catalog</h1></header><footer><p>Made by students</p></footer>",
             "tests": [
               {
                 "kind": "text",
                 "selector": "header h1",
-                "value": "Cofetăria Dulcelind",
-                "label": "header h1: textul trebuie să fie Cofetăria Dulcelind."
+                "value": "Demo Catalog",
+                "label": "header h1: textul trebuie să fie Demo Catalog."
               },
               {
                 "kind": "text",
@@ -1186,7 +1186,7 @@ window.TW_COURSE = {
             "starter": "",
             "id": "html-header-footer",
             "requirements": [
-              "`header h1`: textul trebuie să fie `Cofetăria Dulcelind`.",
+              "`header h1`: textul trebuie să fie `Demo Catalog`.",
               "`footer p`: textul trebuie să fie `Made by students`."
             ]
           },
@@ -7322,7 +7322,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Stilizează HTML-ul furnizat pentru a obține aspectul descris mai jos.",
             "solution": "p::first-letter { color: navy; font-size: 32px; }",
-            "fixture": "<p>Welcome to Cofetăria Dulcelind.</p>",
+            "fixture": "<p>Welcome to Demo Catalog.</p>",
             "tests": [
               {
                 "kind": "pseudo",
@@ -7547,7 +7547,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Stilizează HTML-ul furnizat pentru a obține aspectul descris mai jos.",
             "solution": ".hero { background-image: linear-gradient(to right, navy, teal); background-repeat: no-repeat; background-size: cover; }",
-            "fixture": "<div class=\"hero\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"hero\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "style",
@@ -10139,7 +10139,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `background-attachment` cu valoarea `fixed`. Stabilește dacă fundalul se deplasează cu elementul sau rămâne fix față de viewport. fixed nu fixează și textul.",
             "solution": ".sample {\n  background-attachment: fixed;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -10177,7 +10177,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `background-clip` cu valoarea `padding-box`. Limitează zona în care se pictează fundalul. padding-box exclude zona conturului.",
             "solution": ".sample {\n  background-clip: padding-box;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -10215,7 +10215,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `background-position` cu valoarea `center`. Poziționează imaginea de fundal în zona disponibilă; center o centrează.",
             "solution": ".sample {\n  background-position: center;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -10253,7 +10253,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `background-repeat` cu valoarea `no-repeat`. Controlează repetarea imaginii. no-repeat păstrează o singură instanță.",
             "solution": ".sample {\n  background-repeat: no-repeat;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -10291,7 +10291,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `background-size` cu valoarea `cover`. cover umple zona păstrând proporțiile, cu posibilă decupare; contain păstrează întreaga imagine.",
             "solution": ".sample {\n  background-size: cover;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -10329,7 +10329,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `background-image` cu valoarea `linear-gradient(to right, navy, teal)`. Poate primi o imagine sau un gradient; straturile multiple se separă prin virgulă.",
             "solution": ".sample {\n  background-image: linear-gradient(to right, navy, teal);\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -10367,7 +10367,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `background-color` cu valoarea `navy`. Culoarea de fundal se pictează sub imaginile de fundal.",
             "solution": ".sample {\n  background-color: navy;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -10405,7 +10405,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `background` cu valoarea `navy`. Este o prescurtare care poate reseta mai multe proprietăți background; nu este identică cu schimbarea numai a background-color.",
             "solution": ".sample {\n  background: navy;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -10443,7 +10443,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `border-image` cu valoarea `linear-gradient(navy, teal) 1`. Folosește o imagine sau un gradient pentru contur. border-image-slice poate fi inclus după imagine.",
             "solution": ".sample {\n  border-image: linear-gradient(navy, teal) 1;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -10481,7 +10481,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `border-style` cu valoarea `solid`. Definește desenul conturului: solid, dashed, dotted sau none. Fără stil vizibil, lățimea nu este suficientă.",
             "solution": ".sample {\n  border-style: solid;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -10519,7 +10519,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `border-width` cu valoarea `2px`. Definește lățimea contururilor; 1–4 valori urmează ordinea de tip top/right/bottom/left.",
             "solution": ".sample {\n  border-width: 2px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -10557,7 +10557,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `border-color` cu valoarea `navy`. Definește culoarea contururilor, fără să le creeze automat un stil.",
             "solution": ".sample {\n  border-color: navy;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -10595,7 +10595,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `border` cu valoarea `2px solid navy`. Combină lățimea, stilul și culoarea conturului. Nu reprezintă spațiul interior padding.",
             "solution": ".sample {\n  border: 2px solid navy;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -10633,7 +10633,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `border-top` cu valoarea `2px solid navy`. Aplică conturul numai sus.",
             "solution": ".sample {\n  border-top: 2px solid navy;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -10671,7 +10671,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `border-bottom` cu valoarea `2px solid navy`. Aplică conturul numai jos.",
             "solution": ".sample {\n  border-bottom: 2px solid navy;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -10709,7 +10709,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `border-left` cu valoarea `2px solid navy`. Aplică conturul numai la stânga.",
             "solution": ".sample {\n  border-left: 2px solid navy;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -10747,7 +10747,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `border-right` cu valoarea `2px solid navy`. Aplică conturul numai la dreapta.",
             "solution": ".sample {\n  border-right: 2px solid navy;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -10785,7 +10785,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `border-radius` cu valoarea `12px`. Rotunjește colțurile. Procentele depind de dimensiunile cutiei.",
             "solution": ".sample {\n  border-radius: 12px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -10823,7 +10823,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `border-top-left-radius` cu valoarea `12px`. Rotunjește numai colțul din stânga sus.",
             "solution": ".sample {\n  border-top-left-radius: 12px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -10861,7 +10861,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `border-top-right-radius` cu valoarea `12px`. Rotunjește numai colțul din dreapta sus.",
             "solution": ".sample {\n  border-top-right-radius: 12px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -10899,7 +10899,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `border-bottom-left-radius` cu valoarea `12px`. Rotunjește numai colțul din stânga jos.",
             "solution": ".sample {\n  border-bottom-left-radius: 12px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -10937,7 +10937,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `border-bottom-right-radius` cu valoarea `12px`. Rotunjește numai colțul din dreapta jos.",
             "solution": ".sample {\n  border-bottom-right-radius: 12px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -10975,7 +10975,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `border-collapse` cu valoarea `collapse`. Pentru tabele, unește contururile celulelor vecine; separate le păstrează distincte.",
             "solution": ".sample {\n  border-collapse: collapse;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11013,7 +11013,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `box-shadow` cu valoarea `0 4px 12px rgba(0,0,0,0.2)`. Valorile indică deplasarea orizontală, verticală și blur-ul. Se pot adăuga spread și inset.",
             "solution": ".sample {\n  box-shadow: 0 4px 12px rgba(0,0,0,0.2);\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11051,7 +11051,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `box-sizing` cu valoarea `border-box`. Face ca width și height să includă padding și border, dar nu și margin.",
             "solution": ".sample {\n  box-sizing: border-box;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11089,7 +11089,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `color` cu valoarea `navy`. Culoarea textului se poate moșteni de către descendenți.",
             "solution": ".sample {\n  color: navy;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11127,7 +11127,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample::before`, declară `content` cu valoarea `\"Fresh\"`. Produce conținut pentru pseudo-elemente precum ::before și ::after; nu schimbă textContent din DOM.",
             "solution": ".sample::before {\n  content: \"Fresh\";\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11165,7 +11165,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `counter-increment` cu valoarea `step`. Incrementează un contor CSS. Valoarea implicită a pasului este 1.",
             "solution": ".sample {\n  counter-increment: step;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11203,7 +11203,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `counter-reset` cu valoarea `step 0`. Inițializează un contor numit step. counter(step) îl poate afișa în content.",
             "solution": ".sample {\n  counter-reset: step 0;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11241,7 +11241,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `cursor` cu valoarea `pointer`. Schimbă aspectul cursorului, fără să adauge singură un eveniment de clic.",
             "solution": ".sample {\n  cursor: pointer;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11279,7 +11279,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `display` cu valoarea `block`. Alege comportamentul cutiei. none ascunde și elimină spațiul ocupat în layout.",
             "solution": ".sample {\n  display: block;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11317,7 +11317,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `float` cu valoarea `left`. Permite curgerea conținutului în jurul unei cutii pe partea opusă. Nu îl confunda cu flexbox.",
             "solution": ".sample {\n  float: left;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11355,7 +11355,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `clear` cu valoarea `both`. Împiedică o cutie să se așeze lângă elemente flotante pe ambele părți.",
             "solution": ".sample {\n  clear: both;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11393,7 +11393,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `font-family` cu valoarea `Arial, sans-serif`. Lista este încercată în ordine; familia generică este o rezervă.",
             "solution": ".sample {\n  font-family: Arial, sans-serif;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11431,7 +11431,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `font-size` cu valoarea `20px`. Controlează dimensiunea fontului. rem se raportează la fontul rădăcinii.",
             "solution": ".sample {\n  font-size: 20px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11469,7 +11469,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `font-style` cu valoarea `italic`. Alege stilul fontului; italic diferă de greutatea bold.",
             "solution": ".sample {\n  font-style: italic;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11507,7 +11507,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `font-weight` cu valoarea `700`. Controlează greutatea fontului; redarea depinde și de variantele disponibile.",
             "solution": ".sample {\n  font-weight: 700;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11545,7 +11545,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `line-height` cu valoarea `1.5`. Valoarea fără unitate se raportează la fontul elementului și se moștenește ca factor.",
             "solution": ".sample {\n  line-height: 1.5;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11583,7 +11583,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `text-align` cu valoarea `center`. Aliniază conținutul inline în interiorul blocului; nu centrează automat blocul însuși.",
             "solution": ".sample {\n  text-align: center;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11621,7 +11621,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `text-align-last` cu valoarea `right`. Aliniază ultima linie a blocului, util în combinație cu justificarea textului.",
             "solution": ".sample {\n  text-align-last: right;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11659,7 +11659,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `text-decoration` cu valoarea `underline`. Adaugă decor textului; pentru linkuri păstrează un indiciu vizibil al interactivității.",
             "solution": ".sample {\n  text-decoration: underline;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11697,7 +11697,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `text-shadow` cu valoarea `1px 2px 3px navy`. Adaugă o umbră literelor, nu cutiei; ordinea începe cu deplasările pe x și y.",
             "solution": ".sample {\n  text-shadow: 1px 2px 3px navy;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11735,7 +11735,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `vertical-align` cu valoarea `middle`. Aliniază cutii inline sau conținutul celulelor de tabel. Nu este alinierea generală a unui container flex.",
             "solution": ".sample {\n  vertical-align: middle;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11773,7 +11773,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `list-style-type` cu valoarea `square`. Alege marcatorul elementelor de listă. none elimină marcatorul vizual.",
             "solution": ".sample {\n  list-style-type: square;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11811,7 +11811,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `height` cu valoarea `120px`. Stabilește înălțimea conform box-sizing. Conținutul care nu încape este tratat separat prin overflow.",
             "solution": ".sample {\n  height: 120px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11849,7 +11849,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `width` cu valoarea `240px`. Stabilește lățimea conform box-sizing. Procentele se raportează la blocul container relevant.",
             "solution": ".sample {\n  width: 240px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11887,7 +11887,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `max-height` cu valoarea `240px`. Limitează superior înălțimea; nu impune singură o înălțime minimă.",
             "solution": ".sample {\n  max-height: 240px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11925,7 +11925,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `min-height` cu valoarea `80px`. Păstrează o înălțime minimă fără să interzică creșterea cu conținutul.",
             "solution": ".sample {\n  min-height: 80px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -11963,7 +11963,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `max-width` cu valoarea `600px`. Limitează lățimea fără să împiedice micșorarea sub limită.",
             "solution": ".sample {\n  max-width: 600px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12001,7 +12001,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `min-width` cu valoarea `100px`. Limitează micșorarea cutiei; min-width:0 este util pentru copii flex sau grid.",
             "solution": ".sample {\n  min-width: 100px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12039,7 +12039,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `opacity` cu valoarea `0.7`. Afectează întregul element și descendenții săi, nu doar fundalul.",
             "solution": ".sample {\n  opacity: 0.7;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12077,7 +12077,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `outline` cu valoarea `3px solid orange`. Desenează un contur care nu ocupă spațiu în layout; este util pentru focus.",
             "solution": ".sample {\n  outline: 3px solid orange;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12115,7 +12115,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `overflow` cu valoarea `auto`. Adaugă derulare când conținutul depășește cutia. hidden îl decupează.",
             "solution": ".sample {\n  overflow: auto;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12153,7 +12153,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `overflow-x` cu valoarea `auto`. Controlează depășirea pe orizontală, utilă pentru tabele și cod.",
             "solution": ".sample {\n  overflow-x: auto;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12191,7 +12191,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `overflow-y` cu valoarea `auto`. Controlează depășirea pe verticală.",
             "solution": ".sample {\n  overflow-y: auto;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12229,7 +12229,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `position` cu valoarea `relative`. Păstrează locul în flux și creează o referință pentru descendenți poziționați absolut.",
             "solution": ".sample {\n  position: relative;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12267,7 +12267,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `top` cu valoarea `10px`. Definește deplasarea sau ancorarea de sus pentru o cutie poziționată. Efectul depinde de position.",
             "solution": ".sample {\n  top: 10px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12305,7 +12305,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `right` cu valoarea `10px`. Definește deplasarea sau ancorarea din dreapta pentru o cutie poziționată.",
             "solution": ".sample {\n  right: 10px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12343,7 +12343,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `bottom` cu valoarea `10px`. Definește deplasarea sau ancorarea de jos pentru o cutie poziționată.",
             "solution": ".sample {\n  bottom: 10px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12381,7 +12381,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `left` cu valoarea `10px`. Definește deplasarea sau ancorarea din stânga pentru o cutie poziționată.",
             "solution": ".sample {\n  left: 10px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12419,7 +12419,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `z-index` cu valoarea `2`. Controlează ordinea în contextul de suprapunere relevant; un număr mare nu depășește orice context părinte.",
             "solution": ".sample {\n  z-index: 2;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12457,7 +12457,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `transform` cu valoarea `translateX(20px)`. Aplică transformări vizuale fără să rezerve noua poziție în flux.",
             "solution": ".sample {\n  transform: translateX(20px);\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12495,7 +12495,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `-webkit-transform` cu valoarea `translateX(20px)`. Variantă prefixată întâlnită în cod vechi. În cod obișnuit folosește și proprietatea standard transform.",
             "solution": ".sample {\n  -webkit-transform: translateX(20px);\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12533,7 +12533,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `transform-origin` cu valoarea `center`. Definește punctul în jurul căruia se aplică rotația sau scalarea.",
             "solution": ".sample {\n  transform-origin: center;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12571,7 +12571,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `transition` cu valoarea `transform 0.2s ease`. Combină proprietatea, durata și funcția de timp; poate avea și întârziere.",
             "solution": ".sample {\n  transition: transform 0.2s ease;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12609,7 +12609,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `animation-name` cu valoarea `reveal`. Leagă elementul de un set @keyframes cu același nume.",
             "solution": ".sample {\n  animation-name: reveal;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12647,7 +12647,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `animation-duration` cu valoarea `2s`. Durata unui ciclu al animației. Nu este întârzierea de pornire.",
             "solution": ".sample {\n  animation-duration: 2s;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12685,7 +12685,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `animation-delay` cu valoarea `1s`. Întârzie pornirea animației; valorile negative pornesc din interiorul ciclului.",
             "solution": ".sample {\n  animation-delay: 1s;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12723,7 +12723,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `animation-fill-mode` cu valoarea `forwards`. Controlează stilurile aplicate înainte sau după perioada activă. forwards păstrează efectul ultimului cadru relevant.",
             "solution": ".sample {\n  animation-fill-mode: forwards;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12761,7 +12761,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `animation-iteration-count` cu valoarea `2`. Numărul de repetări; infinite repetă fără limită.",
             "solution": ".sample {\n  animation-iteration-count: 2;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12799,7 +12799,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `animation-timing-function` cu valoarea `linear`. Controlează progresul în timp între cadre, nu durata totală.",
             "solution": ".sample {\n  animation-timing-function: linear;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12837,7 +12837,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `mask-image` cu valoarea `linear-gradient(black, transparent)`. Masca controlează vizibilitatea prin transparență sau luminanță, în funcție de modul folosit.",
             "solution": ".sample {\n  mask-image: linear-gradient(black, transparent);\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12875,7 +12875,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `-webkit-mask-image` cu valoarea `linear-gradient(black, transparent)`. Variantă prefixată a măștii din proiect. Studiază și proprietatea standard mask-image.",
             "solution": ".sample {\n  -webkit-mask-image: linear-gradient(black, transparent);\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12913,7 +12913,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `mask-repeat` cu valoarea `no-repeat`. Controlează repetarea imaginii de mască, independent de imaginea de fundal.",
             "solution": ".sample {\n  mask-repeat: no-repeat;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12951,7 +12951,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `flex-direction` cu valoarea `column`. Alege axa principală a containerului flex: row sau column, inclusiv variante inverse.",
             "solution": ".sample {\n  flex-direction: column;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -12989,7 +12989,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `flex-wrap` cu valoarea `wrap`. Permite împărțirea copiilor flex pe mai multe linii.",
             "solution": ".sample {\n  flex-wrap: wrap;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13027,7 +13027,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `flex-basis` cu valoarea `120px`. Dimensiunea de bază pe axa principală înainte de distribuirea spațiului.",
             "solution": ".sample {\n  flex-basis: 120px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13065,7 +13065,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `flex-grow` cu valoarea `1`. Factorul pentru distribuirea spațiului liber pozitiv între copii flex.",
             "solution": ".sample {\n  flex-grow: 1;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13103,7 +13103,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `flex-shrink` cu valoarea `0`. Controlează micșorarea când spațiul lipsește; zero împiedică micșorarea prin acest mecanism.",
             "solution": ".sample {\n  flex-shrink: 0;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13141,7 +13141,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `align-items` cu valoarea `center`. Aliniază copiii pe axa transversală în flex și în zonele lor pe axa block în grid.",
             "solution": ".sample {\n  align-items: center;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13179,7 +13179,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `justify-content` cu valoarea `space-between`. Distribuie spațiul pe axa principală în flex; între primul și ultimul copil rămân spații egale.",
             "solution": ".sample {\n  justify-content: space-between;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13217,7 +13217,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `gap` cu valoarea `16px`. Definește spațiul dintre rânduri și coloane în grid și flex, fără spațiu suplimentar la marginea containerului.",
             "solution": ".sample {\n  gap: 16px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13255,7 +13255,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `row-gap` cu valoarea `16px`. Spațiul dintre rânduri, separat de column-gap.",
             "solution": ".sample {\n  row-gap: 16px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13293,7 +13293,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `column-gap` cu valoarea `16px`. Spațiul dintre coloane, separat de row-gap.",
             "solution": ".sample {\n  column-gap: 16px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13331,7 +13331,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `grid-gap` cu valoarea `16px`. Numele vechi pentru gap, păstrat în proiect. În cod nou preferă gap.",
             "solution": ".sample {\n  grid-gap: 16px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13369,7 +13369,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `grid-row-gap` cu valoarea `16px`. Numele vechi pentru row-gap.",
             "solution": ".sample {\n  grid-row-gap: 16px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13407,7 +13407,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `grid-column-gap` cu valoarea `16px`. Numele vechi pentru column-gap.",
             "solution": ".sample {\n  grid-column-gap: 16px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13445,7 +13445,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `grid-template-columns` cu valoarea `repeat(2, 1fr)`. Definește coloanele explicite; repeat evită repetarea textului.",
             "solution": ".sample {\n  grid-template-columns: repeat(2, 1fr);\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13483,7 +13483,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `grid-template-rows` cu valoarea `100px auto`. Definește rândurile explicite; auto poate depinde de conținut.",
             "solution": ".sample {\n  grid-template-rows: 100px auto;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13521,7 +13521,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `grid-template-areas` cu valoarea `\"hero hero\" \"hours offers\"`. Fiecare șir este un rând. O zonă cu nume trebuie să fie dreptunghiulară.",
             "solution": ".sample {\n  grid-template-areas: \"hero hero\" \"hours offers\";\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13559,7 +13559,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `grid-area` cu valoarea `hero`. Leagă un copil de zona cu numele hero. Poate primi și patru linii în forma lungă.",
             "solution": ".sample {\n  grid-area: hero;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13597,7 +13597,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `grid-auto-columns` cu valoarea `100px`. Dimensiunea coloanelor implicite create în afara șablonului explicit.",
             "solution": ".sample {\n  grid-auto-columns: 100px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13635,7 +13635,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `grid-auto-rows` cu valoarea `80px`. Dimensiunea rândurilor implicite.",
             "solution": ".sample {\n  grid-auto-rows: 80px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13673,7 +13673,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `grid-auto-flow` cu valoarea `row`. Alege direcția în care auto-placement umple grila.",
             "solution": ".sample {\n  grid-auto-flow: row;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13711,7 +13711,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `object-fit` cu valoarea `cover`. Încadrează conținutul unei imagini în cutia sa păstrând proporțiile; cover poate decupa.",
             "solution": ".sample {\n  object-fit: cover;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13749,7 +13749,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `padding` cu valoarea `16px`. Spațiu interior între conținut și contur. Forma scurtă acceptă 1–4 valori în ordinea sus, dreapta, jos, stânga.",
             "solution": ".sample {\n  padding: 16px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13787,7 +13787,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `padding-top` cu valoarea `16px`. Spațiu interior între conținut și contur, numai pe latura sus.",
             "solution": ".sample {\n  padding-top: 16px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13825,7 +13825,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `padding-right` cu valoarea `16px`. Spațiu interior între conținut și contur, numai pe latura dreapta.",
             "solution": ".sample {\n  padding-right: 16px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13863,7 +13863,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `padding-bottom` cu valoarea `16px`. Spațiu interior între conținut și contur, numai pe latura jos.",
             "solution": ".sample {\n  padding-bottom: 16px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13901,7 +13901,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `padding-left` cu valoarea `16px`. Spațiu interior între conținut și contur, numai pe latura stânga.",
             "solution": ".sample {\n  padding-left: 16px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13939,7 +13939,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `margin` cu valoarea `16px`. Spațiu exterior conturului. Forma scurtă acceptă 1–4 valori în ordinea sus, dreapta, jos, stânga.",
             "solution": ".sample {\n  margin: 16px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -13977,7 +13977,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `margin-top` cu valoarea `16px`. Spațiu exterior conturului, numai pe latura sus.",
             "solution": ".sample {\n  margin-top: 16px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -14015,7 +14015,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `margin-right` cu valoarea `16px`. Spațiu exterior conturului, numai pe latura dreapta.",
             "solution": ".sample {\n  margin-right: 16px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -14053,7 +14053,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `margin-bottom` cu valoarea `16px`. Spațiu exterior conturului, numai pe latura jos.",
             "solution": ".sample {\n  margin-bottom: 16px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -14091,7 +14091,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `margin-left` cu valoarea `16px`. Spațiu exterior conturului, numai pe latura stânga.",
             "solution": ".sample {\n  margin-left: 16px;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -14129,7 +14129,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `list-style-image` cu valoarea `none`. Alege imaginea markerului listei. none permite folosirea markerului dat de list-style-type.",
             "solution": ".sample {\n  list-style-image: none;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -14167,7 +14167,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `list-style-position` cu valoarea `inside`. inside include markerul în cutia conținutului; outside îl plasează în exterior.",
             "solution": ".sample {\n  list-style-position: inside;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -14205,7 +14205,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `transition-property` cu valoarea `color`. Alege proprietățile animate prin tranziție; nu toate proprietățile CSS se interpolează.",
             "solution": ".sample {\n  transition-property: color;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -14243,7 +14243,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `transition-duration` cu valoarea `0.3s`. Stabilește durata unei tranziții, separat de întârzierea pornirii.",
             "solution": ".sample {\n  transition-duration: 0.3s;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -14281,7 +14281,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `transition-delay` cu valoarea `0.2s`. Amână începutul tranziției; nu stabilește durata mișcării.",
             "solution": ".sample {\n  transition-delay: 0.2s;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -14319,7 +14319,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `transition-timing-function` cu valoarea `ease-in-out`. Controlează variația vitezei pe durata tranziției.",
             "solution": ".sample {\n  transition-timing-function: ease-in-out;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -14357,7 +14357,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `flex-flow` cu valoarea `row wrap`. Prescurtare pentru flex-direction și flex-wrap: aici rânduri cu trecere pe rând nou.",
             "solution": ".sample {\n  flex-flow: row wrap;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -14395,7 +14395,7 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Pentru selectorul `.sample`, declară `mask-size` cu valoarea `cover`. Dimensionează imaginea măștii. Masca controlează vizibilitatea, nu culoarea de fundal.",
             "solution": ".sample {\n  mask-size: cover;\n}",
-            "fixture": "<div class=\"sample\">Cofetăria Dulcelind</div>",
+            "fixture": "<div class=\"sample\">Demo Catalog</div>",
             "tests": [
               {
                 "kind": "cssIncludes",
@@ -14504,7 +14504,7 @@ window.TW_COURSE = {
           "id": "js-text",
           "title": "Texte între ghilimele",
           "intro": "Un șir, numit string, este text. Îl poți scrie între ghilimele simple sau duble. Deschiderea și închiderea trebuie să corespundă.",
-          "example": "function solve(input) {\n  return \"Welcome to Cofetăria Dulcelind\";\n}",
+          "example": "function solve(input) {\n  return \"Welcome to Demo Catalog\";\n}",
           "explain": "Un șir, numit string, este text. Îl poți scrie între ghilimele simple sau duble. Deschiderea și închiderea trebuie să corespundă.",
           "points": [],
           "quiz": {
@@ -14519,12 +14519,12 @@ window.TW_COURSE = {
           },
           "task": {
             "mode": "js",
-            "prompt": "Returnează textul Welcome to Cofetăria Dulcelind.",
-            "solution": "function solve(input) {\n  return \"Welcome to Cofetăria Dulcelind\";\n}",
+            "prompt": "Returnează textul Welcome to Demo Catalog.",
+            "solution": "function solve(input) {\n  return \"Welcome to Demo Catalog\";\n}",
             "cases": [
               {
                 "input": null,
-                "expected": "Welcome to Cofetăria Dulcelind"
+                "expected": "Welcome to Demo Catalog"
               }
             ],
             "starter": "function solve(input) {\n  // Write your code here.\n}\n",
@@ -23632,7 +23632,7 @@ window.TW_COURSE = {
           "id": "html-heading-group",
           "title": "Grupează titlul și subtitlul",
           "intro": "hgroup poate grupa un heading cu textul său secundar. Titlul rămâne un heading real, iar subtitlul poate fi un paragraf.",
-          "example": "<hgroup><h1>Cofetăria Dulcelind</h1><p>Fresh every day</p></hgroup>",
+          "example": "<hgroup><h1>Demo Catalog</h1><p>Fresh every day</p></hgroup>",
           "explain": "hgroup poate grupa un heading cu textul său secundar. Titlul rămâne un heading real, iar subtitlul poate fi un paragraf.",
           "points": [],
           "quiz": {
@@ -23647,14 +23647,14 @@ window.TW_COURSE = {
           },
           "task": {
             "mode": "html",
-            "prompt": "Grupează în hgroup titlul h1 Cofetăria Dulcelind și subtitlul p Fresh every day.",
-            "solution": "<hgroup><h1>Cofetăria Dulcelind</h1><p>Fresh every day</p></hgroup>",
+            "prompt": "Grupează în hgroup titlul h1 Demo Catalog și subtitlul p Fresh every day.",
+            "solution": "<hgroup><h1>Demo Catalog</h1><p>Fresh every day</p></hgroup>",
             "tests": [
               {
                 "kind": "text",
                 "selector": "hgroup > h1",
-                "value": "Cofetăria Dulcelind",
-                "label": "hgroup > h1: textul trebuie să fie Cofetăria Dulcelind."
+                "value": "Demo Catalog",
+                "label": "hgroup > h1: textul trebuie să fie Demo Catalog."
               },
               {
                 "kind": "text",
@@ -23666,7 +23666,7 @@ window.TW_COURSE = {
             "starter": "",
             "id": "html-heading-group",
             "requirements": [
-              "`hgroup > h1`: textul trebuie să fie `Cofetăria Dulcelind`.",
+              "`hgroup > h1`: textul trebuie să fie `Demo Catalog`.",
               "`hgroup > p`: textul trebuie să fie `Fresh every day`."
             ]
           },
@@ -28974,7 +28974,7 @@ window.TW_COURSE = {
           "id": "http-locals",
           "title": "Date comune prin res.locals",
           "intro": "res.locals transportă valori către handler-ele și template-urile aceleiași cereri. Middleware-ul trebuie să apeleze next pentru a continua.",
-          "example": "const express=require(\"express\");\nconst app=express();\napp.use((req,res,next)=>{res.locals.siteName=\"Cofetăria Dulcelind\";next();}); app.get(\"/name\",(req,res)=>res.send(res.locals.siteName));\nmodule.exports=app;",
+          "example": "const express=require(\"express\");\nconst app=express();\napp.use((req,res,next)=>{res.locals.siteName=\"Demo Catalog\";next();}); app.get(\"/name\",(req,res)=>res.send(res.locals.siteName));\nmodule.exports=app;",
           "explain": "res.locals transportă valori către handler-ele și template-urile aceleiași cereri. Middleware-ul trebuie să apeleze next pentru a continua.",
           "points": [],
           "quiz": {
@@ -28989,12 +28989,12 @@ window.TW_COURSE = {
           },
           "task": {
             "mode": "express",
-            "prompt": "Setează siteName Cofetăria Dulcelind în res.locals prin middleware și afișează-l la /name.",
-            "solution": "const express=require(\"express\");\nconst app=express();\napp.use((req,res,next)=>{res.locals.siteName=\"Cofetăria Dulcelind\";next();}); app.get(\"/name\",(req,res)=>res.send(res.locals.siteName));\nmodule.exports=app;",
+            "prompt": "Setează siteName Demo Catalog în res.locals prin middleware și afișează-l la /name.",
+            "solution": "const express=require(\"express\");\nconst app=express();\napp.use((req,res,next)=>{res.locals.siteName=\"Demo Catalog\";next();}); app.get(\"/name\",(req,res)=>res.send(res.locals.siteName));\nmodule.exports=app;",
             "requests": [
               {
                 "path": "/name",
-                "bodyExpected": "Cofetăria Dulcelind"
+                "bodyExpected": "Demo Catalog"
               }
             ],
             "starter": "const express = require(\"express\");\nconst app = express();\n\n// Add your routes here.\n\nmodule.exports = app;\n",
@@ -29073,24 +29073,24 @@ window.TW_COURSE = {
             "prompt": "Construiește un template EJS care folosește datele furnizate și produce elementele descrise mai jos.",
             "solution": "<h1><%= title %></h1>",
             "data": {
-              "title": "Cofetăria Dulcelind"
+              "title": "Demo Catalog"
             },
             "tests": [
               {
                 "kind": "text",
                 "selector": "h1",
-                "value": "Cofetăria Dulcelind",
-                "label": "h1: textul trebuie să fie Cofetăria Dulcelind."
+                "value": "Demo Catalog",
+                "label": "h1: textul trebuie să fie Demo Catalog."
               }
             ],
             "starter": "",
             "partials": {},
             "id": "ejs-output",
             "requirements": [
-              "`h1`: textul trebuie să fie `Cofetăria Dulcelind`."
+              "`h1`: textul trebuie să fie `Demo Catalog`."
             ],
             "inputData": {
-              "title": "Cofetăria Dulcelind"
+              "title": "Demo Catalog"
             }
           },
           "hint": "EJS este un motor de template. <%= ... %> inserează o valoare cu escapare HTML. res.render primește numele template-ului și obiectul de date.",
@@ -29332,14 +29332,14 @@ window.TW_COURSE = {
             "prompt": "Construiește un template EJS care folosește datele furnizate și produce elementele descrise mai jos.",
             "solution": "<%- include(\"header\", { title }) %><main><p>Products</p></main>",
             "data": {
-              "title": "Cofetăria Dulcelind"
+              "title": "Demo Catalog"
             },
             "tests": [
               {
                 "kind": "text",
                 "selector": "header h1",
-                "value": "Cofetăria Dulcelind",
-                "label": "header h1: textul trebuie să fie Cofetăria Dulcelind."
+                "value": "Demo Catalog",
+                "label": "header h1: textul trebuie să fie Demo Catalog."
               },
               {
                 "kind": "text",
@@ -29354,11 +29354,11 @@ window.TW_COURSE = {
             },
             "id": "ejs-include",
             "requirements": [
-              "`header h1`: textul trebuie să fie `Cofetăria Dulcelind`.",
+              "`header h1`: textul trebuie să fie `Demo Catalog`.",
               "`main p`: textul trebuie să fie `Products`."
             ],
             "inputData": {
-              "title": "Cofetăria Dulcelind"
+              "title": "Demo Catalog"
             }
           },
           "hint": "include poate introduce un template de antet, meniu sau subsol. Folosim <%- include(...) %> pentru markup-ul de încredere produs de fragment, nu pentru date arbitrare ale utilizatorului.",
@@ -32318,17 +32318,20 @@ window.TW_COURSE = {
     },
     {
       "id": "dulcelind-setup",
-      "title": "Dulcelind · pregătirea pe calculator",
-      "subtitle": "Instalează uneltele, pornește Node.js și pregătește conexiunea PostgreSQL.",
+      "title": "Mediul de lucru · propriul proiect",
+      "subtitle": "Instalează uneltele și deosebește exercițiile din browser de pașii opționali pe calculator.",
       "icon": "code",
       "lessons": [
         {
           "id": "dulc-runtime",
           "title": "Browser, Node.js și baza de date",
           "intro": "Browserul afișează HTML; Node execută Express și EJS; PostgreSQL păstrează produsele.",
-          "example": "GET /project/produse → Express → PostgreSQL → rows → EJS → HTML",
+          "example": "GET /demo/products → Express → PostgreSQL → rows → EJS → HTML",
           "explain": "EJS nu se deschide prin dublu clic. Browserul nu primește parola bazei. Exercițiile din curs folosesc date temporare, separate de Azure.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -32346,7 +32349,7 @@ window.TW_COURSE = {
             "starter": "",
             "id": "dulc-runtime",
             "revision": 3,
-            "contextCode": "GET /project/produse → Express → PostgreSQL → rows → EJS → HTML",
+            "contextCode": "GET /demo/products → Express → PostgreSQL → rows → EJS → HTML",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
           "hint": "EJS nu se deschide prin dublu clic. Browserul nu primește parola bazei. Exercițiile din curs folosesc date temporare, separate de Azure.",
@@ -32358,7 +32361,10 @@ window.TW_COURSE = {
           "intro": "Descarcă Node.js 24 LTS de la nodejs.org/en/download și instalează-l cu npm și PATH.",
           "example": "node --version\nnpm --version",
           "explain": "Deschide un terminal nou după instalare. Rulează comenzile în PowerShell, nu în consola browserului. Dacă node nu este recunoscut, verifică instalarea și repornește terminalul.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -32386,9 +32392,12 @@ window.TW_COURSE = {
           "id": "dulc-workspace",
           "title": "Creează directorul de lucru",
           "intro": "Construiește într-un director nou și nu modifica exemplul consultat.",
-          "example": "mkdir dulcelind\ncd dulcelind\nnpm init -y",
+          "example": "mkdir demo\ncd demo\nnpm init -y",
           "explain": "npm init creează package.json în directorul curent. Deschide acel director în editor. Comenzile următoare se rulează acolo; nu ai nevoie de fișierele altcuiva.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -32406,7 +32415,7 @@ window.TW_COURSE = {
             "starter": "",
             "id": "dulc-workspace",
             "revision": 3,
-            "contextCode": "mkdir dulcelind\ncd dulcelind\nnpm init -y",
+            "contextCode": "mkdir demo\ncd demo\nnpm init -y",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
           "hint": "npm init creează package.json în directorul curent. Deschide acel director în editor. Comenzile următoare se rulează acolo; nu ai nevoie de fișierele altcuiva.",
@@ -32417,8 +32426,11 @@ window.TW_COURSE = {
           "title": "Instalează bibliotecile",
           "intro": "express, ejs și pg sunt biblioteci ale aplicației. sass și sharp pregătesc stilurile și imaginile.",
           "example": "npm install express@5 ejs pg sass sharp bootstrap@5.3.8",
-          "explain": "Păstrează package.json și lockfile-ul în Git; node_modules se regenerează. În repository-ul cursului păstrează managerul și lockfile-ul deja alese.",
-          "points": [],
+          "explain": "Păstrează package.json și package-lock.json în propriul Git. node_modules se regenerează. Nu trebuie să descarci repository-ul acestei platforme.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -32427,7 +32439,7 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 1,
-            "explanation": "Păstrează package.json și lockfile-ul în Git; node_modules se regenerează. În repository-ul cursului păstrează managerul și lockfile-ul deja alese."
+            "explanation": "Păstrează package.json și package-lock.json în propriul Git. node_modules se regenerează. Nu trebuie să descarci repository-ul acestei platforme."
           },
           "task": {
             "mode": "text",
@@ -32439,16 +32451,19 @@ window.TW_COURSE = {
             "contextCode": "npm install express@5 ejs pg sass sharp bootstrap@5.3.8",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "Păstrează package.json și lockfile-ul în Git; node_modules se regenerează. În repository-ul cursului păstrează managerul și lockfile-ul deja alese.",
+          "hint": "Păstrează package.json și package-lock.json în propriul Git. node_modules se regenerează. Nu trebuie să descarci repository-ul acestei platforme.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-modules",
           "title": "CommonJS și modulele .mjs",
-          "intro": "Dulcelind folosește require și module.exports în .js; platforma folosește import în .mjs.",
+          "intro": "catalogul demonstrativ folosește require și module.exports în .js; platforma folosește import în .mjs.",
           "example": "const express=require(\"express\");\nmodule.exports=app;",
           "explain": "Nu adăuga type: module noului proiect dacă folosești această variantă .js; alternativ folosește .cjs. require is not defined poate indica sistemul de module greșit.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -32476,9 +32491,12 @@ window.TW_COURSE = {
           "id": "dulc-folders",
           "title": "Organizează directoarele",
           "intro": "Separă șabloanele, resursele publice și SQL-ul.",
-          "example": "app.js\npackage.json\nviews/fragmente/\nviews/pagini/\nresurse/css/\nresurse/js/\nresurse/json/\nresurse/imagini/\ndata/",
-          "explain": "Creează directoarele din editor. views conține EJS; resurse conține fișiere publice. Un URL /project/resurse/css/general.css nu este o cale de pe disc. Aceste nume sunt ale aplicației construite aici.",
-          "points": [],
+          "example": "app.js\npackage.json\nviews/partials/\nviews/pages/\npublic/css/\npublic/js/\npublic/json/\npublic/images/\ndata/",
+          "explain": "Creează directoarele din editor. views conține EJS; resurse conține fișiere publice. Un URL /demo/public/css/general.css nu este o cale de pe disc. Aceste nume sunt ale aplicației construite aici.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -32487,7 +32505,7 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 0,
-            "explanation": "Creează directoarele din editor. views conține EJS; resurse conține fișiere publice. Un URL /project/resurse/css/general.css nu este o cale de pe disc. Aceste nume sunt ale aplicației construite aici."
+            "explanation": "Creează directoarele din editor. views conține EJS; resurse conține fișiere publice. Un URL /demo/public/css/general.css nu este o cale de pe disc. Aceste nume sunt ale aplicației construite aici."
           },
           "task": {
             "mode": "text",
@@ -32496,19 +32514,22 @@ window.TW_COURSE = {
             "starter": "",
             "id": "dulc-folders",
             "revision": 3,
-            "contextCode": "app.js\npackage.json\nviews/fragmente/\nviews/pagini/\nresurse/css/\nresurse/js/\nresurse/json/\nresurse/imagini/\ndata/",
+            "contextCode": "app.js\npackage.json\nviews/partials/\nviews/pages/\npublic/css/\npublic/js/\npublic/json/\npublic/images/\ndata/",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "Creează directoarele din editor. views conține EJS; resurse conține fișiere publice. Un URL /project/resurse/css/general.css nu este o cale de pe disc. Aceste nume sunt ale aplicației construite aici.",
+          "hint": "Creează directoarele din editor. views conține EJS; resurse conține fișiere publice. Un URL /demo/public/css/general.css nu este o cale de pe disc. Aceste nume sunt ale aplicației construite aici.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-first-server",
           "title": "Pornește primul server",
           "intro": "Creează app.js și verifică Express înainte de a conecta baza.",
-          "example": "const express=require(\"express\");\nconst app=express();\napp.get(\"/\",(req,res)=>res.send(\"Cofetaria Dulcelind\"));\napp.listen(8090,\"127.0.0.1\");\n// Terminal: node app.js\n// Browser: http://127.0.0.1:8090/",
+          "example": "const express=require(\"express\");\nconst app=express();\napp.get(\"/\",(req,res)=>res.send(\"Demo Catalog\"));\napp.listen(8090,\"127.0.0.1\");\n// Terminal: node app.js\n// Browser: http://127.0.0.1:8090/",
           "explain": "Lasă terminalul deschis; Ctrl+C oprește procesul. EADDRINUSE înseamnă port ocupat: identifică procesul tău sau schimbă portul și URL-ul.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -32526,7 +32547,7 @@ window.TW_COURSE = {
             "starter": "",
             "id": "dulc-first-server",
             "revision": 3,
-            "contextCode": "const express=require(\"express\");\nconst app=express();\napp.get(\"/\",(req,res)=>res.send(\"Cofetaria Dulcelind\"));\napp.listen(8090,\"127.0.0.1\");\n// Terminal: node app.js\n// Browser: http://127.0.0.1:8090/",
+            "contextCode": "const express=require(\"express\");\nconst app=express();\napp.get(\"/\",(req,res)=>res.send(\"Demo Catalog\"));\napp.listen(8090,\"127.0.0.1\");\n// Terminal: node app.js\n// Browser: http://127.0.0.1:8090/",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
           "hint": "Lasă terminalul deschis; Ctrl+C oprește procesul. EADDRINUSE înseamnă port ocupat: identifică procesul tău sau schimbă portul și URL-ul.",
@@ -32536,9 +32557,12 @@ window.TW_COURSE = {
           "id": "dulc-start-script",
           "title": "Configurează npm start",
           "intro": "Completează scripts în package.json fără să elimini dependencies.",
-          "example": "{\"scripts\":{\"start\":\"node app.js\"}}",
-          "explain": "În aplicația nouă npm start rulează app.js. În repository-ul cursului rulează scripts/serve.mjs pentru a servi și cursul și /project/. Nu înlocui scriptul acelui repository.",
-          "points": [],
+          "example": "{\"scripts\":{\"start\":\"node app.js\",\"build:assets\":\"node build-assets.mjs\",\"setup:db\":\"node setup-db.cjs\"}}",
+          "explain": "În proiectul tău npm start rulează app.js. Celelalte două scripturi sunt definite aici și vor avea fișierele construite în lecțiile despre build și inițializarea bazei. Nu rula o comandă până nu creezi fișierul ei.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -32547,7 +32571,7 @@ window.TW_COURSE = {
               "Scriptul start definește pornirea"
             ],
             "correct": 2,
-            "explanation": "În aplicația nouă npm start rulează app.js. În repository-ul cursului rulează scripts/serve.mjs pentru a servi și cursul și /project/. Nu înlocui scriptul acelui repository."
+            "explanation": "În proiectul tău npm start rulează app.js. Celelalte două scripturi sunt definite aici și vor avea fișierele construite în lecțiile despre build și inițializarea bazei. Nu rula o comandă până nu creezi fișierul ei."
           },
           "task": {
             "mode": "text",
@@ -32556,19 +32580,22 @@ window.TW_COURSE = {
             "starter": "",
             "id": "dulc-start-script",
             "revision": 3,
-            "contextCode": "{\"scripts\":{\"start\":\"node app.js\"}}",
+            "contextCode": "{\"scripts\":{\"start\":\"node app.js\",\"build:assets\":\"node build-assets.mjs\",\"setup:db\":\"node setup-db.cjs\"}}",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "În aplicația nouă npm start rulează app.js. În repository-ul cursului rulează scripts/serve.mjs pentru a servi și cursul și /project/. Nu înlocui scriptul acelui repository.",
+          "hint": "În proiectul tău npm start rulează app.js. Celelalte două scripturi sunt definite aici și vor avea fișierele construite în lecțiile despre build și inițializarea bazei. Nu rula o comandă până nu creezi fișierul ei.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-pg-install",
           "title": "Pregătește PostgreSQL",
           "intro": "Pentru local instalează PostgreSQL de la postgresql.org/download/windows și pgAdmin. Pentru Azure folosești serverul alocat ție.",
-          "example": "Host local: 127.0.0.1\nPort: 5432\nBază: dulcelind\nClient: pgAdmin sau psql",
-          "explain": "Alege o parolă proprie. În pgAdmin conectează serverul, creează baza dulcelind din Databases și deschide Query Tool pe ea. SQL-ul din browser merge și fără instalare, cu date resetate.",
-          "points": [],
+          "example": "Host local: 127.0.0.1\nPort: 5432\nBază: demo\nClient: pgAdmin sau psql",
+          "explain": "Alege o parolă proprie. În pgAdmin conectează serverul, creează baza demo din Databases și deschide Query Tool pe ea. SQL-ul din browser merge și fără instalare, cu date resetate.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -32577,19 +32604,19 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 0,
-            "explanation": "Alege o parolă proprie. În pgAdmin conectează serverul, creează baza dulcelind din Databases și deschide Query Tool pe ea. SQL-ul din browser merge și fără instalare, cu date resetate."
+            "explanation": "Alege o parolă proprie. În pgAdmin conectează serverul, creează baza demo din Databases și deschide Query Tool pe ea. SQL-ul din browser merge și fără instalare, cu date resetate."
           },
           "task": {
             "mode": "text",
             "prompt": "Cum se numește baza de antrenament?",
-            "solution": "dulcelind",
+            "solution": "demo",
             "starter": "",
             "id": "dulc-pg-install",
             "revision": 3,
-            "contextCode": "Host local: 127.0.0.1\nPort: 5432\nBază: dulcelind\nClient: pgAdmin sau psql",
+            "contextCode": "Host local: 127.0.0.1\nPort: 5432\nBază: demo\nClient: pgAdmin sau psql",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "Alege o parolă proprie. În pgAdmin conectează serverul, creează baza dulcelind din Databases și deschide Query Tool pe ea. SQL-ul din browser merge și fără instalare, cu date resetate.",
+          "hint": "Alege o parolă proprie. În pgAdmin conectează serverul, creează baza demo din Databases și deschide Query Tool pe ea. SQL-ul din browser merge și fără instalare, cu date resetate.",
           "duration": "6-12 min"
         },
         {
@@ -32597,8 +32624,11 @@ window.TW_COURSE = {
           "title": "Verifică baza curentă",
           "intro": "Confirmă baza înainte de import; un server poate avea mai multe baze.",
           "example": "SELECT current_database(),current_user;\nSELECT current_schema();",
-          "explain": "Verifică rezultatul și conexiunea selectată. În Azure, Dulcelind folosește baza cursului într-o schemă separată. Nu importa într-o bază aleasă din greșeală.",
-          "points": [],
+          "explain": "Verifică rezultatul și conexiunea selectată. Folosește baza ta de antrenament și o schemă demo. Nu ai nevoie de baza de date a platformei.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -32607,7 +32637,7 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 1,
-            "explanation": "Verifică rezultatul și conexiunea selectată. În Azure, Dulcelind folosește baza cursului într-o schemă separată. Nu importa într-o bază aleasă din greșeală."
+            "explanation": "Verifică rezultatul și conexiunea selectată. Folosește baza ta de antrenament și o schemă demo. Nu ai nevoie de baza de date a platformei."
           },
           "task": {
             "mode": "text",
@@ -32619,16 +32649,19 @@ window.TW_COURSE = {
             "contextCode": "SELECT current_database(),current_user;\nSELECT current_schema();",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "Verifică rezultatul și conexiunea selectată. În Azure, Dulcelind folosește baza cursului într-o schemă separată. Nu importa într-o bază aleasă din greșeală.",
+          "hint": "Verifică rezultatul și conexiunea selectată. Folosește baza ta de antrenament și o schemă demo. Nu ai nevoie de baza de date a platformei.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-env-local",
           "title": "Configurează conexiunea locală",
           "intro": "Datele reale se păstrează în mediul procesului, nu în codul trimis browserului.",
-          "example": "$env:PROJECT_DATABASE_URL=\"postgresql://UTILIZATOR:PAROLA@127.0.0.1:5432/dulcelind\"\nnpm start",
+          "example": "$env:PROJECT_DATABASE_URL=\"postgresql://UTILIZATOR:PAROLA@127.0.0.1:5432/demo\"\nnpm start",
           "explain": "Înlocuiește substituenții doar în terminalul tău. PowerShell transmite variabila procesului lansat din același terminal. Caracterele speciale din parolă se codifică în URL; poți folosi în schimb câmpuri separate în pg. Nu publica secrete în Git sau în editorul cursului.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -32646,7 +32679,7 @@ window.TW_COURSE = {
             "starter": "",
             "id": "dulc-env-local",
             "revision": 3,
-            "contextCode": "$env:PROJECT_DATABASE_URL=\"postgresql://UTILIZATOR:PAROLA@127.0.0.1:5432/dulcelind\"\nnpm start",
+            "contextCode": "$env:PROJECT_DATABASE_URL=\"postgresql://UTILIZATOR:PAROLA@127.0.0.1:5432/demo\"\nnpm start",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
           "hint": "Înlocuiește substituenții doar în terminalul tău. PowerShell transmite variabila procesului lansat din același terminal. Caracterele speciale din parolă se codifică în URL; poți folosi în schimb câmpuri separate în pg. Nu publica secrete în Git sau în editorul cursului.",
@@ -32656,9 +32689,12 @@ window.TW_COURSE = {
           "id": "dulc-diagnose",
           "title": "Găsește cauza erorii",
           "intro": "Verifică terminalul pentru server și DevTools pentru browser.",
-          "example": "node nerecunoscut → instalare / PATH\nEADDRINUSE → port ocupat\nERR_CONNECTION_REFUSED → proces / port\nCSS 404 → URL greșit\nProduse 500 → log server și SQL",
+          "example": "node nerecunoscut → instalare / PATH\nEADDRINUSE → port ocupat\nERR_CONNECTION_REFUSED → proces / port\nCSS 404 → URL greșit\nProducts 500 → log server și SQL",
           "explain": "Network arată URL-ul și statusul resursei. Consola browserului arată erorile client; excepțiile Express apar în terminal. Nu schimba CSS ca să repari un răspuns 500.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -32676,7 +32712,7 @@ window.TW_COURSE = {
             "starter": "",
             "id": "dulc-diagnose",
             "revision": 3,
-            "contextCode": "node nerecunoscut → instalare / PATH\nEADDRINUSE → port ocupat\nERR_CONNECTION_REFUSED → proces / port\nCSS 404 → URL greșit\nProduse 500 → log server și SQL",
+            "contextCode": "node nerecunoscut → instalare / PATH\nEADDRINUSE → port ocupat\nERR_CONNECTION_REFUSED → proces / port\nCSS 404 → URL greșit\nProducts 500 → log server și SQL",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
           "hint": "Network arată URL-ul și statusul resursei. Consola browserului arată erorile client; excepțiile Express apar în terminal. Nu schimba CSS ca să repari un răspuns 500.",
@@ -32686,17 +32722,20 @@ window.TW_COURSE = {
     },
     {
       "id": "project",
-      "title": "Proiectul complet · Cofetăria Dulcelind",
-      "subtitle": "Construiește paginile, catalogul PostgreSQL și interacțiunile cu rutele și câmpurile aplicației publicate.",
+      "title": "Aplică noțiunile împreună",
+      "subtitle": "Exemple independente de pagini, navigare, cataloage și interacțiuni. Nu ai nevoie de fișierele unui proiect extern.",
       "icon": "flag",
       "lessons": [
         {
           "id": "project-shell",
           "title": "Structura paginii",
-          "intro": "Documentul este în română. Separă antetul, meniul, conținutul și subsolul.",
-          "example": "<html lang=\"ro\"><head><title>Cofetaria Dulcelind</title></head><body><header><h1 id=\"t\">Cofetaria <span>Dulcelind</span></h1></header><nav><a href=\"/project/\">Acasa</a><a href=\"/project/produse\">Produse</a></nav><main id=\"grid-pagina\"><section id=\"welcome\"><h2>Bine ati venit</h2></section></main><footer>Cofetaria Dulcelind</footer></body></html>",
-          "explain": "Documentul este în română. Separă antetul, meniul, conținutul și subsolul.",
-          "points": [],
+          "intro": "Documentul exemplului folosește lang=\"en\" și texte în engleză. Explicațiile lecției rămân în română.",
+          "example": "<html lang=\"en\"><head><title>Demo Catalog</title></head><body><header><h1 id=\"t\">Demo <span>Catalog</span></h1></header><nav><a href=\"/demo/\">Home</a><a href=\"/demo/products\">Products</a></nav><main id=\"grid-pagina\"><section id=\"welcome\"><h2>Welcome</h2></section></main><footer>Demo Catalog</footer></body></html>",
+          "explain": "Separă antetul, meniul, conținutul și subsolul. În exercițiu scrii codul și textele în engleză, exact ca în celelalte exemple ale cursului.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -32705,67 +32744,70 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 1,
-            "explanation": "Documentul este în română. Separă antetul, meniul, conținutul și subsolul."
+            "explanation": "Separă antetul, meniul, conținutul și subsolul. În exercițiu scrii codul și textele în engleză, exact ca în celelalte exemple ale cursului."
           },
           "task": {
             "mode": "html",
-            "prompt": "Construiește fragmentul Dulcelind conform cerințelor de mai jos.",
-            "solution": "<html lang=\"ro\"><head><title>Cofetaria Dulcelind</title></head><body><header><h1 id=\"t\">Cofetaria <span>Dulcelind</span></h1></header><nav><a href=\"/project/\">Acasa</a><a href=\"/project/produse\">Produse</a></nav><main id=\"grid-pagina\"><section id=\"welcome\"><h2>Bine ati venit</h2></section></main><footer>Cofetaria Dulcelind</footer></body></html>",
+            "prompt": "Construiește fragmentul catalogul demonstrativ conform cerințelor de mai jos.",
+            "solution": "<html lang=\"en\"><head><title>Demo Catalog</title></head><body><header><h1 id=\"t\">Demo <span>Catalog</span></h1></header><nav><a href=\"/demo/\">Home</a><a href=\"/demo/products\">Products</a></nav><main id=\"grid-pagina\"><section id=\"welcome\"><h2>Welcome</h2></section></main><footer>Demo Catalog</footer></body></html>",
             "tests": [
               {
                 "kind": "attr",
                 "selector": "html",
                 "name": "lang",
-                "value": "ro",
-                "label": "`html` are `lang=\"ro\"`"
+                "value": "en",
+                "label": "html: atributul lang trebuie să fie en."
               },
               {
                 "kind": "text",
                 "selector": "#t",
-                "value": "Cofetaria Dulcelind",
-                "label": "`#t` afișează `Cofetaria Dulcelind`"
+                "value": "Demo Catalog",
+                "label": "#t: textul trebuie să fie Demo Catalog."
               },
               {
                 "kind": "attr",
                 "selector": "nav a:nth-child(2)",
                 "name": "href",
-                "value": "/project/produse",
-                "label": "`nav a:nth-child(2)` are `href=\"/project/produse\"`"
+                "value": "/demo/products",
+                "label": "nav a:nth-child(2): atributul href trebuie să fie /demo/products."
               },
               {
                 "kind": "count",
                 "selector": "#welcome",
                 "min": 1,
-                "label": "Elementul `#welcome` există"
+                "label": "Există cel puțin 1 elemente #welcome."
               },
               {
                 "kind": "count",
                 "selector": "footer",
                 "min": 1,
-                "label": "Elementul `footer` există"
+                "label": "Există cel puțin 1 elemente footer."
               }
             ],
             "starter": "",
             "id": "project-shell",
             "revision": 3,
             "requirements": [
-              "`html` are `lang=\"ro\"`",
-              "`#t` afișează `Cofetaria Dulcelind`",
-              "`nav a:nth-child(2)` are `href=\"/project/produse\"`",
-              "Elementul `#welcome` există",
-              "Elementul `footer` există"
+              "html: atributul lang trebuie să fie en.",
+              "#t: textul trebuie să fie Demo Catalog.",
+              "nav a:nth-child(2): atributul href trebuie să fie /demo/products.",
+              "Există cel puțin 1 elemente #welcome.",
+              "Există cel puțin 1 elemente footer."
             ]
           },
-          "hint": "Documentul este în română. Separă antetul, meniul, conținutul și subsolul.",
+          "hint": "Separă antetul, meniul, conținutul și subsolul. În exercițiu scrii codul și textele în engleză, exact ca în celelalte exemple ale cursului.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-ejs-config",
           "title": "Configurează Express și EJS",
           "intro": "Setează motorul și directorul views înainte de rute.",
-          "example": "const express=require(\"express\");\nconst path=require(\"node:path\");\nconst app=express();\napp.set(\"view engine\",\"ejs\");\napp.set(\"views\",path.join(__dirname,\"views\"));\napp.get(\"/\",(req,res)=>res.render(\"pagini/index\",{imagini:[]}));",
-          "explain": "Creează views/pagini/index.ejs cu structura paginii. Failed to lookup view cere verificarea directorului și a numelui. Linux distinge literele mari de cele mici.",
-          "points": [],
+          "example": "const express=require(\"express\");\nconst path=require(\"node:path\");\nconst app=express();\napp.set(\"view engine\",\"ejs\");\napp.set(\"views\",path.join(__dirname,\"views\"));\napp.get(\"/\",(req,res)=>res.render(\"pages/index\",{imagini:[]}));",
+          "explain": "Creează views/pages/index.ejs cu structura paginii. Failed to lookup view cere verificarea directorului și a numelui. Linux distinge literele mari de cele mici.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -32774,7 +32816,7 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 1,
-            "explanation": "Creează views/pagini/index.ejs cu structura paginii. Failed to lookup view cere verificarea directorului și a numelui. Linux distinge literele mari de cele mici."
+            "explanation": "Creează views/pages/index.ejs cu structura paginii. Failed to lookup view cere verificarea directorului și a numelui. Linux distinge literele mari de cele mici."
           },
           "task": {
             "mode": "text",
@@ -32783,19 +32825,22 @@ window.TW_COURSE = {
             "starter": "",
             "id": "dulc-ejs-config",
             "revision": 3,
-            "contextCode": "const express=require(\"express\");\nconst path=require(\"node:path\");\nconst app=express();\napp.set(\"view engine\",\"ejs\");\napp.set(\"views\",path.join(__dirname,\"views\"));\napp.get(\"/\",(req,res)=>res.render(\"pagini/index\",{imagini:[]}));",
+            "contextCode": "const express=require(\"express\");\nconst path=require(\"node:path\");\nconst app=express();\napp.set(\"view engine\",\"ejs\");\napp.set(\"views\",path.join(__dirname,\"views\"));\napp.get(\"/\",(req,res)=>res.render(\"pages/index\",{imagini:[]}));",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "Creează views/pagini/index.ejs cu structura paginii. Failed to lookup view cere verificarea directorului și a numelui. Linux distinge literele mari de cele mici.",
+          "hint": "Creează views/pages/index.ejs cu structura paginii. Failed to lookup view cere verificarea directorului și a numelui. Linux distinge literele mari de cele mici.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-partials",
           "title": "Reutilizează fragmentele",
           "intro": "head conține metadate și linkuri CSS; header conține meniul; footer informațiile comune.",
-          "example": "<%- include(\"head\") %><body><%- include(\"header\") %><main><h2>Bine ati venit</h2></main><%- include(\"footer\") %></body>",
-          "explain": "În pagina locală folosești ../fragmente/head. Laboratorul furnizează fragmente în memorie, fără fișiere externe. Folosește <%- include pentru markup de încredere și <%= pentru date.",
-          "points": [],
+          "example": "<%- include(\"head\") %><body><%- include(\"header\") %><main><h2>Welcome</h2></main><%- include(\"footer\") %></body>",
+          "explain": "În pagina locală folosești ../partials/head. Laboratorul furnizează fragmente în memorie, fără fișiere externe. Folosește <%- include pentru markup de încredere și <%= pentru date.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -32804,65 +32849,68 @@ window.TW_COURSE = {
               "include evită duplicarea"
             ],
             "correct": 2,
-            "explanation": "În pagina locală folosești ../fragmente/head. Laboratorul furnizează fragmente în memorie, fără fișiere externe. Folosește <%- include pentru markup de încredere și <%= pentru date."
+            "explanation": "În pagina locală folosești ../partials/head. Laboratorul furnizează fragmente în memorie, fără fișiere externe. Folosește <%- include pentru markup de încredere și <%= pentru date."
           },
           "task": {
             "mode": "ejs",
             "prompt": "Include head, header și footer și adaugă main cu Bine ati venit.",
-            "solution": "<%- include(\"head\") %><body><%- include(\"header\") %><main><h2>Bine ati venit</h2></main><%- include(\"footer\") %></body>",
+            "solution": "<%- include(\"head\") %><body><%- include(\"header\") %><main><h2>Welcome</h2></main><%- include(\"footer\") %></body>",
             "data": {},
             "tests": [
               {
                 "kind": "text",
                 "selector": "title",
-                "value": "Cofetaria Dulcelind",
-                "label": "`title` afișează `Cofetaria Dulcelind`"
+                "value": "Demo Catalog",
+                "label": "title: textul trebuie să fie Demo Catalog."
               },
               {
                 "kind": "text",
                 "selector": "header h1",
-                "value": "Cofetaria Dulcelind",
-                "label": "`header h1` afișează `Cofetaria Dulcelind`"
+                "value": "Demo Catalog",
+                "label": "header h1: textul trebuie să fie Demo Catalog."
               },
               {
                 "kind": "text",
                 "selector": "main h2",
-                "value": "Bine ati venit",
-                "label": "`main h2` afișează `Bine ati venit`"
+                "value": "Welcome",
+                "label": "main h2: textul trebuie să fie Welcome."
               },
               {
                 "kind": "text",
                 "selector": "footer",
                 "value": "Contact",
-                "label": "`footer` afișează `Contact`"
+                "label": "footer: textul trebuie să fie Contact."
               }
             ],
             "starter": "",
             "partials": {
-              "head": "<head><title>Cofetaria Dulcelind</title></head>",
-              "header": "<header><h1>Cofetaria Dulcelind</h1></header>",
+              "head": "<head><title>Demo Catalog</title></head>",
+              "header": "<header><h1>Demo Catalog</h1></header>",
               "footer": "<footer>Contact</footer>"
             },
             "id": "dulc-partials",
             "revision": 3,
             "inputData": {},
             "requirements": [
-              "`title` afișează `Cofetaria Dulcelind`",
-              "`header h1` afișează `Cofetaria Dulcelind`",
-              "`main h2` afișează `Bine ati venit`",
-              "`footer` afișează `Contact`"
+              "title: textul trebuie să fie Demo Catalog.",
+              "header h1: textul trebuie să fie Demo Catalog.",
+              "main h2: textul trebuie să fie Welcome.",
+              "footer: textul trebuie să fie Contact."
             ]
           },
-          "hint": "În pagina locală folosești ../fragmente/head. Laboratorul furnizează fragmente în memorie, fără fișiere externe. Folosește <%- include pentru markup de încredere și <%= pentru date.",
+          "hint": "În pagina locală folosești ../partials/head. Laboratorul furnizează fragmente în memorie, fără fișiere externe. Folosește <%- include pentru markup de încredere și <%= pentru date.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-static-mount",
-          "title": "Montează resursele sub /project",
-          "intro": "Routerul interior servește /resurse, aplicația părinte îl montează pe /project.",
-          "example": "const bakery=express();\nbakery.use(\"/resurse\",express.static(path.join(__dirname,\"resurse\")));\nconst parent=express();\nparent.use(\"/project\",bakery);\nparent.listen(8090,\"127.0.0.1\");",
-          "explain": "Browserul cere /project/resurse/css/general.css. Un link /resurse ar cere rădăcina domeniului. Prefixează linkurile în EJS sau rescrie URL-urile la randare, ca în integrarea cursului. În CSS căile relative se rezolvă din directorul fișierului CSS.",
-          "points": [],
+          "title": "Montează resursele sub /demo",
+          "intro": "Routerul interior servește /public, aplicația părinte îl montează pe /demo.",
+          "example": "const bakery=express();\nbakery.use(\"/public\",express.static(path.join(__dirname,\"resurse\")));\nconst parent=express();\nparent.use(\"/demo\",bakery);\nparent.listen(8090,\"127.0.0.1\");",
+          "explain": "Browserul cere /demo/public/css/general.css. Prefixează linkurile în propriile șabloane cu /demo. Resursele se publică de pe discul tău. Nu ai nevoie de codul serverului acestei platforme.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -32871,28 +32919,31 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 0,
-            "explanation": "Browserul cere /project/resurse/css/general.css. Un link /resurse ar cere rădăcina domeniului. Prefixează linkurile în EJS sau rescrie URL-urile la randare, ca în integrarea cursului. În CSS căile relative se rezolvă din directorul fișierului CSS."
+            "explanation": "Browserul cere /demo/public/css/general.css. Prefixează linkurile în propriile șabloane cu /demo. Resursele se publică de pe discul tău. Nu ai nevoie de codul serverului acestei platforme."
           },
           "task": {
             "mode": "text",
             "prompt": "Scrie URL-ul complet al general.css.",
-            "solution": "/project/resurse/css/general.css",
+            "solution": "/demo/public/css/general.css",
             "starter": "",
             "id": "dulc-static-mount",
             "revision": 3,
-            "contextCode": "const bakery=express();\nbakery.use(\"/resurse\",express.static(path.join(__dirname,\"resurse\")));\nconst parent=express();\nparent.use(\"/project\",bakery);\nparent.listen(8090,\"127.0.0.1\");",
+            "contextCode": "const bakery=express();\nbakery.use(\"/public\",express.static(path.join(__dirname,\"resurse\")));\nconst parent=express();\nparent.use(\"/demo\",bakery);\nparent.listen(8090,\"127.0.0.1\");",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "Browserul cere /project/resurse/css/general.css. Un link /resurse ar cere rădăcina domeniului. Prefixează linkurile în EJS sau rescrie URL-urile la randare, ca în integrarea cursului. În CSS căile relative se rezolvă din directorul fișierului CSS.",
+          "hint": "Browserul cere /demo/public/css/general.css. Prefixează linkurile în propriile șabloane cu /demo. Resursele se publică de pe discul tău. Nu ai nevoie de codul serverului acestei platforme.",
           "duration": "6-12 min"
         },
         {
           "id": "project-menu",
           "title": "Meniul cu submeniuri",
           "intro": "Meniul mobil folosește checkbox-ul ch-menu și label-ul hamburger, nu un buton JavaScript suplimentar.",
-          "example": "<nav><label id=\"hamburger\" for=\"ch-menu\">Meniu</label><input type=\"checkbox\" id=\"ch-menu\"><ul class=\"meniu\"><li><a href=\"/project/\">Acasa</a></li><li>Produse<ul><li><a href=\"/project/produse?tip=cofetarie\">Cofetarie</a></li><li><a href=\"/project/produse?tip=patiserie\">Patiserie</a></li><li><a href=\"/project/produse?tip=gelaterie\">Gelaterie</a></li></ul></li></ul></nav>",
+          "example": "<nav><label id=\"hamburger\" for=\"ch-menu\">Menu</label><input type=\"checkbox\" id=\"ch-menu\"><ul class=\"meniu\"><li><a href=\"/demo/\">Home</a></li><li>Products<ul><li><a href=\"/demo/products?type=books\">Books</a></li><li><a href=\"/demo/products?type=stationery\">Stationery</a></li><li><a href=\"/demo/products?type=accessories\">Accessories</a></li></ul></li></ul></nav>",
           "explain": "Meniul mobil folosește checkbox-ul ch-menu și label-ul hamburger, nu un buton JavaScript suplimentar.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -32905,37 +32956,37 @@ window.TW_COURSE = {
           },
           "task": {
             "mode": "html",
-            "prompt": "Construiește fragmentul Dulcelind conform cerințelor de mai jos.",
-            "solution": "<nav><label id=\"hamburger\" for=\"ch-menu\">Meniu</label><input type=\"checkbox\" id=\"ch-menu\"><ul class=\"meniu\"><li><a href=\"/project/\">Acasa</a></li><li>Produse<ul><li><a href=\"/project/produse?tip=cofetarie\">Cofetarie</a></li><li><a href=\"/project/produse?tip=patiserie\">Patiserie</a></li><li><a href=\"/project/produse?tip=gelaterie\">Gelaterie</a></li></ul></li></ul></nav>",
+            "prompt": "Construiește fragmentul catalogul demonstrativ conform cerințelor de mai jos.",
+            "solution": "<nav><label id=\"hamburger\" for=\"ch-menu\">Menu</label><input type=\"checkbox\" id=\"ch-menu\"><ul class=\"meniu\"><li><a href=\"/demo/\">Home</a></li><li>Products<ul><li><a href=\"/demo/products?type=books\">Books</a></li><li><a href=\"/demo/products?type=stationery\">Stationery</a></li><li><a href=\"/demo/products?type=accessories\">Accessories</a></li></ul></li></ul></nav>",
             "tests": [
               {
                 "kind": "attr",
                 "selector": "#hamburger",
                 "name": "for",
                 "value": "ch-menu",
-                "label": "`#hamburger` are `for=\"ch-menu\"`"
+                "label": "#hamburger: atributul for trebuie să fie ch-menu."
               },
               {
                 "kind": "attr",
                 "selector": "#ch-menu",
                 "name": "type",
                 "value": "checkbox",
-                "label": "`#ch-menu` are `type=\"checkbox\"`"
+                "label": "#ch-menu: atributul type trebuie să fie checkbox."
               },
               {
                 "kind": "count",
                 "selector": ".meniu ul a",
                 "min": 3,
-                "label": "Elementul `.meniu ul a` există de cel puțin 3 ori"
+                "label": "Există cel puțin 3 elemente .meniu ul a."
               }
             ],
             "starter": "",
             "id": "project-menu",
             "revision": 3,
             "requirements": [
-              "`#hamburger` are `for=\"ch-menu\"`",
-              "`#ch-menu` are `type=\"checkbox\"`",
-              "Elementul `.meniu ul a` există de cel puțin 3 ori"
+              "#hamburger: atributul for trebuie să fie ch-menu.",
+              "#ch-menu: atributul type trebuie să fie checkbox.",
+              "Există cel puțin 3 elemente .meniu ul a."
             ]
           },
           "hint": "Meniul mobil folosește checkbox-ul ch-menu și label-ul hamburger, nu un buton JavaScript suplimentar.",
@@ -32947,7 +32998,10 @@ window.TW_COURSE = {
           "intro": "Selectorul :checked reflectă starea checkbox-ului bifat de label.",
           "example": "@media(max-width:700px){ul.meniu{display:none;}#ch-menu:checked ~ ul.meniu{display:block;}}",
           "explain": "Lista trebuie să fie după checkbox în același părinte pentru selectorul ~. În această variantă CSS controlează meniul.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -32962,14 +33016,14 @@ window.TW_COURSE = {
             "mode": "css",
             "prompt": "Lista meniului bifat trebuie să fie vizibilă.",
             "solution": "@media(max-width:700px){ul.meniu{display:none;}#ch-menu:checked ~ ul.meniu{display:block;}}",
-            "fixture": "<nav><input id=\"ch-menu\" type=\"checkbox\" checked><ul class=\"meniu\"><li>Acasa</li></ul></nav>",
+            "fixture": "<nav><input id=\"ch-menu\" type=\"checkbox\" checked><ul class=\"meniu\"><li>Home</li></ul></nav>",
             "tests": [
               {
                 "kind": "style",
                 "selector": "ul.meniu",
                 "name": "display",
                 "value": "block",
-                "label": "`ul.meniu`: `display: block`"
+                "label": "ul.meniu: display este block."
               },
               {
                 "kind": "cssIncludes",
@@ -32981,7 +33035,7 @@ window.TW_COURSE = {
             "id": "project-menu-action",
             "revision": 3,
             "requirements": [
-              "`ul.meniu`: `display: block`",
+              "ul.meniu: display este block.",
               "Folosește :checked"
             ]
           },
@@ -32992,9 +33046,12 @@ window.TW_COURSE = {
           "id": "dulc-home-sections",
           "title": "Completează pagina principală",
           "intro": "Leagă ancorele meniului de secțiuni și construiește conținutul pe rând.",
-          "example": "<main><div id=\"grid-pagina\">\n<section id=\"welcome\"><h2>Bine ati venit</h2></section>\n<section id=\"promotii\"><h2>Promotii</h2></section>\n<section id=\"produse\"><h2>Produse</h2></section>\n<section id=\"orar\"><h2>Orar</h2></section>\n<section id=\"anunturi\"><h2>Anunturi</h2></section>\n<section id=\"index-intrebari\"><h2>Intrebari frecvente</h2></section>\n<section id=\"retete\"><h2>Retete</h2></section>\n<section id=\"galerie-statica\"><h2>Galerie</h2></section>\n</div></main>",
+          "example": "<main><div id=\"grid-pagina\">\n<section id=\"welcome\"><h2>Welcome</h2></section>\n<section id=\"promotii\"><h2>Offers</h2></section>\n<section id=\"products\"><h2>Products</h2></section>\n<section id=\"orar\"><h2>Opening hours</h2></section>\n<section id=\"anunturi\"><h2>News</h2></section>\n<section id=\"index-intrebari\"><h2>FAQ</h2></section>\n<section id=\"retete\"><h2>Tutorials</h2></section>\n<section id=\"galerie-statica\"><h2>Galerie</h2></section>\n</div></main>",
           "explain": "Integrează în secțiuni componentele construite: program, detalii, imagini, iframe. Un id este unic în aceeași pagină. Catalogul este altă pagină, deci poate avea propriul id produse.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -33012,7 +33069,7 @@ window.TW_COURSE = {
             "starter": "",
             "id": "dulc-home-sections",
             "revision": 3,
-            "contextCode": "<main><div id=\"grid-pagina\">\n<section id=\"welcome\"><h2>Bine ati venit</h2></section>\n<section id=\"promotii\"><h2>Promotii</h2></section>\n<section id=\"produse\"><h2>Produse</h2></section>\n<section id=\"orar\"><h2>Orar</h2></section>\n<section id=\"anunturi\"><h2>Anunturi</h2></section>\n<section id=\"index-intrebari\"><h2>Intrebari frecvente</h2></section>\n<section id=\"retete\"><h2>Retete</h2></section>\n<section id=\"galerie-statica\"><h2>Galerie</h2></section>\n</div></main>",
+            "contextCode": "<main><div id=\"grid-pagina\">\n<section id=\"welcome\"><h2>Welcome</h2></section>\n<section id=\"promotii\"><h2>Offers</h2></section>\n<section id=\"products\"><h2>Products</h2></section>\n<section id=\"orar\"><h2>Opening hours</h2></section>\n<section id=\"anunturi\"><h2>News</h2></section>\n<section id=\"index-intrebari\"><h2>FAQ</h2></section>\n<section id=\"retete\"><h2>Tutorials</h2></section>\n<section id=\"galerie-statica\"><h2>Galerie</h2></section>\n</div></main>",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
           "hint": "Integrează în secțiuni componentele construite: program, detalii, imagini, iframe. Un id este unic în aceeași pagină. Catalogul este altă pagină, deci poate avea propriul id produse.",
@@ -33021,10 +33078,13 @@ window.TW_COURSE = {
         {
           "id": "dulc-css-order",
           "title": "Ordinea CSS și Bootstrap",
-          "intro": "Ordinea și media query influențează aspectul final.",
-          "example": "<link rel=\"stylesheet\" href=\"/project/resurse/css/general.css\">\n<link rel=\"stylesheet\" href=\"/project/resurse/css/general1000.css\" media=\"(max-width:1000px)\">\n<link rel=\"stylesheet\" href=\"/project/resurse/css/general700.css\" media=\"(max-width:700px)\">\n<link rel=\"stylesheet\" href=\"/project/resurse/css/nav.css\">\n<link rel=\"stylesheet\" href=\"/project/resurse/css/customizare_bootstrap.css\">",
-          "explain": "Acesta este începutul ordinii: adaugă și nav1000, nav700 și galeria înainte de customizare_bootstrap, ca în pagina finală. Compară la aceeași temă, lățime și zoom. Verifică fonturile și CSS-urile în Network înainte să schimbi stilurile.",
-          "points": [],
+          "intro": "Ordinea fișierelor CSS și media query influențează aspectul.",
+          "example": "<link rel=\"stylesheet\" href=\"/demo/public/css/theme.css\">\n<link rel=\"stylesheet\" href=\"/demo/public/css/layout.css\">\n<link rel=\"stylesheet\" href=\"/demo/public/css/mobile.css\" media=\"(max-width:700px)\">",
+          "explain": "Acestea sunt fișierele tale: theme.css pentru culori, layout.css pentru poziționare și mobile.css pentru ajustări pe ecrane mici. Creează-le în public/css cu regulile exersate în capitolele CSS. Nu trebuie să existe fișierele unui site extern.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -33033,28 +33093,31 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 1,
-            "explanation": "Acesta este începutul ordinii: adaugă și nav1000, nav700 și galeria înainte de customizare_bootstrap, ca în pagina finală. Compară la aceeași temă, lățime și zoom. Verifică fonturile și CSS-urile în Network înainte să schimbi stilurile."
+            "explanation": "Acestea sunt fișierele tale: theme.css pentru culori, layout.css pentru poziționare și mobile.css pentru ajustări pe ecrane mici. Creează-le în public/css cu regulile exersate în capitolele CSS. Nu trebuie să existe fișierele unui site extern."
           },
           "task": {
             "mode": "text",
-            "prompt": "Ce extensie cere browserul pentru stylesheet?",
+            "prompt": "Ce extensie are stylesheet-ul cerut de browser?",
             "solution": ".css",
             "starter": "",
             "id": "dulc-css-order",
             "revision": 3,
-            "contextCode": "<link rel=\"stylesheet\" href=\"/project/resurse/css/general.css\">\n<link rel=\"stylesheet\" href=\"/project/resurse/css/general1000.css\" media=\"(max-width:1000px)\">\n<link rel=\"stylesheet\" href=\"/project/resurse/css/general700.css\" media=\"(max-width:700px)\">\n<link rel=\"stylesheet\" href=\"/project/resurse/css/nav.css\">\n<link rel=\"stylesheet\" href=\"/project/resurse/css/customizare_bootstrap.css\">",
+            "contextCode": "<link rel=\"stylesheet\" href=\"/demo/public/css/theme.css\">\n<link rel=\"stylesheet\" href=\"/demo/public/css/layout.css\">\n<link rel=\"stylesheet\" href=\"/demo/public/css/mobile.css\" media=\"(max-width:700px)\">",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "Acesta este începutul ordinii: adaugă și nav1000, nav700 și galeria înainte de customizare_bootstrap, ca în pagina finală. Compară la aceeași temă, lățime și zoom. Verifică fonturile și CSS-urile în Network înainte să schimbi stilurile.",
+          "hint": "Acestea sunt fișierele tale: theme.css pentru culori, layout.css pentru poziționare și mobile.css pentru ajustări pe ecrane mici. Creează-le în public/css cu regulile exersate în capitolele CSS. Nu trebuie să existe fișierele unui site extern.",
           "duration": "6-12 min"
         },
         {
           "id": "project-table",
-          "title": "Programul cofetăriei",
+          "title": "Un tabel cu programul de lucru",
           "intro": "Tabelul tab-orar separă antetele de zile. Completează apoi toate cele șapte zile.",
-          "example": "<table id=\"tab-orar\"><caption>Program</caption><thead><tr><th scope=\"col\">Zi</th><th scope=\"col\">Interval</th></tr></thead><tbody><tr><th scope=\"row\">Luni</th><td rowspan=\"2\">09:00–18:00</td></tr><tr><th scope=\"row\">Marti</th></tr></tbody></table>",
+          "example": "<table id=\"tab-orar\"><caption>Opening hours</caption><thead><tr><th scope=\"col\">Day</th><th scope=\"col\">Hours</th></tr></thead><tbody><tr><th scope=\"row\">Monday</th><td rowspan=\"2\">09:00–18:00</td></tr><tr><th scope=\"row\">Tuesday</th></tr></tbody></table>",
           "explain": "Tabelul tab-orar separă antetele de zile. Completează apoi toate cele șapte zile.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -33067,36 +33130,36 @@ window.TW_COURSE = {
           },
           "task": {
             "mode": "html",
-            "prompt": "Construiește fragmentul Dulcelind conform cerințelor de mai jos.",
-            "solution": "<table id=\"tab-orar\"><caption>Program</caption><thead><tr><th scope=\"col\">Zi</th><th scope=\"col\">Interval</th></tr></thead><tbody><tr><th scope=\"row\">Luni</th><td rowspan=\"2\">09:00–18:00</td></tr><tr><th scope=\"row\">Marti</th></tr></tbody></table>",
+            "prompt": "Construiește fragmentul catalogul demonstrativ conform cerințelor de mai jos.",
+            "solution": "<table id=\"tab-orar\"><caption>Opening hours</caption><thead><tr><th scope=\"col\">Day</th><th scope=\"col\">Hours</th></tr></thead><tbody><tr><th scope=\"row\">Monday</th><td rowspan=\"2\">09:00–18:00</td></tr><tr><th scope=\"row\">Tuesday</th></tr></tbody></table>",
             "tests": [
               {
                 "kind": "text",
                 "selector": "caption",
-                "value": "Program",
-                "label": "`caption` afișează `Program`"
+                "value": "Opening hours",
+                "label": "caption: textul trebuie să fie Opening hours."
               },
               {
                 "kind": "count",
                 "selector": "thead th[scope=\"col\"]",
                 "min": 2,
-                "label": "Elementul `thead th[scope=\"col\"]` există de cel puțin 2 ori"
+                "label": "Există cel puțin 2 elemente thead th[scope=\"col\"]."
               },
               {
                 "kind": "attr",
                 "selector": "td[rowspan]",
                 "name": "rowspan",
                 "value": "2",
-                "label": "`td[rowspan]` are `rowspan=\"2\"`"
+                "label": "td[rowspan]: atributul rowspan trebuie să fie 2."
               }
             ],
             "starter": "",
             "id": "project-table",
             "revision": 3,
             "requirements": [
-              "`caption` afișează `Program`",
-              "Elementul `thead th[scope=\"col\"]` există de cel puțin 2 ori",
-              "`td[rowspan]` are `rowspan=\"2\"`"
+              "caption: textul trebuie să fie Opening hours.",
+              "Există cel puțin 2 elemente thead th[scope=\"col\"].",
+              "td[rowspan]: atributul rowspan trebuie să fie 2."
             ]
           },
           "hint": "Tabelul tab-orar separă antetele de zile. Completează apoi toate cele șapte zile.",
@@ -33106,9 +33169,12 @@ window.TW_COURSE = {
           "id": "project-faq",
           "title": "Întrebări frecvente",
           "intro": "details și summary deschid răspunsul fără JavaScript. Păstrează ancora index-intrebari.",
-          "example": "<section id=\"index-intrebari\"><h2>Intrebari frecvente</h2><details><summary>Livrati la domiciliu?</summary><p>Da, prin curier.</p></details><details><summary>Unde gasesc ingredientele?</summary><p>Pe pagina produsului.</p></details></section>",
+          "example": "<section id=\"index-intrebari\"><h2>FAQ</h2><details><summary>Do you deliver?</summary><p>Yes, by courier.</p></details><details><summary>Unde gasesc tagsle?</summary><p>Pe pagina productului.</p></details></section>",
           "explain": "details și summary deschid răspunsul fără JavaScript. Păstrează ancora index-intrebari.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -33121,28 +33187,28 @@ window.TW_COURSE = {
           },
           "task": {
             "mode": "html",
-            "prompt": "Construiește fragmentul Dulcelind conform cerințelor de mai jos.",
-            "solution": "<section id=\"index-intrebari\"><h2>Intrebari frecvente</h2><details><summary>Livrati la domiciliu?</summary><p>Da, prin curier.</p></details><details><summary>Unde gasesc ingredientele?</summary><p>Pe pagina produsului.</p></details></section>",
+            "prompt": "Construiește fragmentul catalogul demonstrativ conform cerințelor de mai jos.",
+            "solution": "<section id=\"index-intrebari\"><h2>FAQ</h2><details><summary>Do you deliver?</summary><p>Yes, by courier.</p></details><details><summary>Unde gasesc tagsle?</summary><p>Pe pagina productului.</p></details></section>",
             "tests": [
               {
                 "kind": "count",
                 "selector": "#index-intrebari details",
                 "min": 2,
-                "label": "Elementul `#index-intrebari details` există de cel puțin 2 ori"
+                "label": "Există cel puțin 2 elemente #index-intrebari details."
               },
               {
                 "kind": "text",
                 "selector": "summary",
-                "value": "Livrati la domiciliu?",
-                "label": "`summary` afișează `Livrati la domiciliu?`"
+                "value": "Do you deliver?",
+                "label": "summary: textul trebuie să fie Do you deliver?."
               }
             ],
             "starter": "",
             "id": "project-faq",
             "revision": 3,
             "requirements": [
-              "Elementul `#index-intrebari details` există de cel puțin 2 ori",
-              "`summary` afișează `Livrati la domiciliu?`"
+              "Există cel puțin 2 elemente #index-intrebari details.",
+              "summary: textul trebuie să fie Do you deliver?."
             ]
           },
           "hint": "details și summary deschid răspunsul fără JavaScript. Păstrează ancora index-intrebari.",
@@ -33152,9 +33218,12 @@ window.TW_COURSE = {
           "id": "project-picture",
           "title": "Imagini responsive",
           "intro": "picture verifică sursele în ordine: 700px, 1200px și apoi img de rezervă.",
-          "example": "<picture><source srcset=\"/project/resurse/imagini/macarons-200x200.jpg\" media=\"(max-width:700px)\"><source srcset=\"/project/resurse/imagini/macarons.jpg\" media=\"(max-width:1200px)\"><img src=\"/project/resurse/imagini/macarons-640x360.jpg\" alt=\"Macarons\"></picture>",
+          "example": "<picture><source srcset=\"/demo/public/images/sample-200x200.jpg\" media=\"(max-width:700px)\"><source srcset=\"/demo/public/images/sample.jpg\" media=\"(max-width:1200px)\"><img src=\"/demo/public/images/sample-640x360.jpg\" alt=\"Macarons\"></picture>",
           "explain": "picture verifică sursele în ordine: 700px, 1200px și apoi img de rezervă.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -33167,37 +33236,37 @@ window.TW_COURSE = {
           },
           "task": {
             "mode": "html",
-            "prompt": "Construiește fragmentul Dulcelind conform cerințelor de mai jos.",
-            "solution": "<picture><source srcset=\"/project/resurse/imagini/macarons-200x200.jpg\" media=\"(max-width:700px)\"><source srcset=\"/project/resurse/imagini/macarons.jpg\" media=\"(max-width:1200px)\"><img src=\"/project/resurse/imagini/macarons-640x360.jpg\" alt=\"Macarons\"></picture>",
+            "prompt": "Construiește fragmentul catalogul demonstrativ conform cerințelor de mai jos.",
+            "solution": "<picture><source srcset=\"/demo/public/images/sample-200x200.jpg\" media=\"(max-width:700px)\"><source srcset=\"/demo/public/images/sample.jpg\" media=\"(max-width:1200px)\"><img src=\"/demo/public/images/sample-640x360.jpg\" alt=\"Macarons\"></picture>",
             "tests": [
               {
                 "kind": "count",
                 "selector": "picture source",
                 "min": 2,
-                "label": "Elementul `picture source` există de cel puțin 2 ori"
+                "label": "Există cel puțin 2 elemente picture source."
               },
               {
                 "kind": "attr",
                 "selector": "source",
                 "name": "media",
                 "value": "(max-width:700px)",
-                "label": "`source` are `media=\"(max-width:700px)\"`"
+                "label": "source: atributul media trebuie să fie (max-width:700px)."
               },
               {
                 "kind": "attr",
                 "selector": "img",
                 "name": "src",
-                "value": "/project/resurse/imagini/macarons-640x360.jpg",
-                "label": "`img` are `src=\"/project/resurse/imagini/macarons-640x360.jpg\"`"
+                "value": "/demo/public/images/sample-640x360.jpg",
+                "label": "img: atributul src trebuie să fie /demo/public/images/sample-640x360.jpg."
               }
             ],
             "starter": "",
             "id": "project-picture",
             "revision": 3,
             "requirements": [
-              "Elementul `picture source` există de cel puțin 2 ori",
-              "`source` are `media=\"(max-width:700px)\"`",
-              "`img` are `src=\"/project/resurse/imagini/macarons-640x360.jpg\"`"
+              "Există cel puțin 2 elemente picture source.",
+              "source: atributul media trebuie să fie (max-width:700px).",
+              "img: atributul src trebuie să fie /demo/public/images/sample-640x360.jpg."
             ]
           },
           "hint": "picture verifică sursele în ordine: 700px, 1200px și apoi img de rezervă.",
@@ -33207,9 +33276,12 @@ window.TW_COURSE = {
           "id": "project-video",
           "title": "Chocolate: video și subtitrări",
           "intro": "Video-ul folosește autoplay, loop, muted și playsinline, cu surse MP4 și OGV.",
-          "example": "<video width=\"320\" height=\"240\" playsinline autoplay loop muted><source src=\"/project/resurse/video/Chocolate.mp4\" type=\"video/mp4\"><source src=\"/project/resurse/video/Chocolate.ogv\" type=\"video/ogv\"><track src=\"subtitrari.vtt\" kind=\"captions\" srclang=\"ro\" label=\"romana\" default></video>",
-          "explain": "Creează separat subtitrari.vtt: WEBVTT, un rând liber, apoi 00:00.000 --> 00:03.000 și textul. Aplicația publicată include subtitrările într-un data URL. Un src corect nu creează fișierul media; autoplay depinde și de browser.",
-          "points": [],
+          "example": "<video width=\"320\" height=\"240\" playsinline autoplay loop muted><source src=\"/demo/public/video/sample.mp4\" type=\"video/mp4\"><source src=\"/demo/public/video/sample.ogv\" type=\"video/ogv\"><track src=\"captions.vtt\" kind=\"captions\" srclang=\"en\" label=\"English\" default></video>",
+          "explain": "Creează separat captions.vtt: WEBVTT, un rând liber, apoi 00:00.000 --> 00:03.000 și textul. Aplicația publicată include subtitrările într-un data URL. Un src corect nu creează fișierul media; autoplay depinde și de browser.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -33218,53 +33290,56 @@ window.TW_COURSE = {
               "Chocolate: video și subtitrări"
             ],
             "correct": 2,
-            "explanation": "Creează separat subtitrari.vtt: WEBVTT, un rând liber, apoi 00:00.000 --> 00:03.000 și textul. Aplicația publicată include subtitrările într-un data URL. Un src corect nu creează fișierul media; autoplay depinde și de browser."
+            "explanation": "Creează separat captions.vtt: WEBVTT, un rând liber, apoi 00:00.000 --> 00:03.000 și textul. Aplicația publicată include subtitrările într-un data URL. Un src corect nu creează fișierul media; autoplay depinde și de browser."
           },
           "task": {
             "mode": "html",
-            "prompt": "Construiește fragmentul Dulcelind conform cerințelor de mai jos.",
-            "solution": "<video width=\"320\" height=\"240\" playsinline autoplay loop muted><source src=\"/project/resurse/video/Chocolate.mp4\" type=\"video/mp4\"><source src=\"/project/resurse/video/Chocolate.ogv\" type=\"video/ogv\"><track src=\"subtitrari.vtt\" kind=\"captions\" srclang=\"ro\" label=\"romana\" default></video>",
+            "prompt": "Construiește fragmentul catalogul demonstrativ conform cerințelor de mai jos.",
+            "solution": "<video width=\"320\" height=\"240\" playsinline autoplay loop muted><source src=\"/demo/public/video/sample.mp4\" type=\"video/mp4\"><source src=\"/demo/public/video/sample.ogv\" type=\"video/ogv\"><track src=\"captions.vtt\" kind=\"captions\" srclang=\"en\" label=\"English\" default></video>",
             "tests": [
               {
                 "kind": "count",
                 "selector": "video[autoplay][muted][loop][playsinline]",
                 "min": 1,
-                "label": "Elementul `video[autoplay][muted][loop][playsinline]` există"
+                "label": "Există cel puțin 1 elemente video[autoplay][muted][loop][playsinline]."
               },
               {
                 "kind": "attr",
                 "selector": "source",
                 "name": "type",
                 "value": "video/mp4",
-                "label": "`source` are `type=\"video/mp4\"`"
+                "label": "source: atributul type trebuie să fie video/mp4."
               },
               {
                 "kind": "attr",
                 "selector": "track",
                 "name": "srclang",
-                "value": "ro",
-                "label": "`track` are `srclang=\"ro\"`"
+                "value": "en",
+                "label": "track: atributul srclang trebuie să fie en."
               }
             ],
             "starter": "",
             "id": "project-video",
             "revision": 3,
             "requirements": [
-              "Elementul `video[autoplay][muted][loop][playsinline]` există",
-              "`source` are `type=\"video/mp4\"`",
-              "`track` are `srclang=\"ro\"`"
+              "Există cel puțin 1 elemente video[autoplay][muted][loop][playsinline].",
+              "source: atributul type trebuie să fie video/mp4.",
+              "track: atributul srclang trebuie să fie en."
             ]
           },
-          "hint": "Creează separat subtitrari.vtt: WEBVTT, un rând liber, apoi 00:00.000 --> 00:03.000 și textul. Aplicația publicată include subtitrările într-un data URL. Un src corect nu creează fișierul media; autoplay depinde și de browser.",
+          "hint": "Creează separat captions.vtt: WEBVTT, un rând liber, apoi 00:00.000 --> 00:03.000 și textul. Aplicația publicată include subtitrările într-un data URL. Un src corect nu creează fișierul media; autoplay depinde și de browser.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-recipes",
           "title": "Încarcă rețetele în iframe",
           "intro": "Linkurile folosesc target identic cu name al iframe-ului.",
-          "example": "<a href=\"https://www.youtube.com/embed/VIDEO_ID\" target=\"ifr-video\">Reteta</a>\n<iframe name=\"ifr-video\" title=\"Retete video\" src=\"https://www.youtube.com/embed/VIDEO_ID\" allowfullscreen></iframe>",
+          "example": "<a href=\"https://www.youtube.com/embed/VIDEO_ID\" target=\"ifr-video\">Recipe</a>\n<iframe name=\"ifr-video\" title=\"Tutorials video\" src=\"https://www.youtube.com/embed/VIDEO_ID\" allowfullscreen></iframe>",
           "explain": "VIDEO_ID este un substituent pe care îl înlocuiești cu o rețetă disponibilă. Folosește adresa embed. Disponibilitatea YouTube nu poate fi dedusă doar dintr-un atribut corect.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -33282,7 +33357,7 @@ window.TW_COURSE = {
             "starter": "",
             "id": "dulc-recipes",
             "revision": 3,
-            "contextCode": "<a href=\"https://www.youtube.com/embed/VIDEO_ID\" target=\"ifr-video\">Reteta</a>\n<iframe name=\"ifr-video\" title=\"Retete video\" src=\"https://www.youtube.com/embed/VIDEO_ID\" allowfullscreen></iframe>",
+            "contextCode": "<a href=\"https://www.youtube.com/embed/VIDEO_ID\" target=\"ifr-video\">Recipe</a>\n<iframe name=\"ifr-video\" title=\"Tutorials video\" src=\"https://www.youtube.com/embed/VIDEO_ID\" allowfullscreen></iframe>",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
           "hint": "VIDEO_ID este un substituent pe care îl înlocuiești cu o rețetă disponibilă. Folosește adresa embed. Disponibilitatea YouTube nu poate fi dedusă doar dintr-un atribut corect.",
@@ -33291,10 +33366,13 @@ window.TW_COURSE = {
         {
           "id": "project-gallery",
           "title": "Galeria statică",
-          "intro": "Folosește figure și figcaption în galerie-statica. Mai târziu datele vin din galerie.json.",
-          "example": "<section id=\"galerie-statica\"><figure><img src=\"/project/resurse/imagini/galerie/briose-frisca.png\" alt=\"Briose cu frisca\"><figcaption>Briose cu frisca</figcaption></figure></section>",
-          "explain": "Folosește figure și figcaption în galerie-statica. Mai târziu datele vin din galerie.json.",
-          "points": [],
+          "intro": "Folosește figure și figcaption în galerie-statica. Mai târziu datele vin din gallery.json.",
+          "example": "<section id=\"galerie-statica\"><figure><img src=\"/demo/public/images/galerie/sample-image.png\" alt=\"Example image\"><figcaption>Example image</figcaption></figure></section>",
+          "explain": "Folosește figure și figcaption în galerie-statica. Mai târziu datele vin din gallery.json.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -33303,52 +33381,55 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 0,
-            "explanation": "Folosește figure și figcaption în galerie-statica. Mai târziu datele vin din galerie.json."
+            "explanation": "Folosește figure și figcaption în galerie-statica. Mai târziu datele vin din gallery.json."
           },
           "task": {
             "mode": "html",
-            "prompt": "Construiește fragmentul Dulcelind conform cerințelor de mai jos.",
-            "solution": "<section id=\"galerie-statica\"><figure><img src=\"/project/resurse/imagini/galerie/briose-frisca.png\" alt=\"Briose cu frisca\"><figcaption>Briose cu frisca</figcaption></figure></section>",
+            "prompt": "Construiește fragmentul catalogul demonstrativ conform cerințelor de mai jos.",
+            "solution": "<section id=\"galerie-statica\"><figure><img src=\"/demo/public/images/galerie/sample-image.png\" alt=\"Example image\"><figcaption>Example image</figcaption></figure></section>",
             "tests": [
               {
                 "kind": "count",
                 "selector": "#galerie-statica figure",
                 "min": 1,
-                "label": "Elementul `#galerie-statica figure` există"
+                "label": "Există cel puțin 1 elemente #galerie-statica figure."
               },
               {
                 "kind": "text",
                 "selector": "figcaption",
-                "value": "Briose cu frisca",
-                "label": "`figcaption` afișează `Briose cu frisca`"
+                "value": "Example image",
+                "label": "figcaption: textul trebuie să fie Example image."
               },
               {
                 "kind": "attr",
                 "selector": "img",
                 "name": "alt",
-                "value": "Briose cu frisca",
-                "label": "`img` are `alt=\"Briose cu frisca\"`"
+                "value": "Example image",
+                "label": "img: atributul alt trebuie să fie Example image."
               }
             ],
             "starter": "",
             "id": "project-gallery",
             "revision": 3,
             "requirements": [
-              "Elementul `#galerie-statica figure` există",
-              "`figcaption` afișează `Briose cu frisca`",
-              "`img` are `alt=\"Briose cu frisca\"`"
+              "Există cel puțin 1 elemente #galerie-statica figure.",
+              "figcaption: textul trebuie să fie Example image.",
+              "img: atributul alt trebuie să fie Example image."
             ]
           },
-          "hint": "Folosește figure și figcaption în galerie-statica. Mai târziu datele vin din galerie.json.",
+          "hint": "Folosește figure și figcaption în galerie-statica. Mai târziu datele vin din gallery.json.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-gallery-json",
           "title": "Galeria din JSON",
-          "intro": "galerie.json conține cale_galerie și imagini. Fiecare imagine are fisier, descriere și luni, cu nume românești.",
-          "example": "const gallery=JSON.parse(await fs.readFile(jsonPath,\"utf8\"));\nconst luni=[\"ianuarie\",\"februarie\",\"martie\",\"aprilie\",\"mai\",\"iunie\",\"iulie\",\"august\",\"septembrie\",\"octombrie\",\"noiembrie\",\"decembrie\"];\nconst luna=luni[new Date().getMonth()];\nconst imagini=gallery.imagini.filter(im=>im.luni.includes(luna));",
-          "explain": "getMonth întoarce 0–11, iar vectorul luni transformă indicele în numele din JSON. Construiește căile fisier și fisier_mediu pe server, apoi transmite imagini către EJS. În buclă afișezi descriere în figcaption și alt. Nu folosi im.titlu: acel câmp nu există în JSON.",
-          "points": [],
+          "intro": "O galerie poate fi descrisă prin JSON cu file, description și months.",
+          "example": "// data/gallery.json: [{\"file\":\"sample.png\",\"description\":\"Example image\",\"months\":[6,7,8]}]\nconst gallery=JSON.parse(await fs.readFile(\"data/gallery.json\",\"utf8\"));\nconst month=new Date().getMonth()+1;\nconst images=gallery.filter(image=>image.months.includes(month));",
+          "explain": "Creează data/gallery.json cu lista din exemplu. months folosește valori 1–12, iar getMonth întoarce 0–11. Citește fișierul pe server și transmite images către EJS. În template afișezi description și file.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -33357,28 +33438,31 @@ window.TW_COURSE = {
               "JSON-ul și API-ul Date folosesc indici diferiți"
             ],
             "correct": 2,
-            "explanation": "getMonth întoarce 0–11, iar vectorul luni transformă indicele în numele din JSON. Construiește căile fisier și fisier_mediu pe server, apoi transmite imagini către EJS. În buclă afișezi descriere în figcaption și alt. Nu folosi im.titlu: acel câmp nu există în JSON."
+            "explanation": "Creează data/gallery.json cu lista din exemplu. months folosește valori 1–12, iar getMonth întoarce 0–11. Citește fișierul pe server și transmite images către EJS. În template afișezi description și file."
           },
           "task": {
             "mode": "text",
-            "prompt": "Ce expresie întoarce indicele 0–11 pentru luna curentă?",
-            "solution": "new Date().getMonth()",
+            "prompt": "Ce expresie întoarce luna curentă ca număr de la 1 la 12?",
+            "solution": "new Date().getMonth()+1",
             "starter": "",
             "id": "dulc-gallery-json",
             "revision": 3,
-            "contextCode": "const gallery=JSON.parse(await fs.readFile(jsonPath,\"utf8\"));\nconst luni=[\"ianuarie\",\"februarie\",\"martie\",\"aprilie\",\"mai\",\"iunie\",\"iulie\",\"august\",\"septembrie\",\"octombrie\",\"noiembrie\",\"decembrie\"];\nconst luna=luni[new Date().getMonth()];\nconst imagini=gallery.imagini.filter(im=>im.luni.includes(luna));",
+            "contextCode": "// data/gallery.json: [{\"file\":\"sample.png\",\"description\":\"Example image\",\"months\":[6,7,8]}]\nconst gallery=JSON.parse(await fs.readFile(\"data/gallery.json\",\"utf8\"));\nconst month=new Date().getMonth()+1;\nconst images=gallery.filter(image=>image.months.includes(month));",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "getMonth întoarce 0–11, iar vectorul luni transformă indicele în numele din JSON. Construiește căile fisier și fisier_mediu pe server, apoi transmite imagini către EJS. În buclă afișezi descriere în figcaption și alt. Nu folosi im.titlu: acel câmp nu există în JSON.",
+          "hint": "Creează data/gallery.json cu lista din exemplu. months folosește valori 1–12, iar getMonth întoarce 0–11. Citește fișierul pe server și transmite images către EJS. În template afișezi description și file.",
           "duration": "6-12 min"
         },
         {
           "id": "project-assets",
           "title": "Pregătește resursele înainte de pornire",
-          "intro": "Sass generează CSS și Sharp generează WebP. În integrarea cursului pregătirea are loc la build.",
-          "example": "const css=sass.compile(inputScss).css;\nawait sharp(inputImage).resize(300).webp().toFile(outputImage);\n// Repository curs: npm run build:project",
-          "explain": "Creează directorul destinație înainte de generare. Browserul cere CSS, nu SCSS. Păstrează CSS-ul Bootstrap distribuit pentru aspect identic; reconstruiește-l intenționat după schimbări de stil.",
-          "points": [],
+          "intro": "Build-ul transformă sursele SCSS și imaginile în fișiere publicate de server.",
+          "example": "// Create build-assets.mjs in your project root.\nimport fs from \"node:fs/promises\";\nimport path from \"node:path\";\nimport * as sass from \"sass\";\nimport sharp from \"sharp\";\nawait fs.mkdir(\"public/css\",{recursive:true});\nawait fs.mkdir(\"public/images/mediu\",{recursive:true});\nfor(const name of await fs.readdir(\"public/scss\")){\n  if(name.endsWith(\".scss\")){\n    const result=sass.compile(path.join(\"public/scss\",name));\n    await fs.writeFile(path.join(\"public/css\",name.replace(/\\.scss$/,\".css\")),result.css);\n  }\n}\nawait sharp(\"public/images/sample.png\").resize(300).webp()\n  .toFile(\"public/images/mediu/sample.webp\");\n// Terminal: npm run build:assets",
+          "explain": "Creează public/scss/theme.scss cu body { color: navy; } și salvează o imagine PNG proprie ca public/images/sample.png. Creează build-assets.mjs cu exemplul complet. Scriptul build:assets a fost definit în package.json la pregătire. Rulează-l și verifică public/css/theme.css și public/images/mediu/sample.webp.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -33387,28 +33471,31 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 1,
-            "explanation": "Creează directorul destinație înainte de generare. Browserul cere CSS, nu SCSS. Păstrează CSS-ul Bootstrap distribuit pentru aspect identic; reconstruiește-l intenționat după schimbări de stil."
+            "explanation": "Creează public/scss/theme.scss cu body { color: navy; } și salvează o imagine PNG proprie ca public/images/sample.png. Creează build-assets.mjs cu exemplul complet. Scriptul build:assets a fost definit în package.json la pregătire. Rulează-l și verifică public/css/theme.css și public/images/mediu/sample.webp."
           },
           "task": {
             "mode": "text",
-            "prompt": "Scrie comanda de build a resurselor în repository-ul cursului.",
-            "solution": "npm run build:project",
+            "prompt": "Ce comandă definită în package.json pregătește resursele proiectului tău?",
+            "solution": "npm run build:assets",
             "starter": "",
             "id": "project-assets",
             "revision": 3,
-            "contextCode": "const css=sass.compile(inputScss).css;\nawait sharp(inputImage).resize(300).webp().toFile(outputImage);\n// Repository curs: npm run build:project",
+            "contextCode": "// Create build-assets.mjs in your project root.\nimport fs from \"node:fs/promises\";\nimport path from \"node:path\";\nimport * as sass from \"sass\";\nimport sharp from \"sharp\";\nawait fs.mkdir(\"public/css\",{recursive:true});\nawait fs.mkdir(\"public/images/mediu\",{recursive:true});\nfor(const name of await fs.readdir(\"public/scss\")){\n  if(name.endsWith(\".scss\")){\n    const result=sass.compile(path.join(\"public/scss\",name));\n    await fs.writeFile(path.join(\"public/css\",name.replace(/\\.scss$/,\".css\")),result.css);\n  }\n}\nawait sharp(\"public/images/sample.png\").resize(300).webp()\n  .toFile(\"public/images/mediu/sample.webp\");\n// Terminal: npm run build:assets",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "Creează directorul destinație înainte de generare. Browserul cere CSS, nu SCSS. Păstrează CSS-ul Bootstrap distribuit pentru aspect identic; reconstruiește-l intenționat după schimbări de stil.",
+          "hint": "Creează public/scss/theme.scss cu body { color: navy; } și salvează o imagine PNG proprie ca public/images/sample.png. Creează build-assets.mjs cu exemplul complet. Scriptul build:assets a fost definit în package.json la pregătire. Rulează-l și verifică public/css/theme.css și public/images/mediu/sample.webp.",
           "duration": "6-12 min"
         },
         {
           "id": "project-grid",
           "title": "Catalogul pe desktop și mobil",
-          "intro": "Catalogul original folosește două coloane și spațiu de 1rem între carduri.",
-          "example": ".grid-produse{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}",
+          "intro": "În acest exemplu catalogul are două coloane, cu un spațiu de 1rem între carduri.",
+          "example": ".grid-products{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}",
           "explain": "Testează separat desktopul și mobilul. Lățimea ferestrei nu este lățimea unui card.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -33422,30 +33509,30 @@ window.TW_COURSE = {
           "task": {
             "mode": "css",
             "prompt": "Păstrează cele două coloane ale catalogului original la ambele lățimi.",
-            "solution": ".grid-produse{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}",
-            "fixture": "<div class=\"grid-produse\"><article>Savarină</article><article>Amandina</article><article>Briose</article></div>",
+            "solution": ".grid-products{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}",
+            "fixture": "<div class=\"grid-products\"><article>Notebook</article><article>Pen</article><article>Briose</article></div>",
             "tests": [
               {
                 "kind": "columns",
-                "selector": ".grid-produse",
+                "selector": ".grid-products",
                 "count": 2,
                 "viewport": 900,
-                "label": "La 900px, `.grid-produse` are 2 coloane egale"
+                "label": "La 900px, .grid-products are 2 coloane."
               },
               {
                 "kind": "columns",
-                "selector": ".grid-produse",
+                "selector": ".grid-products",
                 "count": 2,
                 "viewport": 480,
-                "label": "La 480px, `.grid-produse` are 2 coloane egale"
+                "label": "La 480px, .grid-products are 2 coloane."
               }
             ],
             "starter": "",
             "id": "project-grid",
             "revision": 3,
             "requirements": [
-              "La 900px, `.grid-produse` are 2 coloane egale",
-              "La 480px, `.grid-produse` are 2 coloane egale"
+              "La 900px, .grid-products are 2 coloane.",
+              "La 480px, .grid-products are 2 coloane."
             ]
           },
           "hint": "Testează separat desktopul și mobilul. Lățimea ferestrei nu este lățimea unui card.",
@@ -33453,11 +33540,14 @@ window.TW_COURSE = {
         },
         {
           "id": "project-ejs",
-          "title": "Cardurile EJS din prajituri",
-          "intro": "Serverul transmite produse; fiecare prod are nume, pret, calorii și categorie.",
-          "example": "<div class=\"grid-produse\"><% for(const prod of produse){ %><article class=\"produs\"><h3><a href=\"/project/produs/<%= prod.id %>\"><span class=\"val-nume\"><%= prod.nume %></span></a></h3><span class=\"val-pret\"><%= prod.pret %></span><span class=\"val-calorii\"><%= prod.calorii %></span><span class=\"val-categorie\"><%= prod.categorie %></span><input class=\"select-cos\" type=\"checkbox\" value=\"<%= prod.id %>\"></article><% } %></div>",
-          "explain": "Selectorii val-nume și val-pret sunt contractul cu filtrele. NUMERIC poate ajunge ca text din pg: convertește-l înainte de calcule. Folosește <%= pentru escaparea valorilor.",
-          "points": [],
+          "title": "Cardurile EJS din products",
+          "intro": "Serverul transmite products. Fiecare product are name, price, stock și category.",
+          "example": "<div class=\"grid-products\"><% for(const product of products){ %><article class=\"product\"><h3><a href=\"/demo/product/<%= product.id %>\"><span class=\"val-name\"><%= product.name %></span></a></h3><span class=\"val-price\"><%= product.price %></span><span class=\"val-stock\"><%= product.stock %></span><span class=\"val-category\"><%= product.category %></span><input class=\"select-cos\" type=\"checkbox\" value=\"<%= product.id %>\"></article><% } %></div>",
+          "explain": "Selectorii val-name și val-price sunt contractul cu filtrele. NUMERIC poate ajunge ca text din pg: convertește-l înainte de calcule. Folosește <%= pentru escaparea valorilor.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -33466,63 +33556,63 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 1,
-            "explanation": "Selectorii val-nume și val-pret sunt contractul cu filtrele. NUMERIC poate ajunge ca text din pg: convertește-l înainte de calcule. Folosește <%= pentru escaparea valorilor."
+            "explanation": "Selectorii val-name și val-price sunt contractul cu filtrele. NUMERIC poate ajunge ca text din pg: convertește-l înainte de calcule. Folosește <%= pentru escaparea valorilor."
           },
           "task": {
             "mode": "ejs",
             "prompt": "Generează cardurile cu link, preț, calorii, categorie și checkbox.",
-            "solution": "<div class=\"grid-produse\"><% for(const prod of produse){ %><article class=\"produs\"><h3><a href=\"/project/produs/<%= prod.id %>\"><span class=\"val-nume\"><%= prod.nume %></span></a></h3><span class=\"val-pret\"><%= prod.pret %></span><span class=\"val-calorii\"><%= prod.calorii %></span><span class=\"val-categorie\"><%= prod.categorie %></span><input class=\"select-cos\" type=\"checkbox\" value=\"<%= prod.id %>\"></article><% } %></div>",
+            "solution": "<div class=\"grid-products\"><% for(const product of products){ %><article class=\"product\"><h3><a href=\"/demo/product/<%= product.id %>\"><span class=\"val-name\"><%= product.name %></span></a></h3><span class=\"val-price\"><%= product.price %></span><span class=\"val-stock\"><%= product.stock %></span><span class=\"val-category\"><%= product.category %></span><input class=\"select-cos\" type=\"checkbox\" value=\"<%= product.id %>\"></article><% } %></div>",
             "data": {
-              "produse": [
+              "products": [
                 {
                   "id": 1,
-                  "nume": "Savarină",
-                  "pret": "7.50",
-                  "calorii": 400,
-                  "categorie": "comuna"
+                  "name": "Notebook",
+                  "price": "7.50",
+                  "stock": 400,
+                  "category": "standard"
                 },
                 {
                   "id": 2,
-                  "nume": "Amandina",
-                  "pret": "6.00",
-                  "calorii": 400,
-                  "categorie": "comuna"
+                  "name": "Pen",
+                  "price": "6.00",
+                  "stock": 400,
+                  "category": "standard"
                 },
                 {
                   "id": 6,
-                  "nume": "Nimic",
-                  "pret": "10.00",
-                  "calorii": 0,
-                  "categorie": "dietetica"
+                  "name": "Sticker",
+                  "price": "10.00",
+                  "stock": 0,
+                  "category": "limited"
                 }
               ]
             },
             "tests": [
               {
                 "kind": "count",
-                "selector": ".produs",
+                "selector": ".product",
                 "min": 3,
-                "label": "Elementul `.produs` există de cel puțin 3 ori"
+                "label": "Există cel puțin 3 elemente .product."
               },
               {
                 "kind": "text",
-                "selector": ".val-nume",
-                "value": "Savarină",
-                "label": "`.val-nume` afișează `Savarină`"
+                "selector": ".val-name",
+                "value": "Notebook",
+                "label": ".val-name: textul trebuie să fie Notebook."
               },
               {
                 "kind": "attr",
                 "selector": "h3 a",
                 "name": "href",
-                "value": "/project/produs/1",
-                "label": "`h3 a` are `href=\"/project/produs/1\"`"
+                "value": "/demo/product/1",
+                "label": "h3 a: atributul href trebuie să fie /demo/product/1."
               },
               {
                 "kind": "attr",
                 "selector": ".select-cos",
                 "name": "value",
                 "value": "1",
-                "label": "`.select-cos` are `value=\"1\"`"
+                "label": ".select-cos: atributul value trebuie să fie 1."
               }
             ],
             "starter": "",
@@ -33530,47 +33620,50 @@ window.TW_COURSE = {
             "id": "project-ejs",
             "revision": 3,
             "inputData": {
-              "produse": [
+              "products": [
                 {
                   "id": 1,
-                  "nume": "Savarină",
-                  "pret": "7.50",
-                  "calorii": 400,
-                  "categorie": "comuna"
+                  "name": "Notebook",
+                  "price": "7.50",
+                  "stock": 400,
+                  "category": "standard"
                 },
                 {
                   "id": 2,
-                  "nume": "Amandina",
-                  "pret": "6.00",
-                  "calorii": 400,
-                  "categorie": "comuna"
+                  "name": "Pen",
+                  "price": "6.00",
+                  "stock": 400,
+                  "category": "standard"
                 },
                 {
                   "id": 6,
-                  "nume": "Nimic",
-                  "pret": "10.00",
-                  "calorii": 0,
-                  "categorie": "dietetica"
+                  "name": "Sticker",
+                  "price": "10.00",
+                  "stock": 0,
+                  "category": "limited"
                 }
               ]
             },
             "requirements": [
-              "Elementul `.produs` există de cel puțin 3 ori",
-              "`.val-nume` afișează `Savarină`",
-              "`h3 a` are `href=\"/project/produs/1\"`",
-              "`.select-cos` are `value=\"1\"`"
+              "Există cel puțin 3 elemente .product.",
+              ".val-name: textul trebuie să fie Notebook.",
+              "h3 a: atributul href trebuie să fie /demo/product/1.",
+              ".select-cos: atributul value trebuie să fie 1."
             ]
           },
-          "hint": "Selectorii val-nume și val-pret sunt contractul cu filtrele. NUMERIC poate ajunge ca text din pg: convertește-l înainte de calcule. Folosește <%= pentru escaparea valorilor.",
+          "hint": "Selectorii val-name și val-price sunt contractul cu filtrele. NUMERIC poate ajunge ca text din pg: convertește-l înainte de calcule. Folosește <%= pentru escaparea valorilor.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-product-page",
           "title": "Pagina unui produs",
           "intro": "Ruta transmite un singur prod, nu vectorul produse.",
-          "example": "<article id=\"art-produs\"><h2><%= prod.nume %></h2><p><%= prod.descriere %></p><img src=\"/project/resurse/imagini/produse/<%= prod.imagine %>\" alt=\"<%= prod.nume %>\"><p><%= prod.pret %> lei</p><ul><% for(const ingredient of (prod.ingrediente||[])){ %><li><%= ingredient %></li><% } %></ul></article>",
-          "explain": "Adaugă gramaj, calorii, categorie și pt_diabetici. Pentru ingrediente null folosește o listă goală. Imaginea păstrează prefixul /project și datele sunt escapate.",
-          "points": [],
+          "example": "<article id=\"art-product\"><h2><%= product.name %></h2><p><%= product.descriere %></p><img src=\"/demo/public/images/products/<%= product.imagine %>\" alt=\"<%= product.name %>\"><p><%= product.price %> USD</p><ul><% for(const ingredient of (product.tags||[])){ %><li><%= ingredient %></li><% } %></ul></article>",
+          "explain": "Pagina primește un singur product. Pentru tags null folosește o listă goală. Calea imaginii are prefixul /demo, iar valorile afișate sunt escapate. Alege câmpurile necesare propriului catalog.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -33579,20 +33672,20 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 1,
-            "explanation": "Adaugă gramaj, calorii, categorie și pt_diabetici. Pentru ingrediente null folosește o listă goală. Imaginea păstrează prefixul /project și datele sunt escapate."
+            "explanation": "Pagina primește un singur product. Pentru tags null folosește o listă goală. Calea imaginii are prefixul /demo, iar valorile afișate sunt escapate. Alege câmpurile necesare propriului catalog."
           },
           "task": {
             "mode": "ejs",
             "prompt": "Construiește articolul și lista ingredientelor.",
-            "solution": "<article id=\"art-produs\"><h2><%= prod.nume %></h2><p><%= prod.descriere %></p><img src=\"/project/resurse/imagini/produse/<%= prod.imagine %>\" alt=\"<%= prod.nume %>\"><p><%= prod.pret %> lei</p><ul><% for(const ingredient of (prod.ingrediente||[])){ %><li><%= ingredient %></li><% } %></ul></article>",
+            "solution": "<article id=\"art-product\"><h2><%= product.name %></h2><p><%= product.descriere %></p><img src=\"/demo/public/images/products/<%= product.imagine %>\" alt=\"<%= product.name %>\"><p><%= product.price %> USD</p><ul><% for(const ingredient of (product.tags||[])){ %><li><%= ingredient %></li><% } %></ul></article>",
             "data": {
-              "prod": {
-                "nume": "Savarină",
-                "descriere": "Prajitura insiropata",
+              "product": {
+                "name": "Notebook",
+                "descriere": "Example product",
                 "imagine": "aproximativ-savarina.jpg",
-                "pret": "7.50",
-                "ingrediente": [
-                  "faina",
+                "price": "7.50",
+                "tags": [
+                  "featured",
                   "lapte"
                 ]
               }
@@ -33600,22 +33693,22 @@ window.TW_COURSE = {
             "tests": [
               {
                 "kind": "text",
-                "selector": "#art-produs h2",
-                "value": "Savarină",
-                "label": "`#art-produs h2` afișează `Savarină`"
+                "selector": "#art-product h2",
+                "value": "Notebook",
+                "label": "#art-product h2: textul trebuie să fie Notebook."
               },
               {
                 "kind": "count",
                 "selector": "li",
                 "min": 2,
-                "label": "Elementul `li` există de cel puțin 2 ori"
+                "label": "Există cel puțin 2 elemente li."
               },
               {
                 "kind": "attr",
                 "selector": "img",
                 "name": "src",
-                "value": "/project/resurse/imagini/produse/aproximativ-savarina.jpg",
-                "label": "`img` are `src=\"/project/resurse/imagini/produse/aproximativ-savarina.jpg\"`"
+                "value": "/demo/public/images/products/aproximativ-savarina.jpg",
+                "label": "img: atributul src trebuie să fie /demo/public/images/products/aproximativ-savarina.jpg."
               }
             ],
             "starter": "",
@@ -33623,33 +33716,36 @@ window.TW_COURSE = {
             "id": "dulc-product-page",
             "revision": 3,
             "inputData": {
-              "prod": {
-                "nume": "Savarină",
-                "descriere": "Prajitura insiropata",
+              "product": {
+                "name": "Notebook",
+                "descriere": "Example product",
                 "imagine": "aproximativ-savarina.jpg",
-                "pret": "7.50",
-                "ingrediente": [
-                  "faina",
+                "price": "7.50",
+                "tags": [
+                  "featured",
                   "lapte"
                 ]
               }
             },
             "requirements": [
-              "`#art-produs h2` afișează `Savarină`",
-              "Elementul `li` există de cel puțin 2 ori",
-              "`img` are `src=\"/project/resurse/imagini/produse/aproximativ-savarina.jpg\"`"
+              "#art-product h2: textul trebuie să fie Notebook.",
+              "Există cel puțin 2 elemente li.",
+              "img: atributul src trebuie să fie /demo/public/images/products/aproximativ-savarina.jpg."
             ]
           },
-          "hint": "Adaugă gramaj, calorii, categorie și pt_diabetici. Pentru ingrediente null folosește o listă goală. Imaginea păstrează prefixul /project și datele sunt escapate.",
+          "hint": "Pagina primește un singur product. Pentru tags null folosește o listă goală. Calea imaginii are prefixul /demo, iar valorile afișate sunt escapate. Alege câmpurile necesare propriului catalog.",
           "duration": "6-12 min"
         },
         {
           "id": "project-route-id",
           "title": "Ruta /produs/:id",
-          "intro": "Ruta internă este /produs/:id; aplicația montată sub /project expune /project/produs/1.",
-          "example": "const express=require(\"express\");const app=express();const produse=[{id:1,nume:\"Savarină\"}];app.get(\"/produs/:id\",(req,res)=>{if(!/^\\d+$/.test(req.params.id)||!Number.isSafeInteger(Number(req.params.id)))return res.status(400).send(\"Cerere gresita\");const prod=produse.find(p=>p.id===Number(req.params.id));if(!prod)return res.status(404).send(\"Produs inexistent\");res.json(prod);});module.exports=app;",
+          "intro": "Ruta internă este /produs/:id; aplicația montată sub /demo expune /demo/produs/1.",
+          "example": "const express=require(\"express\");const app=express();const products=[{id:1,name:\"Notebook\"}];app.get(\"/product/:id\",(req,res)=>{if(!/^\\d+$/.test(req.params.id)||!Number.isSafeInteger(Number(req.params.id)))return res.status(400).send(\"Invalid request\");const product=products.find(p=>p.id===Number(req.params.id));if(!product)return res.status(404).send(\"Product not found\");res.json(product);});module.exports=app;",
           "explain": "Laboratorul folosește o listă mică în loc de SQL pentru a testa ruta. În aplicație validezi id-ul și interoghezi baza cu $1. Id invalid produce 400, id valid inexistent produce 404.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -33663,24 +33759,24 @@ window.TW_COURSE = {
           "task": {
             "mode": "express",
             "prompt": "Exportă aplicația cu produsul 1, id invalid 400 și inexistent 404.",
-            "solution": "const express=require(\"express\");const app=express();const produse=[{id:1,nume:\"Savarină\"}];app.get(\"/produs/:id\",(req,res)=>{if(!/^\\d+$/.test(req.params.id)||!Number.isSafeInteger(Number(req.params.id)))return res.status(400).send(\"Cerere gresita\");const prod=produse.find(p=>p.id===Number(req.params.id));if(!prod)return res.status(404).send(\"Produs inexistent\");res.json(prod);});module.exports=app;",
+            "solution": "const express=require(\"express\");const app=express();const products=[{id:1,name:\"Notebook\"}];app.get(\"/product/:id\",(req,res)=>{if(!/^\\d+$/.test(req.params.id)||!Number.isSafeInteger(Number(req.params.id)))return res.status(400).send(\"Invalid request\");const product=products.find(p=>p.id===Number(req.params.id));if(!product)return res.status(404).send(\"Product not found\");res.json(product);});module.exports=app;",
             "requests": [
               {
-                "path": "/produs/1",
+                "path": "/product/1",
                 "json": {
                   "id": 1,
-                  "nume": "Savarină"
+                  "name": "Notebook"
                 }
               },
               {
-                "path": "/produs/abc",
+                "path": "/product/abc",
                 "status": 400,
-                "bodyExpected": "Cerere gresita"
+                "bodyExpected": "Invalid request"
               },
               {
-                "path": "/produs/99",
+                "path": "/product/99",
                 "status": 404,
-                "bodyExpected": "Produs inexistent"
+                "bodyExpected": "Product not found"
               }
             ],
             "starter": "const express = require(\"express\");\nconst app = express();\n\n// Add your routes here.\n\nmodule.exports = app;\n",
@@ -33693,10 +33789,13 @@ window.TW_COURSE = {
         {
           "id": "project-query",
           "title": "Interogarea produsului prin pg",
-          "intro": "Tabelul se numește prajituri; valoarea id se transmite separat.",
-          "example": "const result=await pool.query(\"SELECT * FROM prajituri WHERE id = $1\",[id]);\nconst prod=result.rows[0];",
-          "explain": "Nu concatena req.params.id în SQL. Dacă rows este gol, răspunde cu 404; altfel transmite prod către pagini/produs.",
-          "points": [],
+          "intro": "Tabelul se numește products; valoarea id se transmite separat.",
+          "example": "const result=await pool.query(\"SELECT * FROM products WHERE id = $1\",[id]);\nconst product=result.rows[0];",
+          "explain": "Nu concatena req.params.id în SQL. Dacă rows este gol, răspunde cu 404; altfel transmite prod către pages/produs.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -33705,28 +33804,31 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 0,
-            "explanation": "Nu concatena req.params.id în SQL. Dacă rows este gol, răspunde cu 404; altfel transmite prod către pagini/produs."
+            "explanation": "Nu concatena req.params.id în SQL. Dacă rows este gol, răspunde cu 404; altfel transmite prod către pages/produs."
           },
           "task": {
             "mode": "text",
             "prompt": "Scrie interogarea parametrizată pentru toate coloanele produsului după id.",
-            "solution": "SELECT * FROM prajituri WHERE id = $1",
+            "solution": "SELECT * FROM products WHERE id = $1",
             "starter": "",
             "id": "project-query",
             "revision": 3,
-            "contextCode": "const result=await pool.query(\"SELECT * FROM prajituri WHERE id = $1\",[id]);\nconst prod=result.rows[0];",
+            "contextCode": "const result=await pool.query(\"SELECT * FROM products WHERE id = $1\",[id]);\nconst product=result.rows[0];",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "Nu concatena req.params.id în SQL. Dacă rows este gol, răspunde cu 404; altfel transmite prod către pagini/produs.",
+          "hint": "Nu concatena req.params.id în SQL. Dacă rows este gol, răspunde cu 404; altfel transmite prod către pages/produs.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-controls",
           "title": "Construiește controalele filtrelor",
           "intro": "Păstrează id-urile pe care le citește produse.js.",
-          "example": "<input id=\"inp-nume\">\n<input name=\"gr_rad\" type=\"radio\" value=\"0:350\" id=\"i_rad1\">\n<input name=\"gr_rad\" type=\"radio\" value=\"350:700\" id=\"i_rad2\">\n<input name=\"gr_rad\" type=\"radio\" value=\"700:1000000000\" id=\"i_rad3\">\n<input name=\"gr_rad\" type=\"radio\" value=\"toate\" id=\"i_rad4\" checked>\n<input id=\"inp-pret\" type=\"range\" min=\"0\" max=\"70\" value=\"0\">\n<span id=\"infoRange\">(0)</span>\n<select id=\"inp-categorie\"><option value=\"toate\">toate</option></select>\n<button id=\"filtrare\">Filtreaza</button>",
-          "explain": "La click citești valorile, aplici condițiile din project-filter și setezi display la block sau none. input.value este text: convertește prețurile și limitele calorice. Opțiunile categoriei vor veni din ENUM prin EJS.",
-          "points": [],
+          "example": "<input id=\"inp-name\">\n<input name=\"gr_rad\" type=\"radio\" value=\"0:350\" id=\"i_rad1\">\n<input name=\"gr_rad\" type=\"radio\" value=\"350:700\" id=\"i_rad2\">\n<input name=\"gr_rad\" type=\"radio\" value=\"700:1000000000\" id=\"i_rad3\">\n<input name=\"gr_rad\" type=\"radio\" value=\"all\" id=\"i_rad4\" checked>\n<input id=\"inp-price\" type=\"range\" min=\"0\" max=\"70\" value=\"0\">\n<span id=\"infoRange\">(0)</span>\n<select id=\"inp-category\"><option value=\"all\">all</option></select>\n<button id=\"filtrare\">Filter</button>",
+          "explain": "La click citești valorile și aplici condițiile din exercițiul despre filtre. input.value este text: convertește prețurile și limitele stocului înainte de comparații. Opțiunile categoriei pot veni din ENUM prin EJS.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -33735,28 +33837,31 @@ window.TW_COURSE = {
               "Inputurile și scriptul folosesc aceleași id-uri"
             ],
             "correct": 2,
-            "explanation": "La click citești valorile, aplici condițiile din project-filter și setezi display la block sau none. input.value este text: convertește prețurile și limitele calorice. Opțiunile categoriei vor veni din ENUM prin EJS."
+            "explanation": "La click citești valorile și aplici condițiile din exercițiul despre filtre. input.value este text: convertește prețurile și limitele stocului înainte de comparații. Opțiunile categoriei pot veni din ENUM prin EJS."
           },
           "task": {
             "mode": "text",
             "prompt": "Ce id are sliderul de preț minim?",
-            "solution": "inp-pret",
+            "solution": "inp-price",
             "starter": "",
             "id": "dulc-controls",
             "revision": 3,
-            "contextCode": "<input id=\"inp-nume\">\n<input name=\"gr_rad\" type=\"radio\" value=\"0:350\" id=\"i_rad1\">\n<input name=\"gr_rad\" type=\"radio\" value=\"350:700\" id=\"i_rad2\">\n<input name=\"gr_rad\" type=\"radio\" value=\"700:1000000000\" id=\"i_rad3\">\n<input name=\"gr_rad\" type=\"radio\" value=\"toate\" id=\"i_rad4\" checked>\n<input id=\"inp-pret\" type=\"range\" min=\"0\" max=\"70\" value=\"0\">\n<span id=\"infoRange\">(0)</span>\n<select id=\"inp-categorie\"><option value=\"toate\">toate</option></select>\n<button id=\"filtrare\">Filtreaza</button>",
+            "contextCode": "<input id=\"inp-name\">\n<input name=\"gr_rad\" type=\"radio\" value=\"0:350\" id=\"i_rad1\">\n<input name=\"gr_rad\" type=\"radio\" value=\"350:700\" id=\"i_rad2\">\n<input name=\"gr_rad\" type=\"radio\" value=\"700:1000000000\" id=\"i_rad3\">\n<input name=\"gr_rad\" type=\"radio\" value=\"all\" id=\"i_rad4\" checked>\n<input id=\"inp-price\" type=\"range\" min=\"0\" max=\"70\" value=\"0\">\n<span id=\"infoRange\">(0)</span>\n<select id=\"inp-category\"><option value=\"all\">all</option></select>\n<button id=\"filtrare\">Filter</button>",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "La click citești valorile, aplici condițiile din project-filter și setezi display la block sau none. input.value este text: convertește prețurile și limitele calorice. Opțiunile categoriei vor veni din ENUM prin EJS.",
+          "hint": "La click citești valorile și aplici condițiile din exercițiul despre filtre. input.value este text: convertește prețurile și limitele stocului înainte de comparații. Opțiunile categoriei pot veni din ENUM prin EJS.",
           "duration": "6-12 min"
         },
         {
           "id": "project-filter",
-          "title": "Filtrele exacte ale catalogului",
-          "intro": "Numele folosește startsWith; prețul este minim; intervalul caloric exclude limita superioară.",
-          "example": "function solve(i){return i.produse.filter(p=>p.nume.toLowerCase().startsWith(i.nume.trim().toLowerCase())&&(i.calorii===\"toate\"||(p.calorii>=i.min&&p.calorii<i.max))&&Number(p.pret)>=i.pretMin&&(i.categorie===\"toate\"||p.categorie===i.categorie)).map(p=>p.id);}",
-          "explain": "Citește inp-nume, gr_rad, inp-pret și inp-categorie. La 350 calorii produsul intră în 350:700, nu în 0:350. Toate condițiile se combină cu &&.",
-          "points": [],
+          "title": "Combină filtrele unui catalog",
+          "intro": "Exemplul de catalog filtrează după prefixul numelui, stoc, preț minim și categorie.",
+          "example": "function solve(i){return i.products.filter(p=>p.name.toLowerCase().startsWith(i.name.trim().toLowerCase())&&(i.stock===\"all\"||(p.stock>=i.min&&p.stock<i.max))&&Number(p.price)>=i.minPrice&&(i.category===\"all\"||p.category===i.category)).map(p=>p.id);}",
+          "explain": "Folosește startsWith pentru prefix. Combină condițiile cu &&. Intervalul de stoc include limita inferioară și exclude limita superioară: 350 intră în 350–700, nu în 0–350. Acest exemplu este independent de orice aplicație externă.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -33765,44 +33870,44 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 1,
-            "explanation": "Citește inp-nume, gr_rad, inp-pret și inp-categorie. La 350 calorii produsul intră în 350:700, nu în 0:350. Toate condițiile se combină cu &&."
+            "explanation": "Folosește startsWith pentru prefix. Combină condițiile cu &&. Intervalul de stoc include limita inferioară și exclude limita superioară: 350 intră în 350–700, nu în 0–350. Acest exemplu este independent de orice aplicație externă."
           },
           "task": {
             "mode": "js",
             "prompt": "Returnează id-urile potrivite după toate filtrele.",
-            "solution": "function solve(i){return i.produse.filter(p=>p.nume.toLowerCase().startsWith(i.nume.trim().toLowerCase())&&(i.calorii===\"toate\"||(p.calorii>=i.min&&p.calorii<i.max))&&Number(p.pret)>=i.pretMin&&(i.categorie===\"toate\"||p.categorie===i.categorie)).map(p=>p.id);}",
+            "solution": "function solve(i){return i.products.filter(p=>p.name.toLowerCase().startsWith(i.name.trim().toLowerCase())&&(i.stock===\"all\"||(p.stock>=i.min&&p.stock<i.max))&&Number(p.price)>=i.minPrice&&(i.category===\"all\"||p.category===i.category)).map(p=>p.id);}",
             "cases": [
               {
                 "input": {
-                  "produse": [
+                  "products": [
                     {
                       "id": 1,
-                      "nume": "Savarină",
-                      "pret": "7.50",
-                      "calorii": 400,
-                      "categorie": "comuna"
+                      "name": "Notebook",
+                      "price": "7.50",
+                      "stock": 400,
+                      "category": "standard"
                     },
                     {
                       "id": 2,
-                      "nume": "Amandina",
-                      "pret": "6.00",
-                      "calorii": 400,
-                      "categorie": "comuna"
+                      "name": "Pen",
+                      "price": "6.00",
+                      "stock": 400,
+                      "category": "standard"
                     },
                     {
                       "id": 6,
-                      "nume": "Nimic",
-                      "pret": "10.00",
-                      "calorii": 0,
-                      "categorie": "dietetica"
+                      "name": "Sticker",
+                      "price": "10.00",
+                      "stock": 0,
+                      "category": "limited"
                     }
                   ],
-                  "nume": " sa ",
-                  "calorii": "toate",
+                  "name": " no ",
+                  "stock": "all",
                   "min": 0,
                   "max": 350,
-                  "pretMin": 7,
-                  "categorie": "toate"
+                  "minPrice": 7,
+                  "category": "all"
                 },
                 "expected": [
                   1
@@ -33810,35 +33915,35 @@ window.TW_COURSE = {
               },
               {
                 "input": {
-                  "produse": [
+                  "products": [
                     {
                       "id": 1,
-                      "nume": "Savarină",
-                      "pret": "7.50",
-                      "calorii": 400,
-                      "categorie": "comuna"
+                      "name": "Notebook",
+                      "price": "7.50",
+                      "stock": 400,
+                      "category": "standard"
                     },
                     {
                       "id": 2,
-                      "nume": "Amandina",
-                      "pret": "6.00",
-                      "calorii": 400,
-                      "categorie": "comuna"
+                      "name": "Pen",
+                      "price": "6.00",
+                      "stock": 400,
+                      "category": "standard"
                     },
                     {
                       "id": 6,
-                      "nume": "Nimic",
-                      "pret": "10.00",
-                      "calorii": 0,
-                      "categorie": "dietetica"
+                      "name": "Sticker",
+                      "price": "10.00",
+                      "stock": 0,
+                      "category": "limited"
                     }
                   ],
-                  "nume": "",
-                  "calorii": "interval",
+                  "name": "",
+                  "stock": "interval",
                   "min": 0,
                   "max": 350,
-                  "pretMin": 0,
-                  "categorie": "toate"
+                  "minPrice": 0,
+                  "category": "all"
                 },
                 "expected": [
                   6
@@ -33846,55 +33951,55 @@ window.TW_COURSE = {
               },
               {
                 "input": {
-                  "produse": [
+                  "products": [
                     {
                       "id": 1,
-                      "nume": "Savarină",
-                      "pret": "7.50",
-                      "calorii": 400,
-                      "categorie": "comuna"
+                      "name": "Notebook",
+                      "price": "7.50",
+                      "stock": 400,
+                      "category": "standard"
                     },
                     {
                       "id": 2,
-                      "nume": "Amandina",
-                      "pret": "6.00",
-                      "calorii": 400,
-                      "categorie": "comuna"
+                      "name": "Pen",
+                      "price": "6.00",
+                      "stock": 400,
+                      "category": "standard"
                     },
                     {
                       "id": 6,
-                      "nume": "Nimic",
-                      "pret": "10.00",
-                      "calorii": 0,
-                      "categorie": "dietetica"
+                      "name": "Sticker",
+                      "price": "10.00",
+                      "stock": 0,
+                      "category": "limited"
                     }
                   ],
-                  "nume": "va",
-                  "calorii": "toate",
+                  "name": "va",
+                  "stock": "all",
                   "min": 0,
                   "max": 350,
-                  "pretMin": 0,
-                  "categorie": "toate"
+                  "minPrice": 0,
+                  "category": "all"
                 },
                 "expected": []
               },
               {
                 "input": {
-                  "produse": [
+                  "products": [
                     {
                       "id": 9,
-                      "nume": "Limita",
-                      "pret": "2",
-                      "calorii": 350,
-                      "categorie": "comuna"
+                      "name": "Limita",
+                      "price": "2",
+                      "stock": 350,
+                      "category": "standard"
                     }
                   ],
-                  "nume": "",
-                  "calorii": "interval",
+                  "name": "",
+                  "stock": "interval",
                   "min": 0,
                   "max": 350,
-                  "pretMin": 0,
-                  "categorie": "toate"
+                  "minPrice": 0,
+                  "category": "all"
                 },
                 "expected": []
               }
@@ -33903,16 +34008,19 @@ window.TW_COURSE = {
             "id": "project-filter",
             "revision": 3
           },
-          "hint": "Citește inp-nume, gr_rad, inp-pret și inp-categorie. La 350 calorii produsul intră în 350:700, nu în 0:350. Toate condițiile se combină cu &&.",
+          "hint": "Folosește startsWith pentru prefix. Combină condițiile cu &&. Intervalul de stoc include limita inferioară și exclude limita superioară: 350 intră în 350–700, nu în 0–350. Acest exemplu este independent de orice aplicație externă.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-filter-dom",
           "title": "Aplică filtrul în DOM",
           "intro": "Ascunde cardurile nepotrivite fără să le ștergi.",
-          "example": "document.getElementById(\"filtrare\").onclick=()=>{const prefix=document.getElementById(\"inp-nume\").value.trim().toLowerCase();for(const card of document.querySelectorAll(\".produs\"))card.style.display=card.querySelector(\".val-nume\").textContent.trim().toLowerCase().startsWith(prefix)?\"block\":\"none\";};",
-          "explain": "Începe cu numele și adaugă caloriile, prețul și categoria. Filtrarea locală modifică afișarea, nu rândurile din PostgreSQL.",
-          "points": [],
+          "example": "document.getElementById(\"filtrare\").onclick=()=>{const prefix=document.getElementById(\"inp-name\").value.trim().toLowerCase();for(const card of document.querySelectorAll(\".product\"))card.style.display=card.querySelector(\".val-name\").textContent.trim().toLowerCase().startsWith(prefix)?\"block\":\"none\";};",
+          "explain": "Începe cu numele și apoi adaugă stocul, prețul și categoria. Filtrarea în browser schimbă doar afișarea cardurilor, nu rândurile din PostgreSQL.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -33921,27 +34029,27 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 0,
-            "explanation": "Începe cu numele și adaugă caloriile, prețul și categoria. Filtrarea locală modifică afișarea, nu rândurile din PostgreSQL."
+            "explanation": "Începe cu numele și apoi adaugă stocul, prețul și categoria. Filtrarea în browser schimbă doar afișarea cardurilor, nu rândurile din PostgreSQL."
           },
           "task": {
             "mode": "dom",
-            "prompt": "La click afișează Savarină și ascunde Amandina.",
-            "solution": "document.getElementById(\"filtrare\").onclick=()=>{const prefix=document.getElementById(\"inp-nume\").value.trim().toLowerCase();for(const card of document.querySelectorAll(\".produs\"))card.style.display=card.querySelector(\".val-nume\").textContent.trim().toLowerCase().startsWith(prefix)?\"block\":\"none\";};",
-            "fixture": "<input id=\"inp-nume\" value=\"sav\"><button id=\"filtrare\">Filtreaza</button><article class=\"produs\" id=\"sav\"><span class=\"val-nume\">Savarină</span></article><article class=\"produs\" id=\"ama\"><span class=\"val-nume\">Amandina</span></article>",
+            "prompt": "La click afișează Notebook și ascunde Pen.",
+            "solution": "document.getElementById(\"filtrare\").onclick=()=>{const prefix=document.getElementById(\"inp-name\").value.trim().toLowerCase();for(const card of document.querySelectorAll(\".product\"))card.style.display=card.querySelector(\".val-name\").textContent.trim().toLowerCase().startsWith(prefix)?\"block\":\"none\";};",
+            "fixture": "<input id=\"inp-name\" value=\"sav\"><button id=\"filtrare\">Filter</button><article class=\"product\" id=\"sav\"><span class=\"val-name\">Notebook</span></article><article class=\"product\" id=\"ama\"><span class=\"val-name\">Pen</span></article>",
             "tests": [
               {
                 "kind": "style",
                 "selector": "#sav",
                 "name": "display",
                 "value": "block",
-                "label": "`#sav`: `display: block`"
+                "label": "#sav: display este block."
               },
               {
                 "kind": "style",
                 "selector": "#ama",
                 "name": "display",
                 "value": "none",
-                "label": "`#ama`: `display: none`"
+                "label": "#ama: display este none."
               }
             ],
             "actions": [
@@ -33954,20 +34062,23 @@ window.TW_COURSE = {
             "id": "dulc-filter-dom",
             "revision": 3,
             "requirements": [
-              "`#sav`: `display: block`",
-              "`#ama`: `display: none`"
+              "#sav: display este block.",
+              "#ama: display este none."
             ]
           },
-          "hint": "Începe cu numele și adaugă caloriile, prețul și categoria. Filtrarea locală modifică afișarea, nu rândurile din PostgreSQL.",
+          "hint": "Începe cu numele și apoi adaugă stocul, prețul și categoria. Filtrarea în browser schimbă doar afișarea cardurilor, nu rândurile din PostgreSQL.",
           "duration": "6-12 min"
         },
         {
           "id": "project-sort",
           "title": "Sortarea în ambele sensuri",
-          "intro": "semn=1 este crescător, semn=-1 descrescător pentru preț și pentru nume la egalitate.",
-          "example": "function solve(i){return [...i.produse].sort((a,b)=>i.semn*(Number(a.pret)-Number(b.pret)||a.nume.toLowerCase().localeCompare(b.nume.toLowerCase()))).map(p=>p.id);}",
-          "explain": "În DOM folosești Array.from pentru colecția .produs. După sortare appendChild mută cardurile în noua ordine fără să le cloneze.",
-          "points": [],
+          "intro": "sign=1 sortează crescător, sign=-1 descrescător după preț și apoi nume.",
+          "example": "function solve(i){return [...i.products].sort((a,b)=>i.sign*(Number(a.price)-Number(b.price)||a.name.toLowerCase().localeCompare(b.name.toLowerCase()))).map(p=>p.id);}",
+          "explain": "Copiază vectorul înainte de sortare. Convertește price cu Number și folosește name ca al doilea criteriu. Pentru carduri DOM, appendChild mută elementele în ordinea calculată.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -33976,39 +34087,39 @@ window.TW_COURSE = {
               "Semnul schimbă ambele criterii"
             ],
             "correct": 2,
-            "explanation": "În DOM folosești Array.from pentru colecția .produs. După sortare appendChild mută cardurile în noua ordine fără să le cloneze."
+            "explanation": "Copiază vectorul înainte de sortare. Convertește price cu Number și folosește name ca al doilea criteriu. Pentru carduri DOM, appendChild mută elementele în ordinea calculată."
           },
           "task": {
             "mode": "js",
             "prompt": "Returnează id-urile sortate după preț și apoi nume.",
-            "solution": "function solve(i){return [...i.produse].sort((a,b)=>i.semn*(Number(a.pret)-Number(b.pret)||a.nume.toLowerCase().localeCompare(b.nume.toLowerCase()))).map(p=>p.id);}",
+            "solution": "function solve(i){return [...i.products].sort((a,b)=>i.sign*(Number(a.price)-Number(b.price)||a.name.toLowerCase().localeCompare(b.name.toLowerCase()))).map(p=>p.id);}",
             "cases": [
               {
                 "input": {
-                  "produse": [
+                  "products": [
                     {
                       "id": 1,
-                      "nume": "Savarină",
-                      "pret": "7.50",
-                      "calorii": 400,
-                      "categorie": "comuna"
+                      "name": "Notebook",
+                      "price": "7.50",
+                      "stock": 400,
+                      "category": "standard"
                     },
                     {
                       "id": 2,
-                      "nume": "Amandina",
-                      "pret": "6.00",
-                      "calorii": 400,
-                      "categorie": "comuna"
+                      "name": "Pen",
+                      "price": "6.00",
+                      "stock": 400,
+                      "category": "standard"
                     },
                     {
                       "id": 6,
-                      "nume": "Nimic",
-                      "pret": "10.00",
-                      "calorii": 0,
-                      "categorie": "dietetica"
+                      "name": "Sticker",
+                      "price": "10.00",
+                      "stock": 0,
+                      "category": "limited"
                     }
                   ],
-                  "semn": 1
+                  "sign": 1
                 },
                 "expected": [
                   2,
@@ -34018,30 +34129,30 @@ window.TW_COURSE = {
               },
               {
                 "input": {
-                  "produse": [
+                  "products": [
                     {
                       "id": 1,
-                      "nume": "Savarină",
-                      "pret": "7.50",
-                      "calorii": 400,
-                      "categorie": "comuna"
+                      "name": "Notebook",
+                      "price": "7.50",
+                      "stock": 400,
+                      "category": "standard"
                     },
                     {
                       "id": 2,
-                      "nume": "Amandina",
-                      "pret": "6.00",
-                      "calorii": 400,
-                      "categorie": "comuna"
+                      "name": "Pen",
+                      "price": "6.00",
+                      "stock": 400,
+                      "category": "standard"
                     },
                     {
                       "id": 6,
-                      "nume": "Nimic",
-                      "pret": "10.00",
-                      "calorii": 0,
-                      "categorie": "dietetica"
+                      "name": "Sticker",
+                      "price": "10.00",
+                      "stock": 0,
+                      "category": "limited"
                     }
                   ],
-                  "semn": -1
+                  "sign": -1
                 },
                 "expected": [
                   6,
@@ -34051,19 +34162,19 @@ window.TW_COURSE = {
               },
               {
                 "input": {
-                  "produse": [
+                  "products": [
                     {
                       "id": 2,
-                      "nume": "B",
-                      "pret": "7"
+                      "name": "B",
+                      "price": "7"
                     },
                     {
                       "id": 1,
-                      "nume": "A",
-                      "pret": "7"
+                      "name": "A",
+                      "price": "7"
                     }
                   ],
-                  "semn": -1
+                  "sign": -1
                 },
                 "expected": [
                   2,
@@ -34075,16 +34186,19 @@ window.TW_COURSE = {
             "id": "project-sort",
             "revision": 3
           },
-          "hint": "În DOM folosești Array.from pentru colecția .produs. După sortare appendChild mută cardurile în noua ordine fără să le cloneze.",
+          "hint": "Copiază vectorul înainte de sortare. Convertește price cu Number și folosește name ca al doilea criteriu. Pentru carduri DOM, appendChild mută elementele în ordinea calculată.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-reset",
           "title": "Resetarea din exemplu",
-          "intro": "Resetarea originală golește numele, bifează toate caloriile și reafișează cardurile.",
-          "example": "document.getElementById(\"inp-nume\").value=\"\";\ndocument.getElementById(\"i_rad4\").checked=true;\nfor(const prod of document.querySelectorAll(\".produs\"))prod.style.display=\"block\";",
-          "explain": "Sliderul și categoria nu sunt resetate de acel cod. Pentru identitate păstrezi comportamentul observat. O resetare completă ar modifica și sliderul, categoria și infoRange: este o îmbunătățire separată.",
-          "points": [],
+          "intro": "O resetare parțială golește numele, selectează întregul interval de stoc și reafișează cardurile.",
+          "example": "document.getElementById(\"inp-name\").value=\"\";\ndocument.getElementById(\"i_rad4\").checked=true;\nfor(const product of document.querySelectorAll(\".product\"))product.style.display=\"block\";",
+          "explain": "Fragmentul nu resetează sliderul și categoria. Pentru resetare completă adaugă explicit valorile inițiale pentru toate controalele și indicatorii lor. Aceste două comportamente trebuie testate separat.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -34093,7 +34207,7 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 1,
-            "explanation": "Sliderul și categoria nu sunt resetate de acel cod. Pentru identitate păstrezi comportamentul observat. O resetare completă ar modifica și sliderul, categoria și infoRange: este o îmbunătățire separată."
+            "explanation": "Fragmentul nu resetează sliderul și categoria. Pentru resetare completă adaugă explicit valorile inițiale pentru toate controalele și indicatorii lor. Aceste două comportamente trebuie testate separat."
           },
           "task": {
             "mode": "text",
@@ -34102,19 +34216,22 @@ window.TW_COURSE = {
             "starter": "",
             "id": "dulc-reset",
             "revision": 3,
-            "contextCode": "document.getElementById(\"inp-nume\").value=\"\";\ndocument.getElementById(\"i_rad4\").checked=true;\nfor(const prod of document.querySelectorAll(\".produs\"))prod.style.display=\"block\";",
+            "contextCode": "document.getElementById(\"inp-name\").value=\"\";\ndocument.getElementById(\"i_rad4\").checked=true;\nfor(const product of document.querySelectorAll(\".product\"))product.style.display=\"block\";",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "Sliderul și categoria nu sunt resetate de acel cod. Pentru identitate păstrezi comportamentul observat. O resetare completă ar modifica și sliderul, categoria și infoRange: este o îmbunătățire separată.",
+          "hint": "Fragmentul nu resetează sliderul și categoria. Pentru resetare completă adaugă explicit valorile inițiale pentru toate controalele și indicatorii lor. Aceste două comportamente trebuie testate separat.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-total",
           "title": "Alt+C: suma prețurilor afișate",
           "intro": "Adună cardurile vizibile, nu produsele bifate în coș.",
-          "example": "function solve(input){return input.filter(p=>p.display!==\"none\").reduce((sum,p)=>sum+Number(p.pret),0);}",
+          "example": "function solve(input){return input.filter(p=>p.display!==\"none\").reduce((sum,p)=>sum+Number(p.price),0);}",
           "explain": "În keydown verifică e.altKey și e.key.toLowerCase()===\"c\". Creează p#suma_preturi după p#p-suma doar dacă lipsește. Elimină-l după 2000 ms prin setTimeout. Number împiedică concatenarea textelor.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -34128,16 +34245,16 @@ window.TW_COURSE = {
           "task": {
             "mode": "js",
             "prompt": "Returnează suma cardurilor care nu au display none.",
-            "solution": "function solve(input){return input.filter(p=>p.display!==\"none\").reduce((sum,p)=>sum+Number(p.pret),0);}",
+            "solution": "function solve(input){return input.filter(p=>p.display!==\"none\").reduce((sum,p)=>sum+Number(p.price),0);}",
             "cases": [
               {
                 "input": [
                   {
-                    "pret": "7.50",
+                    "price": "7.50",
                     "display": "block"
                   },
                   {
-                    "pret": "6.00",
+                    "price": "6.00",
                     "display": "none"
                   }
                 ],
@@ -34157,11 +34274,14 @@ window.TW_COURSE = {
         },
         {
           "id": "project-cart",
-          "title": "Coșul cos_virtual",
-          "intro": "Coșul memorează id-uri separate prin virgulă sub cheia cos_virtual.",
+          "title": "Coșul cart_ids",
+          "intro": "Coșul memorează id-uri separate prin virgulă sub cheia cart_ids.",
           "example": "function solve(i){let ids=i.saved?i.saved.split(\",\"):[];if(i.checked){if(!ids.includes(i.id))ids.push(i.id);}else ids=ids.filter(id=>id!==i.id);return ids.join(\",\");}",
           "explain": "La încărcare citești lista și bifezi checkbox-urile .select-cos cu acel value. La schimbare salvezi lista. Nu schimba în JSON fără să adaptezi și citirea.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -34212,10 +34332,13 @@ window.TW_COURSE = {
         {
           "id": "dulc-theme",
           "title": "Tema și persistența",
-          "intro": "Butonul schimba_tema comută body.dark și cheia tema.",
-          "example": "document.getElementById(\"schimba_tema\").onclick=()=>{if(document.body.classList.toggle(\"dark\"))localStorage.setItem(\"tema\",\"dark\");else localStorage.removeItem(\"tema\");};",
+          "intro": "Butonul theme-toggle comută body.dark și cheia tema.",
+          "example": "document.getElementById(\"theme-toggle\").onclick=()=>{if(document.body.classList.toggle(\"dark\"))localStorage.setItem(\"tema\",\"dark\");else localStorage.removeItem(\"tema\");};",
           "explain": "La încărcare aplică dark dacă cheia există. Rulează după crearea body, prin DOMContentLoaded sau defer. CSS pentru body.dark schimbă variabilele; stocarea singură nu modifică aspectul.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -34229,27 +34352,27 @@ window.TW_COURSE = {
           "task": {
             "mode": "dom",
             "prompt": "La click adaugă dark pe body.",
-            "solution": "document.getElementById(\"schimba_tema\").onclick=()=>{if(document.body.classList.toggle(\"dark\"))localStorage.setItem(\"tema\",\"dark\");else localStorage.removeItem(\"tema\");};",
-            "fixture": "<button id=\"schimba_tema\">Tema</button>",
+            "solution": "document.getElementById(\"theme-toggle\").onclick=()=>{if(document.body.classList.toggle(\"dark\"))localStorage.setItem(\"tema\",\"dark\");else localStorage.removeItem(\"tema\");};",
+            "fixture": "<button id=\"theme-toggle\">Theme</button>",
             "tests": [
               {
                 "kind": "count",
                 "selector": "body.dark",
                 "min": 1,
-                "label": "Elementul `body.dark` există"
+                "label": "Există cel puțin 1 elemente body.dark."
               }
             ],
             "actions": [
               {
                 "type": "click",
-                "selector": "#schimba_tema"
+                "selector": "#theme-toggle"
               }
             ],
             "starter": "",
             "id": "dulc-theme",
             "revision": 3,
             "requirements": [
-              "Elementul `body.dark` există"
+              "Există cel puțin 1 elemente body.dark."
             ]
           },
           "hint": "La încărcare aplică dark dacă cheia există. Rulează după crearea body, prin DOMContentLoaded sau defer. CSS pentru body.dark schimbă variabilele; stocarea singură nu modifică aspectul.",
@@ -34257,11 +34380,14 @@ window.TW_COURSE = {
         },
         {
           "id": "dulc-cookies",
-          "title": "Bannerul și cookie-ul acceptat_banner",
-          "intro": "La confirmare, cookies.js memorează acceptat_banner într-un cookie cu durată de 60000 ms.",
-          "example": "const d=new Date(Date.now()+60000);\ndocument.cookie=\"acceptat_banner=true; expires=\"+d.toUTCString();\ndocument.getElementById(\"banner\").style.display=\"none\";",
-          "explain": "La load citești document.cookie, separi perechile prin ; și cauți numele exact. Dacă există acceptat_banner, ascunzi bannerul. #ok_cookies confirmă alegerea. Nu folosi localStorage aici dacă vrei comportamentul original: cookie-ul expiră după un minut. Browserul poate avea politici proprii pentru cookie-uri.",
-          "points": [],
+          "title": "Bannerul și cookie-ul banner_accepted",
+          "intro": "La confirmare, cookies.js memorează banner_accepted într-un cookie cu durată de 60000 ms.",
+          "example": "const d=new Date(Date.now()+60000);\ndocument.cookie=\"banner_accepted=true; expires=\"+d.toUTCString();\ndocument.getElementById(\"banner\").style.display=\"none\";",
+          "explain": "La load citești document.cookie și separi perechile prin ;. Dacă există banner_accepted, ascunzi bannerul. Butonul ok_cookies confirmă alegerea; în acest exemplu cookie-ul expiră după un minut. localStorage nu are aceeași expirare automată.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -34270,28 +34396,31 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 0,
-            "explanation": "La load citești document.cookie, separi perechile prin ; și cauți numele exact. Dacă există acceptat_banner, ascunzi bannerul. #ok_cookies confirmă alegerea. Nu folosi localStorage aici dacă vrei comportamentul original: cookie-ul expiră după un minut. Browserul poate avea politici proprii pentru cookie-uri."
+            "explanation": "La load citești document.cookie și separi perechile prin ;. Dacă există banner_accepted, ascunzi bannerul. Butonul ok_cookies confirmă alegerea; în acest exemplu cookie-ul expiră după un minut. localStorage nu are aceeași expirare automată."
           },
           "task": {
             "mode": "text",
             "prompt": "Ce nume are cookie-ul folosit de banner?",
-            "solution": "acceptat_banner",
+            "solution": "banner_accepted",
             "starter": "",
             "id": "dulc-cookies",
             "revision": 3,
-            "contextCode": "const d=new Date(Date.now()+60000);\ndocument.cookie=\"acceptat_banner=true; expires=\"+d.toUTCString();\ndocument.getElementById(\"banner\").style.display=\"none\";",
+            "contextCode": "const d=new Date(Date.now()+60000);\ndocument.cookie=\"banner_accepted=true; expires=\"+d.toUTCString();\ndocument.getElementById(\"banner\").style.display=\"none\";",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "La load citești document.cookie, separi perechile prin ; și cauți numele exact. Dacă există acceptat_banner, ascunzi bannerul. #ok_cookies confirmă alegerea. Nu folosi localStorage aici dacă vrei comportamentul original: cookie-ul expiră după un minut. Browserul poate avea politici proprii pentru cookie-uri.",
+          "hint": "La load citești document.cookie și separi perechile prin ;. Dacă există banner_accepted, ascunzi bannerul. Butonul ok_cookies confirmă alegerea; în acest exemplu cookie-ul expiră după un minut. localStorage nu are aceeași expirare automată.",
           "duration": "6-12 min"
         },
         {
           "id": "project-errors",
           "title": "Erorile 400, 404 și 500",
-          "intro": "În aplicația finală, textele și imaginile erorilor vin din erori.json și se afișează în pagini/eroare.ejs.",
-          "example": "const express=require(\"express\");const app=express();app.get(\"/defect\",(req,res,next)=>next(new Error(\"Test\")));app.use((req,res)=>res.status(404).send(\"Pagina inexistenta\"));app.use((error,req,res,next)=>res.status(500).send(\"Eroare server\"));module.exports=app;",
+          "intro": "În aplicația finală, textele și imaginile erorilor vin din erori.json și se afișează în pages/eroare.ejs.",
+          "example": "const express=require(\"express\");const app=express();app.get(\"/defect\",(req,res,next)=>next(new Error(\"Test\")));app.use((req,res)=>res.status(404).send(\"Page not found\"));app.use((error,req,res,next)=>res.status(500).send(\"Server error\"));module.exports=app;",
           "explain": "Declară fallback-ul după rute. Handler-ul cu patru parametri primește excepțiile. Nu trimite parole sau detalii interne în răspunsul public.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -34305,17 +34434,17 @@ window.TW_COURSE = {
           "task": {
             "mode": "express",
             "prompt": "Configurează 404 pentru o rută lipsă și 500 pentru /defect.",
-            "solution": "const express=require(\"express\");const app=express();app.get(\"/defect\",(req,res,next)=>next(new Error(\"Test\")));app.use((req,res)=>res.status(404).send(\"Pagina inexistenta\"));app.use((error,req,res,next)=>res.status(500).send(\"Eroare server\"));module.exports=app;",
+            "solution": "const express=require(\"express\");const app=express();app.get(\"/defect\",(req,res,next)=>next(new Error(\"Test\")));app.use((req,res)=>res.status(404).send(\"Page not found\"));app.use((error,req,res,next)=>res.status(500).send(\"Server error\"));module.exports=app;",
             "requests": [
               {
                 "path": "/lipsa",
                 "status": 404,
-                "bodyExpected": "Pagina inexistenta"
+                "bodyExpected": "Page not found"
               },
               {
                 "path": "/defect",
                 "status": 500,
-                "bodyExpected": "Eroare server"
+                "bodyExpected": "Server error"
               }
             ],
             "starter": "const express = require(\"express\");\nconst app = express();\n\n// Add your routes here.\n\nmodule.exports = app;\n",
@@ -34328,10 +34457,13 @@ window.TW_COURSE = {
         {
           "id": "dulc-assembly",
           "title": "Asamblează componentele",
-          "intro": "Reunește fragmentele, paginile, scripturile și rutele. Testează static înainte de SQL.",
-          "example": "views/fragmente: head, header, footer\nviews/pagini: index, despre, produse, produs, eroare\nresurse/css: general, nav, galerie, produse, responsive\nresurse/js: produse, produse-cos, tema, schimba_tema, cookies\nresurse/json: galerie, erori\ndata: prajituri.sql, utilizatori.sql\napp.js: static, EJS, rute, date și erori",
-          "explain": "Fiecare etapă oferă o componentă, nu site-ul întreg printr-o singură copiere. Completează conținutul și stilurile, apoi verifică fiecare funcție. Înregistrare și Contact sunt linkuri substituent în aplicația originală; tabelele utilizatorilor nu implementează autentificare.",
-          "points": [],
+          "intro": "Combină tehnicile în propriul site, folosind fișiere create de tine.",
+          "example": "app.js: server and routes\ndb.cjs: PostgreSQL Pool\nsetup-db.cjs: database initialization\nbuild-assets.mjs: SCSS and image build\ndata/catalog.sql: training schema and rows\nviews/partials: head, header, footer\nviews/pages: index, products, product, error\npublic/css: theme, layout, mobile\npublic/js: filters, sorting, storage\npublic/images: your own images",
+          "explain": "Lecțiile oferă exemple de componente. Pentru lucru local le salvezi în propriile fișiere și adaptezi aspectul și conținutul. Nu trebuie să descarci un proiect extern și nu urmărești reproducerea unei cofetării. Creează explicit un backend numai pentru funcțiile de care ai nevoie.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -34340,28 +34472,31 @@ window.TW_COURSE = {
               "Componentele trebuie verificate împreună"
             ],
             "correct": 2,
-            "explanation": "Fiecare etapă oferă o componentă, nu site-ul întreg printr-o singură copiere. Completează conținutul și stilurile, apoi verifică fiecare funcție. Înregistrare și Contact sunt linkuri substituent în aplicația originală; tabelele utilizatorilor nu implementează autentificare."
+            "explanation": "Lecțiile oferă exemple de componente. Pentru lucru local le salvezi în propriile fișiere și adaptezi aspectul și conținutul. Nu trebuie să descarci un proiect extern și nu urmărești reproducerea unei cofetării. Creează explicit un backend numai pentru funcțiile de care ai nevoie."
           },
           "task": {
             "mode": "text",
             "prompt": "Ce șablon afișează un produs?",
-            "solution": "produs.ejs",
+            "solution": "product.ejs",
             "starter": "",
             "id": "dulc-assembly",
             "revision": 3,
-            "contextCode": "views/fragmente: head, header, footer\nviews/pagini: index, despre, produse, produs, eroare\nresurse/css: general, nav, galerie, produse, responsive\nresurse/js: produse, produse-cos, tema, schimba_tema, cookies\nresurse/json: galerie, erori\ndata: prajituri.sql, utilizatori.sql\napp.js: static, EJS, rute, date și erori",
+            "contextCode": "app.js: server and routes\ndb.cjs: PostgreSQL Pool\nsetup-db.cjs: database initialization\nbuild-assets.mjs: SCSS and image build\ndata/catalog.sql: training schema and rows\nviews/partials: head, header, footer\nviews/pages: index, products, product, error\npublic/css: theme, layout, mobile\npublic/js: filters, sorting, storage\npublic/images: your own images",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "Fiecare etapă oferă o componentă, nu site-ul întreg printr-o singură copiere. Completează conținutul și stilurile, apoi verifică fiecare funcție. Înregistrare și Contact sunt linkuri substituent în aplicația originală; tabelele utilizatorilor nu implementează autentificare.",
+          "hint": "Lecțiile oferă exemple de componente. Pentru lucru local le salvezi în propriile fișiere și adaptezi aspectul și conținutul. Nu trebuie să descarci un proiect extern și nu urmărești reproducerea unei cofetării. Creează explicit un backend numai pentru funcțiile de care ai nevoie.",
           "duration": "6-12 min"
         },
         {
           "id": "project-checklist",
           "title": "Verifică site-ul cap-coadă",
-          "intro": "Testează rutele, datele și interacțiunile, nu doar pagina principală.",
-          "example": "GET /project/ → 200\nGET /project/produse → 21 produse\nGET /project/produse?tip=patiserie → 7 produse\nGET /project/produse?tip=gelaterie → 5 produse\nGET /project/produs/1 → Savarină\nGET /project/produs/abc → 400\nGET /project/produs/999 → 404\nGET /project/health → PostgreSQL, 21",
-          "explain": "Verifică Network, imagini, meniu, filtre, sortare, Alt+C, coș după reload, temă și banner. Local fără conexiune poate apărea PGlite; în Azure trebuie PostgreSQL. Un răspuns 200 nu dovedește identitate vizuală.",
-          "points": [],
+          "intro": "Verifică exemplele și funcțiile pe care le-ai construit în propriul proiect.",
+          "example": "GET /demo/ → 200\nGET /demo/products → catalogue\nGET /demo/product/1 → Notebook\nGET /demo/product/abc → 400\nGET /demo/product/999 → 404\nGET /demo/health → PostgreSQL",
+          "explain": "Folosește datele de antrenament ale lecțiilor, apoi verifică navigarea, filtrele, sortarea, stocarea și cererile SQL. Aplicația separată de la /project/ este doar o demonstrație; nu ai nevoie de fișierele ei pentru exerciții.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -34370,36 +34505,39 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 0,
-            "explanation": "Verifică Network, imagini, meniu, filtre, sortare, Alt+C, coș după reload, temă și banner. Local fără conexiune poate apărea PGlite; în Azure trebuie PostgreSQL. Un răspuns 200 nu dovedește identitate vizuală."
+            "explanation": "Folosește datele de antrenament ale lecțiilor, apoi verifică navigarea, filtrele, sortarea, stocarea și cererile SQL. Aplicația separată de la /project/ este doar o demonstrație; nu ai nevoie de fișierele ei pentru exerciții."
           },
           "task": {
             "mode": "text",
-            "prompt": "Câte produse are catalogul original?",
-            "solution": "21",
+            "prompt": "Ce status HTTP aștepți pentru o resursă inexistentă?",
+            "solution": "404",
             "starter": "",
             "id": "project-checklist",
             "revision": 3,
-            "contextCode": "GET /project/ → 200\nGET /project/produse → 21 produse\nGET /project/produse?tip=patiserie → 7 produse\nGET /project/produse?tip=gelaterie → 5 produse\nGET /project/produs/1 → Savarină\nGET /project/produs/abc → 400\nGET /project/produs/999 → 404\nGET /project/health → PostgreSQL, 21",
+            "contextCode": "GET /demo/ → 200\nGET /demo/products → catalogue\nGET /demo/product/1 → Notebook\nGET /demo/product/abc → 400\nGET /demo/product/999 → 404\nGET /demo/health → PostgreSQL",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "Verifică Network, imagini, meniu, filtre, sortare, Alt+C, coș după reload, temă și banner. Local fără conexiune poate apărea PGlite; în Azure trebuie PostgreSQL. Un răspuns 200 nu dovedește identitate vizuală.",
+          "hint": "Folosește datele de antrenament ale lecțiilor, apoi verifică navigarea, filtrele, sortarea, stocarea și cererile SQL. Aplicația separată de la /project/ este doar o demonstrație; nu ai nevoie de fișierele ei pentru exerciții.",
           "duration": "6-12 min"
         }
       ]
     },
     {
       "id": "dulcelind-azure",
-      "title": "Dulcelind · PostgreSQL real și Azure",
-      "subtitle": "Creează schema reală, conectează pg și publică aplicația cu verificări de funcționare.",
+      "title": "PostgreSQL și publicare",
+      "subtitle": "Construiește o bază de antrenament și publică propria aplicație Node.js.",
       "icon": "database",
       "lessons": [
         {
           "id": "dulc-schema",
-          "title": "Separă schema dulcelind",
+          "title": "Separă schema demo",
           "intro": "O schemă este un spațiu de nume în baza curentă. Nu creează un server nou și nu șterge public.",
-          "example": "CREATE SCHEMA dulcelind; CREATE TABLE dulcelind.proba(id int); INSERT INTO dulcelind.proba VALUES(1); SELECT id FROM dulcelind.proba;",
+          "example": "CREATE SCHEMA demo; CREATE TABLE demo.proba(id int); INSERT INTO demo.proba VALUES(1); SELECT id FROM demo.proba;",
           "explain": "O schemă este un spațiu de nume în baza curentă. Nu creează un server nou și nu șterge public.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -34413,7 +34551,7 @@ window.TW_COURSE = {
           "task": {
             "mode": "sql",
             "prompt": "Rulează SQL pe baza temporară furnizată pentru rezultatul cerut.",
-            "solution": "CREATE SCHEMA dulcelind; CREATE TABLE dulcelind.proba(id int); INSERT INTO dulcelind.proba VALUES(1); SELECT id FROM dulcelind.proba;",
+            "solution": "CREATE SCHEMA demo; CREATE TABLE demo.proba(id int); INSERT INTO demo.proba VALUES(1); SELECT id FROM demo.proba;",
             "expected": [
               {
                 "id": 1
@@ -34437,11 +34575,14 @@ window.TW_COURSE = {
         },
         {
           "id": "dulc-enum",
-          "title": "Tipurile exacte ale produselor",
-          "intro": "tipuri_produse permite cofetarie, patiserie și gelaterie. Tipurile și tabelele sunt create în aceeași schemă.",
-          "example": "SELECT unnest(enum_range(NULL::tipuri_produse))::text AS tip;",
-          "explain": "tipuri_produse permite cofetarie, patiserie și gelaterie. Tipurile și tabelele sunt create în aceeași schemă.",
-          "points": [],
+          "title": "Tipuri definite cu ENUM",
+          "intro": "product_type permite books, stationery și accessories. Tipurile și tabelele sunt create în aceeași schemă.",
+          "example": "SELECT unnest(enum_range(NULL::product_type))::text AS type;",
+          "explain": "product_type permite books, stationery și accessories. Tipurile și tabelele sunt create în aceeași schemă.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -34450,52 +34591,55 @@ window.TW_COURSE = {
               "SQL-ul se execută pe date de antrenament"
             ],
             "correct": 2,
-            "explanation": "tipuri_produse permite cofetarie, patiserie și gelaterie. Tipurile și tabelele sunt create în aceeași schemă."
+            "explanation": "product_type permite books, stationery și accessories. Tipurile și tabelele sunt create în aceeași schemă."
           },
           "task": {
             "mode": "sql",
             "prompt": "Rulează SQL pe baza temporară furnizată pentru rezultatul cerut.",
-            "solution": "SELECT unnest(enum_range(NULL::tipuri_produse))::text AS tip;",
+            "solution": "SELECT unnest(enum_range(NULL::product_type))::text AS type;",
             "expected": [
               {
-                "tip": "cofetarie"
+                "type": "books"
               },
               {
-                "tip": "patiserie"
+                "type": "stationery"
               },
               {
-                "tip": "gelaterie"
+                "type": "accessories"
               }
             ],
-            "setup": "CREATE SCHEMA dulcelind; SET search_path TO dulcelind;\nCREATE TYPE categ_prajitura AS ENUM( 'comanda speciala', 'aniversara', 'editie limitata', 'pentru copii', 'dietetica','comuna');\nCREATE TYPE tipuri_produse AS ENUM('cofetarie', 'patiserie', 'gelaterie');\n\n\nCREATE TABLE IF NOT EXISTS prajituri (\n   id serial PRIMARY KEY,\n   nume VARCHAR(50) UNIQUE NOT NULL,\n   descriere TEXT,\n   pret NUMERIC(8,2) NOT NULL,\n   gramaj INT NOT NULL CHECK (gramaj>=0),   \n   tip_produs tipuri_produse DEFAULT 'cofetarie',\n   calorii INT NOT NULL CHECK (calorii>=0),\n   categorie categ_prajitura DEFAULT 'comuna',\n   ingrediente VARCHAR [], --pot sa nu fie specificare deci nu punem NOT NULL\n   pt_diabetici BOOLEAN NOT NULL DEFAULT FALSE,\n   imagine VARCHAR(300),\n   data_adaugare TIMESTAMP DEFAULT current_timestamp\n);\n\nINSERT into prajituri (nume,descriere,pret, gramaj, calorii, tip_produs, categorie, ingrediente, pt_diabetici, imagine) VALUES \n('Savarină', 'Prăjitură insiropată, cu frișcă', 7.5 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"lapte\",\"frisca\",\"zahar\"}', False, 'aproximativ-savarina.jpg'),\n\n('Amandină', 'Prăjitură cu ciocolată', 6 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"ciocolata\",\"lapte\",\"zahar\",\"unt\"}', False, 'posibil-amandina.jpg'),\n\n('Tort glazurat', 'Tort pentru evenimente, poate fi decorat cu diverse culori', 35 , 1000, 2500, 'cofetarie', 'comanda speciala', '{\"oua\",\"zahar\",\"faina\",\"lapte\",\"ciocolata\",\"alune\"}', False,'tort-glazurat.jpg'),\n\n('Dulcelind cu fructe', 'Rețetă proprie, cu conținut sănătos (dacă ignorați tonele de zahăr) de fruncte proaspete', 10 , 250, 620, 'cofetarie', 'aniversara', '{\"frisca\",\"zahar\",\"faina\",\"zmeura\",\"lapte\",\"mure\",\"capsuni\"}', False,'dulcelind.jpg'),\n\n('Tartă cu căpșuni', 'Sub căpșuni se află o tartă.', 6 , 245, 280, 'cofetarie', 'comuna', '{\"vanilie\",\"faina\",\"capsuni\",\"lapte\", \"indulcitor\"}', True,'tarta-capsuni.jpg'),\n\n('Nimic', 'Nimic', 10 , 0, 0, 'cofetarie', 'dietetica', '{}', False, 'nimic.jpg'),\n\n('Cozonac zburător', 'Cineva a vărsat heliu peste aluat.', 25.5 , 1000, 1800, 'patiserie', 'comuna', '{\"zahar\",\"unt\",\"faina\",\"lapte\",\"cacao\",\"alune\", \"nuca\"}', False, 'cozonac-zburator.jpg'),\n\n('Brioșe', 'Aluat pufos, cu bucățele de ciocolată. Bucățelele de ciocolata, însă, nu sunt tocmai pufoase.', 8 , 145, 320, 'patiserie', 'comuna', '{\"ciocolata\",\"lapte\",\"unt\",\"migdale\",\"faina\",\"zahar\"}', False, 'briose.jpg'),\n\n('Turtă dulce', 'Un produs bun de savurat de Craciun. Sau și mai târziu dacă stocul a depășit cererea. De obicei mai găsiți și prin iunie...', 12 , 400, 550, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"scortisoara\",\"zahar\",\"unt\"}', False, 'turta-dulce.jpg'),\n\n('Turtă dulce dietetică', 'Îndulcitor în loc de zahăr. Dar nu vă lăsați păcăliți de nume, în rest nimic nu-i dietetic.', 10 , 400, 520, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"zaharina\",\"unt\",\"scortisoara\"}', True, 'turta-dulce-dietetica.jpg'),\n\n('Căsuță din turtă dulce', 'Vine cu tot cu vrăjitoare și cuptor la pachet. A nu se lăsa în mijlocul pădurii.', 70 , 450, 2700, 'patiserie', 'aniversara', '{\"unt\",\"scortisoara\", \"oua\",\"faina\",\"lapte\",\"zahar\"}', False, 'casuta-turta-dulce.jpg'),\n\n('Croissant', 'Un răsfăț pufos și dulce... mda... dulce... dacă nu încurcă Dorelina, iar, sarea cu zahărul!!!', 5 , 150, 285, 'patiserie', 'comuna', '{\"faina\",\"lapte\",\"zahar/sare\",\"unt\",\"ciocolata\",\"migdale\"}', False, 'croissant.jpg'),\n\n('Prajitura căpșuni', 'Prăjitura se face doar cu comandă specială, fiindcă apoi o comandăm și noi la rândul nostru la cofetăria vecină.', 15 , 180, 385, 'cofetarie', 'comanda speciala', '{\"faina\",\"lapte\",\"zahar\", \"capsuni\",\"unt\",\"gelatina\"}', False, 'prajitura-capsuni.jpg'),\n\n('Nasturei cu dulceață', 'Pentru când năstureii normali cedează fiindcă ați mâncat prea multă dulceață', 20.5 , 350, 700, 'patiserie', 'comuna', '{\"migdale\", \"faina\",\"lapte\",\"zahar\",\"unt\",\"dulceata\"}', False, 'nasturei-dulceata.jpg'),\n\n\n('Bomboane de ciocolată pe băț', 'Bățul e cel comestibil, nu bomboana.', 6, 100, 210,'cofetarie', 'pentru copii', '{\"ciocolata\", \"zahar\", \"lapte\", \"alune\", \"faina\"}', False, 'bomboane-ciocolata-bat.jpg'),\n\n('Înghețată fumătoare', 'Din când în când, tușește... Dar nu are COVID!', 18.5 , 225, 370, 'gelaterie', 'comuna', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-fumatoare.jpg'),\n\n\n('Înghețată multicoloră', 'Când storci un curcubeu peste înghețată... Ediție limitată; fabricăm doar după ploaie.', 12 , 120, 270, 'gelaterie', 'editie limitata', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-multicolora.jpg'),\n\n\n('Brioșă cu înghețată', 'Nu încercam să fim creativi... Dorelina a încurcat iar rețetele. Măcar are culoare roz', 14 , 235, 340, 'gelaterie', 'pentru copii', '{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'briosa-inghetata.jpg'),\n\n('Înghețată generică', 'Când bușim așa de tare rețeta încât nu se mai încadrează în niuna dintre celelalte categorii.', 8, 90, 130, 'gelaterie','comuna','{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'inghetata-generica.jpg'),\n\n('Imagine cu înghețată', 'Pentru cei aflați la dietă.', 5, 10,10,'gelaterie', 'comuna', '{\"hârtie\", \"tuș\"}', False, 'imagine-cu-inghetata.jpg'),\n\n\n('Bomboane colorate', 'Pentru copiii care doresc să afle devreme cum e o vizită la dentist.', 7, 150,340,'cofetarie', 'pentru copii', '{\"zahar\", \"ciocolata\",\"lapte\"}', False, 'bomboane-colorate.jpg');\n",
+            "setup": "CREATE SCHEMA IF NOT EXISTS demo; SET search_path TO demo;\nCREATE TYPE product_type AS ENUM ('books','stationery','accessories'); CREATE TYPE product_category AS ENUM ('standard','limited'); CREATE TABLE products(id serial PRIMARY KEY,name text UNIQUE NOT NULL,price numeric(8,2),stock int,product_type product_type,category product_category,tags text[]);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Notebook',7.5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Pen',6,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 3',3,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 4',4,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 5',5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Sticker',10,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 7',7,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 8',8,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 9',9,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 10',10,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 11',11,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 12',12,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 13',13,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 14',14,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 15',15,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 16',16,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 17',17,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 18',18,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 19',19,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 20',20,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 21',21,10,'accessories','standard',ARRAY['featured']);",
             "checkQuery": null,
             "starter": "",
             "id": "dulc-enum",
             "revision": 3,
-            "contextCode": "CREATE SCHEMA dulcelind; SET search_path TO dulcelind;\nCREATE TYPE categ_prajitura AS ENUM( 'comanda speciala', 'aniversara', 'editie limitata', 'pentru copii', 'dietetica','comuna');\nCREATE TYPE tipuri_produse AS ENUM('cofetarie', 'patiserie', 'gelaterie');\n\n\nCREATE TABLE IF NOT EXISTS prajituri (\n   id serial PRIMARY KEY,\n   nume VARCHAR(50) UNIQUE NOT NULL,\n   descriere TEXT,\n   pret NUMERIC(8,2) NOT NULL,\n   gramaj INT NOT NULL CHECK (gramaj>=0),   \n   tip_produs tipuri_produse DEFAULT 'cofetarie',\n   calorii INT NOT NULL CHECK (calorii>=0),\n   categorie categ_prajitura DEFAULT 'comuna',\n   ingrediente VARCHAR [], --pot sa nu fie specificare deci nu punem NOT NULL\n   pt_diabetici BOOLEAN NOT NULL DEFAULT FALSE,\n   imagine VARCHAR(300),\n   data_adaugare TIMESTAMP DEFAULT current_timestamp\n);\n\nINSERT into prajituri (nume,descriere,pret, gramaj, calorii, tip_produs, categorie, ingrediente, pt_diabetici, imagine) VALUES \n('Savarină', 'Prăjitură insiropată, cu frișcă', 7.5 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"lapte\",\"frisca\",\"zahar\"}', False, 'aproximativ-savarina.jpg'),\n\n('Amandină', 'Prăjitură cu ciocolată', 6 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"ciocolata\",\"lapte\",\"zahar\",\"unt\"}', False, 'posibil-amandina.jpg'),\n\n('Tort glazurat', 'Tort pentru evenimente, poate fi decorat cu diverse culori', 35 , 1000, 2500, 'cofetarie', 'comanda speciala', '{\"oua\",\"zahar\",\"faina\",\"lapte\",\"ciocolata\",\"alune\"}', False,'tort-glazurat.jpg'),\n\n('Dulcelind cu fructe', 'Rețetă proprie, cu conținut sănătos (dacă ignorați tonele de zahăr) de fruncte proaspete', 10 , 250, 620, 'cofetarie', 'aniversara', '{\"frisca\",\"zahar\",\"faina\",\"zmeura\",\"lapte\",\"mure\",\"capsuni\"}', False,'dulcelind.jpg'),\n\n('Tartă cu căpșuni', 'Sub căpșuni se află o tartă.', 6 , 245, 280, 'cofetarie', 'comuna', '{\"vanilie\",\"faina\",\"capsuni\",\"lapte\", \"indulcitor\"}', True,'tarta-capsuni.jpg'),\n\n('Nimic', 'Nimic', 10 , 0, 0, 'cofetarie', 'dietetica', '{}', False, 'nimic.jpg'),\n\n('Cozonac zburător', 'Cineva a vărsat heliu peste aluat.', 25.5 , 1000, 1800, 'patiserie', 'comuna', '{\"zahar\",\"unt\",\"faina\",\"lapte\",\"cacao\",\"alune\", \"nuca\"}', False, 'cozonac-zburator.jpg'),\n\n('Brioșe', 'Aluat pufos, cu bucățele de ciocolată. Bucățelele de ciocolata, însă, nu sunt tocmai pufoase.', 8 , 145, 320, 'patiserie', 'comuna', '{\"ciocolata\",\"lapte\",\"unt\",\"migdale\",\"faina\",\"zahar\"}', False, 'briose.jpg'),\n\n('Turtă dulce', 'Un produs bun de savurat de Craciun. Sau și mai târziu dacă stocul a depășit cererea. De obicei mai găsiți și prin iunie...', 12 , 400, 550, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"scortisoara\",\"zahar\",\"unt\"}', False, 'turta-dulce.jpg'),\n\n('Turtă dulce dietetică', 'Îndulcitor în loc de zahăr. Dar nu vă lăsați păcăliți de nume, în rest nimic nu-i dietetic.', 10 , 400, 520, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"zaharina\",\"unt\",\"scortisoara\"}', True, 'turta-dulce-dietetica.jpg'),\n\n('Căsuță din turtă dulce', 'Vine cu tot cu vrăjitoare și cuptor la pachet. A nu se lăsa în mijlocul pădurii.', 70 , 450, 2700, 'patiserie', 'aniversara', '{\"unt\",\"scortisoara\", \"oua\",\"faina\",\"lapte\",\"zahar\"}', False, 'casuta-turta-dulce.jpg'),\n\n('Croissant', 'Un răsfăț pufos și dulce... mda... dulce... dacă nu încurcă Dorelina, iar, sarea cu zahărul!!!', 5 , 150, 285, 'patiserie', 'comuna', '{\"faina\",\"lapte\",\"zahar/sare\",\"unt\",\"ciocolata\",\"migdale\"}', False, 'croissant.jpg'),\n\n('Prajitura căpșuni', 'Prăjitura se face doar cu comandă specială, fiindcă apoi o comandăm și noi la rândul nostru la cofetăria vecină.', 15 , 180, 385, 'cofetarie', 'comanda speciala', '{\"faina\",\"lapte\",\"zahar\", \"capsuni\",\"unt\",\"gelatina\"}', False, 'prajitura-capsuni.jpg'),\n\n('Nasturei cu dulceață', 'Pentru când năstureii normali cedează fiindcă ați mâncat prea multă dulceață', 20.5 , 350, 700, 'patiserie', 'comuna', '{\"migdale\", \"faina\",\"lapte\",\"zahar\",\"unt\",\"dulceata\"}', False, 'nasturei-dulceata.jpg'),\n\n\n('Bomboane de ciocolată pe băț', 'Bățul e cel comestibil, nu bomboana.', 6, 100, 210,'cofetarie', 'pentru copii', '{\"ciocolata\", \"zahar\", \"lapte\", \"alune\", \"faina\"}', False, 'bomboane-ciocolata-bat.jpg'),\n\n('Înghețată fumătoare', 'Din când în când, tușește... Dar nu are COVID!', 18.5 , 225, 370, 'gelaterie', 'comuna', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-fumatoare.jpg'),\n\n\n('Înghețată multicoloră', 'Când storci un curcubeu peste înghețată... Ediție limitată; fabricăm doar după ploaie.', 12 , 120, 270, 'gelaterie', 'editie limitata', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-multicolora.jpg'),\n\n\n('Brioșă cu înghețată', 'Nu încercam să fim creativi... Dorelina a încurcat iar rețetele. Măcar are culoare roz', 14 , 235, 340, 'gelaterie', 'pentru copii', '{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'briosa-inghetata.jpg'),\n\n('Înghețată generică', 'Când bușim așa de tare rețeta încât nu se mai încadrează în niuna dintre celelalte categorii.', 8, 90, 130, 'gelaterie','comuna','{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'inghetata-generica.jpg'),\n\n('Imagine cu înghețată', 'Pentru cei aflați la dietă.', 5, 10,10,'gelaterie', 'comuna', '{\"hârtie\", \"tuș\"}', False, 'imagine-cu-inghetata.jpg'),\n\n\n('Bomboane colorate', 'Pentru copiii care doresc să afle devreme cum e o vizită la dentist.', 7, 150,340,'cofetarie', 'pentru copii', '{\"zahar\", \"ciocolata\",\"lapte\"}', False, 'bomboane-colorate.jpg');\n",
+            "contextCode": "CREATE SCHEMA IF NOT EXISTS demo; SET search_path TO demo;\nCREATE TYPE product_type AS ENUM ('books','stationery','accessories'); CREATE TYPE product_category AS ENUM ('standard','limited'); CREATE TABLE products(id serial PRIMARY KEY,name text UNIQUE NOT NULL,price numeric(8,2),stock int,product_type product_type,category product_category,tags text[]);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Notebook',7.5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Pen',6,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 3',3,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 4',4,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 5',5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Sticker',10,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 7',7,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 8',8,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 9',9,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 10',10,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 11',11,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 12',12,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 13',13,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 14',14,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 15',15,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 16',16,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 17',17,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 18',18,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 19',19,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 20',20,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 21',21,10,'accessories','standard',ARRAY['featured']);",
             "contextLabel": "Baza de date de la care pornești",
             "expectedResult": [
               {
-                "tip": "cofetarie"
+                "type": "books"
               },
               {
-                "tip": "patiserie"
+                "type": "stationery"
               },
               {
-                "tip": "gelaterie"
+                "type": "accessories"
               }
             ]
           },
-          "hint": "tipuri_produse permite cofetarie, patiserie și gelaterie. Tipurile și tabelele sunt create în aceeași schemă.",
+          "hint": "product_type permite books, stationery și accessories. Tipurile și tabelele sunt create în aceeași schemă.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-table",
-          "title": "Construiește tabelul prajituri",
-          "intro": "Începe cu id serial, nume unic, pret numeric(8,2), gramaj și calorii nenegative. Schema completă adaugă tip_produs, categorie, ingrediente, pt_diabetici, imagine și data_adaugare.",
-          "example": "CREATE TABLE prajituri(id serial PRIMARY KEY,nume varchar(50) UNIQUE NOT NULL,pret numeric(8,2) NOT NULL,gramaj int CHECK(gramaj>=0),calorii int CHECK(calorii>=0));",
-          "explain": "Începe cu id serial, nume unic, pret numeric(8,2), gramaj și calorii nenegative. Schema completă adaugă tip_produs, categorie, ingrediente, pt_diabetici, imagine și data_adaugare.",
-          "points": [],
+          "title": "Construiește tabelul products",
+          "intro": "Începe cu id serial, name unic, price numeric(8,2), weight și stock nenegative.",
+          "example": "CREATE TABLE products(id serial PRIMARY KEY,name varchar(50) UNIQUE NOT NULL,price numeric(8,2) NOT NULL,weight int CHECK(weight>=0),stock int CHECK(stock>=0));",
+          "explain": "Coloanele și constrângerile sunt ale catalogului tău de antrenament. Exercițiul verifică inserarea și citirea unui rând. Alte exemple adaugă product_type, category și tags.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -34504,20 +34648,20 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 0,
-            "explanation": "Începe cu id serial, nume unic, pret numeric(8,2), gramaj și calorii nenegative. Schema completă adaugă tip_produs, categorie, ingrediente, pt_diabetici, imagine și data_adaugare."
+            "explanation": "Coloanele și constrângerile sunt ale catalogului tău de antrenament. Exercițiul verifică inserarea și citirea unui rând. Alte exemple adaugă product_type, category și tags."
           },
           "task": {
             "mode": "sql",
             "prompt": "Rulează SQL pe baza temporară furnizată pentru rezultatul cerut.",
-            "solution": "CREATE TABLE prajituri(id serial PRIMARY KEY,nume varchar(50) UNIQUE NOT NULL,pret numeric(8,2) NOT NULL,gramaj int CHECK(gramaj>=0),calorii int CHECK(calorii>=0));",
+            "solution": "CREATE TABLE products(id serial PRIMARY KEY,name varchar(50) UNIQUE NOT NULL,price numeric(8,2) NOT NULL,weight int CHECK(weight>=0),stock int CHECK(stock>=0));",
             "expected": [
               {
-                "nume": "Savarină",
-                "pret": "7.50"
+                "name": "Notebook",
+                "price": "7.50"
               }
             ],
             "setup": "",
-            "checkQuery": "INSERT INTO prajituri(nume,pret,gramaj,calorii) VALUES('Savarină',7.5,200,400); SELECT nume,pret::text FROM prajituri;",
+            "checkQuery": "INSERT INTO products(name,price,weight,stock) VALUES('Notebook',7.5,200,400); SELECT name,price::text FROM products;",
             "starter": "",
             "id": "dulc-table",
             "revision": 3,
@@ -34525,21 +34669,24 @@ window.TW_COURSE = {
             "contextLabel": "Baza de date de la care pornești",
             "expectedResult": [
               {
-                "nume": "Savarină",
-                "pret": "7.50"
+                "name": "Notebook",
+                "price": "7.50"
               }
             ]
           },
-          "hint": "Începe cu id serial, nume unic, pret numeric(8,2), gramaj și calorii nenegative. Schema completă adaugă tip_produs, categorie, ingrediente, pt_diabetici, imagine și data_adaugare.",
+          "hint": "Coloanele și constrângerile sunt ale catalogului tău de antrenament. Exercițiul verifică inserarea și citirea unui rând. Alte exemple adaugă product_type, category și tags.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-seed",
           "title": "Verifică cele 21 de produse",
           "intro": "Seed-ul creează datele inițiale. Aici ai în laborator SQL-ul real al catalogului, fără date de conectare.",
-          "example": "SELECT count(*)::int AS total FROM prajituri;",
-          "explain": "Seed-ul creează datele inițiale. Aici ai în laborator SQL-ul real al catalogului, fără date de conectare.",
-          "points": [],
+          "example": "SELECT count(*)::int AS total FROM products;",
+          "explain": "Baza temporară a exercițiului este furnizată integral în zona de date. Pentru lucru pe calculator, creează data/catalog.sql și copiază acolo SQL-ul de inițializare afișat, nu doar SELECT-ul soluției. Rulează-l în baza ta goală din Query Tool. Nu ai nevoie de fișierele aplicației separate.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -34548,23 +34695,23 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 1,
-            "explanation": "Seed-ul creează datele inițiale. Aici ai în laborator SQL-ul real al catalogului, fără date de conectare."
+            "explanation": "Baza temporară a exercițiului este furnizată integral în zona de date. Pentru lucru pe calculator, creează data/catalog.sql și copiază acolo SQL-ul de inițializare afișat, nu doar SELECT-ul soluției. Rulează-l în baza ta goală din Query Tool. Nu ai nevoie de fișierele aplicației separate."
           },
           "task": {
             "mode": "sql",
             "prompt": "Rulează SQL pe baza temporară furnizată pentru rezultatul cerut.",
-            "solution": "SELECT count(*)::int AS total FROM prajituri;",
+            "solution": "SELECT count(*)::int AS total FROM products;",
             "expected": [
               {
                 "total": 21
               }
             ],
-            "setup": "CREATE SCHEMA dulcelind; SET search_path TO dulcelind;\nCREATE TYPE categ_prajitura AS ENUM( 'comanda speciala', 'aniversara', 'editie limitata', 'pentru copii', 'dietetica','comuna');\nCREATE TYPE tipuri_produse AS ENUM('cofetarie', 'patiserie', 'gelaterie');\n\n\nCREATE TABLE IF NOT EXISTS prajituri (\n   id serial PRIMARY KEY,\n   nume VARCHAR(50) UNIQUE NOT NULL,\n   descriere TEXT,\n   pret NUMERIC(8,2) NOT NULL,\n   gramaj INT NOT NULL CHECK (gramaj>=0),   \n   tip_produs tipuri_produse DEFAULT 'cofetarie',\n   calorii INT NOT NULL CHECK (calorii>=0),\n   categorie categ_prajitura DEFAULT 'comuna',\n   ingrediente VARCHAR [], --pot sa nu fie specificare deci nu punem NOT NULL\n   pt_diabetici BOOLEAN NOT NULL DEFAULT FALSE,\n   imagine VARCHAR(300),\n   data_adaugare TIMESTAMP DEFAULT current_timestamp\n);\n\nINSERT into prajituri (nume,descriere,pret, gramaj, calorii, tip_produs, categorie, ingrediente, pt_diabetici, imagine) VALUES \n('Savarină', 'Prăjitură insiropată, cu frișcă', 7.5 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"lapte\",\"frisca\",\"zahar\"}', False, 'aproximativ-savarina.jpg'),\n\n('Amandină', 'Prăjitură cu ciocolată', 6 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"ciocolata\",\"lapte\",\"zahar\",\"unt\"}', False, 'posibil-amandina.jpg'),\n\n('Tort glazurat', 'Tort pentru evenimente, poate fi decorat cu diverse culori', 35 , 1000, 2500, 'cofetarie', 'comanda speciala', '{\"oua\",\"zahar\",\"faina\",\"lapte\",\"ciocolata\",\"alune\"}', False,'tort-glazurat.jpg'),\n\n('Dulcelind cu fructe', 'Rețetă proprie, cu conținut sănătos (dacă ignorați tonele de zahăr) de fruncte proaspete', 10 , 250, 620, 'cofetarie', 'aniversara', '{\"frisca\",\"zahar\",\"faina\",\"zmeura\",\"lapte\",\"mure\",\"capsuni\"}', False,'dulcelind.jpg'),\n\n('Tartă cu căpșuni', 'Sub căpșuni se află o tartă.', 6 , 245, 280, 'cofetarie', 'comuna', '{\"vanilie\",\"faina\",\"capsuni\",\"lapte\", \"indulcitor\"}', True,'tarta-capsuni.jpg'),\n\n('Nimic', 'Nimic', 10 , 0, 0, 'cofetarie', 'dietetica', '{}', False, 'nimic.jpg'),\n\n('Cozonac zburător', 'Cineva a vărsat heliu peste aluat.', 25.5 , 1000, 1800, 'patiserie', 'comuna', '{\"zahar\",\"unt\",\"faina\",\"lapte\",\"cacao\",\"alune\", \"nuca\"}', False, 'cozonac-zburator.jpg'),\n\n('Brioșe', 'Aluat pufos, cu bucățele de ciocolată. Bucățelele de ciocolata, însă, nu sunt tocmai pufoase.', 8 , 145, 320, 'patiserie', 'comuna', '{\"ciocolata\",\"lapte\",\"unt\",\"migdale\",\"faina\",\"zahar\"}', False, 'briose.jpg'),\n\n('Turtă dulce', 'Un produs bun de savurat de Craciun. Sau și mai târziu dacă stocul a depășit cererea. De obicei mai găsiți și prin iunie...', 12 , 400, 550, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"scortisoara\",\"zahar\",\"unt\"}', False, 'turta-dulce.jpg'),\n\n('Turtă dulce dietetică', 'Îndulcitor în loc de zahăr. Dar nu vă lăsați păcăliți de nume, în rest nimic nu-i dietetic.', 10 , 400, 520, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"zaharina\",\"unt\",\"scortisoara\"}', True, 'turta-dulce-dietetica.jpg'),\n\n('Căsuță din turtă dulce', 'Vine cu tot cu vrăjitoare și cuptor la pachet. A nu se lăsa în mijlocul pădurii.', 70 , 450, 2700, 'patiserie', 'aniversara', '{\"unt\",\"scortisoara\", \"oua\",\"faina\",\"lapte\",\"zahar\"}', False, 'casuta-turta-dulce.jpg'),\n\n('Croissant', 'Un răsfăț pufos și dulce... mda... dulce... dacă nu încurcă Dorelina, iar, sarea cu zahărul!!!', 5 , 150, 285, 'patiserie', 'comuna', '{\"faina\",\"lapte\",\"zahar/sare\",\"unt\",\"ciocolata\",\"migdale\"}', False, 'croissant.jpg'),\n\n('Prajitura căpșuni', 'Prăjitura se face doar cu comandă specială, fiindcă apoi o comandăm și noi la rândul nostru la cofetăria vecină.', 15 , 180, 385, 'cofetarie', 'comanda speciala', '{\"faina\",\"lapte\",\"zahar\", \"capsuni\",\"unt\",\"gelatina\"}', False, 'prajitura-capsuni.jpg'),\n\n('Nasturei cu dulceață', 'Pentru când năstureii normali cedează fiindcă ați mâncat prea multă dulceață', 20.5 , 350, 700, 'patiserie', 'comuna', '{\"migdale\", \"faina\",\"lapte\",\"zahar\",\"unt\",\"dulceata\"}', False, 'nasturei-dulceata.jpg'),\n\n\n('Bomboane de ciocolată pe băț', 'Bățul e cel comestibil, nu bomboana.', 6, 100, 210,'cofetarie', 'pentru copii', '{\"ciocolata\", \"zahar\", \"lapte\", \"alune\", \"faina\"}', False, 'bomboane-ciocolata-bat.jpg'),\n\n('Înghețată fumătoare', 'Din când în când, tușește... Dar nu are COVID!', 18.5 , 225, 370, 'gelaterie', 'comuna', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-fumatoare.jpg'),\n\n\n('Înghețată multicoloră', 'Când storci un curcubeu peste înghețată... Ediție limitată; fabricăm doar după ploaie.', 12 , 120, 270, 'gelaterie', 'editie limitata', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-multicolora.jpg'),\n\n\n('Brioșă cu înghețată', 'Nu încercam să fim creativi... Dorelina a încurcat iar rețetele. Măcar are culoare roz', 14 , 235, 340, 'gelaterie', 'pentru copii', '{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'briosa-inghetata.jpg'),\n\n('Înghețată generică', 'Când bușim așa de tare rețeta încât nu se mai încadrează în niuna dintre celelalte categorii.', 8, 90, 130, 'gelaterie','comuna','{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'inghetata-generica.jpg'),\n\n('Imagine cu înghețată', 'Pentru cei aflați la dietă.', 5, 10,10,'gelaterie', 'comuna', '{\"hârtie\", \"tuș\"}', False, 'imagine-cu-inghetata.jpg'),\n\n\n('Bomboane colorate', 'Pentru copiii care doresc să afle devreme cum e o vizită la dentist.', 7, 150,340,'cofetarie', 'pentru copii', '{\"zahar\", \"ciocolata\",\"lapte\"}', False, 'bomboane-colorate.jpg');\n",
+            "setup": "CREATE SCHEMA IF NOT EXISTS demo; SET search_path TO demo;\nCREATE TYPE product_type AS ENUM ('books','stationery','accessories'); CREATE TYPE product_category AS ENUM ('standard','limited'); CREATE TABLE products(id serial PRIMARY KEY,name text UNIQUE NOT NULL,price numeric(8,2),stock int,product_type product_type,category product_category,tags text[]);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Notebook',7.5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Pen',6,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 3',3,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 4',4,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 5',5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Sticker',10,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 7',7,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 8',8,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 9',9,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 10',10,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 11',11,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 12',12,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 13',13,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 14',14,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 15',15,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 16',16,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 17',17,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 18',18,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 19',19,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 20',20,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 21',21,10,'accessories','standard',ARRAY['featured']);",
             "checkQuery": null,
             "starter": "",
             "id": "dulc-seed",
             "revision": 3,
-            "contextCode": "CREATE SCHEMA dulcelind; SET search_path TO dulcelind;\nCREATE TYPE categ_prajitura AS ENUM( 'comanda speciala', 'aniversara', 'editie limitata', 'pentru copii', 'dietetica','comuna');\nCREATE TYPE tipuri_produse AS ENUM('cofetarie', 'patiserie', 'gelaterie');\n\n\nCREATE TABLE IF NOT EXISTS prajituri (\n   id serial PRIMARY KEY,\n   nume VARCHAR(50) UNIQUE NOT NULL,\n   descriere TEXT,\n   pret NUMERIC(8,2) NOT NULL,\n   gramaj INT NOT NULL CHECK (gramaj>=0),   \n   tip_produs tipuri_produse DEFAULT 'cofetarie',\n   calorii INT NOT NULL CHECK (calorii>=0),\n   categorie categ_prajitura DEFAULT 'comuna',\n   ingrediente VARCHAR [], --pot sa nu fie specificare deci nu punem NOT NULL\n   pt_diabetici BOOLEAN NOT NULL DEFAULT FALSE,\n   imagine VARCHAR(300),\n   data_adaugare TIMESTAMP DEFAULT current_timestamp\n);\n\nINSERT into prajituri (nume,descriere,pret, gramaj, calorii, tip_produs, categorie, ingrediente, pt_diabetici, imagine) VALUES \n('Savarină', 'Prăjitură insiropată, cu frișcă', 7.5 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"lapte\",\"frisca\",\"zahar\"}', False, 'aproximativ-savarina.jpg'),\n\n('Amandină', 'Prăjitură cu ciocolată', 6 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"ciocolata\",\"lapte\",\"zahar\",\"unt\"}', False, 'posibil-amandina.jpg'),\n\n('Tort glazurat', 'Tort pentru evenimente, poate fi decorat cu diverse culori', 35 , 1000, 2500, 'cofetarie', 'comanda speciala', '{\"oua\",\"zahar\",\"faina\",\"lapte\",\"ciocolata\",\"alune\"}', False,'tort-glazurat.jpg'),\n\n('Dulcelind cu fructe', 'Rețetă proprie, cu conținut sănătos (dacă ignorați tonele de zahăr) de fruncte proaspete', 10 , 250, 620, 'cofetarie', 'aniversara', '{\"frisca\",\"zahar\",\"faina\",\"zmeura\",\"lapte\",\"mure\",\"capsuni\"}', False,'dulcelind.jpg'),\n\n('Tartă cu căpșuni', 'Sub căpșuni se află o tartă.', 6 , 245, 280, 'cofetarie', 'comuna', '{\"vanilie\",\"faina\",\"capsuni\",\"lapte\", \"indulcitor\"}', True,'tarta-capsuni.jpg'),\n\n('Nimic', 'Nimic', 10 , 0, 0, 'cofetarie', 'dietetica', '{}', False, 'nimic.jpg'),\n\n('Cozonac zburător', 'Cineva a vărsat heliu peste aluat.', 25.5 , 1000, 1800, 'patiserie', 'comuna', '{\"zahar\",\"unt\",\"faina\",\"lapte\",\"cacao\",\"alune\", \"nuca\"}', False, 'cozonac-zburator.jpg'),\n\n('Brioșe', 'Aluat pufos, cu bucățele de ciocolată. Bucățelele de ciocolata, însă, nu sunt tocmai pufoase.', 8 , 145, 320, 'patiserie', 'comuna', '{\"ciocolata\",\"lapte\",\"unt\",\"migdale\",\"faina\",\"zahar\"}', False, 'briose.jpg'),\n\n('Turtă dulce', 'Un produs bun de savurat de Craciun. Sau și mai târziu dacă stocul a depășit cererea. De obicei mai găsiți și prin iunie...', 12 , 400, 550, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"scortisoara\",\"zahar\",\"unt\"}', False, 'turta-dulce.jpg'),\n\n('Turtă dulce dietetică', 'Îndulcitor în loc de zahăr. Dar nu vă lăsați păcăliți de nume, în rest nimic nu-i dietetic.', 10 , 400, 520, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"zaharina\",\"unt\",\"scortisoara\"}', True, 'turta-dulce-dietetica.jpg'),\n\n('Căsuță din turtă dulce', 'Vine cu tot cu vrăjitoare și cuptor la pachet. A nu se lăsa în mijlocul pădurii.', 70 , 450, 2700, 'patiserie', 'aniversara', '{\"unt\",\"scortisoara\", \"oua\",\"faina\",\"lapte\",\"zahar\"}', False, 'casuta-turta-dulce.jpg'),\n\n('Croissant', 'Un răsfăț pufos și dulce... mda... dulce... dacă nu încurcă Dorelina, iar, sarea cu zahărul!!!', 5 , 150, 285, 'patiserie', 'comuna', '{\"faina\",\"lapte\",\"zahar/sare\",\"unt\",\"ciocolata\",\"migdale\"}', False, 'croissant.jpg'),\n\n('Prajitura căpșuni', 'Prăjitura se face doar cu comandă specială, fiindcă apoi o comandăm și noi la rândul nostru la cofetăria vecină.', 15 , 180, 385, 'cofetarie', 'comanda speciala', '{\"faina\",\"lapte\",\"zahar\", \"capsuni\",\"unt\",\"gelatina\"}', False, 'prajitura-capsuni.jpg'),\n\n('Nasturei cu dulceață', 'Pentru când năstureii normali cedează fiindcă ați mâncat prea multă dulceață', 20.5 , 350, 700, 'patiserie', 'comuna', '{\"migdale\", \"faina\",\"lapte\",\"zahar\",\"unt\",\"dulceata\"}', False, 'nasturei-dulceata.jpg'),\n\n\n('Bomboane de ciocolată pe băț', 'Bățul e cel comestibil, nu bomboana.', 6, 100, 210,'cofetarie', 'pentru copii', '{\"ciocolata\", \"zahar\", \"lapte\", \"alune\", \"faina\"}', False, 'bomboane-ciocolata-bat.jpg'),\n\n('Înghețată fumătoare', 'Din când în când, tușește... Dar nu are COVID!', 18.5 , 225, 370, 'gelaterie', 'comuna', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-fumatoare.jpg'),\n\n\n('Înghețată multicoloră', 'Când storci un curcubeu peste înghețată... Ediție limitată; fabricăm doar după ploaie.', 12 , 120, 270, 'gelaterie', 'editie limitata', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-multicolora.jpg'),\n\n\n('Brioșă cu înghețată', 'Nu încercam să fim creativi... Dorelina a încurcat iar rețetele. Măcar are culoare roz', 14 , 235, 340, 'gelaterie', 'pentru copii', '{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'briosa-inghetata.jpg'),\n\n('Înghețată generică', 'Când bușim așa de tare rețeta încât nu se mai încadrează în niuna dintre celelalte categorii.', 8, 90, 130, 'gelaterie','comuna','{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'inghetata-generica.jpg'),\n\n('Imagine cu înghețată', 'Pentru cei aflați la dietă.', 5, 10,10,'gelaterie', 'comuna', '{\"hârtie\", \"tuș\"}', False, 'imagine-cu-inghetata.jpg'),\n\n\n('Bomboane colorate', 'Pentru copiii care doresc să afle devreme cum e o vizită la dentist.', 7, 150,340,'cofetarie', 'pentru copii', '{\"zahar\", \"ciocolata\",\"lapte\"}', False, 'bomboane-colorate.jpg');\n",
+            "contextCode": "CREATE SCHEMA IF NOT EXISTS demo; SET search_path TO demo;\nCREATE TYPE product_type AS ENUM ('books','stationery','accessories'); CREATE TYPE product_category AS ENUM ('standard','limited'); CREATE TABLE products(id serial PRIMARY KEY,name text UNIQUE NOT NULL,price numeric(8,2),stock int,product_type product_type,category product_category,tags text[]);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Notebook',7.5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Pen',6,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 3',3,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 4',4,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 5',5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Sticker',10,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 7',7,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 8',8,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 9',9,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 10',10,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 11',11,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 12',12,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 13',13,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 14',14,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 15',15,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 16',16,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 17',17,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 18',18,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 19',19,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 20',20,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 21',21,10,'accessories','standard',ARRAY['featured']);",
             "contextLabel": "Baza de date de la care pornești",
             "expectedResult": [
               {
@@ -34572,16 +34719,19 @@ window.TW_COURSE = {
               }
             ]
           },
-          "hint": "Seed-ul creează datele inițiale. Aici ai în laborator SQL-ul real al catalogului, fără date de conectare.",
+          "hint": "Baza temporară a exercițiului este furnizată integral în zona de date. Pentru lucru pe calculator, creează data/catalog.sql și copiază acolo SQL-ul de inițializare afișat, nu doar SELECT-ul soluției. Rulează-l în baza ta goală din Query Tool. Nu ai nevoie de fișierele aplicației separate.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-types-count",
           "title": "Verifică produsele fiecărui tip",
-          "intro": "Catalogul are 9 produse de cofetărie, 7 de patiserie și 5 de gelaterie. Cere explicit ordinea rezultatelor.",
-          "example": "SELECT tip_produs::text AS tip,count(*)::int AS total FROM prajituri GROUP BY tip_produs ORDER BY tip;",
-          "explain": "Catalogul are 9 produse de cofetărie, 7 de patiserie și 5 de gelaterie. Cere explicit ordinea rezultatelor.",
-          "points": [],
+          "intro": "Datele de antrenament includ 9 rânduri books, 7 stationery și 5 accessories.",
+          "example": "SELECT product_type::text AS type,count(*)::int AS total FROM products GROUP BY product_type ORDER BY type;",
+          "explain": "GROUP BY numără rândurile fiecărui tip, iar ORDER BY type sortează rezultatul alfabetic. Acestea sunt categoriile datelor furnizate în exercițiu.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -34590,58 +34740,61 @@ window.TW_COURSE = {
               "SQL-ul se execută pe date de antrenament"
             ],
             "correct": 2,
-            "explanation": "Catalogul are 9 produse de cofetărie, 7 de patiserie și 5 de gelaterie. Cere explicit ordinea rezultatelor."
+            "explanation": "GROUP BY numără rândurile fiecărui tip, iar ORDER BY type sortează rezultatul alfabetic. Acestea sunt categoriile datelor furnizate în exercițiu."
           },
           "task": {
             "mode": "sql",
             "prompt": "Rulează SQL pe baza temporară furnizată pentru rezultatul cerut.",
-            "solution": "SELECT tip_produs::text AS tip,count(*)::int AS total FROM prajituri GROUP BY tip_produs ORDER BY tip;",
+            "solution": "SELECT product_type::text AS type,count(*)::int AS total FROM products GROUP BY product_type ORDER BY type;",
             "expected": [
               {
-                "tip": "cofetarie",
-                "total": 9
-              },
-              {
-                "tip": "gelaterie",
+                "type": "accessories",
                 "total": 5
               },
               {
-                "tip": "patiserie",
+                "type": "books",
+                "total": 9
+              },
+              {
+                "type": "stationery",
                 "total": 7
               }
             ],
-            "setup": "CREATE SCHEMA dulcelind; SET search_path TO dulcelind;\nCREATE TYPE categ_prajitura AS ENUM( 'comanda speciala', 'aniversara', 'editie limitata', 'pentru copii', 'dietetica','comuna');\nCREATE TYPE tipuri_produse AS ENUM('cofetarie', 'patiserie', 'gelaterie');\n\n\nCREATE TABLE IF NOT EXISTS prajituri (\n   id serial PRIMARY KEY,\n   nume VARCHAR(50) UNIQUE NOT NULL,\n   descriere TEXT,\n   pret NUMERIC(8,2) NOT NULL,\n   gramaj INT NOT NULL CHECK (gramaj>=0),   \n   tip_produs tipuri_produse DEFAULT 'cofetarie',\n   calorii INT NOT NULL CHECK (calorii>=0),\n   categorie categ_prajitura DEFAULT 'comuna',\n   ingrediente VARCHAR [], --pot sa nu fie specificare deci nu punem NOT NULL\n   pt_diabetici BOOLEAN NOT NULL DEFAULT FALSE,\n   imagine VARCHAR(300),\n   data_adaugare TIMESTAMP DEFAULT current_timestamp\n);\n\nINSERT into prajituri (nume,descriere,pret, gramaj, calorii, tip_produs, categorie, ingrediente, pt_diabetici, imagine) VALUES \n('Savarină', 'Prăjitură insiropată, cu frișcă', 7.5 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"lapte\",\"frisca\",\"zahar\"}', False, 'aproximativ-savarina.jpg'),\n\n('Amandină', 'Prăjitură cu ciocolată', 6 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"ciocolata\",\"lapte\",\"zahar\",\"unt\"}', False, 'posibil-amandina.jpg'),\n\n('Tort glazurat', 'Tort pentru evenimente, poate fi decorat cu diverse culori', 35 , 1000, 2500, 'cofetarie', 'comanda speciala', '{\"oua\",\"zahar\",\"faina\",\"lapte\",\"ciocolata\",\"alune\"}', False,'tort-glazurat.jpg'),\n\n('Dulcelind cu fructe', 'Rețetă proprie, cu conținut sănătos (dacă ignorați tonele de zahăr) de fruncte proaspete', 10 , 250, 620, 'cofetarie', 'aniversara', '{\"frisca\",\"zahar\",\"faina\",\"zmeura\",\"lapte\",\"mure\",\"capsuni\"}', False,'dulcelind.jpg'),\n\n('Tartă cu căpșuni', 'Sub căpșuni se află o tartă.', 6 , 245, 280, 'cofetarie', 'comuna', '{\"vanilie\",\"faina\",\"capsuni\",\"lapte\", \"indulcitor\"}', True,'tarta-capsuni.jpg'),\n\n('Nimic', 'Nimic', 10 , 0, 0, 'cofetarie', 'dietetica', '{}', False, 'nimic.jpg'),\n\n('Cozonac zburător', 'Cineva a vărsat heliu peste aluat.', 25.5 , 1000, 1800, 'patiserie', 'comuna', '{\"zahar\",\"unt\",\"faina\",\"lapte\",\"cacao\",\"alune\", \"nuca\"}', False, 'cozonac-zburator.jpg'),\n\n('Brioșe', 'Aluat pufos, cu bucățele de ciocolată. Bucățelele de ciocolata, însă, nu sunt tocmai pufoase.', 8 , 145, 320, 'patiserie', 'comuna', '{\"ciocolata\",\"lapte\",\"unt\",\"migdale\",\"faina\",\"zahar\"}', False, 'briose.jpg'),\n\n('Turtă dulce', 'Un produs bun de savurat de Craciun. Sau și mai târziu dacă stocul a depășit cererea. De obicei mai găsiți și prin iunie...', 12 , 400, 550, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"scortisoara\",\"zahar\",\"unt\"}', False, 'turta-dulce.jpg'),\n\n('Turtă dulce dietetică', 'Îndulcitor în loc de zahăr. Dar nu vă lăsați păcăliți de nume, în rest nimic nu-i dietetic.', 10 , 400, 520, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"zaharina\",\"unt\",\"scortisoara\"}', True, 'turta-dulce-dietetica.jpg'),\n\n('Căsuță din turtă dulce', 'Vine cu tot cu vrăjitoare și cuptor la pachet. A nu se lăsa în mijlocul pădurii.', 70 , 450, 2700, 'patiserie', 'aniversara', '{\"unt\",\"scortisoara\", \"oua\",\"faina\",\"lapte\",\"zahar\"}', False, 'casuta-turta-dulce.jpg'),\n\n('Croissant', 'Un răsfăț pufos și dulce... mda... dulce... dacă nu încurcă Dorelina, iar, sarea cu zahărul!!!', 5 , 150, 285, 'patiserie', 'comuna', '{\"faina\",\"lapte\",\"zahar/sare\",\"unt\",\"ciocolata\",\"migdale\"}', False, 'croissant.jpg'),\n\n('Prajitura căpșuni', 'Prăjitura se face doar cu comandă specială, fiindcă apoi o comandăm și noi la rândul nostru la cofetăria vecină.', 15 , 180, 385, 'cofetarie', 'comanda speciala', '{\"faina\",\"lapte\",\"zahar\", \"capsuni\",\"unt\",\"gelatina\"}', False, 'prajitura-capsuni.jpg'),\n\n('Nasturei cu dulceață', 'Pentru când năstureii normali cedează fiindcă ați mâncat prea multă dulceață', 20.5 , 350, 700, 'patiserie', 'comuna', '{\"migdale\", \"faina\",\"lapte\",\"zahar\",\"unt\",\"dulceata\"}', False, 'nasturei-dulceata.jpg'),\n\n\n('Bomboane de ciocolată pe băț', 'Bățul e cel comestibil, nu bomboana.', 6, 100, 210,'cofetarie', 'pentru copii', '{\"ciocolata\", \"zahar\", \"lapte\", \"alune\", \"faina\"}', False, 'bomboane-ciocolata-bat.jpg'),\n\n('Înghețată fumătoare', 'Din când în când, tușește... Dar nu are COVID!', 18.5 , 225, 370, 'gelaterie', 'comuna', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-fumatoare.jpg'),\n\n\n('Înghețată multicoloră', 'Când storci un curcubeu peste înghețată... Ediție limitată; fabricăm doar după ploaie.', 12 , 120, 270, 'gelaterie', 'editie limitata', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-multicolora.jpg'),\n\n\n('Brioșă cu înghețată', 'Nu încercam să fim creativi... Dorelina a încurcat iar rețetele. Măcar are culoare roz', 14 , 235, 340, 'gelaterie', 'pentru copii', '{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'briosa-inghetata.jpg'),\n\n('Înghețată generică', 'Când bușim așa de tare rețeta încât nu se mai încadrează în niuna dintre celelalte categorii.', 8, 90, 130, 'gelaterie','comuna','{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'inghetata-generica.jpg'),\n\n('Imagine cu înghețată', 'Pentru cei aflați la dietă.', 5, 10,10,'gelaterie', 'comuna', '{\"hârtie\", \"tuș\"}', False, 'imagine-cu-inghetata.jpg'),\n\n\n('Bomboane colorate', 'Pentru copiii care doresc să afle devreme cum e o vizită la dentist.', 7, 150,340,'cofetarie', 'pentru copii', '{\"zahar\", \"ciocolata\",\"lapte\"}', False, 'bomboane-colorate.jpg');\n",
+            "setup": "CREATE SCHEMA IF NOT EXISTS demo; SET search_path TO demo;\nCREATE TYPE product_type AS ENUM ('books','stationery','accessories'); CREATE TYPE product_category AS ENUM ('standard','limited'); CREATE TABLE products(id serial PRIMARY KEY,name text UNIQUE NOT NULL,price numeric(8,2),stock int,product_type product_type,category product_category,tags text[]);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Notebook',7.5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Pen',6,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 3',3,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 4',4,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 5',5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Sticker',10,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 7',7,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 8',8,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 9',9,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 10',10,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 11',11,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 12',12,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 13',13,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 14',14,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 15',15,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 16',16,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 17',17,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 18',18,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 19',19,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 20',20,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 21',21,10,'accessories','standard',ARRAY['featured']);",
             "checkQuery": null,
             "starter": "",
             "id": "dulc-types-count",
             "revision": 3,
-            "contextCode": "CREATE SCHEMA dulcelind; SET search_path TO dulcelind;\nCREATE TYPE categ_prajitura AS ENUM( 'comanda speciala', 'aniversara', 'editie limitata', 'pentru copii', 'dietetica','comuna');\nCREATE TYPE tipuri_produse AS ENUM('cofetarie', 'patiserie', 'gelaterie');\n\n\nCREATE TABLE IF NOT EXISTS prajituri (\n   id serial PRIMARY KEY,\n   nume VARCHAR(50) UNIQUE NOT NULL,\n   descriere TEXT,\n   pret NUMERIC(8,2) NOT NULL,\n   gramaj INT NOT NULL CHECK (gramaj>=0),   \n   tip_produs tipuri_produse DEFAULT 'cofetarie',\n   calorii INT NOT NULL CHECK (calorii>=0),\n   categorie categ_prajitura DEFAULT 'comuna',\n   ingrediente VARCHAR [], --pot sa nu fie specificare deci nu punem NOT NULL\n   pt_diabetici BOOLEAN NOT NULL DEFAULT FALSE,\n   imagine VARCHAR(300),\n   data_adaugare TIMESTAMP DEFAULT current_timestamp\n);\n\nINSERT into prajituri (nume,descriere,pret, gramaj, calorii, tip_produs, categorie, ingrediente, pt_diabetici, imagine) VALUES \n('Savarină', 'Prăjitură insiropată, cu frișcă', 7.5 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"lapte\",\"frisca\",\"zahar\"}', False, 'aproximativ-savarina.jpg'),\n\n('Amandină', 'Prăjitură cu ciocolată', 6 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"ciocolata\",\"lapte\",\"zahar\",\"unt\"}', False, 'posibil-amandina.jpg'),\n\n('Tort glazurat', 'Tort pentru evenimente, poate fi decorat cu diverse culori', 35 , 1000, 2500, 'cofetarie', 'comanda speciala', '{\"oua\",\"zahar\",\"faina\",\"lapte\",\"ciocolata\",\"alune\"}', False,'tort-glazurat.jpg'),\n\n('Dulcelind cu fructe', 'Rețetă proprie, cu conținut sănătos (dacă ignorați tonele de zahăr) de fruncte proaspete', 10 , 250, 620, 'cofetarie', 'aniversara', '{\"frisca\",\"zahar\",\"faina\",\"zmeura\",\"lapte\",\"mure\",\"capsuni\"}', False,'dulcelind.jpg'),\n\n('Tartă cu căpșuni', 'Sub căpșuni se află o tartă.', 6 , 245, 280, 'cofetarie', 'comuna', '{\"vanilie\",\"faina\",\"capsuni\",\"lapte\", \"indulcitor\"}', True,'tarta-capsuni.jpg'),\n\n('Nimic', 'Nimic', 10 , 0, 0, 'cofetarie', 'dietetica', '{}', False, 'nimic.jpg'),\n\n('Cozonac zburător', 'Cineva a vărsat heliu peste aluat.', 25.5 , 1000, 1800, 'patiserie', 'comuna', '{\"zahar\",\"unt\",\"faina\",\"lapte\",\"cacao\",\"alune\", \"nuca\"}', False, 'cozonac-zburator.jpg'),\n\n('Brioșe', 'Aluat pufos, cu bucățele de ciocolată. Bucățelele de ciocolata, însă, nu sunt tocmai pufoase.', 8 , 145, 320, 'patiserie', 'comuna', '{\"ciocolata\",\"lapte\",\"unt\",\"migdale\",\"faina\",\"zahar\"}', False, 'briose.jpg'),\n\n('Turtă dulce', 'Un produs bun de savurat de Craciun. Sau și mai târziu dacă stocul a depășit cererea. De obicei mai găsiți și prin iunie...', 12 , 400, 550, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"scortisoara\",\"zahar\",\"unt\"}', False, 'turta-dulce.jpg'),\n\n('Turtă dulce dietetică', 'Îndulcitor în loc de zahăr. Dar nu vă lăsați păcăliți de nume, în rest nimic nu-i dietetic.', 10 , 400, 520, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"zaharina\",\"unt\",\"scortisoara\"}', True, 'turta-dulce-dietetica.jpg'),\n\n('Căsuță din turtă dulce', 'Vine cu tot cu vrăjitoare și cuptor la pachet. A nu se lăsa în mijlocul pădurii.', 70 , 450, 2700, 'patiserie', 'aniversara', '{\"unt\",\"scortisoara\", \"oua\",\"faina\",\"lapte\",\"zahar\"}', False, 'casuta-turta-dulce.jpg'),\n\n('Croissant', 'Un răsfăț pufos și dulce... mda... dulce... dacă nu încurcă Dorelina, iar, sarea cu zahărul!!!', 5 , 150, 285, 'patiserie', 'comuna', '{\"faina\",\"lapte\",\"zahar/sare\",\"unt\",\"ciocolata\",\"migdale\"}', False, 'croissant.jpg'),\n\n('Prajitura căpșuni', 'Prăjitura se face doar cu comandă specială, fiindcă apoi o comandăm și noi la rândul nostru la cofetăria vecină.', 15 , 180, 385, 'cofetarie', 'comanda speciala', '{\"faina\",\"lapte\",\"zahar\", \"capsuni\",\"unt\",\"gelatina\"}', False, 'prajitura-capsuni.jpg'),\n\n('Nasturei cu dulceață', 'Pentru când năstureii normali cedează fiindcă ați mâncat prea multă dulceață', 20.5 , 350, 700, 'patiserie', 'comuna', '{\"migdale\", \"faina\",\"lapte\",\"zahar\",\"unt\",\"dulceata\"}', False, 'nasturei-dulceata.jpg'),\n\n\n('Bomboane de ciocolată pe băț', 'Bățul e cel comestibil, nu bomboana.', 6, 100, 210,'cofetarie', 'pentru copii', '{\"ciocolata\", \"zahar\", \"lapte\", \"alune\", \"faina\"}', False, 'bomboane-ciocolata-bat.jpg'),\n\n('Înghețată fumătoare', 'Din când în când, tușește... Dar nu are COVID!', 18.5 , 225, 370, 'gelaterie', 'comuna', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-fumatoare.jpg'),\n\n\n('Înghețată multicoloră', 'Când storci un curcubeu peste înghețată... Ediție limitată; fabricăm doar după ploaie.', 12 , 120, 270, 'gelaterie', 'editie limitata', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-multicolora.jpg'),\n\n\n('Brioșă cu înghețată', 'Nu încercam să fim creativi... Dorelina a încurcat iar rețetele. Măcar are culoare roz', 14 , 235, 340, 'gelaterie', 'pentru copii', '{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'briosa-inghetata.jpg'),\n\n('Înghețată generică', 'Când bușim așa de tare rețeta încât nu se mai încadrează în niuna dintre celelalte categorii.', 8, 90, 130, 'gelaterie','comuna','{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'inghetata-generica.jpg'),\n\n('Imagine cu înghețată', 'Pentru cei aflați la dietă.', 5, 10,10,'gelaterie', 'comuna', '{\"hârtie\", \"tuș\"}', False, 'imagine-cu-inghetata.jpg'),\n\n\n('Bomboane colorate', 'Pentru copiii care doresc să afle devreme cum e o vizită la dentist.', 7, 150,340,'cofetarie', 'pentru copii', '{\"zahar\", \"ciocolata\",\"lapte\"}', False, 'bomboane-colorate.jpg');\n",
+            "contextCode": "CREATE SCHEMA IF NOT EXISTS demo; SET search_path TO demo;\nCREATE TYPE product_type AS ENUM ('books','stationery','accessories'); CREATE TYPE product_category AS ENUM ('standard','limited'); CREATE TABLE products(id serial PRIMARY KEY,name text UNIQUE NOT NULL,price numeric(8,2),stock int,product_type product_type,category product_category,tags text[]);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Notebook',7.5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Pen',6,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 3',3,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 4',4,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 5',5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Sticker',10,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 7',7,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 8',8,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 9',9,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 10',10,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 11',11,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 12',12,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 13',13,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 14',14,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 15',15,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 16',16,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 17',17,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 18',18,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 19',19,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 20',20,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 21',21,10,'accessories','standard',ARRAY['featured']);",
             "contextLabel": "Baza de date de la care pornești",
             "expectedResult": [
               {
-                "tip": "cofetarie",
-                "total": 9
-              },
-              {
-                "tip": "gelaterie",
+                "type": "accessories",
                 "total": 5
               },
               {
-                "tip": "patiserie",
+                "type": "books",
+                "total": 9
+              },
+              {
+                "type": "stationery",
                 "total": 7
               }
             ]
           },
-          "hint": "Catalogul are 9 produse de cofetărie, 7 de patiserie și 5 de gelaterie. Cere explicit ordinea rezultatelor.",
+          "hint": "GROUP BY numără rândurile fiecărui tip, iar ORDER BY type sortează rezultatul alfabetic. Acestea sunt categoriile datelor furnizate în exercițiu.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-ingredients",
           "title": "Listele de ingrediente",
           "intro": "PostgreSQL întoarce text[] ca vector. ANY verifică apartenența; EJS va itera ingredientele.",
-          "example": "SELECT nume FROM prajituri WHERE 'faina'=ANY(ingrediente) AND id=1;",
+          "example": "SELECT name FROM products WHERE 'featured'=ANY(tags) AND id=1;",
           "explain": "PostgreSQL întoarce text[] ca vector. ANY verifică apartenența; EJS va itera ingredientele.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -34655,22 +34808,22 @@ window.TW_COURSE = {
           "task": {
             "mode": "sql",
             "prompt": "Rulează SQL pe baza temporară furnizată pentru rezultatul cerut.",
-            "solution": "SELECT nume FROM prajituri WHERE 'faina'=ANY(ingrediente) AND id=1;",
+            "solution": "SELECT name FROM products WHERE 'featured'=ANY(tags) AND id=1;",
             "expected": [
               {
-                "nume": "Savarină"
+                "name": "Notebook"
               }
             ],
-            "setup": "CREATE SCHEMA dulcelind; SET search_path TO dulcelind;\nCREATE TYPE categ_prajitura AS ENUM( 'comanda speciala', 'aniversara', 'editie limitata', 'pentru copii', 'dietetica','comuna');\nCREATE TYPE tipuri_produse AS ENUM('cofetarie', 'patiserie', 'gelaterie');\n\n\nCREATE TABLE IF NOT EXISTS prajituri (\n   id serial PRIMARY KEY,\n   nume VARCHAR(50) UNIQUE NOT NULL,\n   descriere TEXT,\n   pret NUMERIC(8,2) NOT NULL,\n   gramaj INT NOT NULL CHECK (gramaj>=0),   \n   tip_produs tipuri_produse DEFAULT 'cofetarie',\n   calorii INT NOT NULL CHECK (calorii>=0),\n   categorie categ_prajitura DEFAULT 'comuna',\n   ingrediente VARCHAR [], --pot sa nu fie specificare deci nu punem NOT NULL\n   pt_diabetici BOOLEAN NOT NULL DEFAULT FALSE,\n   imagine VARCHAR(300),\n   data_adaugare TIMESTAMP DEFAULT current_timestamp\n);\n\nINSERT into prajituri (nume,descriere,pret, gramaj, calorii, tip_produs, categorie, ingrediente, pt_diabetici, imagine) VALUES \n('Savarină', 'Prăjitură insiropată, cu frișcă', 7.5 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"lapte\",\"frisca\",\"zahar\"}', False, 'aproximativ-savarina.jpg'),\n\n('Amandină', 'Prăjitură cu ciocolată', 6 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"ciocolata\",\"lapte\",\"zahar\",\"unt\"}', False, 'posibil-amandina.jpg'),\n\n('Tort glazurat', 'Tort pentru evenimente, poate fi decorat cu diverse culori', 35 , 1000, 2500, 'cofetarie', 'comanda speciala', '{\"oua\",\"zahar\",\"faina\",\"lapte\",\"ciocolata\",\"alune\"}', False,'tort-glazurat.jpg'),\n\n('Dulcelind cu fructe', 'Rețetă proprie, cu conținut sănătos (dacă ignorați tonele de zahăr) de fruncte proaspete', 10 , 250, 620, 'cofetarie', 'aniversara', '{\"frisca\",\"zahar\",\"faina\",\"zmeura\",\"lapte\",\"mure\",\"capsuni\"}', False,'dulcelind.jpg'),\n\n('Tartă cu căpșuni', 'Sub căpșuni se află o tartă.', 6 , 245, 280, 'cofetarie', 'comuna', '{\"vanilie\",\"faina\",\"capsuni\",\"lapte\", \"indulcitor\"}', True,'tarta-capsuni.jpg'),\n\n('Nimic', 'Nimic', 10 , 0, 0, 'cofetarie', 'dietetica', '{}', False, 'nimic.jpg'),\n\n('Cozonac zburător', 'Cineva a vărsat heliu peste aluat.', 25.5 , 1000, 1800, 'patiserie', 'comuna', '{\"zahar\",\"unt\",\"faina\",\"lapte\",\"cacao\",\"alune\", \"nuca\"}', False, 'cozonac-zburator.jpg'),\n\n('Brioșe', 'Aluat pufos, cu bucățele de ciocolată. Bucățelele de ciocolata, însă, nu sunt tocmai pufoase.', 8 , 145, 320, 'patiserie', 'comuna', '{\"ciocolata\",\"lapte\",\"unt\",\"migdale\",\"faina\",\"zahar\"}', False, 'briose.jpg'),\n\n('Turtă dulce', 'Un produs bun de savurat de Craciun. Sau și mai târziu dacă stocul a depășit cererea. De obicei mai găsiți și prin iunie...', 12 , 400, 550, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"scortisoara\",\"zahar\",\"unt\"}', False, 'turta-dulce.jpg'),\n\n('Turtă dulce dietetică', 'Îndulcitor în loc de zahăr. Dar nu vă lăsați păcăliți de nume, în rest nimic nu-i dietetic.', 10 , 400, 520, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"zaharina\",\"unt\",\"scortisoara\"}', True, 'turta-dulce-dietetica.jpg'),\n\n('Căsuță din turtă dulce', 'Vine cu tot cu vrăjitoare și cuptor la pachet. A nu se lăsa în mijlocul pădurii.', 70 , 450, 2700, 'patiserie', 'aniversara', '{\"unt\",\"scortisoara\", \"oua\",\"faina\",\"lapte\",\"zahar\"}', False, 'casuta-turta-dulce.jpg'),\n\n('Croissant', 'Un răsfăț pufos și dulce... mda... dulce... dacă nu încurcă Dorelina, iar, sarea cu zahărul!!!', 5 , 150, 285, 'patiserie', 'comuna', '{\"faina\",\"lapte\",\"zahar/sare\",\"unt\",\"ciocolata\",\"migdale\"}', False, 'croissant.jpg'),\n\n('Prajitura căpșuni', 'Prăjitura se face doar cu comandă specială, fiindcă apoi o comandăm și noi la rândul nostru la cofetăria vecină.', 15 , 180, 385, 'cofetarie', 'comanda speciala', '{\"faina\",\"lapte\",\"zahar\", \"capsuni\",\"unt\",\"gelatina\"}', False, 'prajitura-capsuni.jpg'),\n\n('Nasturei cu dulceață', 'Pentru când năstureii normali cedează fiindcă ați mâncat prea multă dulceață', 20.5 , 350, 700, 'patiserie', 'comuna', '{\"migdale\", \"faina\",\"lapte\",\"zahar\",\"unt\",\"dulceata\"}', False, 'nasturei-dulceata.jpg'),\n\n\n('Bomboane de ciocolată pe băț', 'Bățul e cel comestibil, nu bomboana.', 6, 100, 210,'cofetarie', 'pentru copii', '{\"ciocolata\", \"zahar\", \"lapte\", \"alune\", \"faina\"}', False, 'bomboane-ciocolata-bat.jpg'),\n\n('Înghețată fumătoare', 'Din când în când, tușește... Dar nu are COVID!', 18.5 , 225, 370, 'gelaterie', 'comuna', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-fumatoare.jpg'),\n\n\n('Înghețată multicoloră', 'Când storci un curcubeu peste înghețată... Ediție limitată; fabricăm doar după ploaie.', 12 , 120, 270, 'gelaterie', 'editie limitata', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-multicolora.jpg'),\n\n\n('Brioșă cu înghețată', 'Nu încercam să fim creativi... Dorelina a încurcat iar rețetele. Măcar are culoare roz', 14 , 235, 340, 'gelaterie', 'pentru copii', '{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'briosa-inghetata.jpg'),\n\n('Înghețată generică', 'Când bușim așa de tare rețeta încât nu se mai încadrează în niuna dintre celelalte categorii.', 8, 90, 130, 'gelaterie','comuna','{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'inghetata-generica.jpg'),\n\n('Imagine cu înghețată', 'Pentru cei aflați la dietă.', 5, 10,10,'gelaterie', 'comuna', '{\"hârtie\", \"tuș\"}', False, 'imagine-cu-inghetata.jpg'),\n\n\n('Bomboane colorate', 'Pentru copiii care doresc să afle devreme cum e o vizită la dentist.', 7, 150,340,'cofetarie', 'pentru copii', '{\"zahar\", \"ciocolata\",\"lapte\"}', False, 'bomboane-colorate.jpg');\n",
+            "setup": "CREATE SCHEMA IF NOT EXISTS demo; SET search_path TO demo;\nCREATE TYPE product_type AS ENUM ('books','stationery','accessories'); CREATE TYPE product_category AS ENUM ('standard','limited'); CREATE TABLE products(id serial PRIMARY KEY,name text UNIQUE NOT NULL,price numeric(8,2),stock int,product_type product_type,category product_category,tags text[]);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Notebook',7.5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Pen',6,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 3',3,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 4',4,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 5',5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Sticker',10,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 7',7,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 8',8,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 9',9,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 10',10,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 11',11,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 12',12,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 13',13,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 14',14,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 15',15,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 16',16,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 17',17,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 18',18,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 19',19,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 20',20,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 21',21,10,'accessories','standard',ARRAY['featured']);",
             "checkQuery": null,
             "starter": "",
             "id": "dulc-ingredients",
             "revision": 3,
-            "contextCode": "CREATE SCHEMA dulcelind; SET search_path TO dulcelind;\nCREATE TYPE categ_prajitura AS ENUM( 'comanda speciala', 'aniversara', 'editie limitata', 'pentru copii', 'dietetica','comuna');\nCREATE TYPE tipuri_produse AS ENUM('cofetarie', 'patiserie', 'gelaterie');\n\n\nCREATE TABLE IF NOT EXISTS prajituri (\n   id serial PRIMARY KEY,\n   nume VARCHAR(50) UNIQUE NOT NULL,\n   descriere TEXT,\n   pret NUMERIC(8,2) NOT NULL,\n   gramaj INT NOT NULL CHECK (gramaj>=0),   \n   tip_produs tipuri_produse DEFAULT 'cofetarie',\n   calorii INT NOT NULL CHECK (calorii>=0),\n   categorie categ_prajitura DEFAULT 'comuna',\n   ingrediente VARCHAR [], --pot sa nu fie specificare deci nu punem NOT NULL\n   pt_diabetici BOOLEAN NOT NULL DEFAULT FALSE,\n   imagine VARCHAR(300),\n   data_adaugare TIMESTAMP DEFAULT current_timestamp\n);\n\nINSERT into prajituri (nume,descriere,pret, gramaj, calorii, tip_produs, categorie, ingrediente, pt_diabetici, imagine) VALUES \n('Savarină', 'Prăjitură insiropată, cu frișcă', 7.5 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"lapte\",\"frisca\",\"zahar\"}', False, 'aproximativ-savarina.jpg'),\n\n('Amandină', 'Prăjitură cu ciocolată', 6 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"ciocolata\",\"lapte\",\"zahar\",\"unt\"}', False, 'posibil-amandina.jpg'),\n\n('Tort glazurat', 'Tort pentru evenimente, poate fi decorat cu diverse culori', 35 , 1000, 2500, 'cofetarie', 'comanda speciala', '{\"oua\",\"zahar\",\"faina\",\"lapte\",\"ciocolata\",\"alune\"}', False,'tort-glazurat.jpg'),\n\n('Dulcelind cu fructe', 'Rețetă proprie, cu conținut sănătos (dacă ignorați tonele de zahăr) de fruncte proaspete', 10 , 250, 620, 'cofetarie', 'aniversara', '{\"frisca\",\"zahar\",\"faina\",\"zmeura\",\"lapte\",\"mure\",\"capsuni\"}', False,'dulcelind.jpg'),\n\n('Tartă cu căpșuni', 'Sub căpșuni se află o tartă.', 6 , 245, 280, 'cofetarie', 'comuna', '{\"vanilie\",\"faina\",\"capsuni\",\"lapte\", \"indulcitor\"}', True,'tarta-capsuni.jpg'),\n\n('Nimic', 'Nimic', 10 , 0, 0, 'cofetarie', 'dietetica', '{}', False, 'nimic.jpg'),\n\n('Cozonac zburător', 'Cineva a vărsat heliu peste aluat.', 25.5 , 1000, 1800, 'patiserie', 'comuna', '{\"zahar\",\"unt\",\"faina\",\"lapte\",\"cacao\",\"alune\", \"nuca\"}', False, 'cozonac-zburator.jpg'),\n\n('Brioșe', 'Aluat pufos, cu bucățele de ciocolată. Bucățelele de ciocolata, însă, nu sunt tocmai pufoase.', 8 , 145, 320, 'patiserie', 'comuna', '{\"ciocolata\",\"lapte\",\"unt\",\"migdale\",\"faina\",\"zahar\"}', False, 'briose.jpg'),\n\n('Turtă dulce', 'Un produs bun de savurat de Craciun. Sau și mai târziu dacă stocul a depășit cererea. De obicei mai găsiți și prin iunie...', 12 , 400, 550, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"scortisoara\",\"zahar\",\"unt\"}', False, 'turta-dulce.jpg'),\n\n('Turtă dulce dietetică', 'Îndulcitor în loc de zahăr. Dar nu vă lăsați păcăliți de nume, în rest nimic nu-i dietetic.', 10 , 400, 520, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"zaharina\",\"unt\",\"scortisoara\"}', True, 'turta-dulce-dietetica.jpg'),\n\n('Căsuță din turtă dulce', 'Vine cu tot cu vrăjitoare și cuptor la pachet. A nu se lăsa în mijlocul pădurii.', 70 , 450, 2700, 'patiserie', 'aniversara', '{\"unt\",\"scortisoara\", \"oua\",\"faina\",\"lapte\",\"zahar\"}', False, 'casuta-turta-dulce.jpg'),\n\n('Croissant', 'Un răsfăț pufos și dulce... mda... dulce... dacă nu încurcă Dorelina, iar, sarea cu zahărul!!!', 5 , 150, 285, 'patiserie', 'comuna', '{\"faina\",\"lapte\",\"zahar/sare\",\"unt\",\"ciocolata\",\"migdale\"}', False, 'croissant.jpg'),\n\n('Prajitura căpșuni', 'Prăjitura se face doar cu comandă specială, fiindcă apoi o comandăm și noi la rândul nostru la cofetăria vecină.', 15 , 180, 385, 'cofetarie', 'comanda speciala', '{\"faina\",\"lapte\",\"zahar\", \"capsuni\",\"unt\",\"gelatina\"}', False, 'prajitura-capsuni.jpg'),\n\n('Nasturei cu dulceață', 'Pentru când năstureii normali cedează fiindcă ați mâncat prea multă dulceață', 20.5 , 350, 700, 'patiserie', 'comuna', '{\"migdale\", \"faina\",\"lapte\",\"zahar\",\"unt\",\"dulceata\"}', False, 'nasturei-dulceata.jpg'),\n\n\n('Bomboane de ciocolată pe băț', 'Bățul e cel comestibil, nu bomboana.', 6, 100, 210,'cofetarie', 'pentru copii', '{\"ciocolata\", \"zahar\", \"lapte\", \"alune\", \"faina\"}', False, 'bomboane-ciocolata-bat.jpg'),\n\n('Înghețată fumătoare', 'Din când în când, tușește... Dar nu are COVID!', 18.5 , 225, 370, 'gelaterie', 'comuna', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-fumatoare.jpg'),\n\n\n('Înghețată multicoloră', 'Când storci un curcubeu peste înghețată... Ediție limitată; fabricăm doar după ploaie.', 12 , 120, 270, 'gelaterie', 'editie limitata', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-multicolora.jpg'),\n\n\n('Brioșă cu înghețată', 'Nu încercam să fim creativi... Dorelina a încurcat iar rețetele. Măcar are culoare roz', 14 , 235, 340, 'gelaterie', 'pentru copii', '{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'briosa-inghetata.jpg'),\n\n('Înghețată generică', 'Când bușim așa de tare rețeta încât nu se mai încadrează în niuna dintre celelalte categorii.', 8, 90, 130, 'gelaterie','comuna','{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'inghetata-generica.jpg'),\n\n('Imagine cu înghețată', 'Pentru cei aflați la dietă.', 5, 10,10,'gelaterie', 'comuna', '{\"hârtie\", \"tuș\"}', False, 'imagine-cu-inghetata.jpg'),\n\n\n('Bomboane colorate', 'Pentru copiii care doresc să afle devreme cum e o vizită la dentist.', 7, 150,340,'cofetarie', 'pentru copii', '{\"zahar\", \"ciocolata\",\"lapte\"}', False, 'bomboane-colorate.jpg');\n",
+            "contextCode": "CREATE SCHEMA IF NOT EXISTS demo; SET search_path TO demo;\nCREATE TYPE product_type AS ENUM ('books','stationery','accessories'); CREATE TYPE product_category AS ENUM ('standard','limited'); CREATE TABLE products(id serial PRIMARY KEY,name text UNIQUE NOT NULL,price numeric(8,2),stock int,product_type product_type,category product_category,tags text[]);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Notebook',7.5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Pen',6,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 3',3,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 4',4,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 5',5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Sticker',10,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 7',7,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 8',8,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 9',9,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 10',10,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 11',11,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 12',12,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 13',13,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 14',14,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 15',15,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 16',16,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 17',17,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 18',18,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 19',19,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 20',20,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 21',21,10,'accessories','standard',ARRAY['featured']);",
             "contextLabel": "Baza de date de la care pornești",
             "expectedResult": [
               {
-                "nume": "Savarină"
+                "name": "Notebook"
               }
             ]
           },
@@ -34680,10 +34833,13 @@ window.TW_COURSE = {
         {
           "id": "dulc-search-path",
           "title": "Schema curentă și search_path",
-          "intro": "Numele necalificat prajituri se rezolvă prin search_path. dulcelind.prajituri evită ambiguitatea cu public.",
-          "example": "SET search_path TO dulcelind; SELECT nume FROM prajituri WHERE id=1;",
-          "explain": "Numele necalificat prajituri se rezolvă prin search_path. dulcelind.prajituri evită ambiguitatea cu public.",
-          "points": [],
+          "intro": "Numele necalificat products se rezolvă prin search_path. demo.products evită ambiguitatea cu public.",
+          "example": "SET search_path TO demo; SELECT name FROM products WHERE id=1;",
+          "explain": "Numele necalificat products se rezolvă prin search_path. demo.products evită ambiguitatea cu public.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -34692,40 +34848,43 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 1,
-            "explanation": "Numele necalificat prajituri se rezolvă prin search_path. dulcelind.prajituri evită ambiguitatea cu public."
+            "explanation": "Numele necalificat products se rezolvă prin search_path. demo.products evită ambiguitatea cu public."
           },
           "task": {
             "mode": "sql",
             "prompt": "Rulează SQL pe baza temporară furnizată pentru rezultatul cerut.",
-            "solution": "SET search_path TO dulcelind; SELECT nume FROM prajituri WHERE id=1;",
+            "solution": "SET search_path TO demo; SELECT name FROM products WHERE id=1;",
             "expected": [
               {
-                "nume": "Savarină"
+                "name": "Notebook"
               }
             ],
-            "setup": "CREATE SCHEMA dulcelind; SET search_path TO dulcelind;\nCREATE TYPE categ_prajitura AS ENUM( 'comanda speciala', 'aniversara', 'editie limitata', 'pentru copii', 'dietetica','comuna');\nCREATE TYPE tipuri_produse AS ENUM('cofetarie', 'patiserie', 'gelaterie');\n\n\nCREATE TABLE IF NOT EXISTS prajituri (\n   id serial PRIMARY KEY,\n   nume VARCHAR(50) UNIQUE NOT NULL,\n   descriere TEXT,\n   pret NUMERIC(8,2) NOT NULL,\n   gramaj INT NOT NULL CHECK (gramaj>=0),   \n   tip_produs tipuri_produse DEFAULT 'cofetarie',\n   calorii INT NOT NULL CHECK (calorii>=0),\n   categorie categ_prajitura DEFAULT 'comuna',\n   ingrediente VARCHAR [], --pot sa nu fie specificare deci nu punem NOT NULL\n   pt_diabetici BOOLEAN NOT NULL DEFAULT FALSE,\n   imagine VARCHAR(300),\n   data_adaugare TIMESTAMP DEFAULT current_timestamp\n);\n\nINSERT into prajituri (nume,descriere,pret, gramaj, calorii, tip_produs, categorie, ingrediente, pt_diabetici, imagine) VALUES \n('Savarină', 'Prăjitură insiropată, cu frișcă', 7.5 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"lapte\",\"frisca\",\"zahar\"}', False, 'aproximativ-savarina.jpg'),\n\n('Amandină', 'Prăjitură cu ciocolată', 6 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"ciocolata\",\"lapte\",\"zahar\",\"unt\"}', False, 'posibil-amandina.jpg'),\n\n('Tort glazurat', 'Tort pentru evenimente, poate fi decorat cu diverse culori', 35 , 1000, 2500, 'cofetarie', 'comanda speciala', '{\"oua\",\"zahar\",\"faina\",\"lapte\",\"ciocolata\",\"alune\"}', False,'tort-glazurat.jpg'),\n\n('Dulcelind cu fructe', 'Rețetă proprie, cu conținut sănătos (dacă ignorați tonele de zahăr) de fruncte proaspete', 10 , 250, 620, 'cofetarie', 'aniversara', '{\"frisca\",\"zahar\",\"faina\",\"zmeura\",\"lapte\",\"mure\",\"capsuni\"}', False,'dulcelind.jpg'),\n\n('Tartă cu căpșuni', 'Sub căpșuni se află o tartă.', 6 , 245, 280, 'cofetarie', 'comuna', '{\"vanilie\",\"faina\",\"capsuni\",\"lapte\", \"indulcitor\"}', True,'tarta-capsuni.jpg'),\n\n('Nimic', 'Nimic', 10 , 0, 0, 'cofetarie', 'dietetica', '{}', False, 'nimic.jpg'),\n\n('Cozonac zburător', 'Cineva a vărsat heliu peste aluat.', 25.5 , 1000, 1800, 'patiserie', 'comuna', '{\"zahar\",\"unt\",\"faina\",\"lapte\",\"cacao\",\"alune\", \"nuca\"}', False, 'cozonac-zburator.jpg'),\n\n('Brioșe', 'Aluat pufos, cu bucățele de ciocolată. Bucățelele de ciocolata, însă, nu sunt tocmai pufoase.', 8 , 145, 320, 'patiserie', 'comuna', '{\"ciocolata\",\"lapte\",\"unt\",\"migdale\",\"faina\",\"zahar\"}', False, 'briose.jpg'),\n\n('Turtă dulce', 'Un produs bun de savurat de Craciun. Sau și mai târziu dacă stocul a depășit cererea. De obicei mai găsiți și prin iunie...', 12 , 400, 550, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"scortisoara\",\"zahar\",\"unt\"}', False, 'turta-dulce.jpg'),\n\n('Turtă dulce dietetică', 'Îndulcitor în loc de zahăr. Dar nu vă lăsați păcăliți de nume, în rest nimic nu-i dietetic.', 10 , 400, 520, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"zaharina\",\"unt\",\"scortisoara\"}', True, 'turta-dulce-dietetica.jpg'),\n\n('Căsuță din turtă dulce', 'Vine cu tot cu vrăjitoare și cuptor la pachet. A nu se lăsa în mijlocul pădurii.', 70 , 450, 2700, 'patiserie', 'aniversara', '{\"unt\",\"scortisoara\", \"oua\",\"faina\",\"lapte\",\"zahar\"}', False, 'casuta-turta-dulce.jpg'),\n\n('Croissant', 'Un răsfăț pufos și dulce... mda... dulce... dacă nu încurcă Dorelina, iar, sarea cu zahărul!!!', 5 , 150, 285, 'patiserie', 'comuna', '{\"faina\",\"lapte\",\"zahar/sare\",\"unt\",\"ciocolata\",\"migdale\"}', False, 'croissant.jpg'),\n\n('Prajitura căpșuni', 'Prăjitura se face doar cu comandă specială, fiindcă apoi o comandăm și noi la rândul nostru la cofetăria vecină.', 15 , 180, 385, 'cofetarie', 'comanda speciala', '{\"faina\",\"lapte\",\"zahar\", \"capsuni\",\"unt\",\"gelatina\"}', False, 'prajitura-capsuni.jpg'),\n\n('Nasturei cu dulceață', 'Pentru când năstureii normali cedează fiindcă ați mâncat prea multă dulceață', 20.5 , 350, 700, 'patiserie', 'comuna', '{\"migdale\", \"faina\",\"lapte\",\"zahar\",\"unt\",\"dulceata\"}', False, 'nasturei-dulceata.jpg'),\n\n\n('Bomboane de ciocolată pe băț', 'Bățul e cel comestibil, nu bomboana.', 6, 100, 210,'cofetarie', 'pentru copii', '{\"ciocolata\", \"zahar\", \"lapte\", \"alune\", \"faina\"}', False, 'bomboane-ciocolata-bat.jpg'),\n\n('Înghețată fumătoare', 'Din când în când, tușește... Dar nu are COVID!', 18.5 , 225, 370, 'gelaterie', 'comuna', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-fumatoare.jpg'),\n\n\n('Înghețată multicoloră', 'Când storci un curcubeu peste înghețată... Ediție limitată; fabricăm doar după ploaie.', 12 , 120, 270, 'gelaterie', 'editie limitata', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-multicolora.jpg'),\n\n\n('Brioșă cu înghețată', 'Nu încercam să fim creativi... Dorelina a încurcat iar rețetele. Măcar are culoare roz', 14 , 235, 340, 'gelaterie', 'pentru copii', '{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'briosa-inghetata.jpg'),\n\n('Înghețată generică', 'Când bușim așa de tare rețeta încât nu se mai încadrează în niuna dintre celelalte categorii.', 8, 90, 130, 'gelaterie','comuna','{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'inghetata-generica.jpg'),\n\n('Imagine cu înghețată', 'Pentru cei aflați la dietă.', 5, 10,10,'gelaterie', 'comuna', '{\"hârtie\", \"tuș\"}', False, 'imagine-cu-inghetata.jpg'),\n\n\n('Bomboane colorate', 'Pentru copiii care doresc să afle devreme cum e o vizită la dentist.', 7, 150,340,'cofetarie', 'pentru copii', '{\"zahar\", \"ciocolata\",\"lapte\"}', False, 'bomboane-colorate.jpg');\n",
+            "setup": "CREATE SCHEMA IF NOT EXISTS demo; SET search_path TO demo;\nCREATE TYPE product_type AS ENUM ('books','stationery','accessories'); CREATE TYPE product_category AS ENUM ('standard','limited'); CREATE TABLE products(id serial PRIMARY KEY,name text UNIQUE NOT NULL,price numeric(8,2),stock int,product_type product_type,category product_category,tags text[]);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Notebook',7.5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Pen',6,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 3',3,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 4',4,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 5',5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Sticker',10,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 7',7,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 8',8,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 9',9,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 10',10,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 11',11,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 12',12,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 13',13,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 14',14,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 15',15,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 16',16,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 17',17,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 18',18,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 19',19,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 20',20,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 21',21,10,'accessories','standard',ARRAY['featured']);",
             "checkQuery": null,
             "starter": "",
             "id": "dulc-search-path",
             "revision": 3,
-            "contextCode": "CREATE SCHEMA dulcelind; SET search_path TO dulcelind;\nCREATE TYPE categ_prajitura AS ENUM( 'comanda speciala', 'aniversara', 'editie limitata', 'pentru copii', 'dietetica','comuna');\nCREATE TYPE tipuri_produse AS ENUM('cofetarie', 'patiserie', 'gelaterie');\n\n\nCREATE TABLE IF NOT EXISTS prajituri (\n   id serial PRIMARY KEY,\n   nume VARCHAR(50) UNIQUE NOT NULL,\n   descriere TEXT,\n   pret NUMERIC(8,2) NOT NULL,\n   gramaj INT NOT NULL CHECK (gramaj>=0),   \n   tip_produs tipuri_produse DEFAULT 'cofetarie',\n   calorii INT NOT NULL CHECK (calorii>=0),\n   categorie categ_prajitura DEFAULT 'comuna',\n   ingrediente VARCHAR [], --pot sa nu fie specificare deci nu punem NOT NULL\n   pt_diabetici BOOLEAN NOT NULL DEFAULT FALSE,\n   imagine VARCHAR(300),\n   data_adaugare TIMESTAMP DEFAULT current_timestamp\n);\n\nINSERT into prajituri (nume,descriere,pret, gramaj, calorii, tip_produs, categorie, ingrediente, pt_diabetici, imagine) VALUES \n('Savarină', 'Prăjitură insiropată, cu frișcă', 7.5 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"lapte\",\"frisca\",\"zahar\"}', False, 'aproximativ-savarina.jpg'),\n\n('Amandină', 'Prăjitură cu ciocolată', 6 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"ciocolata\",\"lapte\",\"zahar\",\"unt\"}', False, 'posibil-amandina.jpg'),\n\n('Tort glazurat', 'Tort pentru evenimente, poate fi decorat cu diverse culori', 35 , 1000, 2500, 'cofetarie', 'comanda speciala', '{\"oua\",\"zahar\",\"faina\",\"lapte\",\"ciocolata\",\"alune\"}', False,'tort-glazurat.jpg'),\n\n('Dulcelind cu fructe', 'Rețetă proprie, cu conținut sănătos (dacă ignorați tonele de zahăr) de fruncte proaspete', 10 , 250, 620, 'cofetarie', 'aniversara', '{\"frisca\",\"zahar\",\"faina\",\"zmeura\",\"lapte\",\"mure\",\"capsuni\"}', False,'dulcelind.jpg'),\n\n('Tartă cu căpșuni', 'Sub căpșuni se află o tartă.', 6 , 245, 280, 'cofetarie', 'comuna', '{\"vanilie\",\"faina\",\"capsuni\",\"lapte\", \"indulcitor\"}', True,'tarta-capsuni.jpg'),\n\n('Nimic', 'Nimic', 10 , 0, 0, 'cofetarie', 'dietetica', '{}', False, 'nimic.jpg'),\n\n('Cozonac zburător', 'Cineva a vărsat heliu peste aluat.', 25.5 , 1000, 1800, 'patiserie', 'comuna', '{\"zahar\",\"unt\",\"faina\",\"lapte\",\"cacao\",\"alune\", \"nuca\"}', False, 'cozonac-zburator.jpg'),\n\n('Brioșe', 'Aluat pufos, cu bucățele de ciocolată. Bucățelele de ciocolata, însă, nu sunt tocmai pufoase.', 8 , 145, 320, 'patiserie', 'comuna', '{\"ciocolata\",\"lapte\",\"unt\",\"migdale\",\"faina\",\"zahar\"}', False, 'briose.jpg'),\n\n('Turtă dulce', 'Un produs bun de savurat de Craciun. Sau și mai târziu dacă stocul a depășit cererea. De obicei mai găsiți și prin iunie...', 12 , 400, 550, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"scortisoara\",\"zahar\",\"unt\"}', False, 'turta-dulce.jpg'),\n\n('Turtă dulce dietetică', 'Îndulcitor în loc de zahăr. Dar nu vă lăsați păcăliți de nume, în rest nimic nu-i dietetic.', 10 , 400, 520, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"zaharina\",\"unt\",\"scortisoara\"}', True, 'turta-dulce-dietetica.jpg'),\n\n('Căsuță din turtă dulce', 'Vine cu tot cu vrăjitoare și cuptor la pachet. A nu se lăsa în mijlocul pădurii.', 70 , 450, 2700, 'patiserie', 'aniversara', '{\"unt\",\"scortisoara\", \"oua\",\"faina\",\"lapte\",\"zahar\"}', False, 'casuta-turta-dulce.jpg'),\n\n('Croissant', 'Un răsfăț pufos și dulce... mda... dulce... dacă nu încurcă Dorelina, iar, sarea cu zahărul!!!', 5 , 150, 285, 'patiserie', 'comuna', '{\"faina\",\"lapte\",\"zahar/sare\",\"unt\",\"ciocolata\",\"migdale\"}', False, 'croissant.jpg'),\n\n('Prajitura căpșuni', 'Prăjitura se face doar cu comandă specială, fiindcă apoi o comandăm și noi la rândul nostru la cofetăria vecină.', 15 , 180, 385, 'cofetarie', 'comanda speciala', '{\"faina\",\"lapte\",\"zahar\", \"capsuni\",\"unt\",\"gelatina\"}', False, 'prajitura-capsuni.jpg'),\n\n('Nasturei cu dulceață', 'Pentru când năstureii normali cedează fiindcă ați mâncat prea multă dulceață', 20.5 , 350, 700, 'patiserie', 'comuna', '{\"migdale\", \"faina\",\"lapte\",\"zahar\",\"unt\",\"dulceata\"}', False, 'nasturei-dulceata.jpg'),\n\n\n('Bomboane de ciocolată pe băț', 'Bățul e cel comestibil, nu bomboana.', 6, 100, 210,'cofetarie', 'pentru copii', '{\"ciocolata\", \"zahar\", \"lapte\", \"alune\", \"faina\"}', False, 'bomboane-ciocolata-bat.jpg'),\n\n('Înghețată fumătoare', 'Din când în când, tușește... Dar nu are COVID!', 18.5 , 225, 370, 'gelaterie', 'comuna', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-fumatoare.jpg'),\n\n\n('Înghețată multicoloră', 'Când storci un curcubeu peste înghețată... Ediție limitată; fabricăm doar după ploaie.', 12 , 120, 270, 'gelaterie', 'editie limitata', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-multicolora.jpg'),\n\n\n('Brioșă cu înghețată', 'Nu încercam să fim creativi... Dorelina a încurcat iar rețetele. Măcar are culoare roz', 14 , 235, 340, 'gelaterie', 'pentru copii', '{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'briosa-inghetata.jpg'),\n\n('Înghețată generică', 'Când bușim așa de tare rețeta încât nu se mai încadrează în niuna dintre celelalte categorii.', 8, 90, 130, 'gelaterie','comuna','{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'inghetata-generica.jpg'),\n\n('Imagine cu înghețată', 'Pentru cei aflați la dietă.', 5, 10,10,'gelaterie', 'comuna', '{\"hârtie\", \"tuș\"}', False, 'imagine-cu-inghetata.jpg'),\n\n\n('Bomboane colorate', 'Pentru copiii care doresc să afle devreme cum e o vizită la dentist.', 7, 150,340,'cofetarie', 'pentru copii', '{\"zahar\", \"ciocolata\",\"lapte\"}', False, 'bomboane-colorate.jpg');\n",
+            "contextCode": "CREATE SCHEMA IF NOT EXISTS demo; SET search_path TO demo;\nCREATE TYPE product_type AS ENUM ('books','stationery','accessories'); CREATE TYPE product_category AS ENUM ('standard','limited'); CREATE TABLE products(id serial PRIMARY KEY,name text UNIQUE NOT NULL,price numeric(8,2),stock int,product_type product_type,category product_category,tags text[]);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Notebook',7.5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Pen',6,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 3',3,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 4',4,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 5',5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Sticker',10,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 7',7,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 8',8,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 9',9,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 10',10,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 11',11,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 12',12,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 13',13,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 14',14,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 15',15,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 16',16,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 17',17,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 18',18,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 19',19,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 20',20,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 21',21,10,'accessories','standard',ARRAY['featured']);",
             "contextLabel": "Baza de date de la care pornești",
             "expectedResult": [
               {
-                "nume": "Savarină"
+                "name": "Notebook"
               }
             ]
           },
-          "hint": "Numele necalificat prajituri se rezolvă prin search_path. dulcelind.prajituri evită ambiguitatea cu public.",
+          "hint": "Numele necalificat products se rezolvă prin search_path. demo.products evită ambiguitatea cu public.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-transaction",
           "title": "Anulează o modificare cu ROLLBACK",
           "intro": "BEGIN deschide tranzacția. ROLLBACK anulează schimbarea; COMMIT o confirmă. Nu folosi DROP TYPE în inițializarea repetată.",
-          "example": "BEGIN; UPDATE prajituri SET pret=99 WHERE id=1; ROLLBACK; SELECT pret::text FROM prajituri WHERE id=1;",
+          "example": "BEGIN; UPDATE products SET price=99 WHERE id=1; ROLLBACK; SELECT price::text FROM products WHERE id=1;",
           "explain": "BEGIN deschide tranzacția. ROLLBACK anulează schimbarea; COMMIT o confirmă. Nu folosi DROP TYPE în inițializarea repetată.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -34739,22 +34898,22 @@ window.TW_COURSE = {
           "task": {
             "mode": "sql",
             "prompt": "Rulează SQL pe baza temporară furnizată pentru rezultatul cerut.",
-            "solution": "BEGIN; UPDATE prajituri SET pret=99 WHERE id=1; ROLLBACK; SELECT pret::text FROM prajituri WHERE id=1;",
+            "solution": "BEGIN; UPDATE products SET price=99 WHERE id=1; ROLLBACK; SELECT price::text FROM products WHERE id=1;",
             "expected": [
               {
-                "pret": "7.50"
+                "price": "7.50"
               }
             ],
-            "setup": "CREATE SCHEMA dulcelind; SET search_path TO dulcelind;\nCREATE TYPE categ_prajitura AS ENUM( 'comanda speciala', 'aniversara', 'editie limitata', 'pentru copii', 'dietetica','comuna');\nCREATE TYPE tipuri_produse AS ENUM('cofetarie', 'patiserie', 'gelaterie');\n\n\nCREATE TABLE IF NOT EXISTS prajituri (\n   id serial PRIMARY KEY,\n   nume VARCHAR(50) UNIQUE NOT NULL,\n   descriere TEXT,\n   pret NUMERIC(8,2) NOT NULL,\n   gramaj INT NOT NULL CHECK (gramaj>=0),   \n   tip_produs tipuri_produse DEFAULT 'cofetarie',\n   calorii INT NOT NULL CHECK (calorii>=0),\n   categorie categ_prajitura DEFAULT 'comuna',\n   ingrediente VARCHAR [], --pot sa nu fie specificare deci nu punem NOT NULL\n   pt_diabetici BOOLEAN NOT NULL DEFAULT FALSE,\n   imagine VARCHAR(300),\n   data_adaugare TIMESTAMP DEFAULT current_timestamp\n);\n\nINSERT into prajituri (nume,descriere,pret, gramaj, calorii, tip_produs, categorie, ingrediente, pt_diabetici, imagine) VALUES \n('Savarină', 'Prăjitură insiropată, cu frișcă', 7.5 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"lapte\",\"frisca\",\"zahar\"}', False, 'aproximativ-savarina.jpg'),\n\n('Amandină', 'Prăjitură cu ciocolată', 6 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"ciocolata\",\"lapte\",\"zahar\",\"unt\"}', False, 'posibil-amandina.jpg'),\n\n('Tort glazurat', 'Tort pentru evenimente, poate fi decorat cu diverse culori', 35 , 1000, 2500, 'cofetarie', 'comanda speciala', '{\"oua\",\"zahar\",\"faina\",\"lapte\",\"ciocolata\",\"alune\"}', False,'tort-glazurat.jpg'),\n\n('Dulcelind cu fructe', 'Rețetă proprie, cu conținut sănătos (dacă ignorați tonele de zahăr) de fruncte proaspete', 10 , 250, 620, 'cofetarie', 'aniversara', '{\"frisca\",\"zahar\",\"faina\",\"zmeura\",\"lapte\",\"mure\",\"capsuni\"}', False,'dulcelind.jpg'),\n\n('Tartă cu căpșuni', 'Sub căpșuni se află o tartă.', 6 , 245, 280, 'cofetarie', 'comuna', '{\"vanilie\",\"faina\",\"capsuni\",\"lapte\", \"indulcitor\"}', True,'tarta-capsuni.jpg'),\n\n('Nimic', 'Nimic', 10 , 0, 0, 'cofetarie', 'dietetica', '{}', False, 'nimic.jpg'),\n\n('Cozonac zburător', 'Cineva a vărsat heliu peste aluat.', 25.5 , 1000, 1800, 'patiserie', 'comuna', '{\"zahar\",\"unt\",\"faina\",\"lapte\",\"cacao\",\"alune\", \"nuca\"}', False, 'cozonac-zburator.jpg'),\n\n('Brioșe', 'Aluat pufos, cu bucățele de ciocolată. Bucățelele de ciocolata, însă, nu sunt tocmai pufoase.', 8 , 145, 320, 'patiserie', 'comuna', '{\"ciocolata\",\"lapte\",\"unt\",\"migdale\",\"faina\",\"zahar\"}', False, 'briose.jpg'),\n\n('Turtă dulce', 'Un produs bun de savurat de Craciun. Sau și mai târziu dacă stocul a depășit cererea. De obicei mai găsiți și prin iunie...', 12 , 400, 550, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"scortisoara\",\"zahar\",\"unt\"}', False, 'turta-dulce.jpg'),\n\n('Turtă dulce dietetică', 'Îndulcitor în loc de zahăr. Dar nu vă lăsați păcăliți de nume, în rest nimic nu-i dietetic.', 10 , 400, 520, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"zaharina\",\"unt\",\"scortisoara\"}', True, 'turta-dulce-dietetica.jpg'),\n\n('Căsuță din turtă dulce', 'Vine cu tot cu vrăjitoare și cuptor la pachet. A nu se lăsa în mijlocul pădurii.', 70 , 450, 2700, 'patiserie', 'aniversara', '{\"unt\",\"scortisoara\", \"oua\",\"faina\",\"lapte\",\"zahar\"}', False, 'casuta-turta-dulce.jpg'),\n\n('Croissant', 'Un răsfăț pufos și dulce... mda... dulce... dacă nu încurcă Dorelina, iar, sarea cu zahărul!!!', 5 , 150, 285, 'patiserie', 'comuna', '{\"faina\",\"lapte\",\"zahar/sare\",\"unt\",\"ciocolata\",\"migdale\"}', False, 'croissant.jpg'),\n\n('Prajitura căpșuni', 'Prăjitura se face doar cu comandă specială, fiindcă apoi o comandăm și noi la rândul nostru la cofetăria vecină.', 15 , 180, 385, 'cofetarie', 'comanda speciala', '{\"faina\",\"lapte\",\"zahar\", \"capsuni\",\"unt\",\"gelatina\"}', False, 'prajitura-capsuni.jpg'),\n\n('Nasturei cu dulceață', 'Pentru când năstureii normali cedează fiindcă ați mâncat prea multă dulceață', 20.5 , 350, 700, 'patiserie', 'comuna', '{\"migdale\", \"faina\",\"lapte\",\"zahar\",\"unt\",\"dulceata\"}', False, 'nasturei-dulceata.jpg'),\n\n\n('Bomboane de ciocolată pe băț', 'Bățul e cel comestibil, nu bomboana.', 6, 100, 210,'cofetarie', 'pentru copii', '{\"ciocolata\", \"zahar\", \"lapte\", \"alune\", \"faina\"}', False, 'bomboane-ciocolata-bat.jpg'),\n\n('Înghețată fumătoare', 'Din când în când, tușește... Dar nu are COVID!', 18.5 , 225, 370, 'gelaterie', 'comuna', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-fumatoare.jpg'),\n\n\n('Înghețată multicoloră', 'Când storci un curcubeu peste înghețată... Ediție limitată; fabricăm doar după ploaie.', 12 , 120, 270, 'gelaterie', 'editie limitata', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-multicolora.jpg'),\n\n\n('Brioșă cu înghețată', 'Nu încercam să fim creativi... Dorelina a încurcat iar rețetele. Măcar are culoare roz', 14 , 235, 340, 'gelaterie', 'pentru copii', '{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'briosa-inghetata.jpg'),\n\n('Înghețată generică', 'Când bușim așa de tare rețeta încât nu se mai încadrează în niuna dintre celelalte categorii.', 8, 90, 130, 'gelaterie','comuna','{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'inghetata-generica.jpg'),\n\n('Imagine cu înghețată', 'Pentru cei aflați la dietă.', 5, 10,10,'gelaterie', 'comuna', '{\"hârtie\", \"tuș\"}', False, 'imagine-cu-inghetata.jpg'),\n\n\n('Bomboane colorate', 'Pentru copiii care doresc să afle devreme cum e o vizită la dentist.', 7, 150,340,'cofetarie', 'pentru copii', '{\"zahar\", \"ciocolata\",\"lapte\"}', False, 'bomboane-colorate.jpg');\n",
+            "setup": "CREATE SCHEMA IF NOT EXISTS demo; SET search_path TO demo;\nCREATE TYPE product_type AS ENUM ('books','stationery','accessories'); CREATE TYPE product_category AS ENUM ('standard','limited'); CREATE TABLE products(id serial PRIMARY KEY,name text UNIQUE NOT NULL,price numeric(8,2),stock int,product_type product_type,category product_category,tags text[]);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Notebook',7.5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Pen',6,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 3',3,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 4',4,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 5',5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Sticker',10,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 7',7,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 8',8,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 9',9,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 10',10,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 11',11,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 12',12,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 13',13,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 14',14,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 15',15,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 16',16,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 17',17,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 18',18,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 19',19,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 20',20,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 21',21,10,'accessories','standard',ARRAY['featured']);",
             "checkQuery": null,
             "starter": "",
             "id": "dulc-transaction",
             "revision": 3,
-            "contextCode": "CREATE SCHEMA dulcelind; SET search_path TO dulcelind;\nCREATE TYPE categ_prajitura AS ENUM( 'comanda speciala', 'aniversara', 'editie limitata', 'pentru copii', 'dietetica','comuna');\nCREATE TYPE tipuri_produse AS ENUM('cofetarie', 'patiserie', 'gelaterie');\n\n\nCREATE TABLE IF NOT EXISTS prajituri (\n   id serial PRIMARY KEY,\n   nume VARCHAR(50) UNIQUE NOT NULL,\n   descriere TEXT,\n   pret NUMERIC(8,2) NOT NULL,\n   gramaj INT NOT NULL CHECK (gramaj>=0),   \n   tip_produs tipuri_produse DEFAULT 'cofetarie',\n   calorii INT NOT NULL CHECK (calorii>=0),\n   categorie categ_prajitura DEFAULT 'comuna',\n   ingrediente VARCHAR [], --pot sa nu fie specificare deci nu punem NOT NULL\n   pt_diabetici BOOLEAN NOT NULL DEFAULT FALSE,\n   imagine VARCHAR(300),\n   data_adaugare TIMESTAMP DEFAULT current_timestamp\n);\n\nINSERT into prajituri (nume,descriere,pret, gramaj, calorii, tip_produs, categorie, ingrediente, pt_diabetici, imagine) VALUES \n('Savarină', 'Prăjitură insiropată, cu frișcă', 7.5 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"lapte\",\"frisca\",\"zahar\"}', False, 'aproximativ-savarina.jpg'),\n\n('Amandină', 'Prăjitură cu ciocolată', 6 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"ciocolata\",\"lapte\",\"zahar\",\"unt\"}', False, 'posibil-amandina.jpg'),\n\n('Tort glazurat', 'Tort pentru evenimente, poate fi decorat cu diverse culori', 35 , 1000, 2500, 'cofetarie', 'comanda speciala', '{\"oua\",\"zahar\",\"faina\",\"lapte\",\"ciocolata\",\"alune\"}', False,'tort-glazurat.jpg'),\n\n('Dulcelind cu fructe', 'Rețetă proprie, cu conținut sănătos (dacă ignorați tonele de zahăr) de fruncte proaspete', 10 , 250, 620, 'cofetarie', 'aniversara', '{\"frisca\",\"zahar\",\"faina\",\"zmeura\",\"lapte\",\"mure\",\"capsuni\"}', False,'dulcelind.jpg'),\n\n('Tartă cu căpșuni', 'Sub căpșuni se află o tartă.', 6 , 245, 280, 'cofetarie', 'comuna', '{\"vanilie\",\"faina\",\"capsuni\",\"lapte\", \"indulcitor\"}', True,'tarta-capsuni.jpg'),\n\n('Nimic', 'Nimic', 10 , 0, 0, 'cofetarie', 'dietetica', '{}', False, 'nimic.jpg'),\n\n('Cozonac zburător', 'Cineva a vărsat heliu peste aluat.', 25.5 , 1000, 1800, 'patiserie', 'comuna', '{\"zahar\",\"unt\",\"faina\",\"lapte\",\"cacao\",\"alune\", \"nuca\"}', False, 'cozonac-zburator.jpg'),\n\n('Brioșe', 'Aluat pufos, cu bucățele de ciocolată. Bucățelele de ciocolata, însă, nu sunt tocmai pufoase.', 8 , 145, 320, 'patiserie', 'comuna', '{\"ciocolata\",\"lapte\",\"unt\",\"migdale\",\"faina\",\"zahar\"}', False, 'briose.jpg'),\n\n('Turtă dulce', 'Un produs bun de savurat de Craciun. Sau și mai târziu dacă stocul a depășit cererea. De obicei mai găsiți și prin iunie...', 12 , 400, 550, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"scortisoara\",\"zahar\",\"unt\"}', False, 'turta-dulce.jpg'),\n\n('Turtă dulce dietetică', 'Îndulcitor în loc de zahăr. Dar nu vă lăsați păcăliți de nume, în rest nimic nu-i dietetic.', 10 , 400, 520, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"zaharina\",\"unt\",\"scortisoara\"}', True, 'turta-dulce-dietetica.jpg'),\n\n('Căsuță din turtă dulce', 'Vine cu tot cu vrăjitoare și cuptor la pachet. A nu se lăsa în mijlocul pădurii.', 70 , 450, 2700, 'patiserie', 'aniversara', '{\"unt\",\"scortisoara\", \"oua\",\"faina\",\"lapte\",\"zahar\"}', False, 'casuta-turta-dulce.jpg'),\n\n('Croissant', 'Un răsfăț pufos și dulce... mda... dulce... dacă nu încurcă Dorelina, iar, sarea cu zahărul!!!', 5 , 150, 285, 'patiserie', 'comuna', '{\"faina\",\"lapte\",\"zahar/sare\",\"unt\",\"ciocolata\",\"migdale\"}', False, 'croissant.jpg'),\n\n('Prajitura căpșuni', 'Prăjitura se face doar cu comandă specială, fiindcă apoi o comandăm și noi la rândul nostru la cofetăria vecină.', 15 , 180, 385, 'cofetarie', 'comanda speciala', '{\"faina\",\"lapte\",\"zahar\", \"capsuni\",\"unt\",\"gelatina\"}', False, 'prajitura-capsuni.jpg'),\n\n('Nasturei cu dulceață', 'Pentru când năstureii normali cedează fiindcă ați mâncat prea multă dulceață', 20.5 , 350, 700, 'patiserie', 'comuna', '{\"migdale\", \"faina\",\"lapte\",\"zahar\",\"unt\",\"dulceata\"}', False, 'nasturei-dulceata.jpg'),\n\n\n('Bomboane de ciocolată pe băț', 'Bățul e cel comestibil, nu bomboana.', 6, 100, 210,'cofetarie', 'pentru copii', '{\"ciocolata\", \"zahar\", \"lapte\", \"alune\", \"faina\"}', False, 'bomboane-ciocolata-bat.jpg'),\n\n('Înghețată fumătoare', 'Din când în când, tușește... Dar nu are COVID!', 18.5 , 225, 370, 'gelaterie', 'comuna', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-fumatoare.jpg'),\n\n\n('Înghețată multicoloră', 'Când storci un curcubeu peste înghețată... Ediție limitată; fabricăm doar după ploaie.', 12 , 120, 270, 'gelaterie', 'editie limitata', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-multicolora.jpg'),\n\n\n('Brioșă cu înghețată', 'Nu încercam să fim creativi... Dorelina a încurcat iar rețetele. Măcar are culoare roz', 14 , 235, 340, 'gelaterie', 'pentru copii', '{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'briosa-inghetata.jpg'),\n\n('Înghețată generică', 'Când bușim așa de tare rețeta încât nu se mai încadrează în niuna dintre celelalte categorii.', 8, 90, 130, 'gelaterie','comuna','{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'inghetata-generica.jpg'),\n\n('Imagine cu înghețată', 'Pentru cei aflați la dietă.', 5, 10,10,'gelaterie', 'comuna', '{\"hârtie\", \"tuș\"}', False, 'imagine-cu-inghetata.jpg'),\n\n\n('Bomboane colorate', 'Pentru copiii care doresc să afle devreme cum e o vizită la dentist.', 7, 150,340,'cofetarie', 'pentru copii', '{\"zahar\", \"ciocolata\",\"lapte\"}', False, 'bomboane-colorate.jpg');\n",
+            "contextCode": "CREATE SCHEMA IF NOT EXISTS demo; SET search_path TO demo;\nCREATE TYPE product_type AS ENUM ('books','stationery','accessories'); CREATE TYPE product_category AS ENUM ('standard','limited'); CREATE TABLE products(id serial PRIMARY KEY,name text UNIQUE NOT NULL,price numeric(8,2),stock int,product_type product_type,category product_category,tags text[]);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Notebook',7.5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Pen',6,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 3',3,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 4',4,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 5',5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Sticker',10,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 7',7,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 8',8,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 9',9,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 10',10,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 11',11,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 12',12,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 13',13,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 14',14,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 15',15,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 16',16,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 17',17,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 18',18,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 19',19,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 20',20,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 21',21,10,'accessories','standard',ARRAY['featured']);",
             "contextLabel": "Baza de date de la care pornești",
             "expectedResult": [
               {
-                "pret": "7.50"
+                "price": "7.50"
               }
             ]
           },
@@ -34765,9 +34924,12 @@ window.TW_COURSE = {
           "id": "dulc-idempotent",
           "title": "Păstrează datele existente",
           "intro": "La reinițializare verifică existența tabelului înainte să inserezi seed-ul. Nu dubla și nu suprascrie produsele.",
-          "example": "SELECT to_regclass('dulcelind.prajituri')::text AS tabel;",
+          "example": "SELECT to_regclass('demo.products')::text AS table_name;",
           "explain": "La reinițializare verifică existența tabelului înainte să inserezi seed-ul. Nu dubla și nu suprascrie produsele.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -34781,22 +34943,22 @@ window.TW_COURSE = {
           "task": {
             "mode": "sql",
             "prompt": "Rulează SQL pe baza temporară furnizată pentru rezultatul cerut.",
-            "solution": "SELECT to_regclass('dulcelind.prajituri')::text AS tabel;",
+            "solution": "SELECT to_regclass('demo.products')::text AS table_name;",
             "expected": [
               {
-                "tabel": "prajituri"
+                "table_name": "products"
               }
             ],
-            "setup": "CREATE SCHEMA dulcelind; SET search_path TO dulcelind;\nCREATE TYPE categ_prajitura AS ENUM( 'comanda speciala', 'aniversara', 'editie limitata', 'pentru copii', 'dietetica','comuna');\nCREATE TYPE tipuri_produse AS ENUM('cofetarie', 'patiserie', 'gelaterie');\n\n\nCREATE TABLE IF NOT EXISTS prajituri (\n   id serial PRIMARY KEY,\n   nume VARCHAR(50) UNIQUE NOT NULL,\n   descriere TEXT,\n   pret NUMERIC(8,2) NOT NULL,\n   gramaj INT NOT NULL CHECK (gramaj>=0),   \n   tip_produs tipuri_produse DEFAULT 'cofetarie',\n   calorii INT NOT NULL CHECK (calorii>=0),\n   categorie categ_prajitura DEFAULT 'comuna',\n   ingrediente VARCHAR [], --pot sa nu fie specificare deci nu punem NOT NULL\n   pt_diabetici BOOLEAN NOT NULL DEFAULT FALSE,\n   imagine VARCHAR(300),\n   data_adaugare TIMESTAMP DEFAULT current_timestamp\n);\n\nINSERT into prajituri (nume,descriere,pret, gramaj, calorii, tip_produs, categorie, ingrediente, pt_diabetici, imagine) VALUES \n('Savarină', 'Prăjitură insiropată, cu frișcă', 7.5 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"lapte\",\"frisca\",\"zahar\"}', False, 'aproximativ-savarina.jpg'),\n\n('Amandină', 'Prăjitură cu ciocolată', 6 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"ciocolata\",\"lapte\",\"zahar\",\"unt\"}', False, 'posibil-amandina.jpg'),\n\n('Tort glazurat', 'Tort pentru evenimente, poate fi decorat cu diverse culori', 35 , 1000, 2500, 'cofetarie', 'comanda speciala', '{\"oua\",\"zahar\",\"faina\",\"lapte\",\"ciocolata\",\"alune\"}', False,'tort-glazurat.jpg'),\n\n('Dulcelind cu fructe', 'Rețetă proprie, cu conținut sănătos (dacă ignorați tonele de zahăr) de fruncte proaspete', 10 , 250, 620, 'cofetarie', 'aniversara', '{\"frisca\",\"zahar\",\"faina\",\"zmeura\",\"lapte\",\"mure\",\"capsuni\"}', False,'dulcelind.jpg'),\n\n('Tartă cu căpșuni', 'Sub căpșuni se află o tartă.', 6 , 245, 280, 'cofetarie', 'comuna', '{\"vanilie\",\"faina\",\"capsuni\",\"lapte\", \"indulcitor\"}', True,'tarta-capsuni.jpg'),\n\n('Nimic', 'Nimic', 10 , 0, 0, 'cofetarie', 'dietetica', '{}', False, 'nimic.jpg'),\n\n('Cozonac zburător', 'Cineva a vărsat heliu peste aluat.', 25.5 , 1000, 1800, 'patiserie', 'comuna', '{\"zahar\",\"unt\",\"faina\",\"lapte\",\"cacao\",\"alune\", \"nuca\"}', False, 'cozonac-zburator.jpg'),\n\n('Brioșe', 'Aluat pufos, cu bucățele de ciocolată. Bucățelele de ciocolata, însă, nu sunt tocmai pufoase.', 8 , 145, 320, 'patiserie', 'comuna', '{\"ciocolata\",\"lapte\",\"unt\",\"migdale\",\"faina\",\"zahar\"}', False, 'briose.jpg'),\n\n('Turtă dulce', 'Un produs bun de savurat de Craciun. Sau și mai târziu dacă stocul a depășit cererea. De obicei mai găsiți și prin iunie...', 12 , 400, 550, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"scortisoara\",\"zahar\",\"unt\"}', False, 'turta-dulce.jpg'),\n\n('Turtă dulce dietetică', 'Îndulcitor în loc de zahăr. Dar nu vă lăsați păcăliți de nume, în rest nimic nu-i dietetic.', 10 , 400, 520, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"zaharina\",\"unt\",\"scortisoara\"}', True, 'turta-dulce-dietetica.jpg'),\n\n('Căsuță din turtă dulce', 'Vine cu tot cu vrăjitoare și cuptor la pachet. A nu se lăsa în mijlocul pădurii.', 70 , 450, 2700, 'patiserie', 'aniversara', '{\"unt\",\"scortisoara\", \"oua\",\"faina\",\"lapte\",\"zahar\"}', False, 'casuta-turta-dulce.jpg'),\n\n('Croissant', 'Un răsfăț pufos și dulce... mda... dulce... dacă nu încurcă Dorelina, iar, sarea cu zahărul!!!', 5 , 150, 285, 'patiserie', 'comuna', '{\"faina\",\"lapte\",\"zahar/sare\",\"unt\",\"ciocolata\",\"migdale\"}', False, 'croissant.jpg'),\n\n('Prajitura căpșuni', 'Prăjitura se face doar cu comandă specială, fiindcă apoi o comandăm și noi la rândul nostru la cofetăria vecină.', 15 , 180, 385, 'cofetarie', 'comanda speciala', '{\"faina\",\"lapte\",\"zahar\", \"capsuni\",\"unt\",\"gelatina\"}', False, 'prajitura-capsuni.jpg'),\n\n('Nasturei cu dulceață', 'Pentru când năstureii normali cedează fiindcă ați mâncat prea multă dulceață', 20.5 , 350, 700, 'patiserie', 'comuna', '{\"migdale\", \"faina\",\"lapte\",\"zahar\",\"unt\",\"dulceata\"}', False, 'nasturei-dulceata.jpg'),\n\n\n('Bomboane de ciocolată pe băț', 'Bățul e cel comestibil, nu bomboana.', 6, 100, 210,'cofetarie', 'pentru copii', '{\"ciocolata\", \"zahar\", \"lapte\", \"alune\", \"faina\"}', False, 'bomboane-ciocolata-bat.jpg'),\n\n('Înghețată fumătoare', 'Din când în când, tușește... Dar nu are COVID!', 18.5 , 225, 370, 'gelaterie', 'comuna', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-fumatoare.jpg'),\n\n\n('Înghețată multicoloră', 'Când storci un curcubeu peste înghețată... Ediție limitată; fabricăm doar după ploaie.', 12 , 120, 270, 'gelaterie', 'editie limitata', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-multicolora.jpg'),\n\n\n('Brioșă cu înghețată', 'Nu încercam să fim creativi... Dorelina a încurcat iar rețetele. Măcar are culoare roz', 14 , 235, 340, 'gelaterie', 'pentru copii', '{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'briosa-inghetata.jpg'),\n\n('Înghețată generică', 'Când bușim așa de tare rețeta încât nu se mai încadrează în niuna dintre celelalte categorii.', 8, 90, 130, 'gelaterie','comuna','{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'inghetata-generica.jpg'),\n\n('Imagine cu înghețată', 'Pentru cei aflați la dietă.', 5, 10,10,'gelaterie', 'comuna', '{\"hârtie\", \"tuș\"}', False, 'imagine-cu-inghetata.jpg'),\n\n\n('Bomboane colorate', 'Pentru copiii care doresc să afle devreme cum e o vizită la dentist.', 7, 150,340,'cofetarie', 'pentru copii', '{\"zahar\", \"ciocolata\",\"lapte\"}', False, 'bomboane-colorate.jpg');\n",
+            "setup": "CREATE SCHEMA IF NOT EXISTS demo; SET search_path TO demo;\nCREATE TYPE product_type AS ENUM ('books','stationery','accessories'); CREATE TYPE product_category AS ENUM ('standard','limited'); CREATE TABLE products(id serial PRIMARY KEY,name text UNIQUE NOT NULL,price numeric(8,2),stock int,product_type product_type,category product_category,tags text[]);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Notebook',7.5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Pen',6,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 3',3,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 4',4,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 5',5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Sticker',10,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 7',7,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 8',8,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 9',9,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 10',10,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 11',11,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 12',12,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 13',13,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 14',14,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 15',15,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 16',16,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 17',17,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 18',18,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 19',19,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 20',20,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 21',21,10,'accessories','standard',ARRAY['featured']);",
             "checkQuery": null,
             "starter": "",
             "id": "dulc-idempotent",
             "revision": 3,
-            "contextCode": "CREATE SCHEMA dulcelind; SET search_path TO dulcelind;\nCREATE TYPE categ_prajitura AS ENUM( 'comanda speciala', 'aniversara', 'editie limitata', 'pentru copii', 'dietetica','comuna');\nCREATE TYPE tipuri_produse AS ENUM('cofetarie', 'patiserie', 'gelaterie');\n\n\nCREATE TABLE IF NOT EXISTS prajituri (\n   id serial PRIMARY KEY,\n   nume VARCHAR(50) UNIQUE NOT NULL,\n   descriere TEXT,\n   pret NUMERIC(8,2) NOT NULL,\n   gramaj INT NOT NULL CHECK (gramaj>=0),   \n   tip_produs tipuri_produse DEFAULT 'cofetarie',\n   calorii INT NOT NULL CHECK (calorii>=0),\n   categorie categ_prajitura DEFAULT 'comuna',\n   ingrediente VARCHAR [], --pot sa nu fie specificare deci nu punem NOT NULL\n   pt_diabetici BOOLEAN NOT NULL DEFAULT FALSE,\n   imagine VARCHAR(300),\n   data_adaugare TIMESTAMP DEFAULT current_timestamp\n);\n\nINSERT into prajituri (nume,descriere,pret, gramaj, calorii, tip_produs, categorie, ingrediente, pt_diabetici, imagine) VALUES \n('Savarină', 'Prăjitură insiropată, cu frișcă', 7.5 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"lapte\",\"frisca\",\"zahar\"}', False, 'aproximativ-savarina.jpg'),\n\n('Amandină', 'Prăjitură cu ciocolată', 6 , 200, 400, 'cofetarie', 'comuna', '{\"faina\",\"ciocolata\",\"lapte\",\"zahar\",\"unt\"}', False, 'posibil-amandina.jpg'),\n\n('Tort glazurat', 'Tort pentru evenimente, poate fi decorat cu diverse culori', 35 , 1000, 2500, 'cofetarie', 'comanda speciala', '{\"oua\",\"zahar\",\"faina\",\"lapte\",\"ciocolata\",\"alune\"}', False,'tort-glazurat.jpg'),\n\n('Dulcelind cu fructe', 'Rețetă proprie, cu conținut sănătos (dacă ignorați tonele de zahăr) de fruncte proaspete', 10 , 250, 620, 'cofetarie', 'aniversara', '{\"frisca\",\"zahar\",\"faina\",\"zmeura\",\"lapte\",\"mure\",\"capsuni\"}', False,'dulcelind.jpg'),\n\n('Tartă cu căpșuni', 'Sub căpșuni se află o tartă.', 6 , 245, 280, 'cofetarie', 'comuna', '{\"vanilie\",\"faina\",\"capsuni\",\"lapte\", \"indulcitor\"}', True,'tarta-capsuni.jpg'),\n\n('Nimic', 'Nimic', 10 , 0, 0, 'cofetarie', 'dietetica', '{}', False, 'nimic.jpg'),\n\n('Cozonac zburător', 'Cineva a vărsat heliu peste aluat.', 25.5 , 1000, 1800, 'patiserie', 'comuna', '{\"zahar\",\"unt\",\"faina\",\"lapte\",\"cacao\",\"alune\", \"nuca\"}', False, 'cozonac-zburator.jpg'),\n\n('Brioșe', 'Aluat pufos, cu bucățele de ciocolată. Bucățelele de ciocolata, însă, nu sunt tocmai pufoase.', 8 , 145, 320, 'patiserie', 'comuna', '{\"ciocolata\",\"lapte\",\"unt\",\"migdale\",\"faina\",\"zahar\"}', False, 'briose.jpg'),\n\n('Turtă dulce', 'Un produs bun de savurat de Craciun. Sau și mai târziu dacă stocul a depășit cererea. De obicei mai găsiți și prin iunie...', 12 , 400, 550, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"scortisoara\",\"zahar\",\"unt\"}', False, 'turta-dulce.jpg'),\n\n('Turtă dulce dietetică', 'Îndulcitor în loc de zahăr. Dar nu vă lăsați păcăliți de nume, în rest nimic nu-i dietetic.', 10 , 400, 520, 'patiserie', 'aniversara', '{\"faina\",\"lapte\",\"zaharina\",\"unt\",\"scortisoara\"}', True, 'turta-dulce-dietetica.jpg'),\n\n('Căsuță din turtă dulce', 'Vine cu tot cu vrăjitoare și cuptor la pachet. A nu se lăsa în mijlocul pădurii.', 70 , 450, 2700, 'patiserie', 'aniversara', '{\"unt\",\"scortisoara\", \"oua\",\"faina\",\"lapte\",\"zahar\"}', False, 'casuta-turta-dulce.jpg'),\n\n('Croissant', 'Un răsfăț pufos și dulce... mda... dulce... dacă nu încurcă Dorelina, iar, sarea cu zahărul!!!', 5 , 150, 285, 'patiserie', 'comuna', '{\"faina\",\"lapte\",\"zahar/sare\",\"unt\",\"ciocolata\",\"migdale\"}', False, 'croissant.jpg'),\n\n('Prajitura căpșuni', 'Prăjitura se face doar cu comandă specială, fiindcă apoi o comandăm și noi la rândul nostru la cofetăria vecină.', 15 , 180, 385, 'cofetarie', 'comanda speciala', '{\"faina\",\"lapte\",\"zahar\", \"capsuni\",\"unt\",\"gelatina\"}', False, 'prajitura-capsuni.jpg'),\n\n('Nasturei cu dulceață', 'Pentru când năstureii normali cedează fiindcă ați mâncat prea multă dulceață', 20.5 , 350, 700, 'patiserie', 'comuna', '{\"migdale\", \"faina\",\"lapte\",\"zahar\",\"unt\",\"dulceata\"}', False, 'nasturei-dulceata.jpg'),\n\n\n('Bomboane de ciocolată pe băț', 'Bățul e cel comestibil, nu bomboana.', 6, 100, 210,'cofetarie', 'pentru copii', '{\"ciocolata\", \"zahar\", \"lapte\", \"alune\", \"faina\"}', False, 'bomboane-ciocolata-bat.jpg'),\n\n('Înghețată fumătoare', 'Din când în când, tușește... Dar nu are COVID!', 18.5 , 225, 370, 'gelaterie', 'comuna', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-fumatoare.jpg'),\n\n\n('Înghețată multicoloră', 'Când storci un curcubeu peste înghețată... Ediție limitată; fabricăm doar după ploaie.', 12 , 120, 270, 'gelaterie', 'editie limitata', '{\"smantana\",\"lapte\",\"migdale\", \"dulceata\",\"zahar\",\"vanilie\",\"ciocolata\", \"frisca\"}', False, 'inghetata-multicolora.jpg'),\n\n\n('Brioșă cu înghețată', 'Nu încercam să fim creativi... Dorelina a încurcat iar rețetele. Măcar are culoare roz', 14 , 235, 340, 'gelaterie', 'pentru copii', '{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'briosa-inghetata.jpg'),\n\n('Înghețată generică', 'Când bușim așa de tare rețeta încât nu se mai încadrează în niuna dintre celelalte categorii.', 8, 90, 130, 'gelaterie','comuna','{\"frisca\", \"smantana\", \"lapte\", \"ceva roz\", \"faina\",\"zahar\",\"vanilie\"}', False, 'inghetata-generica.jpg'),\n\n('Imagine cu înghețată', 'Pentru cei aflați la dietă.', 5, 10,10,'gelaterie', 'comuna', '{\"hârtie\", \"tuș\"}', False, 'imagine-cu-inghetata.jpg'),\n\n\n('Bomboane colorate', 'Pentru copiii care doresc să afle devreme cum e o vizită la dentist.', 7, 150,340,'cofetarie', 'pentru copii', '{\"zahar\", \"ciocolata\",\"lapte\"}', False, 'bomboane-colorate.jpg');\n",
+            "contextCode": "CREATE SCHEMA IF NOT EXISTS demo; SET search_path TO demo;\nCREATE TYPE product_type AS ENUM ('books','stationery','accessories'); CREATE TYPE product_category AS ENUM ('standard','limited'); CREATE TABLE products(id serial PRIMARY KEY,name text UNIQUE NOT NULL,price numeric(8,2),stock int,product_type product_type,category product_category,tags text[]);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Notebook',7.5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Pen',6,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 3',3,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 4',4,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 5',5,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Sticker',10,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 7',7,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 8',8,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 9',9,10,'books','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 10',10,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 11',11,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 12',12,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 13',13,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 14',14,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 15',15,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 16',16,10,'stationery','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 17',17,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 18',18,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 19',19,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 20',20,10,'accessories','standard',ARRAY['featured']);INSERT INTO products(name,price,stock,product_type,category,tags) VALUES ('Item 21',21,10,'accessories','standard',ARRAY['featured']);",
             "contextLabel": "Baza de date de la care pornești",
             "expectedResult": [
               {
-                "tabel": "prajituri"
+                "table_name": "products"
               }
             ]
           },
@@ -34807,9 +34969,12 @@ window.TW_COURSE = {
           "id": "dulc-pool",
           "title": "Creează un singur Pool",
           "intro": "Pool reutilizează conexiunile între cereri; nu crea unul pentru fiecare produs.",
-          "example": "const {Pool}=require(\"pg\");\nconst pool=new Pool({\n host:process.env.AZURE_POSTGRESQL_HOST,\n port:Number(process.env.AZURE_POSTGRESQL_PORT||5432),\n user:process.env.AZURE_POSTGRESQL_USER,\n password:process.env.AZURE_POSTGRESQL_PASSWORD,\n database:process.env.AZURE_POSTGRESQL_DATABASE,\n ssl:{rejectUnauthorized:true},\n options:\"-c search_path=dulcelind\",\n connectionTimeoutMillis:5000\n});",
-          "explain": "Exemplul este pentru Azure cu TLS. Pentru PostgreSQL local configurează politica TLS potrivită instalării. Nu apela pool.end după fiecare request; îl închizi la oprirea aplicației.",
-          "points": [],
+          "example": "// Create db.cjs.\nconst {Pool}=require(\"pg\");\nconst production=process.env.NODE_ENV===\"production\";\nconst common={connectionTimeoutMillis:5000,options:\"-c search_path=demo\"};\nconst config=process.env.PROJECT_DATABASE_URL\n ? {connectionString:process.env.PROJECT_DATABASE_URL}\n : {host:process.env.AZURE_POSTGRESQL_HOST,\n    port:Number(process.env.AZURE_POSTGRESQL_PORT||5432),\n    user:process.env.AZURE_POSTGRESQL_USER,\n    password:process.env.AZURE_POSTGRESQL_PASSWORD,\n    database:process.env.AZURE_POSTGRESQL_DATABASE};\nconst pool=new Pool({...common,...config,\n  ...(production?{ssl:{rejectUnauthorized:true}}:{})});\nmodule.exports=pool;",
+          "explain": "Salvează db.cjs și importă-l în app.js cu const pool=require(\"./db.cjs\"). Local folosești PROJECT_DATABASE_URL din pregătire; pentru Azure setezi câmpurile separate și NODE_ENV=production. Nu închide Pool după fiecare request. Exemplul local presupune un server de antrenament fără TLS.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -34818,7 +34983,7 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 1,
-            "explanation": "Exemplul este pentru Azure cu TLS. Pentru PostgreSQL local configurează politica TLS potrivită instalării. Nu apela pool.end după fiecare request; îl închizi la oprirea aplicației."
+            "explanation": "Salvează db.cjs și importă-l în app.js cu const pool=require(\"./db.cjs\"). Local folosești PROJECT_DATABASE_URL din pregătire; pentru Azure setezi câmpurile separate și NODE_ENV=production. Nu închide Pool după fiecare request. Exemplul local presupune un server de antrenament fără TLS."
           },
           "task": {
             "mode": "text",
@@ -34827,19 +34992,22 @@ window.TW_COURSE = {
             "starter": "",
             "id": "dulc-pool",
             "revision": 3,
-            "contextCode": "const {Pool}=require(\"pg\");\nconst pool=new Pool({\n host:process.env.AZURE_POSTGRESQL_HOST,\n port:Number(process.env.AZURE_POSTGRESQL_PORT||5432),\n user:process.env.AZURE_POSTGRESQL_USER,\n password:process.env.AZURE_POSTGRESQL_PASSWORD,\n database:process.env.AZURE_POSTGRESQL_DATABASE,\n ssl:{rejectUnauthorized:true},\n options:\"-c search_path=dulcelind\",\n connectionTimeoutMillis:5000\n});",
+            "contextCode": "// Create db.cjs.\nconst {Pool}=require(\"pg\");\nconst production=process.env.NODE_ENV===\"production\";\nconst common={connectionTimeoutMillis:5000,options:\"-c search_path=demo\"};\nconst config=process.env.PROJECT_DATABASE_URL\n ? {connectionString:process.env.PROJECT_DATABASE_URL}\n : {host:process.env.AZURE_POSTGRESQL_HOST,\n    port:Number(process.env.AZURE_POSTGRESQL_PORT||5432),\n    user:process.env.AZURE_POSTGRESQL_USER,\n    password:process.env.AZURE_POSTGRESQL_PASSWORD,\n    database:process.env.AZURE_POSTGRESQL_DATABASE};\nconst pool=new Pool({...common,...config,\n  ...(production?{ssl:{rejectUnauthorized:true}}:{})});\nmodule.exports=pool;",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "Exemplul este pentru Azure cu TLS. Pentru PostgreSQL local configurează politica TLS potrivită instalării. Nu apela pool.end după fiecare request; îl închizi la oprirea aplicației.",
+          "hint": "Salvează db.cjs și importă-l în app.js cu const pool=require(\"./db.cjs\"). Local folosești PROJECT_DATABASE_URL din pregătire; pentru Azure setezi câmpurile separate și NODE_ENV=production. Nu închide Pool după fiecare request. Exemplul local presupune un server de antrenament fără TLS.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-list-route",
           "title": "Ruta citește SQL și randează EJS",
           "intro": "/produse citește produsele și opțiunile ENUM, apoi transmite datele către pagină.",
-          "example": "app.get(\"/produse\",async(req,res,next)=>{\n try {\n  const result=await pool.query(\"SELECT * FROM prajituri ORDER BY id\");\n  const categories=await pool.query(\"SELECT unnest(enum_range(NULL::categ_prajitura))\");\n  res.render(\"pagini/produse\",{produse:result.rows,optiuni:categories.rows});\n }catch(error){next(error);}\n});",
+          "example": "app.get(\"/products\",async(req,res,next)=>{\n try {\n  const result=await pool.query(\"SELECT * FROM products ORDER BY id\");\n  const categorys=await pool.query(\"SELECT unnest(enum_range(NULL::product_category))\");\n  res.render(\"pages/products\",{products:result.rows,options:categorys.rows});\n }catch(error){next(error);}\n});",
           "explain": "Template-ul iterează produse pentru carduri și optiuni pentru option. opt.unnest este coloana întoarsă de interogare. await așteaptă rezultatul; fără el primești o promisiune.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -34857,7 +35025,7 @@ window.TW_COURSE = {
             "starter": "",
             "id": "dulc-list-route",
             "revision": 3,
-            "contextCode": "app.get(\"/produse\",async(req,res,next)=>{\n try {\n  const result=await pool.query(\"SELECT * FROM prajituri ORDER BY id\");\n  const categories=await pool.query(\"SELECT unnest(enum_range(NULL::categ_prajitura))\");\n  res.render(\"pagini/produse\",{produse:result.rows,optiuni:categories.rows});\n }catch(error){next(error);}\n});",
+            "contextCode": "app.get(\"/products\",async(req,res,next)=>{\n try {\n  const result=await pool.query(\"SELECT * FROM products ORDER BY id\");\n  const categorys=await pool.query(\"SELECT unnest(enum_range(NULL::product_category))\");\n  res.render(\"pages/products\",{products:result.rows,options:categorys.rows});\n }catch(error){next(error);}\n});",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
           "hint": "Template-ul iterează produse pentru carduri și optiuni pentru option. opt.unnest este coloana întoarsă de interogare. await așteaptă rezultatul; fără el primești o promisiune.",
@@ -34866,10 +35034,13 @@ window.TW_COURSE = {
         {
           "id": "dulc-type-query",
           "title": "Filtrează tipul pe server",
-          "intro": "?tip=patiserie schimbă setul citit din SQL. Acceptă numai valori cunoscute și folosește parametri.",
-          "example": "const allowed=[\"cofetarie\",\"patiserie\",\"gelaterie\"];\nconst tip=req.query.tip;\nif(tip!==undefined&&(typeof tip!==\"string\"||!allowed.includes(tip)))return res.status(400).send(\"Cerere gresita\");\nconst result=await pool.query(\"SELECT * FROM prajituri\"+(tip?\" WHERE tip_produs=$1\":\"\")+\" ORDER BY id\",tip?[tip]:[]);",
-          "explain": "Filtrul SQL se aplică înainte de EJS. Filtrul JavaScript de nume, calorii și preț se aplică pe cardurile primite. Nu concatena tip în textul SQL.",
-          "points": [],
+          "intro": "?tip=stationery schimbă setul citit din SQL. Acceptă numai valori cunoscute și folosește parametri.",
+          "example": "const allowed=[\"books\",\"stationery\",\"accessories\"];\nconst type=req.query.type;\nif(type!==undefined&&(typeof type!==\"string\"||!allowed.includes(type)))return res.status(400).send(\"Invalid request\");\nconst result=await pool.query(\"SELECT * FROM products\"+(type?\" WHERE product_type=$1\":\"\")+\" ORDER BY id\",type?[type]:[]);",
+          "explain": "Filtrul SQL se aplică înainte de randarea EJS. Filtrele din browser lucrează apoi cu cardurile primite. Valoarea type se transmite ca parametru separat și se validează față de lista allowed.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -34878,7 +35049,7 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 0,
-            "explanation": "Filtrul SQL se aplică înainte de EJS. Filtrul JavaScript de nume, calorii și preț se aplică pe cardurile primite. Nu concatena tip în textul SQL."
+            "explanation": "Filtrul SQL se aplică înainte de randarea EJS. Filtrele din browser lucrează apoi cu cardurile primite. Valoarea type se transmite ca parametru separat și se validează față de lista allowed."
           },
           "task": {
             "mode": "text",
@@ -34887,19 +35058,22 @@ window.TW_COURSE = {
             "starter": "",
             "id": "dulc-type-query",
             "revision": 3,
-            "contextCode": "const allowed=[\"cofetarie\",\"patiserie\",\"gelaterie\"];\nconst tip=req.query.tip;\nif(tip!==undefined&&(typeof tip!==\"string\"||!allowed.includes(tip)))return res.status(400).send(\"Cerere gresita\");\nconst result=await pool.query(\"SELECT * FROM prajituri\"+(tip?\" WHERE tip_produs=$1\":\"\")+\" ORDER BY id\",tip?[tip]:[]);",
+            "contextCode": "const allowed=[\"books\",\"stationery\",\"accessories\"];\nconst type=req.query.type;\nif(type!==undefined&&(typeof type!==\"string\"||!allowed.includes(type)))return res.status(400).send(\"Invalid request\");\nconst result=await pool.query(\"SELECT * FROM products\"+(type?\" WHERE product_type=$1\":\"\")+\" ORDER BY id\",type?[type]:[]);",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "Filtrul SQL se aplică înainte de EJS. Filtrul JavaScript de nume, calorii și preț se aplică pe cardurile primite. Nu concatena tip în textul SQL.",
+          "hint": "Filtrul SQL se aplică înainte de randarea EJS. Filtrele din browser lucrează apoi cu cardurile primite. Valoarea type se transmite ca parametru separat și se validează față de lista allowed.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-pool-transaction",
           "title": "O tranzacție, aceeași conexiune",
           "intro": "Rezervă un client din Pool și eliberează-l în finally.",
-          "example": "const client=await pool.connect();\ntry{\n await client.query(\"BEGIN\");\n await client.query(\"SELECT pg_advisory_xact_lock(260019)\");\n await client.query(\"CREATE SCHEMA IF NOT EXISTS dulcelind\");\n // verifică tabelele și inițializează ce lipsește\n await client.query(\"COMMIT\");\n}catch(error){await client.query(\"ROLLBACK\");throw error;}\nfinally{client.release();}",
+          "example": "const client=await pool.connect();\ntry{\n await client.query(\"BEGIN\");\n await client.query(\"SELECT pg_advisory_xact_lock(260019)\");\n await client.query(\"CREATE SCHEMA IF NOT EXISTS demo\");\n // verifică tabelele și inițializează ce lipsește\n await client.query(\"COMMIT\");\n}catch(error){await client.query(\"ROLLBACK\");throw error;}\nfinally{client.release();}",
           "explain": "pool.query poate alege clienți diferiți. Instrucțiunile unei tranzacții trebuie executate prin același client. Inițializarea aplicației folosește pg_advisory_xact_lock pentru a serializa procesele concurente; blocarea se eliberează la terminare.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -34917,7 +35091,7 @@ window.TW_COURSE = {
             "starter": "",
             "id": "dulc-pool-transaction",
             "revision": 3,
-            "contextCode": "const client=await pool.connect();\ntry{\n await client.query(\"BEGIN\");\n await client.query(\"SELECT pg_advisory_xact_lock(260019)\");\n await client.query(\"CREATE SCHEMA IF NOT EXISTS dulcelind\");\n // verifică tabelele și inițializează ce lipsește\n await client.query(\"COMMIT\");\n}catch(error){await client.query(\"ROLLBACK\");throw error;}\nfinally{client.release();}",
+            "contextCode": "const client=await pool.connect();\ntry{\n await client.query(\"BEGIN\");\n await client.query(\"SELECT pg_advisory_xact_lock(260019)\");\n await client.query(\"CREATE SCHEMA IF NOT EXISTS demo\");\n // verifică tabelele și inițializează ce lipsește\n await client.query(\"COMMIT\");\n}catch(error){await client.query(\"ROLLBACK\");throw error;}\nfinally{client.release();}",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
           "hint": "pool.query poate alege clienți diferiți. Instrucțiunile unei tranzacții trebuie executate prin același client. Inițializarea aplicației folosește pg_advisory_xact_lock pentru a serializa procesele concurente; blocarea se eliberează la terminare.",
@@ -34926,10 +35100,13 @@ window.TW_COURSE = {
         {
           "id": "dulc-user-tables",
           "title": "Utilizatori și accesări",
-          "intro": "utilizatori are rol și username unic; accesari poate referi un utilizator.",
-          "example": "CREATE TYPE roluri AS ENUM ('admin','moderator','comun');\nCREATE TABLE utilizatori(id serial PRIMARY KEY,username varchar(50) UNIQUE NOT NULL);\nCREATE TABLE accesari(id serial PRIMARY KEY,user_id int REFERENCES utilizatori(id),pagina varchar(500));",
-          "explain": "Acesta este un fragment al relației, nu schema completă. Restul include email, confirmare și alte câmpuri. O coloană parola nu implementează hash, înregistrare sau autentificare; acele fluxuri nu există în exemplul Dulcelind.",
-          "points": [],
+          "intro": "Un tabel users poate avea username unic, iar visits îl poate referi prin user_id.",
+          "example": "CREATE TYPE user_role AS ENUM ('admin','moderator','member');\nCREATE TABLE users(id serial PRIMARY KEY,username varchar(50) UNIQUE NOT NULL);\nCREATE TABLE visits(id serial PRIMARY KEY,user_id int REFERENCES users(id),page varchar(500));",
+          "explain": "Acesta este un exemplu minimal de relație între tabele, nu un sistem de autentificare. Definirea unei coloane nu implementează hash-ul parolei, înregistrarea sau conectarea.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -34938,28 +35115,31 @@ window.TW_COURSE = {
               "O schemă nu este un sistem de autentificare"
             ],
             "correct": 2,
-            "explanation": "Acesta este un fragment al relației, nu schema completă. Restul include email, confirmare și alte câmpuri. O coloană parola nu implementează hash, înregistrare sau autentificare; acele fluxuri nu există în exemplul Dulcelind."
+            "explanation": "Acesta este un exemplu minimal de relație între tabele, nu un sistem de autentificare. Definirea unei coloane nu implementează hash-ul parolei, înregistrarea sau conectarea."
           },
           "task": {
             "mode": "text",
             "prompt": "Ce tabel are cheia străină user_id?",
-            "solution": "accesari",
+            "solution": "visits",
             "starter": "",
             "id": "dulc-user-tables",
             "revision": 3,
-            "contextCode": "CREATE TYPE roluri AS ENUM ('admin','moderator','comun');\nCREATE TABLE utilizatori(id serial PRIMARY KEY,username varchar(50) UNIQUE NOT NULL);\nCREATE TABLE accesari(id serial PRIMARY KEY,user_id int REFERENCES utilizatori(id),pagina varchar(500));",
+            "contextCode": "CREATE TYPE user_role AS ENUM ('admin','moderator','member');\nCREATE TABLE users(id serial PRIMARY KEY,username varchar(50) UNIQUE NOT NULL);\nCREATE TABLE visits(id serial PRIMARY KEY,user_id int REFERENCES users(id),page varchar(500));",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "Acesta este un fragment al relației, nu schema completă. Restul include email, confirmare și alte câmpuri. O coloană parola nu implementează hash, înregistrare sau autentificare; acele fluxuri nu există în exemplul Dulcelind.",
+          "hint": "Acesta este un exemplu minimal de relație între tabele, nu un sistem de autentificare. Definirea unei coloane nu implementează hash-ul parolei, înregistrarea sau conectarea.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-azure-existing",
           "title": "Reutilizează resursele Azure",
-          "intro": "Identifică App Service-ul și serverul PostgreSQL deja folosite înainte să creezi alte resurse.",
+          "intro": "Pentru publicare folosește resursele Azure proprii sau cele alocate explicit ție.",
           "example": "AZURE_POSTGRESQL_HOST\nAZURE_POSTGRESQL_PORT\nAZURE_POSTGRESQL_USER\nAZURE_POSTGRESQL_PASSWORD\nAZURE_POSTGRESQL_DATABASE",
-          "explain": "Dulcelind reutilizează aceste setări și schema dulcelind în aceeași bază. În contul propriu fără resurse poți crea App Service Linux pentru Node și PostgreSQL Flexible Server; verifică abonamentul și costul estimat înainte. Nu folosi baza colegilor pentru exerciții.",
-          "points": [],
+          "explain": "Dacă ai deja un server PostgreSQL, poți utiliza o schemă demo în propria bază. Altfel creează PostgreSQL Flexible Server și App Service Linux pentru Node.js, după verificarea costului. Nu folosi baza platformei de curs. Configurează pe App Service valorile proprii pentru câmpurile enumerate.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -34968,7 +35148,7 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 0,
-            "explanation": "Dulcelind reutilizează aceste setări și schema dulcelind în aceeași bază. În contul propriu fără resurse poți crea App Service Linux pentru Node și PostgreSQL Flexible Server; verifică abonamentul și costul estimat înainte. Nu folosi baza colegilor pentru exerciții."
+            "explanation": "Dacă ai deja un server PostgreSQL, poți utiliza o schemă demo în propria bază. Altfel creează PostgreSQL Flexible Server și App Service Linux pentru Node.js, după verificarea costului. Nu folosi baza platformei de curs. Configurează pe App Service valorile proprii pentru câmpurile enumerate."
           },
           "task": {
             "mode": "text",
@@ -34980,7 +35160,7 @@ window.TW_COURSE = {
             "contextCode": "AZURE_POSTGRESQL_HOST\nAZURE_POSTGRESQL_PORT\nAZURE_POSTGRESQL_USER\nAZURE_POSTGRESQL_PASSWORD\nAZURE_POSTGRESQL_DATABASE",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "Dulcelind reutilizează aceste setări și schema dulcelind în aceeași bază. În contul propriu fără resurse poți crea App Service Linux pentru Node și PostgreSQL Flexible Server; verifică abonamentul și costul estimat înainte. Nu folosi baza colegilor pentru exerciții.",
+          "hint": "Dacă ai deja un server PostgreSQL, poți utiliza o schemă demo în propria bază. Altfel creează PostgreSQL Flexible Server și App Service Linux pentru Node.js, după verificarea costului. Nu folosi baza platformei de curs. Configurează pe App Service valorile proprii pentru câmpurile enumerate.",
           "duration": "6-12 min"
         },
         {
@@ -34988,8 +35168,11 @@ window.TW_COURSE = {
           "title": "Configurează mediul App Service",
           "intro": "În portalul App Service deschide Environment variables / App settings, setează valorile și salvează.",
           "example": "const host=process.env.AZURE_POSTGRESQL_HOST;\nconst database=process.env.AZURE_POSTGRESQL_DATABASE;\n// Nu afișa parola sau URL-ul complet în loguri.",
-          "explain": "Salvarea poate reporni aplicația. Setările rămân pe server: nu în site/course.js și nu în JavaScript-ul browserului. Dacă există Key Vault păstrează mecanismul configurat.",
-          "points": [],
+          "explain": "Valorile aparțin aplicației tale. Salvarea poate reporni App Service. Nu publica parola în surse, capturi sau browser. NODE_ENV=production activează TLS în db.cjs. Nu este necesar accesul la configurația acestei platforme.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -34998,7 +35181,7 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 1,
-            "explanation": "Salvarea poate reporni aplicația. Setările rămân pe server: nu în site/course.js și nu în JavaScript-ul browserului. Dacă există Key Vault păstrează mecanismul configurat."
+            "explanation": "Valorile aparțin aplicației tale. Salvarea poate reporni App Service. Nu publica parola în surse, capturi sau browser. NODE_ENV=production activează TLS în db.cjs. Nu este necesar accesul la configurația acestei platforme."
           },
           "task": {
             "mode": "text",
@@ -35010,7 +35193,7 @@ window.TW_COURSE = {
             "contextCode": "const host=process.env.AZURE_POSTGRESQL_HOST;\nconst database=process.env.AZURE_POSTGRESQL_DATABASE;\n// Nu afișa parola sau URL-ul complet în loguri.",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "Salvarea poate reporni aplicația. Setările rămân pe server: nu în site/course.js și nu în JavaScript-ul browserului. Dacă există Key Vault păstrează mecanismul configurat.",
+          "hint": "Valorile aparțin aplicației tale. Salvarea poate reporni App Service. Nu publica parola în surse, capturi sau browser. NODE_ENV=production activează TLS în db.cjs. Nu este necesar accesul la configurația acestei platforme.",
           "duration": "6-12 min"
         },
         {
@@ -35019,7 +35202,10 @@ window.TW_COURSE = {
           "intro": "Conexiunea Azure folosește TLS cu verificarea identității serverului.",
           "example": "ssl:{rejectUnauthorized:true}",
           "explain": "Dacă runtime-ul nu cunoaște CA-ul necesar, configurează certificatul cerut de furnizor. Nu folosi false ca soluție. Opțiunile SSL din URL pot suprascrie obiectul ssl: verifică regulile pg înainte să le combini.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -35049,7 +35235,10 @@ window.TW_COURSE = {
           "intro": "Cu acces public, permite în firewall sursele de ieșire ale aplicației. Cu acces privat, configurează integrarea de rețea și DNS.",
           "example": "App Service → outbound IP addresses\nPostgreSQL → Networking\nPort: 5432",
           "explain": "Configurarea se face pe resursa Azure, nu într-un pg_hba local al aplicației. Nu deschide toate IP-urile pentru a ascunde problema. ETIMEDOUT și autentificarea greșită sunt cauze diferite.",
-          "points": [],
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -35077,9 +35266,12 @@ window.TW_COURSE = {
           "id": "dulc-permissions",
           "title": "Drepturi pentru schemă și date",
           "intro": "Contul trebuie să se poată conecta și să creeze schema și tabelele la prima inițializare.",
-          "example": "CREATE SCHEMA IF NOT EXISTS dulcelind;\n// În repository: npm run setup:project-db",
-          "explain": "Administratorul poate pregăti schema și datele înainte, apoi acorda aplicației drepturile necesare. Schema separă numele, nu este o barieră între conturi care au drepturi asupra ambelor scheme. Inițializarea repetată nu trebuie să modifice produsele existente.",
-          "points": [],
+          "example": "// Create setup-db.cjs.\nconst fs=require(\"node:fs/promises\");\nconst pool=require(\"./db.cjs\");\nasync function main(){\n const client=await pool.connect();\n try{\n  await client.query(\"BEGIN\");\n  await client.query(\"CREATE SCHEMA IF NOT EXISTS demo\");\n  await client.query(\"SET LOCAL search_path TO demo\");\n  const result=await client.query(\"SELECT to_regclass('demo.products') AS table_name\");\n  if(!result.rows[0].table_name){\n   await client.query(await fs.readFile(\"data/catalog.sql\",\"utf8\"));\n  }\n  await client.query(\"COMMIT\");\n }catch(error){await client.query(\"ROLLBACK\");throw error;}\n finally{client.release();await pool.end();}\n}\nmain().catch(error=>{console.error(error.message);process.exitCode=1;});\n// Terminal: npm run setup:db",
+          "explain": "Creează setup-db.cjs după ce ai db.cjs și data/catalog.sql din lecțiile anterioare. Scriptul setup:db este deja definit în package.json. Inițializarea importă date numai dacă tabelul lipsește; schema și drepturile nu sunt același lucru.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -35088,19 +35280,19 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 1,
-            "explanation": "Administratorul poate pregăti schema și datele înainte, apoi acorda aplicației drepturile necesare. Schema separă numele, nu este o barieră între conturi care au drepturi asupra ambelor scheme. Inițializarea repetată nu trebuie să modifice produsele existente."
+            "explanation": "Creează setup-db.cjs după ce ai db.cjs și data/catalog.sql din lecțiile anterioare. Scriptul setup:db este deja definit în package.json. Inițializarea importă date numai dacă tabelul lipsește; schema și drepturile nu sunt același lucru."
           },
           "task": {
             "mode": "text",
-            "prompt": "Ce comandă inițializează explicit baza proiectului?",
-            "solution": "npm run setup:project-db",
+            "prompt": "Ce comandă definită în proiectul tău inițializează baza?",
+            "solution": "npm run setup:db",
             "starter": "",
             "id": "dulc-permissions",
             "revision": 3,
-            "contextCode": "CREATE SCHEMA IF NOT EXISTS dulcelind;\n// În repository: npm run setup:project-db",
+            "contextCode": "// Create setup-db.cjs.\nconst fs=require(\"node:fs/promises\");\nconst pool=require(\"./db.cjs\");\nasync function main(){\n const client=await pool.connect();\n try{\n  await client.query(\"BEGIN\");\n  await client.query(\"CREATE SCHEMA IF NOT EXISTS demo\");\n  await client.query(\"SET LOCAL search_path TO demo\");\n  const result=await client.query(\"SELECT to_regclass('demo.products') AS table_name\");\n  if(!result.rows[0].table_name){\n   await client.query(await fs.readFile(\"data/catalog.sql\",\"utf8\"));\n  }\n  await client.query(\"COMMIT\");\n }catch(error){await client.query(\"ROLLBACK\");throw error;}\n finally{client.release();await pool.end();}\n}\nmain().catch(error=>{console.error(error.message);process.exitCode=1;});\n// Terminal: npm run setup:db",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "Administratorul poate pregăti schema și datele înainte, apoi acorda aplicației drepturile necesare. Schema separă numele, nu este o barieră între conturi care au drepturi asupra ambelor scheme. Inițializarea repetată nu trebuie să modifice produsele existente.",
+          "hint": "Creează setup-db.cjs după ce ai db.cjs și data/catalog.sql din lecțiile anterioare. Scriptul setup:db este deja definit în package.json. Inițializarea importă date numai dacă tabelul lipsește; schema și drepturile nu sunt același lucru.",
           "duration": "6-12 min"
         },
         {
@@ -35108,8 +35300,11 @@ window.TW_COURSE = {
           "title": "Portul furnizat de Azure",
           "intro": "Folosește PORT și bind 0.0.0.0 în producție. Local poți folosi 8090 și 127.0.0.1.",
           "example": "const port=Number(process.env.PORT||8090);\nconst host=process.env.NODE_ENV===\"production\"?\"0.0.0.0\":\"127.0.0.1\";\napp.listen(port,host);",
-          "explain": "În repository-ul cursului runtimeSettings detectează și WEBSITE_SITE_NAME, iar startup rămâne npm start. Nu porni un listener separat în createApp. Un port fix poate face containerul inaccesibil.",
-          "points": [],
+          "explain": "Aplică acest app.listen în propriul app.js. Local NODE_ENV poate lipsi; în App Service setează production. Pentru routerul montat sub /demo pornești numai aplicația părinte. Nu ai nevoie de runtimeSettings sau de scripturile platformei.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -35118,7 +35313,7 @@ window.TW_COURSE = {
               "Azure stabilește portul aplicației"
             ],
             "correct": 2,
-            "explanation": "În repository-ul cursului runtimeSettings detectează și WEBSITE_SITE_NAME, iar startup rămâne npm start. Nu porni un listener separat în createApp. Un port fix poate face containerul inaccesibil."
+            "explanation": "Aplică acest app.listen în propriul app.js. Local NODE_ENV poate lipsi; în App Service setează production. Pentru routerul montat sub /demo pornești numai aplicația părinte. Nu ai nevoie de runtimeSettings sau de scripturile platformei."
           },
           "task": {
             "mode": "text",
@@ -35130,16 +35325,19 @@ window.TW_COURSE = {
             "contextCode": "const port=Number(process.env.PORT||8090);\nconst host=process.env.NODE_ENV===\"production\"?\"0.0.0.0\":\"127.0.0.1\";\napp.listen(port,host);",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "În repository-ul cursului runtimeSettings detectează și WEBSITE_SITE_NAME, iar startup rămâne npm start. Nu porni un listener separat în createApp. Un port fix poate face containerul inaccesibil.",
+          "hint": "Aplică acest app.listen în propriul app.js. Local NODE_ENV poate lipsi; în App Service setează production. Pentru routerul montat sub /demo pornești numai aplicația părinte. Nu ai nevoie de runtimeSettings sau de scripturile platformei.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-lazy",
           "title": "Păstrează cursul rapid",
-          "intro": "Încarcă EJS și aplicația cofetăriei numai la accesarea /project/.",
-          "example": "let projectPromise;\nprojectPromise ||= createApp();\nconst app=await projectPromise;\n// Baza se deschide la catalog, produs sau health.",
-          "explain": "Păstrează promisiunea pentru a evita inițializări simultane repetate. Baza și imaginile nu trebuie să întârzie pagina cursului. Dacă inițializarea SQL eșuează, curăță conexiunea și permite o reîncercare controlată.",
-          "points": [],
+          "intro": "Încarcă datele unui fișier numai când sunt cerute și reutilizează rezultatul.",
+          "example": "// Create data/catalog.json containing [{\"id\":1,\"name\":\"Notebook\"}].\nconst fs=require(\"node:fs/promises\");\nlet catalogPromise;\nfunction readCatalog(){return catalogPromise??=fs.readFile(\"data/catalog.json\",\"utf8\").then(JSON.parse);}",
+          "explain": "Acest exemplu de cache este independent de PostgreSQL. Promisiunea evită citirile repetate; fișierul necesar este descris chiar în exemplu. Cache-ul trebuie invalidat dacă vrei să reîncarci date schimbate.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -35148,28 +35346,31 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 0,
-            "explanation": "Păstrează promisiunea pentru a evita inițializări simultane repetate. Baza și imaginile nu trebuie să întârzie pagina cursului. Dacă inițializarea SQL eșuează, curăță conexiunea și permite o reîncercare controlată."
+            "explanation": "Acest exemplu de cache este independent de PostgreSQL. Promisiunea evită citirile repetate; fișierul necesar este descris chiar în exemplu. Cache-ul trebuie invalidat dacă vrei să reîncarci date schimbate."
           },
           "task": {
             "mode": "text",
-            "prompt": "Ce prefix declanșează încărcarea Dulcelind?",
-            "solution": "/project/",
+            "prompt": "Ce fișier propriu este citit de exemplu?",
+            "solution": "data/catalog.json",
             "starter": "",
             "id": "dulc-lazy",
             "revision": 3,
-            "contextCode": "let projectPromise;\nprojectPromise ||= createApp();\nconst app=await projectPromise;\n// Baza se deschide la catalog, produs sau health.",
+            "contextCode": "// Create data/catalog.json containing [{\"id\":1,\"name\":\"Notebook\"}].\nconst fs=require(\"node:fs/promises\");\nlet catalogPromise;\nfunction readCatalog(){return catalogPromise??=fs.readFile(\"data/catalog.json\",\"utf8\").then(JSON.parse);}",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "Păstrează promisiunea pentru a evita inițializări simultane repetate. Baza și imaginile nu trebuie să întârzie pagina cursului. Dacă inițializarea SQL eșuează, curăță conexiunea și permite o reîncercare controlată.",
+          "hint": "Acest exemplu de cache este independent de PostgreSQL. Promisiunea evită citirile repetate; fișierul necesar este descris chiar în exemplu. Cache-ul trebuie invalidat dacă vrei să reîncarci date schimbate.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-pipeline",
           "title": "Build și publicare prin GitHub",
           "intro": "Revizuiește modificările și secretele înainte de commit; apoi urmărește workflow-ul de publicare.",
-          "example": "git status\ngit diff --check\n// Revizuiește și comite fișierele proiectului.\n// În acest repository push pe main declanșează GitHub Actions.\n// Build: npm run build:project",
-          "explain": "Nu comite .env, parole, node_modules sau datele unui server PostgreSQL local. Build-ul instalează și verifică aplicația pe Linux; nu publica node_modules de Windows, deoarece Sharp include dependențe native. Un workflow verde nu confirmă singur conexiunea SQL live.",
-          "points": [],
+          "example": "git status\ngit diff --check\n// Review and commit your files.\n// Your build command: npm run build:assets",
+          "explain": "În repository-ul tău configurezi separat GitHub Actions și destinația de publicare. Un push nu publică automat fără workflow configurat. Instalează dependențele în runner Linux pentru App Service Linux; nu urca node_modules de Windows.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -35178,7 +35379,7 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 1,
-            "explanation": "Nu comite .env, parole, node_modules sau datele unui server PostgreSQL local. Build-ul instalează și verifică aplicația pe Linux; nu publica node_modules de Windows, deoarece Sharp include dependențe native. Un workflow verde nu confirmă singur conexiunea SQL live."
+            "explanation": "În repository-ul tău configurezi separat GitHub Actions și destinația de publicare. Un push nu publică automat fără workflow configurat. Instalează dependențele în runner Linux pentru App Service Linux; nu urca node_modules de Windows."
           },
           "task": {
             "mode": "text",
@@ -35187,19 +35388,22 @@ window.TW_COURSE = {
             "starter": "",
             "id": "dulc-pipeline",
             "revision": 3,
-            "contextCode": "git status\ngit diff --check\n// Revizuiește și comite fișierele proiectului.\n// În acest repository push pe main declanșează GitHub Actions.\n// Build: npm run build:project",
+            "contextCode": "git status\ngit diff --check\n// Review and commit your files.\n// Your build command: npm run build:assets",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "Nu comite .env, parole, node_modules sau datele unui server PostgreSQL local. Build-ul instalează și verifică aplicația pe Linux; nu publica node_modules de Windows, deoarece Sharp include dependențe native. Un workflow verde nu confirmă singur conexiunea SQL live.",
+          "hint": "În repository-ul tău configurezi separat GitHub Actions și destinația de publicare. Un push nu publică automat fără workflow configurat. Instalează dependențele în runner Linux pentru App Service Linux; nu urca node_modules de Windows.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-health",
           "title": "Verifică PostgreSQL după publicare",
-          "intro": "Deschide /project/health după terminarea deployment-ului.",
-          "example": "{\"ready\":true,\"project\":\"Dulcelind\",\"database\":\"PostgreSQL\",\"products\":21}",
-          "explain": "În Azure trebuie PostgreSQL, nu PGlite. Endpoint-ul verifică accesul la date, dar nu trebuie să afișeze host, user, parolă sau URL. Cursul are separat /api/health.",
-          "points": [],
+          "intro": "Deschide /demo/health după terminarea deployment-ului.",
+          "example": "app.get(\"/health\",async(req,res,next)=>{try{const result=await pool.query(\"SELECT count(*)::int AS products FROM products\");res.json({ready:true,database:\"PostgreSQL\",...result.rows[0]});}catch(error){next(error);}});",
+          "explain": "Adaugă ruta în propriul app.js înainte de fallback. Cu montarea /demo o verifici la /demo/health. Nu afișa parola sau URL-ul de conectare. Un workflow verde nu confirmă că baza funcționează.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -35208,7 +35412,7 @@ window.TW_COURSE = {
               "Verificarea live urmează după deployment"
             ],
             "correct": 2,
-            "explanation": "În Azure trebuie PostgreSQL, nu PGlite. Endpoint-ul verifică accesul la date, dar nu trebuie să afișeze host, user, parolă sau URL. Cursul are separat /api/health."
+            "explanation": "Adaugă ruta în propriul app.js înainte de fallback. Cu montarea /demo o verifici la /demo/health. Nu afișa parola sau URL-ul de conectare. Un workflow verde nu confirmă că baza funcționează."
           },
           "task": {
             "mode": "text",
@@ -35217,19 +35421,22 @@ window.TW_COURSE = {
             "starter": "",
             "id": "dulc-health",
             "revision": 3,
-            "contextCode": "{\"ready\":true,\"project\":\"Dulcelind\",\"database\":\"PostgreSQL\",\"products\":21}",
+            "contextCode": "app.get(\"/health\",async(req,res,next)=>{try{const result=await pool.query(\"SELECT count(*)::int AS products FROM products\");res.json({ready:true,database:\"PostgreSQL\",...result.rows[0]});}catch(error){next(error);}});",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "În Azure trebuie PostgreSQL, nu PGlite. Endpoint-ul verifică accesul la date, dar nu trebuie să afișeze host, user, parolă sau URL. Cursul are separat /api/health.",
+          "hint": "Adaugă ruta în propriul app.js înainte de fallback. Cu montarea /demo o verifici la /demo/health. Nu afișa parola sau URL-ul de conectare. Un workflow verde nu confirmă că baza funcționează.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-live-debug",
           "title": "Diagnostichează conexiunea live",
           "intro": "Deschide App Service Log stream și reproduce cererea catalogului.",
-          "example": "Missing setting → mediu\npassword authentication failed → cont / parolă\nETIMEDOUT → rețea / DNS / firewall\ncertificate error → TLS / CA\npermission denied → drepturi\nrelation prajituri does not exist → schema / seed / search_path",
-          "explain": "Nu publica loguri cu secrete. Compară /api/health și /project/health pentru a identifica serviciul afectat. PostgreSQL rămâne obligatoriu în producție, ca un fallback să nu mascheze problema.",
-          "points": [],
+          "example": "Missing setting → mediu\npassword authentication failed → cont / parolă\nETIMEDOUT → rețea / DNS / firewall\ncertificate error → TLS / CA\npermission denied → drepturi\nrelation products does not exist → schema / seed / search_path",
+          "explain": "Deschide logurile propriei aplicații și reproduce cererea. /demo/health este ruta pe care ai construit-o, nu un serviciu al platformei. Verifică separat serverul, rețeaua, autentificarea și schema.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -35238,28 +35445,31 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 0,
-            "explanation": "Nu publica loguri cu secrete. Compară /api/health și /project/health pentru a identifica serviciul afectat. PostgreSQL rămâne obligatoriu în producție, ca un fallback să nu mascheze problema."
+            "explanation": "Deschide logurile propriei aplicații și reproduce cererea. /demo/health este ruta pe care ai construit-o, nu un serviciu al platformei. Verifică separat serverul, rețeaua, autentificarea și schema."
           },
           "task": {
             "mode": "text",
-            "prompt": "Ce endpoint verifică baza cofetăriei?",
-            "solution": "/project/health",
+            "prompt": "Ce endpoint ai definit pentru verificarea bazei aplicației tale?",
+            "solution": "/demo/health",
             "starter": "",
             "id": "dulc-live-debug",
             "revision": 3,
-            "contextCode": "Missing setting → mediu\npassword authentication failed → cont / parolă\nETIMEDOUT → rețea / DNS / firewall\ncertificate error → TLS / CA\npermission denied → drepturi\nrelation prajituri does not exist → schema / seed / search_path",
+            "contextCode": "Missing setting → mediu\npassword authentication failed → cont / parolă\nETIMEDOUT → rețea / DNS / firewall\ncertificate error → TLS / CA\npermission denied → drepturi\nrelation products does not exist → schema / seed / search_path",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "Nu publica loguri cu secrete. Compară /api/health și /project/health pentru a identifica serviciul afectat. PostgreSQL rămâne obligatoriu în producție, ca un fallback să nu mascheze problema.",
+          "hint": "Deschide logurile propriei aplicații și reproduce cererea. /demo/health este ruta pe care ai construit-o, nu un serviciu al platformei. Verifică separat serverul, rețeaua, autentificarea și schema.",
           "duration": "6-12 min"
         },
         {
           "id": "dulc-live-parity",
           "title": "Compară funcțiile și aspectul",
-          "intro": "Compară la aceeași lățime, temă și zoom. Un răspuns 200 nu dovedește identitate vizuală.",
-          "example": "Desktop: 1440px\nTabletă: 768px\nMobil: 390px\nNetwork: resurse locale fără 404\nCatalog: 21; patiserie: 7; gelaterie: 5",
-          "explain": "Verifică și prefixul numelui, prețul minim, limitele calorice, sortarea în ambele sensuri, Alt+C, coșul după reload, tema și bannerul. Fonturile externe și video au nevoie de acces la serviciile lor.",
-          "points": [],
+          "intro": "Verifică propriul site la mai multe lățimi și cu date cunoscute.",
+          "example": "Desktop: 1440px\nTabletă: 768px\nMobil: 390px\nNetwork: resurse locale fără 404\nCatalog: 21; stationery: 7; accessories: 5",
+          "explain": "Folosește testele de rutare, filtrare, sortare, stocare și SQL pentru a confirma comportamentul cerut. Exemplele cursului nu trebuie să reproducă aspectul unei aplicații anume. Site-ul separat este doar o demonstrație pe care o poți inspecta.",
+          "points": [
+            "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
+            "Comenzile marcate Terminal sunt pași opționali pentru proiectul tău; editorul cursului nu le execută."
+          ],
           "quiz": {
             "question": "Ce verificăm în această etapă?",
             "options": [
@@ -35268,19 +35478,19 @@ window.TW_COURSE = {
               "Tot codul se execută în browser"
             ],
             "correct": 1,
-            "explanation": "Verifică și prefixul numelui, prețul minim, limitele calorice, sortarea în ambele sensuri, Alt+C, coșul după reload, tema și bannerul. Fonturile externe și video au nevoie de acces la serviciile lor."
+            "explanation": "Folosește testele de rutare, filtrare, sortare, stocare și SQL pentru a confirma comportamentul cerut. Exemplele cursului nu trebuie să reproducă aspectul unei aplicații anume. Site-ul separat este doar o demonstrație pe care o poți inspecta."
           },
           "task": {
             "mode": "text",
-            "prompt": "Este suficient HTTP 200 pentru identitate vizuală? Scrie da sau nu.",
-            "solution": "nu",
+            "prompt": "Este suficient HTTP 200 ca să confirmi toate funcțiile? Scrie yes sau no.",
+            "solution": "no",
             "starter": "",
             "id": "dulc-live-parity",
             "revision": 3,
-            "contextCode": "Desktop: 1440px\nTabletă: 768px\nMobil: 390px\nNetwork: resurse locale fără 404\nCatalog: 21; patiserie: 7; gelaterie: 5",
+            "contextCode": "Desktop: 1440px\nTabletă: 768px\nMobil: 390px\nNetwork: resurse locale fără 404\nCatalog: 21; stationery: 7; accessories: 5",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
-          "hint": "Verifică și prefixul numelui, prețul minim, limitele calorice, sortarea în ambele sensuri, Alt+C, coșul după reload, tema și bannerul. Fonturile externe și video au nevoie de acces la serviciile lor.",
+          "hint": "Folosește testele de rutare, filtrare, sortare, stocare și SQL pentru a confirma comportamentul cerut. Exemplele cursului nu trebuie să reproducă aspectul unei aplicații anume. Site-ul separat este doar o demonstrație pe care o poți inspecta.",
           "duration": "6-12 min"
         }
       ]

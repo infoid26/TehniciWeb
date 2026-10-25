@@ -94,7 +94,13 @@ def assembly_lessons(p):
 
 def cloud_chapter():
     c=chapter('dulcelind-azure','Dulcelind · PostgreSQL real și Azure','Creează schema reală, conectează pg și publică aplicația cu verificări de funcționare.','','database')
-    seed=Path('project-reference/data/prajituri.sql').read_text(encoding='utf8')
+    # Independent training data; the course never reads the separate example app.
+    seed="CREATE TYPE tipuri_produse AS ENUM ('cofetarie','patiserie','gelaterie'); CREATE TYPE categ_prajitura AS ENUM ('comuna','dietetica'); CREATE TABLE prajituri(id serial PRIMARY KEY,nume text UNIQUE NOT NULL,pret numeric(8,2),calorii int,tip_produs tipuri_produse,categorie categ_prajitura,ingrediente text[]);"
+    for i in range(1,22):
+        name={1:'Savarină',2:'Amandina',6:'Nimic'}.get(i,'Item '+str(i))
+        price={1:7.5,2:6,6:10}.get(i,i)
+        kind='cofetarie' if i<=9 else 'patiserie' if i<=16 else 'gelaterie'
+        seed+=f"INSERT INTO prajituri(nume,pret,calorii,tip_produs,categorie,ingrediente) VALUES ('{name}',{price},10,'{kind}','comuna',ARRAY['faina']);"
     seed=re.sub(r'^DROP TYPE IF EXISTS [^;]+;\s*','',seed,flags=re.M)
     setup='CREATE SCHEMA dulcelind; SET search_path TO dulcelind;\n'+seed
     def S(id,title,idea,code,expected,check=None,initial=setup):

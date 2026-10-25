@@ -10,9 +10,9 @@ Path('README.md').write_text(f'''# Tehnici Web · INFO ID 26
 
 Cursul este disponibil la **[tw.infoid26.ro](https://tw.infoid26.ro/)**.
 
-{total} de lecții în {len(chapters)} de capitole, cu explicații în română și exerciții pentru browser, server și SQL. Înveți să construiești un site de la documentul HTML până la pagini generate din date. Nu ai nevoie de proiectul profesoarei: exercițiile includ structura, fișierele, datele și schemele SQL necesare.
+{total} de lecții în {len(chapters)} de capitole, cu explicații în română și exerciții pentru browser, server și SQL. Înveți să construiești un site de la documentul HTML până la pagini generate din date. Pentru exercițiile din browser nu ai nevoie de fișiere externe: datele și fișierele virtuale sunt furnizate. Explicațiile și întrebările sunt în română; codul și datele exemplelor sunt în engleză.
 
-Atelierul Dulcelind adaugă pregătirea Node.js, PostgreSQL local, schema reală și publicarea pe Azure. Exemplele folosesc rutele și câmpurile cofetăriei. Pașii de terminal și cloud se fac pe calculatorul propriu; exercițiile din browser rămân izolate.
+Exemplele de integrare arată pregătirea Node.js, PostgreSQL și publicarea unei aplicații proprii. Pașii marcați Terminal sunt opționali și explică fișierele pe care le creezi pe calculator. Nu presupun accesul la repository-ul platformei. [Exemplul separat](https://tw.infoid26.ro/project/) rămâne în română și nu este o condiție pentru curs.
 
 Materia include HTML, formulare, media, MathML, CSS, responsive, animații, JavaScript, expresii regulate, date calendaristice, DOM, stocare, JSON, SCSS, Node, HTTP, Express, EJS și PostgreSQL. SQL include crearea tabelelor și tipurilor, constrângeri, chei străine, vectori, filtrare, agregare, relații între tabele și modificarea datelor.
 

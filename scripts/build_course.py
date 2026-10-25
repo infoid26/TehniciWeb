@@ -9,6 +9,8 @@ from standalone_course import adapt
 adapt()
 from course_dulcelind import align
 align()
+from course_general import generalize
+generalize(chapters)
 learning=[c for c in chapters if not c['lessons'] or not c['lessons'][0].get('reading')]
 order=['start','web-foundations','html-start','html-semantics-complete','html-media','html-controls-complete','mathml','mathml-details','css-basics','css-selectors-complete','css-layout','css-effects-complete','css-details','js-start','js-scope-complete','js-functions-complete','js-arrays','js-collections-complete','js-text','regex-complete','dates-complete','js-details','dom','browser-integration','storage','json','json-complete','scss','scss-complete','node','node-files-complete','node-integration','express','http-routing-complete','ejs','templates-data-complete','sql','sql-schema-complete','sql-queries-complete','dulcelind-setup','project','dulcelind-azure']
 assert set(order)=={c['id'] for c in learning},'Update the chapter order when adding curriculum'

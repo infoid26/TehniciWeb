@@ -956,9 +956,9 @@ Filtre, agregări, actualizări și rezultate pentru un site de produse.
 - [Paginare deterministă](https://tw.infoid26.ro/#lectie/sql-pagination/0)
 - [Păstrează și rândurile fără corespondent](https://tw.infoid26.ro/#lectie/sql-left-join/0)
 
-## Dulcelind · pregătirea pe calculator · 12 lecții
+## Mediul de lucru · propriul proiect · 12 lecții
 
-Instalează uneltele, pornește Node.js și pregătește conexiunea PostgreSQL.
+Instalează uneltele și deosebește exercițiile din browser de pașii opționali pe calculator.
 
 - [Browser, Node.js și baza de date](https://tw.infoid26.ro/#lectie/dulc-runtime/0)
 - [Instalează Node.js](https://tw.infoid26.ro/#lectie/dulc-install-node/0)
@@ -973,19 +973,19 @@ Instalează uneltele, pornește Node.js și pregătește conexiunea PostgreSQL.
 - [Configurează conexiunea locală](https://tw.infoid26.ro/#lectie/dulc-env-local/0)
 - [Găsește cauza erorii](https://tw.infoid26.ro/#lectie/dulc-diagnose/0)
 
-## Proiectul complet · Cofetăria Dulcelind · 33 lecții
+## Aplică noțiunile împreună · 33 lecții
 
-Construiește paginile, catalogul PostgreSQL și interacțiunile cu rutele și câmpurile aplicației publicate.
+Exemple independente de pagini, navigare, cataloage și interacțiuni. Nu ai nevoie de fișierele unui proiect extern.
 
 - [Structura paginii](https://tw.infoid26.ro/#lectie/project-shell/0)
 - [Configurează Express și EJS](https://tw.infoid26.ro/#lectie/dulc-ejs-config/0)
 - [Reutilizează fragmentele](https://tw.infoid26.ro/#lectie/dulc-partials/0)
-- [Montează resursele sub /project](https://tw.infoid26.ro/#lectie/dulc-static-mount/0)
+- [Montează resursele sub /demo](https://tw.infoid26.ro/#lectie/dulc-static-mount/0)
 - [Meniul cu submeniuri](https://tw.infoid26.ro/#lectie/project-menu/0)
 - [Deschide meniul mobil](https://tw.infoid26.ro/#lectie/project-menu-action/0)
 - [Completează pagina principală](https://tw.infoid26.ro/#lectie/dulc-home-sections/0)
 - [Ordinea CSS și Bootstrap](https://tw.infoid26.ro/#lectie/dulc-css-order/0)
-- [Programul cofetăriei](https://tw.infoid26.ro/#lectie/project-table/0)
+- [Un tabel cu programul de lucru](https://tw.infoid26.ro/#lectie/project-table/0)
 - [Întrebări frecvente](https://tw.infoid26.ro/#lectie/project-faq/0)
 - [Imagini responsive](https://tw.infoid26.ro/#lectie/project-picture/0)
 - [Chocolate: video și subtitrări](https://tw.infoid26.ro/#lectie/project-video/0)
@@ -994,30 +994,30 @@ Construiește paginile, catalogul PostgreSQL și interacțiunile cu rutele și c
 - [Galeria din JSON](https://tw.infoid26.ro/#lectie/dulc-gallery-json/0)
 - [Pregătește resursele înainte de pornire](https://tw.infoid26.ro/#lectie/project-assets/0)
 - [Catalogul pe desktop și mobil](https://tw.infoid26.ro/#lectie/project-grid/0)
-- [Cardurile EJS din prajituri](https://tw.infoid26.ro/#lectie/project-ejs/0)
+- [Cardurile EJS din products](https://tw.infoid26.ro/#lectie/project-ejs/0)
 - [Pagina unui produs](https://tw.infoid26.ro/#lectie/dulc-product-page/0)
 - [Ruta /produs/:id](https://tw.infoid26.ro/#lectie/project-route-id/0)
 - [Interogarea produsului prin pg](https://tw.infoid26.ro/#lectie/project-query/0)
 - [Construiește controalele filtrelor](https://tw.infoid26.ro/#lectie/dulc-controls/0)
-- [Filtrele exacte ale catalogului](https://tw.infoid26.ro/#lectie/project-filter/0)
+- [Combină filtrele unui catalog](https://tw.infoid26.ro/#lectie/project-filter/0)
 - [Aplică filtrul în DOM](https://tw.infoid26.ro/#lectie/dulc-filter-dom/0)
 - [Sortarea în ambele sensuri](https://tw.infoid26.ro/#lectie/project-sort/0)
 - [Resetarea din exemplu](https://tw.infoid26.ro/#lectie/dulc-reset/0)
 - [Alt+C: suma prețurilor afișate](https://tw.infoid26.ro/#lectie/dulc-total/0)
-- [Coșul cos_virtual](https://tw.infoid26.ro/#lectie/project-cart/0)
+- [Coșul cart_ids](https://tw.infoid26.ro/#lectie/project-cart/0)
 - [Tema și persistența](https://tw.infoid26.ro/#lectie/dulc-theme/0)
-- [Bannerul și cookie-ul acceptat_banner](https://tw.infoid26.ro/#lectie/dulc-cookies/0)
+- [Bannerul și cookie-ul banner_accepted](https://tw.infoid26.ro/#lectie/dulc-cookies/0)
 - [Erorile 400, 404 și 500](https://tw.infoid26.ro/#lectie/project-errors/0)
 - [Asamblează componentele](https://tw.infoid26.ro/#lectie/dulc-assembly/0)
 - [Verifică site-ul cap-coadă](https://tw.infoid26.ro/#lectie/project-checklist/0)
 
-## Dulcelind · PostgreSQL real și Azure · 25 lecții
+## PostgreSQL și publicare · 25 lecții
 
-Creează schema reală, conectează pg și publică aplicația cu verificări de funcționare.
+Construiește o bază de antrenament și publică propria aplicație Node.js.
 
-- [Separă schema dulcelind](https://tw.infoid26.ro/#lectie/dulc-schema/0)
-- [Tipurile exacte ale produselor](https://tw.infoid26.ro/#lectie/dulc-enum/0)
-- [Construiește tabelul prajituri](https://tw.infoid26.ro/#lectie/dulc-table/0)
+- [Separă schema demo](https://tw.infoid26.ro/#lectie/dulc-schema/0)
+- [Tipuri definite cu ENUM](https://tw.infoid26.ro/#lectie/dulc-enum/0)
+- [Construiește tabelul products](https://tw.infoid26.ro/#lectie/dulc-table/0)
 - [Verifică cele 21 de produse](https://tw.infoid26.ro/#lectie/dulc-seed/0)
 - [Verifică produsele fiecărui tip](https://tw.infoid26.ro/#lectie/dulc-types-count/0)
 - [Listele de ingrediente](https://tw.infoid26.ro/#lectie/dulc-ingredients/0)

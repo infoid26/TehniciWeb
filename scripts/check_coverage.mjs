@@ -14,4 +14,4 @@ for(const chapter of course.chapters){
 assert(!(await fs.readdir('site')).some(name=>name==='sources.js'||name.startsWith('source-')));
 const app=await fs.readFile('site/app.js','utf8');
 for(const text of ['Sursa acestei lecții','download-code','Ctrl + Enter:','href="#surse"','TW_SOURCES'])assert(!app.includes(text),text);
-console.log('PASS: 827 lessons including the aligned Dulcelind workshop; original reference library, source images, lesson citations and editor download UI removed.');
+console.log('PASS: 827 lessons including independent integration examples; original reference library, source images, lesson citations and editor download UI removed.');

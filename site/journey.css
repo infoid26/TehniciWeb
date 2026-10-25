@@ -141,3 +141,107 @@ main { padding-top:42px; }
  .quiz-option { padding:16px; font-size:15px; }
  .course-shortcuts .secondary { font-size:12px; }
 }
+
+/* Compact account group with equal cards and a shared caption. */
+.topbar {
+  display:grid;
+  grid-template-columns:minmax(180px,1fr) minmax(0,420px);
+  align-items:center;
+  gap:24px;
+  min-height:82px;
+  padding-block:14px 12px;
+}
+.topbar .brand { min-width:0; min-height:56px; align-self:start; }
+.topbar-actions {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-rows:minmax(56px,auto);
+  gap:10px 12px;
+  width:100%;
+  max-width:420px;
+  justify-self:end;
+  align-items:stretch;
+}
+.topbar-actions > .total {
+  box-sizing:border-box;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  width:100%;
+  min-height:56px;
+  padding:10px 16px;
+  border-radius:12px;
+}
+.topbar-actions > .account-controls {
+  display:flex;
+  align-items:stretch;
+  align-content:center;
+  width:100%;
+  min-width:0;
+  gap:8px;
+}
+.account-controls .account-signin {
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  width:100%;
+  min-height:56px;
+  margin:0;
+  padding:10px 12px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:var(--paper);
+  color:var(--ink);
+  font-size:12px;
+  font-weight:600;
+  line-height:1.4;
+  text-align:center;
+  box-shadow:none;
+}
+.account-controls .account-signin::before {
+  content:"";
+  width:18px;
+  height:18px;
+  flex:0 0 18px;
+  background:
+    linear-gradient(#f25022 0 0) top left/8px 8px no-repeat,
+    linear-gradient(#7fba00 0 0) top right/8px 8px no-repeat,
+    linear-gradient(#00a4ef 0 0) bottom left/8px 8px no-repeat,
+    linear-gradient(#ffb900 0 0) bottom right/8px 8px no-repeat;
+}
+.account-controls .account-signin:disabled { opacity:1; cursor:default; }
+.shell > .signin-hint {
+  max-width:420px;
+  margin:10px 0 0 auto;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.5;
+  text-align:center;
+}
+@media(max-width:720px) {
+  .topbar { grid-template-columns:1fr; gap:18px; }
+  .topbar-actions { justify-self:start; max-width:100%; }
+  .shell > .signin-hint { max-width:100%; }
+}
+@media(max-width:380px) {
+  .topbar-actions { column-gap:8px; }
+  .topbar-actions > .total { padding:10px; }
+  .account-controls .account-signin { padding:10px 8px; gap:8px; font-size:11px; }
+}
+.topbar .brand strong {
+  font-size:52px;
+  line-height:1;
+  letter-spacing:-4px;
+}
+.topbar .brand-meta {
+  font-size:12px;
+  line-height:1.65;
+  letter-spacing:1.6px;
+}
+.topbar .brand-meta b {
+  display:inline;
+  font-size:12px;
+  letter-spacing:0;
+}

@@ -25,7 +25,7 @@
     let user=null,base=empty(),version=0,ready=false,stopped=false,busy=false,timer,retry=2000,conflict=null,imported=false;
     const message=text=>{status.textContent=text;};
     const button=(label,fn)=>{const el=document.createElement('button');el.type='button';el.className='secondary';el.textContent=label;el.addEventListener('click',fn);actions.append(el);return el;};
-    const link=(label,href)=>{const el=document.createElement('a');el.className='secondary';el.textContent=label;el.href=href;controls.append(el);};
+    const link=(label,href)=>{const el=document.createElement('a');el.className='secondary';el.textContent=label;el.href=href;if(href.startsWith('/.auth/login/'))el.className+=' account-signin';controls.append(el);};
     const cacheKey=()=>storageKey+':account:'+user.id;
     const exportLocal=()=>download('TehniciWeb-progres-local.json',JSON.stringify(getState(),null,2),'application/json');
     function persist(){
@@ -51,12 +51,20 @@
       });
       message('Aceeași lecție a fost modificată pe alt dispozitiv. Am oprit sincronizarea pentru a păstra ambele variante.');
     }
-    function render(){
+    function render(preview=false){
+      panel.hidden=!user;
+      const signinHint=document.querySelector('#account-signin-hint');
+      if(signinHint){
+        signinHint.hidden=Boolean(user);
+        signinHint.textContent=preview?'Conectarea cu Microsoft este disponibilă pe site-ul public.':'Conectează-te cu Microsoft pentru a salva progresul în cont.';
+      }
       controls.replaceChildren();
       actions.replaceChildren();
       if(user){
         const label=document.createElement('span');label.className='account-name';label.textContent=user.name||user.email;label.title=user.email;controls.append(label);
         link('Logout','/.auth/logout?post_logout_redirect_uri=/');
+      }else if(preview){
+        const signIn=document.createElement('button');signIn.type='button';signIn.className='secondary account-signin';signIn.textContent='Conectare cu Microsoft';signIn.disabled=true;signIn.title='Conectarea Microsoft nu este activa pe aceasta adresa.';controls.append(signIn);
       }else link('Conectare cu Microsoft','/.auth/login/aad?post_login_redirect_uri=/');
     }
     function importAnonymous(){
@@ -125,7 +133,7 @@
       if(location.protocol==='file:'){panel.hidden=true;return;}
       try{
         const account=await request('/api/account');
-        if(!account.enabled){message('Progres salvat în acest browser.');return;}
+        if(!account.enabled){render(true);message('Conectarea Microsoft nu este activă pe această adresă. Progresul este salvat în acest browser.');return;}
         user=account.user;
         if(!user){render();message('');return;}
         // Restore this account's pending edits before loading and merging cloud data.

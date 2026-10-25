@@ -73,6 +73,24 @@ try{
  response=await request('/api/progress','GET',undefined,{'X-MS-CLIENT-PRINCIPAL':''});assert.equal(response.status,401);
  response=await request('/api/progress','GET',undefined,{'X-MS-CLIENT-PRINCIPAL':principal('no@gmail.com')});assert.equal(response.status,403);
  assert.equal(JSON.parse((await request()).body).version,2,'Rejected requests must not change stored progress');
+ // Local logout expires the actual Easy Auth cookies, including split cookies.
+ response=await request('/account/logout','GET');assert.equal(response.status,405);assert.equal(response.headers.allow,'POST');
+ response=await request('/account/logout','POST',undefined,{Origin:'https://evil.test'});assert.equal(response.status,403);assert.equal(response.headers['set-cookie'],undefined);
+ response=await request('/account/logout','POST',undefined,{'Sec-Fetch-Site':'cross-site'});assert.equal(response.status,403);
+ const jar=new Map([['AppServiceAuthSession','test-session'],['AppServiceAuthSession1','chunk1'],['AppServiceAuthSession2','chunk2'],['AppServiceAuthSession999','chunk999'],['preferences','dark']]);
+ response=await request('/account/logout?next=https://evil.test','POST',undefined,{Cookie:[...jar].map(([name,value])=>`${name}=${value}`).join('; '),'Sec-Fetch-Site':'same-origin'});
+ assert.equal(response.status,303);assert.equal(response.headers.location,'/');assert.equal(response.headers['cache-control'],'no-store');
+ for(const cookie of response.headers['set-cookie']){
+   assert(cookie.includes('Max-Age=0'));assert(cookie.includes('Path=/'));assert(cookie.includes('HttpOnly; Secure'));
+   jar.delete(cookie.split('=',1)[0]);
+ }
+ assert.deepEqual([...jar],[['preferences','dark']],'Logout must expire all auth chunks while retaining other cookies');
+ for(let refresh=0;refresh<2;refresh++){
+   response=await request('/api/account','GET',undefined,{'X-MS-CLIENT-PRINCIPAL':'',Cookie:'preferences=dark'});
+   assert.equal(JSON.parse(response.body).user,null,'No session on the redirected page or subsequent refresh');
+   response=await request('/api/progress','GET',undefined,{'X-MS-CLIENT-PRINCIPAL':''});assert.equal(response.status,401);
+ }
+ assert.equal(JSON.parse((await request()).body).version,2,'Signing in again restores unchanged account progress');
  const unavailable=createServer({env,production:true,progressStore:{read:()=>{throw new Error('secret connection string');},close:async()=>{}}});
  response=await inject(unavailable.listeners('request')[0],{path:'/api/progress',headers});assert.equal(response.status,503);assert(!response.body.includes('secret'));
  const disabled=createServer({env:{},production:true});response=await inject(disabled.listeners('request')[0],{path:'/api/account',headers});assert.equal(JSON.parse(response.body).enabled,false);
@@ -98,6 +116,8 @@ function clientFixture({email='student@s.unibuc.ro',name='Ionuț Axinte',id=tena
  const controller=context.window.TW_ACCOUNTS.create({storageKey:'progress',normalize:copy,getState:()=>state,setState:value=>{state=copy(value);},refresh(){},download:(name,value)=>downloads.push(JSON.parse(value))});
  return {controller,context,elements,storage,downloads,get state(){return state;},set state(value){state=copy(value);}};
 }
+const logoutForm=fixture=>fixture.elements.get('#account-controls').children.find(el=>el.action==='/account/logout');
+const logoutButton=fixture=>logoutForm(fixture).children[0];
 let remote={version:0,progress:empty()},writes=0;
 const api=async(path,options)=>{
  if(options.method!=='PUT')return {status:200,value:remote};
@@ -106,8 +126,14 @@ const api=async(path,options)=>{
  remote={version:remote.version+1,progress:copy(body.progress)};return {status:200,value:remote};
 };
 const first=clientFixture({api});await first.controller.start();
-assert(first.elements.get('#account-controls').children.some(el=>el.children.some(child=>child.textContent==='Ionuț Axinte')));
-assert(first.elements.get('#account-controls').children.some(el=>el.children.some(child=>child.textContent==='Logout')&&el.href.startsWith('/.auth/logout')));
+assert(logoutButton(first).children.some(child=>child.textContent==='Ionuț Axinte'));
+assert.equal(logoutButton(first).type,'submit');assert(logoutButton(first).children.some(child=>child.textContent==='Logout'));
+assert.equal(logoutForm(first).method,'post');
+const logoutClient=clientFixture({api});await logoutClient.controller.start();
+logoutClient.state=copy(progress);logoutClient.controller.save();
+const beforeLogout=writes;logoutForm(logoutClient).listeners.submit();await logoutClient.controller.flush();
+assert.equal(writes,beforeLogout,'Logout stops background synchronization');
+assert.deepEqual(JSON.parse(logoutClient.storage.get('progress:account:'+tenant+':'+object)).progress,progress,'Pending account progress survives logout');
 const anonymous=clientFixture({anonymous:true,api});await anonymous.controller.start();
 assert(anonymous.elements.get('#account-controls').children.some(el=>el.textContent==='Conectare cu Microsoft'&&el.href.startsWith('/.auth/login/aad')));
 first.state=progress;first.controller.save();await first.controller.flush();assert.equal(remote.version,1);
@@ -118,7 +144,7 @@ assert(Object.hasOwn(remote.progress.records,'start-file'));assert(Object.hasOwn
 const third=clientFixture({api});await third.controller.start();third.state.records['start-browser'].code='other device';third.controller.save();await third.controller.flush();
 second.state.records['start-browser'].code='local edit';second.controller.save();await second.controller.flush();
 assert(second.elements.get('#account-status').textContent.includes('Am oprit sincronizarea'));
-assert(second.elements.get('#account-controls').children.some(el=>el.children.some(child=>child.textContent==='Logout')),'Conflict actions must not remove account controls');
+assert(logoutButton(second).children.some(child=>child.textContent==='Logout'),'Conflict actions must not remove account controls');
 const count=writes;await second.controller.flush();assert.equal(writes,count);assert.equal(remote.progress.records['start-browser'].code,'other device');
 const cached=JSON.parse(second.storage.get('progress:account:'+tenant+':'+object));assert.equal(cached.progress.records['start-browser'].code,'local edit');
 const offline=clientFixture({storage:second.storage,api:async()=>{throw new Error('offline');}});await offline.controller.start();assert.equal(offline.state.records['start-browser'].code,'local edit');

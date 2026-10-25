@@ -54,6 +54,14 @@ Tabelul `tw_account_progress` se creează la prima cerere validă; utilizatorul 
 - API-ul limitează progresul la 6 MB, codul unei lecții la 100.000 de caractere și lecțiile la cele din curs. Identitatea provine exclusiv de la platformă, iar salvările cer origin-ul public exact și antete de aceeași origine. Răspunsurile private nu sunt cache-uite. În Cloudflare nu aplica reguli „Cache Everything” pentru `/api/*` sau `/.auth/*`.
 - Progresul este un ajutor de studiu, nu un catalog de note: rezultatele locale nu sunt o certificare server a rezolvării.
 
+## Deconectare doar de pe site
+
+Butonul Logout trimite un formular POST la `/account/logout`. Serverul verifica originea, expira cookie-ul `AppServiceAuthSession` si fragmentele sale numerotate pentru domeniul curent, apoi raspunde cu 303 catre `/`. Nu apeleaza `/.auth/logout` si nu trimite browserul la deconectarea Microsoft. Cookie-urile Microsoft de pe alte domenii si progresul din PostgreSQL raman intacte. Modificarile inca nesincronizate sunt pastrate in copia locala a contului pentru urmatoarea conectare.
+
+Pastreaza **Allow unauthenticated access** in Easy Auth: fara cookie-ul sesiunii, cursul trebuie sa ramana public, fara autentificare automata. Nu cache-ui `/account/logout`. Endpointul refuza GET si cererile POST din alte origini. `logoutUrl` din API necesita POST.
+
+Dupa publicare, verifica in browserul autentificat: Logout revine la curs cu butonul de conectare; doua refresh-uri pastreaza starea anonima; serviciile Microsoft raman conectate; o noua conectare restaureaza progresul. Testele locale verifica raspunsurile HTTP si expirarea cookie-urilor, dar nu executa modulul Easy Auth din Azure.
+
 ## Verificări
 
 `npm run check:accounts` verifică regulile de identitate, refuzul altor domenii/directoare, cererile cross-origin, izolarea utilizatorilor și SQL-ul real prin PGlite. Testează și codul de sincronizare livrat în browser: al doilea dispozitiv, modificări independente, conflicte, modul offline și importul anonim automat și recuperarea după o salvare eșuată. Acestea nu înlocuiesc un login Microsoft real în Azure.

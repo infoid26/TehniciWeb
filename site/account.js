@@ -26,6 +26,12 @@
     const message=text=>{status.textContent=text;};
     const button=(label,fn)=>{const el=document.createElement('button');el.type='button';el.className='secondary';el.textContent=label;el.addEventListener('click',fn);actions.append(el);return el;};
     const link=(label,href)=>{const el=document.createElement('a');el.className='secondary';el.textContent=label;el.href=href;if(href.startsWith('/.auth/login/'))el.className+=' account-signin';controls.append(el);return el;};
+    const logoutControl=label=>{
+      const form=document.createElement('form');form.method='post';form.action='/account/logout';form.className='account-signout-form';
+      const submit=document.createElement('button');submit.type='submit';submit.className='secondary';submit.textContent=label;
+      form.addEventListener('submit',()=>{persist();stopped=true;clearTimeout(timer);});
+      form.append(submit);controls.append(form);return submit;
+    };
     const cacheKey=()=>storageKey+':account:'+user.id;
     const exportLocal=()=>download('TehniciWeb-progres-local.json',JSON.stringify(getState(),null,2),'application/json');
     function persist(){
@@ -61,7 +67,7 @@
       controls.replaceChildren();
       actions.replaceChildren();
       if(user){
-        const signOut=link('','/.auth/logout?post_logout_redirect_uri=/');
+        const signOut=logoutControl('');
         signOut.className='secondary account-signout';signOut.title=user.email;
         signOut.ariaLabel='Logout: '+(user.name||user.email);
         const label=document.createElement('span');label.className='account-name';label.textContent=user.name||user.email;
@@ -149,7 +155,7 @@
         }catch{setState(empty());base=empty();version=0;message('Copia locală a contului nu a putut fi citită.');}
         render();await sync();
       }catch(error){
-        if(error.status===403){controls.replaceChildren();link('Schimbă contul Microsoft','/.auth/logout?post_logout_redirect_uri=/');message(error.message);}
+        if(error.status===403){controls.replaceChildren();logoutControl('Schimbă contul Microsoft');message(error.message);}
         else message('Conectarea nu este disponibilă momentan. Poți continua cu progres local.');
       }
     }

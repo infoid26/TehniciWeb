@@ -1,6 +1,6 @@
 # Programa cursului
 
-42 de capitole; 827 de lecții cu exerciții.
+42 de capitole; 844 de lecții cu exerciții.
 
 Fiecare legătură deschide o lecție din curs.
 
@@ -40,27 +40,27 @@ Cereri, browsere, căutare, SEO și publicare.
 Construiești o pagină validă și înțelegi fiecare tag folosit.
 
 - [Taguri de început și de sfârșit](https://tw.infoid26.ro/#lectie/html-tags/0)
+- [Paragrafe și spații](https://tw.infoid26.ro/#lectie/html-paragraphs/0)
+- [Titluri și ierarhie](https://tw.infoid26.ro/#lectie/html-headings/0)
 - [Atributele oferă detalii](https://tw.infoid26.ro/#lectie/html-attributes/0)
+- [Legături către pagini și contacte](https://tw.infoid26.ro/#lectie/html-links/0)
+- [Părinți, copii și frați](https://tw.infoid26.ro/#lectie/html-tree/0)
+- [Liste ordonate și neordonate](https://tw.infoid26.ro/#lectie/html-lists/0)
+- [Liste în interiorul listelor](https://tw.infoid26.ro/#lectie/html-nested-lists/0)
 - [Declară HTML modern](https://tw.infoid26.ro/#lectie/html-doctype/0)
 - [Separă informațiile de conținut](https://tw.infoid26.ro/#lectie/html-head-body/0)
 - [Diacritice și UTF-8](https://tw.infoid26.ro/#lectie/html-encoding/0)
 - [Pregătește pagina pentru telefon](https://tw.infoid26.ro/#lectie/html-viewport/0)
 - [Descriere, autor și favicon](https://tw.infoid26.ro/#lectie/html-metadata/0)
 - [Comentarii și caractere rezervate](https://tw.infoid26.ro/#lectie/html-comments/0)
-- [Părinți, copii și frați](https://tw.infoid26.ro/#lectie/html-tree/0)
-- [Titluri și ierarhie](https://tw.infoid26.ro/#lectie/html-headings/0)
 - [Antet și subsol](https://tw.infoid26.ro/#lectie/html-header-footer/0)
 - [Navigare și ancore](https://tw.infoid26.ro/#lectie/html-nav/0)
 - [main și section](https://tw.infoid26.ro/#lectie/html-main-section/0)
 - [article și aside](https://tw.infoid26.ro/#lectie/html-article-aside/0)
-- [Paragrafe și spații](https://tw.infoid26.ro/#lectie/html-paragraphs/0)
 - [Cod și text preformatat](https://tw.infoid26.ro/#lectie/html-pre-code/0)
-- [Liste ordonate și neordonate](https://tw.infoid26.ro/#lectie/html-lists/0)
-- [Liste în interiorul listelor](https://tw.infoid26.ro/#lectie/html-nested-lists/0)
 - [Importanță și accent](https://tw.infoid26.ro/#lectie/html-emphasis/0)
 - [Citate, marcaj și note](https://tw.infoid26.ro/#lectie/html-inline-semantics/0)
 - [Date lizibile pentru oameni și mașini](https://tw.infoid26.ro/#lectie/html-time/0)
-- [Legături către pagini și contacte](https://tw.infoid26.ro/#lectie/html-links/0)
 - [Indici, editări și întreruperi](https://tw.infoid26.ro/#lectie/html-text-details/0)
 
 ## HTML · semantica fiecărui element · 30 lecții
@@ -199,12 +199,16 @@ Fiecare familie de taguri are propria lecție; verificarea urmărește structura
 
 Reguli, cascadă, text, culori și modelul cutiei.
 
-- [Ierarhie vizuală](https://tw.infoid26.ro/#lectie/design-hierarchy/0)
-- [Cromatică și contrast](https://tw.infoid26.ro/#lectie/design-color/0)
-- [Motorul de randare](https://tw.infoid26.ro/#lectie/design-engines/0)
 - [O declarație: proprietate și valoare](https://tw.infoid26.ro/#lectie/css-rule/0)
 - [Clase reutilizabile](https://tw.infoid26.ro/#lectie/css-class/0)
 - [Selectează un id](https://tw.infoid26.ro/#lectie/css-id/0)
+- [Formate pentru culori](https://tw.infoid26.ro/#lectie/css-colors/0)
+- [px, rem, em și procente](https://tw.infoid26.ro/#lectie/css-units/0)
+- [Fonturi, aliniere și lizibilitate](https://tw.infoid26.ro/#lectie/css-type/0)
+- [Conținut, padding, border și margin](https://tw.infoid26.ro/#lectie/css-box/0)
+- [Ierarhie vizuală](https://tw.infoid26.ro/#lectie/design-hierarchy/0)
+- [Cromatică și contrast](https://tw.infoid26.ro/#lectie/design-color/0)
+- [Motorul de randare](https://tw.infoid26.ro/#lectie/design-engines/0)
 - [Descendenți și copii direcți](https://tw.infoid26.ro/#lectie/css-descendant/0)
 - [Frați alăturați și frați ulteriori](https://tw.infoid26.ro/#lectie/css-siblings/0)
 - [Selectori după atribute](https://tw.infoid26.ro/#lectie/css-attributes/0)
@@ -215,13 +219,9 @@ Reguli, cascadă, text, culori și modelul cutiei.
 - [Conținut generat: before și after](https://tw.infoid26.ro/#lectie/css-generated/0)
 - [Prima literă și prima linie](https://tw.infoid26.ro/#lectie/css-first-letter/0)
 - [Numerotare cu contoare CSS](https://tw.infoid26.ro/#lectie/css-counters/0)
-- [px, rem, em și procente](https://tw.infoid26.ro/#lectie/css-units/0)
-- [Formate pentru culori](https://tw.infoid26.ro/#lectie/css-colors/0)
 - [Transparența textului și a fundalului](https://tw.infoid26.ro/#lectie/css-opacity/0)
 - [Fundaluri multiple și gradiente](https://tw.infoid26.ro/#lectie/css-backgrounds/0)
-- [Conținut, padding, border și margin](https://tw.infoid26.ro/#lectie/css-box/0)
 - [Când marginile verticale se suprapun](https://tw.infoid26.ro/#lectie/css-margin-collapse/0)
-- [Fonturi, aliniere și lizibilitate](https://tw.infoid26.ro/#lectie/css-type/0)
 - [Stilizează orarul](https://tw.infoid26.ro/#lectie/css-table/0)
 - [Stilizează listele unui meniu](https://tw.infoid26.ro/#lectie/css-list/0)
 
@@ -248,13 +248,10 @@ Potriviri exacte, frați, poziții și controale interactive.
 - [input:disabled](https://tw.infoid26.ro/#lectie/selector-disabled/0)
 - [input:required](https://tw.infoid26.ro/#lectie/selector-required/0)
 
-## CSS · layout, responsive și mișcare · 22 lecții
+## CSS · layout, responsive și mișcare · 23 lecții
 
 Construiești meniul, grila, galeria și adaptarea la ecrane.
 
-- [Proprietăți personalizate](https://tw.infoid26.ro/#lectie/css-variables/0)
-- [Poziționare și blocul de referință](https://tw.infoid26.ro/#lectie/css-position/0)
-- [Suprapunere și z-index](https://tw.infoid26.ro/#lectie/css-stack/0)
 - [display, visibility și overflow](https://tw.infoid26.ro/#lectie/css-display/0)
 - [Un rând flexibil](https://tw.infoid26.ro/#lectie/css-flex/0)
 - [Axe și aliniere](https://tw.infoid26.ro/#lectie/css-flex-axes/0)
@@ -263,6 +260,9 @@ Construiești meniul, grila, galeria și adaptarea la ecrane.
 - [Întindere pe mai multe coloane](https://tw.infoid26.ro/#lectie/css-grid-lines/0)
 - [Zone cu nume](https://tw.infoid26.ro/#lectie/css-grid-areas/0)
 - [Media query: desktop și telefon](https://tw.infoid26.ro/#lectie/css-responsive/0)
+- [Proprietăți personalizate](https://tw.infoid26.ro/#lectie/css-variables/0)
+- [Poziționare și blocul de referință](https://tw.infoid26.ro/#lectie/css-position/0)
+- [Suprapunere și z-index](https://tw.infoid26.ro/#lectie/css-stack/0)
 - [Condiții media și printare](https://tw.infoid26.ro/#lectie/css-media-logic/0)
 - [Meniul mobil cu checkbox](https://tw.infoid26.ro/#lectie/css-mobile-menu/0)
 - [Submeniul la hover și focus](https://tw.infoid26.ro/#lectie/css-dropdown/0)
@@ -274,8 +274,9 @@ Construiești meniul, grila, galeria și adaptarea la ecrane.
 - [Măști și decuparea conținutului](https://tw.infoid26.ro/#lectie/css-masks/0)
 - [Contururi și efecte decorative](https://tw.infoid26.ro/#lectie/css-decoration/0)
 - [Bootstrap, iconuri și CSS compilat](https://tw.infoid26.ro/#lectie/css-framework/0)
+- [Un link față de viewport](https://tw.infoid26.ro/#lectie/css-fixed-viewport/0)
 
-## CSS · efecte, fonturi și accesibilitate · 10 lecții
+## CSS · efecte, fonturi și accesibilitate · 11 lecții
 
 Fundaluri, animații, focus, subtitrări și pregătirea pentru print.
 
@@ -289,6 +290,7 @@ Fundaluri, animații, focus, subtitrări și pregătirea pentru print.
 - [Stilizează subtitrările](https://tw.infoid26.ro/#lectie/css-cue/0)
 - [Linkuri accesibile cu tastatura](https://tw.infoid26.ro/#lectie/css-focus-link/0)
 - [Aspect pentru imprimare](https://tw.infoid26.ro/#lectie/css-print-clean/0)
+- [Înjumătățește lățimea vizuală](https://tw.infoid26.ro/#lectie/css-scale-horizontal/0)
 
 ## CSS · proprietățile proiectului, separat · 113 lecții
 
@@ -408,7 +410,7 @@ Dimensiuni, fundaluri, contururi, text, poziționare și animație în pași mic
 - [flex-flow](https://tw.infoid26.ro/#lectie/css-detail-flex-flow/0)
 - [mask-size](https://tw.infoid26.ro/#lectie/css-detail-mask-size/0)
 
-## JavaScript · de la prima valoare · 18 lecții
+## JavaScript · de la prima valoare · 20 lecții
 
 Valori, variabile, funcții, condiții și bucle explicate de la zero.
 
@@ -419,10 +421,12 @@ Valori, variabile, funcții, condiții și bucle explicate de la zero.
 - [Un nume pentru o valoare](https://tw.infoid26.ro/#lectie/js-const/0)
 - [O valoare care se schimbă](https://tw.infoid26.ro/#lectie/js-let/0)
 - [Boolean și tipuri](https://tw.infoid26.ro/#lectie/js-types/0)
+- [Indici și length](https://tw.infoid26.ro/#lectie/array-index/0)
 - [Convertește înainte de adunare](https://tw.infoid26.ro/#lectie/js-convert/0)
 - [Comparații și egalitate strictă](https://tw.infoid26.ro/#lectie/js-compare/0)
 - [Alege între două ramuri](https://tw.infoid26.ro/#lectie/js-if/0)
 - [Condiții combinate](https://tw.infoid26.ro/#lectie/js-logic/0)
+- [Obiecte și proprietăți](https://tw.infoid26.ro/#lectie/object-properties/0)
 - [Parametri și apeluri](https://tw.infoid26.ro/#lectie/js-function/0)
 - [Funcții săgeată și callback](https://tw.infoid26.ro/#lectie/js-arrow/0)
 - [Blocuri, let și var](https://tw.infoid26.ro/#lectie/js-scope/0)
@@ -445,24 +449,10 @@ Blocuri, var, let, const, conversii și comparații.
 - [Comparație strictă](https://tw.infoid26.ro/#lectie/strict-equality/0)
 - [Valori lipsă și valori false](https://tw.infoid26.ro/#lectie/nullish-values/0)
 
-## JavaScript · funcțiile ca obiecte · 8 lecții
-
-Parametri, arguments, proprietăți și forme de apel.
-
-- [Funcții cu același nume](https://tw.infoid26.ro/#lectie/function-last-definition/0)
-- [Numele unei funcții](https://tw.infoid26.ro/#lectie/function-name/0)
-- [Numărul parametrilor declarați](https://tw.infoid26.ro/#lectie/function-length/0)
-- [arguments într-o funcție obișnuită](https://tw.infoid26.ro/#lectie/function-arguments/0)
-- [Rest este un vector](https://tw.infoid26.ro/#lectie/function-rest-array/0)
-- [Constructorul Function](https://tw.infoid26.ro/#lectie/function-constructor/0)
-- [Lipsa unui return](https://tw.infoid26.ro/#lectie/function-return-value/0)
-- [Valoare implicită și null](https://tw.infoid26.ro/#lectie/function-default/0)
-
-## JavaScript · vectori și obiecte · 29 lecții
+## JavaScript · vectori și obiecte · 27 lecții
 
 Toate operațiile de colecții utile pentru filtre, sortare și coș.
 
-- [Indici și length](https://tw.infoid26.ro/#lectie/array-index/0)
 - [Ultimul element](https://tw.infoid26.ro/#lectie/array-length/0)
 - [Copiere și referințe](https://tw.infoid26.ro/#lectie/array-copy/0)
 - [Adaugă și elimină la final](https://tw.infoid26.ro/#lectie/array-push-pop/0)
@@ -489,7 +479,6 @@ Toate operațiile de colecții utile pentru filtre, sortare și coș.
 - [Vectori de vectori](https://tw.infoid26.ro/#lectie/array-matrix/0)
 - [Aplatizare cu flat](https://tw.infoid26.ro/#lectie/array-flat/0)
 - [Transformă și aplatizează un nivel](https://tw.infoid26.ro/#lectie/array-flatmap/0)
-- [Obiecte și proprietăți](https://tw.infoid26.ro/#lectie/object-properties/0)
 - [Chei, valori și perechi](https://tw.infoid26.ro/#lectie/object-entries/0)
 
 ## JavaScript · colecții și cazuri-limită · 13 lecții
@@ -510,7 +499,21 @@ Indici, goluri, copiere, sortare și matrici.
 - [Citește substr din cod vechi](https://tw.infoid26.ro/#lectie/string-substr-legacy/0)
 - [Alege un indice dintr-o valoare aleatoare](https://tw.infoid26.ro/#lectie/random-selection/0)
 
-## JavaScript · șiruri, regex, Date și Math · 17 lecții
+## JavaScript · funcțiile ca obiecte · 9 lecții
+
+Parametri, arguments, proprietăți și forme de apel.
+
+- [Un callback cu nume](https://tw.infoid26.ro/#lectie/callback-named/0)
+- [Funcții cu același nume](https://tw.infoid26.ro/#lectie/function-last-definition/0)
+- [Numele unei funcții](https://tw.infoid26.ro/#lectie/function-name/0)
+- [Numărul parametrilor declarați](https://tw.infoid26.ro/#lectie/function-length/0)
+- [arguments într-o funcție obișnuită](https://tw.infoid26.ro/#lectie/function-arguments/0)
+- [Rest este un vector](https://tw.infoid26.ro/#lectie/function-rest-array/0)
+- [Constructorul Function](https://tw.infoid26.ro/#lectie/function-constructor/0)
+- [Lipsa unui return](https://tw.infoid26.ro/#lectie/function-return-value/0)
+- [Valoare implicită și null](https://tw.infoid26.ro/#lectie/function-default/0)
+
+## JavaScript · șiruri, regex, Date și Math · 20 lecții
 
 Toate metodele de text și date din prezentare.
 
@@ -523,9 +526,12 @@ Toate metodele de text și date din prezentare.
 - [Comparare textuală](https://tw.infoid26.ro/#lectie/string-compare/0)
 - [Desparte în fragmente](https://tw.infoid26.ro/#lectie/string-split/0)
 - [Completare la o lungime minimă](https://tw.infoid26.ro/#lectie/string-pad/0)
-- [Un model de text](https://tw.infoid26.ro/#lectie/regex-basic/0)
-- [Grupuri și alternative](https://tw.infoid26.ro/#lectie/regex-groups/0)
+- [Prima expresie regulată: caută un text](https://tw.infoid26.ro/#lectie/regex-basic/0)
+- [Cere întregul text cu ^ și $](https://tw.infoid26.ro/#lectie/regex-exact/0)
+- [Alege o singură cifră](https://tw.infoid26.ro/#lectie/regex-digits/0)
 - [Câte repetări sunt permise?](https://tw.infoid26.ro/#lectie/regex-quantifiers/0)
+- [Grupuri și alternative](https://tw.infoid26.ro/#lectie/regex-groups/0)
+- [Combină litere, cifre și repetări](https://tw.infoid26.ro/#lectie/regex-code-format/0)
 - [Condiții fără consum: lookahead](https://tw.infoid26.ro/#lectie/regex-assertions/0)
 - [Componentele unei date](https://tw.infoid26.ro/#lectie/date-utc/0)
 - [Timestamp și intervale](https://tw.infoid26.ro/#lectie/date-time/0)
@@ -568,14 +574,14 @@ Toate opțiunile, clasele, cuantificatorii și aserțiile din prezentare.
 
 Getter, setter, UTC, luni și intervale în milisecunde.
 
-- [getUTCMilliseconds](https://tw.infoid26.ro/#lectie/date-full-getUTCMilliseconds/0)
-- [getUTCSeconds](https://tw.infoid26.ro/#lectie/date-full-getUTCSeconds/0)
-- [getUTCMinutes](https://tw.infoid26.ro/#lectie/date-full-getUTCMinutes/0)
-- [getUTCHours](https://tw.infoid26.ro/#lectie/date-full-getUTCHours/0)
+- [getUTCFullYear](https://tw.infoid26.ro/#lectie/date-full-getUTCFullYear/0)
+- [getUTCMonth](https://tw.infoid26.ro/#lectie/date-full-getUTCMonth/0)
 - [getUTCDate](https://tw.infoid26.ro/#lectie/date-full-getUTCDate/0)
 - [getUTCDay](https://tw.infoid26.ro/#lectie/date-full-getUTCDay/0)
-- [getUTCMonth](https://tw.infoid26.ro/#lectie/date-full-getUTCMonth/0)
-- [getUTCFullYear](https://tw.infoid26.ro/#lectie/date-full-getUTCFullYear/0)
+- [getUTCHours](https://tw.infoid26.ro/#lectie/date-full-getUTCHours/0)
+- [getUTCMinutes](https://tw.infoid26.ro/#lectie/date-full-getUTCMinutes/0)
+- [getUTCSeconds](https://tw.infoid26.ro/#lectie/date-full-getUTCSeconds/0)
+- [getUTCMilliseconds](https://tw.infoid26.ro/#lectie/date-full-getUTCMilliseconds/0)
 - [setUTCFullYear](https://tw.infoid26.ro/#lectie/date-full-setUTCFullYear/0)
 - [setUTCMonth](https://tw.infoid26.ro/#lectie/date-full-setUTCMonth/0)
 - [setUTCDate](https://tw.infoid26.ro/#lectie/date-full-setUTCDate/0)
@@ -651,7 +657,7 @@ DOM real: citești câmpuri, reacționezi la clic și construiești filtrele.
 - [DOMContentLoaded și load](https://tw.infoid26.ro/#lectie/dom-ready/0)
 - [Comută tema printr-o clasă](https://tw.infoid26.ro/#lectie/dom-theme/0)
 
-## Browser · construcție și verificare · 42 lecții
+## Browser · construcție și verificare · 41 lecții
 
 Completează pagina și verifică structura, compatibilitatea și comportamentul.
 
@@ -692,23 +698,10 @@ Completează pagina și verifică structura, compatibilitatea și comportamentul
 - [Selectează un id](https://tw.infoid26.ro/#lectie/dom-select-by-id/0)
 - [Colecție după clasă](https://tw.infoid26.ro/#lectie/dom-select-by-class/0)
 - [Verifică o clasă existentă](https://tw.infoid26.ro/#lectie/dom-class-contains/0)
-- [Șterge o singură preferință](https://tw.infoid26.ro/#lectie/storage-remove-one/0)
 - [Configurația MathJax din cod vechi](https://tw.infoid26.ro/#lectie/mathjax-historical-config/0)
 - [Alinierea și dimensiunea subtitrării](https://tw.infoid26.ro/#lectie/vtt-cue-layout/0)
 - [Direcția animației](https://tw.infoid26.ro/#lectie/css-animation-direction-long/0)
 - [Înlocuiește vechea structură cu frame-uri](https://tw.infoid26.ro/#lectie/html-frame-history/0)
-
-## Stare în browser · coș și cookies · 7 lecții
-
-Serializezi date, restaurezi selecții și separi preferințele de datele serverului.
-
-- [localStorage păstrează texte](https://tw.infoid26.ro/#lectie/storage-model/0)
-- [Restaurează o valoare opțională](https://tw.infoid26.ro/#lectie/storage-restore/0)
-- [Adaugă fără duplicate](https://tw.infoid26.ro/#lectie/cart-add/0)
-- [Elimină produsul debifat](https://tw.infoid26.ro/#lectie/cart-remove/0)
-- [Totalul produselor vizibile](https://tw.infoid26.ro/#lectie/cart-total/0)
-- [Citește o pereche din cookie-uri](https://tw.infoid26.ro/#lectie/cookie-read/0)
-- [Expirare, cale și ștergere](https://tw.infoid26.ro/#lectie/cookie-write/0)
 
 ## JSON · date și fișiere de configurare · 9 lecții
 
@@ -739,6 +732,19 @@ Tipuri, erori, replacer, reviver și serializare.
 - [Date și JSON](https://tw.infoid26.ro/#lectie/json-full-date/0)
 - [Referințe circulare](https://tw.infoid26.ro/#lectie/json-full-circular/0)
 
+## Stare în browser · coș și cookies · 8 lecții
+
+Serializezi date, restaurezi selecții și separi preferințele de datele serverului.
+
+- [localStorage păstrează texte](https://tw.infoid26.ro/#lectie/storage-model/0)
+- [Restaurează o valoare opțională](https://tw.infoid26.ro/#lectie/storage-restore/0)
+- [Șterge o singură preferință](https://tw.infoid26.ro/#lectie/storage-remove-one/0)
+- [Adaugă fără duplicate](https://tw.infoid26.ro/#lectie/cart-add/0)
+- [Elimină produsul debifat](https://tw.infoid26.ro/#lectie/cart-remove/0)
+- [Totalul produselor vizibile](https://tw.infoid26.ro/#lectie/cart-total/0)
+- [Citește o pereche din cookie-uri](https://tw.infoid26.ro/#lectie/cookie-read/0)
+- [Expirare, cale și ștergere](https://tw.infoid26.ro/#lectie/cookie-write/0)
+
 ## SCSS · compilare reală · 16 lecții
 
 Variabile, tipuri, condiții, bucle, module, liste și funcții.
@@ -758,7 +764,7 @@ Variabile, tipuri, condiții, bucle, module, liste și funcții.
 - [Ieși din imbricare cu @at-root](https://tw.infoid26.ro/#lectie/scss-root/0)
 - [Placeholder și @extend](https://tw.infoid26.ro/#lectie/scss-extend/0)
 - [Calculează o valoare cu @function](https://tw.infoid26.ro/#lectie/scss-function/0)
-- [Personalizează înainte de compilare](https://tw.infoid26.ro/#lectie/scss-bootstrap/0)
+- [Personalizează sursele Bootstrap](https://tw.infoid26.ro/#lectie/scss-bootstrap/0)
 
 ## SCSS · module, liste și reutilizare · 8 lecții
 
@@ -773,14 +779,13 @@ Configurare, funcții, bucle și selectori generați.
 - [Valori numite într-o hartă](https://tw.infoid26.ro/#lectie/sass-map/0)
 - [Reexportă un modul Sass](https://tw.infoid26.ro/#lectie/sass-forward/0)
 
-## Node · fișiere și aplicații · 16 lecții
+## Node · fișiere și aplicații · 19 lecții
 
 Terminal, module, callback-uri, căi, fișiere și organizarea serverului.
 
 - [Rulează un fișier din terminal](https://tw.infoid26.ro/#lectie/node-run/0)
 - [Pachete și npm](https://tw.infoid26.ro/#lectie/node-npm/0)
 - [Manifestul proiectului](https://tw.infoid26.ro/#lectie/node-package/0)
-- [Callback și event loop](https://tw.infoid26.ro/#lectie/node-event-loop/0)
 - [Încarcă un modul](https://tw.infoid26.ro/#lectie/node-require/0)
 - [Compune o cale](https://tw.infoid26.ro/#lectie/node-join/0)
 - [Nume, extensie și director](https://tw.infoid26.ro/#lectie/node-basename/0)
@@ -790,6 +795,10 @@ Terminal, module, callback-uri, căi, fișiere și organizarea serverului.
 - [Un fișier JSON devine date](https://tw.infoid26.ro/#lectie/node-json-file/0)
 - [Verifică existența](https://tw.infoid26.ro/#lectie/node-exists/0)
 - [Scrie într-un fișier virtual](https://tw.infoid26.ro/#lectie/node-write/0)
+- [Callback și event loop](https://tw.infoid26.ro/#lectie/node-event-loop/0)
+- [Ordinea citirii asincrone](https://tw.infoid26.ro/#lectie/node-callback-order/0)
+- [O promisiune pentru o valoare](https://tw.infoid26.ro/#lectie/node-promise-value/0)
+- [Așteaptă un rezultat cu await](https://tw.infoid26.ro/#lectie/node-await-value/0)
 - [Citire asincronă și await](https://tw.infoid26.ro/#lectie/node-async-read/0)
 - [Hash-uri cu crypto](https://tw.infoid26.ro/#lectie/node-crypto/0)
 - [Supravegherea fișierelor și backup](https://tw.infoid26.ro/#lectie/node-watch/0)
@@ -807,7 +816,7 @@ Construiește operații independente pe fișiere virtuale.
 - [Rezultat asincron prin callback](https://tw.infoid26.ro/#lectie/node-read-callback/0)
 - [Derivare de cheie](https://tw.infoid26.ro/#lectie/node-crypto-scrypt/0)
 
-## Node · de la fișiere la HTTP și date · 18 lecții
+## Node · de la fișiere la HTTP și date · 13 lecții
 
 Directoare, HTTP nativ și legătura dintre baza de date și pagină.
 
@@ -821,20 +830,16 @@ Directoare, HTTP nativ și legătura dintre baza de date și pagină.
 - [npm · update](https://tw.infoid26.ro/#lectie/node-npm-update/0)
 - [npm · uninstall](https://tw.infoid26.ro/#lectie/node-npm-uninstall/0)
 - [npm · list](https://tw.infoid26.ro/#lectie/node-npm-list/0)
-- [Trimite un fișier cu sendFile](https://tw.infoid26.ro/#lectie/node-send-file/0)
-- [Deschide conexiunea PostgreSQL](https://tw.infoid26.ro/#lectie/node-pg-connect/0)
 - [Luna în timpul local](https://tw.infoid26.ro/#lectie/date-local-month/0)
 - [Directorul curent al procesului](https://tw.infoid26.ro/#lectie/node-working-directory/0)
-- [Ascultă cereri pe un port](https://tw.infoid26.ro/#lectie/node-listen-port/0)
-- [Configurează motorul de template-uri](https://tw.infoid26.ro/#lectie/express-template-engine/0)
-- [Handler pentru toate metodele HTTP](https://tw.infoid26.ro/#lectie/express-all-methods/0)
 - [Tipul fișierului prin callback](https://tw.infoid26.ro/#lectie/node-lstat-callback/0)
 
-## Express · cereri și răspunsuri reale · 16 lecții
+## Express · cereri și răspunsuri reale · 20 lecții
 
 Rute, middleware, parametri, resurse statice și erori HTTP.
 
 - [Prima aplicație Express](https://tw.infoid26.ro/#lectie/express-first/0)
+- [Ascultă cereri pe un port](https://tw.infoid26.ro/#lectie/node-listen-port/0)
 - [Metoda HTTP contează](https://tw.infoid26.ro/#lectie/express-method/0)
 - [Răspuns JSON](https://tw.infoid26.ro/#lectie/express-json/0)
 - [Coduri HTTP](https://tw.infoid26.ro/#lectie/express-status/0)
@@ -850,6 +855,9 @@ Rute, middleware, parametri, resurse statice și erori HTTP.
 - [Prefix URL și folder static](https://tw.infoid26.ro/#lectie/express-static/0)
 - [Express 4 din slide-uri și Express 5 din proiect](https://tw.infoid26.ro/#lectie/express-wildcard/0)
 - [Tratarea unei erori](https://tw.infoid26.ro/#lectie/express-error/0)
+- [Trimite un fișier cu sendFile](https://tw.infoid26.ro/#lectie/node-send-file/0)
+- [Handler pentru toate metodele HTTP](https://tw.infoid26.ro/#lectie/express-all-methods/0)
+- [Pornește cu nodemon](https://tw.infoid26.ro/#lectie/express-nodemon/0)
 
 ## HTTP · construiește contractul rutelor · 10 lecții
 
@@ -866,10 +874,11 @@ Metode, statusuri, prefixe, parametri și middleware.
 - [Date comune prin res.locals](https://tw.infoid26.ro/#lectie/http-locals/0)
 - [Date dintr-un formular](https://tw.infoid26.ro/#lectie/http-urlencoded/0)
 
-## EJS · pagini construite din date · 10 lecții
+## EJS · pagini construite din date · 11 lecții
 
 De la o variabilă la fragmente, produse, galerie și pagini de erori.
 
+- [Configurează motorul de template-uri](https://tw.infoid26.ro/#lectie/express-template-engine/0)
 - [Afișează o variabilă](https://tw.infoid26.ro/#lectie/ejs-output/0)
 - [Escapare și conținut HTML](https://tw.infoid26.ro/#lectie/ejs-escape/0)
 - [HTML condiționat](https://tw.infoid26.ro/#lectie/ejs-conditions/0)
@@ -892,28 +901,27 @@ Liste, condiții, formulare și fragmente reutilizabile.
 - [Numerotează rezultate](https://tw.infoid26.ro/#lectie/template-counter/0)
 - [Datele galeriei devin markup](https://tw.infoid26.ro/#lectie/template-gallery-data/0)
 
-## PostgreSQL · datele produselor · 16 lecții
+## SQL · de la primul tabel la primele interogări · 15 lecții
 
-Tabele, tipuri, constrângeri, selecții și relația cu pg.
+Citește un tabel, alege coloane, filtrează și sortează; apoi creează și modifică date.
 
-- [SELECT și FROM](https://tw.infoid26.ro/#lectie/sql-select/0)
-- [Creează un tabel](https://tw.infoid26.ro/#lectie/sql-create/0)
-- [Adaugă un rând](https://tw.infoid26.ro/#lectie/sql-insert/0)
+- [Citește un tabel: rânduri și coloane](https://tw.infoid26.ro/#lectie/sql-read-table/0)
+- [Prima comandă SQL: citește tot tabelul](https://tw.infoid26.ro/#lectie/sql-read-all/0)
+- [Alege o singură coloană](https://tw.infoid26.ro/#lectie/sql-select/0)
+- [Alege coloanele](https://tw.infoid26.ro/#lectie/sql-select-columns/0)
 - [Filtrează rândurile](https://tw.infoid26.ro/#lectie/sql-where/0)
 - [Ordinea nu este implicită](https://tw.infoid26.ro/#lectie/sql-order/0)
 - [Limitează numărul de rezultate](https://tw.infoid26.ro/#lectie/sql-limit/0)
-- [Tipuri numerice și constrângeri](https://tw.infoid26.ro/#lectie/sql-numeric/0)
-- [Valori implicite și boolean](https://tw.infoid26.ro/#lectie/sql-default/0)
-- [Vectori în PostgreSQL](https://tw.infoid26.ro/#lectie/sql-arrays/0)
-- [Categorii cu ENUM](https://tw.infoid26.ro/#lectie/sql-enum/0)
+- [Creează un tabel](https://tw.infoid26.ro/#lectie/sql-create/0)
+- [Adaugă un rând](https://tw.infoid26.ro/#lectie/sql-insert/0)
 - [Modifică rânduri alese](https://tw.infoid26.ro/#lectie/sql-update/0)
 - [Elimină un rând](https://tw.infoid26.ro/#lectie/sql-delete/0)
-- [Număr și total](https://tw.infoid26.ro/#lectie/sql-count/0)
+- [Numără rândurile cu COUNT](https://tw.infoid26.ro/#lectie/sql-count/0)
+- [Adună valorile cu SUM](https://tw.infoid26.ro/#lectie/sql-sum/0)
+- [Calculează media cu AVG](https://tw.infoid26.ro/#lectie/sql-avg/0)
 - [Grupează rezultate](https://tw.infoid26.ro/#lectie/sql-group/0)
-- [Valori parametrizate în pg](https://tw.infoid26.ro/#lectie/sql-parameters/0)
-- [Driverul pg și rezultatul](https://tw.infoid26.ro/#lectie/pg-rows/0)
 
-## SQL · construiește schema de date · 17 lecții
+## SQL · construiește schema de date · 21 lecții
 
 Produse, utilizatori și accesări, cu tipuri și constrângeri explicate separat.
 
@@ -934,18 +942,22 @@ Produse, utilizatori și accesări, cu tipuri și constrângeri explicate separa
 - [Relație opțională](https://tw.infoid26.ro/#lectie/schema-null-reference/0)
 - [Creare repetabilă](https://tw.infoid26.ro/#lectie/schema-if-not-exists/0)
 - [Eliminarea unui tip de antrenament](https://tw.infoid26.ro/#lectie/schema-drop-type/0)
+- [Tipuri numerice și constrângeri](https://tw.infoid26.ro/#lectie/sql-numeric/0)
+- [Valori implicite și boolean](https://tw.infoid26.ro/#lectie/sql-default/0)
+- [Vectori în PostgreSQL](https://tw.infoid26.ro/#lectie/sql-arrays/0)
+- [Categorii cu ENUM](https://tw.infoid26.ro/#lectie/sql-enum/0)
 
-## SQL · interogări și date pentru pagini · 16 lecții
+## SQL · interogări și date pentru pagini · 19 lecții
 
 Filtre, agregări, actualizări și rezultate pentru un site de produse.
 
-- [Alege coloanele](https://tw.infoid26.ro/#lectie/sql-select-columns/0)
 - [Valori distincte](https://tw.infoid26.ro/#lectie/sql-distinct/0)
 - [Condiții combinate](https://tw.infoid26.ro/#lectie/sql-and-or/0)
 - [Interval inclusiv](https://tw.infoid26.ro/#lectie/sql-between/0)
 - [Apartenență la o listă](https://tw.infoid26.ro/#lectie/sql-in-values/0)
 - [Căutare fără diferență de registru](https://tw.infoid26.ro/#lectie/sql-ilike/0)
 - [Valoare de rezervă](https://tw.infoid26.ro/#lectie/sql-coalesce/0)
+- [Citește date din două tabele cu JOIN](https://tw.infoid26.ro/#lectie/sql-join/0)
 - [Numără pe grupuri](https://tw.infoid26.ro/#lectie/sql-count-user-visits/0)
 - [Filtrează grupurile](https://tw.infoid26.ro/#lectie/sql-having/0)
 - [Valori după INSERT](https://tw.infoid26.ro/#lectie/sql-returning/0)
@@ -955,6 +967,9 @@ Filtre, agregări, actualizări și rezultate pentru un site de produse.
 - [Caută în ingrediente](https://tw.infoid26.ro/#lectie/sql-array-any/0)
 - [Paginare deterministă](https://tw.infoid26.ro/#lectie/sql-pagination/0)
 - [Păstrează și rândurile fără corespondent](https://tw.infoid26.ro/#lectie/sql-left-join/0)
+- [Valori parametrizate în pg](https://tw.infoid26.ro/#lectie/sql-parameters/0)
+- [Driverul pg și rezultatul](https://tw.infoid26.ro/#lectie/pg-rows/0)
+- [Deschide conexiunea PostgreSQL](https://tw.infoid26.ro/#lectie/node-pg-connect/0)
 
 ## Mediul de lucru · propriul proiect · 12 lecții
 
@@ -973,7 +988,7 @@ Instalează uneltele și deosebește exercițiile din browser de pașii opționa
 - [Configurează conexiunea locală](https://tw.infoid26.ro/#lectie/dulc-env-local/0)
 - [Găsește cauza erorii](https://tw.infoid26.ro/#lectie/dulc-diagnose/0)
 
-## Aplică noțiunile împreună · 33 lecții
+## Aplică noțiunile împreună · 35 lecții
 
 Exemple independente de pagini, navigare, cataloage și interacțiuni. Nu ai nevoie de fișierele unui proiect extern.
 
@@ -1010,6 +1025,8 @@ Exemple independente de pagini, navigare, cataloage și interacțiuni. Nu ai nev
 - [Erorile 400, 404 și 500](https://tw.infoid26.ro/#lectie/project-errors/0)
 - [Asamblează componentele](https://tw.infoid26.ro/#lectie/dulc-assembly/0)
 - [Verifică site-ul cap-coadă](https://tw.infoid26.ro/#lectie/project-checklist/0)
+- [Din PostgreSQL până la pagina EJS](https://tw.infoid26.ro/#lectie/project-pg-ejs-route/0)
+- [O eroare personalizată din JSON](https://tw.infoid26.ro/#lectie/project-json-error-page/0)
 
 ## PostgreSQL și publicare · 25 lecții
 

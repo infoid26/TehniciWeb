@@ -10,7 +10,7 @@ self.onmessage=async ({data:{task,code}})=>{
   await db.exec("SET statement_timeout='4s'");
   const result=await db.exec(code);
   const rows=task.checkQuery?(await db.exec(task.checkQuery)).at(-1)?.rows:result.at(-1)?.rows;
-  self.postMessage([{label:'Rezultatul SQL',expected:task.expected,actual:rows,passed:stable(rows)===stable(task.expected)}]);
+  self.postMessage([{label:'Rezultatul SQL',expected:task.expected,actual:rows,passed:stable(task.unordered?[...rows].sort((a,b)=>stable(a).localeCompare(stable(b))):rows)===stable(task.unordered?[...task.expected].sort((a,b)=>stable(a).localeCompare(stable(b))):task.expected)}]);
  } catch(error) { self.postMessage([{label:'Execuție SQL',passed:false,error:error.message}]); }
  finally {await db?.close();}
 };

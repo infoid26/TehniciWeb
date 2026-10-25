@@ -54,7 +54,7 @@ export function createServer(options={}) {
   };
   let activeChecks=0;
   let tasksPromise;
-  const lessons=()=>tasksPromise??=(async()=>{const context={window:{}};vm.runInNewContext(await fs.readFile(path.join(root,'site/course.js'),'utf8'),context);return new Map(context.window.TW_COURSE.chapters.flatMap(c=>c.lessons).map(l=>[l.id,JSON.parse(JSON.stringify(l))]));})();
+  const lessons=()=>tasksPromise??=(async()=>{const context={window:{}};vm.runInNewContext(await fs.readFile(path.join(root,'site/course.js'),'utf8'),context);vm.runInNewContext(await fs.readFile(path.join(root,'site/exam-data.js'),'utf8'),context);return new Map([...context.window.TW_COURSE.chapters.flatMap(c=>c.lessons),...context.window.TW_EXAM.exercises.filter(e=>e.task)].map(l=>[l.id,JSON.parse(JSON.stringify(l))]));})();
   const progressStore=options.progressStore||createProgressStore(progressDatabaseSettings(env));
   const accountHandler=createAccountHandler({env,lessons,store:progressStore});
   const json=(res,status,value)=>{res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});res.end(JSON.stringify(value));};
@@ -102,7 +102,7 @@ export function createServer(options={}) {
         }catch{json(res,502,{error:'Evaluatorul nu a putut finaliza verificarea.'});return;}
         finally{activeChecks--;}
       }
-      const relative = pathname === '/' ? 'index.html' : pathname.slice(1);
+      const relative = pathname === '/' ? 'index.html' : ['/examen','/examen/'].includes(pathname) ? 'site/exam.html' : pathname.slice(1);
       if (/^site\/(?:sources\.js|source-)/.test(relative)) { res.writeHead(404); res.end('Pagina nu exista.'); return; }
       if (relative !== 'index.html' && !/^site\/[a-zA-Z0-9._-]+$/.test(relative)) { res.writeHead(404); res.end('Pagina nu există.'); return; }
       const target = path.resolve(root,relative);

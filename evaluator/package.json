@@ -2,6 +2,13 @@
   "name": "tehnici-web-session",
   "private": true,
   "type": "module",
-  "engines": {"node": "24.x"},
-  "dependencies": {"express": "5.1.0", "ejs": "3.1.10", "sass": "1.93.2"}
+  "engines": {
+    "node": "24.x"
+  },
+  "dependencies": {
+    "express": "5.1.0",
+    "ejs": "3.1.10",
+    "sass": "1.93.2",
+    "@electric-sql/pglite": "0.5.10"
+  }
 }

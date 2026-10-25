@@ -9,7 +9,7 @@ for(const name of ['esc','rich','codeBlock','format']) {
  const declaration=body.find(node=>node.type==='VariableDeclaration'&&node.declarations.some(d=>d.id.name===name));
  vm.runInContext(source.slice(declaration.start,declaration.end),context);
 }
-for(const name of ['taskContextHTML','taskHTML']) {
+for(const name of ['dataTableHTML','sqlTablesHTML','taskContextHTML','taskHTML']) {
  const fn=body.find(node=>node.type==='FunctionDeclaration'&&node.id.name===name);
  vm.runInContext(source.slice(fn.start,fn.end),context);
 }
@@ -33,3 +33,15 @@ for(const chapter of course.chapters)for(const lesson of chapter.lessons) {
 const folder=course.chapters.flatMap(c=>c.lessons).find(l=>l.id==='start-folder');
 assert.equal(folder.task.mode,'html');assert(folder.task.contextCode.includes('images/'));
 console.log(`PASS: ${count} independent learning tasks render with self-contained data and PA help above the editor. No original source readings are published.`);
+
+const sqlIntro=course.chapters.flatMap(c=>c.lessons).find(l=>l.id==='sql-select');
+context.sqlIntro=sqlIntro;
+const sqlHTML=vm.runInContext('taskHTML(sqlIntro,{code:sqlIntro.task.starter})',context);
+assert.equal((sqlHTML.match(/<table /g)||[]).length,2,'Input and expected rows must be tables');
+assert(sqlHTML.includes('<th scope="col">price</th>'));
+assert(sqlHTML.includes('<details class="exercise-data sql-setup">'),'Setup is collapsed, optional material');
+assert(!sqlHTML.includes('<details class="exercise-data sql-setup" open'));
+assert(!sqlHTML.includes('&quot;price&quot;'),'The expected SQL result must not be JSON');
+const escaped=vm.runInContext('dataTableHTML([{name:"<img src=x onerror=alert(1)>"}],"<script>")',context);
+assert(!escaped.includes('<img'));assert(escaped.includes('&lt;img'));assert(escaped.includes('&lt;script&gt;'));
+console.log('PASS: beginner SQL input/results render as accessible tables, setup stays collapsed, and cell content is escaped.');

@@ -49,6 +49,7 @@
           case 'textContains': passed = !!el && el.textContent.includes(t.value); break;
           case 'absent': passed = !el; break;
           case 'value': passed = !!el && el.value === t.value; break;
+          case 'storage': passed = localStorage.getItem(t.key) === t.value; break;
           case 'style': passed = !!el && getComputedStyle(el).getPropertyValue(t.name).trim() === t.value; break;
           case 'custom': passed = !!el && getComputedStyle(el).getPropertyValue(t.name).trim() === t.value; break;
           case 'pseudo': passed = !!el && getComputedStyle(el, t.pseudo).getPropertyValue(t.name).includes(t.includes); break;
@@ -87,6 +88,8 @@
       let userCode='';
       if(task.mode==='dom'){
         try{userCode=window.TW_EDITOR.guard(code);}catch(e){userCode=`throw new Error(${JSON.stringify(e.message)});`;}
+        const initial=JSON.stringify(task.storage||{}).replace(/</g,'\\u003c');
+        userCode='const __twStorage='+initial+';Object.defineProperty(window,"localStorage",{value:{getItem:key=>Object.hasOwn(__twStorage,key)?String(__twStorage[key]):null,setItem:(key,value)=>{__twStorage[key]=String(value);},removeItem:key=>{delete __twStorage[key];},clear:()=>{for(const key of Object.keys(__twStorage))delete __twStorage[key];}},configurable:true});\n'+userCode;
         const actions=JSON.stringify(task.actions||[]).replace(/</g,'\\u003c');
         userCode=`let __twError='';try{${userCode}\n}catch(e){__twError=e.message;}\nsetTimeout(()=>{try{for(const action of ${actions}){const el=action.selector?document.querySelector(action.selector):document;if(action.type==='fill'){el.value=action.value;el.dispatchEvent(new Event(action.event||'input',{bubbles:true}));}if(action.type==='click')el.click();if(action.type==='check'){el.checked=action.checked;el.dispatchEvent(new Event('change',{bubbles:true}));}if(action.type==='key')document.dispatchEvent(new KeyboardEvent('keydown',{key:action.key,altKey:!!action.altKey,bubbles:true}));}}catch(e){__twError=e.message;}},40);`;
         userCode=`window.addEventListener('error',e=>{__twError=e.message;});\n`+userCode;
@@ -96,7 +99,8 @@
       doc.body.append(script);
     } else if(task.mode==='dom'){
       const script=doc.createElement('script');script.setAttribute('nonce',nonce);
-      script.textContent=window.TW_EDITOR.guard(code).replace(/<\/script/gi,'<\\/script');doc.body.append(script);
+      const initial=JSON.stringify(task.storage||{}).replace(/</g,'\\u003c');
+      script.textContent=('const __twStorage='+initial+';Object.defineProperty(window,"localStorage",{value:{getItem:key=>Object.hasOwn(__twStorage,key)?String(__twStorage[key]):null,setItem:(key,value)=>{__twStorage[key]=String(value);},removeItem:key=>{delete __twStorage[key];},clear:()=>{for(const key of Object.keys(__twStorage))delete __twStorage[key];}},configurable:true});\n'+window.TW_EDITOR.guard(code)).replace(/<\/script/gi,'<\\/script');doc.body.append(script);
     }
     return '<!doctype html>\n' + doc.documentElement.outerHTML;
   }
@@ -205,7 +209,7 @@
       } catch (e) { fail(e.message); }
     });
   }
-  async function check(task, code, onCancel) {
+  async function checkSingle(task, code, onCancel) {
     if (['html','css','dom'].includes(task.mode)) return checkWeb(task, code, onCancel);
     if (task.mode === 'js') return checkJS(task, code, onCancel);
     if (['sql','scss','ejs'].includes(task.mode)) {
@@ -233,6 +237,19 @@
       } catch (e) { return [{ label:'Sintaxa JSON', passed:false, error:e.message }]; }
     }
     return [{ label:'Răspunsul cerut', expected:task.solution, actual:code.trim(), passed:code.trim() === task.solution.trim() }];
+  }
+  async function check(task, code, onCancel) {
+    if(!task.variants?.length || ['node','express'].includes(task.mode))return checkSingle(task,code,onCancel);
+    const results=[];
+    let cancelled=false,stop;
+    onCancel?.(()=>{cancelled=true;stop?.();});
+    for(const variant of [{},...task.variants]){
+      if(cancelled)break;
+      const output=await checkSingle({...task,...variant,variants:undefined},code,cancel=>{stop=cancel;if(cancelled)cancel();});
+      results.push(...output.map(row=>({...row,label:(variant.label||'Date inițiale')+' · '+row.label})));
+    }
+    if(cancelled&&!results.some(row=>!row.passed))results.push({label:'Verificare oprită.',passed:false});
+    return results;
   }
   window.TW_RUNNER = { check, preview };
 })();

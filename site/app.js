@@ -75,7 +75,7 @@
     const resume = resumeLesson();
     main.innerHTML = `<section class="hero"><div><div class="eyebrow">TEHNICI WEB · INFO ID 26</div><h1>Din prima linie,<br>până la un site complet.</h1><p class="lead">Înveți conceptele prin exemple și exerciții în browser. Explicațiile sunt în română, iar codul este în engleză. Pentru exerciții nu ai nevoie de fișierele unui proiect extern.</p><a class="button" href="#lectie/${resume.id}/${startStep(resume)}">${state.resume ? 'Continuă lecția' : 'Începe cu prima lecție'} <span aria-hidden="true">→</span></a></div><div class="hero-visual" aria-hidden="true"><small>DIN COD ÎN PAGINĂ</small><div class="mini-window"><div class="window-dots">● ● ●</div><pre>&lt;h1&gt;Hello, web!&lt;/h1&gt;\n\nh1 {\n  color: #6952ce;\n}</pre></div><div class="mini-result"><span>REZULTAT</span><strong>Hello, web!</strong></div></div></section>
       <div class="chapter-heading"><h2>Traseul tău de învățare</h2><span>${course.chapters.length} capitole · ${lessons.length} lecții · ${lessons.length} exerciții</span></div>
-      <div class="course-shortcuts"><a class="secondary" href="/project/" target="_blank" rel="noopener">Vezi exemplul separat ↗</a></div><div class="toolbar"><label for="search">Găsește o lecție<input id="search" type="search" placeholder="De exemplu: grid, JSON, funcții" autocomplete="off"></label></div>
+      <div class="course-shortcuts"><a class="secondary" href="/project/" target="_blank" rel="noopener">Proiect Website ↗</a><a class="secondary" href="/examen">Pregătire Examen →</a></div><div class="toolbar"><label for="search">Găsește o lecție<input id="search" type="search" placeholder="De exemplu: grid, JSON, funcții" autocomplete="off"></label></div>
       <div id="chapter-list" class="chapter-list" style="margin-top:20px"></div>
       <details class="tools"><summary>Progres și alte opțiuni</summary><p>Procentul numără întrebările corecte și exercițiile verificate. Modificarea unei soluții cere o nouă verificare. Lecțiile sunt accesibile pentru recapitulare, în ordinea recomandată din traseu.</p><p>Cursul explică tehnici generale prin exemple independente. Exercițiile din browser includ datele de lucru; pașii de terminal descriu fișierele pe care le creezi singur. Exercițiile și întrebările sunt create pentru platformă, nu sunt subiecte oficiale de examen.</p><p>HTML/CSS rulează în previzualizare; JavaScript în teste izolate cu limită de timp. SQL, SCSS și EJS rulează în browser. Node și Express folosesc evaluatorul platformei. Fișierele din exercițiile fs sunt virtuale; nu modifică fișierele tale personale. Exemplele de integrare arată cum combini tehnologiile. Aplicația de la /project/ rămâne o demonstrație separată. Traseul nu confirmă un barem de examen.</p><p>Verificările urmăresc cerința exercițiului, nu sunt un validator HTML complet și nu demonstrează corectitudinea pentru orice intrare. Pentru o pagină proprie folosește și <a href="https://validator.w3.org/nu/" target="_blank" rel="noopener noreferrer">validatorul HTML</a> și <a href="https://jigsaw.w3.org/css-validator/" target="_blank" rel="noopener noreferrer">validatorul CSS</a>.</p></details>`;
     renderChapters('');
@@ -102,8 +102,8 @@
     const nextLesson = lessons[lessons.findIndex(x => x.id === l.id)+1];
     const canContinue = step === 2 ? quizDone(l) : step === 3 ? codeDone(l) : true;
     let body;
-    if (step === 0) body = `<p>${rich(l.intro)}</p><ul class="concept-points">${l.points.map(p => `<li>${rich(p)}</li>`).join('')}</ul>`;
-    if (step === 1) body = `<h2>Ce face acest cod?</h2>${codeBlock(l.example,l.task.mode)}<p>${rich(l.explain)}</p>`;
+    if (step === 0) body = `${learningIntroHTML(l)}<p>${rich(l.intro)}</p><ul class="concept-points">${l.points.map(p => `<li>${rich(p)}</li>`).join('')}</ul>`;
+    if (step === 1) body = `<h2>${l.example?'Ce face acest cod?':'Urmărește exemplul'}</h2>${l.task.mode==='sql'?sqlTablesHTML(l.task):''}${l.exampleTables?l.exampleTables.map(t=>dataTableHTML(t.rows,'Tabelul '+t.name,t.columns)).join(''):''}${l.example?codeBlock(l.example,l.task.mode):''}${l.exampleResult?dataTableHTML(l.exampleResult,'Rezultatul exemplului'):''}<p>${rich(l.explain)}</p>${notationHTML(l)}${l.walkthrough?.length?`<ol class="code-walkthrough">${l.walkthrough.map(item=>`<li>${rich(item)}</li>`).join('')}</ol>`:''}`;
     if (step === 2) body = `<h2>${rich(l.quiz.question)}</h2><div class="quiz-options">${l.quiz.options.map((o,i) => `<button class="quiz-option ${quizDone(l) && i === l.quiz.correct ? 'right' : ''}" data-answer="${i}" ${quizDone(l) ? 'disabled' : ''}><span class="letter">${String.fromCharCode(65+i)}</span><span>${rich(o)}</span></button>`).join('')}</div><p id="quiz-feedback" class="feedback ${quizDone(l) ? 'good' : ''}" role="status">${quizDone(l) ? `Corect. ${esc(l.quiz.explanation)}` : ''}</p>`;
     if (step === 3) body = taskHTML(l,r);
     if (step === 4) body = `<div class="success-badge" aria-hidden="true">✓</div><div class="eyebrow">AI SCRIS. AI VERIFICAT.</div><h2>${esc(l.title)}</h2><p>Întrebarea și exercițiul sunt finalizate. Poți reveni oricând pentru recapitulare.</p><div class="finish-total">${updateProgress()}%</div><p class="source">din întrebările și exercițiile întregului traseu</p>`;
@@ -134,12 +134,37 @@
     feedback.textContent = `Corect. ${l.quiz.explanation}`;
     document.querySelector('#continue').disabled = false;
   }
+  function dataTableHTML(rows,caption,columns) {
+    if(!Array.isArray(rows))return '';
+    columns ||= [...new Set(rows.flatMap(row=>Object.keys(row||{})))];
+    if(!columns.length)return `<p class="table-empty">${esc(caption)}: niciun rând.</p>`;
+    const cell=value=>value===null?'<span class="table-null">NULL</span>':esc(Array.isArray(value)?JSON.stringify(value):value);
+    return `<div class="data-table-wrap" role="region" aria-label="${esc(caption)}" tabindex="0"><table class="data-table"><caption>${esc(caption)}</caption><thead><tr>${columns.map(name=>`<th scope="col">${esc(name)}</th>`).join('')}</tr></thead><tbody>${rows.length?rows.map(row=>`<tr>${columns.map(name=>`<td>${cell(row[name])}</td>`).join('')}</tr>`).join(''):`<tr><td colspan="${columns.length}">Niciun rând.</td></tr>`}</tbody></table></div>`;
+  }
+  function sqlTablesHTML(t) {
+    return (t.tables||[]).map(table=>dataTableHTML(table.rows,'Tabelul '+table.name,t.visibleColumns||table.columns)+(table.totalRows>table.rows.length?`<p class="table-note">Sunt afișate ${table.rows.length} din ${table.totalRows} de rânduri.</p>`:'')).join('');
+  }
+  function notationHTML(l) {
+    return l.notation?.length?`<details class="notation-help"><summary>Explică simbolurile și operațiile din exemplu</summary><ul>${l.notation.map(item=>`<li>${rich(item)}</li>`).join('')}</ul></details>`:'';
+  }
+  function learningIntroHTML(l) {
+    const learning=l.chapter?.learning;
+    if(!learning)return '';
+    if(l.chapter.lessons[0].id!==l.id){const previous=byId.get(l.prerequisites?.[0]);return previous?`<p class="lesson-prerequisite">Pasul anterior: <a href="#lectie/${previous.id}/0">${esc(previous.title)}</a></p>`:'';}
+    const links=learning.prerequisites.filter(id=>byId.has(id)).map(id=>`<a href="#lectie/${id}/0">${esc(byId.get(id).title)}</a>`);
+    return `<aside class="learning-start"><p>${rich(learning.goal)}</p>${links.length?`<p>Înainte de acest capitol: ${links.join(' · ')}</p>`:'<p>Poți începe aici de la zero.</p>'}</aside>`;
+  }
   function taskContextHTML(t) {
     let out='';
-    if(t.contextCode) out += `<div class="exercise-data"><h3>${esc(t.contextLabel || 'Datele exercițiului')}</h3>${codeBlock(t.contextCode,t.mode==='sql'?'sql':'text')}</div>`;
+    if(t.tables?.length)out+=`<div class="exercise-data"><h3>Baza de date de la care pornești</h3>${sqlTablesHTML(t)}</div>`;
+    if(t.mode==='sql'){
+      if(!t.tables?.length)out+='<p class="exercise-data">Baza de antrenament este goală. Creezi doar structura cerută în exercițiu.</p>';
+      if(t.contextCode)out+=`<details class="exercise-data sql-setup"><summary>SQL-ul de pregătire (opțional)</summary><p>Acest cod este executat automat. Nu trebuie să îl scrii sau să îl înțelegi înaintea exercițiului curent.</p>${codeBlock(t.contextCode,'sql')}</details>`;
+    }
+    if(t.contextCode&&t.mode!=='sql') out += `<div class="exercise-data"><h3>${esc(t.contextLabel || 'Datele exercițiului')}</h3>${codeBlock(t.contextCode,t.mode==='sql'?'sql':'text')}</div>`;
     if(t.fixture) out += `<details class="exercise-data" open><summary>HTML furnizat</summary>${codeBlock(t.fixture,'html')}</details>`;
     if(t.inputData) out += `<div class="exercise-data"><h3>Datele primite de template</h3>${codeBlock(format(t.inputData),'json')}</div>`;
-    if(t.expectedResult !== undefined) out += `<div class="exercise-data"><h3>Rezultatul cerut</h3>${codeBlock(format(t.expectedResult),'json')}</div>`;
+    if(t.expectedResult !== undefined) out += `<div class="exercise-data"><h3>Rezultatul cerut</h3>${t.mode==='sql'?dataTableHTML(t.expectedResult,'Rezultatul cerut'):codeBlock(format(t.expectedResult),'json')}</div>`;
     if(t.files && Object.keys(t.files).length) out += `<details class="exercise-data" open><summary>Fișierele virtuale furnizate</summary>${Object.entries(t.files).map(([name,content])=>`<p><code class="required-text">${esc(name)}</code></p>${codeBlock(content,'text')}`).join('')}</details>`;
     if(t.partials && Object.keys(t.partials).length) out += `<details class="exercise-data" open><summary>Fragmentele EJS disponibile</summary>${Object.entries(t.partials).map(([name,content])=>`<p><code class="required-text">${esc(name)}</code></p>${codeBlock(content,'ejs')}`).join('')}</details>`;
     if(t.actions?.length) out += `<p class="exercise-data">După executarea codului, verificarea simulează: ${t.actions.map(a=>`${esc({click:'clic pe',fill:'introducerea valorii în',check:'schimbarea bifei pentru',key:'apăsarea tastei'}[a.type] || a.type)} <code class="required-text">${esc(a.selector || a.key || 'document')}</code>${a.value!==undefined?` cu valoarea <code class="required-text">${esc(a.value)}</code>`:''}`).join('; ')}.</p>`;
@@ -232,7 +257,7 @@
     finally { if (generation === routeGeneration) { running = false; cancelRun = null; button.disabled = false; stop.hidden = true; } }
     if (generation !== routeGeneration || record(l).code !== code) return;
     const passed = results.length > 0 && results.every(t => t.passed === true);
-    output.innerHTML = `<ul>${results.map(t => `<li class="${t.passed?'pass':'fail'}"><strong>${t.passed?'✓':'✕'} ${esc(t.label)}</strong>${t.error?`<p>${esc(t.error)}</p>`:''}${Object.hasOwn(t,'input')?`<pre>Intrare: ${esc(format(t.input))}</pre>`:''}${Object.hasOwn(t,'expected')?`<pre>Așteptat: ${esc(format(t.expected))}\nObținut: ${esc(format(t.actual))}</pre>`:''}</li>`).join('')}</ul>`;
+    output.innerHTML = `<ul>${results.map(t => `<li class="${t.passed?'pass':'fail'}"><strong>${t.passed?'✓':'✕'} ${esc(t.label)}</strong>${t.error?`<p>${esc(t.error)}</p>`:''}${Object.hasOwn(t,'input')?`<pre>Intrare: ${esc(format(t.input))}</pre>`:''}${Object.hasOwn(t,'expected')?(l.task.mode==='sql'?dataTableHTML(t.expected,'Rezultat așteptat')+dataTableHTML(t.actual,'Rezultat obținut'):`<pre>Așteptat: ${esc(format(t.expected))}\nObținut: ${esc(format(t.actual))}</pre>`):''}</li>`).join('')}</ul>`;
     status.className = `feedback ${passed?'good':'bad'}`;
     status.textContent = passed ? 'Toate verificările au trecut. Poți continua.' : 'Mai ai ceva de ajustat. Verifică cerințele marcate și folosește indiciul dacă ai nevoie.';
     r.verified = passed ? code : null;

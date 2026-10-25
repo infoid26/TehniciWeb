@@ -28,7 +28,10 @@
     "check:project": "node scripts/check_project.mjs",
     "build:project-video": "node scripts/build_project_video.mjs",
     "check:project:browser": "node scripts/check_project_browser.mjs",
-    "check:workshop": "node scripts/check_workshop.mjs"
+    "check:workshop": "node scripts/check_workshop.mjs",
+    "check:progression": "node scripts/check_progression.mjs",
+    "check:exam": "node scripts/check_exam_cli.mjs",
+    "check:exam:browser": "node scripts/check_exam.mjs"
   },
   "dependencies": {
     "express": "^5.1.0",

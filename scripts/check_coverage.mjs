@@ -4,8 +4,8 @@ import assert from 'node:assert/strict';
 const context={window:{}};
 vm.runInNewContext(await fs.readFile('site/course.js','utf8'),context);
 const course=context.window.TW_COURSE;
-assert.equal(course.chapters.length,40);
-assert.equal(course.chapters.flatMap(c=>c.lessons).length,775);
+assert.equal(course.chapters.length,42);
+assert.equal(course.chapters.flatMap(c=>c.lessons).length,827);
 assert(!course.references);
 for(const chapter of course.chapters){
  assert(!chapter.source);
@@ -14,4 +14,4 @@ for(const chapter of course.chapters){
 assert(!(await fs.readdir('site')).some(name=>name==='sources.js'||name.startsWith('source-')));
 const app=await fs.readFile('site/app.js','utf8');
 for(const text of ['Sursa acestei lecții','download-code','Ctrl + Enter:','href="#surse"','TW_SOURCES'])assert(!app.includes(text),text);
-console.log('PASS: all 775 lessons retained; original reference library, source images, lesson citations and editor download UI removed.');
+console.log('PASS: 827 lessons including the aligned Dulcelind workshop; original reference library, source images, lesson citations and editor download UI removed.');

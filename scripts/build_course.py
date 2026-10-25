@@ -7,8 +7,10 @@ import json
 from pathlib import Path
 from standalone_course import adapt
 adapt()
+from course_dulcelind import align
+align()
 learning=[c for c in chapters if not c['lessons'] or not c['lessons'][0].get('reading')]
-order=['start','web-foundations','html-start','html-semantics-complete','html-media','html-controls-complete','mathml','mathml-details','css-basics','css-selectors-complete','css-layout','css-effects-complete','css-details','js-start','js-scope-complete','js-functions-complete','js-arrays','js-collections-complete','js-text','regex-complete','dates-complete','js-details','dom','browser-integration','storage','json','json-complete','scss','scss-complete','node','node-files-complete','node-integration','express','http-routing-complete','ejs','templates-data-complete','sql','sql-schema-complete','sql-queries-complete','project']
+order=['start','web-foundations','html-start','html-semantics-complete','html-media','html-controls-complete','mathml','mathml-details','css-basics','css-selectors-complete','css-layout','css-effects-complete','css-details','js-start','js-scope-complete','js-functions-complete','js-arrays','js-collections-complete','js-text','regex-complete','dates-complete','js-details','dom','browser-integration','storage','json','json-complete','scss','scss-complete','node','node-files-complete','node-integration','express','http-routing-complete','ejs','templates-data-complete','sql','sql-schema-complete','sql-queries-complete','dulcelind-setup','project','dulcelind-azure']
 assert set(order)=={c['id'] for c in learning},'Update the chapter order when adding curriculum'
 learning.sort(key=lambda c:order.index(c['id']))
 # Publish only independent lessons; do not embed source files or slide readings.

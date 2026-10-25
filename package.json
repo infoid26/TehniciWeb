@@ -27,7 +27,8 @@
     "check:sandboxes": "node scripts/check_sandboxes.mjs",
     "check:project": "node scripts/check_project.mjs",
     "build:project-video": "node scripts/build_project_video.mjs",
-    "check:project:browser": "node scripts/check_project_browser.mjs"
+    "check:project:browser": "node scripts/check_project_browser.mjs",
+    "check:workshop": "node scripts/check_workshop.mjs"
   },
   "dependencies": {
     "express": "^5.1.0",

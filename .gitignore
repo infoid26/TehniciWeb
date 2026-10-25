@@ -5,3 +5,5 @@ __pycache__/
 Curs/
 Laborator/
 tools/
+
+.local/

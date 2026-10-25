@@ -31,7 +31,7 @@ console.log('Failures:',JSON.stringify(results.filter(r=>!r.passed||!r.negativeR
 assert(results.every(r=>r.passed&&r.negativeRejected),'Server exercise failures');
 const server=createServer();const handler=server.listeners('request')[0];
 try {
- for(const [route,status,text] of [['/',200,'Tehnici Web'],['/site/journey.css',200,'.node-bubble'],['/project/',200,'Sweet Corner'],['/project/products',200,'Chocolate cake'],['/project/product/1',200,'Chocolate cake'],['/project/product/abc',400,'Invalid request'],['/project/product/999',404,'Page not found'],['/project/missing',404,'Page not found'],['/project/assets/css/site.css',200,'.product-card'],['/project/assets/images/cake-300.webp',200,null]]) {
+ for(const [route,status,text] of [['/',200,'Tehnici Web'],['/site/journey.css',200,'.node-bubble'],['/project/',200,'Dulcelind'],['/project/produse',200,'Savarin'],['/project/produs/1',200,'Savarin'],['/project/produs/abc',400,'Cerere gresita'],['/project/produs/999',404,'404 -'],['/project/missing',404,'404 -'],['/project/resurse/css/general.css',200,'grid-pagina'],['/project/resurse/imagini/macarons.jpg',200,null]]) {
   const response=await inject(handler,{path:route,timeout:20000});assert.equal(response.status,status,route);if(text)assert(response.body.includes(text),route);console.log(status,route);
  }
  const res=await inject(handler,{path:'/api/check',method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:'node-read',code:lessons.find(l=>l.id==='node-read').task.solution})});assert.equal(res.status,200);assert(JSON.parse(res.body).results.every(t=>t.passed));

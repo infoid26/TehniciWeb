@@ -1,0 +1,10 @@
+%grup-util{ 
+  padding-left:10%;
+  padding-right:20%;
+  color:black;  
+}
+
+#box{
+  @extend %grup-util;
+  background:yellow;
+}

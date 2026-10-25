@@ -1,0 +1,20 @@
+html{
+    --dimensiune-text:13px;
+}
+
+body{
+    --spatiere--pagina:50px;
+    
+}
+
+
+#grid-pagina{
+    grid-template-areas: "z-welcome z-welcome"
+                         "z-produse z-produse"
+                         "z-promotii z-promotii"
+                         "z-fig1 z-anunturi"
+                         "z-fig2 z-anunturi"
+                         "z-fig3 z-anunturi"
+                         "z-orar z-orar"
+                         "z-index-intrebari z-index-intrebari";
+}

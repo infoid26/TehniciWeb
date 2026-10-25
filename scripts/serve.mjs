@@ -65,7 +65,7 @@ export function createServer(options={}) {
       if(pathname==='/api/health'&&req.method==='GET'){json(res,200,{status:'ok',service:'tehnici-web',labs:evaluatorUrl?'remote':production?'not-configured':'development'});return;}
       if(pathname==='/project' || pathname.startsWith('/project/')) {
         if(pathname==='/project') { res.writeHead(302,{Location:'/project/'});res.end();return; }
-        projectPromise ||= require('../project-reference/app.js').createApp().then(app=>{app.locals.basePath='/project';return app;});
+        projectPromise ||= require('../project-reference/app.js').createApp({env}).then(app=>{app.locals.basePath='/project';return app;});
         const app=await projectPromise;
         req.url=req.url.slice('/project'.length);
         app(req,res);

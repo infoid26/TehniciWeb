@@ -1,74 +1,88 @@
 const express = require('express');
-const path = require('path');
-const fs = require('fs');
-const { createProductStore } = require('./lib/products');
+const path = require('node:path');
+const fs = require('node:fs');
+const {createProductStore} = require('./lib/products');
+const {projectDatabaseSettings} = require('./lib/database');
 
-async function createApp(options = {}) {
-  const app = express();
-  app.locals.basePath = '';
-  const store = await createProductStore(options.databaseUrl ?? process.env.DATABASE_URL);
-  const gallery = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/gallery.json'), 'utf8'));
-  const errors = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/errors.json'), 'utf8'));
-  const home = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/home.json'), 'utf8'));
+// Rebase local URLs after EJS rendering, including dynamically generated images.
+function projectUrls(html, base) {
+  return html.replace(/((?:href|src|srcset|poster|action)\s*=\s*["']?)(\/(?!\/)|(?=resurse\/))/gi, '$1'+base+'/');
+}
+async function createApp(options={}) {
+  const app=express();
+  app.locals.basePath='/project';
   app.disable('x-powered-by');
-  app.set('view engine', 'ejs');
-  app.set('views', path.join(__dirname, 'views'));
-  app.use('/assets', express.static(path.join(__dirname, 'public'), {redirect:false,index:false}));
-  app.use('/vendor', express.static(path.join(__dirname, '../node_modules/bootstrap/dist')));
-  app.use((req, res, next) => {
-    res.locals.dataMode = store.mode;
+  app.set('view engine','ejs');
+  app.set('views',path.join(__dirname,'views'));
+  const errors=JSON.parse(fs.readFileSync(path.join(__dirname,'resurse/json/erori.json'),'utf8'));
+  const gallery=JSON.parse(fs.readFileSync(path.join(__dirname,'resurse/json/galerie.json'),'utf8'));
+  const images=gallery.imagini.map(image=>({...image,
+    fisier:'/'+gallery.cale_galerie+'/'+image.fisier,
+    fisier_mediu:'/'+gallery.cale_galerie+'/mediu/'+path.parse(image.fisier).name+'.webp'}));
+  // The home page and assets do not need SQL; initialize it only for the catalog.
+  let storePromise;
+  const store=()=>storePromise??=(createProductStore(options.databaseSettings??(options.databaseUrl?{connectionOptions:{connectionString:options.databaseUrl},schema:'dulcelind'}:projectDatabaseSettings(options.env??process.env))).catch(error=>{storePromise=undefined;throw error;}));
+  app.locals.close=async()=>{if(storePromise)await(await storePromise).close();};
+  app.use((req,res,next)=>{
+    const render=res.render.bind(res);
+    res.render=(view,locals={})=>render(view,locals,(error,html)=>{
+      if(error)return next(error);
+      res.send(projectUrls(html,app.locals.basePath));
+    });
     next();
   });
-  const showError = (res, status) => {
-    const error = errors[String(status)] || errors['500'];
-    return res.status(status).render('pages/error', { title: error.title, error });
-  };
-  app.get(['/', '/index', '/home'], (req, res) => {
-    res.render('pages/home', { title: 'Fresh cakes and pastries', images: gallery.images, ...home });
+  app.get('/resurse/css/:file',(req,res,next)=>{
+    if(!/^[\w.-]+\.css$/.test(req.params.file))return next();
+    const filename=path.join(__dirname,'resurse/css',req.params.file);
+    if(!fs.existsSync(filename))return next();
+    const css=fs.readFileSync(filename,'utf8').replace(/(url\(\s*["']?)\/resurse\//gi,'$1'+app.locals.basePath+'/resurse/');
+    res.type('css').send(css);
   });
-  app.get(['/about','/despre'], (req, res) => res.render('pages/about', { title: 'About our bakery', images: gallery.images }));
-  app.get('/contact', (req, res) => res.render('pages/contact', { title: 'Visit Sweet Corner' }));
-  const recipes={
-    fruit:{name:'Fruit bowl',ingredients:['Seasonal fruit','Plain yogurt','A little honey'],steps:['Wash and slice the fruit.','Add yogurt to a bowl.','Arrange the fruit and finish with honey.'],image:'tea'},
-    chocolate:{name:'Chocolate cup',ingredients:['Dark chocolate','Warm milk','Fresh berries'],steps:['Melt the chocolate gently.','Stir in a little warm milk.','Serve in a cup with berries.'],image:'cake'},
-    vanilla:{name:'Vanilla sundae',ingredients:['Vanilla ice cream','Sliced banana','Roasted almonds'],steps:['Place two scoops in a glass.','Add banana slices.','Sprinkle with almonds and serve immediately.'],image:'icecream'},
-  };
-  app.get('/recipe/:slug',(req,res)=>Object.hasOwn(recipes,req.params.slug)?res.render('pages/recipe',{recipe:recipes[req.params.slug]}):showError(res,404));
-  app.get('/products', async (req, res, next) => {
-    try {
-      const type = typeof req.query.type === 'string' ? req.query.type : 'all';
-      if (!['all', 'cake', 'pastry', 'icecream'].includes(type)) return showError(res, 400);
-      const products = await store.list(type);
-      const categories = await store.categories();
-      res.render('pages/products', { title: 'Our products', products, categories, selectedType: type });
-    } catch (error) { next(error); }
+  app.use('/resurse',express.static(path.join(__dirname,'resurse'),{redirect:false,index:false,dotfiles:'deny'}));
+  app.use('/dist',express.static(path.join(__dirname,'../node_modules/bootstrap/dist'),{redirect:false,index:false}));
+  app.get('/favicon.ico',(req,res)=>res.sendFile(path.join(__dirname,'resurse/imagini/favicon/favicon.ico')));
+  function showError(res,code) {
+    const error=errors.info_erori.find(e=>e.identificator===code)||errors.eroare_default;
+    return res.status(code>=400?code:500).render('pagini/eroare',{
+      titlu:error.titlu,text:error.text,imagine:errors.cale_baza+'/'+error.imagine});
+  }
+  app.get(['/','/index','/home'],(req,res)=>res.render('pagini/index',{imagini:images}));
+  app.get('/despre',(req,res)=>res.render('pagini/despre'));
+  app.get('/produse',async(req,res,next)=>{
+    try{
+      const type=req.query.tip;
+      if(type!==undefined&&(typeof type!=='string'||!['cofetarie','patiserie','gelaterie'].includes(type)))return showError(res,400);
+      const db=await store();
+      res.render('pagini/produse',{produse:await db.list(type),optiuni:await db.categories()});
+    }catch(error){next(error);}
   });
-  app.get('/product/:id', async (req, res, next) => {
-    try {
-      if (!/^\d+$/.test(req.params.id) || !Number.isSafeInteger(Number(req.params.id))) return showError(res, 400);
-      const product = await store.find(Number(req.params.id));
-      if (!product) return showError(res, 404);
-      res.render('pages/product', { title: product.name, product });
-    } catch (error) { next(error); }
+  app.get('/produs/:id',async(req,res,next)=>{
+    try{
+      if(!/^\d+$/.test(req.params.id)||!Number.isSafeInteger(Number(req.params.id)))return showError(res,400);
+      const product=await(await store()).find(Number(req.params.id));
+      if(!product)return showError(res,404);
+      res.render('pagini/produs',{prod:product});
+    }catch(error){next(error);}
   });
-  app.get('/health', (req, res) => res.json({ ready: true, dataMode: store.mode }));
-  app.use((req, res) => showError(res, path.extname(req.path)==='.ejs'?400:(req.path==='/assets'||req.path.startsWith('/assets/')&&!path.extname(req.path))?403:404));
-  app.use((error, req, res, next) => {
-    console.error(error.message);
-    if (res.headersSent) return next(error);
-    showError(res, 500);
+  app.get('/health',async(req,res,next)=>{
+    try {const db=await store();res.json({ready:true,project:'Dulcelind',database:db.mode,...await db.health()});}
+    catch(error){next(error);}
   });
-  app.locals.close = () => store.close();
+  app.use((req,res)=>showError(res,path.extname(req.path)==='.ejs'?400:((req.path==='/resurse'||req.path.startsWith('/resurse/'))&&!path.extname(req.path))?403:404));
+  app.use((error,req,res,next)=>{
+    console.error('Dulcelind:',error.message);
+    if(res.headersSent)return next(error);
+    showError(res,500);
+  });
   return app;
 }
-
-if (require.main === module) {
-  createApp().then(app => {
-    const port = Number(process.env.PORT || 8089);
-    const server = app.listen(port, '127.0.0.1', () => console.log(`Sweet Corner: http://127.0.0.1:${port}`));
-    const stop = () => server.close(async () => { await app.locals.close(); process.exit(0); });
-    process.on('SIGINT', stop);
-    process.on('SIGTERM', stop);
-  }).catch(error => { console.error(error.message); process.exitCode = 1; });
+if(require.main===module){
+  createApp().then(app=>{
+    const parent=express();parent.get('/',(req,res)=>res.redirect('/project/'));parent.use('/project',app);
+    const port=Number(process.env.PORT||8089);
+    const server=parent.listen(port,process.env.HOST||'127.0.0.1',()=>console.log('Dulcelind: http://127.0.0.1:'+port+'/project/'));
+    const stop=()=>server.close(async()=>{await app.locals.close();process.exit(0);});
+    process.once('SIGINT',stop);process.once('SIGTERM',stop);
+  }).catch(error=>{console.error(error);process.exitCode=1;});
 }
-module.exports = { createApp };
+module.exports={createApp,projectUrls};

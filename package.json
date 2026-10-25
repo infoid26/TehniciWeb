@@ -8,6 +8,7 @@
   "description": "Curs interactiv de Tehnici Web pentru INFO ID 26.",
   "scripts": {
     "start": "node scripts/serve.mjs",
+    "setup:project-db": "node scripts/setup_project_db.mjs",
     "check": "node scripts/check.mjs",
     "check:browser": "node scripts/check_complete.mjs",
     "build:course": "python scripts/build_course.py",

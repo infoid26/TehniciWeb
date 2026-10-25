@@ -1,24 +1,29 @@
-const fs = require('fs/promises');
-const path = require('path');
-async function createProductStore(databaseUrl) {
-  let database, mode;
-  if (databaseUrl) {
-    const { Pool } = require('pg');
-    database = new Pool({ connectionString: databaseUrl });
-    mode = 'PostgreSQL';
-    // Initialize a separate training database with data/products.sql before connecting.
+const fs = require('node:fs/promises');
+const path = require('node:path');
+const {initializeDatabase} = require('./database');
+async function createProductStore(settings = {}) {
+  if (typeof settings === 'string') settings = {connectionOptions: {connectionString: settings}, schema: 'dulcelind'};
+  let database;
+  if (settings.connectionOptions) {
+    const {Pool} = require('pg');
+    database = new Pool({...settings.connectionOptions, connectionTimeoutMillis: 5000, options: '-c search_path=dulcelind'});
+    try {
+      const client = await database.connect();
+      try {await initializeDatabase(client);} finally {client.release();}
+    } catch (error) {await database.end(); throw error;}
   } else {
-    const { PGlite } = await import('@electric-sql/pglite');
+    const {PGlite} = await import('@electric-sql/pglite');
     database = new PGlite();
-    await database.exec(await fs.readFile(path.join(__dirname, '../data/products.sql'), 'utf8'));
-    mode = 'PostgreSQL in memory (training)';
+    try {await database.exec(await fs.readFile(path.join(__dirname, '../data/prajituri.sql'), 'utf8'));}
+    catch (error) {await database.close(); throw error;}
   }
   return {
-    mode,
-    async list(type) { return (await database.query(type === 'all' ? 'SELECT * FROM products ORDER BY id' : 'SELECT * FROM products WHERE type = $1 ORDER BY id', type === 'all' ? [] : [type])).rows; },
-    async find(id) { return (await database.query('SELECT * FROM products WHERE id = $1', [id])).rows[0]; },
-    async categories() { return (await database.query('SELECT unnest(enum_range(NULL::product_category)) AS name')).rows.map(row => row.name); },
-    async close() { if (databaseUrl) await database.end(); else await database.close(); }
+    mode: settings.connectionOptions ? 'PostgreSQL' : 'PGlite',
+    async health() {return (await database.query('SELECT count(*)::int AS products FROM prajituri')).rows[0];},
+    async list(type) {return (await database.query('SELECT * FROM prajituri' + (type ? ' WHERE tip_produs = $1' : '') + ' ORDER BY id', type ? [type] : [])).rows;},
+    async find(id) {return (await database.query('SELECT * FROM prajituri WHERE id = $1', [id])).rows[0];},
+    async categories() {return (await database.query('SELECT unnest(enum_range(NULL::categ_prajitura))')).rows;},
+    async close() {if (settings.connectionOptions) await database.end(); else await database.close();}
   };
 }
-module.exports = { createProductStore };
+module.exports = {createProductStore};

@@ -35,6 +35,7 @@ jobs:
           npm run check:sandboxes
           npm run check:coverage
           npm run check:curriculum
+          node scripts/check_project_database.mjs
           npm run check:project
 
       - name: Bundle verified Azure Sandbox CLI

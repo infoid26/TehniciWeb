@@ -25,7 +25,7 @@
     let user=null,base=empty(),version=0,ready=false,stopped=false,busy=false,timer,retry=2000,conflict=null,imported=false;
     const message=text=>{status.textContent=text;};
     const button=(label,fn)=>{const el=document.createElement('button');el.type='button';el.className='secondary';el.textContent=label;el.addEventListener('click',fn);actions.append(el);return el;};
-    const link=(label,href)=>{const el=document.createElement('a');el.className='secondary';el.textContent=label;el.href=href;if(href.startsWith('/.auth/login/'))el.className+=' account-signin';controls.append(el);};
+    const link=(label,href)=>{const el=document.createElement('a');el.className='secondary';el.textContent=label;el.href=href;if(href.startsWith('/.auth/login/'))el.className+=' account-signin';controls.append(el);return el;};
     const cacheKey=()=>storageKey+':account:'+user.id;
     const exportLocal=()=>download('TehniciWeb-progres-local.json',JSON.stringify(getState(),null,2),'application/json');
     function persist(){
@@ -61,8 +61,12 @@
       controls.replaceChildren();
       actions.replaceChildren();
       if(user){
-        const label=document.createElement('span');label.className='account-name';label.textContent=user.name||user.email;label.title=user.email;controls.append(label);
-        link('Logout','/.auth/logout?post_logout_redirect_uri=/');
+        const signOut=link('','/.auth/logout?post_logout_redirect_uri=/');
+        signOut.className='secondary account-signout';signOut.title=user.email;
+        signOut.ariaLabel='Logout: '+(user.name||user.email);
+        const label=document.createElement('span');label.className='account-name';label.textContent=user.name||user.email;
+        const action=document.createElement('span');action.className='account-signout-label';action.textContent='Logout';
+        signOut.append(label);signOut.append(action);
       }else if(preview){
         const signIn=document.createElement('button');signIn.type='button';signIn.className='secondary account-signin';signIn.textContent='Conectare cu Microsoft';signIn.disabled=true;signIn.title='Conectarea Microsoft nu este activa pe aceasta adresa.';controls.append(signIn);
       }else link('Conectare cu Microsoft','/.auth/login/aad?post_login_redirect_uri=/');

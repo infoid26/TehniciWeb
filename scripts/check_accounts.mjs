@@ -106,8 +106,8 @@ const api=async(path,options)=>{
  remote={version:remote.version+1,progress:copy(body.progress)};return {status:200,value:remote};
 };
 const first=clientFixture({api});await first.controller.start();
-assert(first.elements.get('#account-controls').children.some(el=>el.textContent==='Ionuț Axinte'));
-assert(first.elements.get('#account-controls').children.some(el=>el.textContent==='Logout'&&el.href.startsWith('/.auth/logout')));
+assert(first.elements.get('#account-controls').children.some(el=>el.children.some(child=>child.textContent==='Ionuț Axinte')));
+assert(first.elements.get('#account-controls').children.some(el=>el.children.some(child=>child.textContent==='Logout')&&el.href.startsWith('/.auth/logout')));
 const anonymous=clientFixture({anonymous:true,api});await anonymous.controller.start();
 assert(anonymous.elements.get('#account-controls').children.some(el=>el.textContent==='Conectare cu Microsoft'&&el.href.startsWith('/.auth/login/aad')));
 first.state=progress;first.controller.save();await first.controller.flush();assert.equal(remote.version,1);
@@ -118,7 +118,7 @@ assert(Object.hasOwn(remote.progress.records,'start-file'));assert(Object.hasOwn
 const third=clientFixture({api});await third.controller.start();third.state.records['start-browser'].code='other device';third.controller.save();await third.controller.flush();
 second.state.records['start-browser'].code='local edit';second.controller.save();await second.controller.flush();
 assert(second.elements.get('#account-status').textContent.includes('Am oprit sincronizarea'));
-assert(second.elements.get('#account-controls').children.some(el=>el.textContent==='Logout'),'Conflict actions must not remove account controls');
+assert(second.elements.get('#account-controls').children.some(el=>el.children.some(child=>child.textContent==='Logout')),'Conflict actions must not remove account controls');
 const count=writes;await second.controller.flush();assert.equal(writes,count);assert.equal(remote.progress.records['start-browser'].code,'other device');
 const cached=JSON.parse(second.storage.get('progress:account:'+tenant+':'+object));assert.equal(cached.progress.records['start-browser'].code,'local edit');
 const offline=clientFixture({storage:second.storage,api:async()=>{throw new Error('offline');}});await offline.controller.start();assert.equal(offline.state.records['start-browser'].code,'local edit');

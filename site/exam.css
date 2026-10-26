@@ -103,3 +103,5 @@
 .ticket-prompt { padding:16px 0; border-top:1px solid var(--line); }
 .ticket-prompt p { line-height:1.8; }
 #exam-workspace { margin-top:24px; }
+
+.exam-restart { margin-top:40px; }

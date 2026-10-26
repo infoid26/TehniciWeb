@@ -38,8 +38,8 @@
   function controls(){
     const phase=state.phase;
     document.body.classList.add('simulation-active');
-    $('#simulation-intro').hidden=phase!=='finished';
-    $('#start-simulation').hidden=phase!=='finished';
+    $('#simulation-intro').hidden=true;
+    $('#start-simulation').hidden=true;
     $('#last-attempt').hidden=true;
     $('#simulation-panel').hidden=phase==='finished';
     $('#stage-title').textContent='Proba '+(state.index+1)+' · '+stage().name;
@@ -55,18 +55,18 @@
       preparation:'Citește enunțurile și deschide fișierele furnizate. Încă nu scrii cod. Ai cel mult 5 minute; poți începe proba mai devreme.',
       working:'Lucrează în editor și verifică ce produce codul. La predare sau la expirarea timpului, răspunsurile sunt blocate și evaluate.',
       grading:'Proba a fost predată. Răspunsurile sunt blocate și se verifică toate cerințele.',
-      submitted:'Verificarea s-a încheiat. Poți vedea rezultatele și continua cu proba următoare. Rezolvările explicate vor fi disponibile la final.',
+      submitted:'Proba a fost predată. Continuă cu următoarea probă; rezultatele și rezolvările apar numai după terminarea examenului.',
       finished:'Simulare încheiată.'
     };
     $('#phase-instructions').textContent=messages[phase];
     const preparing=phase==='preparation';
     $('#simulation-tasks').hidden=!preparing;
-    $('#simulation-tasks').innerHTML=preparing?'<h2>Biletul extras</h2>'+stage().ids.map((id,index)=>'<article class="ticket-prompt"><h3>Cerința '+(index+1)+'</h3><p>'+esc(byId.get(id).task.prompt)+'</p></article>').join(''):'';
+    $('#simulation-tasks').innerHTML=preparing?'<h2>Biletul extras</h2>'+stage().ids.map((id,index)=>'<article class="ticket-prompt"><h3>Cerința '+(index+1)+'</h3><p>'+esc(byId.get(id).task.prompt)+'</p>'+context(byId.get(id).task).replace(/<details class="exam-context">/g,'<details class="exam-context" open>')+'</article>').join(''):'';
     if(phase!=='working'){
       $('#exam-workspace').hidden=true;TW_EDITOR.clear();viewId='';
       if(phase==='submitted'){
         $('#simulation-tasks').hidden=false;
-        $('#simulation-tasks').innerHTML='<h2>Proba a fost predată</h2>'+stage().ids.map(id=>'<h3>'+esc(byId.get(id).title)+'</h3>'+resultHTML(stage().results[id],true)).join('');
+        $('#simulation-tasks').innerHTML='<h2>Proba a fost predată</h2><p>Continuă cu proba următoare. Rezultatele apar după terminarea examenului.</p>';
       }
     }
     if(phase==='working'){
@@ -147,8 +147,13 @@
     grading=false;cancelRun=null;
     if(state===current&&state.index===index&&engine.graded(state,results)){save();controls();showTask(state.selected,false);}
   }
+  function completed(){
+    return state?.phase==='finished'&&state.stages.every(part=>part.ids.length&&part.endedAt!==null&&part.ids.every(id=>Array.isArray(part.results[id])));
+  }
   function report(){
-    if(!state)return;
+    if(!completed())return;
+    document.body.classList.add('simulation-active');
+    $('#simulation-intro').hidden=true;
     TW_EDITOR.clear();viewId='';$('#exam-workspace').hidden=true;$('#simulation-panel').hidden=true;
     const report=$('#exam-report');report.hidden=false;
     const sections=state.stages.map((part,index)=>{
@@ -159,8 +164,10 @@
         return '<section class="review-question"><h4>'+esc(item.title)+'</h4><p>'+esc(item.task.prompt)+'</p>'+resultHTML(results,true)+'<details class="exam-context"><summary>Răspunsul tău</summary>'+pre(row.code)+'</details><p><strong>Explicația ta:</strong> '+esc(row.explanation||'Nu ai completat o explicație.')+'</p><details class="exam-context"><summary>Rezolvare și raționament</summary>'+pre(item.task.solution)+'<ol>'+(item.steps||[]).map(step=>'<li>'+esc(step)+'</li>').join('')+'</ol><p>'+esc(item.reasoning?.counterexample||'Încearcă și alte valori, nu numai exemplul inițial.')+'</p></details><ul>'+(item.rubric||[]).map(check=>'<li>'+esc(check)+'</li>').join('')+'</ul>'+(item.lessonId?'<a class="exam-work-link" href="/#lectie/'+encodeURIComponent(item.lessonId)+'/0" target="_blank" rel="noopener">Recapitulează în curs ↗</a>':'')+'</section>';
       }).join('')+'</article>';
     }).join('');
-    report.innerHTML='<div class="eyebrow">DUPĂ SIMULARE</div><h2>Verifică și explică soluțiile</h2><p>Acestea sunt rezultatele cerințelor de antrenament, nu o notă oficială. Un evaluator indisponibil sau o eroare de conexiune nu reprezintă o evaluare a cunoștințelor. Compară explicațiile tale cu reperele și recapitulează ce ai omis.</p><div class="review-stages">'+sections+'</div>';
-    $('#start-simulation').hidden=false;$('#start-simulation').textContent='Începe o simulare nouă';$('#last-attempt').hidden=true;
+    report.innerHTML='<div class="eyebrow">DUPĂ SIMULARE</div><h1>Rezultat Examen</h1><p>Acestea sunt rezultatele cerințelor de antrenament, nu o notă oficială. Un evaluator indisponibil sau o eroare de conexiune nu reprezintă o evaluare a cunoștințelor. Compară explicațiile tale cu reperele și recapitulează ce ai omis.</p><div class="review-stages">'+sections+'</div>';
+    report.innerHTML+='<button id="restart-simulation" class="primary exam-restart">Începe o nouă simulare</button>';
+    $('#restart-simulation').onclick=start;
+    $('#start-simulation').hidden=true;$('#last-attempt').hidden=true;
   }
   function start(){
     cancelRun?.();generation++;grading=false;
@@ -168,8 +175,16 @@
     $('#start-simulation').hidden=true;save();controls();window.scrollTo({top:0,behavior:'instant'});
   }
   function finish(){
-    if(!state||grading)return;
-    cancelRun?.();generation++;engine.finish(state);save();controls();report();window.scrollTo({top:0,behavior:'instant'});
+    cancelRun?.();cancelRun=null;generation++;grading=false;
+    TW_EDITOR.clear();viewId='';state=null;
+    try{localStorage.removeItem(storageKey);}catch{warnStorage();}
+    document.body.classList.remove('simulation-active');
+    $('#simulation-intro').hidden=false;
+    $('#start-simulation').hidden=false;$('#start-simulation').textContent='Începe simularea';
+    $('#last-attempt').hidden=true;
+    for(const id of ['simulation-panel','exam-workspace','exam-report'])$('#'+id).hidden=true;
+    $('#exam-report').innerHTML='';$('#simulation-tasks').innerHTML='';
+    window.scrollTo({top:0,behavior:'instant'});
   }
   function tick(){
     if(!state||state.phase==='finished'||grading)return;
@@ -199,7 +214,7 @@
   $('#finish-attempt').onclick=finish;
   try{
     const raw=localStorage.getItem(storageKey);
-    if(raw){state=engine.restore(JSON.parse(raw),exercises);if(state.phase==='finished'){$('#last-attempt').hidden=false;$('#last-attempt').onclick=()=>{report();window.scrollTo({top:0,behavior:'instant'});};}else{controls();if(state.selected)showTask(state.selected,false);if(state.phase==='grading')gradeStage(true);else tick();}}
+    if(raw){state=engine.restore(JSON.parse(raw),exercises);if(state.phase==='finished'){if(!completed()){finish();}else{$('#last-attempt').hidden=false;$('#last-attempt').onclick=()=>{report();window.scrollTo({top:0,behavior:'instant'});};}}else{controls();if(state.selected)showTask(state.selected,false);if(state.phase==='grading')gradeStage(true);else tick();}}
   }catch{state=null;warnStorage();}
   void window.TW_ACCOUNTS.mountHeader({returnTo:'/examen',onLogout:save});
   setInterval(tick,250);

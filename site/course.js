@@ -1959,6 +1959,83 @@ window.TW_COURSE = {
           "prerequisites": [
             "html-time"
           ]
+        },
+        {
+          "id": "reason-link-action",
+          "title": "Provocare: link sau buton?",
+          "intro": "Alege elementul după comportament: navigarea are o destinație; o acțiune în pagina curentă nu are nevoie de o adresă fictivă.",
+          "example": "<a href=\"/help\">Help</a>\n<button type=\"button\">Close</button>",
+          "explain": "Linkul oferă o destinație care poate fi deschisă și într-un tab nou. Butonul declanșează acțiunea. type=\"button\" îl împiedică să trimită accidental un formular.",
+          "points": [],
+          "quiz": {
+            "question": "Details deschide o altă pagină, iar Select alege cardul. Ce alegi?",
+            "options": [
+              "Ambele sunt linkuri cu href=\"#\".",
+              "Details este link, Select este buton.",
+              "Ambele sunt paragrafe stilizate."
+            ],
+            "correct": 1,
+            "explanation": "Linkul oferă o destinație care poate fi deschisă și într-un tab nou. Butonul declanșează acțiunea. type=\"button\" îl împiedică să trimită accidental un formular."
+          },
+          "task": {
+            "mode": "html",
+            "prompt": "Construiește Details ca link către /items/7 și Select ca buton care nu trimite formularul. Nu utiliza href=\"#\".",
+            "solution": "<a href=\"/items/7\">Details</a><button type=\"button\">Select</button>",
+            "tests": [
+              {
+                "kind": "text",
+                "selector": "a",
+                "value": "Details",
+                "label": "`a` afișează `Details`"
+              },
+              {
+                "kind": "attr",
+                "selector": "a",
+                "name": "href",
+                "value": "/items/7",
+                "label": "`a` are `href=\"/items/7\"`"
+              },
+              {
+                "kind": "text",
+                "selector": "button",
+                "value": "Select",
+                "label": "`button` afișează `Select`"
+              },
+              {
+                "kind": "attr",
+                "selector": "button",
+                "name": "type",
+                "value": "button",
+                "label": "`button` are `type=\"button\"`"
+              },
+              {
+                "kind": "absent",
+                "selector": "a[href=\"#\"]",
+                "label": "`a[href=\"#\"]` nu există"
+              }
+            ],
+            "starter": "",
+            "id": "reason-link-action"
+          },
+          "hint": "Ce se întâmplă dacă butonul este mutat într-un form?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "html-links",
+              "html-attributes"
+            ],
+            "questions": [
+              "Care control are o destinație?",
+              "Ce se întâmplă dacă butonul este mutat într-un form?"
+            ],
+            "explanation": "Linkul oferă o destinație care poate fi deschisă și într-un tab nou. Butonul declanșează acțiunea. type=\"button\" îl împiedică să trimită accidental un formular.",
+            "counterexample": "Aspectul de buton nu schimbă rolul unui link. href=\"#\" poate schimba poziția paginii fără să exprime selectarea."
+          },
+          "notation": [],
+          "prerequisites": [
+            "html-text-details"
+          ]
         }
       ],
       "learning": {
@@ -4312,6 +4389,169 @@ window.TW_COURSE = {
           "prerequisites": [
             "html-range"
           ]
+        },
+        {
+          "id": "reason-picture-choice",
+          "title": "Provocare: picture pentru altă compoziție",
+          "intro": "Separă două nevoi: altă compoziție la o anumită lățime și aceeași compoziție la rezoluții diferite.",
+          "example": "<picture>\n  <source media=\"(max-width: 500px)\" srcset=\"portrait.png\">\n  <img src=\"wide.png\" alt=\"City park\">\n</picture>",
+          "explain": "picture poate alege alt cadraj printr-o condiție media. img rămâne fallback-ul și poartă alt. CSS width redimensionează sursa aleasă, fără să aleagă singur o altă compoziție.",
+          "points": [],
+          "quiz": {
+            "question": "Pe telefon trebuie un cadraj portret, iar pe desktop unul panoramic. Ce alegi?",
+            "options": [
+              "Doar width:100% pe imaginea panoramică.",
+              "Două img fără condiții.",
+              "picture cu source media și img fallback."
+            ],
+            "correct": 2,
+            "explanation": "picture poate alege alt cadraj printr-o condiție media. img rămâne fallback-ul și poartă alt. CSS width redimensionează sursa aleasă, fără să aleagă singur o altă compoziție."
+          },
+          "task": {
+            "mode": "html",
+            "prompt": "Până la 500px inclusiv folosește Portrait; în rest Wide. Pune un img fallback cu alt=\"City park\". URL-urile data sunt furnizate, fără fișiere externe.",
+            "solution": "<picture><source media=\"(max-width: 500px)\" srcset='data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"300\"%3E%3Crect width=\"200\" height=\"300\" fill=\"navy\"/%3E%3C/svg%3E'><img src='data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"600\" height=\"200\"%3E%3Crect width=\"600\" height=\"200\" fill=\"teal\"/%3E%3C/svg%3E' alt=\"City park\"></picture>",
+            "tests": [
+              {
+                "kind": "attr",
+                "selector": "picture > source",
+                "name": "media",
+                "value": "(max-width: 500px)",
+                "label": "`picture > source` are `media=\"(max-width: 500px)\"`"
+              },
+              {
+                "kind": "attr",
+                "selector": "source",
+                "name": "srcset",
+                "value": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"300\"%3E%3Crect width=\"200\" height=\"300\" fill=\"navy\"/%3E%3C/svg%3E",
+                "label": "`source` are `srcset=\"data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"300\"%3E%3Crect width=\"200\" height=\"300\" fill=\"navy\"/%3E%3C/svg%3E\"`"
+              },
+              {
+                "kind": "attr",
+                "selector": "picture > img",
+                "name": "src",
+                "value": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"600\" height=\"200\"%3E%3Crect width=\"600\" height=\"200\" fill=\"teal\"/%3E%3C/svg%3E",
+                "label": "`picture > img` are `src=\"data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"600\" height=\"200\"%3E%3Crect width=\"600\" height=\"200\" fill=\"teal\"/%3E%3C/svg%3E\"`"
+              },
+              {
+                "kind": "attr",
+                "selector": "img",
+                "name": "alt",
+                "value": "City park",
+                "label": "`img` are `alt=\"City park\"`"
+              }
+            ],
+            "starter": "",
+            "contextCode": "Portrait: data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"300\"%3E%3Crect width=\"200\" height=\"300\" fill=\"navy\"/%3E%3C/svg%3E\nWide: data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"600\" height=\"200\"%3E%3Crect width=\"600\" height=\"200\" fill=\"teal\"/%3E%3C/svg%3E",
+            "contextLabel": "Imaginile furnizate",
+            "id": "reason-picture-choice"
+          },
+          "hint": "De ce nu este suficient doar width:100%?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "html-picture",
+              "html-srcset"
+            ],
+            "questions": [
+              "Se schimbă rezoluția sau compoziția?",
+              "Unde trebuie textul alternativ?",
+              "De ce nu este suficient doar width:100%?"
+            ],
+            "explanation": "picture poate alege alt cadraj printr-o condiție media. img rămâne fallback-ul și poartă alt. CSS width redimensionează sursa aleasă, fără să aleagă singur o altă compoziție.",
+            "counterexample": "Două versiuni ale aceleiași fotografii, cu aceeași compoziție, nu impun automat picture."
+          },
+          "notation": [],
+          "prerequisites": [
+            "html-validation"
+          ]
+        },
+        {
+          "id": "reason-img-enough",
+          "title": "Provocare: când nu este necesar picture?",
+          "intro": "Nu alege un element mai complex doar fiindcă există. img are deja un mecanism pentru variante de rezoluție.",
+          "example": "<img src=\"small.jpg\" srcset=\"small.jpg 400w, large.jpg 800w\" sizes=\"400px\" alt=\"Park\">",
+          "explain": "Dacă se schimbă numai rezoluția, img cu srcset și sizes poate fi suficient. Descrierile w trebuie să corespundă lățimilor reale. Pentru alt cadraj sau pentru surse condiționate explicit de media, picture devine util.",
+          "points": [],
+          "quiz": {
+            "question": "Aceeași fotografie are variante de 400 și 800px, ocupând 400px CSS. Este obligatoriu picture?",
+            "options": [
+              "Nu; img cu srcset și sizes poate rezolva cerința.",
+              "Da; două fișiere cer întotdeauna picture.",
+              "Nu; width:400px descarcă automat o altă rezoluție."
+            ],
+            "correct": 0,
+            "explanation": "Dacă se schimbă numai rezoluția, img cu srcset și sizes poate fi suficient. Descrierile w trebuie să corespundă lățimilor reale. Pentru alt cadraj sau pentru surse condiționate explicit de media, picture devine util."
+          },
+          "task": {
+            "mode": "html",
+            "prompt": "Imaginile furnizate au aceeași compoziție, la 400 și 800 pixeli. Construiește un singur img cu srcset 400w/800w, sizes=\"400px\", fallback-ul mic și alt=\"Color study\". Nu folosi picture sau source.",
+            "solution": "<img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAADICAIAAABJdyC1AAAFgklEQVR4nO3SAQmAAADEwI9jEuOYySQWsoQlhMEYXITbcd3J797nTH43fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0fpA0+4cgYHtF6lAAAAAElFTkSuQmCC\" srcset=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAADICAIAAABJdyC1AAAFgklEQVR4nO3SAQmAAADEwI9jEuOYySQWsoQlhMEYXITbcd3J797nTH43fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0fpA0+4cgYHtF6lAAAAAElFTkSuQmCC 400w, data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAGQCAIAAADZR5NjAAANCElEQVR4nO3UUQkCABRFsRfHJMYxk0ksZAkrnL+LMFiG3eP1BvgL388T4C/cfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJEPw/DyCTolID1AAAAAElFTkSuQmCC 800w\" sizes=\"400px\" alt=\"Color study\">",
+            "tests": [
+              {
+                "kind": "attr",
+                "selector": "img",
+                "name": "src",
+                "value": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAADICAIAAABJdyC1AAAFgklEQVR4nO3SAQmAAADEwI9jEuOYySQWsoQlhMEYXITbcd3J797nTH43fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0fpA0+4cgYHtF6lAAAAAElFTkSuQmCC",
+                "label": "`img` are `src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAADICAIAAABJdyC1AAAFgklEQVR4nO3SAQmAAADEwI9jEuOYySQWsoQlhMEYXITbcd3J797nTH43fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0fpA0+4cgYHtF6lAAAAAElFTkSuQmCC\"`"
+              },
+              {
+                "kind": "attr",
+                "selector": "img",
+                "name": "srcset",
+                "value": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAADICAIAAABJdyC1AAAFgklEQVR4nO3SAQmAAADEwI9jEuOYySQWsoQlhMEYXITbcd3J797nTH43fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0fpA0+4cgYHtF6lAAAAAElFTkSuQmCC 400w, data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAGQCAIAAADZR5NjAAANCElEQVR4nO3UUQkCABRFsRfHJMYxk0ksZAkrnL+LMFiG3eP1BvgL388T4C/cfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJEPw/DyCTolID1AAAAAElFTkSuQmCC 800w",
+                "label": "`img` are `srcset=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAADICAIAAABJdyC1AAAFgklEQVR4nO3SAQmAAADEwI9jEuOYySQWsoQlhMEYXITbcd3J797nTH43fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0fpA0+4cgYHtF6lAAAAAElFTkSuQmCC 400w, data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAGQCAIAAADZR5NjAAANCElEQVR4nO3UUQkCABRFsRfHJMYxk0ksZAkrnL+LMFiG3eP1BvgL388T4C/cfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJEPw/DyCTolID1AAAAAElFTkSuQmCC 800w\"`"
+              },
+              {
+                "kind": "attr",
+                "selector": "img",
+                "name": "sizes",
+                "value": "400px",
+                "label": "`img` are `sizes=\"400px\"`"
+              },
+              {
+                "kind": "attr",
+                "selector": "img",
+                "name": "alt",
+                "value": "Color study",
+                "label": "`img` are `alt=\"Color study\"`"
+              },
+              {
+                "kind": "absent",
+                "selector": "picture",
+                "label": "`picture` nu există"
+              },
+              {
+                "kind": "absent",
+                "selector": "source",
+                "label": "`source` nu există"
+              }
+            ],
+            "starter": "",
+            "contextCode": "Small (400 x 200): data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAADICAIAAABJdyC1AAAFgklEQVR4nO3SAQmAAADEwI9jEuOYySQWsoQlhMEYXITbcd3J797nTH43fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0dp+Owo4bOjNHx2lPDZURo+O0r47CgNnx0lfHaUhs+OEj47SsNnRwmfHaXhs6OEz47S8NlRwmdHafjsKOGzozR8dpTw2VEaPjtK+OwoDZ8dJXx2lIbPjhI+O0rDZ0cJnx2l4bOjhM+O0vDZUcJnR2n47Cjhs6M0fHaU8NlRGj47SvjsKA2fHSV8dpSGz44SPjtKw2dHCZ8dpeGzo4TPjtLw2VHCZ0fpA0+4cgYHtF6lAAAAAElFTkSuQmCC\nLarge (800 x 400): data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAGQCAIAAADZR5NjAAANCElEQVR4nO3UUQkCABRFsRfHJMYxk0ksZAkrnL+LMFiG3eP1BvgL388T4C/cfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJENx8TIJqPCRDdfEyAaD4mQHTzMQGi+ZgA0c3HBIjmYwJEPw/DyCTolID1AAAAAElFTkSuQmCC",
+            "contextLabel": "Fișiere raster furnizate, cu aceeași compoziție",
+            "id": "reason-img-enough"
+          },
+          "hint": "Ce poate face deja un img?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "html-picture",
+              "html-srcset"
+            ],
+            "questions": [
+              "Sunt diferite imaginile sau doar numărul de pixeli?",
+              "Ce poate face deja un img?"
+            ],
+            "explanation": "Dacă se schimbă numai rezoluția, img cu srcset și sizes poate fi suficient. Descrierile w trebuie să corespundă lățimilor reale. Pentru alt cadraj sau pentru surse condiționate explicit de media, picture devine util.",
+            "counterexample": "Faptul că ai două fișiere nu spune singur dacă trebuie picture."
+          },
+          "notation": [],
+          "prerequisites": [
+            "reason-picture-choice"
+          ]
         }
       ],
       "learning": {
@@ -4965,6 +5205,77 @@ window.TW_COURSE = {
           "notation": [],
           "prerequisites": [
             "media-loading"
+          ]
+        },
+        {
+          "id": "reason-readonly",
+          "title": "Provocare: blocat, dar inclus la submit",
+          "intro": "readonly și disabled nu sunt interschimbabile la trimiterea formularului.",
+          "example": "<input name=\"code\" value=\"A7\" readonly>",
+          "explain": "Un input readonly cu name poate fi inclus în datele trimise. Un control disabled este omis. Niciunul nu înlocuiește validarea serverului.",
+          "points": [],
+          "quiz": {
+            "question": "Codul trebuie vizibil, needitabil și trimis la submit. Ce alegi?",
+            "options": [
+              "input disabled fără name.",
+              "input cu name și readonly.",
+              "Doar placeholder în loc de value."
+            ],
+            "correct": 1,
+            "explanation": "Un input readonly cu name poate fi inclus în datele trimise. Un control disabled este omis. Niciunul nu înlocuiește validarea serverului."
+          },
+          "task": {
+            "mode": "html",
+            "prompt": "Creează un form cu un input text având name=\"reference\", value=\"AB7\" și readonly, fără disabled.",
+            "solution": "<form><input type=\"text\" name=\"reference\" value=\"AB7\" readonly></form>",
+            "tests": [
+              {
+                "kind": "attr",
+                "selector": "form input",
+                "name": "name",
+                "value": "reference",
+                "label": "`form input` are `name=\"reference\"`"
+              },
+              {
+                "kind": "attr",
+                "selector": "input",
+                "name": "value",
+                "value": "AB7",
+                "label": "`input` are `value=\"AB7\"`"
+              },
+              {
+                "kind": "count",
+                "selector": "input[readonly]",
+                "min": 1,
+                "label": "Elementul `input[readonly]` există"
+              },
+              {
+                "kind": "absent",
+                "selector": "input[disabled]",
+                "label": "`input[disabled]` nu există"
+              }
+            ],
+            "starter": "",
+            "id": "reason-readonly"
+          },
+          "hint": "Ce rol are name?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "form-disabled-readonly",
+              "html-labels"
+            ],
+            "questions": [
+              "Trebuie trimisă valoarea?",
+              "Ce rol are name?"
+            ],
+            "explanation": "Un input readonly cu name poate fi inclus în datele trimise. Un control disabled este omis. Niciunul nu înlocuiește validarea serverului.",
+            "counterexample": "disabled ar elimina valoarea din datele formularului."
+          },
+          "notation": [],
+          "prerequisites": [
+            "vtt-cue-position"
           ]
         }
       ],
@@ -8691,6 +9002,67 @@ window.TW_COURSE = {
           "prerequisites": [
             "css-table"
           ]
+        },
+        {
+          "id": "reason-cascade",
+          "title": "Provocare: de ce nu câștigă ultima regulă?",
+          "intro": "Ordinea în fișier nu este singurul criteriu al cascadei. În reguli obișnuite de aceeași origine și același strat, un selector mai specific poate câștiga deși apare înainte.",
+          "example": "#panel .note { color: navy; }\n.note { color: black; }",
+          "explain": "Selectorul cu ID are specificitate mai mare. O excepție locală poate folosi aceeași specificitate și poate apărea după regula inițială, fără important.",
+          "points": [],
+          "quiz": {
+            "question": "Ce culoare primește .note din #panel în exemplu?",
+            "options": [
+              "Negru; ultima regulă câștigă întotdeauna.",
+              "Navy, datorită selectorului mai specific.",
+              "Doar culoarea moștenită, fără cele două reguli."
+            ],
+            "correct": 1,
+            "explanation": "Selectorul cu ID are specificitate mai mare. O excepție locală poate folosi aceeași specificitate și poate apărea după regula inițială, fără important."
+          },
+          "task": {
+            "mode": "css",
+            "prompt": "Păstrează regulile de pornire și adaugă o excepție fără !important: numai .urgent din #panel devine roșie; nota obișnuită rămâne navy.",
+            "solution": "#panel .note { color: navy; }\n.note { color: black; }\n#panel .urgent { color: red; }",
+            "fixture": "<div id=\"panel\"><p class=\"note\">Normal</p><p class=\"note urgent\">Urgent</p></div>",
+            "tests": [
+              {
+                "kind": "style",
+                "selector": ".note:not(.urgent)",
+                "name": "color",
+                "value": "rgb(0, 0, 128)",
+                "label": "`.note:not(.urgent)`: `color: rgb(0, 0, 128)`"
+              },
+              {
+                "kind": "style",
+                "selector": ".urgent",
+                "name": "color",
+                "value": "rgb(255, 0, 0)",
+                "label": "`.urgent`: `color: rgb(255, 0, 0)`"
+              }
+            ],
+            "starter": "#panel .note { color: navy; }\n.note { color: black; }\n",
+            "id": "reason-cascade"
+          },
+          "hint": "Ce compari înaintea ordinii?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "css-specificity",
+              "css-inherit"
+            ],
+            "questions": [
+              "De ce o simplă regulă .urgent poate pierde?",
+              "Ce compari înaintea ordinii?"
+            ],
+            "explanation": "Selectorul cu ID are specificitate mai mare. O excepție locală poate folosi aceeași specificitate și poate apărea după regula inițială, fără important.",
+            "counterexample": "Aplicarea important peste tot poate ascunde cauza fără să explice cascada."
+          },
+          "notation": [],
+          "prerequisites": [
+            "css-list"
+          ]
         }
       ],
       "learning": {
@@ -9504,6 +9876,158 @@ window.TW_COURSE = {
           "notation": [],
           "prerequisites": [
             "selector-disabled"
+          ]
+        },
+        {
+          "id": "reason-selector",
+          "title": "Provocare: combină condițiile fără selectări în plus",
+          "intro": "Un selector combinat poate exprima poziția, atributele și excluderile. Verifică și elementele care seamănă cu ținta, dar nu respectă toate cerințele.",
+          "example": "#news > article[data-state=\"published\"]:not(.pinned) { color: navy; }",
+          "explain": "> cere copil direct; atributul verifică starea; :not exclude clasa. Spațiul în loc de > poate include descendenți nedoriți.",
+          "points": [],
+          "quiz": {
+            "question": "Vrei prețurile articolelor ready, copii direcți ai #catalog, dar nu featured. Ce selector este suficient de precis?",
+            "options": [
+              "#catalog article .price",
+              "article[data-state=\"ready\"] .price",
+              "#catalog > article[data-state=\"ready\"]:not(.featured) > .price"
+            ],
+            "correct": 2,
+            "explanation": "> cere copil direct; atributul verifică starea; :not exclude clasa. Spațiul în loc de > poate include descendenți nedoriți."
+          },
+          "task": {
+            "mode": "css",
+            "prompt": "Colorează navy numai prețul 12. Celelalte patru prețuri rămân negre. Nu modifica HTML-ul și nu selecta după textul numărului.",
+            "solution": ".price { color: black; }\n#catalog > article[data-state=\"ready\"]:not(.featured) > .price { color: navy; }",
+            "fixture": "<main id=\"catalog\"><article data-state=\"ready\"><p class=\"price\">12</p></article><article data-state=\"ready\" class=\"featured\"><p class=\"price\">20</p></article><article data-state=\"draft\"><p class=\"price\">5</p></article><div><article data-state=\"ready\"><p class=\"price\">9</p></article></div></main><aside><p class=\"price\">7</p></aside>",
+            "tests": [
+              {
+                "kind": "style",
+                "selector": "#catalog > article:first-child .price",
+                "name": "color",
+                "value": "rgb(0, 0, 128)",
+                "label": "`#catalog > article:first-child .price`: `color: rgb(0, 0, 128)`"
+              },
+              {
+                "kind": "style",
+                "selector": ".featured .price",
+                "name": "color",
+                "value": "rgb(0, 0, 0)",
+                "label": "`.featured .price`: `color: rgb(0, 0, 0)`"
+              },
+              {
+                "kind": "style",
+                "selector": "[data-state=\"draft\"] .price",
+                "name": "color",
+                "value": "rgb(0, 0, 0)",
+                "label": "`[data-state=\"draft\"] .price`: `color: rgb(0, 0, 0)`"
+              },
+              {
+                "kind": "style",
+                "selector": "#catalog > div .price",
+                "name": "color",
+                "value": "rgb(0, 0, 0)",
+                "label": "`#catalog > div .price`: `color: rgb(0, 0, 0)`"
+              },
+              {
+                "kind": "style",
+                "selector": "aside .price",
+                "name": "color",
+                "value": "rgb(0, 0, 0)",
+                "label": "`aside .price`: `color: rgb(0, 0, 0)`"
+              }
+            ],
+            "starter": "",
+            "id": "reason-selector"
+          },
+          "hint": "Poți explica fiecare segment al selectorului?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "css-descendant",
+              "css-attributes",
+              "selector-not"
+            ],
+            "questions": [
+              "Unde este necesar copil direct?",
+              "Ce condiție exclude fiecare element apropiat?",
+              "Poți explica fiecare segment al selectorului?"
+            ],
+            "explanation": "> cere copil direct; atributul verifică starea; :not exclude clasa. Spațiul în loc de > poate include descendenți nedoriți.",
+            "counterexample": "Un selector prea larg ar colora și prețul 9 din containerul intermediar."
+          },
+          "notation": [],
+          "prerequisites": [
+            "selector-required"
+          ]
+        },
+        {
+          "id": "reason-nth-type",
+          "title": "Provocare: a doua poziție dintre ce elemente?",
+          "intro": "nth-child numără toți copiii; nth-of-type numără numai elementele de același tip.",
+          "example": "section > p:nth-of-type(2) { color: navy; }",
+          "explain": "Titlul și aside intră în numărătoarea tuturor copiilor, dar nu în numărătoarea paragrafelor.",
+          "points": [],
+          "quiz": {
+            "question": "În h2, p, aside, p, p, ce selectează p:nth-child(2)?",
+            "options": [
+              "Primul paragraf.",
+              "Al doilea paragraf.",
+              "Al doilea p indiferent de ceilalți copii."
+            ],
+            "correct": 0,
+            "explanation": "Titlul și aside intră în numărătoarea tuturor copiilor, dar nu în numărătoarea paragrafelor."
+          },
+          "task": {
+            "mode": "css",
+            "prompt": "Colorează navy numai paragraful Second. First și Third trebuie să rămână negre.",
+            "solution": "#notes p { color: black; }\n#notes > p:nth-of-type(2) { color: navy; }",
+            "fixture": "<section id=\"notes\"><h2>Notes</h2><p>First</p><aside>Extra</aside><p>Second</p><p>Third</p></section>",
+            "tests": [
+              {
+                "kind": "style",
+                "selector": "#notes p:nth-of-type(1)",
+                "name": "color",
+                "value": "rgb(0, 0, 0)",
+                "label": "`#notes p:nth-of-type(1)`: `color: rgb(0, 0, 0)`"
+              },
+              {
+                "kind": "style",
+                "selector": "#notes p:nth-of-type(2)",
+                "name": "color",
+                "value": "rgb(0, 0, 128)",
+                "label": "`#notes p:nth-of-type(2)`: `color: rgb(0, 0, 128)`"
+              },
+              {
+                "kind": "style",
+                "selector": "#notes p:nth-of-type(3)",
+                "name": "color",
+                "value": "rgb(0, 0, 0)",
+                "label": "`#notes p:nth-of-type(3)`: `color: rgb(0, 0, 0)`"
+              }
+            ],
+            "starter": "",
+            "id": "reason-nth-type"
+          },
+          "hint": "Ce se schimbă dacă apare încă un titlu?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "selector-nth-type",
+              "selector-nth-even"
+            ],
+            "questions": [
+              "Numeri toți frații sau numai paragrafele?",
+              "Ce se schimbă dacă apare încă un titlu?"
+            ],
+            "explanation": "Titlul și aside intră în numărătoarea tuturor copiilor, dar nu în numărătoarea paragrafelor.",
+            "counterexample": "p:nth-child(2) ar colora First în structura dată."
+          },
+          "notation": [],
+          "prerequisites": [
+            "reason-selector"
           ]
         }
       ],
@@ -10736,6 +11260,156 @@ window.TW_COURSE = {
           "notation": [],
           "prerequisites": [
             "css-framework"
+          ]
+        },
+        {
+          "id": "reason-box",
+          "title": "Provocare: de ce depășește cardul containerul?",
+          "intro": "În content-box, padding-ul și bordura se adaugă lățimii declarate; în border-box sunt incluse.",
+          "example": ".card { width: 100%; padding: 20px; border: 5px solid; box-sizing: border-box; }",
+          "explain": "Într-un container de 300px, un card content-box de 100% cu 40px padding și 10px bordură poate avea exteriorul de 350px.",
+          "points": [],
+          "quiz": {
+            "question": "Ce corectează cauza depășirii produse de padding și bordură?",
+            "options": [
+              "Ascund orice depășire cu overflow:hidden.",
+              "Măresc arbitrar containerul.",
+              "box-sizing: border-box pe card."
+            ],
+            "correct": 2,
+            "explanation": "Într-un container de 300px, un card content-box de 100% cu 40px padding și 10px bordură poate avea exteriorul de 350px."
+          },
+          "task": {
+            "mode": "css",
+            "prompt": "Containerul are 300px. Include padding 20px și bordură 5px în lățimea de 100% a cardului, fără să ascunzi conținutul.",
+            "solution": "#container { width: 300px; }\n.card { width: 100%; padding: 20px; border: 5px solid navy; box-sizing: border-box; }",
+            "fixture": "<div id=\"container\"><article class=\"card\">Details</article></div>",
+            "tests": [
+              {
+                "kind": "style",
+                "selector": ".card",
+                "name": "box-sizing",
+                "value": "border-box",
+                "label": "`.card`: `box-sizing: border-box`"
+              },
+              {
+                "kind": "style",
+                "selector": ".card",
+                "name": "width",
+                "value": "300px",
+                "label": "`.card`: `width: 300px`"
+              },
+              {
+                "kind": "style",
+                "selector": ".card",
+                "name": "padding-left",
+                "value": "20px",
+                "label": "`.card`: `padding-left: 20px`"
+              },
+              {
+                "kind": "style",
+                "selector": ".card",
+                "name": "border-left-width",
+                "value": "5px",
+                "label": "`.card`: `border-left-width: 5px`"
+              }
+            ],
+            "starter": "",
+            "id": "reason-box"
+          },
+          "hint": "Poți calcula dimensiunea exterioară înainte de corecție?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "css-box",
+              "css-responsive"
+            ],
+            "questions": [
+              "Ce include width în fiecare model?",
+              "Poți calcula dimensiunea exterioară înainte de corecție?"
+            ],
+            "explanation": "Într-un container de 300px, un card content-box de 100% cu 40px padding și 10px bordură poate avea exteriorul de 350px.",
+            "counterexample": "overflow:hidden poate tăia textul, fără să corecteze dimensiunea cardului."
+          },
+          "notation": [],
+          "prerequisites": [
+            "css-fixed-viewport"
+          ]
+        },
+        {
+          "id": "reason-grid-boundary",
+          "title": "Provocare: verifică ambele părți ale limitei",
+          "intro": "O schimbare responsive trebuie verificată la limită și imediat după limită, nu numai pe ecranul propriu.",
+          "example": ".cards { display: grid; grid-template-columns: repeat(2, 1fr); }\n@media (max-width: 500px) { .cards { grid-template-columns: 1fr; } }",
+          "explain": "max-width include valoarea de 500px; regula de bază rămâne activă la 501px. Coloanele sunt egale prin 1fr.",
+          "points": [],
+          "quiz": {
+            "question": "Cerința spune o coloană până la 500px inclusiv și două peste 500px. Ce teste sunt importante?",
+            "options": [
+              "500px și 501px, plus lățimi mai mici și mai mari.",
+              "Numai desktopul pe care scriu.",
+              "Numai numărul de carduri."
+            ],
+            "correct": 0,
+            "explanation": "max-width include valoarea de 500px; regula de bază rămâne activă la 501px. Coloanele sunt egale prin 1fr."
+          },
+          "task": {
+            "mode": "css",
+            "prompt": "Afișează două coloane egale la 800px și 501px, dar o coloană la 500px și 390px.",
+            "solution": ".cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }\n@media (max-width: 500px) { .cards { grid-template-columns: 1fr; } }",
+            "fixture": "<div class=\"cards\"><article>One</article><article>Two</article><article>Three</article></div>",
+            "tests": [
+              {
+                "kind": "columns",
+                "selector": ".cards",
+                "count": 2,
+                "viewport": 800,
+                "label": "La 800px, `.cards` are 2 coloane egale"
+              },
+              {
+                "kind": "columns",
+                "selector": ".cards",
+                "count": 2,
+                "viewport": 501,
+                "label": "La 501px, `.cards` are 2 coloane egale"
+              },
+              {
+                "kind": "columns",
+                "selector": ".cards",
+                "count": 1,
+                "viewport": 500,
+                "label": "La 500px, `.cards` are 1 coloane egale"
+              },
+              {
+                "kind": "columns",
+                "selector": ".cards",
+                "count": 1,
+                "viewport": 390,
+                "label": "La 390px, `.cards` are 1 coloane egale"
+              }
+            ],
+            "starter": "",
+            "id": "reason-grid-boundary"
+          },
+          "hint": "Ce regulă trebuie să câștige la 501px?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "css-grid",
+              "css-responsive"
+            ],
+            "questions": [
+              "Ce înseamnă inclusiv la limită?",
+              "Ce regulă trebuie să câștige la 501px?"
+            ],
+            "explanation": "max-width include valoarea de 500px; regula de bază rămâne activă la 501px. Coloanele sunt egale prin 1fr.",
+            "counterexample": "Un layout poate părea corect într-o singură captură și să fie greșit imediat lângă prag."
+          },
+          "notation": [],
+          "prerequisites": [
+            "reason-box"
           ]
         }
       ],
@@ -17071,6 +17745,80 @@ window.TW_COURSE = {
           "prerequisites": [
             "js-while"
           ]
+        },
+        {
+          "id": "reason-conversion",
+          "title": "Provocare: numere care vin ca texte",
+          "intro": "Un text care arată ca număr rămâne text până la conversie. Decide conversia înaintea operației.",
+          "example": "Number(\"12\") + Number(\"3\"); // 15",
+          "explain": "+ poate concatena texte. Conversia rezultatului concatenării este prea târzie.",
+          "points": [],
+          "quiz": {
+            "question": "Vrei suma numerică a textelor \"10\" și \"2\". Ce alegi?",
+            "options": [
+              "Aduni textele, apoi convertești rezultatul.",
+              "Convertești ambele valori înainte de adunare.",
+              "Pui un spațiu între texte."
+            ],
+            "correct": 1,
+            "explanation": "+ poate concatena texte. Conversia rezultatului concatenării este prea târzie."
+          },
+          "task": {
+            "mode": "js",
+            "prompt": "input are price și fee ca texte. Returnează suma numerică fără să modifici input.",
+            "solution": "function solve(input) { return Number(input.price) + Number(input.fee); }",
+            "cases": [
+              {
+                "input": {
+                  "price": "10",
+                  "fee": "2"
+                },
+                "expected": 12
+              },
+              {
+                "input": {
+                  "price": "0",
+                  "fee": "5"
+                },
+                "expected": 5
+              },
+              {
+                "input": {
+                  "price": "2.5",
+                  "fee": "0.5"
+                },
+                "expected": 3
+              },
+              {
+                "input": {
+                  "price": "-2",
+                  "fee": "3"
+                },
+                "expected": 1
+              }
+            ],
+            "starter": "function solve(input) {\n  // Write your code here.\n}\n",
+            "id": "reason-conversion"
+          },
+          "hint": "Ce ar produce + fără conversie?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "js-convert",
+              "js-if"
+            ],
+            "questions": [
+              "Ce tip au valorile înaintea operației?",
+              "Ce ar produce + fără conversie?"
+            ],
+            "explanation": "+ poate concatena texte. Conversia rezultatului concatenării este prea târzie.",
+            "counterexample": "Number(\"10\" + \"2\") produce 102, nu 12."
+          },
+          "notation": [],
+          "prerequisites": [
+            "js-default-rest"
+          ]
         }
       ],
       "learning": {
@@ -17532,6 +18280,76 @@ window.TW_COURSE = {
           ],
           "prerequisites": [
             "strict-equality"
+          ]
+        },
+        {
+          "id": "reason-zero",
+          "title": "Provocare: zero nu este absență",
+          "intro": "O valoare falsy poate fi validă. Zero poate însemna stoc epuizat, nu informație lipsă.",
+          "example": "const stock = input.stock ?? 10;",
+          "explain": "?? folosește alternativa numai pentru null și undefined. || o folosește și pentru 0.",
+          "points": [],
+          "quiz": {
+            "question": "stock=0 trebuie păstrat, iar stock=null trebuie înlocuit cu 10. Ce alegi?",
+            "options": [
+              "stock || 10",
+              "stock + 10",
+              "stock ?? 10"
+            ],
+            "correct": 2,
+            "explanation": "?? folosește alternativa numai pentru null și undefined. || o folosește și pentru 0."
+          },
+          "task": {
+            "mode": "js",
+            "prompt": "Păstrează input.stock dacă nu este null sau undefined. Numai pentru acestea întoarce 10.",
+            "solution": "function solve(input) { return input.stock ?? 10; }",
+            "cases": [
+              {
+                "input": {
+                  "stock": 0
+                },
+                "expected": 0
+              },
+              {
+                "input": {
+                  "stock": 7
+                },
+                "expected": 7
+              },
+              {
+                "input": {
+                  "stock": null
+                },
+                "expected": 10
+              },
+              {
+                "input": {},
+                "expected": 10
+              }
+            ],
+            "starter": "function solve(input) {\n  // Write your code here.\n}\n",
+            "id": "reason-zero"
+          },
+          "hint": "Care valori activează fiecare operator?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "nullish-values"
+            ],
+            "questions": [
+              "Ce semnifică zero în această problemă?",
+              "Care valori activează fiecare operator?"
+            ],
+            "explanation": "?? folosește alternativa numai pentru null și undefined. || o folosește și pentru 0.",
+            "counterexample": "stock || 10 ar transforma stocul epuizat în 10."
+          },
+          "notation": [
+            "const declară un nume pentru o valoare. Nu îl poți reasigna cu =; conținutul unui obiect poate fi totuși modificat.",
+            "input.name citește proprietatea name a obiectului primit. Numele proprietăților vin din datele afișate în exercițiu."
+          ],
+          "prerequisites": [
+            "nullish-values"
           ]
         }
       ],
@@ -19102,6 +19920,97 @@ window.TW_COURSE = {
           "prerequisites": [
             "array-flatmap"
           ]
+        },
+        {
+          "id": "reason-sort",
+          "title": "Provocare: sortare fără distrugerea sursei",
+          "intro": "Un comparator corect nu împiedică sort să modifice vectorul. Copierea și ordinea numerică sunt două decizii separate.",
+          "example": "const sorted = [...values].sort(function (a, b) { return a - b; });",
+          "explain": "Copia păstrează intrarea; comparatorul evită ordinea textuală implicită a numerelor.",
+          "points": [],
+          "quiz": {
+            "question": "Catalogul trebuie să poată reveni la ordinea inițială. Ce păstrezi?",
+            "options": [
+              "Vectorul inițial nemodificat și o copie sortată.",
+              "Numai vectorul sortat, fiindcă îl pot inversa.",
+              "Numai ordinea textuală implicită."
+            ],
+            "correct": 0,
+            "explanation": "Copia păstrează intrarea; comparatorul evită ordinea textuală implicită a numerelor."
+          },
+          "task": {
+            "mode": "js",
+            "prompt": "Returnează numerele crescător, fără să modifici input.",
+            "solution": "function solve(input) { return [...input].sort(function (a, b) { return a - b; }); }",
+            "cases": [
+              {
+                "input": [
+                  10,
+                  2,
+                  1
+                ],
+                "expected": [
+                  1,
+                  2,
+                  10
+                ]
+              },
+              {
+                "input": [],
+                "expected": []
+              },
+              {
+                "input": [
+                  0,
+                  -3,
+                  2
+                ],
+                "expected": [
+                  -3,
+                  0,
+                  2
+                ]
+              },
+              {
+                "input": [
+                  2,
+                  2,
+                  1
+                ],
+                "expected": [
+                  1,
+                  2,
+                  2
+                ]
+              }
+            ],
+            "starter": "function solve(input) {\n  // Write your code here.\n}\n",
+            "id": "reason-sort"
+          },
+          "hint": "Ce se întâmplă cu 2 și 10 fără comparator?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "array-sort",
+              "array-copy"
+            ],
+            "questions": [
+              "Ce metodă modifică sursa?",
+              "Ce se întâmplă cu 2 și 10 fără comparator?"
+            ],
+            "explanation": "Copia păstrează intrarea; comparatorul evită ordinea textuală implicită a numerelor.",
+            "counterexample": "Inversarea sortării nu reconstruiește ordinea inițială arbitrară."
+          },
+          "notation": [
+            "function declară o funcție: o bucată de cod pe care o poți apela. solve este numele folosit de verificarea exercițiilor.",
+            "return trimite valoarea calculată la apelant și încheie execuția curentă a funcției.",
+            "const declară un nume pentru o valoare. Nu îl poți reasigna cu =; conținutul unui obiect poate fi totuși modificat.",
+            "sort reordonează vectorul pe care este apelat. Pentru a păstra intrarea, sortează o copie; fără comparator, ordinea este textuală."
+          ],
+          "prerequisites": [
+            "object-entries"
+          ]
         }
       ],
       "learning": {
@@ -19838,6 +20747,98 @@ window.TW_COURSE = {
           ],
           "prerequisites": [
             "string-substr-legacy"
+          ]
+        },
+        {
+          "id": "reason-missing-index",
+          "title": "Provocare: căutare fără rezultat",
+          "intro": "findIndex întoarce -1 când nu găsește elementul. Verifică semnificația rezultatului înainte să îl folosești pentru modificare.",
+          "example": "if (index !== -1) items.splice(index, 1);",
+          "explain": "splice(-1,1) șterge ultimul element. Absența id-ului nu trebuie să elimine un element fără legătură.",
+          "points": [],
+          "quiz": {
+            "question": "Ce face splice(-1,1) pe un vector nevid?",
+            "options": [
+              "Nu face nimic.",
+              "Șterge ultimul element.",
+              "Aruncă obligatoriu o eroare."
+            ],
+            "correct": 1,
+            "explanation": "splice(-1,1) șterge ultimul element. Absența id-ului nu trebuie să elimine un element fără legătură."
+          },
+          "task": {
+            "mode": "js",
+            "prompt": "Returnează o copie a input.items fără elementul cu id=input.id. Dacă id-ul lipsește, păstrează tot.",
+            "solution": "function solve(input) { const items = [...input.items]; const index = items.findIndex(function (item) { return item.id === input.id; }); if (index !== -1) items.splice(index, 1); return items; }",
+            "cases": [
+              {
+                "input": {
+                  "items": [
+                    {
+                      "id": 1
+                    },
+                    {
+                      "id": 2
+                    }
+                  ],
+                  "id": 9
+                },
+                "expected": [
+                  {
+                    "id": 1
+                  },
+                  {
+                    "id": 2
+                  }
+                ]
+              },
+              {
+                "input": {
+                  "items": [
+                    {
+                      "id": 1
+                    },
+                    {
+                      "id": 2
+                    }
+                  ],
+                  "id": 1
+                },
+                "expected": [
+                  {
+                    "id": 2
+                  }
+                ]
+              },
+              {
+                "input": {
+                  "items": [],
+                  "id": 1
+                },
+                "expected": []
+              }
+            ],
+            "starter": "function solve(input) {\n  // Write your code here.\n}\n",
+            "id": "reason-missing-index"
+          },
+          "hint": "Cum interpretează splice un index negativ?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "array-find-index",
+              "array-splice-removed"
+            ],
+            "questions": [
+              "Cum semnalează căutarea absența?",
+              "Cum interpretează splice un index negativ?"
+            ],
+            "explanation": "splice(-1,1) șterge ultimul element. Absența id-ului nu trebuie să elimine un element fără legătură.",
+            "counterexample": "Testarea numai cu un id existent nu descoperă ștergerea accidentală a ultimului element."
+          },
+          "notation": [],
+          "prerequisites": [
+            "random-selection"
           ]
         }
       ],
@@ -21335,6 +22336,87 @@ window.TW_COURSE = {
           "prerequisites": [
             "math-round"
           ]
+        },
+        {
+          "id": "reason-search",
+          "title": "Provocare: căutare tolerantă la majuscule",
+          "intro": "Normalizează după aceeași regulă termenul și textul în care cauți.",
+          "example": "name.toLowerCase().includes(term.trim().toLowerCase());",
+          "explain": "trim elimină spațiile de la capetele termenului. Textul gol este inclus în orice text și poate reafișa toate rezultatele.",
+          "points": [],
+          "quiz": {
+            "question": "Ce nu ajunge pentru ca \" PEN \" să găsească \"Blue pen\"?",
+            "options": [
+              "Conversia ambelor texte la litere mici.",
+              "Eliminarea spațiilor de la capetele termenului.",
+              "Normalizarea numai a numelui, nu și a termenului."
+            ],
+            "correct": 2,
+            "explanation": "trim elimină spațiile de la capetele termenului. Textul gol este inclus în orice text și poate reafișa toate rezultatele."
+          },
+          "task": {
+            "mode": "js",
+            "prompt": "Returnează textele din input.names care conțin input.term, ignorând majusculele și spațiile de la capetele termenului.",
+            "solution": "function solve(input) { const term = input.term.trim().toLowerCase(); return input.names.filter(function (name) { return name.toLowerCase().includes(term); }); }",
+            "cases": [
+              {
+                "input": {
+                  "names": [
+                    "Blue pen",
+                    "Notebook"
+                  ],
+                  "term": " PEN "
+                },
+                "expected": [
+                  "Blue pen"
+                ]
+              },
+              {
+                "input": {
+                  "names": [
+                    "Tea",
+                    "Cake"
+                  ],
+                  "term": ""
+                },
+                "expected": [
+                  "Tea",
+                  "Cake"
+                ]
+              },
+              {
+                "input": {
+                  "names": [
+                    "Tea"
+                  ],
+                  "term": "milk"
+                },
+                "expected": []
+              }
+            ],
+            "starter": "function solve(input) {\n  // Write your code here.\n}\n",
+            "id": "reason-search"
+          },
+          "hint": "Ce rezultat dorești pentru termenul gol?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "string-trim",
+              "string-case",
+              "string-search"
+            ],
+            "questions": [
+              "Ce normalizezi în fiecare parte?",
+              "Ce rezultat dorești pentru termenul gol?"
+            ],
+            "explanation": "trim elimină spațiile de la capetele termenului. Textul gol este inclus în orice text și poate reafișa toate rezultatele.",
+            "counterexample": "startsWith ar respinge Blue pen pentru termenul pen, deși cerința cere apariția oriunde."
+          },
+          "notation": [],
+          "prerequisites": [
+            "math-minmax"
+          ]
         }
       ],
       "learning": {
@@ -22612,6 +23694,76 @@ window.TW_COURSE = {
           "prerequisites": [
             "regex-full-lookbehind-positive"
           ]
+        },
+        {
+          "id": "reason-whole",
+          "title": "Provocare: format complet sau fragment?",
+          "intro": "O potrivire găsită în interiorul textului nu validează automat textul întreg.",
+          "example": "/^[A-Z]{2}[0-9]{3}$/.test(\"AB123\");",
+          "explain": "Ancorele cer întregul text, iar cuantificatorii cer lungimi exacte.",
+          "points": [],
+          "quiz": {
+            "question": "De ce /[A-Z]{2}[0-9]{3}/ acceptă \"xAB123y\"?",
+            "options": [
+              "Găsește un fragment valid; lipsesc ancorele.",
+              "Este necesar flagul g ca să respingă textul.",
+              "Nu permite combinarea literelor și cifrelor."
+            ],
+            "correct": 0,
+            "explanation": "Ancorele cer întregul text, iar cuantificatorii cer lungimi exacte."
+          },
+          "task": {
+            "mode": "js",
+            "prompt": "Acceptă numai exact două litere mari A-Z și trei cifre. Returnează boolean.",
+            "solution": "function solve(input) { return /^[A-Z]{2}[0-9]{3}$/.test(input); }",
+            "cases": [
+              {
+                "input": "AB123",
+                "expected": true
+              },
+              {
+                "input": "xAB123y",
+                "expected": false
+              },
+              {
+                "input": "ab123",
+                "expected": false
+              },
+              {
+                "input": "AB1234",
+                "expected": false
+              },
+              {
+                "input": "AB12",
+                "expected": false
+              },
+              {
+                "input": "",
+                "expected": false
+              }
+            ],
+            "starter": "function solve(input) {\n  // Write your code here.\n}\n",
+            "id": "reason-whole"
+          },
+          "hint": "Ce exemple apropiate trebuie respinse?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "regex-exact",
+              "regex-full-quant-exact"
+            ],
+            "questions": [
+              "Validezi întregul text sau cauți o parte?",
+              "Ce exemple apropiate trebuie respinse?"
+            ],
+            "explanation": "Ancorele cer întregul text, iar cuantificatorii cer lungimi exacte.",
+            "counterexample": "Flagul g nu transformă o căutare de fragment într-o validare completă."
+          },
+          "notation": [],
+          "prerequisites": [
+            "regex-full-lookbehind-negative"
+          ]
         }
       ],
       "learning": {
@@ -23341,6 +24493,64 @@ window.TW_COURSE = {
           ],
           "prerequisites": [
             "date-negative-timestamp"
+          ]
+        },
+        {
+          "id": "reason-utc-month",
+          "title": "Provocare: luna se poate schimba după conversie",
+          "intro": "Același moment poate aparține altei zile sau luni în alt fus orar. Folosește consecvent fusul cerut.",
+          "example": "new Date(\"2026-03-01T00:30:00+02:00\").getUTCMonth(); // 1",
+          "explain": "Momentul din exemplu este încă în februarie la UTC. getUTCMonth numără lunile de la 0.",
+          "points": [],
+          "quiz": {
+            "question": "Momentul 1 martie, 00:30, la +02:00 aparține cărei luni UTC?",
+            "options": [
+              "Martie indiferent de offset.",
+              "Februarie.",
+              "Date nu poate reprezenta acest moment."
+            ],
+            "correct": 1,
+            "explanation": "Momentul din exemplu este încă în februarie la UTC. getUTCMonth numără lunile de la 0."
+          },
+          "task": {
+            "mode": "js",
+            "prompt": "Returnează luna UTC a momentului input, numerotată de la 1 la 12.",
+            "solution": "function solve(input) { return new Date(input).getUTCMonth() + 1; }",
+            "cases": [
+              {
+                "input": "2026-03-01T00:30:00+02:00",
+                "expected": 2
+              },
+              {
+                "input": "2026-01-01T00:30:00+02:00",
+                "expected": 12
+              },
+              {
+                "input": "2026-07-15T12:00:00Z",
+                "expected": 7
+              }
+            ],
+            "starter": "function solve(input) {\n  // Write your code here.\n}\n",
+            "id": "reason-utc-month"
+          },
+          "hint": "Ce se schimbă la traversarea miezului nopții?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "date-full-getUTCMonth",
+              "date-full-getUTCFullYear"
+            ],
+            "questions": [
+              "Se cere timp local sau UTC?",
+              "Ce se schimbă la traversarea miezului nopții?"
+            ],
+            "explanation": "Momentul din exemplu este încă în februarie la UTC. getUTCMonth numără lunile de la 0.",
+            "counterexample": "Extragerea caracterelor lunii din text ar ignora offsetul."
+          },
+          "notation": [],
+          "prerequisites": [
+            "date-duration-days"
           ]
         }
       ],
@@ -26108,6 +27318,96 @@ window.TW_COURSE = {
           "prerequisites": [
             "dom-ready"
           ]
+        },
+        {
+          "id": "reason-event-time",
+          "title": "Provocare: când citești valoarea?",
+          "intro": "O valoare citită la încărcare este o captură a acelui moment. Citește valoarea curentă atunci când acțiunea o folosește.",
+          "example": "button.onclick = function () { output.textContent = input.value; };",
+          "explain": "Handler-ul citește după modificările utilizatorului. Atributul HTML value poate rămâne neschimbat, deși proprietatea value a fost modificată.",
+          "points": [],
+          "quiz": {
+            "question": "Utilizatorul schimbă numele înainte de Apply. Unde citești .value?",
+            "options": [
+              "Numai la încărcare, înainte de handler.",
+              "Din atributul HTML value, fără proprietatea curentă.",
+              "În handler-ul click."
+            ],
+            "correct": 2,
+            "explanation": "Handler-ul citește după modificările utilizatorului. Atributul HTML value poate rămâne neschimbat, deși proprietatea value a fost modificată."
+          },
+          "task": {
+            "mode": "dom",
+            "prompt": "La Apply afișează valoarea curentă din input în #result. Se testează și o altă valoare introdusă după încărcare.",
+            "solution": "document.querySelector(\"#apply\").onclick = function () { document.querySelector(\"#result\").textContent = document.querySelector(\"#name\").value; };",
+            "fixture": "<input id=\"name\" value=\"Old\"><button id=\"apply\">Apply</button><p id=\"result\"></p>",
+            "tests": [
+              {
+                "kind": "text",
+                "selector": "#result",
+                "value": "New",
+                "label": "`#result` afișează `New`"
+              }
+            ],
+            "actions": [
+              {
+                "type": "fill",
+                "selector": "#name",
+                "value": "New"
+              },
+              {
+                "type": "click",
+                "selector": "#apply"
+              }
+            ],
+            "starter": "",
+            "variants": [
+              {
+                "label": "Alt nume",
+                "actions": [
+                  {
+                    "type": "fill",
+                    "selector": "#name",
+                    "value": "Alex"
+                  },
+                  {
+                    "type": "click",
+                    "selector": "#apply"
+                  }
+                ],
+                "tests": [
+                  {
+                    "kind": "text",
+                    "selector": "#result",
+                    "value": "Alex",
+                    "label": "`#result` afișează `Alex`"
+                  }
+                ]
+              }
+            ],
+            "id": "reason-event-time"
+          },
+          "hint": "Citești proprietatea curentă sau atributul inițial?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "dom-click",
+              "dom-value"
+            ],
+            "questions": [
+              "În ce moment se poate modifica valoarea?",
+              "Citești proprietatea curentă sau atributul inițial?"
+            ],
+            "explanation": "Handler-ul citește după modificările utilizatorului. Atributul HTML value poate rămâne neschimbat, deși proprietatea value a fost modificată.",
+            "counterexample": "Un const name=input.value creat înainte de eveniment poate păstra Old."
+          },
+          "notation": [
+            "textContent citește sau înlocuiește textul elementului. Un text cu taguri nu este interpretat ca HTML."
+          ],
+          "prerequisites": [
+            "dom-theme"
+          ]
         }
       ],
       "learning": {
@@ -28129,6 +29429,67 @@ window.TW_COURSE = {
           "prerequisites": [
             "css-animation-direction-long"
           ]
+        },
+        {
+          "id": "reason-text",
+          "title": "Provocare: text sau markup?",
+          "intro": "Un nume introdus de utilizator poate conține semne de taguri. Dacă se cere text, nu îl interpreta ca HTML.",
+          "example": "output.textContent = \"<b>Example</b>\";",
+          "explain": "textContent păstrează textul literal, fără să creeze un element b.",
+          "points": [],
+          "quiz": {
+            "question": "Cum afișezi un nume care poate conține <img...>, fără interpretare ca HTML?",
+            "options": [
+              "Prin textContent.",
+              "Prin innerHTML.",
+              "Elimin doar cuvântul script."
+            ],
+            "correct": 0,
+            "explanation": "textContent păstrează textul literal, fără să creeze un element b."
+          },
+          "task": {
+            "mode": "dom",
+            "prompt": "Copiază valoarea din input în #result ca text literal, fără un element b în rezultat.",
+            "solution": "document.querySelector(\"#result\").textContent = document.querySelector(\"#name\").value;",
+            "fixture": "<input id=\"name\" value=\"&lt;b&gt;Notebook&lt;/b&gt;\"><div id=\"result\"></div>",
+            "tests": [
+              {
+                "kind": "text",
+                "selector": "#result",
+                "value": "<b>Notebook</b>",
+                "label": "`#result` afișează `<b>Notebook</b>`"
+              },
+              {
+                "kind": "absent",
+                "selector": "#result b",
+                "label": "`#result b` nu există"
+              }
+            ],
+            "actions": [],
+            "starter": "",
+            "id": "reason-text"
+          },
+          "hint": "Cum verifici absența elementelor interpretate?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "dom-text",
+              "dom-create"
+            ],
+            "questions": [
+              "Vrei text sau elemente noi?",
+              "Cum verifici absența elementelor interpretate?"
+            ],
+            "explanation": "textContent păstrează textul literal, fără să creeze un element b.",
+            "counterexample": "Un test doar cu Notebook ar trece și pentru innerHTML."
+          },
+          "notation": [
+            "textContent citește sau înlocuiește textul elementului. Un text cu taguri nu este interpretat ca HTML."
+          ],
+          "prerequisites": [
+            "html-frame-history"
+          ]
         }
       ],
       "learning": {
@@ -28592,6 +29953,72 @@ window.TW_COURSE = {
           ],
           "prerequisites": [
             "json-format"
+          ]
+        },
+        {
+          "id": "reason-boundary",
+          "title": "Provocare: din text JSON până la rezultat",
+          "intro": "Parsarea, accesul la proprietăți și filtrarea sunt operații distincte, în această ordine.",
+          "example": "const data = JSON.parse(text);\nconst items = data.items.filter(function (item) { return item.available; });",
+          "explain": "Înaintea parsării ai text. După parsare poți accesa items ca vector și calcula un rezultat.",
+          "points": [],
+          "quiz": {
+            "question": "Care este ordinea potrivită pentru textul unui fișier JSON cu items?",
+            "options": [
+              "Filtrez direct textul.",
+              "Parsez textul, accesez items, apoi filtrez.",
+              "Aplic stringify înainte de accesarea proprietăților."
+            ],
+            "correct": 1,
+            "explanation": "Înaintea parsării ai text. După parsare poți accesa items ca vector și calcula un rezultat."
+          },
+          "task": {
+            "mode": "js",
+            "prompt": "input este text JSON cu items. Returnează numele elementelor cu available=true, în ordine.",
+            "solution": "function solve(input) { const data = JSON.parse(input); return data.items.filter(function (item) { return item.available === true; }).map(function (item) { return item.name; }); }",
+            "cases": [
+              {
+                "input": "{\"items\":[{\"name\":\"Pen\",\"available\":true},{\"name\":\"Book\",\"available\":false}]}",
+                "expected": [
+                  "Pen"
+                ]
+              },
+              {
+                "input": "{\"items\":[]}",
+                "expected": []
+              },
+              {
+                "input": "{\"items\":[{\"name\":\"Tea\",\"available\":false}]}",
+                "expected": []
+              }
+            ],
+            "starter": "function solve(input) {\n  // Write your code here.\n}\n",
+            "id": "reason-boundary"
+          },
+          "hint": "Ce întorci pentru o listă fără rezultate?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "json-parse",
+              "json-nested"
+            ],
+            "questions": [
+              "Ce tip ai înainte și după JSON.parse?",
+              "Ce întorci pentru o listă fără rezultate?"
+            ],
+            "explanation": "Înaintea parsării ai text. După parsare poți accesa items ca vector și calcula un rezultat.",
+            "counterexample": "stringify ar serializa încă o dată textul, nu ar oferi obiectul cu items."
+          },
+          "notation": [
+            "function declară o funcție: o bucată de cod pe care o poți apela. solve este numele folosit de verificarea exercițiilor.",
+            "return trimite valoarea calculată la apelant și încheie execuția curentă a funcției.",
+            "const declară un nume pentru o valoare. Nu îl poți reasigna cu =; conținutul unui obiect poate fi totuși modificat.",
+            "JSON.parse citește un text JSON și construiește valoarea JavaScript descrisă de el. Textul invalid produce o eroare.",
+            "filter construiește un vector nou păstrând elementele pentru care funcția întoarce true."
+          ],
+          "prerequisites": [
+            "json-errors"
           ]
         }
       ],
@@ -29494,6 +30921,79 @@ window.TW_COURSE = {
           "prerequisites": [
             "cookie-read"
           ]
+        },
+        {
+          "id": "reason-restore",
+          "title": "Provocare: date salvate absente sau invalide",
+          "intro": "Datele salvate pot lipsi, pot avea JSON invalid sau pot avea alte tipuri decât cele așteptate.",
+          "example": "try { const data = JSON.parse(saved); } catch (error) { /* Use a default. */ }",
+          "explain": "JSON valid nu garantează forma necesară aplicației. Validez obiectul și tipul contorului, păstrând valoarea validă zero.",
+          "points": [],
+          "quiz": {
+            "question": "Ce faci dacă preferința poate lipsi sau conține JSON invalid?",
+            "options": [
+              "Folosesc eval pe textul salvat.",
+              "Șterg întreaga stocare la fiecare încărcare.",
+              "Tratez eroarea și validez forma datelor."
+            ],
+            "correct": 2,
+            "explanation": "JSON valid nu garantează forma necesară aplicației. Validez obiectul și tipul contorului, păstrând valoarea validă zero."
+          },
+          "task": {
+            "mode": "js",
+            "prompt": "input este text salvat sau null. Returnează count numai dacă este numeric și nenegativ într-un obiect JSON; în rest returnează 0.",
+            "solution": "function solve(input) { try { const data = JSON.parse(input); if (data && typeof data.count === \"number\" && data.count >= 0) return data.count; } catch (error) { return 0; } return 0; }",
+            "cases": [
+              {
+                "input": "{\"count\":0}",
+                "expected": 0
+              },
+              {
+                "input": "{\"count\":8}",
+                "expected": 8
+              },
+              {
+                "input": null,
+                "expected": 0
+              },
+              {
+                "input": "broken",
+                "expected": 0
+              },
+              {
+                "input": "{\"count\":\"8\"}",
+                "expected": 0
+              },
+              {
+                "input": "{\"count\":-1}",
+                "expected": 0
+              }
+            ],
+            "starter": "function solve(input) {\n  // Write your code here.\n}\n",
+            "id": "reason-restore"
+          },
+          "hint": "De ce nu ștergi preferințe fără legătură?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "storage-restore",
+              "json-errors"
+            ],
+            "questions": [
+              "Este parsarea suficientă pentru a garanta tipurile?",
+              "De ce nu ștergi preferințe fără legătură?"
+            ],
+            "explanation": "JSON valid nu garantează forma necesară aplicației. Validez obiectul și tipul contorului, păstrând valoarea validă zero.",
+            "counterexample": "Datele {\"count\":\"8\"} sunt JSON valid, dar nu respectă contractul acestui contor."
+          },
+          "notation": [
+            "const declară un nume pentru o valoare. Nu îl poți reasigna cu =; conținutul unui obiect poate fi totuși modificat.",
+            "JSON.parse citește un text JSON și construiește valoarea JavaScript descrisă de el. Textul invalid produce o eroare."
+          ],
+          "prerequisites": [
+            "cookie-write"
+          ]
         }
       ],
       "learning": {
@@ -30292,6 +31792,72 @@ window.TW_COURSE = {
           "notation": [],
           "prerequisites": [
             "scss-function"
+          ]
+        },
+        {
+          "id": "reason-theme",
+          "title": "Provocare: valoare de build sau de utilizare?",
+          "intro": "Sass calculează variabilele la compilare. Variabilele CSS pot rămâne legate de tema paginii încărcate.",
+          "example": "$spacing: 12px;\n.card { padding: $spacing; color: var(--accent); }",
+          "explain": "CSS-ul rezultat păstrează var(--accent), dar padding devine 12px. Schimbarea variabilei Sass ar necesita o nouă compilare.",
+          "points": [],
+          "quiz": {
+            "question": "Culoarea trebuie schimbată în browser fără recompilarea SCSS. Ce alegi?",
+            "options": [
+              "O proprietate CSS personalizată folosită cu var().",
+              "Numai $accent în SCSS.",
+              "Browserul va compila singur fișierul SCSS."
+            ],
+            "correct": 0,
+            "explanation": "CSS-ul rezultat păstrează var(--accent), dar padding devine 12px. Schimbarea variabilei Sass ar necesita o nouă compilare."
+          },
+          "task": {
+            "mode": "scss",
+            "prompt": "Scrie SCSS care folosește $spacing pentru padding 12px și păstrează culoarea legată de --accent, nu o valoare fixă.",
+            "solution": "$spacing: 12px;\n.card { padding: $spacing; color: var(--accent); }",
+            "fixture": "<article class=\"card\" style=\"--accent:navy\">Catalog</article>",
+            "tests": [
+              {
+                "kind": "style",
+                "selector": ".card",
+                "name": "padding-left",
+                "value": "12px",
+                "label": "`.card`: `padding-left: 12px`"
+              },
+              {
+                "kind": "style",
+                "selector": ".card",
+                "name": "color",
+                "value": "rgb(0, 0, 128)",
+                "label": "`.card`: `color: rgb(0, 0, 128)`"
+              },
+              {
+                "kind": "cssIncludes",
+                "value": "var(--accent)",
+                "label": "Culoarea rămâne legată de variabila CSS."
+              }
+            ],
+            "starter": "",
+            "id": "reason-theme"
+          },
+          "hint": "Ce expresie trebuie păstrată în CSS pentru tema din browser?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "scss-variables",
+              "css-variables"
+            ],
+            "questions": [
+              "Ce se calculează la build?",
+              "Ce expresie trebuie păstrată în CSS pentru tema din browser?"
+            ],
+            "explanation": "CSS-ul rezultat păstrează var(--accent), dar padding devine 12px. Schimbarea variabilei Sass ar necesita o nouă compilare.",
+            "counterexample": "Modificarea lui $accent în sursa SCSS nu schimbă singură CSS-ul deja descărcat."
+          },
+          "notation": [],
+          "prerequisites": [
+            "scss-bootstrap"
           ]
         }
       ],
@@ -31539,6 +33105,83 @@ window.TW_COURSE = {
           "notation": [],
           "prerequisites": [
             "node-crypto"
+          ]
+        },
+        {
+          "id": "reason-file-flow",
+          "title": "Provocare: rezultatul trebuie să vină din fișier",
+          "intro": "O funcție generală citește calea cerută și calculează rezultatul din conținutul citit.",
+          "example": "const text = fs.readFileSync(file, \"utf8\");\nconst data = JSON.parse(text);",
+          "explain": "utf8 cere text în loc de Buffer. După parsare poți filtra items. Alt fișier trebuie să poată produce alt rezultat.",
+          "points": [],
+          "quiz": {
+            "question": "Cum descoperi că rezultatul este scris direct în cod?",
+            "options": [
+              "Repet numai primul exemplu.",
+              "Testez și un alt fișier, cu alte date.",
+              "Caut cuvântul JSON în sursă."
+            ],
+            "correct": 1,
+            "explanation": "utf8 cere text în loc de Buffer. După parsare poți filtra items. Alt fișier trebuie să poată produce alt rezultat."
+          },
+          "task": {
+            "mode": "node",
+            "prompt": "Citește input.file și returnează numele elementelor cu stock>0. Nu fixa numele fișierului sau rezultatul.",
+            "solution": "const fs = require(\"fs\");\nfunction solve(input) { const data = JSON.parse(fs.readFileSync(input.file, \"utf8\")); return data.items.filter(function (item) { return item.stock > 0; }).map(function (item) { return item.name; }); }",
+            "cases": [
+              {
+                "input": {
+                  "file": "stock.json"
+                },
+                "expected": [
+                  "Pen"
+                ]
+              },
+              {
+                "input": {
+                  "file": "empty.json"
+                },
+                "expected": []
+              },
+              {
+                "input": {
+                  "file": "other.json"
+                },
+                "expected": [
+                  "Book",
+                  "Tea"
+                ]
+              }
+            ],
+            "starter": "function solve(input) {\n  // Write your code here.\n}\n",
+            "files": {
+              "stock.json": "{\"items\":[{\"name\":\"Pen\",\"stock\":2},{\"name\":\"Notebook\",\"stock\":0}]}",
+              "empty.json": "{\"items\":[]}",
+              "other.json": "{\"items\":[{\"name\":\"Book\",\"stock\":1},{\"name\":\"Tea\",\"stock\":5}]}"
+            },
+            "id": "reason-file-flow"
+          },
+          "hint": "Ce trebuie să depindă de input.file?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "node-json-file",
+              "node-buffer"
+            ],
+            "questions": [
+              "Ce întoarce citirea cu utf8?",
+              "Ce trebuie să depindă de input.file?"
+            ],
+            "explanation": "utf8 cere text în loc de Buffer. După parsare poți filtra items. Alt fișier trebuie să poată produce alt rezultat.",
+            "counterexample": "return [\"Pen\"] trece primul caz, dar nu rezolvă problema generală."
+          },
+          "notation": [
+            "const declară un nume pentru o valoare. Nu îl poți reasigna cu =; conținutul unui obiect poate fi totuși modificat.",
+            "JSON.parse citește un text JSON și construiește valoarea JavaScript descrisă de el. Textul invalid produce o eroare."
+          ],
+          "prerequisites": [
+            "node-watch"
           ]
         }
       ],
@@ -33407,6 +35050,87 @@ window.TW_COURSE = {
           "prerequisites": [
             "express-all-methods"
           ]
+        },
+        {
+          "id": "reason-query",
+          "title": "Provocare: absent nu înseamnă invalid",
+          "intro": "Un parametru poate lipsi sau poate fi prezent, dar invalid. O valoare implicită nu trebuie să ascundă un parametru greșit.",
+          "example": "if (request.query.limit === undefined) { response.json({ limit: 10 }); return; }",
+          "explain": "Numai absența primește 10. Pentru valori prezente verific intervalul și integritatea numărului, apoi răspund cu 400 dacă nu sunt valide.",
+          "points": [],
+          "quiz": {
+            "question": "De ce Number(limit)||10 este greșit dacă zero este invalid?",
+            "options": [
+              "Nu poate converti texte numerice.",
+              "Verifică automat intervalul 1–50.",
+              "Ascunde zero invalid sub valoarea implicită."
+            ],
+            "correct": 2,
+            "explanation": "Numai absența primește 10. Pentru valori prezente verific intervalul și integritatea numărului, apoi răspund cu 400 dacă nu sunt valide."
+          },
+          "task": {
+            "mode": "express",
+            "prompt": "La /items fără limit întoarce JSON {\"limit\":10}. Acceptă întregi 1–50. Pentru zero, text, fracție sau valori peste 50 întoarce 400 și Invalid limit.",
+            "solution": "const express = require(\"express\");\nconst app = express();\napp.get(\"/items\", function (request, response) {\n  const raw = request.query.limit;\n  if (raw === undefined) { response.json({ limit: 10 }); return; }\n  const limit = Number(raw);\n  if (!Number.isInteger(limit) || limit < 1 || limit > 50) {\n    response.status(400).send(\"Invalid limit\"); return;\n  }\n  response.json({ limit: limit });\n});\nmodule.exports = app;",
+            "requests": [
+              {
+                "path": "/items",
+                "json": {
+                  "limit": 10
+                }
+              },
+              {
+                "path": "/items?limit=2",
+                "json": {
+                  "limit": 2
+                }
+              },
+              {
+                "path": "/items?limit=0",
+                "status": 400,
+                "bodyExpected": "Invalid limit"
+              },
+              {
+                "path": "/items?limit=abc",
+                "status": 400,
+                "bodyExpected": "Invalid limit"
+              },
+              {
+                "path": "/items?limit=2.5",
+                "status": 400,
+                "bodyExpected": "Invalid limit"
+              },
+              {
+                "path": "/items?limit=51",
+                "status": 400,
+                "bodyExpected": "Invalid limit"
+              }
+            ],
+            "starter": "const express = require(\"express\");\nconst app = express();\n\n// Add your routes here.\n\nmodule.exports = app;\n",
+            "id": "reason-query"
+          },
+          "hint": "Ce valori aparent apropiate trebuie respinse?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "express-query",
+              "express-numbers",
+              "express-status"
+            ],
+            "questions": [
+              "Cum distingi lipsa de zero?",
+              "Ce valori aparent apropiate trebuie respinse?"
+            ],
+            "explanation": "Numai absența primește 10. Pentru valori prezente verific intervalul și integritatea numărului, apoi răspund cu 400 dacă nu sunt valide.",
+            "counterexample": "parseInt(\"2abc\") ar produce 2, deși textul nu reprezintă întregul cerut."
+          },
+          "notation": [
+            "=== compară atât valoarea, cât și tipul: numărul 10 diferă de textul \"10\"."
+          ],
+          "prerequisites": [
+            "express-nodemon"
+          ]
         }
       ],
       "learning": {
@@ -33899,6 +35623,67 @@ window.TW_COURSE = {
           ],
           "prerequisites": [
             "http-locals"
+          ]
+        },
+        {
+          "id": "reason-order",
+          "title": "Provocare: ruta există, dar cererea nu ajunge la ea",
+          "intro": "O rută declarată nu este automat accesibilă. Un middleware anterior poate încheia răspunsul.",
+          "example": "app.get(\"/status\", handler);\napp.use(notFound);",
+          "explain": "Fallback-ul 404 vine după rutele cunoscute. Dacă răspunde înaintea lor fără next, oprește cererea.",
+          "points": [],
+          "quiz": {
+            "question": "Ce face un middleware 404 pus înaintea rutei, dacă trimite răspunsul fără next?",
+            "options": [
+              "Oprește cererea înaintea rutei.",
+              "Express ignoră ordinea și alege ruta mai specifică.",
+              "Trimite corect două răspunsuri."
+            ],
+            "correct": 0,
+            "explanation": "Fallback-ul 404 vine după rutele cunoscute. Dacă răspunde înaintea lor fără next, oprește cererea."
+          },
+          "task": {
+            "mode": "express",
+            "prompt": "Configurează /status cu 200 și Ready. Toate căile necunoscute primesc 404 și Not found.",
+            "solution": "const express = require(\"express\");\nconst app = express();\napp.get(\"/status\", function (request, response) { response.send(\"Ready\"); });\napp.use(function (request, response) { response.status(404).send(\"Not found\"); });\nmodule.exports = app;",
+            "requests": [
+              {
+                "path": "/status",
+                "bodyExpected": "Ready"
+              },
+              {
+                "path": "/missing",
+                "status": 404,
+                "bodyExpected": "Not found"
+              },
+              {
+                "path": "/other",
+                "status": 404,
+                "bodyExpected": "Not found"
+              }
+            ],
+            "starter": "const express = require(\"express\");\nconst app = express();\n\n// Add your routes here.\n\nmodule.exports = app;\n",
+            "id": "reason-order"
+          },
+          "hint": "Unde trebuie așezat fallback-ul?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "express-order",
+              "express-next"
+            ],
+            "questions": [
+              "Ce se execută primul?",
+              "Ce încheie răspunsul?",
+              "Unde trebuie așezat fallback-ul?"
+            ],
+            "explanation": "Fallback-ul 404 vine după rutele cunoscute. Dacă răspunde înaintea lor fără next, oprește cererea.",
+            "counterexample": "Schimbarea textului erorii nu rezolvă ordinea greșită."
+          },
+          "notation": [],
+          "prerequisites": [
+            "http-urlencoded"
           ]
         }
       ],
@@ -34605,6 +36390,134 @@ window.TW_COURSE = {
           ],
           "prerequisites": [
             "ejs-gallery"
+          ]
+        },
+        {
+          "id": "reason-escape-empty",
+          "title": "Provocare: text neobișnuit și listă goală",
+          "intro": "Un template trebuie să funcționeze și pentru nume care arată ca HTML, și fără rezultate.",
+          "example": "<li><%= item.name %></li>",
+          "explain": "Escaparea păstrează numele ca text. O ramură pentru lista goală îi explică utilizatorului de ce nu vede elemente.",
+          "points": [],
+          "quiz": {
+            "question": "Numele primit este \"<b>Pen</b>\" și trebuie afișat literal. Ce alegi?",
+            "options": [
+              "<%- item.name %>",
+              "<%= item.name %>",
+              "Un nume fix scris în template."
+            ],
+            "correct": 1,
+            "explanation": "Escaparea păstrează numele ca text. O ramură pentru lista goală îi explică utilizatorului de ce nu vede elemente."
+          },
+          "task": {
+            "mode": "ejs",
+            "prompt": "Afișează numele din items ca text, în li. Pentru items gol afișează No items într-un p, fără ul.",
+            "solution": "<% if (items.length === 0) { %><p>No items</p><% } else { %><ul><% for (const item of items) { %><li><%= item.name %></li><% } %></ul><% } %>",
+            "data": {
+              "items": [
+                {
+                  "name": "<b>Pen</b>"
+                }
+              ]
+            },
+            "tests": [
+              {
+                "kind": "text",
+                "selector": "li",
+                "value": "<b>Pen</b>",
+                "label": "`li` afișează `<b>Pen</b>`"
+              },
+              {
+                "kind": "absent",
+                "selector": "li b",
+                "label": "`li b` nu există"
+              },
+              {
+                "kind": "count",
+                "selector": "ul",
+                "min": 1,
+                "label": "Elementul `ul` există"
+              }
+            ],
+            "starter": "",
+            "partials": {},
+            "variants": [
+              {
+                "label": "Listă goală",
+                "data": {
+                  "items": []
+                },
+                "tests": [
+                  {
+                    "kind": "text",
+                    "selector": "p",
+                    "value": "No items",
+                    "label": "`p` afișează `No items`"
+                  },
+                  {
+                    "kind": "absent",
+                    "selector": "ul",
+                    "label": "`ul` nu există"
+                  }
+                ]
+              },
+              {
+                "label": "Alte nume",
+                "data": {
+                  "items": [
+                    {
+                      "name": "Tea"
+                    },
+                    {
+                      "name": "Book"
+                    }
+                  ]
+                },
+                "tests": [
+                  {
+                    "kind": "text",
+                    "selector": "li:first-child",
+                    "value": "Tea",
+                    "label": "`li:first-child` afișează `Tea`"
+                  },
+                  {
+                    "kind": "text",
+                    "selector": "li:last-child",
+                    "value": "Book",
+                    "label": "`li:last-child` afișează `Book`"
+                  }
+                ]
+              }
+            ],
+            "id": "reason-escape-empty",
+            "inputData": {
+              "items": [
+                {
+                  "name": "<b>Pen</b>"
+                }
+              ]
+            }
+          },
+          "hint": "Ce trebuie afișat când nu ai elemente?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "ejs-escape",
+              "ejs-empty"
+            ],
+            "questions": [
+              "Vrei text sau markup?",
+              "Ce trebuie afișat când nu ai elemente?"
+            ],
+            "explanation": "Escaparea păstrează numele ca text. O ramură pentru lista goală îi explică utilizatorului de ce nu vede elemente.",
+            "counterexample": "Un test doar cu Pen nu descoperă interpretarea accidentală a tagurilor."
+          },
+          "notation": [
+            "<%= expresie %> evaluează expresia și inserează valoarea ca text cu escapare HTML."
+          ],
+          "prerequisites": [
+            "ejs-errors"
           ]
         }
       ],
@@ -40337,6 +42250,213 @@ window.TW_COURSE = {
           "notation": [],
           "prerequisites": [
             "pg-rows"
+          ]
+        },
+        {
+          "id": "reason-sql-logic",
+          "title": "Provocare: parantezele schimbă rezultatul",
+          "intro": "Stocul pozitiv trebuie cerut ambelor categorii alternative, nu numai celei de-a doua.",
+          "example": "WHERE (category = 'books' OR category = 'stationery') AND stock > 0",
+          "explain": "Fără paranteze, prioritatea AND poate accepta produse books fără stoc. Rândul Book este un contraexemplu util.",
+          "points": [],
+          "quiz": {
+            "question": "Ce condiție cere books sau stationery, ambele cu stoc pozitiv?",
+            "options": [
+              "category='books' OR category='stationery' AND stock>0",
+              "category='books' AND category='stationery' AND stock>0",
+              "(category='books' OR category='stationery') AND stock>0"
+            ],
+            "correct": 2,
+            "explanation": "Fără paranteze, prioritatea AND poate accepta produse books fără stoc. Rândul Book este un contraexemplu util."
+          },
+          "task": {
+            "mode": "sql",
+            "prompt": "Afișează name pentru books sau stationery cu stock>0, în ordinea id-ului.",
+            "solution": "SELECT name FROM products WHERE (category = 'books' OR category = 'stationery') AND stock > 0 ORDER BY id;",
+            "expected": [
+              {
+                "name": "Pen"
+              },
+              {
+                "name": "Notebook"
+              }
+            ],
+            "setup": "CREATE TABLE products (id integer, name text, category text, stock integer); INSERT INTO products VALUES (1,'Book','books',0),(2,'Pen','stationery',3),(3,'Notebook','books',2),(4,'Mug','accessories',4);",
+            "checkQuery": null,
+            "starter": "",
+            "id": "reason-sql-logic",
+            "contextCode": "CREATE TABLE products (id integer, name text, category text, stock integer); INSERT INTO products VALUES (1,'Book','books',0),(2,'Pen','stationery',3),(3,'Notebook','books',2),(4,'Mug','accessories',4);",
+            "expectedResult": [
+              {
+                "name": "Pen"
+              },
+              {
+                "name": "Notebook"
+              }
+            ],
+            "tables": [
+              {
+                "name": "products",
+                "columns": [
+                  "id",
+                  "name",
+                  "category",
+                  "stock"
+                ],
+                "rows": [
+                  {
+                    "id": 1,
+                    "name": "Book",
+                    "category": "books",
+                    "stock": 0
+                  },
+                  {
+                    "id": 2,
+                    "name": "Pen",
+                    "category": "stationery",
+                    "stock": 3
+                  },
+                  {
+                    "id": 3,
+                    "name": "Notebook",
+                    "category": "books",
+                    "stock": 2
+                  },
+                  {
+                    "id": 4,
+                    "name": "Mug",
+                    "category": "accessories",
+                    "stock": 4
+                  }
+                ],
+                "totalRows": 4
+              }
+            ]
+          },
+          "hint": "Ce rând descoperă lipsa parantezelor?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "sql-and-or"
+            ],
+            "questions": [
+              "Ce condiție este comună ambelor categorii?",
+              "Ce rând descoperă lipsa parantezelor?"
+            ],
+            "explanation": "Fără paranteze, prioritatea AND poate accepta produse books fără stoc. Rândul Book este un contraexemplu util.",
+            "counterexample": "Book are categoria potrivită, dar nu are stoc și trebuie exclus."
+          },
+          "notation": [
+            "WHERE păstrează numai rândurile pentru care condiția este adevărată. În UPDATE și DELETE limitează rândurile modificate."
+          ],
+          "prerequisites": [
+            "node-pg-connect"
+          ]
+        },
+        {
+          "id": "reason-sql-zero",
+          "title": "Provocare: păstrează și numără corect cazurile fără potrivire",
+          "intro": "LEFT JOIN poate păstra utilizatori fără accesări; coloana numărată decide dacă apar cu zero sau cu unu.",
+          "example": "COUNT(visits.id)",
+          "explain": "Rândul fără accesare are visits.id NULL. COUNT(visits.id) ignoră NULL, în timp ce COUNT(*) numără și rândul păstrat.",
+          "points": [],
+          "quiz": {
+            "question": "Ce numără corect accesările după LEFT JOIN?",
+            "options": [
+              "COUNT(visits.id)",
+              "COUNT(*) în orice situație.",
+              "INNER JOIN păstrează și utilizatorii fără potrivire."
+            ],
+            "correct": 0,
+            "explanation": "Rândul fără accesare are visits.id NULL. COUNT(visits.id) ignoră NULL, în timp ce COUNT(*) numără și rândul păstrat."
+          },
+          "task": {
+            "mode": "sql",
+            "prompt": "Afișează name și total pentru toți utilizatorii, inclusiv cei fără accesări. Sortează după users.id.",
+            "solution": "SELECT users.name, COUNT(visits.id)::int AS total FROM users LEFT JOIN visits ON visits.user_id = users.id GROUP BY users.id, users.name ORDER BY users.id;",
+            "expected": [
+              {
+                "name": "Alex",
+                "total": 2
+              },
+              {
+                "name": "Sam",
+                "total": 0
+              }
+            ],
+            "setup": "CREATE TABLE users (id integer, name text); CREATE TABLE visits (id integer, user_id integer); INSERT INTO users VALUES (1,'Alex'),(2,'Sam'); INSERT INTO visits VALUES (10,1),(11,1);",
+            "checkQuery": null,
+            "starter": "",
+            "id": "reason-sql-zero",
+            "contextCode": "CREATE TABLE users (id integer, name text); CREATE TABLE visits (id integer, user_id integer); INSERT INTO users VALUES (1,'Alex'),(2,'Sam'); INSERT INTO visits VALUES (10,1),(11,1);",
+            "expectedResult": [
+              {
+                "name": "Alex",
+                "total": 2
+              },
+              {
+                "name": "Sam",
+                "total": 0
+              }
+            ],
+            "tables": [
+              {
+                "name": "users",
+                "columns": [
+                  "id",
+                  "name"
+                ],
+                "rows": [
+                  {
+                    "id": 1,
+                    "name": "Alex"
+                  },
+                  {
+                    "id": 2,
+                    "name": "Sam"
+                  }
+                ],
+                "totalRows": 2
+              },
+              {
+                "name": "visits",
+                "columns": [
+                  "id",
+                  "user_id"
+                ],
+                "rows": [
+                  {
+                    "id": 10,
+                    "user_id": 1
+                  },
+                  {
+                    "id": 11,
+                    "user_id": 1
+                  }
+                ],
+                "totalRows": 2
+              }
+            ]
+          },
+          "hint": "Ce conține visits.id în acel rând?",
+          "duration": "8–15 min",
+          "challenge": true,
+          "reasoning": {
+            "prerequisites": [
+              "sql-left-join",
+              "sql-count-user-visits"
+            ],
+            "questions": [
+              "Cine trebuie păstrat fără potriviri?",
+              "Ce conține visits.id în acel rând?"
+            ],
+            "explanation": "Rândul fără accesare are visits.id NULL. COUNT(visits.id) ignoră NULL, în timp ce COUNT(*) numără și rândul păstrat.",
+            "counterexample": "COUNT(*) ar raporta 1 pentru Sam după acest LEFT JOIN."
+          },
+          "notation": [],
+          "prerequisites": [
+            "reason-sql-logic"
           ]
         }
       ],

@@ -29,11 +29,12 @@ for(const id of ['node-send-file','node-listen-port','express-all-methods','expr
 assert(positions.get('storage-model')<positions.get('storage-remove-one'));
 assert(byId.get('dulc-filter-dom').task.fixture.includes('value="not"'));
 assert(byId.get('ejs-conditions').task.variants.some(item=>item.data.available===false));
-for(const file of ['site/app.js','site/exam.js','site/runner.js','scripts/serve.mjs','scripts/lab-worker.mjs','site/template-worker-source.js']){
+for(const file of ['site/app.js','site/exam-session.js','site/exam.js','site/runner.js','scripts/serve.mjs','scripts/lab-worker.mjs','site/template-worker-source.js']){
  parse(await fs.readFile(file,'utf8'),{ecmaVersion:'latest',sourceType:file.endsWith('.mjs')||file.includes('worker-source')?'module':'script'});
 }
 const html=await fs.readFile('site/exam.html','utf8');
 for(const text of ['ID 2025–2026','nodemon','5 minute','3,5 puncte','0,3','15 minute','20 minute','10 minute','2 minute','1 minut','30 de minute'])assert(html.includes(text),text);
+assert(!html.includes('id="exam-bank"')&&!html.includes('id="exam-search"'),'Exercise bank must not be visible');
 for(const [parser,content] of [[htmlParser,html],[cssParser,await fs.readFile('site/exam.css','utf8')]]){
  parser.parse(content).iterate({enter(node){assert(!node.type.isError,'Page syntax at '+node.from);}});
 }

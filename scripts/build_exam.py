@@ -240,6 +240,21 @@ module.exports = app;'''
         steps=['Citește timpul la fiecare cerere.', 'Calculează perioada.', 'Creează directorul numai pe ruta cerută.', 'Păstrează fragmentele comune.'],
         rubric=['Formatul include zerouri.', 'Timestamp-ul are secunde.', 'Pagina păstrează antetul și subsolul.'])
 
+    # Transfer tasks are available to the random simulation without publishing a bank.
+    for chapter in course['chapters']:
+        for l in chapter['lessons']:
+            if not l.get('challenge'):
+                continue
+            mode = l['task']['mode']
+            if mode not in ('css','scss','dom','js','node','express','ejs','sql'):
+                continue
+            category = 'css' if mode in ('css','scss') else 'server' if mode in ('node','express','ejs') else 'sql' if mode == 'sql' else 'client'
+            item = add('exam-transfer-' + l['id'], l['title'].removeprefix('Provocare: '), category,
+                       deepcopy(l['task']), minutes=20 if category=='server' else 15,
+                       hint=l['hint'], steps=[l['reasoning']['explanation'],l['reasoning']['counterexample']],
+                       rubric=l['reasoning']['questions'], lesson_id=l['id'], level='Raționament')
+            item['reasoning'] = deepcopy(l['reasoning'])
+
     # Oral rehearsals model the explanation, not a keyword-scored text quiz.
     oral = [
         ('html-tag','Ce exprimă un tag HTML?','Explică diferența dintre element, tag de deschidere, conținut și tag de închidere. Dă un exemplu cu p.','Un element precum <p>Hello</p> marchează un paragraf: <p> deschide, Hello este conținutul și </p> închide. Există și elemente fără tag final, de exemplu img.',['Identifică p.','Explică textul vizibil.','Menționează elementele fără închidere.'],'html-tags'),

@@ -30,6 +30,7 @@ jobs:
           npm run check
           npm run check:learning
           npm run check:progression
+          npm run check:reasoning
           npm run check:exam
           npm run check:workshop
           npm run check:azure

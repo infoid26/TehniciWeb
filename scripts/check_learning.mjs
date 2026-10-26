@@ -9,7 +9,7 @@ for(const name of ['esc','rich','codeBlock','format']) {
  const declaration=body.find(node=>node.type==='VariableDeclaration'&&node.declarations.some(d=>d.id.name===name));
  vm.runInContext(source.slice(declaration.start,declaration.end),context);
 }
-for(const name of ['dataTableHTML','sqlTablesHTML','taskContextHTML','taskHTML']) {
+for(const name of ['dataTableHTML','sqlTablesHTML','taskContextHTML','reasoningHTML','taskHTML']) {
  const fn=body.find(node=>node.type==='FunctionDeclaration'&&node.id.name===name);
  vm.runInContext(source.slice(fn.start,fn.end),context);
 }

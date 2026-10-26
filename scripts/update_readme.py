@@ -12,11 +12,13 @@ Cursul este disponibil la **[tw.infoid26.ro](https://tw.infoid26.ro/)**.
 
 {total} de lecții în {len(chapters)} de capitole, cu explicații în română și exerciții pentru browser, server și SQL. Înveți să construiești un site de la documentul HTML până la pagini generate din date. Pentru exercițiile din browser nu ai nevoie de fișiere externe: datele și fișierele virtuale sunt furnizate. Explicațiile și întrebările sunt în română; codul și datele exemplelor sunt în engleză.
 
+Provocările de aplicare cer alegerea unei soluții, justificarea ei și identificarea unui contraexemplu: picture sau img, selectori combinați, tipuri, valori absente, momentele evenimentelor, validarea rutelor și interogări SQL. Ele apar după bazele relevante, fără a le înlocui.
+
 Traseul introduce bazele înaintea aplicațiilor: sintaxă și exemple mici, apoi combinații. Fiecare capitol are un punct de pornire explicat și legături către bazele necesare. La SQL, datele și rezultatele sunt tabele vizibile; comenzile care pregătesc laboratorul sunt opționale. Metoda de predare este descrisă în [PEDAGOGY.md](PEDAGOGY.md).
 
 Exemplele de integrare arată pregătirea Node.js, PostgreSQL și publicarea unei aplicații proprii. Pașii marcați Terminal sunt opționali și explică fișierele pe care le creezi pe calculator. Nu presupun accesul la repository-ul platformei. [Proiect Website](https://tw.infoid26.ro/project/) rămâne în română și nu este o condiție pentru curs.
 
-[Pregătire Examen](https://tw.infoid26.ro/examen) este pagina separată cu desfășurarea evaluării din fotografiile furnizate, exerciții de bază și integrate, explicații orale și simulări cronometrate. Datele și fișierele sunt oferite în laborator, iar progresul de examen se salvează separat. Anunțul de prezentare folosit este pentru ID 2025–2026; pentru seria actuală se aplică anunțul profesoarei.
+[Pregătire Examen](https://tw.infoid26.ro/examen) este pagina separată cu desfășurarea evaluării din fotografiile furnizate, exerciții de bază și integrate, explicații orale și simulări cronometrate. Simularea extrage bilete pe probe, oferă editorul și datele în browser, blochează scrierea în pregătire și verifică răspunsurile la predare. Nu sunt necesare instalări pentru simulare. Indiciile și soluțiile apar numai în recapitularea finală; nu se afișează o bancă de exerciții. Progresul simulării este separat de progresul cursului. Anunțul de prezentare folosit este pentru ID 2025–2026; pentru seria actuală se aplică anunțul profesoarei.
 
 Materia include HTML, formulare, media, MathML, CSS, responsive, animații, JavaScript, expresii regulate, date calendaristice, DOM, stocare, JSON, SCSS, Node, HTTP, Express, EJS și PostgreSQL. SQL include crearea tabelelor și tipurilor, constrângeri, chei străine, vectori, filtrare, agregare, relații între tabele și modificarea datelor.
 

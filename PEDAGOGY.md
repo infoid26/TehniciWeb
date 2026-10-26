@@ -29,3 +29,15 @@ Exercițiile integrate includ galerie filtrată pe intervale de minute, erori di
 ID-urile lecțiilor existente sunt păstrate; numai exercițiile corectate își pot cere reverificarea soluției. Progresul paginii de examen se salvează sub o cheie separată și nu modifică progresul cursului.
 
 check:exam rulează din terminal verificări de structură, soluții Node/Express/SQL/JavaScript, compilare SCSS/EJS și rute HTTP. Nu lansează un browser și nu confirmă aspectul sau interacțiunile DOM. check:exam:browser este verificarea separată în browser, de rulat numai când lansarea lui este autorizată și disponibilă.
+
+## Transfer și raționament
+
+Provocările din curs vin după noțiunile pe care le folosesc. Chestionarul cere o alegere într-o situație concretă, cu alternative plauzibile. Exercițiul aplică alegerea pe date furnizate. Explicația soluției arată și un contraexemplu: de ce o alternativă aparent potrivită ar eșua. Nu presupunem JavaScript în provocările din HTML.
+
+Alegerea picture/img este exersată în ambele sensuri: alt cadraj condiționat de viewport, respectiv aceeași compoziție la rezoluții diferite. Selectorii sunt testați și pe elemente apropiate care trebuie excluse; datele de intrare includ valori absente, zero și cazuri fără rezultate. O verificare automată a codului nu este prezentată drept notare a explicației în limbaj natural.
+
+## Simulare în browser
+
+Pagina de examen arată regulile și un singur flux de simulare, fără listă de exerciții. Fiecare probă are extragere, pregătire de cel mult 5 minute, lucru cronometrat și predare. În pregătire editorul este numai pentru citire; la predare răspunsul este blocat. Termenele și răspunsurile sunt păstrate la reîncărcare, fără să se reseteze timpul. Soluțiile sunt afișate numai după încheierea simulării.
+
+Mediul, fișierele și datele sunt oferite de platformă. Nu sunt necesare instalări pe calculator pentru simulare. Programele necesare examenului real sunt explicate separat. Etapele păstrează timpii documentați; cerințele sunt adaptări independente. Rezultatele testelor nu sunt o notă oficială și nu înlocuiesc justificarea orală.

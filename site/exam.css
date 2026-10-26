@@ -1,7 +1,6 @@
 .exam-shell { max-width:1240px; }
-.exam-links { display:flex; gap:24px; flex-wrap:wrap; font-size:14px; }
-.exam-links a { color:var(--muted); text-decoration:none; }
-.exam-links a:hover { color:var(--ink); }
+.exam-course-link { align-items:center; color:var(--ink); font-size:12px; font-weight:600; line-height:1.4; text-align:center; text-decoration:none; }
+.exam-course-link:hover { border-color:var(--accent); }
 .exam-hero { max-width:840px; padding:12px 0 32px; }
 .exam-hero h1 { font-size:clamp(34px,4.8vw,58px); line-height:1.15; letter-spacing:-1.5px; margin:18px 0; }
 .exam-hero .lead { max-width:740px; color:var(--muted); line-height:1.8; }
@@ -77,7 +76,20 @@
 #exam-status { color:var(--muted); }
 .exam-work-link { color:#c6b7ff; }
 @media(max-width:900px) { .exam-bank { grid-template-columns:repeat(2,minmax(0,1fr)); } .rules-grid { grid-template-columns:1fr; } }
-@media(max-width:650px) { .exam-shell { padding:0 18px; } .exam-hero h1 { letter-spacing:-1px; } .exam-bank,.exam-filters,.exam-editor-grid { grid-template-columns:1fr; } .exam-links { gap:14px; font-size:12px; } .topbar { flex-wrap:wrap; gap:14px; padding:20px 0; } .rule-card,.simulation-card { padding:20px; } .exam-section h2 { font-size:25px; } .exam-table th,.exam-table td { padding:12px; } .exam-stats { gap:12px; } }
+@media(max-width:650px) { .exam-shell { padding:0 18px; } .exam-hero h1 { letter-spacing:-1px; } .exam-bank,.exam-filters,.exam-editor-grid { grid-template-columns:1fr; } .topbar { flex-wrap:wrap; gap:14px; padding:20px 0; } .rule-card,.simulation-card { padding:20px; } .exam-section h2 { font-size:25px; } .exam-table th,.exam-table td { padding:12px; } .exam-stats { gap:12px; } }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 
 .exam-shell [hidden] { display:none !important; }
+
+.simulation-stages { display:flex; gap:10px; flex-wrap:wrap; list-style:none; padding:0; margin:24px 0; }
+.simulation-stages li { padding:8px 12px; border:1px solid var(--line); border-radius:8px; color:var(--muted); font-size:12px; }
+.simulation-stages .current { color:#e4d8ff; border-color:#a995ff; }
+.simulation-tasks .selected { outline:2px solid var(--accent); outline-offset:3px; }
+#phase-instructions { line-height:1.9; }
+.exam-context-note { font-size:14px; color:var(--muted); line-height:1.8; }
+.review-stages { display:grid; gap:24px; }
+.review-question { padding:24px 0; border-top:1px solid var(--line); }
+.review-question h4 { font-size:19px; }
+.review-question p,.review-question li { line-height:1.8; }
+.exam-editor-panel textarea[readonly] { opacity:.8; }
+.simulation-card .exam-actions { margin-bottom:0; }

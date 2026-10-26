@@ -86,6 +86,8 @@ def improve(chapters):
     repair_concept_jumps(cs,ls,edit,reorder)
     from course_assessment import repair_assessment
     repair_assessment(chapters, cs, ls, edit, reorder, move)
+    from course_reasoning import add_reasoning
+    add_reasoning(cs, ls)
     add_guidance(cs,ls)
     explain_notation(cs)
 

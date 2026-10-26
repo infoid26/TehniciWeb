@@ -4894,6 +4894,1626 @@ window.TW_EXAM = {
       }
     },
     {
+      "id": "exam-transfer-reason-cascade",
+      "title": "de ce nu câștigă ultima regulă?",
+      "category": "css",
+      "minutes": 15,
+      "level": "Raționament",
+      "hint": "Ce compari înaintea ordinii?",
+      "steps": [
+        "Selectorul cu ID are specificitate mai mare. O excepție locală poate folosi aceeași specificitate și poate apărea după regula inițială, fără important.",
+        "Aplicarea important peste tot poate ascunde cauza fără să explice cascada."
+      ],
+      "answer": "",
+      "rubric": [
+        "De ce o simplă regulă .urgent poate pierde?",
+        "Ce compari înaintea ordinii?"
+      ],
+      "lessonId": "reason-cascade",
+      "task": {
+        "mode": "css",
+        "prompt": "Păstrează regulile de pornire și adaugă o excepție fără !important: numai .urgent din #panel devine roșie; nota obișnuită rămâne navy.",
+        "solution": "#panel .note { color: navy; }\n.note { color: black; }\n#panel .urgent { color: red; }",
+        "fixture": "<div id=\"panel\"><p class=\"note\">Normal</p><p class=\"note urgent\">Urgent</p></div>",
+        "tests": [
+          {
+            "kind": "style",
+            "selector": ".note:not(.urgent)",
+            "name": "color",
+            "value": "rgb(0, 0, 128)",
+            "label": "`.note:not(.urgent)`: `color: rgb(0, 0, 128)`"
+          },
+          {
+            "kind": "style",
+            "selector": ".urgent",
+            "name": "color",
+            "value": "rgb(255, 0, 0)",
+            "label": "`.urgent`: `color: rgb(255, 0, 0)`"
+          }
+        ],
+        "starter": "#panel .note { color: navy; }\n.note { color: black; }\n",
+        "id": "exam-transfer-reason-cascade"
+      },
+      "reasoning": {
+        "prerequisites": [
+          "css-specificity",
+          "css-inherit"
+        ],
+        "questions": [
+          "De ce o simplă regulă .urgent poate pierde?",
+          "Ce compari înaintea ordinii?"
+        ],
+        "explanation": "Selectorul cu ID are specificitate mai mare. O excepție locală poate folosi aceeași specificitate și poate apărea după regula inițială, fără important.",
+        "counterexample": "Aplicarea important peste tot poate ascunde cauza fără să explice cascada."
+      }
+    },
+    {
+      "id": "exam-transfer-reason-selector",
+      "title": "combină condițiile fără selectări în plus",
+      "category": "css",
+      "minutes": 15,
+      "level": "Raționament",
+      "hint": "Poți explica fiecare segment al selectorului?",
+      "steps": [
+        "> cere copil direct; atributul verifică starea; :not exclude clasa. Spațiul în loc de > poate include descendenți nedoriți.",
+        "Un selector prea larg ar colora și prețul 9 din containerul intermediar."
+      ],
+      "answer": "",
+      "rubric": [
+        "Unde este necesar copil direct?",
+        "Ce condiție exclude fiecare element apropiat?",
+        "Poți explica fiecare segment al selectorului?"
+      ],
+      "lessonId": "reason-selector",
+      "task": {
+        "mode": "css",
+        "prompt": "Colorează navy numai prețul 12. Celelalte patru prețuri rămân negre. Nu modifica HTML-ul și nu selecta după textul numărului.",
+        "solution": ".price { color: black; }\n#catalog > article[data-state=\"ready\"]:not(.featured) > .price { color: navy; }",
+        "fixture": "<main id=\"catalog\"><article data-state=\"ready\"><p class=\"price\">12</p></article><article data-state=\"ready\" class=\"featured\"><p class=\"price\">20</p></article><article data-state=\"draft\"><p class=\"price\">5</p></article><div><article data-state=\"ready\"><p class=\"price\">9</p></article></div></main><aside><p class=\"price\">7</p></aside>",
+        "tests": [
+          {
+            "kind": "style",
+            "selector": "#catalog > article:first-child .price",
+            "name": "color",
+            "value": "rgb(0, 0, 128)",
+            "label": "`#catalog > article:first-child .price`: `color: rgb(0, 0, 128)`"
+          },
+          {
+            "kind": "style",
+            "selector": ".featured .price",
+            "name": "color",
+            "value": "rgb(0, 0, 0)",
+            "label": "`.featured .price`: `color: rgb(0, 0, 0)`"
+          },
+          {
+            "kind": "style",
+            "selector": "[data-state=\"draft\"] .price",
+            "name": "color",
+            "value": "rgb(0, 0, 0)",
+            "label": "`[data-state=\"draft\"] .price`: `color: rgb(0, 0, 0)`"
+          },
+          {
+            "kind": "style",
+            "selector": "#catalog > div .price",
+            "name": "color",
+            "value": "rgb(0, 0, 0)",
+            "label": "`#catalog > div .price`: `color: rgb(0, 0, 0)`"
+          },
+          {
+            "kind": "style",
+            "selector": "aside .price",
+            "name": "color",
+            "value": "rgb(0, 0, 0)",
+            "label": "`aside .price`: `color: rgb(0, 0, 0)`"
+          }
+        ],
+        "starter": "",
+        "id": "exam-transfer-reason-selector"
+      },
+      "reasoning": {
+        "prerequisites": [
+          "css-descendant",
+          "css-attributes",
+          "selector-not"
+        ],
+        "questions": [
+          "Unde este necesar copil direct?",
+          "Ce condiție exclude fiecare element apropiat?",
+          "Poți explica fiecare segment al selectorului?"
+        ],
+        "explanation": "> cere copil direct; atributul verifică starea; :not exclude clasa. Spațiul în loc de > poate include descendenți nedoriți.",
+        "counterexample": "Un selector prea larg ar colora și prețul 9 din containerul intermediar."
+      }
+    },
+    {
+      "id": "exam-transfer-reason-nth-type",
+      "title": "a doua poziție dintre ce elemente?",
+      "category": "css",
+      "minutes": 15,
+      "level": "Raționament",
+      "hint": "Ce se schimbă dacă apare încă un titlu?",
+      "steps": [
+        "Titlul și aside intră în numărătoarea tuturor copiilor, dar nu în numărătoarea paragrafelor.",
+        "p:nth-child(2) ar colora First în structura dată."
+      ],
+      "answer": "",
+      "rubric": [
+        "Numeri toți frații sau numai paragrafele?",
+        "Ce se schimbă dacă apare încă un titlu?"
+      ],
+      "lessonId": "reason-nth-type",
+      "task": {
+        "mode": "css",
+        "prompt": "Colorează navy numai paragraful Second. First și Third trebuie să rămână negre.",
+        "solution": "#notes p { color: black; }\n#notes > p:nth-of-type(2) { color: navy; }",
+        "fixture": "<section id=\"notes\"><h2>Notes</h2><p>First</p><aside>Extra</aside><p>Second</p><p>Third</p></section>",
+        "tests": [
+          {
+            "kind": "style",
+            "selector": "#notes p:nth-of-type(1)",
+            "name": "color",
+            "value": "rgb(0, 0, 0)",
+            "label": "`#notes p:nth-of-type(1)`: `color: rgb(0, 0, 0)`"
+          },
+          {
+            "kind": "style",
+            "selector": "#notes p:nth-of-type(2)",
+            "name": "color",
+            "value": "rgb(0, 0, 128)",
+            "label": "`#notes p:nth-of-type(2)`: `color: rgb(0, 0, 128)`"
+          },
+          {
+            "kind": "style",
+            "selector": "#notes p:nth-of-type(3)",
+            "name": "color",
+            "value": "rgb(0, 0, 0)",
+            "label": "`#notes p:nth-of-type(3)`: `color: rgb(0, 0, 0)`"
+          }
+        ],
+        "starter": "",
+        "id": "exam-transfer-reason-nth-type"
+      },
+      "reasoning": {
+        "prerequisites": [
+          "selector-nth-type",
+          "selector-nth-even"
+        ],
+        "questions": [
+          "Numeri toți frații sau numai paragrafele?",
+          "Ce se schimbă dacă apare încă un titlu?"
+        ],
+        "explanation": "Titlul și aside intră în numărătoarea tuturor copiilor, dar nu în numărătoarea paragrafelor.",
+        "counterexample": "p:nth-child(2) ar colora First în structura dată."
+      }
+    },
+    {
+      "id": "exam-transfer-reason-box",
+      "title": "de ce depășește cardul containerul?",
+      "category": "css",
+      "minutes": 15,
+      "level": "Raționament",
+      "hint": "Poți calcula dimensiunea exterioară înainte de corecție?",
+      "steps": [
+        "Într-un container de 300px, un card content-box de 100% cu 40px padding și 10px bordură poate avea exteriorul de 350px.",
+        "overflow:hidden poate tăia textul, fără să corecteze dimensiunea cardului."
+      ],
+      "answer": "",
+      "rubric": [
+        "Ce include width în fiecare model?",
+        "Poți calcula dimensiunea exterioară înainte de corecție?"
+      ],
+      "lessonId": "reason-box",
+      "task": {
+        "mode": "css",
+        "prompt": "Containerul are 300px. Include padding 20px și bordură 5px în lățimea de 100% a cardului, fără să ascunzi conținutul.",
+        "solution": "#container { width: 300px; }\n.card { width: 100%; padding: 20px; border: 5px solid navy; box-sizing: border-box; }",
+        "fixture": "<div id=\"container\"><article class=\"card\">Details</article></div>",
+        "tests": [
+          {
+            "kind": "style",
+            "selector": ".card",
+            "name": "box-sizing",
+            "value": "border-box",
+            "label": "`.card`: `box-sizing: border-box`"
+          },
+          {
+            "kind": "style",
+            "selector": ".card",
+            "name": "width",
+            "value": "300px",
+            "label": "`.card`: `width: 300px`"
+          },
+          {
+            "kind": "style",
+            "selector": ".card",
+            "name": "padding-left",
+            "value": "20px",
+            "label": "`.card`: `padding-left: 20px`"
+          },
+          {
+            "kind": "style",
+            "selector": ".card",
+            "name": "border-left-width",
+            "value": "5px",
+            "label": "`.card`: `border-left-width: 5px`"
+          }
+        ],
+        "starter": "",
+        "id": "exam-transfer-reason-box"
+      },
+      "reasoning": {
+        "prerequisites": [
+          "css-box",
+          "css-responsive"
+        ],
+        "questions": [
+          "Ce include width în fiecare model?",
+          "Poți calcula dimensiunea exterioară înainte de corecție?"
+        ],
+        "explanation": "Într-un container de 300px, un card content-box de 100% cu 40px padding și 10px bordură poate avea exteriorul de 350px.",
+        "counterexample": "overflow:hidden poate tăia textul, fără să corecteze dimensiunea cardului."
+      }
+    },
+    {
+      "id": "exam-transfer-reason-grid-boundary",
+      "title": "verifică ambele părți ale limitei",
+      "category": "css",
+      "minutes": 15,
+      "level": "Raționament",
+      "hint": "Ce regulă trebuie să câștige la 501px?",
+      "steps": [
+        "max-width include valoarea de 500px; regula de bază rămâne activă la 501px. Coloanele sunt egale prin 1fr.",
+        "Un layout poate părea corect într-o singură captură și să fie greșit imediat lângă prag."
+      ],
+      "answer": "",
+      "rubric": [
+        "Ce înseamnă inclusiv la limită?",
+        "Ce regulă trebuie să câștige la 501px?"
+      ],
+      "lessonId": "reason-grid-boundary",
+      "task": {
+        "mode": "css",
+        "prompt": "Afișează două coloane egale la 800px și 501px, dar o coloană la 500px și 390px.",
+        "solution": ".cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }\n@media (max-width: 500px) { .cards { grid-template-columns: 1fr; } }",
+        "fixture": "<div class=\"cards\"><article>One</article><article>Two</article><article>Three</article></div>",
+        "tests": [
+          {
+            "kind": "columns",
+            "selector": ".cards",
+            "count": 2,
+            "viewport": 800,
+            "label": "La 800px, `.cards` are 2 coloane egale"
+          },
+          {
+            "kind": "columns",
+            "selector": ".cards",
+            "count": 2,
+            "viewport": 501,
+            "label": "La 501px, `.cards` are 2 coloane egale"
+          },
+          {
+            "kind": "columns",
+            "selector": ".cards",
+            "count": 1,
+            "viewport": 500,
+            "label": "La 500px, `.cards` are 1 coloane egale"
+          },
+          {
+            "kind": "columns",
+            "selector": ".cards",
+            "count": 1,
+            "viewport": 390,
+            "label": "La 390px, `.cards` are 1 coloane egale"
+          }
+        ],
+        "starter": "",
+        "id": "exam-transfer-reason-grid-boundary"
+      },
+      "reasoning": {
+        "prerequisites": [
+          "css-grid",
+          "css-responsive"
+        ],
+        "questions": [
+          "Ce înseamnă inclusiv la limită?",
+          "Ce regulă trebuie să câștige la 501px?"
+        ],
+        "explanation": "max-width include valoarea de 500px; regula de bază rămâne activă la 501px. Coloanele sunt egale prin 1fr.",
+        "counterexample": "Un layout poate părea corect într-o singură captură și să fie greșit imediat lângă prag."
+      }
+    },
+    {
+      "id": "exam-transfer-reason-conversion",
+      "title": "numere care vin ca texte",
+      "category": "client",
+      "minutes": 15,
+      "level": "Raționament",
+      "hint": "Ce ar produce + fără conversie?",
+      "steps": [
+        "+ poate concatena texte. Conversia rezultatului concatenării este prea târzie.",
+        "Number(\"10\" + \"2\") produce 102, nu 12."
+      ],
+      "answer": "",
+      "rubric": [
+        "Ce tip au valorile înaintea operației?",
+        "Ce ar produce + fără conversie?"
+      ],
+      "lessonId": "reason-conversion",
+      "task": {
+        "mode": "js",
+        "prompt": "input are price și fee ca texte. Returnează suma numerică fără să modifici input.",
+        "solution": "function solve(input) { return Number(input.price) + Number(input.fee); }",
+        "cases": [
+          {
+            "input": {
+              "price": "10",
+              "fee": "2"
+            },
+            "expected": 12
+          },
+          {
+            "input": {
+              "price": "0",
+              "fee": "5"
+            },
+            "expected": 5
+          },
+          {
+            "input": {
+              "price": "2.5",
+              "fee": "0.5"
+            },
+            "expected": 3
+          },
+          {
+            "input": {
+              "price": "-2",
+              "fee": "3"
+            },
+            "expected": 1
+          }
+        ],
+        "starter": "function solve(input) {\n  // Write your code here.\n}\n",
+        "id": "exam-transfer-reason-conversion"
+      },
+      "reasoning": {
+        "prerequisites": [
+          "js-convert",
+          "js-if"
+        ],
+        "questions": [
+          "Ce tip au valorile înaintea operației?",
+          "Ce ar produce + fără conversie?"
+        ],
+        "explanation": "+ poate concatena texte. Conversia rezultatului concatenării este prea târzie.",
+        "counterexample": "Number(\"10\" + \"2\") produce 102, nu 12."
+      }
+    },
+    {
+      "id": "exam-transfer-reason-zero",
+      "title": "zero nu este absență",
+      "category": "client",
+      "minutes": 15,
+      "level": "Raționament",
+      "hint": "Care valori activează fiecare operator?",
+      "steps": [
+        "?? folosește alternativa numai pentru null și undefined. || o folosește și pentru 0.",
+        "stock || 10 ar transforma stocul epuizat în 10."
+      ],
+      "answer": "",
+      "rubric": [
+        "Ce semnifică zero în această problemă?",
+        "Care valori activează fiecare operator?"
+      ],
+      "lessonId": "reason-zero",
+      "task": {
+        "mode": "js",
+        "prompt": "Păstrează input.stock dacă nu este null sau undefined. Numai pentru acestea întoarce 10.",
+        "solution": "function solve(input) { return input.stock ?? 10; }",
+        "cases": [
+          {
+            "input": {
+              "stock": 0
+            },
+            "expected": 0
+          },
+          {
+            "input": {
+              "stock": 7
+            },
+            "expected": 7
+          },
+          {
+            "input": {
+              "stock": null
+            },
+            "expected": 10
+          },
+          {
+            "input": {},
+            "expected": 10
+          }
+        ],
+        "starter": "function solve(input) {\n  // Write your code here.\n}\n",
+        "id": "exam-transfer-reason-zero"
+      },
+      "reasoning": {
+        "prerequisites": [
+          "nullish-values"
+        ],
+        "questions": [
+          "Ce semnifică zero în această problemă?",
+          "Care valori activează fiecare operator?"
+        ],
+        "explanation": "?? folosește alternativa numai pentru null și undefined. || o folosește și pentru 0.",
+        "counterexample": "stock || 10 ar transforma stocul epuizat în 10."
+      }
+    },
+    {
+      "id": "exam-transfer-reason-sort",
+      "title": "sortare fără distrugerea sursei",
+      "category": "client",
+      "minutes": 15,
+      "level": "Raționament",
+      "hint": "Ce se întâmplă cu 2 și 10 fără comparator?",
+      "steps": [
+        "Copia păstrează intrarea; comparatorul evită ordinea textuală implicită a numerelor.",
+        "Inversarea sortării nu reconstruiește ordinea inițială arbitrară."
+      ],
+      "answer": "",
+      "rubric": [
+        "Ce metodă modifică sursa?",
+        "Ce se întâmplă cu 2 și 10 fără comparator?"
+      ],
+      "lessonId": "reason-sort",
+      "task": {
+        "mode": "js",
+        "prompt": "Returnează numerele crescător, fără să modifici input.",
+        "solution": "function solve(input) { return [...input].sort(function (a, b) { return a - b; }); }",
+        "cases": [
+          {
+            "input": [
+              10,
+              2,
+              1
+            ],
+            "expected": [
+              1,
+              2,
+              10
+            ]
+          },
+          {
+            "input": [],
+            "expected": []
+          },
+          {
+            "input": [
+              0,
+              -3,
+              2
+            ],
+            "expected": [
+              -3,
+              0,
+              2
+            ]
+          },
+          {
+            "input": [
+              2,
+              2,
+              1
+            ],
+            "expected": [
+              1,
+              2,
+              2
+            ]
+          }
+        ],
+        "starter": "function solve(input) {\n  // Write your code here.\n}\n",
+        "id": "exam-transfer-reason-sort"
+      },
+      "reasoning": {
+        "prerequisites": [
+          "array-sort",
+          "array-copy"
+        ],
+        "questions": [
+          "Ce metodă modifică sursa?",
+          "Ce se întâmplă cu 2 și 10 fără comparator?"
+        ],
+        "explanation": "Copia păstrează intrarea; comparatorul evită ordinea textuală implicită a numerelor.",
+        "counterexample": "Inversarea sortării nu reconstruiește ordinea inițială arbitrară."
+      }
+    },
+    {
+      "id": "exam-transfer-reason-missing-index",
+      "title": "căutare fără rezultat",
+      "category": "client",
+      "minutes": 15,
+      "level": "Raționament",
+      "hint": "Cum interpretează splice un index negativ?",
+      "steps": [
+        "splice(-1,1) șterge ultimul element. Absența id-ului nu trebuie să elimine un element fără legătură.",
+        "Testarea numai cu un id existent nu descoperă ștergerea accidentală a ultimului element."
+      ],
+      "answer": "",
+      "rubric": [
+        "Cum semnalează căutarea absența?",
+        "Cum interpretează splice un index negativ?"
+      ],
+      "lessonId": "reason-missing-index",
+      "task": {
+        "mode": "js",
+        "prompt": "Returnează o copie a input.items fără elementul cu id=input.id. Dacă id-ul lipsește, păstrează tot.",
+        "solution": "function solve(input) { const items = [...input.items]; const index = items.findIndex(function (item) { return item.id === input.id; }); if (index !== -1) items.splice(index, 1); return items; }",
+        "cases": [
+          {
+            "input": {
+              "items": [
+                {
+                  "id": 1
+                },
+                {
+                  "id": 2
+                }
+              ],
+              "id": 9
+            },
+            "expected": [
+              {
+                "id": 1
+              },
+              {
+                "id": 2
+              }
+            ]
+          },
+          {
+            "input": {
+              "items": [
+                {
+                  "id": 1
+                },
+                {
+                  "id": 2
+                }
+              ],
+              "id": 1
+            },
+            "expected": [
+              {
+                "id": 2
+              }
+            ]
+          },
+          {
+            "input": {
+              "items": [],
+              "id": 1
+            },
+            "expected": []
+          }
+        ],
+        "starter": "function solve(input) {\n  // Write your code here.\n}\n",
+        "id": "exam-transfer-reason-missing-index"
+      },
+      "reasoning": {
+        "prerequisites": [
+          "array-find-index",
+          "array-splice-removed"
+        ],
+        "questions": [
+          "Cum semnalează căutarea absența?",
+          "Cum interpretează splice un index negativ?"
+        ],
+        "explanation": "splice(-1,1) șterge ultimul element. Absența id-ului nu trebuie să elimine un element fără legătură.",
+        "counterexample": "Testarea numai cu un id existent nu descoperă ștergerea accidentală a ultimului element."
+      }
+    },
+    {
+      "id": "exam-transfer-reason-search",
+      "title": "căutare tolerantă la majuscule",
+      "category": "client",
+      "minutes": 15,
+      "level": "Raționament",
+      "hint": "Ce rezultat dorești pentru termenul gol?",
+      "steps": [
+        "trim elimină spațiile de la capetele termenului. Textul gol este inclus în orice text și poate reafișa toate rezultatele.",
+        "startsWith ar respinge Blue pen pentru termenul pen, deși cerința cere apariția oriunde."
+      ],
+      "answer": "",
+      "rubric": [
+        "Ce normalizezi în fiecare parte?",
+        "Ce rezultat dorești pentru termenul gol?"
+      ],
+      "lessonId": "reason-search",
+      "task": {
+        "mode": "js",
+        "prompt": "Returnează textele din input.names care conțin input.term, ignorând majusculele și spațiile de la capetele termenului.",
+        "solution": "function solve(input) { const term = input.term.trim().toLowerCase(); return input.names.filter(function (name) { return name.toLowerCase().includes(term); }); }",
+        "cases": [
+          {
+            "input": {
+              "names": [
+                "Blue pen",
+                "Notebook"
+              ],
+              "term": " PEN "
+            },
+            "expected": [
+              "Blue pen"
+            ]
+          },
+          {
+            "input": {
+              "names": [
+                "Tea",
+                "Cake"
+              ],
+              "term": ""
+            },
+            "expected": [
+              "Tea",
+              "Cake"
+            ]
+          },
+          {
+            "input": {
+              "names": [
+                "Tea"
+              ],
+              "term": "milk"
+            },
+            "expected": []
+          }
+        ],
+        "starter": "function solve(input) {\n  // Write your code here.\n}\n",
+        "id": "exam-transfer-reason-search"
+      },
+      "reasoning": {
+        "prerequisites": [
+          "string-trim",
+          "string-case",
+          "string-search"
+        ],
+        "questions": [
+          "Ce normalizezi în fiecare parte?",
+          "Ce rezultat dorești pentru termenul gol?"
+        ],
+        "explanation": "trim elimină spațiile de la capetele termenului. Textul gol este inclus în orice text și poate reafișa toate rezultatele.",
+        "counterexample": "startsWith ar respinge Blue pen pentru termenul pen, deși cerința cere apariția oriunde."
+      }
+    },
+    {
+      "id": "exam-transfer-reason-whole",
+      "title": "format complet sau fragment?",
+      "category": "client",
+      "minutes": 15,
+      "level": "Raționament",
+      "hint": "Ce exemple apropiate trebuie respinse?",
+      "steps": [
+        "Ancorele cer întregul text, iar cuantificatorii cer lungimi exacte.",
+        "Flagul g nu transformă o căutare de fragment într-o validare completă."
+      ],
+      "answer": "",
+      "rubric": [
+        "Validezi întregul text sau cauți o parte?",
+        "Ce exemple apropiate trebuie respinse?"
+      ],
+      "lessonId": "reason-whole",
+      "task": {
+        "mode": "js",
+        "prompt": "Acceptă numai exact două litere mari A-Z și trei cifre. Returnează boolean.",
+        "solution": "function solve(input) { return /^[A-Z]{2}[0-9]{3}$/.test(input); }",
+        "cases": [
+          {
+            "input": "AB123",
+            "expected": true
+          },
+          {
+            "input": "xAB123y",
+            "expected": false
+          },
+          {
+            "input": "ab123",
+            "expected": false
+          },
+          {
+            "input": "AB1234",
+            "expected": false
+          },
+          {
+            "input": "AB12",
+            "expected": false
+          },
+          {
+            "input": "",
+            "expected": false
+          }
+        ],
+        "starter": "function solve(input) {\n  // Write your code here.\n}\n",
+        "id": "exam-transfer-reason-whole"
+      },
+      "reasoning": {
+        "prerequisites": [
+          "regex-exact",
+          "regex-full-quant-exact"
+        ],
+        "questions": [
+          "Validezi întregul text sau cauți o parte?",
+          "Ce exemple apropiate trebuie respinse?"
+        ],
+        "explanation": "Ancorele cer întregul text, iar cuantificatorii cer lungimi exacte.",
+        "counterexample": "Flagul g nu transformă o căutare de fragment într-o validare completă."
+      }
+    },
+    {
+      "id": "exam-transfer-reason-utc-month",
+      "title": "luna se poate schimba după conversie",
+      "category": "client",
+      "minutes": 15,
+      "level": "Raționament",
+      "hint": "Ce se schimbă la traversarea miezului nopții?",
+      "steps": [
+        "Momentul din exemplu este încă în februarie la UTC. getUTCMonth numără lunile de la 0.",
+        "Extragerea caracterelor lunii din text ar ignora offsetul."
+      ],
+      "answer": "",
+      "rubric": [
+        "Se cere timp local sau UTC?",
+        "Ce se schimbă la traversarea miezului nopții?"
+      ],
+      "lessonId": "reason-utc-month",
+      "task": {
+        "mode": "js",
+        "prompt": "Returnează luna UTC a momentului input, numerotată de la 1 la 12.",
+        "solution": "function solve(input) { return new Date(input).getUTCMonth() + 1; }",
+        "cases": [
+          {
+            "input": "2026-03-01T00:30:00+02:00",
+            "expected": 2
+          },
+          {
+            "input": "2026-01-01T00:30:00+02:00",
+            "expected": 12
+          },
+          {
+            "input": "2026-07-15T12:00:00Z",
+            "expected": 7
+          }
+        ],
+        "starter": "function solve(input) {\n  // Write your code here.\n}\n",
+        "id": "exam-transfer-reason-utc-month"
+      },
+      "reasoning": {
+        "prerequisites": [
+          "date-full-getUTCMonth",
+          "date-full-getUTCFullYear"
+        ],
+        "questions": [
+          "Se cere timp local sau UTC?",
+          "Ce se schimbă la traversarea miezului nopții?"
+        ],
+        "explanation": "Momentul din exemplu este încă în februarie la UTC. getUTCMonth numără lunile de la 0.",
+        "counterexample": "Extragerea caracterelor lunii din text ar ignora offsetul."
+      }
+    },
+    {
+      "id": "exam-transfer-reason-event-time",
+      "title": "când citești valoarea?",
+      "category": "client",
+      "minutes": 15,
+      "level": "Raționament",
+      "hint": "Citești proprietatea curentă sau atributul inițial?",
+      "steps": [
+        "Handler-ul citește după modificările utilizatorului. Atributul HTML value poate rămâne neschimbat, deși proprietatea value a fost modificată.",
+        "Un const name=input.value creat înainte de eveniment poate păstra Old."
+      ],
+      "answer": "",
+      "rubric": [
+        "În ce moment se poate modifica valoarea?",
+        "Citești proprietatea curentă sau atributul inițial?"
+      ],
+      "lessonId": "reason-event-time",
+      "task": {
+        "mode": "dom",
+        "prompt": "La Apply afișează valoarea curentă din input în #result. Se testează și o altă valoare introdusă după încărcare.",
+        "solution": "document.querySelector(\"#apply\").onclick = function () { document.querySelector(\"#result\").textContent = document.querySelector(\"#name\").value; };",
+        "fixture": "<input id=\"name\" value=\"Old\"><button id=\"apply\">Apply</button><p id=\"result\"></p>",
+        "tests": [
+          {
+            "kind": "text",
+            "selector": "#result",
+            "value": "New",
+            "label": "`#result` afișează `New`"
+          }
+        ],
+        "actions": [
+          {
+            "type": "fill",
+            "selector": "#name",
+            "value": "New"
+          },
+          {
+            "type": "click",
+            "selector": "#apply"
+          }
+        ],
+        "starter": "",
+        "variants": [
+          {
+            "label": "Alt nume",
+            "actions": [
+              {
+                "type": "fill",
+                "selector": "#name",
+                "value": "Alex"
+              },
+              {
+                "type": "click",
+                "selector": "#apply"
+              }
+            ],
+            "tests": [
+              {
+                "kind": "text",
+                "selector": "#result",
+                "value": "Alex",
+                "label": "`#result` afișează `Alex`"
+              }
+            ]
+          }
+        ],
+        "id": "exam-transfer-reason-event-time"
+      },
+      "reasoning": {
+        "prerequisites": [
+          "dom-click",
+          "dom-value"
+        ],
+        "questions": [
+          "În ce moment se poate modifica valoarea?",
+          "Citești proprietatea curentă sau atributul inițial?"
+        ],
+        "explanation": "Handler-ul citește după modificările utilizatorului. Atributul HTML value poate rămâne neschimbat, deși proprietatea value a fost modificată.",
+        "counterexample": "Un const name=input.value creat înainte de eveniment poate păstra Old."
+      }
+    },
+    {
+      "id": "exam-transfer-reason-text",
+      "title": "text sau markup?",
+      "category": "client",
+      "minutes": 15,
+      "level": "Raționament",
+      "hint": "Cum verifici absența elementelor interpretate?",
+      "steps": [
+        "textContent păstrează textul literal, fără să creeze un element b.",
+        "Un test doar cu Notebook ar trece și pentru innerHTML."
+      ],
+      "answer": "",
+      "rubric": [
+        "Vrei text sau elemente noi?",
+        "Cum verifici absența elementelor interpretate?"
+      ],
+      "lessonId": "reason-text",
+      "task": {
+        "mode": "dom",
+        "prompt": "Copiază valoarea din input în #result ca text literal, fără un element b în rezultat.",
+        "solution": "document.querySelector(\"#result\").textContent = document.querySelector(\"#name\").value;",
+        "fixture": "<input id=\"name\" value=\"&lt;b&gt;Notebook&lt;/b&gt;\"><div id=\"result\"></div>",
+        "tests": [
+          {
+            "kind": "text",
+            "selector": "#result",
+            "value": "<b>Notebook</b>",
+            "label": "`#result` afișează `<b>Notebook</b>`"
+          },
+          {
+            "kind": "absent",
+            "selector": "#result b",
+            "label": "`#result b` nu există"
+          }
+        ],
+        "actions": [],
+        "starter": "",
+        "id": "exam-transfer-reason-text"
+      },
+      "reasoning": {
+        "prerequisites": [
+          "dom-text",
+          "dom-create"
+        ],
+        "questions": [
+          "Vrei text sau elemente noi?",
+          "Cum verifici absența elementelor interpretate?"
+        ],
+        "explanation": "textContent păstrează textul literal, fără să creeze un element b.",
+        "counterexample": "Un test doar cu Notebook ar trece și pentru innerHTML."
+      }
+    },
+    {
+      "id": "exam-transfer-reason-boundary",
+      "title": "din text JSON până la rezultat",
+      "category": "client",
+      "minutes": 15,
+      "level": "Raționament",
+      "hint": "Ce întorci pentru o listă fără rezultate?",
+      "steps": [
+        "Înaintea parsării ai text. După parsare poți accesa items ca vector și calcula un rezultat.",
+        "stringify ar serializa încă o dată textul, nu ar oferi obiectul cu items."
+      ],
+      "answer": "",
+      "rubric": [
+        "Ce tip ai înainte și după JSON.parse?",
+        "Ce întorci pentru o listă fără rezultate?"
+      ],
+      "lessonId": "reason-boundary",
+      "task": {
+        "mode": "js",
+        "prompt": "input este text JSON cu items. Returnează numele elementelor cu available=true, în ordine.",
+        "solution": "function solve(input) { const data = JSON.parse(input); return data.items.filter(function (item) { return item.available === true; }).map(function (item) { return item.name; }); }",
+        "cases": [
+          {
+            "input": "{\"items\":[{\"name\":\"Pen\",\"available\":true},{\"name\":\"Book\",\"available\":false}]}",
+            "expected": [
+              "Pen"
+            ]
+          },
+          {
+            "input": "{\"items\":[]}",
+            "expected": []
+          },
+          {
+            "input": "{\"items\":[{\"name\":\"Tea\",\"available\":false}]}",
+            "expected": []
+          }
+        ],
+        "starter": "function solve(input) {\n  // Write your code here.\n}\n",
+        "id": "exam-transfer-reason-boundary"
+      },
+      "reasoning": {
+        "prerequisites": [
+          "json-parse",
+          "json-nested"
+        ],
+        "questions": [
+          "Ce tip ai înainte și după JSON.parse?",
+          "Ce întorci pentru o listă fără rezultate?"
+        ],
+        "explanation": "Înaintea parsării ai text. După parsare poți accesa items ca vector și calcula un rezultat.",
+        "counterexample": "stringify ar serializa încă o dată textul, nu ar oferi obiectul cu items."
+      }
+    },
+    {
+      "id": "exam-transfer-reason-restore",
+      "title": "date salvate absente sau invalide",
+      "category": "client",
+      "minutes": 15,
+      "level": "Raționament",
+      "hint": "De ce nu ștergi preferințe fără legătură?",
+      "steps": [
+        "JSON valid nu garantează forma necesară aplicației. Validez obiectul și tipul contorului, păstrând valoarea validă zero.",
+        "Datele {\"count\":\"8\"} sunt JSON valid, dar nu respectă contractul acestui contor."
+      ],
+      "answer": "",
+      "rubric": [
+        "Este parsarea suficientă pentru a garanta tipurile?",
+        "De ce nu ștergi preferințe fără legătură?"
+      ],
+      "lessonId": "reason-restore",
+      "task": {
+        "mode": "js",
+        "prompt": "input este text salvat sau null. Returnează count numai dacă este numeric și nenegativ într-un obiect JSON; în rest returnează 0.",
+        "solution": "function solve(input) { try { const data = JSON.parse(input); if (data && typeof data.count === \"number\" && data.count >= 0) return data.count; } catch (error) { return 0; } return 0; }",
+        "cases": [
+          {
+            "input": "{\"count\":0}",
+            "expected": 0
+          },
+          {
+            "input": "{\"count\":8}",
+            "expected": 8
+          },
+          {
+            "input": null,
+            "expected": 0
+          },
+          {
+            "input": "broken",
+            "expected": 0
+          },
+          {
+            "input": "{\"count\":\"8\"}",
+            "expected": 0
+          },
+          {
+            "input": "{\"count\":-1}",
+            "expected": 0
+          }
+        ],
+        "starter": "function solve(input) {\n  // Write your code here.\n}\n",
+        "id": "exam-transfer-reason-restore"
+      },
+      "reasoning": {
+        "prerequisites": [
+          "storage-restore",
+          "json-errors"
+        ],
+        "questions": [
+          "Este parsarea suficientă pentru a garanta tipurile?",
+          "De ce nu ștergi preferințe fără legătură?"
+        ],
+        "explanation": "JSON valid nu garantează forma necesară aplicației. Validez obiectul și tipul contorului, păstrând valoarea validă zero.",
+        "counterexample": "Datele {\"count\":\"8\"} sunt JSON valid, dar nu respectă contractul acestui contor."
+      }
+    },
+    {
+      "id": "exam-transfer-reason-theme",
+      "title": "valoare de build sau de utilizare?",
+      "category": "css",
+      "minutes": 15,
+      "level": "Raționament",
+      "hint": "Ce expresie trebuie păstrată în CSS pentru tema din browser?",
+      "steps": [
+        "CSS-ul rezultat păstrează var(--accent), dar padding devine 12px. Schimbarea variabilei Sass ar necesita o nouă compilare.",
+        "Modificarea lui $accent în sursa SCSS nu schimbă singură CSS-ul deja descărcat."
+      ],
+      "answer": "",
+      "rubric": [
+        "Ce se calculează la build?",
+        "Ce expresie trebuie păstrată în CSS pentru tema din browser?"
+      ],
+      "lessonId": "reason-theme",
+      "task": {
+        "mode": "scss",
+        "prompt": "Scrie SCSS care folosește $spacing pentru padding 12px și păstrează culoarea legată de --accent, nu o valoare fixă.",
+        "solution": "$spacing: 12px;\n.card { padding: $spacing; color: var(--accent); }",
+        "fixture": "<article class=\"card\" style=\"--accent:navy\">Catalog</article>",
+        "tests": [
+          {
+            "kind": "style",
+            "selector": ".card",
+            "name": "padding-left",
+            "value": "12px",
+            "label": "`.card`: `padding-left: 12px`"
+          },
+          {
+            "kind": "style",
+            "selector": ".card",
+            "name": "color",
+            "value": "rgb(0, 0, 128)",
+            "label": "`.card`: `color: rgb(0, 0, 128)`"
+          },
+          {
+            "kind": "cssIncludes",
+            "value": "var(--accent)",
+            "label": "Culoarea rămâne legată de variabila CSS."
+          }
+        ],
+        "starter": "",
+        "id": "exam-transfer-reason-theme"
+      },
+      "reasoning": {
+        "prerequisites": [
+          "scss-variables",
+          "css-variables"
+        ],
+        "questions": [
+          "Ce se calculează la build?",
+          "Ce expresie trebuie păstrată în CSS pentru tema din browser?"
+        ],
+        "explanation": "CSS-ul rezultat păstrează var(--accent), dar padding devine 12px. Schimbarea variabilei Sass ar necesita o nouă compilare.",
+        "counterexample": "Modificarea lui $accent în sursa SCSS nu schimbă singură CSS-ul deja descărcat."
+      }
+    },
+    {
+      "id": "exam-transfer-reason-file-flow",
+      "title": "rezultatul trebuie să vină din fișier",
+      "category": "server",
+      "minutes": 20,
+      "level": "Raționament",
+      "hint": "Ce trebuie să depindă de input.file?",
+      "steps": [
+        "utf8 cere text în loc de Buffer. După parsare poți filtra items. Alt fișier trebuie să poată produce alt rezultat.",
+        "return [\"Pen\"] trece primul caz, dar nu rezolvă problema generală."
+      ],
+      "answer": "",
+      "rubric": [
+        "Ce întoarce citirea cu utf8?",
+        "Ce trebuie să depindă de input.file?"
+      ],
+      "lessonId": "reason-file-flow",
+      "task": {
+        "mode": "node",
+        "prompt": "Citește input.file și returnează numele elementelor cu stock>0. Nu fixa numele fișierului sau rezultatul.",
+        "solution": "const fs = require(\"fs\");\nfunction solve(input) { const data = JSON.parse(fs.readFileSync(input.file, \"utf8\")); return data.items.filter(function (item) { return item.stock > 0; }).map(function (item) { return item.name; }); }",
+        "cases": [
+          {
+            "input": {
+              "file": "stock.json"
+            },
+            "expected": [
+              "Pen"
+            ]
+          },
+          {
+            "input": {
+              "file": "empty.json"
+            },
+            "expected": []
+          },
+          {
+            "input": {
+              "file": "other.json"
+            },
+            "expected": [
+              "Book",
+              "Tea"
+            ]
+          }
+        ],
+        "starter": "function solve(input) {\n  // Write your code here.\n}\n",
+        "files": {
+          "stock.json": "{\"items\":[{\"name\":\"Pen\",\"stock\":2},{\"name\":\"Notebook\",\"stock\":0}]}",
+          "empty.json": "{\"items\":[]}",
+          "other.json": "{\"items\":[{\"name\":\"Book\",\"stock\":1},{\"name\":\"Tea\",\"stock\":5}]}"
+        },
+        "id": "exam-transfer-reason-file-flow"
+      },
+      "reasoning": {
+        "prerequisites": [
+          "node-json-file",
+          "node-buffer"
+        ],
+        "questions": [
+          "Ce întoarce citirea cu utf8?",
+          "Ce trebuie să depindă de input.file?"
+        ],
+        "explanation": "utf8 cere text în loc de Buffer. După parsare poți filtra items. Alt fișier trebuie să poată produce alt rezultat.",
+        "counterexample": "return [\"Pen\"] trece primul caz, dar nu rezolvă problema generală."
+      }
+    },
+    {
+      "id": "exam-transfer-reason-query",
+      "title": "absent nu înseamnă invalid",
+      "category": "server",
+      "minutes": 20,
+      "level": "Raționament",
+      "hint": "Ce valori aparent apropiate trebuie respinse?",
+      "steps": [
+        "Numai absența primește 10. Pentru valori prezente verific intervalul și integritatea numărului, apoi răspund cu 400 dacă nu sunt valide.",
+        "parseInt(\"2abc\") ar produce 2, deși textul nu reprezintă întregul cerut."
+      ],
+      "answer": "",
+      "rubric": [
+        "Cum distingi lipsa de zero?",
+        "Ce valori aparent apropiate trebuie respinse?"
+      ],
+      "lessonId": "reason-query",
+      "task": {
+        "mode": "express",
+        "prompt": "La /items fără limit întoarce JSON {\"limit\":10}. Acceptă întregi 1–50. Pentru zero, text, fracție sau valori peste 50 întoarce 400 și Invalid limit.",
+        "solution": "const express = require(\"express\");\nconst app = express();\napp.get(\"/items\", function (request, response) {\n  const raw = request.query.limit;\n  if (raw === undefined) { response.json({ limit: 10 }); return; }\n  const limit = Number(raw);\n  if (!Number.isInteger(limit) || limit < 1 || limit > 50) {\n    response.status(400).send(\"Invalid limit\"); return;\n  }\n  response.json({ limit: limit });\n});\nmodule.exports = app;",
+        "requests": [
+          {
+            "path": "/items",
+            "json": {
+              "limit": 10
+            }
+          },
+          {
+            "path": "/items?limit=2",
+            "json": {
+              "limit": 2
+            }
+          },
+          {
+            "path": "/items?limit=0",
+            "status": 400,
+            "bodyExpected": "Invalid limit"
+          },
+          {
+            "path": "/items?limit=abc",
+            "status": 400,
+            "bodyExpected": "Invalid limit"
+          },
+          {
+            "path": "/items?limit=2.5",
+            "status": 400,
+            "bodyExpected": "Invalid limit"
+          },
+          {
+            "path": "/items?limit=51",
+            "status": 400,
+            "bodyExpected": "Invalid limit"
+          }
+        ],
+        "starter": "const express = require(\"express\");\nconst app = express();\n\n// Add your routes here.\n\nmodule.exports = app;\n",
+        "id": "exam-transfer-reason-query"
+      },
+      "reasoning": {
+        "prerequisites": [
+          "express-query",
+          "express-numbers",
+          "express-status"
+        ],
+        "questions": [
+          "Cum distingi lipsa de zero?",
+          "Ce valori aparent apropiate trebuie respinse?"
+        ],
+        "explanation": "Numai absența primește 10. Pentru valori prezente verific intervalul și integritatea numărului, apoi răspund cu 400 dacă nu sunt valide.",
+        "counterexample": "parseInt(\"2abc\") ar produce 2, deși textul nu reprezintă întregul cerut."
+      }
+    },
+    {
+      "id": "exam-transfer-reason-order",
+      "title": "ruta există, dar cererea nu ajunge la ea",
+      "category": "server",
+      "minutes": 20,
+      "level": "Raționament",
+      "hint": "Unde trebuie așezat fallback-ul?",
+      "steps": [
+        "Fallback-ul 404 vine după rutele cunoscute. Dacă răspunde înaintea lor fără next, oprește cererea.",
+        "Schimbarea textului erorii nu rezolvă ordinea greșită."
+      ],
+      "answer": "",
+      "rubric": [
+        "Ce se execută primul?",
+        "Ce încheie răspunsul?",
+        "Unde trebuie așezat fallback-ul?"
+      ],
+      "lessonId": "reason-order",
+      "task": {
+        "mode": "express",
+        "prompt": "Configurează /status cu 200 și Ready. Toate căile necunoscute primesc 404 și Not found.",
+        "solution": "const express = require(\"express\");\nconst app = express();\napp.get(\"/status\", function (request, response) { response.send(\"Ready\"); });\napp.use(function (request, response) { response.status(404).send(\"Not found\"); });\nmodule.exports = app;",
+        "requests": [
+          {
+            "path": "/status",
+            "bodyExpected": "Ready"
+          },
+          {
+            "path": "/missing",
+            "status": 404,
+            "bodyExpected": "Not found"
+          },
+          {
+            "path": "/other",
+            "status": 404,
+            "bodyExpected": "Not found"
+          }
+        ],
+        "starter": "const express = require(\"express\");\nconst app = express();\n\n// Add your routes here.\n\nmodule.exports = app;\n",
+        "id": "exam-transfer-reason-order"
+      },
+      "reasoning": {
+        "prerequisites": [
+          "express-order",
+          "express-next"
+        ],
+        "questions": [
+          "Ce se execută primul?",
+          "Ce încheie răspunsul?",
+          "Unde trebuie așezat fallback-ul?"
+        ],
+        "explanation": "Fallback-ul 404 vine după rutele cunoscute. Dacă răspunde înaintea lor fără next, oprește cererea.",
+        "counterexample": "Schimbarea textului erorii nu rezolvă ordinea greșită."
+      }
+    },
+    {
+      "id": "exam-transfer-reason-escape-empty",
+      "title": "text neobișnuit și listă goală",
+      "category": "server",
+      "minutes": 20,
+      "level": "Raționament",
+      "hint": "Ce trebuie afișat când nu ai elemente?",
+      "steps": [
+        "Escaparea păstrează numele ca text. O ramură pentru lista goală îi explică utilizatorului de ce nu vede elemente.",
+        "Un test doar cu Pen nu descoperă interpretarea accidentală a tagurilor."
+      ],
+      "answer": "",
+      "rubric": [
+        "Vrei text sau markup?",
+        "Ce trebuie afișat când nu ai elemente?"
+      ],
+      "lessonId": "reason-escape-empty",
+      "task": {
+        "mode": "ejs",
+        "prompt": "Afișează numele din items ca text, în li. Pentru items gol afișează No items într-un p, fără ul.",
+        "solution": "<% if (items.length === 0) { %><p>No items</p><% } else { %><ul><% for (const item of items) { %><li><%= item.name %></li><% } %></ul><% } %>",
+        "data": {
+          "items": [
+            {
+              "name": "<b>Pen</b>"
+            }
+          ]
+        },
+        "tests": [
+          {
+            "kind": "text",
+            "selector": "li",
+            "value": "<b>Pen</b>",
+            "label": "`li` afișează `<b>Pen</b>`"
+          },
+          {
+            "kind": "absent",
+            "selector": "li b",
+            "label": "`li b` nu există"
+          },
+          {
+            "kind": "count",
+            "selector": "ul",
+            "min": 1,
+            "label": "Elementul `ul` există"
+          }
+        ],
+        "starter": "",
+        "partials": {},
+        "variants": [
+          {
+            "label": "Listă goală",
+            "data": {
+              "items": []
+            },
+            "tests": [
+              {
+                "kind": "text",
+                "selector": "p",
+                "value": "No items",
+                "label": "`p` afișează `No items`"
+              },
+              {
+                "kind": "absent",
+                "selector": "ul",
+                "label": "`ul` nu există"
+              }
+            ]
+          },
+          {
+            "label": "Alte nume",
+            "data": {
+              "items": [
+                {
+                  "name": "Tea"
+                },
+                {
+                  "name": "Book"
+                }
+              ]
+            },
+            "tests": [
+              {
+                "kind": "text",
+                "selector": "li:first-child",
+                "value": "Tea",
+                "label": "`li:first-child` afișează `Tea`"
+              },
+              {
+                "kind": "text",
+                "selector": "li:last-child",
+                "value": "Book",
+                "label": "`li:last-child` afișează `Book`"
+              }
+            ]
+          }
+        ],
+        "id": "exam-transfer-reason-escape-empty",
+        "inputData": {
+          "items": [
+            {
+              "name": "<b>Pen</b>"
+            }
+          ]
+        }
+      },
+      "reasoning": {
+        "prerequisites": [
+          "ejs-escape",
+          "ejs-empty"
+        ],
+        "questions": [
+          "Vrei text sau markup?",
+          "Ce trebuie afișat când nu ai elemente?"
+        ],
+        "explanation": "Escaparea păstrează numele ca text. O ramură pentru lista goală îi explică utilizatorului de ce nu vede elemente.",
+        "counterexample": "Un test doar cu Pen nu descoperă interpretarea accidentală a tagurilor."
+      }
+    },
+    {
+      "id": "exam-transfer-reason-sql-logic",
+      "title": "parantezele schimbă rezultatul",
+      "category": "sql",
+      "minutes": 15,
+      "level": "Raționament",
+      "hint": "Ce rând descoperă lipsa parantezelor?",
+      "steps": [
+        "Fără paranteze, prioritatea AND poate accepta produse books fără stoc. Rândul Book este un contraexemplu util.",
+        "Book are categoria potrivită, dar nu are stoc și trebuie exclus."
+      ],
+      "answer": "",
+      "rubric": [
+        "Ce condiție este comună ambelor categorii?",
+        "Ce rând descoperă lipsa parantezelor?"
+      ],
+      "lessonId": "reason-sql-logic",
+      "task": {
+        "mode": "sql",
+        "prompt": "Afișează name pentru books sau stationery cu stock>0, în ordinea id-ului.",
+        "solution": "SELECT name FROM products WHERE (category = 'books' OR category = 'stationery') AND stock > 0 ORDER BY id;",
+        "expected": [
+          {
+            "name": "Pen"
+          },
+          {
+            "name": "Notebook"
+          }
+        ],
+        "setup": "CREATE TABLE products (id integer, name text, category text, stock integer); INSERT INTO products VALUES (1,'Book','books',0),(2,'Pen','stationery',3),(3,'Notebook','books',2),(4,'Mug','accessories',4);",
+        "checkQuery": null,
+        "starter": "",
+        "id": "exam-transfer-reason-sql-logic",
+        "contextCode": "CREATE TABLE products (id integer, name text, category text, stock integer); INSERT INTO products VALUES (1,'Book','books',0),(2,'Pen','stationery',3),(3,'Notebook','books',2),(4,'Mug','accessories',4);",
+        "expectedResult": [
+          {
+            "name": "Pen"
+          },
+          {
+            "name": "Notebook"
+          }
+        ],
+        "tables": [
+          {
+            "name": "products",
+            "columns": [
+              "id",
+              "name",
+              "category",
+              "stock"
+            ],
+            "rows": [
+              {
+                "id": 1,
+                "name": "Book",
+                "category": "books",
+                "stock": 0
+              },
+              {
+                "id": 2,
+                "name": "Pen",
+                "category": "stationery",
+                "stock": 3
+              },
+              {
+                "id": 3,
+                "name": "Notebook",
+                "category": "books",
+                "stock": 2
+              },
+              {
+                "id": 4,
+                "name": "Mug",
+                "category": "accessories",
+                "stock": 4
+              }
+            ],
+            "totalRows": 4
+          }
+        ]
+      },
+      "reasoning": {
+        "prerequisites": [
+          "sql-and-or"
+        ],
+        "questions": [
+          "Ce condiție este comună ambelor categorii?",
+          "Ce rând descoperă lipsa parantezelor?"
+        ],
+        "explanation": "Fără paranteze, prioritatea AND poate accepta produse books fără stoc. Rândul Book este un contraexemplu util.",
+        "counterexample": "Book are categoria potrivită, dar nu are stoc și trebuie exclus."
+      }
+    },
+    {
+      "id": "exam-transfer-reason-sql-zero",
+      "title": "păstrează și numără corect cazurile fără potrivire",
+      "category": "sql",
+      "minutes": 15,
+      "level": "Raționament",
+      "hint": "Ce conține visits.id în acel rând?",
+      "steps": [
+        "Rândul fără accesare are visits.id NULL. COUNT(visits.id) ignoră NULL, în timp ce COUNT(*) numără și rândul păstrat.",
+        "COUNT(*) ar raporta 1 pentru Sam după acest LEFT JOIN."
+      ],
+      "answer": "",
+      "rubric": [
+        "Cine trebuie păstrat fără potriviri?",
+        "Ce conține visits.id în acel rând?"
+      ],
+      "lessonId": "reason-sql-zero",
+      "task": {
+        "mode": "sql",
+        "prompt": "Afișează name și total pentru toți utilizatorii, inclusiv cei fără accesări. Sortează după users.id.",
+        "solution": "SELECT users.name, COUNT(visits.id)::int AS total FROM users LEFT JOIN visits ON visits.user_id = users.id GROUP BY users.id, users.name ORDER BY users.id;",
+        "expected": [
+          {
+            "name": "Alex",
+            "total": 2
+          },
+          {
+            "name": "Sam",
+            "total": 0
+          }
+        ],
+        "setup": "CREATE TABLE users (id integer, name text); CREATE TABLE visits (id integer, user_id integer); INSERT INTO users VALUES (1,'Alex'),(2,'Sam'); INSERT INTO visits VALUES (10,1),(11,1);",
+        "checkQuery": null,
+        "starter": "",
+        "id": "exam-transfer-reason-sql-zero",
+        "contextCode": "CREATE TABLE users (id integer, name text); CREATE TABLE visits (id integer, user_id integer); INSERT INTO users VALUES (1,'Alex'),(2,'Sam'); INSERT INTO visits VALUES (10,1),(11,1);",
+        "expectedResult": [
+          {
+            "name": "Alex",
+            "total": 2
+          },
+          {
+            "name": "Sam",
+            "total": 0
+          }
+        ],
+        "tables": [
+          {
+            "name": "users",
+            "columns": [
+              "id",
+              "name"
+            ],
+            "rows": [
+              {
+                "id": 1,
+                "name": "Alex"
+              },
+              {
+                "id": 2,
+                "name": "Sam"
+              }
+            ],
+            "totalRows": 2
+          },
+          {
+            "name": "visits",
+            "columns": [
+              "id",
+              "user_id"
+            ],
+            "rows": [
+              {
+                "id": 10,
+                "user_id": 1
+              },
+              {
+                "id": 11,
+                "user_id": 1
+              }
+            ],
+            "totalRows": 2
+          }
+        ]
+      },
+      "reasoning": {
+        "prerequisites": [
+          "sql-left-join",
+          "sql-count-user-visits"
+        ],
+        "questions": [
+          "Cine trebuie păstrat fără potriviri?",
+          "Ce conține visits.id în acel rând?"
+        ],
+        "explanation": "Rândul fără accesare are visits.id NULL. COUNT(visits.id) ignoră NULL, în timp ce COUNT(*) numără și rândul păstrat.",
+        "counterexample": "COUNT(*) ar raporta 1 pentru Sam după acest LEFT JOIN."
+      }
+    },
+    {
       "id": "exam-oral-html-tag",
       "title": "Ce exprimă un tag HTML?",
       "category": "oral",

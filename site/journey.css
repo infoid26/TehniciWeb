@@ -304,3 +304,9 @@ main { padding-top:42px; }
 .notation-help summary { color:var(--accent); cursor:pointer; }
 .notation-help li { margin:8px 0; }
 .screen .lesson-prerequisite { font-size:13px; color:var(--muted); }
+
+.reasoning-prompt { padding:22px; margin:0 0 26px; border:1px solid #76649d; border-radius:14px; background:#a995ff0c; }
+.reasoning-prompt h3 { margin:12px 0; }
+.reasoning-prompt li,.reasoning-solution p { line-height:1.9; }
+.reasoning-prompt>p { color:var(--muted); font-size:13px; }
+.reasoning-solution { border-top:1px solid var(--line); margin-top:20px; padding-top:12px; }

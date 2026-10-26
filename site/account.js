@@ -17,6 +17,48 @@
     return {progress,conflicts};
   }
 
+  function signOutControl(controls,label,onLogout){
+    const form=document.createElement('form');form.method='post';form.action='/account/logout';form.className='account-signout-form';
+    const submit=document.createElement('button');submit.type='submit';submit.className='secondary';submit.textContent=label;
+    if(onLogout)form.addEventListener('submit',onLogout);
+    form.append(submit);controls.append(form);return submit;
+  }
+  function renderControls(controls,{user=null,enabled=true,returnTo='/',onLogout}={}){
+    controls.replaceChildren();
+    if(user){
+      const signOut=signOutControl(controls,'',onLogout);
+      signOut.className='secondary account-signout';signOut.title=user.email;
+      signOut.ariaLabel='Logout: '+(user.name||user.email);
+      const label=document.createElement('span');label.className='account-name';label.textContent=user.name||user.email;
+      const action=document.createElement('span');action.className='account-signout-label';action.textContent='Logout';
+      signOut.append(label);signOut.append(action);
+    }else{
+      const signIn=document.createElement(enabled?'a':'button');
+      signIn.className='secondary account-signin';signIn.textContent='Conectare cu Microsoft';
+      if(enabled)signIn.href='/.auth/login/aad?post_login_redirect_uri='+encodeURIComponent(returnTo);
+      else{signIn.type='button';signIn.disabled=true;signIn.title='Conectarea Microsoft nu este activă pe această adresă.';}
+      controls.append(signIn);
+    }
+  }
+  async function mountHeader({returnTo='/',onLogout}={}){
+    const controls=document.querySelector('#account-controls');
+    const status=document.querySelector('#account-header-status');
+    if(!controls)return;
+    const message=text=>{if(status){status.textContent=text;status.hidden=!text;}};
+    const unavailable=text=>{renderControls(controls,{enabled:false});message(text);};
+    if(location.protocol==='file:'){unavailable('Conectarea cu Microsoft este disponibilă pe site-ul public.');return;}
+    try{
+      const response=await fetch('/api/account',{credentials:'same-origin',cache:'no-store',redirect:'error',signal:AbortSignal.timeout(10000)});
+      const account=await response.json();
+      if(!response.ok){const error=new Error(account.error||'Conectarea nu este disponibilă momentan.');error.status=response.status;throw error;}
+      renderControls(controls,{user:account.user,enabled:account.enabled,returnTo,onLogout});
+      message(account.enabled?'':'Conectarea cu Microsoft este disponibilă pe site-ul public.');
+    }catch(error){
+      if(error.status===403){controls.replaceChildren();signOutControl(controls,'Schimbă contul Microsoft',onLogout);message(error.message);}
+      else unavailable('Conectarea nu este disponibilă momentan. Poți continua simularea.');
+    }
+  }
+
   function create({getState,setState,normalize,storageKey,refresh,download}){
     const panel=document.querySelector('#account-panel');
     const controls=document.querySelector('#account-controls');
@@ -25,13 +67,8 @@
     let user=null,base=empty(),version=0,ready=false,stopped=false,busy=false,timer,retry=2000,conflict=null,imported=false;
     const message=text=>{status.textContent=text;};
     const button=(label,fn)=>{const el=document.createElement('button');el.type='button';el.className='secondary';el.textContent=label;el.addEventListener('click',fn);actions.append(el);return el;};
-    const link=(label,href)=>{const el=document.createElement('a');el.className='secondary';el.textContent=label;el.href=href;if(href.startsWith('/.auth/login/'))el.className+=' account-signin';controls.append(el);return el;};
-    const logoutControl=label=>{
-      const form=document.createElement('form');form.method='post';form.action='/account/logout';form.className='account-signout-form';
-      const submit=document.createElement('button');submit.type='submit';submit.className='secondary';submit.textContent=label;
-      form.addEventListener('submit',()=>{persist();stopped=true;clearTimeout(timer);});
-      form.append(submit);controls.append(form);return submit;
-    };
+    const beforeLogout=()=>{persist();stopped=true;clearTimeout(timer);};
+    const logoutControl=label=>signOutControl(controls,label,beforeLogout);
     const cacheKey=()=>storageKey+':account:'+user.id;
     const exportLocal=()=>download('TehniciWeb-progres-local.json',JSON.stringify(getState(),null,2),'application/json');
     function persist(){
@@ -64,18 +101,8 @@
         signinHint.hidden=Boolean(user);
         signinHint.textContent=preview?'Conectarea cu Microsoft este disponibilă pe site-ul public.':'Conectează-te cu Microsoft pentru a salva progresul în cont.';
       }
-      controls.replaceChildren();
       actions.replaceChildren();
-      if(user){
-        const signOut=logoutControl('');
-        signOut.className='secondary account-signout';signOut.title=user.email;
-        signOut.ariaLabel='Logout: '+(user.name||user.email);
-        const label=document.createElement('span');label.className='account-name';label.textContent=user.name||user.email;
-        const action=document.createElement('span');action.className='account-signout-label';action.textContent='Logout';
-        signOut.append(label);signOut.append(action);
-      }else if(preview){
-        const signIn=document.createElement('button');signIn.type='button';signIn.className='secondary account-signin';signIn.textContent='Conectare cu Microsoft';signIn.disabled=true;signIn.title='Conectarea Microsoft nu este activa pe aceasta adresa.';controls.append(signIn);
-      }else link('Conectare cu Microsoft','/.auth/login/aad?post_login_redirect_uri=/');
+      renderControls(controls,{user,enabled:!preview,onLogout:beforeLogout});
     }
     function importAnonymous(){
       if(imported)return;
@@ -163,5 +190,5 @@
     document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')void sync();});
     return {start,save,flush:sync};
   }
-  window.TW_ACCOUNTS={create,mergeProgress};
+  window.TW_ACCOUNTS={create,mergeProgress,mountHeader};
 })();

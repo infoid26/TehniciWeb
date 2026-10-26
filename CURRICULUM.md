@@ -1,6 +1,6 @@
 # Programa cursului
 
-42 de capitole; 844 de lecții cu exerciții.
+42 de capitole; 871 de lecții cu exerciții.
 
 Fiecare legătură deschide o lecție din curs.
 
@@ -35,7 +35,7 @@ Cereri, browsere, căutare, SEO și publicare.
 - [Imagini și dreptul de utilizare](https://tw.infoid26.ro/#lectie/web-image-rights/0)
 - [Titlu și descriere utile](https://tw.infoid26.ro/#lectie/web-seo-title/0)
 
-## HTML · documentul și textul · 23 lecții
+## HTML · documentul și textul · 24 lecții
 
 Construiești o pagină validă și înțelegi fiecare tag folosit.
 
@@ -62,6 +62,7 @@ Construiești o pagină validă și înțelegi fiecare tag folosit.
 - [Citate, marcaj și note](https://tw.infoid26.ro/#lectie/html-inline-semantics/0)
 - [Date lizibile pentru oameni și mașini](https://tw.infoid26.ro/#lectie/html-time/0)
 - [Indici, editări și întreruperi](https://tw.infoid26.ro/#lectie/html-text-details/0)
+- [Provocare: link sau buton?](https://tw.infoid26.ro/#lectie/reason-link-action/0)
 
 ## HTML · semantica fiecărui element · 30 lecții
 
@@ -98,7 +99,7 @@ Text, metadate, legături și alternative moderne pentru tagurile vechi.
 - [Recunoaște tt](https://tw.infoid26.ro/#lectie/legacy-tt/0)
 - [Recunoaște frameset](https://tw.infoid26.ro/#lectie/legacy-frameset/0)
 
-## HTML · conținut, media și formulare · 19 lecții
+## HTML · conținut, media și formulare · 21 lecții
 
 Orar, galerie, subtitrări și controalele filtrării.
 
@@ -121,8 +122,10 @@ Orar, galerie, subtitrări și controalele filtrării.
 - [Radio și checkbox](https://tw.infoid26.ro/#lectie/html-radio/0)
 - [Intervale, valori și validare de bază](https://tw.infoid26.ro/#lectie/html-range/0)
 - [Validare și compatibilitate](https://tw.infoid26.ro/#lectie/html-validation/0)
+- [Provocare: picture pentru altă compoziție](https://tw.infoid26.ro/#lectie/reason-picture-choice/0)
+- [Provocare: când nu este necesar picture?](https://tw.infoid26.ro/#lectie/reason-img-enough/0)
 
-## HTML · formulare, tabele și media · 11 lecții
+## HTML · formulare, tabele și media · 12 lecții
 
 Fiecare control și atribut important este exersat cu date incluse.
 
@@ -137,6 +140,7 @@ Fiecare control și atribut important este exersat cu date incluse.
 - [Surse video alternative](https://tw.infoid26.ro/#lectie/media-source-types/0)
 - [Încărcare amânată și dimensiuni](https://tw.infoid26.ro/#lectie/media-loading/0)
 - [Poziționarea subtitrărilor](https://tw.infoid26.ro/#lectie/vtt-cue-position/0)
+- [Provocare: blocat, dar inclus la submit](https://tw.infoid26.ro/#lectie/reason-readonly/0)
 
 ## MathML · fiecare piesă a formulei · 6 lecții
 
@@ -195,7 +199,7 @@ Fiecare familie de taguri are propria lecție; verificarea urmărește structura
 - [maction · Interactivitate: sintaxă MathML istorică](https://tw.infoid26.ro/#lectie/math-detail-maction/0)
 - [cn · Număr în Content MathML](https://tw.infoid26.ro/#lectie/math-detail-cn/0)
 
-## CSS · selectori și aspect · 25 lecții
+## CSS · selectori și aspect · 26 lecții
 
 Reguli, cascadă, text, culori și modelul cutiei.
 
@@ -224,8 +228,9 @@ Reguli, cascadă, text, culori și modelul cutiei.
 - [Când marginile verticale se suprapun](https://tw.infoid26.ro/#lectie/css-margin-collapse/0)
 - [Stilizează orarul](https://tw.infoid26.ro/#lectie/css-table/0)
 - [Stilizează listele unui meniu](https://tw.infoid26.ro/#lectie/css-list/0)
+- [Provocare: de ce nu câștigă ultima regulă?](https://tw.infoid26.ro/#lectie/reason-cascade/0)
 
-## CSS · selectori și stări în detaliu · 18 lecții
+## CSS · selectori și stări în detaliu · 20 lecții
 
 Potriviri exacte, frați, poziții și controale interactive.
 
@@ -247,8 +252,10 @@ Potriviri exacte, frați, poziții și controale interactive.
 - [input:checked](https://tw.infoid26.ro/#lectie/selector-checked/0)
 - [input:disabled](https://tw.infoid26.ro/#lectie/selector-disabled/0)
 - [input:required](https://tw.infoid26.ro/#lectie/selector-required/0)
+- [Provocare: combină condițiile fără selectări în plus](https://tw.infoid26.ro/#lectie/reason-selector/0)
+- [Provocare: a doua poziție dintre ce elemente?](https://tw.infoid26.ro/#lectie/reason-nth-type/0)
 
-## CSS · layout, responsive și mișcare · 23 lecții
+## CSS · layout, responsive și mișcare · 25 lecții
 
 Construiești meniul, grila, galeria și adaptarea la ecrane.
 
@@ -275,6 +282,8 @@ Construiești meniul, grila, galeria și adaptarea la ecrane.
 - [Contururi și efecte decorative](https://tw.infoid26.ro/#lectie/css-decoration/0)
 - [Bootstrap, iconuri și CSS compilat](https://tw.infoid26.ro/#lectie/css-framework/0)
 - [Un link față de viewport](https://tw.infoid26.ro/#lectie/css-fixed-viewport/0)
+- [Provocare: de ce depășește cardul containerul?](https://tw.infoid26.ro/#lectie/reason-box/0)
+- [Provocare: verifică ambele părți ale limitei](https://tw.infoid26.ro/#lectie/reason-grid-boundary/0)
 
 ## CSS · efecte, fonturi și accesibilitate · 11 lecții
 
@@ -410,7 +419,7 @@ Dimensiuni, fundaluri, contururi, text, poziționare și animație în pași mic
 - [flex-flow](https://tw.infoid26.ro/#lectie/css-detail-flex-flow/0)
 - [mask-size](https://tw.infoid26.ro/#lectie/css-detail-mask-size/0)
 
-## JavaScript · de la prima valoare · 20 lecții
+## JavaScript · de la prima valoare · 21 lecții
 
 Valori, variabile, funcții, condiții și bucle explicate de la zero.
 
@@ -434,8 +443,9 @@ Valori, variabile, funcții, condiții și bucle explicate de la zero.
 - [Parcurge valorile unui vector](https://tw.infoid26.ro/#lectie/js-for-of/0)
 - [while, break și continue](https://tw.infoid26.ro/#lectie/js-while/0)
 - [Argumente implicite și rest](https://tw.infoid26.ro/#lectie/js-default-rest/0)
+- [Provocare: numere care vin ca texte](https://tw.infoid26.ro/#lectie/reason-conversion/0)
 
-## JavaScript · scope și valori · 9 lecții
+## JavaScript · scope și valori · 10 lecții
 
 Blocuri, var, let, const, conversii și comparații.
 
@@ -448,8 +458,9 @@ Blocuri, var, let, const, conversii și comparații.
 - [Number cere întregul text numeric](https://tw.infoid26.ro/#lectie/number-full-conversion/0)
 - [Comparație strictă](https://tw.infoid26.ro/#lectie/strict-equality/0)
 - [Valori lipsă și valori false](https://tw.infoid26.ro/#lectie/nullish-values/0)
+- [Provocare: zero nu este absență](https://tw.infoid26.ro/#lectie/reason-zero/0)
 
-## JavaScript · vectori și obiecte · 27 lecții
+## JavaScript · vectori și obiecte · 28 lecții
 
 Toate operațiile de colecții utile pentru filtre, sortare și coș.
 
@@ -480,8 +491,9 @@ Toate operațiile de colecții utile pentru filtre, sortare și coș.
 - [Aplatizare cu flat](https://tw.infoid26.ro/#lectie/array-flat/0)
 - [Transformă și aplatizează un nivel](https://tw.infoid26.ro/#lectie/array-flatmap/0)
 - [Chei, valori și perechi](https://tw.infoid26.ro/#lectie/object-entries/0)
+- [Provocare: sortare fără distrugerea sursei](https://tw.infoid26.ro/#lectie/reason-sort/0)
 
-## JavaScript · colecții și cazuri-limită · 13 lecții
+## JavaScript · colecții și cazuri-limită · 14 lecții
 
 Indici, goluri, copiere, sortare și matrici.
 
@@ -498,6 +510,7 @@ Indici, goluri, copiere, sortare și matrici.
 - [Unește două liste cu concat](https://tw.infoid26.ro/#lectie/array-concat-copy/0)
 - [Citește substr din cod vechi](https://tw.infoid26.ro/#lectie/string-substr-legacy/0)
 - [Alege un indice dintr-o valoare aleatoare](https://tw.infoid26.ro/#lectie/random-selection/0)
+- [Provocare: căutare fără rezultat](https://tw.infoid26.ro/#lectie/reason-missing-index/0)
 
 ## JavaScript · funcțiile ca obiecte · 9 lecții
 
@@ -513,7 +526,7 @@ Parametri, arguments, proprietăți și forme de apel.
 - [Lipsa unui return](https://tw.infoid26.ro/#lectie/function-return-value/0)
 - [Valoare implicită și null](https://tw.infoid26.ro/#lectie/function-default/0)
 
-## JavaScript · șiruri, regex, Date și Math · 20 lecții
+## JavaScript · șiruri, regex, Date și Math · 21 lecții
 
 Toate metodele de text și date din prezentare.
 
@@ -537,8 +550,9 @@ Toate metodele de text și date din prezentare.
 - [Timestamp și intervale](https://tw.infoid26.ro/#lectie/date-time/0)
 - [floor, ceil și round](https://tw.infoid26.ro/#lectie/math-round/0)
 - [Limite și numere aleatorii](https://tw.infoid26.ro/#lectie/math-minmax/0)
+- [Provocare: căutare tolerantă la majuscule](https://tw.infoid26.ro/#lectie/reason-search/0)
 
-## JavaScript · expresii regulate pas cu pas · 27 lecții
+## JavaScript · expresii regulate pas cu pas · 28 lecții
 
 Toate opțiunile, clasele, cuantificatorii și aserțiile din prezentare.
 
@@ -569,8 +583,9 @@ Toate opțiunile, clasele, cuantificatorii și aserțiile din prezentare.
 - [Lookahead negativ](https://tw.infoid26.ro/#lectie/regex-full-lookahead-negative/0)
 - [Lookbehind pozitiv](https://tw.infoid26.ro/#lectie/regex-full-lookbehind-positive/0)
 - [Lookbehind negativ](https://tw.infoid26.ro/#lectie/regex-full-lookbehind-negative/0)
+- [Provocare: format complet sau fragment?](https://tw.infoid26.ro/#lectie/reason-whole/0)
 
-## JavaScript · dată și timp · 17 lecții
+## JavaScript · dată și timp · 18 lecții
 
 Getter, setter, UTC, luni și intervale în milisecunde.
 
@@ -591,6 +606,7 @@ Getter, setter, UTC, luni și intervale în milisecunde.
 - [setUTCMilliseconds](https://tw.infoid26.ro/#lectie/date-full-setUTCMilliseconds/0)
 - [Momente înainte de epoca Unix](https://tw.infoid26.ro/#lectie/date-negative-timestamp/0)
 - [Zile ca durată și zile calendaristice](https://tw.infoid26.ro/#lectie/date-duration-days/0)
+- [Provocare: luna se poate schimba după conversie](https://tw.infoid26.ro/#lectie/reason-utc-month/0)
 
 ## JavaScript · fiecare metodă, separat · 37 lecții
 
@@ -634,7 +650,7 @@ Exersează metodele de text, colecții, numere și timp fără să le ascunzi î
 - [Date.setTime · schimbă momentul](https://tw.infoid26.ro/#lectie/detail-date-setTime/0)
 - [toUTCString · dată pentru expirare](https://tw.infoid26.ro/#lectie/detail-date-utcString/0)
 
-## JavaScript · pagina devine interactivă · 18 lecții
+## JavaScript · pagina devine interactivă · 19 lecții
 
 DOM real: citești câmpuri, reacționezi la clic și construiești filtrele.
 
@@ -656,8 +672,9 @@ DOM real: citești câmpuri, reacționezi la clic și construiești filtrele.
 - [O acțiune mai târziu](https://tw.infoid26.ro/#lectie/dom-timeout/0)
 - [DOMContentLoaded și load](https://tw.infoid26.ro/#lectie/dom-ready/0)
 - [Comută tema printr-o clasă](https://tw.infoid26.ro/#lectie/dom-theme/0)
+- [Provocare: când citești valoarea?](https://tw.infoid26.ro/#lectie/reason-event-time/0)
 
-## Browser · construcție și verificare · 41 lecții
+## Browser · construcție și verificare · 42 lecții
 
 Completează pagina și verifică structura, compatibilitatea și comportamentul.
 
@@ -702,8 +719,9 @@ Completează pagina și verifică structura, compatibilitatea și comportamentul
 - [Alinierea și dimensiunea subtitrării](https://tw.infoid26.ro/#lectie/vtt-cue-layout/0)
 - [Direcția animației](https://tw.infoid26.ro/#lectie/css-animation-direction-long/0)
 - [Înlocuiește vechea structură cu frame-uri](https://tw.infoid26.ro/#lectie/html-frame-history/0)
+- [Provocare: text sau markup?](https://tw.infoid26.ro/#lectie/reason-text/0)
 
-## JSON · date și fișiere de configurare · 9 lecții
+## JSON · date și fișiere de configurare · 10 lecții
 
 Formate stricte, parsare, reviver, replacer și datele galeriei.
 
@@ -716,6 +734,7 @@ Formate stricte, parsare, reviver, replacer și datele galeriei.
 - [Selectează proprietăți la serializare](https://tw.infoid26.ro/#lectie/json-replacer/0)
 - [Indentare pentru fișiere lizibile](https://tw.infoid26.ro/#lectie/json-format/0)
 - [Fallback și configurație validă](https://tw.infoid26.ro/#lectie/json-errors/0)
+- [Provocare: din text JSON până la rezultat](https://tw.infoid26.ro/#lectie/reason-boundary/0)
 
 ## JSON · transformări și cazuri speciale · 10 lecții
 
@@ -732,7 +751,7 @@ Tipuri, erori, replacer, reviver și serializare.
 - [Date și JSON](https://tw.infoid26.ro/#lectie/json-full-date/0)
 - [Referințe circulare](https://tw.infoid26.ro/#lectie/json-full-circular/0)
 
-## Stare în browser · coș și cookies · 8 lecții
+## Stare în browser · coș și cookies · 9 lecții
 
 Serializezi date, restaurezi selecții și separi preferințele de datele serverului.
 
@@ -744,8 +763,9 @@ Serializezi date, restaurezi selecții și separi preferințele de datele server
 - [Totalul produselor vizibile](https://tw.infoid26.ro/#lectie/cart-total/0)
 - [Citește o pereche din cookie-uri](https://tw.infoid26.ro/#lectie/cookie-read/0)
 - [Expirare, cale și ștergere](https://tw.infoid26.ro/#lectie/cookie-write/0)
+- [Provocare: date salvate absente sau invalide](https://tw.infoid26.ro/#lectie/reason-restore/0)
 
-## SCSS · compilare reală · 16 lecții
+## SCSS · compilare reală · 17 lecții
 
 Variabile, tipuri, condiții, bucle, module, liste și funcții.
 
@@ -765,6 +785,7 @@ Variabile, tipuri, condiții, bucle, module, liste și funcții.
 - [Placeholder și @extend](https://tw.infoid26.ro/#lectie/scss-extend/0)
 - [Calculează o valoare cu @function](https://tw.infoid26.ro/#lectie/scss-function/0)
 - [Personalizează sursele Bootstrap](https://tw.infoid26.ro/#lectie/scss-bootstrap/0)
+- [Provocare: valoare de build sau de utilizare?](https://tw.infoid26.ro/#lectie/reason-theme/0)
 
 ## SCSS · module, liste și reutilizare · 8 lecții
 
@@ -779,7 +800,7 @@ Configurare, funcții, bucle și selectori generați.
 - [Valori numite într-o hartă](https://tw.infoid26.ro/#lectie/sass-map/0)
 - [Reexportă un modul Sass](https://tw.infoid26.ro/#lectie/sass-forward/0)
 
-## Node · fișiere și aplicații · 19 lecții
+## Node · fișiere și aplicații · 20 lecții
 
 Terminal, module, callback-uri, căi, fișiere și organizarea serverului.
 
@@ -802,6 +823,7 @@ Terminal, module, callback-uri, căi, fișiere și organizarea serverului.
 - [Citire asincronă și await](https://tw.infoid26.ro/#lectie/node-async-read/0)
 - [Hash-uri cu crypto](https://tw.infoid26.ro/#lectie/node-crypto/0)
 - [Supravegherea fișierelor și backup](https://tw.infoid26.ro/#lectie/node-watch/0)
+- [Provocare: rezultatul trebuie să vină din fișier](https://tw.infoid26.ro/#lectie/reason-file-flow/0)
 
 ## Node · fișiere, căi și callback-uri · 8 lecții
 
@@ -834,7 +856,7 @@ Directoare, HTTP nativ și legătura dintre baza de date și pagină.
 - [Directorul curent al procesului](https://tw.infoid26.ro/#lectie/node-working-directory/0)
 - [Tipul fișierului prin callback](https://tw.infoid26.ro/#lectie/node-lstat-callback/0)
 
-## Express · cereri și răspunsuri reale · 20 lecții
+## Express · cereri și răspunsuri reale · 21 lecții
 
 Rute, middleware, parametri, resurse statice și erori HTTP.
 
@@ -858,8 +880,9 @@ Rute, middleware, parametri, resurse statice și erori HTTP.
 - [Trimite un fișier cu sendFile](https://tw.infoid26.ro/#lectie/node-send-file/0)
 - [Handler pentru toate metodele HTTP](https://tw.infoid26.ro/#lectie/express-all-methods/0)
 - [Pornește cu nodemon](https://tw.infoid26.ro/#lectie/express-nodemon/0)
+- [Provocare: absent nu înseamnă invalid](https://tw.infoid26.ro/#lectie/reason-query/0)
 
-## HTTP · construiește contractul rutelor · 10 lecții
+## HTTP · construiește contractul rutelor · 11 lecții
 
 Metode, statusuri, prefixe, parametri și middleware.
 
@@ -873,8 +896,9 @@ Metode, statusuri, prefixe, parametri și middleware.
 - [Calea fără query string](https://tw.infoid26.ro/#lectie/http-request-path/0)
 - [Date comune prin res.locals](https://tw.infoid26.ro/#lectie/http-locals/0)
 - [Date dintr-un formular](https://tw.infoid26.ro/#lectie/http-urlencoded/0)
+- [Provocare: ruta există, dar cererea nu ajunge la ea](https://tw.infoid26.ro/#lectie/reason-order/0)
 
-## EJS · pagini construite din date · 11 lecții
+## EJS · pagini construite din date · 12 lecții
 
 De la o variabilă la fragmente, produse, galerie și pagini de erori.
 
@@ -889,6 +913,7 @@ De la o variabilă la fragmente, produse, galerie și pagini de erori.
 - [Opțiuni din datele serverului](https://tw.infoid26.ro/#lectie/ejs-filters/0)
 - [Galerie din JSON](https://tw.infoid26.ro/#lectie/ejs-gallery/0)
 - [O pagină de eroare cu date](https://tw.infoid26.ro/#lectie/ejs-errors/0)
+- [Provocare: text neobișnuit și listă goală](https://tw.infoid26.ro/#lectie/reason-escape-empty/0)
 
 ## EJS · transformă datele în pagini · 6 lecții
 
@@ -947,7 +972,7 @@ Produse, utilizatori și accesări, cu tipuri și constrângeri explicate separa
 - [Vectori în PostgreSQL](https://tw.infoid26.ro/#lectie/sql-arrays/0)
 - [Categorii cu ENUM](https://tw.infoid26.ro/#lectie/sql-enum/0)
 
-## SQL · interogări și date pentru pagini · 19 lecții
+## SQL · interogări și date pentru pagini · 21 lecții
 
 Filtre, agregări, actualizări și rezultate pentru un site de produse.
 
@@ -970,6 +995,8 @@ Filtre, agregări, actualizări și rezultate pentru un site de produse.
 - [Valori parametrizate în pg](https://tw.infoid26.ro/#lectie/sql-parameters/0)
 - [Driverul pg și rezultatul](https://tw.infoid26.ro/#lectie/pg-rows/0)
 - [Deschide conexiunea PostgreSQL](https://tw.infoid26.ro/#lectie/node-pg-connect/0)
+- [Provocare: parantezele schimbă rezultatul](https://tw.infoid26.ro/#lectie/reason-sql-logic/0)
+- [Provocare: păstrează și numără corect cazurile fără potrivire](https://tw.infoid26.ro/#lectie/reason-sql-zero/0)
 
 ## Mediul de lucru · propriul proiect · 12 lecții
 

@@ -4,98 +4,103 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#10141f">
-  <meta name="description" content="Pregătire pentru Tehnici Web: desfășurarea evaluării, exerciții practice și simulări cronometrate. INFO ID 26.">
+  <meta name="description" content="Înțelege examenul de Tehnici Web și exersează probele cronometrate direct în browser, fără instalări.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' 'nonce-tw-preview'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; worker-src 'self' blob:; frame-src 'self' about:; connect-src 'self'; object-src 'none'; base-uri 'none'">
-  <title>Pregătire Examen · Tehnici Web</title>
+  <title>Simulare examen · Tehnici Web</title>
   <link rel="stylesheet" href="/site/style.css">
   <link rel="stylesheet" href="/site/journey.css">
   <link rel="stylesheet" href="/site/exam.css">
   <script src="/site/exam-data.js" defer></script>
+  <script src="/site/account.js" defer></script>
   <script src="/site/editor.js" defer></script>
   <script src="/site/runner.js" defer></script>
-  <script src="/site/exam.js" defer></script>
+  <script src="/site/exam-session.js" defer></script><script src="/site/exam.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#exam-content">Sari la conținut</a>
   <div class="shell exam-shell">
     <header class="topbar">
       <a class="brand" href="/"><strong>TW<span>.</span></strong><span class="brand-meta">INFO ID 26<br><b>Pregătire Examen</b></span></a>
-      <nav class="exam-links" aria-label="Navigare principală"><a href="/">Curs interactiv</a><a href="/project/" target="_blank" rel="noopener">Proiect Website ↗</a></nav>
+      <nav class="topbar-actions" aria-label="Navigare principală">
+        <a class="total exam-course-link" href="/">Curs interactiv</a>
+        <div id="account-controls" class="account-controls" aria-label="Cont Microsoft"></div>
+      </nav>
     </header>
+    <p id="account-header-status" class="signin-hint" role="status" hidden></p>
     <main id="exam-content">
       <section class="exam-hero">
-        <div class="eyebrow">DE LA ÎNȚELEGERE LA REZOLVARE</div>
-        <h1>Pregătire pentru examen.</h1>
-        <p class="lead">Înțelege cum se desfășoară evaluarea. Exersează modificările, explică alegerile și apoi încearcă un bilet contra cronometru.</p>
-        <div class="exam-stats"><span><strong id="exercise-total">—</strong> exerciții</span><span>CSS · JavaScript · Node · EJS · PostgreSQL</span><span id="exam-progress">0 rezolvate</span></div>
+        <div class="eyebrow">ÎNȚELEGE FORMATUL. APLICĂ CE AI ÎNVĂȚAT.</div>
+        <h1>Exersează examenul,<br>direct în browser.</h1>
+        <p class="lead">Primești un bilet aleatoriu, citești cerințele, lucrezi contra cronometru și predai rezolvarea. Editorul, fișierele și datele sunt pregătite aici. Nu trebuie să instalezi programe.</p>
+        <div class="exam-stats"><span>CSS · JavaScript client + BD · Node + EJS</span><span>Pregătire, probe și recapitulare</span></div>
       </section>
-      <nav class="exam-tabs" aria-label="Secțiunile pregătirii">
-        <a href="#desfasurare">Desfășurare</a><a href="#exercitii">Exerciții</a><a href="#simulare">Simulare</a>
-      </nav>
 
       <section id="desfasurare" class="exam-section" aria-labelledby="rules-title">
-        <div class="eyebrow">CUM EȘTI EVALUAT</div><h2 id="rules-title">Prezentarea și examenul practic</h2>
-        <p class="exam-source">Regulile de mai jos redau anunțurile și exemplele din fotografiile furnizate. Anunțul de prezentare este pentru ID 2025–2026. Aceste materiale sunt reperul de pregătire; pentru seria actuală se aplică anunțul profesoarei.</p>
+        <div class="eyebrow">CE SE ÎNTÂMPLĂ LA EVALUARE</div><h2 id="rules-title">Două momente diferite</h2>
+        <p class="exam-source">Explicațiile se bazează pe fotografiile cu regulile și exemplele furnizate. Anunțul despre prezentare este pentru ID 2025–2026. Pentru seria actuală, verifică anunțul profesoarei. Biletele de aici sunt antrenamente proprii, în același stil; nu sunt subiecte oficiale.</p>
         <div class="rules-grid">
           <article class="rule-card">
-            <span class="exam-tag">PREZENTARE</span><h3>Explici codul și modificările</h3>
+            <span class="exam-tag">1 · PREZENTAREA PROIECTULUI</span><h3>Arăți și explici ce ai făcut</h3>
             <ol class="rule-steps">
-              <li><strong>Etapa 1: HTML.</strong> Derulezi fișierul propriu și răspunzi la întrebări despre taguri și rezultatul codului.</li>
-              <li><strong>Validare în direct.</strong> Ai deja deschis validatorul HTML și introduci fișierul în timpul prezentării, pentru a fi verificat.</li>
-              <li><strong>Întrebări din proiect.</strong> Explici cum funcționează codul și cum ai face modificările. Pentru modificările propuse spui și explici codul; nu îl scrii efectiv.</li>
-              <li><strong>Timp pe întrebare.</strong> Ai 2 minute pentru întrebările de 0,5 puncte și 1 minut pentru cele cu punctaj mai mic. Pornești cronometrul imediat după enunț. Prezentarea durează aproximativ 30 de minute.</li>
+              <li><strong>Deschizi HTML-ul.</strong> Profesoara poate întreba ce înseamnă un tag sau ce produce o anumită bucată de cod.</li>
+              <li><strong>Validezi în direct.</strong> Ai deja deschis validatorul HTML și introduci fișierul în timpul prezentării.</li>
+              <li><strong>Explici modificări.</strong> Spui ce ai schimba și de ce, ajutându-te de codul proiectului. În exemplele de prezentare, nu scrii efectiv modificarea.</li>
+              <li><strong>Răspunzi cronometrat.</strong> Ai 2 minute pentru o întrebare de 0,5 puncte și 1 minut pentru cele cu punctaj mai mic. Cronometrul pornește după întrebare. Prezentarea durează aproximativ 30 de minute.</li>
             </ol>
-            <p>Exemplele arată stilul întrebărilor. La evaluare pot fi alese alte părți din cod.</p>
-            <a href="https://validator.w3.org/nu/" target="_blank" rel="noopener noreferrer">Deschide validatorul HTML ↗</a>
+            <p>Pregătește-te să justifici alegerea, nu doar să numești o proprietate: de ce acest selector, de ce picture în loc de img, de ce acest filtru sau această interogare?</p>
+            <a href="https://validator.w3.org/nu/" target="_blank" rel="noopener noreferrer">Validator HTML ↗</a>
           </article>
           <article class="rule-card">
-            <span class="exam-tag">EXAMEN PRACTIC</span><h3>Modifici un proiect care funcționează</h3>
+            <span class="exam-tag">2 · EXAMENUL PRACTIC</span><h3>Primești o cerință nouă și scrii cod</h3>
             <ol class="rule-steps">
-              <li><strong>Înainte să vii.</strong> Ai Node.js, PostgreSQL și datele deja inserate. Proiectul trebuie să funcționeze. Poți folosi calculatorul din laborator cu proiectul pe stick; anunțul recomandă laptopul, când este posibil.</li>
-              <li><strong>La intrare.</strong> Pornești proiectul cu nodemon și deschizi un tab în browser.</li>
-              <li><strong>Pregătire: cel mult 5 minute.</strong> Citești biletul, deschizi fișierele, referințele și slide-urile necesare și explici de ce le alegi. Încă nu scrii cod.</li>
-              <li><strong>Rezolvare cronometrată.</strong> Pornești cronometrul și lucrezi. După bilet urmează categoria următoare.</li>
-              <li><strong>Justificare.</strong> După oprirea cronometrului, profesoara poate întreba de ce ai scris anumite lucruri. Explicația contribuie la notare.</li>
+              <li><strong>Proiectul funcționează deja.</strong> La examenul real ai Node.js, PostgreSQL și datele pregătite. Pornești proiectul cu nodemon și îl deschizi în browser.</li>
+              <li><strong>Primești biletul.</strong> Citești enunțul și alegi fișierele, referințele și slide-urile necesare, explicând de ce le deschizi.</li>
+              <li><strong>Ai cel mult 5 minute de pregătire.</strong> Deschizi ce îți trebuie, dar încă nu scrii cod.</li>
+              <li><strong>Pornești proba.</strong> Lucrezi în timpul alocat, verifici rezultatul, apoi oprești cronometrul și predai.</li>
+              <li><strong>Justifici soluția.</strong> Profesoara poate întreba de ce ai scris anumite lucruri. Apoi urmează biletul din categoria următoare.</li>
             </ol>
           </article>
         </div>
-        <div class="exam-table-wrap"><table class="exam-table"><caption>Timpii din exemplele de examen practic</caption><thead><tr><th scope="col">Categorie</th><th scope="col">Timp</th><th scope="col">Ce exersezi aici</th></tr></thead><tbody><tr><td>CSS</td><td>15 minute</td><td>Selectori, layout, pseudo-elemente, transformări, tranziții</td></tr><tr><td>JavaScript client + BD</td><td>15 minute</td><td>Controale, DOM, datele produselor și filtrare</td></tr><tr><td>Node + EJS</td><td>20 minute</td><td>Fișiere JSON, rute, template-uri și date</td></tr><tr><td>Bonus</td><td>10 minute</td><td>Completări precum stocare și restaurare</td></tr></tbody></table></div>
-        <details class="rule-details"><summary>Participare, punctaj și materiale permise</summary>
-          <p>În documentul furnizat, lista de participare include studenții care au deja cel puțin 3,5 puncte din proiect și activitate. Punctajul examenului este din 10; ai nevoie de cel puțin 5/10 pentru promovarea examenului. Punctajul se înmulțește cu 0,3 pentru contribuția la nota finală.</p>
-          <p>Biletele au trei categorii și combină obiective din materia categoriei. Poți prelua și adapta cod din propriul proiect. Sunt permise slide-urile de curs și linkurile din documentul indicat de profesoară. Aceasta nu înseamnă acces nelimitat la orice resursă; pagina de față este pentru antrenament.</p>
-          <p>Intrarea este în ordinea listei publicate, pe măsură ce ies studenții. Anunțul estimează aproximativ 45–60 de minute petrecute în sală și mai mulți studenți evaluați simultan. Ordinea poate fi schimbată prin înțelegere cu un coleg.</p>
-          <p>Documentele sunt exemple istorice. Nu confirmă automat aceleași condiții pentru un alt an universitar.</p>
+        <div class="exam-table-wrap"><table class="exam-table"><caption>Timpii probelor practice din documentele furnizate</caption><thead><tr><th scope="col">Probă</th><th scope="col">Timp</th><th scope="col">La ce să te aștepți</th></tr></thead><tbody>
+          <tr><td>CSS</td><td>15 minute</td><td>Selectori, poziționare, layout, stări și efecte; uneori adaptarea HTML-ului.</td></tr>
+          <tr><td>JavaScript client + BD</td><td>15 minute</td><td>Controale, filtrare, date și modificarea paginii.</td></tr>
+          <tr><td>Node + EJS</td><td>20 minute</td><td>Rute, fișiere JSON, date și pagini generate.</td></tr>
+          <tr><td>Bonus</td><td>10 minute</td><td>O completare, de exemplu memorarea unei alegeri.</td></tr>
+        </tbody></table></div>
+        <details class="rule-details"><summary>Ce trebuie pregătit pentru examenul real?</summary>
+          <p><strong>Programe:</strong> un editor de cod, un browser, Node.js cu npm, nodemon și PostgreSQL. Pachetele proiectului, inclusiv Express, EJS și pg, trebuie instalate. Fișierele proiectului, baza de date și datele trebuie să existe înainte de începerea probei.</p>
+          <p><strong>Verifică înainte:</strong> aplicația pornește, paginile se deschid, o pagină citește date din PostgreSQL și CSS-ul compilat este încărcat. Nu lăsa configurarea mediului pentru cele 5 minute de citire a biletului.</p>
+          <p><strong>Pornire:</strong> în folderul proiectului, package.json descrie pachetele și comenzile. Instalezi nodemon local cu <code>npm install --save-dev nodemon</code>. Dacă fișierul de intrare este app.js, poți defini în scripts <code>"dev": "nodemon app.js"</code>, apoi pornești cu <code>npm run dev</code>. Ctrl+C oprește procesul. Fiecare proiect poate avea alte nume de fișiere și comenzi.</p>
+          <p>Aceste instalări sunt pentru examenul real. <strong>Simularea de mai jos funcționează fără instalări.</strong></p>
         </details>
-        <details class="rule-details"><summary>Pregătire locală: ce fișiere și comenzi folosești</summary>
-          <p><strong>app.js</strong> este fișierul care pornește aplicația ta Express și apelează listen pe portul ales. <strong>package.json</strong> descrie pachetele și comenzile proiectului. Îl creezi cu <code>npm init -y</code> în folderul propriu, dacă încă nu există.</p>
-          <p>După ce ai app.js și package.json, <code>npm install --save-dev nodemon</code> instalează unealta de repornire în proiect. Adaugi în obiectul scripts o proprietate <code>"dev": "nodemon app.js"</code>, păstrând celelalte proprietăți. Apoi <code>npm run dev</code> pornește aplicația. Ctrl+C o oprește. Reîncarci browserul separat.</p>
-          <p>Baza ta PostgreSQL trebuie să existe, conexiunea să fie configurată și datele să fie inserate înainte de examen. Verifică o pagină care citește datele, nu numai prima pagină. Pregătește fișierele JSON, template-urile EJS și CSS-ul compilat. Nu trebuie să descarci repository-ul acestei platforme pentru exercițiile de aici.</p>
+        <details class="rule-details"><summary>Punctaj și materiale permise</summary>
+          <p>În anunțul furnizat, participarea cere cel puțin 3,5 puncte din proiect și activitate. Examenul este din 10, cu minimum 5/10 pentru promovare. Punctajul examenului se înmulțește cu 0,3 pentru contribuția la nota finală.</p>
+          <p>Sunt permise slide-urile și linkurile indicate de profesoară. Poți adapta cod din propriul proiect. Exemplele ilustrează stilul întrebărilor; alte obiective din aceeași materie pot fi combinate în bilete noi.</p>
         </details>
       </section>
 
-      <section id="exercitii" class="exam-section" aria-labelledby="bank-title">
-        <div class="eyebrow">EXERSEAZĂ ÎN RITMUL TĂU</div><h2 id="bank-title">Banca de exerciții</h2>
-        <p>„Fundamente” reia explicațiile și exercițiile din curs. „Bilet practic” combină tehnicile, cu date și fișiere furnizate. Întrebările orale au repere de răspuns și autoevaluare. Enunțurile sunt adaptări de antrenament, cu exemple în engleză.</p>
-        <div class="exam-filters">
-          <label>Caută<input id="exam-search" type="search" placeholder="De exemplu: galerie, slider, SQL"></label>
-          <label>Categorie<select id="exam-category"><option value="all">Toate categoriile</option><option value="css">CSS / SCSS</option><option value="client">JavaScript client</option><option value="server">Node + Express + EJS</option><option value="sql">PostgreSQL</option><option value="oral">Prezentare orală</option></select></label>
-          <label>Tip<select id="exam-level"><option value="all">Toate tipurile</option><option>Fundamente</option><option>Bilet practic</option><option>Prezentare orală</option></select></label>
+      <section id="simulator" class="exam-section simulation-card" aria-labelledby="simulation-title">
+        <div class="eyebrow">ACUM ÎNCEARCĂ TU</div><h2 id="simulation-title">Simulare pe probe</h2>
+        <p>Totul este pregătit în laboratorul din pagină. La fiecare probă extragi un bilet, ai până la 5 minute să citești și să deschizi fișierele furnizate, apoi începi lucrul. La predare, codul este blocat și verificat. Indiciile și rezolvările apar numai la recapitularea finală.</p>
+        <p>Simularea folosește timpii din tabel. Extragerea poate combina și situații noi, nu doar exemplele profesoarei. Rezultatele sunt pentru antrenament și nu reprezintă o notă oficială.</p>
+        <div class="exam-actions"><button id="start-simulation" class="primary">Începe simularea</button><button id="last-attempt" class="secondary" hidden>Vezi ultima simulare</button></div>
+        <div id="simulation-panel" hidden>
+          <ol id="simulation-stages" class="simulation-stages" aria-label="Probele simulării"></ol>
+          <h3 id="stage-title"></h3>
+          <p id="phase-instructions"></p>
+          <div class="exam-timer"><output id="simulation-clock" aria-label="Timp rămas">—</output><span id="simulation-status" role="status"></span></div>
+          <div class="exam-actions">
+            <button id="draw-ticket" class="primary" hidden>Extrage bilet</button>
+            <button id="begin-stage" class="primary" hidden>Începe proba</button>
+            <button id="submit-stage" class="primary" hidden>Predă proba</button>
+            <button id="next-stage" class="primary" hidden>Continuă cu proba următoare</button>
+            <button id="finish-attempt" class="secondary">Încheie simularea</button>
+          </div>
+          <div id="simulation-tasks" class="simulation-tasks" aria-label="Cerințele biletului"></div>
         </div>
-        <p id="exam-filter-count" role="status"></p>
-        <div id="exam-bank" class="exam-bank"></div>
       </section>
-
-      <section id="simulare" class="exam-section simulation-card" aria-labelledby="simulation-title">
-        <div class="eyebrow">APLICĂ CE AI ÎNVĂȚAT</div><h2 id="simulation-title">Simulare cronometrată</h2>
-        <p>Primești o selecție aleatoare de exerciții integrate: CSS, client, server și bonus. Începi cu 5 minute pentru identificarea fișierelor, fără scriere de cod. Urmează 15, 15, 20 și 10 minute. Simularea nu calculează o notă oficială.</p>
-        <button id="start-simulation" class="primary">Extrage o simulare</button>
-        <div id="simulation-status" role="status" hidden></div>
-        <div id="simulation-tasks" class="simulation-tasks"></div>
-        <button id="simulation-next" class="secondary" hidden>Încheie pregătirea și începe CSS</button>
-        <button id="simulation-end" class="secondary" hidden>Încheie simularea</button>
-      </section>
-
-      <section id="exam-workspace" class="exam-section" aria-label="Exercițiul selectat" hidden></section>
+      <section id="exam-workspace" class="exam-section" aria-label="Laboratorul biletului" hidden></section>
+      <section id="exam-report" class="exam-section" aria-label="Rezultatele simulării" hidden></section>
       <p id="exam-storage-warning" role="status" hidden></p>
     </main>
     <footer><span>Tehnici Web · INFO ID 26</span><a href="/">Înapoi la curs</a></footer>

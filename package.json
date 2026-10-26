@@ -31,7 +31,8 @@
     "check:workshop": "node scripts/check_workshop.mjs",
     "check:progression": "node scripts/check_progression.mjs",
     "check:exam": "node scripts/check_exam_cli.mjs",
-    "check:exam:browser": "node scripts/check_exam.mjs"
+    "check:exam:browser": "node scripts/check_exam.mjs",
+    "check:reasoning": "node scripts/check_reasoning.mjs"
   },
   "dependencies": {
     "express": "^5.1.0",

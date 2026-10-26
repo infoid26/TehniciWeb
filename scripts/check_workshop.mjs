@@ -20,7 +20,7 @@ assert(selected.find(l=>l.id==='dulc-start-script').example.includes('build:asse
 assert(selected.find(l=>l.id==='dulc-permissions').example.includes('Create setup-db.cjs'));
 assert(selected.find(l=>l.id==='dulc-pool').example.includes('Create db.cjs'));
 const ui=await fs.readFile('site/app.js','utf8');
-assert(ui.includes('Proiect Website') && ui.includes('Pregătire Examen'));
+assert(ui.includes('Proiect Website') && ui.includes('Simulare Examen'));
 for(const id of ['project-shell','project-menu','project-gallery','project-picture','project-video','project-faq','project-table','project-grid','project-menu-action','project-filter','project-sort','project-cart','project-ejs','project-route-id','project-query','project-assets','project-errors','project-checklist'])assert(selected.some(l=>l.id===id),id);
 assert(lessons.some(l=>l.example.includes('pg_advisory_xact_lock')));
 assert(lessons.some(l=>l.example.includes('rejectUnauthorized:true')));

@@ -63,11 +63,36 @@ async function run(){
  // Express checks RegExp with instanceof; literals created inside vm belong to
  // another realm. Recreate only route patterns in the host realm at the boundary.
  const routePath=value=>Object.prototype.toString.call(value)==='[object RegExp]'?new RegExp(value.source,value.flags):Array.isArray(value)?value.map(routePath):value;
- const trainingExpress=Object.assign((...args)=>{
-  const app=express(...args);
-  for(const method of ['use','route','all','get','post','put','patch','delete','head','options']){
-   const original=app[method];app[method]=function(first,...rest){return original.call(this,routePath(first),...rest);};
+ // VM async functions return promises from a different JavaScript realm.
+ // Normalize only the return value at the Express boundary, retaining arity,
+ // receiver, synchronous throws and Express's rejection/error handling.
+ const handlers=new WeakMap(),instrumented=new WeakSet();
+ const handler=value=>{
+  if(Array.isArray(value))return value.map(handler);
+  if(typeof value!=='function')return value;
+  if(handlers.has(value))return handlers.get(value);
+  const wrapped=function(...args){
+   const result=Reflect.apply(value,this,args);
+   return result&&typeof result.then==='function'?Promise.resolve(result):result;
+  };
+  Object.defineProperty(wrapped,'length',{value:value.length});
+  handlers.set(value,wrapped);return wrapped;
+ };
+ const instrument=target=>{
+  if(instrumented.has(target))return target;
+  instrumented.add(target);
+  for(const method of new Set(['use','route','all','param',...http.METHODS.map(value=>value.toLowerCase())])){
+   if(typeof target[method]!=='function')continue;
+   const original=target[method];
+   target[method]=function(first,...rest){
+    const result=original.call(this,handler(routePath(first)),...rest.map(handler));
+    return method==='route'?instrument(result):result;
+   };
   }
+  return target;
+ };
+ const trainingExpress=Object.assign((...args)=>{
+  const app=instrument(express(...args));
   if(Object.keys(task.files||{}).some(name=>name.endsWith('.ejs'))){
    app.response.render=function(view,locals={},callback){
     if(typeof locals==='function'){callback=locals;locals={};}
@@ -90,6 +115,7 @@ async function run(){
   }
   return app;
  },express);
+ trainingExpress.Router=(...args)=>instrument(express.Router(...args));
  const allowed={path:path.posix,crypto,http,url,querystring,fs:virtualFS(task.files||{}),express:trainingExpress};
  let pgDatabase;
  if(task.database){

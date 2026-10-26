@@ -93,3 +93,13 @@
 .review-question p,.review-question li { line-height:1.8; }
 .exam-editor-panel textarea[readonly] { opacity:.8; }
 .simulation-card .exam-actions { margin-bottom:0; }
+
+/* One simulation screen at a time, with its timer always available. */
+.simulation-active .exam-hero,.simulation-active #desfasurare { display:none; }
+.simulation-active main { padding-top:20px; }
+.simulation-active #simulator { margin:0 0 24px; }
+.simulation-active .exam-timer { position:sticky; top:0; z-index:5; background:var(--paper); padding:12px; border:1px solid var(--line); border-radius:10px; }
+.simulation-active #simulation-panel > .exam-actions { position:sticky; top:94px; z-index:4; background:var(--paper); padding:10px 0; }
+.ticket-prompt { padding:16px 0; border-top:1px solid var(--line); }
+.ticket-prompt p { line-height:1.8; }
+#exam-workspace { margin-top:24px; }

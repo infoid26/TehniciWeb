@@ -255,6 +255,35 @@ module.exports = app;'''
                        rubric=l['reasoning']['questions'], lesson_id=l['id'], level='Raționament')
             item['reasoning'] = deepcopy(l['reasoning'])
 
+    # Reuse the course's independently runnable contracts, with stable exam IDs.
+    # A lesson already represented by a foundation/transfer ticket is not copied twice.
+    represented = {item.get('lessonId') for item in items}
+    supported = {'html','css','scss','js','json','dom','node','express','ejs','sql'}
+    for chapter in course['chapters']:
+        for lesson in chapter['lessons']:
+            if lesson['id'] in represented or lesson['task']['mode'] not in supported:
+                continue
+            mode = lesson['task']['mode']
+            category = ('css' if mode in ('html','css','scss') else
+                        'server' if mode in ('node','express','ejs') else
+                        'sql' if mode == 'sql' else 'client')
+            item = add('exam-curriculum-' + lesson['id'], lesson['title'], category,
+                       deepcopy(lesson['task']), minutes=20 if category == 'server' else 15,
+                       hint=lesson['hint'], steps=lesson.get('walkthrough') or [lesson['explain']],
+                       rubric=[lesson['task']['prompt'], 'Explică alegerea și verifică un caz diferit.'],
+                       lesson_id=lesson['id'], level='Bilet practic')
+            if lesson.get('reasoning'):
+                item['reasoning'] = deepcopy(lesson['reasoning'])
+            represented.add(lesson['id'])
+    lesson_chapters = {lesson['id']:chapter for chapter in course['chapters'] for lesson in chapter['lessons']}
+    for item in items:
+        if item.get('task'):
+            mode = item['task']['mode']
+            item['category'] = ('css' if mode in ('html','css','scss') else 'server' if mode in ('node','express','ejs') else 'sql' if mode == 'sql' else 'client')
+        chapter = lesson_chapters.get(item.get('lessonId'))
+        if chapter:
+            item.update(chapterId=chapter['id'], chapterTitle=chapter['title'])
+
     # Oral rehearsals model the explanation, not a keyword-scored text quiz.
     oral = [
         ('html-tag','Ce exprimă un tag HTML?','Explică diferența dintre element, tag de deschidere, conținut și tag de închidere. Dă un exemplu cu p.','Un element precum <p>Hello</p> marchează un paragraf: <p> deschide, Hello este conținutul și </p> închide. Există și elemente fără tag final, de exemplu img.',['Identifică p.','Explică textul vizibil.','Menționează elementele fără închidere.'],'html-tags'),
@@ -285,7 +314,7 @@ module.exports = app;'''
     for id,title,prompt,answer,rubric,lesson_id in oral:
         item=add('exam-oral-'+id,title,'oral',minutes=2,hint='Spune ce fișier deschizi, de ce și ce efect are fiecare linie.',answer=answer,rubric=rubric,lesson_id=lesson_id,level='Prezentare orală')
         item['prompt']=prompt
-    output = dict(version=1,sourceLabel='Fotografii furnizate de student: anunț ID 2025–2026 și exemple de bilete.',
+    output = dict(version=1,sourceLabel='Exerciții de antrenament din programa cursului.',
                   exercises=items)
     Path('site/exam-data.js').write_text('window.TW_EXAM = '+json.dumps(output,ensure_ascii=False,indent=2)+';\n',encoding='utf-8')
     print(len(items),'exam exercises;',sum('task' in x for x in items),'with editor and checks')

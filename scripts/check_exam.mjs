@@ -22,27 +22,28 @@ try{
  await page.locator('#start-simulation').click();
  for(let index=0;index<4;index++){
   await page.locator('#draw-ticket').click();
-  await page.waitForSelector('#exam-code[readonly]');
+  await page.waitForSelector('#simulation-tasks:not([hidden])');
   assert.equal(await page.locator('.cm-editor').count(),0);
   assert(await page.locator('#draw-ticket').isHidden());
   assert.equal(await page.getByText('Rezolvare și raționament',{exact:true}).count(),0);
   const before=await page.evaluate(()=>JSON.parse(localStorage.getItem('tw-infoid26-exam-simulation-v2')));
-  await page.reload();await page.waitForSelector('#exam-code[readonly]');
+  await page.reload();await page.waitForSelector('#simulation-tasks:not([hidden])');
   const after=await page.evaluate(()=>JSON.parse(localStorage.getItem('tw-infoid26-exam-simulation-v2')));
   assert.equal(after.stages[index].deadline,before.stages[index].deadline);
   await page.locator('#begin-stage').click();await page.waitForSelector('.cm-editor');
-  const ids=await page.locator('[data-task]').evaluateAll(nodes=>nodes.map(node=>node.dataset.task));
+  const ids=await page.evaluate(()=>{const s=JSON.parse(localStorage.getItem('tw-infoid26-exam-simulation-v2'));return s.stages[s.index].ids;});
   for(const id of ids){
-   await page.locator('[data-task="'+id+'"]').click();await page.waitForSelector('.cm-editor');
+   await page.waitForSelector('.cm-editor');
    await page.evaluate(id=>{
     const task=TW_EXAM.exercises.find(item=>item.id===id).task;
     const field=document.querySelector('#exam-code');field.value=task.solution;field.dispatchEvent(new Event('input',{bubbles:true}));
    },id);
    await page.locator('#exam-explanation').fill('Explain the chosen operation and check an opposite case.');
+   if(id!==ids.at(-1))await page.locator('#submit-stage').click();
   }
   await page.locator('#submit-stage').click();
   await page.waitForFunction(()=>!document.querySelector('#next-stage').hidden,null,{timeout:60000});
-  assert(await page.locator('#exam-code').getAttribute('readonly')!==null);
+  assert(await page.locator('#exam-workspace').isHidden());
   assert.equal(await page.getByText('Rezolvare și raționament',{exact:true}).count(),0);
   const stored=await page.evaluate(()=>JSON.parse(localStorage.getItem('tw-infoid26-exam-simulation-v2')));
   for(const id of ids)assert(stored.stages[index].results[id].every(row=>row.passed),id);

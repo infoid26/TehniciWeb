@@ -10,6 +10,15 @@ const bank=JSON.parse(JSON.stringify(context.window.TW_EXAM.exercises));
 const lessons=course.chapters.flatMap(chapter=>chapter.lessons);
 const positions=new Map(lessons.map((lesson,index)=>[lesson.id,index]));
 const challenges=lessons.filter(lesson=>lesson.challenge);
+const executable=new Set(['html','css','scss','js','json','dom','node','express','ejs','sql']);
+const represented=new Set(bank.filter(item=>item.task).map(item=>item.lessonId));
+for(const lesson of lessons)if(executable.has(lesson.task.mode))assert(represented.has(lesson.id),'Missing exam exercise: '+lesson.id);
+assert(bank.filter(item=>item.task).length>=750,'Keep broad curriculum coverage');
+for(const item of bank.filter(item=>item.task)){
+ const mode=item.task.mode;
+ assert.equal(item.category,['html','css','scss'].includes(mode)?'css':['node','express','ejs'].includes(mode)?'server':mode==='sql'?'sql':'client',item.id+' must be reachable in its stage');
+}
+
 assert(challenges.length>=25);
 for(const l of challenges){
  assert(l.reasoning.questions.length>=2,l.id);

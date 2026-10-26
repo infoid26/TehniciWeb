@@ -37,7 +37,6 @@
 
       <section id="desfasurare" class="exam-section" aria-labelledby="rules-title">
         <div class="eyebrow">CE SE ÎNTÂMPLĂ LA EVALUARE</div><h2 id="rules-title">Două momente diferite</h2>
-        <p class="exam-source">Explicațiile se bazează pe fotografiile cu regulile și exemplele furnizate. Anunțul despre prezentare este pentru ID 2025–2026. Pentru seria actuală, verifică anunțul profesoarei. Biletele de aici sunt antrenamente proprii, în același stil; nu sunt subiecte oficiale.</p>
         <div class="rules-grid">
           <article class="rule-card">
             <span class="exam-tag">1 · PREZENTAREA PROIECTULUI</span><h3>Arăți și explici ce ai făcut</h3>
@@ -80,10 +79,11 @@
       </section>
 
       <section id="simulator" class="exam-section simulation-card" aria-labelledby="simulation-title">
-        <div class="eyebrow">ACUM ÎNCEARCĂ TU</div><h2 id="simulation-title">Simulare pe probe</h2>
+        <div id="simulation-intro"><div class="eyebrow">ACUM ÎNCEARCĂ TU</div><h2 id="simulation-title">Simulare pe probe</h2>
         <p>Totul este pregătit în laboratorul din pagină. La fiecare probă extragi un bilet, ai până la 5 minute să citești și să deschizi fișierele furnizate, apoi începi lucrul. La predare, codul este blocat și verificat. Indiciile și rezolvările apar numai la recapitularea finală.</p>
         <p>Simularea folosește timpii din tabel. Extragerea poate combina și situații noi, nu doar exemplele profesoarei. Rezultatele sunt pentru antrenament și nu reprezintă o notă oficială.</p>
         <div class="exam-actions"><button id="start-simulation" class="primary">Începe simularea</button><button id="last-attempt" class="secondary" hidden>Vezi ultima simulare</button></div>
+        </div>
         <div id="simulation-panel" hidden>
           <ol id="simulation-stages" class="simulation-stages" aria-label="Probele simulării"></ol>
           <h3 id="stage-title"></h3>
@@ -97,9 +97,9 @@
             <button id="finish-attempt" class="secondary">Încheie simularea</button>
           </div>
           <div id="simulation-tasks" class="simulation-tasks" aria-label="Cerințele biletului"></div>
+          <section id="exam-workspace" aria-label="Laboratorul biletului" hidden></section>
         </div>
       </section>
-      <section id="exam-workspace" class="exam-section" aria-label="Laboratorul biletului" hidden></section>
       <section id="exam-report" class="exam-section" aria-label="Rezultatele simulării" hidden></section>
       <p id="exam-storage-warning" role="status" hidden></p>
     </main>

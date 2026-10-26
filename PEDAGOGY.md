@@ -38,6 +38,8 @@ Alegerea picture/img este exersată în ambele sensuri: alt cadraj condiționat 
 
 ## Simulare în browser
 
-Pagina de examen arată regulile și un singur flux de simulare, fără listă de exerciții. Fiecare probă are extragere, pregătire de cel mult 5 minute, lucru cronometrat și predare. În pregătire editorul este numai pentru citire; la predare răspunsul este blocat. Termenele și răspunsurile sunt păstrate la reîncărcare, fără să se reseteze timpul. Soluțiile sunt afișate numai după încheierea simulării.
+Pagina de examen arată regulile și un singur flux de simulare, fără listă de exerciții. Fiecare probă are extragere, pregătire de cel mult 5 minute, lucru cronometrat și predare. În pregătire editorul nu este afișat; la predare răspunsul este blocat. Termenele și răspunsurile sunt păstrate la reîncărcare, fără să se reseteze timpul. Soluțiile sunt afișate numai după încheierea simulării.
 
 Mediul, fișierele și datele sunt oferite de platformă. Nu sunt necesare instalări pe calculator pentru simulare. Programele necesare examenului real sunt explicate separat. Etapele păstrează timpii documentați; cerințele sunt adaptări independente. Rezultatele testelor nu sunt o notă oficială și nu înlocuiesc justificarea orală.
+
+Setul de simulare include toate exercițiile executabile ale cursului, cu ID-uri de examen separate, date, teste și rezolvări copiate la generare. Extragerea distribuie alegerile între capitole, apoi între exerciții. Cerințele se parcurg consecutiv, cu un singur editor vizibil.

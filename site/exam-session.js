@@ -1,19 +1,22 @@
 (() => {
   'use strict';
   const plans = [
-    {name:'CSS',seconds:15*60},
+    {name:'HTML + CSS',seconds:15*60},
     {name:'JavaScript client + BD',seconds:15*60},
     {name:'Node + EJS',seconds:20*60},
     {name:'Bonus',seconds:10*60}
   ];
-  const practical = item => item.task && ['Bilet practic','Raționament'].includes(item.level);
+  const practical = item => Boolean(item.task);
   function drawMany(pool,count,random,used) {
     const values=pool.filter(item=>!used.has(item.id));
     if(values.length<count)throw new Error('Nu sunt suficiente cerințe pentru această probă.');
     const ids=[];
     for(let i=0;i<count;i++){
-      const index=Math.min(values.length-1,Math.floor(random()*values.length));
-      const item=values.splice(index,1)[0];
+      const chapters=[...new Set(values.map(item=>item.chapterId||'mixed'))];
+      const chapter=chapters[Math.min(chapters.length-1,Math.floor(random()*chapters.length))];
+      const group=values.filter(item=>(item.chapterId||'mixed')===chapter);
+      const chosen=group[Math.min(group.length-1,Math.floor(random()*group.length))];
+      const item=values.splice(values.indexOf(chosen),1)[0];
       ids.push(item.id);used.add(item.id);
     }
     return ids;
@@ -26,9 +29,9 @@
     const pool=exercises.filter(practical), used=new Set(state.stages.flatMap(stage=>stage.ids));
     const pick=(predicate,count)=>drawMany(pool.filter(predicate),count,random,used);
     let ids;
-    if(state.index===0)ids=pick(item=>item.category==='css'&&['css','scss'].includes(item.task.mode),2);
-    if(state.index===1)ids=[...pick(item=>item.category==='client'&&item.task.mode==='dom'&&!/storage/.test(item.id),1),...drawMany(exercises.filter(item=>item.category==='sql'&&item.task.mode==='sql'),1,random,used)];
-    if(state.index===2)ids=[...pick(item=>item.task.mode==='express',1),...pick(item=>item.task.mode==='ejs',1)];
+    if(state.index===0)ids=[...pick(item=>item.category==='css'&&['html','css','scss'].includes(item.task.mode),1),...pick(item=>item.category==='css'&&['css','scss'].includes(item.task.mode),1)];
+    if(state.index===1)ids=[...pick(item=>item.category==='client'&&['dom','js','json'].includes(item.task.mode),1),...drawMany(exercises.filter(item=>item.category==='sql'&&item.task.mode==='sql'),1,random,used)];
+    if(state.index===2)ids=[...pick(item=>item.task.mode==='express',1),...pick(item=>['node','ejs'].includes(item.task.mode),1)];
     if(state.index===3)ids=pick(item=>item.category==='client'&&item.task.mode==='dom'&&/storage/.test(item.id),1);
     const stage=state.stages[state.index];
     stage.ids=ids;stage.preparedAt=now;stage.deadline=now+5*60*1000;

@@ -89,11 +89,38 @@ export function createProgressStore({connectionString,connectionOptions,database
       tenant_id uuid NOT NULL, object_id uuid NOT NULL, ticket_id text NOT NULL,
       completed_at timestamptz NOT NULL DEFAULT now(),
       PRIMARY KEY (tenant_id, object_id, ticket_id)
+    )`);
+    await pool.query(`CREATE TABLE IF NOT EXISTS tw_account_exam_history (
+      tenant_id uuid NOT NULL, object_id uuid NOT NULL,
+      version integer NOT NULL CHECK (version > 0), history jsonb NOT NULL,
+      PRIMARY KEY (tenant_id, object_id)
     )`);})().catch(error=>{initializing=undefined;throw error;});
     await initializing;
     return pool;
   }
   const convert=row=>row?{version:Number(row.version),progress:row.progress}:{version:0,progress:empty()};
+  async function examHistory(user,change){
+    const db=await ready(),owner=[user.tenant,user.object];
+    for(let attempt=0;attempt<12;attempt++){
+      const {rows}=await db.query('SELECT version,history FROM tw_account_exam_history WHERE tenant_id=$1 AND object_id=$2',owner);
+      if(!rows.length){
+        // Preserve existing accounts when upgrading from per-probe history.
+        await db.query(`INSERT INTO tw_account_exam_history (tenant_id,object_id,version,history)
+          SELECT $1,$2,1,jsonb_build_object('completed',COALESCE(jsonb_agg(ticket_id),'[]'::jsonb),'submissions','[]'::jsonb)
+          FROM tw_account_exam_tickets WHERE tenant_id=$1 AND object_id=$2 ON CONFLICT DO NOTHING`,owner);
+        continue;
+      }
+      const {version,history}=rows[0];
+      if(!change)return history;
+      const next=change(structuredClone(history));
+      if(!next)return history;
+      // Completion and pool reset share a compare-and-swap. Another tab cannot
+      // erase a newly submitted simulation or reset the same pool twice.
+      const result=await db.query('UPDATE tw_account_exam_history SET version=version+1,history=$3::jsonb WHERE tenant_id=$1 AND object_id=$2 AND version=$4 RETURNING history',[...owner,JSON.stringify(next),version]);
+      if(result.rows.length)return result.rows[0].history;
+    }
+    throw new Error('Exam history changed concurrently');
+  }
   return {
     async read(user){
       const db=await ready();
@@ -110,12 +137,26 @@ export function createProgressStore({connectionString,connectionOptions,database
       return result.rows[0]?convert(result.rows[0]):null;
     },
     async examHistory(user){
-      const db=await ready();
-      return (await db.query('SELECT ticket_id FROM tw_account_exam_tickets WHERE tenant_id=$1 AND object_id=$2 ORDER BY ticket_id',[user.tenant,user.object])).rows.map(row=>row.ticket_id);
+      return (await examHistory(user)).completed;
     },
-    async completeTicket(user,ticketId){
-      const db=await ready();
-      await db.query('INSERT INTO tw_account_exam_tickets (tenant_id,object_id,ticket_id) VALUES ($1,$2,$3) ON CONFLICT DO NOTHING',[user.tenant,user.object,ticketId]);
+    async completeSimulation(user,submissionId,ticketIds){
+      const history=await examHistory(user,history=>{
+        if(history.submissions.includes(submissionId))return null;
+        history.submissions.push(submissionId);
+        history.completed=[...new Set([...history.completed,...ticketIds])];
+        return history;
+      });
+      return history.completed;
+    },
+    async drawTicket(user,category,bank){
+      const categoryTickets=bank.filter(ticket=>ticket.category===category),ids=new Set(categoryTickets.map(ticket=>ticket.id));
+      const history=await examHistory(user,history=>{
+        if(categoryTickets.some(ticket=>!history.completed.includes(ticket.id)))return null;
+        history.completed=history.completed.filter(id=>!ids.has(id));
+        return history;
+      });
+      const pool=categoryTickets.filter(ticket=>!history.completed.includes(ticket.id));
+      return {ticketId:pool[Math.floor(Math.random()*pool.length)].id,remaining:pool.length-1,completed:history.completed};
     },
     async close(){if(pool&&!database)await pool.end();},
   };
@@ -169,17 +210,16 @@ export function createAccountHandler({env,lessons,tickets,store}){
         try{input=JSON.parse(Buffer.concat(chunks).toString('utf8'));}catch{json(res,400,{error:'JSON invalid.'});return true;}
         const bank=await tickets();
         if(input?.action==='complete'){
-          if(!bank.some(t=>t.id===input.ticketId)){json(res,400,{error:'Bilet invalid.'});return true;}
-          await store.completeTicket(user,input.ticketId);
-          json(res,200,{completed:await store.examHistory(user)});return true;
+          const ids=input.ticketIds,categories=['css','server','client'];
+          if(typeof input.submissionId!=='string'||! /^[a-zA-Z0-9-]{10,160}$/.test(input.submissionId)||!Array.isArray(ids)||ids.length!==3||categories.some(category=>ids.filter(id=>bank.some(ticket=>ticket.id===id&&ticket.category===category)).length!==1)){
+            json(res,400,{error:'Predarea trebuie să includă toate probele simulării.'});return true;
+          }
+          json(res,200,{completed:await store.completeSimulation(user,input.submissionId,ids)});return true;
         }
-        if(input?.action!=='draw'||!['css','server','client'].includes(input.category)||!Array.isArray(input.exclude)||input.exclude.length>bank.length||input.exclude.some(id=>typeof id!=='string')){
+        if(input?.action!=='draw'||!['css','server','client'].includes(input.category)){
           json(res,400,{error:'Extragere invalidă.'});return true;
         }
-        const completed=await store.examHistory(user),excluded=new Set([...completed,...input.exclude]);
-        const pool=bank.filter(t=>t.category===input.category&&!excluded.has(t.id));
-        if(!pool.length){json(res,409,{code:'tickets-exhausted',error:'Ai parcurs toate biletele acestei probe. Nu mai sunt bilete noi.'});return true;}
-        json(res,200,{ticketId:pool[Math.floor(Math.random()*pool.length)].id,remaining:pool.length-1,completed});return true;
+        json(res,200,await store.drawTicket(user,input.category,bank));return true;
       }
       if(req.method==='GET'){json(res,200,await store.read(user));return true;}
       if(req.method!=='PUT'){json(res,405,{error:'Metodă nepermisă.'});return true;}

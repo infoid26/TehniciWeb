@@ -178,12 +178,19 @@
       try{results[id]=await TW_RUNNER.check(byId.get(id).task,answers[id].code,cancel=>{cancelRun=cancel;});}
       catch(error){results[id]=[{label:'Verificare indisponibilă',passed:false,error:error.message}];}
     }
-    if(state===current&&state.index===index&&index<3)await history.complete(stage().ticketId);
     grading=false;cancelRun=null;
-    if(state===current&&state.index===index&&engine.graded(state,results)){save();controls();showTask(state.selected,false);}
+    if(state===current&&state.index===index&&engine.graded(state,results)){save();controls();showTask(state.selected,false);void recordCompletion();}
   }
-  function completed(){
-    return state?.phase==='finished'&&state.stages.every(part=>part.ids.length&&part.endedAt!==null&&part.ids.every(id=>Array.isArray(part.results[id])));
+  function submittedAll(){
+    return !!state&&state.stages.every(part=>part.ids.length&&part.endedAt!==null&&part.ids.every(id=>Array.isArray(part.results[id])));
+  }
+  function completed(){return state?.phase==='finished'&&submittedAll();}
+  async function recordCompletion(){
+    if(!submittedAll())return;
+    const ticketIds=state.stages.slice(0,3).map(part=>part.ticketId);
+    state.submissionId||='legacy-'+state.createdAt+'-'+ticketIds.join('-');save();
+    try{await history.complete({submissionId:state.submissionId,ticketIds});}
+    catch(error){$('#account-header-status').hidden=false;$('#account-header-status').textContent=error.message;}
   }
   function report(){
     if(!completed())return;
@@ -263,7 +270,7 @@
     if(raw){state=engine.restore(JSON.parse(raw),exercises);if(state.phase==='finished'){if(!completed()){finish();}else{$('#last-attempt').hidden=false;$('#last-attempt').onclick=()=>{report();window.scrollTo({top:0,behavior:'instant'});};}}else{controls();if(state.selected)showTask(state.selected,false);if(state.phase==='grading')gradeStage(true);else tick();}}
   }catch{state=null;warnStorage();}
 
-      if(state)for(const part of state.stages)if(part.category!=='bonus'&&part.endedAt!==null)await history.complete(part.ticketId);
+      await recordCompletion();
       $('#start-simulation').disabled=false;
     }catch(error){$('#account-header-status').hidden=false;$('#account-header-status').textContent=error.message;}
   })();

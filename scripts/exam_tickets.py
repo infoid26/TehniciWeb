@@ -103,17 +103,28 @@ def build_tickets(server_objectives):
     setup='CREATE TABLE products(id int,name text,type text,price int,weight int,stock int,description text,allergen text,promo boolean);INSERT INTO products VALUES '+','.join('('+','.join(('true' if v else 'false') if isinstance(v,bool) else str(v) if isinstance(v,int) else "'"+v+"'" for v in p.values())+')' for p in products)+';'
     specs=[('type','Tipul produsului','p.type===choice','type=$1','cofetarie'),('price','Preț maxim','p.price<=Number(choice)','price<=$1','15'),('weight','Gramaj minim','p.weight>=Number(choice)','weight>=$1','150'),('stock','Stoc minim','p.stock>=Number(choice)','stock>=$1','3'),('description','Text în descriere','p.description.toLowerCase().includes(choice.toLowerCase())',"description ILIKE '%' || $1 || '%'",'CREMA'),('allergen','Excluderea unui alergen','p.allergen!==choice','allergen<>$1','gluten'),('promo','Produse la promoție','String(p.promo)===choice','promo=$1','true'),('name','Începutul numelui','p.name.toLowerCase().startsWith(choice.toLowerCase())',"name ILIKE $1 || '%'",'S')]
     base_specs=list(specs)
-    for size in [2,3]:
-        for group in combinations(base_specs,size):
-            key='-'.join(spec[0] for spec in group)
-            conditions=[]; clauses=[]
-            for index,spec in enumerate(group):
-                conditions.append('('+spec[2].replace('choice',f'choice.split("|")[{index}]')+')')
-                parameter=f"split_part($1,'|',{index+1})"
-                if spec[0] in ['price','weight','stock']: parameter+='::int'
-                if spec[0]=='promo': parameter+='::boolean'
-                clauses.append('('+spec[3].replace('$1',parameter)+')')
-            specs.append((key,' + '.join(spec[1] for spec in group),'&&'.join(conditions),' AND '.join(clauses),'|'.join(spec[4] for spec in group)))
+    groups=list(combinations(base_specs,2))+list(combinations(base_specs,3))
+    # Complementary pairs cover each criterion 14 times. Preserve the first 92 IDs.
+    extra_groups=[]
+    for triple in list(combinations(range(1,len(base_specs)),3))[:14]:
+        first=(0,)+triple
+        for indices in [first,tuple(i for i in range(len(base_specs)) if i not in first)]:
+            product=products[len(extra_groups)%len(products)]
+            values=dict(type=product['type'],price=str(product['price']),weight=str(product['weight']),
+                        stock=str(product['stock']),description=product['description'].split()[0].upper(),
+                        allergen='lapte' if product['allergen']=='gluten' else 'gluten',
+                        promo=str(product['promo']).lower(),name=product['name'][0].upper())
+            extra_groups.append(tuple((*base_specs[i][:4],values[base_specs[i][0]]) for i in indices))
+    for group in groups+extra_groups:
+        key='-'.join(spec[0] for spec in group)
+        conditions=[]; clauses=[]
+        for index,spec in enumerate(group):
+            conditions.append('('+spec[2].replace('choice',f'choice.split("|")[{index}]')+')')
+            parameter=f"split_part($1,'|',{index+1})"
+            if spec[0] in ['price','weight','stock']: parameter+='::int'
+            if spec[0]=='promo': parameter+='::boolean'
+            clauses.append('('+spec[3].replace('$1',parameter)+')')
+        specs.append((key,' + '.join(spec[1] for spec in group),'&&'.join(conditions),' AND '.join(clauses),'|'.join(spec[4] for spec in group)))
     for number,(field,title,condition,where,value) in enumerate(specs,1):
         key=f'ticket-client-{field}'
         matches={
@@ -133,6 +144,22 @@ def build_tickets(server_objectives):
         route=express(f'În catalog, adaugă GET /products?value=... pentru filtrul „{title}”. Citește tabela products prin pg și întoarce toate coloanele ca JSON în ordinea id. Fără value întoarce toate produsele. Criteriile se aplică simultan: {constraints}. {value_format}Folosește parametri SQL; nu concatena valoarea în interogare. Exemplu: value={value}.',
             'const express=require("express");const {Pool}=require("pg");const app=express();const pool=new Pool();\napp.get("/products",async(req,res)=>{const v=req.query.value;const result=await pool.query("SELECT '+fields+' FROM products"+(v?" WHERE '+where+'":"")+" ORDER BY id",v?[v]:[]);res.json(result.rows);});module.exports=app;',
             [dict(path='/products',json=products),dict(path='/products?value='+value,json=wanted)])
+        criterion_cases=[]
+        if number>92:
+            # A positive example plus one failing case per criterion catches
+            # solutions that omit any requested SQL or JavaScript predicate.
+            assert wanted, 'New tickets need a non-empty example'
+            product=wanted[0]
+            rejected=dict(type='patiserie' if product['type']!='patiserie' else 'cofetarie',
+                          price=str(product['price']-1),weight=str(product['weight']+1),
+                          stock=str(product['stock']+1),description='not-in-description',
+                          allergen=product['allergen'],promo=str(not product['promo']).lower(),name='ZZZ')
+            for index,criterion in enumerate(field.split('-')):
+                changed=value.split('|');changed[index]=rejected[criterion]
+                choice='|'.join(changed)
+                rows=[p for p in products if all(matches[f](p,v) for f,v in zip(field.split('-'),changed))]
+                route['requests'].append(dict(path='/products?value='+choice,json=rows))
+                criterion_cases.append((criterion,choice,rows))
         route.update(database=setup,tables=[dict(name='products',rows=products,columns=list(products[0]))])
         api=objective(key+'-api',title+' — date din PostgreSQL','client',route)
         alternates={'type':'patiserie','price':'8','weight':'800','stock':'8','description':'fructe','allergen':'lapte','promo':'false','name':'T'}
@@ -144,6 +171,11 @@ def build_tickets(server_objectives):
         code+='document.querySelector("#filter").onclick=()=>{const choice=document.querySelector("[name=catalog-filter]:checked").value;const term=document.querySelector("#search").value.trim().toLowerCase();let total=0;for(const p of products){const visible=(choice==="all"||('+condition+'))&&p.name.toLowerCase().includes(term);document.querySelector(`[data-id="${p.id}"]`).hidden=!visible;if(visible)total++;}document.querySelector("#count").textContent=String(total);};'
         tests=[prop(f'[data-id="{p["id"]}"]','display','block' if p in wanted else 'none') for p in products]+[exact('#count',str(len(wanted))),dict(kind='count',selector='[name=other]:checked',min=1,label='Celălalt grup nu se modifică')]
         task=dom(f'Continuă catalogul biletului: afișează tipul fiecărui produs (deja furnizat), păstrează grupul radio separat de other și opțiunea all implicită. La Filtrează aplică filtrul „{title}” (pentru alegerea {value}: {constraints}). {value_format}Combină rezultatul cu textul din #search, căutat în nume fără diferențe de majuscule și ignorând spațiile de la capete. Actualizează #count. All dezactivează numai filtrul radio. În browser primești aceleași produse ca din ruta PostgreSQL, în variabila products; nu trebuie să faci fetch.',code,fixture,tests,[dict(type='click',selector='[name=catalog-filter][value="'+value+'"]'),dict(type='click',selector='#filter')],starter='const products='+json.dumps(products)+';\n// Complete the filter handler.\n',variants=[dict(label='All păstrează filtrul de nume',actions=[dict(type='fill',selector='#search',value=' ECL '),dict(type='click',selector='#filter')],tests=[prop('[data-id="4"]','display','block'),prop('[data-id="1"]','display','none'),exact('#count','1')]),dict(label='Căutare fără rezultate',actions=[dict(type='fill',selector='#search',value='zzz'),dict(type='click',selector='#filter')],tests=[exact('#count','0')])])
+        for criterion,choice,rows in criterion_cases:
+            task['variants'].append(dict(label='Criteriul '+criterion+' se aplica independent',
+                fixture=fixture.replace('value="'+value+'"','value="'+choice+'"'),
+                actions=[dict(type='click',selector='[name=catalog-filter][value="'+choice+'"]'),dict(type='click',selector='#filter')],
+                tests=[prop(f'[data-id="{p["id"]}"]','display','block' if p in rows else 'none') for p in products]+[exact('#count',str(len(rows)))]))
         client=objective(key+'-dom',title+' — filtrare în pagină','client',task)
         bonus_solution=code.replace('let total=0;','localStorage.setItem("catalogChoice",choice);let total=0;')+'\nconst saved=localStorage.getItem("catalogChoice");for(const radio of document.querySelectorAll("[name=catalog-filter]")){if(radio.value===saved)radio.parentElement.style.border="2px solid blue";}'
         bonus_task=dom('Continuă filtrul realizat la proba BD + JavaScript client. La click pe Filtrează salvează alegerea radio în localStorage sub catalogChoice. La reîncărcare marchează eticheta opțiunii salvate cu border:2px solid blue. Nu modifica grupul other și nu elimina filtrarea sau contorul. În simulare, codul de pornire este răspunsul tău de la filtrarea în pagină; completează-l fără să elimini funcționalitatea existentă.',bonus_solution,fixture,[prop('[name=catalog-filter][value="'+value+'"]','outline-style','none'),dict(kind='storage',key='catalogChoice',value=value,label='Alegerea este salvată')],[dict(type='click',selector='[name=catalog-filter][value="'+value+'"]'),dict(type='click',selector='#filter')],starter=code,storage={'catalogChoice':value})

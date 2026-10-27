@@ -91,27 +91,58 @@ try{
    response=await request('/api/progress','GET',undefined,{'X-MS-CLIENT-PRINCIPAL':''});assert.equal(response.status,401);
  }
  assert.equal(JSON.parse((await request()).body).version,2,'Signing in again restores unchanged account progress');
- // Exam history is private, additive, idempotent and shared across devices.
+ // Only whole simulations consume tickets. Exhausted categories restart independently.
  const examContext={window:{}};vm.runInNewContext(await fs.readFile('site/exam-data.js','utf8'),examContext);
- const cssIds=JSON.parse(JSON.stringify(examContext.window.TW_EXAM.tickets)).filter(t=>t.category==='css').map(t=>t.id);
+ const bank=JSON.parse(JSON.stringify(examContext.window.TW_EXAM.tickets));
+ const ids=category=>bank.filter(t=>t.category===category).map(t=>t.id);
+ const cssIds=ids('css'),serverIds=ids('server'),clientIds=ids('client');
+ const submission=(name,css=cssIds[0],node=serverIds[0],client=clientIds[0])=>({action:'complete',submissionId:'simulation-'+name,ticketIds:[css,node,client]});
  const exam=(method,body,extra={})=>request('/api/exam/tickets',method,body,{'X-TW-Exam':'1',...extra});
- assert.deepEqual(JSON.parse((await exam('GET')).body).completed,[]);
- for(let i=0;i<2;i++)assert.equal((await exam('POST',{action:'complete',ticketId:cssIds[0]})).status,200);
- assert.deepEqual(JSON.parse((await exam('GET')).body).completed,[cssIds[0]]);
- response=await exam('POST',{action:'draw',category:'css',exclude:cssIds.slice(1)});
- assert.equal(response.status,409);assert.equal(JSON.parse(response.body).code,'tickets-exhausted','Completed ticket must not be drawn even by a stale client');
- response=await exam('POST',{action:'draw',category:'css',exclude:cssIds.slice(1)},{'X-MS-CLIENT-PRINCIPAL':second,'X-TW-Account':tenant+':'+other});
- assert.equal(response.status,200);assert.equal(JSON.parse(response.body).ticketId,cssIds[0],'Other account has independent history');
- await Promise.all(cssIds.slice(1,3).map(ticketId=>exam('POST',{action:'complete',ticketId})));
- assert.deepEqual(JSON.parse((await exam('GET')).body).completed,cssIds.slice(0,3),'Concurrent completions merge without lost entries');
- assert.equal((await exam('POST',{action:'complete',ticketId:'bad-id'})).status,400);
- assert.equal((await exam('POST',{action:'complete',ticketId:cssIds[3]},{Origin:'https://evil.test'})).status,403);
- assert.equal((await exam('POST',{action:'complete',ticketId:cssIds[3]},{'X-TW-Exam':''})).status,403);
+ const history=async()=>JSON.parse((await exam('GET')).body).completed;
+ const sameIds=(actual,expected)=>assert.deepEqual([...actual].sort(),[...expected].sort());
+ // Accounts with existing history retain it during the automatic schema upgrade.
+ await db.query('INSERT INTO tw_account_exam_tickets (tenant_id,object_id,ticket_id) VALUES ($1,$2,$3)',[tenant,object,cssIds[0]]);
+ sameIds(await history(),[cssIds[0]]);
+ assert.equal((await exam('POST',{action:'complete',ticketId:cssIds[1]})).status,400,'Old per-probe submissions are no longer accepted');
+ for(const ticketIds of [[cssIds[1]],[cssIds[1],serverIds[0]],[cssIds[1],cssIds[2],cssIds[3]],[cssIds[1],serverIds[0],'bad-id']]){
+   assert.equal((await exam('POST',{...submission('incomplete'),ticketIds})).status,400);
+ }
+ sameIds(await history(),[cssIds[0]],'Incomplete submissions change nothing');
+ for(let i=0;i<2;i++)assert.equal((await exam('POST',submission('first'))).status,200);
+ sameIds(await history(),[cssIds[0],serverIds[0],clientIds[0]]);
+ let drawn=JSON.parse((await exam('POST',{action:'draw',category:'css',exclude:cssIds.slice(1)})).body);
+ assert(cssIds.includes(drawn.ticketId)&&drawn.ticketId!==cssIds[0],'Server history excludes completed tickets and ignores stale local exclusions');
+ const secondHeaders={'X-MS-CLIENT-PRINCIPAL':second,'X-TW-Account':tenant+':'+other};
+ sameIds(JSON.parse((await exam('GET',undefined,secondHeaders)).body).completed,[],'Other accounts have independent history');
+ assert.equal((await exam('POST',{action:'draw',category:'css'},secondHeaders)).status,200);
+ await Promise.all([1,2].map(index=>exam('POST',submission('concurrent-'+index,cssIds[index],serverIds[index],clientIds[index]))));
+ sameIds(await history(),[...cssIds.slice(0,3),...serverIds.slice(0,3),...clientIds.slice(0,3)]);
+ const user={tenant,object};
+ await store.completeSimulation(user,'simulation-fill-css',cssIds);
+ const beforeReset=await history();
+ assert.equal(beforeReset.filter(id=>cssIds.includes(id)).length,120);
+ const resets=await Promise.all([exam('POST',{action:'draw',category:'css'}),exam('POST',{action:'draw',category:'css'})]);
+ assert(resets.every(response=>response.status===200),'Exhaustion automatically starts a new round, also with simultaneous draws');
+ const afterReset=await history();
+ sameIds(afterReset,[...serverIds.slice(0,3),...clientIds.slice(0,3)],'A CSS reset retains both other pools');
+ await exam('POST',submission('first'));
+ sameIds(await history(),afterReset,'Reloading an old completed simulation must not consume tickets in the new round');
+ await exam('POST',submission('new-round'));
+ const newDraw=JSON.parse((await exam('POST',{action:'draw',category:'css'})).body);
+ assert.notEqual(newDraw.ticketId,cssIds[0],'A newly completed simulation consumes its ticket in the new round');
+ // All three equal pools can start a second full round together.
+ await store.completeSimulation({tenant,object:other},'simulation-entire-round',bank.map(ticket=>ticket.id));
+ const nextRound=await Promise.all(['css','server','client'].map(category=>exam('POST',{action:'draw',category},secondHeaders)));
+ assert(nextRound.every(response=>response.status===200&&JSON.parse(response.body).remaining===119));
+ sameIds(JSON.parse((await exam('GET',undefined,secondHeaders)).body).completed,[],'Every pool restarts after a full round');
+ assert.equal((await exam('POST',submission('cross-origin'),{Origin:'https://evil.test'})).status,403);
+ assert.equal((await exam('POST',submission('missing-header'),{'X-TW-Exam':''})).status,403);
  assert.equal((await exam('GET',undefined,{'X-MS-CLIENT-PRINCIPAL':''})).status,401);
- assert.equal((await exam('POST',{action:'complete',ticketId:cssIds[3]},{'X-MS-CLIENT-PRINCIPAL':second})).status,409);
+ assert.equal((await exam('POST',submission('changed-account'),{'X-MS-CLIENT-PRINCIPAL':second})).status,409);
  assert.equal((await exam('POST','{')).status,400);
  assert.equal((await exam('POST','x'.repeat(50001))).status,413);
  assert.equal(JSON.parse((await request()).body).version,2,'Exam history must not alter course progress');
+ console.log('PASS: whole-simulation completion; existing-history migration; independent pool reset; concurrent draws/completions; idempotent retry after reset.');
  const unavailable=createServer({env,production:true,progressStore:{read:()=>{throw new Error('secret connection string');},close:async()=>{}}});
  response=await inject(unavailable.listeners('request')[0],{path:'/api/progress',headers});assert.equal(response.status,503);assert(!response.body.includes('secret'));
  const disabled=createServer({env:{},production:true});response=await inject(disabled.listeners('request')[0],{path:'/api/account',headers});assert.equal(JSON.parse(response.body).enabled,false);

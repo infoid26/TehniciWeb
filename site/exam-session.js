@@ -8,7 +8,7 @@
   ];
   const tickets=window.TW_EXAM.tickets;
   function create(now=Date.now()) {
-    return {version:3,createdAt:now,phase:'ready',index:0,selected:'',stages:plans.map(plan=>({...plan,ticketId:null,ids:[],answers:{},results:{},startedAt:null,endedAt:null,deadline:null,preparedAt:null}))};
+    return {version:3,submissionId:window.crypto?.randomUUID?.()||'exam-'+now+'-'+Math.random().toString(36).slice(2),createdAt:now,phase:'ready',index:0,selected:'',stages:plans.map(plan=>({...plan,ticketId:null,ids:[],answers:{},results:{},startedAt:null,endedAt:null,deadline:null,preparedAt:null}))};
   }
   function draw(state,exercises,random=Math.random,now=Date.now(),options={}) {
     if(state.phase!=='ready')throw new Error('Biletul a fost deja extras.');

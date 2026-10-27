@@ -64,11 +64,15 @@ Dupa publicare, verifica in browserul autentificat: Logout revine la curs cu but
 
 ## Istoricul biletelor de examen
 
-Biletele predate sunt înregistrate în `tw_account_exam_tickets`, separat de lecții, folosind tenant-ul și identificatorul Microsoft ale utilizatorului. Tabela se creează automat în aceeași bază de date configurată pentru progres. Nu sunt necesare setări de conectare noi.
+Biletele se marchează ca parcurse numai după predarea tuturor probelor din simulare, inclusiv bonusul. Extragerea, predarea unei singure probe, abandonarea și reîncărcarea unei simulări incomplete nu consumă bilete.
 
-`GET /api/exam/tickets` citește istoricul contului. Cererile POST aleg un bilet neparcurs sau înregistrează predarea, după verificarea identității, originii și antetelor contului. O predare repetată este idempotentă; predările simultane nu suprascriu alte bilete. Extragerea singură nu consumă biletul. Biletele folosesc identificatori stabili, iar numerele celor existente sunt păstrate la extinderea băncii.
+Istoricul contului este păstrat în `tw_account_exam_history`, separat de lecții, folosind tenant-ul și identificatorul Microsoft. Tabela se creează automat în baza de date configurată pentru progres. Istoricul existent din `tw_account_exam_tickets` este preluat automat la prima accesare.
 
-Browserul păstrează separat pentru fiecare cont predările încă nesincronizate și reia salvarea înaintea următoarei extrageri sau la reîncărcare. Dacă istoricul contului nu poate fi verificat, extragerea este oprită, pentru a evita repetarea pe baza unui istoric incomplet. La epuizarea unei categorii se afișează un mesaj; nu se resetează automat istoricul. Fără autentificare, istoricul rămâne numai în browser și nu este importat automat în alt cont.
+`GET /api/exam/tickets` citește istoricul. POST `complete` primește identificatorul stabil al simulării și cele trei bilete (CSS, Node + EJS, BD + JavaScript client); predările parțiale sunt refuzate. O simulare retrimisă este idempotentă, inclusiv după reluarea pool-ului. Actualizările folosesc versiuni pentru a păstra predările simultane și a evita resetarea dublă de pe două dispozitive. Identitatea, originea și antetele contului sunt verificate la fiecare cerere.
+
+POST `draw` exclude biletele parcurse. După epuizarea celor 120 de bilete ale unei probe, extragerea următoare reia automat numai pool-ul acelei probe; celelalte două își păstrează istoricul. Istoricul serverului este sursa folosită pentru conturile conectate, inclusiv atunci când alt dispozitiv are o copie locală mai veche.
+
+Browserul păstrează separat pentru fiecare cont simulările complete încă nesincronizate și reia salvarea înaintea următoarei extrageri sau la reîncărcare. Dacă istoricul nu poate fi verificat, extragerea este oprită. Fără autentificare, aceleași reguli de reluare și predare completă se aplică numai în browser, fără import automat în alt cont.
 
 ## Verificări
 

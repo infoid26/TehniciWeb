@@ -10,7 +10,7 @@ def prepare_starters(exercises,base_style):
         if mode=='css':
             selected=task['baseStyles'].removeprefix('<style>').removesuffix('</style>')
             selected=re.sub(r'([^{}]+)\{([^{}]*)\}',lambda m:m[1].strip()+' {\n'+''.join('  '+line.strip()+';\n' for line in m[2].split(';') if line.strip())+'}\n\n',selected)
-            task['starter']=selected+'/* Add or change the rules required by the ticket below. */\n'
+            task['starter']=selected
         elif mode=='dom' and key.endswith('-dom'):
             # Keep the existing name filter and result counter; the student adds
             # the radio filter and its combination with the existing search.
@@ -149,3 +149,5 @@ module.exports = app;
         if task.get('starter','')!=previous:
             task['previousStarters']=[previous]
             if mode=='css':task['previousStarters'].append(css_base+'/* Add or change the rules required by the ticket below. */\n')
+            if mode=='css':
+                task['previousStarters'].extend(selected+comment+'\n' for comment in ['/* Add or change the rules required by the ticket below. */','/* Edit the existing styles or add new rules as needed. */'])

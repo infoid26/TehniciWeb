@@ -5,6 +5,18 @@ const context={window:{}};
 for(const file of ['site/exam-data.js','site/exam-session.js'])vm.runInNewContext(await fs.readFile(file,'utf8'),context);
 const {exercises,tickets}=JSON.parse(JSON.stringify(context.window.TW_EXAM));
 const engine=context.window.TW_EXAM_SESSION;
+assert.equal(tickets.length,360);
+for(const category of ['css','server','client'])assert.equal(tickets.filter(t=>t.category===category).length,120,'Equal pools for every probe');
+const extra=tickets.filter(t=>t.category==='client'&&t.number>92);
+assert.equal(extra.length,28);
+const appearances=new Map();
+for(const ticket of extra){
+ const task=exercises.find(item=>item.id===ticket.ids[0]).task;
+ assert(task.requests[1].json.length>0,'New tickets have a non-empty result example');
+ assert.equal(task.requests.length,6,'Every new SQL criterion is checked independently');
+ for(const field of ticket.ids[0].replace('ticket-client-','').replace('-api','').split('-'))appearances.set(field,(appearances.get(field)||0)+1);
+}
+assert.equal(appearances.size,8);assert([...appearances.values()].every(count=>count===14),'New tickets cover all eight criteria equally');
 const used=new Set();
 const counts=['css','server','client'].map(category=>tickets.filter(t=>t.category===category).length);
 for(let n=0;n<Math.max(...counts);n++){

@@ -27,7 +27,11 @@ try{
   assert(await page.locator('#draw-ticket').isHidden());
   assert.equal(await page.getByText('Rezolvare și raționament',{exact:true}).count(),0);
   const before=await page.evaluate(()=>JSON.parse(localStorage.getItem('tw-infoid26-exam-simulation-v3')));
-  await page.reload();await page.waitForSelector('#simulation-tasks:not([hidden])');
+  await page.reload();await page.waitForSelector('#last-attempt:not([hidden])');
+  assert(await page.locator('#desfasurare').isVisible(),'Reload stays on the presentation');
+  assert(await page.locator('#simulation-panel').isHidden());
+  assert.equal(await page.locator('#last-attempt').textContent(),'Continuă simularea');
+  await page.locator('#last-attempt').click();await page.waitForSelector('#simulation-tasks:not([hidden])');
   const after=await page.evaluate(()=>JSON.parse(localStorage.getItem('tw-infoid26-exam-simulation-v3')));
   assert.equal(after.stages[index].deadline,before.stages[index].deadline);
   await page.locator('#begin-stage').click();await page.waitForSelector('.cm-editor');
@@ -55,5 +59,5 @@ try{
  await page.setViewportSize({width:390,height:844});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
  await page.screenshot({path:'.audit/exam-simulation-mobile.png'});
  assert.deepEqual(errors,[]);
- console.log('PASS: no visible bank; random tickets; read-only preparation; reload retains deadline; editors and locked submission; solutions only after finish; isolated storage and mobile layout.');
+ console.log('PASS: no visible bank; random tickets; read-only preparation; presentation on reload and explicit resume retains deadline; editors and locked submission; solutions only after finish; isolated storage and mobile layout.');
 }finally{await browser.close();server.closeAllConnections();await new Promise(resolve=>server.close(resolve));}

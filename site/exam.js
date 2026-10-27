@@ -6,7 +6,7 @@
   const esc=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   const pre=value=>'<pre><code>'+esc(value)+'</code></pre>';
   const clock=seconds=>Math.floor(seconds/60).toString().padStart(2,'0')+':'+(seconds%60).toString().padStart(2,'0');
-  let state=null,generation=0,cancelRun=null,grading=false,viewId='';
+  let state=null,active=false,generation=0,cancelRun=null,grading=false,viewId='';
   const $=selector=>document.querySelector(selector);
   function warnStorage(){
     $('#exam-storage-warning').hidden=false;
@@ -194,6 +194,7 @@
   }
   function report(){
     if(!completed())return;
+    active=true;
     document.body.classList.add('simulation-active');
     $('#simulation-intro').hidden=true;
     TW_EDITOR.clear();viewId='';$('#exam-workspace').hidden=true;$('#simulation-panel').hidden=true;
@@ -213,12 +214,12 @@
   }
   function start(){
     cancelRun?.();generation++;grading=false;
-    state=engine.create();$('#exam-report').hidden=true;$('#exam-workspace').hidden=true;
+    active=true;state=engine.create();$('#exam-report').hidden=true;$('#exam-workspace').hidden=true;
     $('#start-simulation').hidden=true;save();controls();window.scrollTo({top:0,behavior:'instant'});
   }
   function finish(){
     cancelRun?.();cancelRun=null;generation++;grading=false;
-    TW_EDITOR.clear();viewId='';state=null;
+    TW_EDITOR.clear();viewId='';state=null;active=false;
     try{localStorage.removeItem(storageKey);}catch{warnStorage();}
     document.body.classList.remove('simulation-active');
     $('#simulation-intro').hidden=false;
@@ -229,7 +230,7 @@
     window.scrollTo({top:0,behavior:'instant'});
   }
   function tick(){
-    if(!state||state.phase==='finished'||grading)return;
+    if(!active||!state||state.phase==='finished'||grading)return;
     const oldPhase=state.phase,event=engine.tick(state);
     if(event==='submit'){save();gradeStage(true);return;}
     if(oldPhase!==state.phase){save();controls();if(state.selected)showTask(state.selected,false);}
@@ -265,10 +266,26 @@
     try{
       const user=await history.ready;
       if(user)storageKey+=':account:'+user.id;
-  try{
-    const raw=localStorage.getItem(storageKey);
-    if(raw){state=engine.restore(JSON.parse(raw),exercises);if(state.phase==='finished'){if(!completed()){finish();}else{$('#last-attempt').hidden=false;$('#last-attempt').onclick=()=>{report();window.scrollTo({top:0,behavior:'instant'});};}}else{controls();if(state.selected)showTask(state.selected,false);if(state.phase==='grading')gradeStage(true);else tick();}}
-  }catch{state=null;warnStorage();}
+      try{
+        const raw=localStorage.getItem(storageKey);
+        if(raw){
+          state=engine.restore(JSON.parse(raw),exercises);
+          if(state.phase==='finished'&&!completed())finish();
+          else{
+            const button=$('#last-attempt');button.hidden=false;
+            button.textContent=state.phase==='finished'?'Vezi ultima simulare':'Continuă simularea';
+            button.onclick=()=>{
+              if(state.phase==='finished')report();
+              else{
+                active=true;controls();
+                if(state.phase==='grading')void gradeStage(true);
+                else{tick();if(!grading&&state.selected)showTask(state.selected,false);}
+              }
+              window.scrollTo({top:0,behavior:'instant'});
+            };
+          }
+        }
+      }catch{state=null;warnStorage();}
 
       await recordCompletion();
       $('#start-simulation').disabled=false;

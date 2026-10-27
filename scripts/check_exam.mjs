@@ -26,12 +26,12 @@ try{
   assert.equal(await page.locator('.cm-editor').count(),0);
   assert(await page.locator('#draw-ticket').isHidden());
   assert.equal(await page.getByText('Rezolvare și raționament',{exact:true}).count(),0);
-  const before=await page.evaluate(()=>JSON.parse(localStorage.getItem('tw-infoid26-exam-simulation-v2')));
+  const before=await page.evaluate(()=>JSON.parse(localStorage.getItem('tw-infoid26-exam-simulation-v3')));
   await page.reload();await page.waitForSelector('#simulation-tasks:not([hidden])');
-  const after=await page.evaluate(()=>JSON.parse(localStorage.getItem('tw-infoid26-exam-simulation-v2')));
+  const after=await page.evaluate(()=>JSON.parse(localStorage.getItem('tw-infoid26-exam-simulation-v3')));
   assert.equal(after.stages[index].deadline,before.stages[index].deadline);
   await page.locator('#begin-stage').click();await page.waitForSelector('.cm-editor');
-  const ids=await page.evaluate(()=>{const s=JSON.parse(localStorage.getItem('tw-infoid26-exam-simulation-v2'));return s.stages[s.index].ids;});
+  const ids=await page.evaluate(()=>{const s=JSON.parse(localStorage.getItem('tw-infoid26-exam-simulation-v3'));return s.stages[s.index].ids;});
   for(const id of ids){
    await page.waitForSelector('.cm-editor');
    await page.evaluate(id=>{
@@ -45,7 +45,7 @@ try{
   await page.waitForFunction(()=>!document.querySelector('#next-stage').hidden,null,{timeout:60000});
   assert(await page.locator('#exam-workspace').isHidden());
   assert.equal(await page.getByText('Rezolvare și raționament',{exact:true}).count(),0);
-  const stored=await page.evaluate(()=>JSON.parse(localStorage.getItem('tw-infoid26-exam-simulation-v2')));
+  const stored=await page.evaluate(()=>JSON.parse(localStorage.getItem('tw-infoid26-exam-simulation-v3')));
   for(const id of ids)assert(stored.stages[index].results[id].every(row=>row.passed),id);
   await page.locator('#next-stage').click();
  }

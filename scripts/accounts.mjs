@@ -79,12 +79,17 @@ export function createProgressStore({connectionString,connectionOptions,database
       // Never log connection strings or student code on a database error.
       pool.on('error',()=>console.warn('Progress database connection unavailable.'));
     }
-    initializing??=pool.query(`CREATE TABLE IF NOT EXISTS tw_account_progress (
+    initializing??=(async()=>{await pool.query(`CREATE TABLE IF NOT EXISTS tw_account_progress (
       tenant_id uuid NOT NULL, object_id uuid NOT NULL,
       version integer NOT NULL CHECK (version > 0), progress jsonb NOT NULL,
       updated_at timestamptz NOT NULL DEFAULT now(),
       PRIMARY KEY (tenant_id, object_id)
-    )`).catch(error=>{initializing=undefined;throw error;});
+    )`);
+    await pool.query(`CREATE TABLE IF NOT EXISTS tw_account_exam_tickets (
+      tenant_id uuid NOT NULL, object_id uuid NOT NULL, ticket_id text NOT NULL,
+      completed_at timestamptz NOT NULL DEFAULT now(),
+      PRIMARY KEY (tenant_id, object_id, ticket_id)
+    )`);})().catch(error=>{initializing=undefined;throw error;});
     await initializing;
     return pool;
   }
@@ -104,11 +109,19 @@ export function createProgressStore({connectionString,connectionOptions,database
         :await db.query('UPDATE tw_account_progress SET version=version+1,progress=$3::jsonb,updated_at=now() WHERE tenant_id=$1 AND object_id=$2 AND version=$4 RETURNING version,progress',[...values,version]);
       return result.rows[0]?convert(result.rows[0]):null;
     },
+    async examHistory(user){
+      const db=await ready();
+      return (await db.query('SELECT ticket_id FROM tw_account_exam_tickets WHERE tenant_id=$1 AND object_id=$2 ORDER BY ticket_id',[user.tenant,user.object])).rows.map(row=>row.ticket_id);
+    },
+    async completeTicket(user,ticketId){
+      const db=await ready();
+      await db.query('INSERT INTO tw_account_exam_tickets (tenant_id,object_id,ticket_id) VALUES ($1,$2,$3) ON CONFLICT DO NOTHING',[user.tenant,user.object,ticketId]);
+    },
     async close(){if(pool&&!database)await pool.end();},
   };
 }
 
-export function createAccountHandler({env,lessons,store}){
+export function createAccountHandler({env,lessons,tickets,store}){
   const settings=accountSettings(env);
   const json=(res,status,value)=>{
     for(const [name,header] of Object.entries({'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','Vary':'Cookie','X-Content-Type-Options':'nosniff'}))res.setHeader(name,header);
@@ -132,7 +145,7 @@ export function createAccountHandler({env,lessons,store}){
       res.writeHead(303,{'Location':'/','Cache-Control':'no-store','Vary':'Cookie','Referrer-Policy':'no-referrer'});
       res.end();return true;
     }
-    if(!['/api/account','/api/progress'].includes(pathname))return false;
+    if(!['/api/account','/api/progress','/api/exam/tickets'].includes(pathname))return false;
     try{
       if(!settings){json(res,pathname==='/api/account'?200:503,{enabled:false,user:null,error:'Sincronizarea conturilor nu este încă activată.'});return true;}
       let user;
@@ -143,6 +156,31 @@ export function createAccountHandler({env,lessons,store}){
       }
       if(!user){json(res,401,{error:'Conectează-te pentru sincronizarea progresului.'});return true;}
       if(req.headers['x-tw-account']!==user.id){json(res,409,{code:'account-changed',error:'Contul conectat s-a schimbat. Reîncarcă pagina; copia locală este păstrată.'});return true;}
+      if(pathname==='/api/exam/tickets'){
+        if(req.method==='GET'){json(res,200,{completed:await store.examHistory(user)});return true;}
+        if(req.method!=='POST'){json(res,405,{error:'Metoda nepermisă.'});return true;}
+        if(req.headers.origin!==settings.origin||req.headers['x-tw-exam']!=='1'||req.headers['sec-fetch-site']==='cross-site'){
+          json(res,403,{error:'Cererea trebuie trimisă de pe site.'});return true;
+        }
+        if(!/^application\/json(?:\s*;|$)/i.test(req.headers['content-type']||'')){json(res,415,{error:'Este necesar JSON.'});return true;}
+        const chunks=[];let size=0;
+        for await(const chunk of req){size+=Buffer.byteLength(chunk);if(size>50000){json(res,413,{error:'Cerere prea mare.'});return true;}chunks.push(Buffer.from(chunk));}
+        let input;
+        try{input=JSON.parse(Buffer.concat(chunks).toString('utf8'));}catch{json(res,400,{error:'JSON invalid.'});return true;}
+        const bank=await tickets();
+        if(input?.action==='complete'){
+          if(!bank.some(t=>t.id===input.ticketId)){json(res,400,{error:'Bilet invalid.'});return true;}
+          await store.completeTicket(user,input.ticketId);
+          json(res,200,{completed:await store.examHistory(user)});return true;
+        }
+        if(input?.action!=='draw'||!['css','server','client'].includes(input.category)||!Array.isArray(input.exclude)||input.exclude.length>bank.length||input.exclude.some(id=>typeof id!=='string')){
+          json(res,400,{error:'Extragere invalidă.'});return true;
+        }
+        const completed=await store.examHistory(user),excluded=new Set([...completed,...input.exclude]);
+        const pool=bank.filter(t=>t.category===input.category&&!excluded.has(t.id));
+        if(!pool.length){json(res,409,{code:'tickets-exhausted',error:'Ai parcurs toate biletele acestei probe. Nu mai sunt bilete noi.'});return true;}
+        json(res,200,{ticketId:pool[Math.floor(Math.random()*pool.length)].id,remaining:pool.length-1,completed});return true;
+      }
       if(req.method==='GET'){json(res,200,await store.read(user));return true;}
       if(req.method!=='PUT'){json(res,405,{error:'Metodă nepermisă.'});return true;}
       if(req.headers.origin!==settings.origin||req.headers['x-tw-progress']!=='1'||req.headers['sec-fetch-site']==='cross-site'){
@@ -160,7 +198,7 @@ export function createAccountHandler({env,lessons,store}){
       const saved=await store.write(user,input.version,progress);
       if(!saved){json(res,409,{error:'Progresul s-a schimbat pe alt dispozitiv.',...await store.read(user)});return true;}
       json(res,200,saved);
-    }catch{json(res,503,{error:'Progresul nu a putut fi sincronizat. Copia locală este păstrată.'});}
+    }catch{json(res,503,{error:pathname==='/api/exam/tickets'?'Istoricul biletelor nu poate fi sincronizat momentan. Încearcă din nou.':'Progresul nu a putut fi sincronizat. Copia locală este păstrată.'});}
     return true;
   };
 }

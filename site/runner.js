@@ -54,6 +54,16 @@
           case 'custom': passed = !!el && getComputedStyle(el).getPropertyValue(t.name).trim() === t.value; break;
           case 'pseudo': passed = !!el && getComputedStyle(el, t.pseudo).getPropertyValue(t.name).includes(t.includes); break;
           case 'cssIncludes': passed = css.replace(/\s+/g,'').includes(t.value.replace(/\s+/g,'')); break;
+          case 'hoverStyle': {
+            const hovered=document.querySelector(t.hover),style=document.createElement('style');
+            const rules=[];
+            const visit=list=>{for(const rule of list){if(rule.selectorText&&rule.selectorText.includes(':hover'))rules.push(rule.cssText.replaceAll(':hover','.tw-check-hover'));else if(rule.cssRules)visit(rule.cssRules);}};
+            for(const sheet of document.styleSheets)visit(sheet.cssRules);
+            style.textContent=rules.join('\n')+'\n*{transition:none!important;animation:none!important}';
+            try {document.head.append(style);hovered?.classList.add('tw-check-hover');passed=!!el&&!!hovered&&getComputedStyle(el).getPropertyValue(t.name).trim()===t.value;}
+            finally {hovered?.classList.remove('tw-check-hover');style.remove();}
+            break;
+          }
           case 'columns': {
             const cols = el ? getComputedStyle(el).gridTemplateColumns.split(/\s+/).filter(Boolean) : [];
             passed = !!el && getComputedStyle(el).display === 'grid' && cols.length === t.count && cols.every(n => Math.abs(parseFloat(n) - parseFloat(cols[0])) < 1);

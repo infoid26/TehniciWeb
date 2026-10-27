@@ -21,7 +21,7 @@
     "check:browser-labs": "node scripts/check_browser_labs.mjs",
     "check:server": "node scripts/check_server.mjs",
     "check:azure": "node scripts/check_azure.mjs",
-    "check:accounts": "node scripts/check_accounts.mjs",
+    "check:accounts": "node scripts/check_accounts.mjs && node scripts/check_exam_history.mjs",
     "check:evaluator": "node scripts/check_evaluator.mjs",
     "check:coverage": "node scripts/check_coverage.mjs",
     "check:sandboxes": "node scripts/check_sandboxes.mjs",
@@ -30,7 +30,7 @@
     "check:project:browser": "node scripts/check_project_browser.mjs",
     "check:workshop": "node scripts/check_workshop.mjs",
     "check:progression": "node scripts/check_progression.mjs",
-    "check:exam": "node scripts/check_exam_cli.mjs",
+    "check:exam": "node scripts/check_exam_tickets.mjs && node scripts/check_exam_cli.mjs",
     "check:exam:browser": "node scripts/check_exam.mjs",
     "check:reasoning": "node scripts/check_reasoning.mjs"
   },

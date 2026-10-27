@@ -62,6 +62,14 @@ Pastreaza **Allow unauthenticated access** in Easy Auth: fara cookie-ul sesiunii
 
 Dupa publicare, verifica in browserul autentificat: Logout revine la curs cu butonul de conectare; doua refresh-uri pastreaza starea anonima; serviciile Microsoft raman conectate; o noua conectare restaureaza progresul. Testele locale verifica raspunsurile HTTP si expirarea cookie-urilor, dar nu executa modulul Easy Auth din Azure.
 
+## Istoricul biletelor de examen
+
+Biletele predate sunt înregistrate în `tw_account_exam_tickets`, separat de lecții, folosind tenant-ul și identificatorul Microsoft ale utilizatorului. Tabela se creează automat în aceeași bază de date configurată pentru progres. Nu sunt necesare setări de conectare noi.
+
+`GET /api/exam/tickets` citește istoricul contului. Cererile POST aleg un bilet neparcurs sau înregistrează predarea, după verificarea identității, originii și antetelor contului. O predare repetată este idempotentă; predările simultane nu suprascriu alte bilete. Extragerea singură nu consumă biletul. Biletele folosesc identificatori stabili, iar numerele celor existente sunt păstrate la extinderea băncii.
+
+Browserul păstrează separat pentru fiecare cont predările încă nesincronizate și reia salvarea înaintea următoarei extrageri sau la reîncărcare. Dacă istoricul contului nu poate fi verificat, extragerea este oprită, pentru a evita repetarea pe baza unui istoric incomplet. La epuizarea unei categorii se afișează un mesaj; nu se resetează automat istoricul. Fără autentificare, istoricul rămâne numai în browser și nu este importat automat în alt cont.
+
 ## Verificări
 
 `npm run check:accounts` verifică regulile de identitate, refuzul altor domenii/directoare, cererile cross-origin, izolarea utilizatorilor și SQL-ul real prin PGlite. Testează și codul de sincronizare livrat în browser: al doilea dispozitiv, modificări independente, conflicte, modul offline și importul anonim automat și recuperarea după o salvare eșuată. Acestea nu înlocuiesc un login Microsoft real în Azure.

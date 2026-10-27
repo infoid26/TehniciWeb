@@ -11,14 +11,19 @@ const lessons=course.chapters.flatMap(chapter=>chapter.lessons);
 const positions=new Map(lessons.map((lesson,index)=>[lesson.id,index]));
 const challenges=lessons.filter(lesson=>lesson.challenge);
 const executable=new Set(['html','css','scss','js','json','dom','node','express','ejs','sql']);
-const represented=new Set(bank.filter(item=>item.task).map(item=>item.lessonId));
-for(const lesson of lessons)if(executable.has(lesson.task.mode))assert(represented.has(lesson.id),'Missing exam exercise: '+lesson.id);
-assert(bank.filter(item=>item.task).length>=750,'Keep broad curriculum coverage');
-for(const item of bank.filter(item=>item.task)){
- const mode=item.task.mode;
- assert.equal(item.category,['html','css','scss'].includes(mode)?'css':['node','express','ejs'].includes(mode)?'server':mode==='sql'?'sql':'client',item.id+' must be reachable in its stage');
+const tickets=JSON.parse(JSON.stringify(context.window.TW_EXAM.tickets));
+assert.equal(tickets.length,332);
+for(const [category,total] of [['css',120],['server',120],['client',92]])assert.equal(tickets.filter(t=>t.category===category).length,total);
+const taskIds=new Set(bank.map(item=>item.id));
+assert.equal(taskIds.size,bank.length);
+assert(bank.every(item=>item.task&&!['html','js','json','node','sql'].includes(item.task.mode)),'Use applied practical objectives, not foundation drills');
+const combinations=new Set();
+for(const ticket of tickets){
+ assert.equal(ticket.ids.length,2);
+ assert(ticket.ids.every(id=>taskIds.has(id)));
+ assert(!combinations.has(ticket.ids.join('|')));combinations.add(ticket.ids.join('|'));
+ if(ticket.category==='client')assert(ticket.bonusIds?.every(id=>taskIds.has(id)));
 }
-
 assert(challenges.length>=25);
 for(const l of challenges){
  assert(l.reasoning.questions.length>=2,l.id);
@@ -35,7 +40,11 @@ assert.equal(engine.answer(state,'missing',{code:'x'},1000),false);
 for(let stageIndex=0;stageIndex<4;stageIndex++){
  assert.equal(state.phase,'ready');engine.draw(state,bank,()=>0,1000+stageIndex*1000000);
  const stage=state.stages[stageIndex];
- assert(stage.ids.length>=1);
+ assert.equal(stage.ids.length,stageIndex===3?1:2);
+ if(stageIndex===0)assert.equal(stage.name,'CSS');
+ if(stageIndex===1)assert.equal(stage.name,'Node + EJS');
+ if(stageIndex===2)assert.equal(stage.name,'BD + JavaScript client');
+ if(stageIndex===3)assert.equal(stage.ticketId,state.stages[2].ticketId);
  assert.equal(engine.answer(state,stage.ids[0],{code:'early'},stage.preparedAt),false);
  assert.throws(()=>engine.draw(state,bank,()=>0,stage.preparedAt),'Cannot reroll a drawn ticket');
  const restored=engine.restore(JSON.parse(JSON.stringify(state)),bank);
@@ -64,7 +73,7 @@ assert(!/id="exam-(bank|search|category|level)"/.test(page));
 for(const name of ['start-simulation','draw-ticket','begin-stage','submit-stage','simulation-clock','exam-report'])assert(page.includes('id="'+name+'"'),name);
 const ui=await fs.readFile('site/exam.js','utf8');
 assert(!ui.includes("id=\"exam-search\""));
-assert(ui.includes("tw-infoid26-exam-simulation-v2"));
+assert(ui.includes("tw-infoid26-exam-simulation-v3"));
 assert(!ui.includes("localStorage.clear("));
 function run(task,code){
  return new Promise((resolve,reject)=>{

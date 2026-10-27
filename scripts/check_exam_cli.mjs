@@ -29,7 +29,7 @@ for(const id of ['node-send-file','node-listen-port','express-all-methods','expr
 assert(positions.get('storage-model')<positions.get('storage-remove-one'));
 assert(byId.get('dulc-filter-dom').task.fixture.includes('value="not"'));
 assert(byId.get('ejs-conditions').task.variants.some(item=>item.data.available===false));
-for(const file of ['site/app.js','site/exam-session.js','site/exam.js','site/runner.js','scripts/serve.mjs','scripts/lab-worker.mjs','site/template-worker-source.js']){
+for(const file of ['site/app.js','site/exam-session.js','site/exam-history.js','site/exam.js','site/runner.js','scripts/serve.mjs','scripts/lab-worker.mjs','site/template-worker-source.js']){
  parse(await fs.readFile(file,'utf8'),{ecmaVersion:'latest',sourceType:file.endsWith('.mjs')||file.includes('worker-source')?'module':'script'});
 }
 const html=await fs.readFile('site/exam.html','utf8');

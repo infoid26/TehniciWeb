@@ -91,6 +91,27 @@ try{
    response=await request('/api/progress','GET',undefined,{'X-MS-CLIENT-PRINCIPAL':''});assert.equal(response.status,401);
  }
  assert.equal(JSON.parse((await request()).body).version,2,'Signing in again restores unchanged account progress');
+ // Exam history is private, additive, idempotent and shared across devices.
+ const examContext={window:{}};vm.runInNewContext(await fs.readFile('site/exam-data.js','utf8'),examContext);
+ const cssIds=JSON.parse(JSON.stringify(examContext.window.TW_EXAM.tickets)).filter(t=>t.category==='css').map(t=>t.id);
+ const exam=(method,body,extra={})=>request('/api/exam/tickets',method,body,{'X-TW-Exam':'1',...extra});
+ assert.deepEqual(JSON.parse((await exam('GET')).body).completed,[]);
+ for(let i=0;i<2;i++)assert.equal((await exam('POST',{action:'complete',ticketId:cssIds[0]})).status,200);
+ assert.deepEqual(JSON.parse((await exam('GET')).body).completed,[cssIds[0]]);
+ response=await exam('POST',{action:'draw',category:'css',exclude:cssIds.slice(1)});
+ assert.equal(response.status,409);assert.equal(JSON.parse(response.body).code,'tickets-exhausted','Completed ticket must not be drawn even by a stale client');
+ response=await exam('POST',{action:'draw',category:'css',exclude:cssIds.slice(1)},{'X-MS-CLIENT-PRINCIPAL':second,'X-TW-Account':tenant+':'+other});
+ assert.equal(response.status,200);assert.equal(JSON.parse(response.body).ticketId,cssIds[0],'Other account has independent history');
+ await Promise.all(cssIds.slice(1,3).map(ticketId=>exam('POST',{action:'complete',ticketId})));
+ assert.deepEqual(JSON.parse((await exam('GET')).body).completed,cssIds.slice(0,3),'Concurrent completions merge without lost entries');
+ assert.equal((await exam('POST',{action:'complete',ticketId:'bad-id'})).status,400);
+ assert.equal((await exam('POST',{action:'complete',ticketId:cssIds[3]},{Origin:'https://evil.test'})).status,403);
+ assert.equal((await exam('POST',{action:'complete',ticketId:cssIds[3]},{'X-TW-Exam':''})).status,403);
+ assert.equal((await exam('GET',undefined,{'X-MS-CLIENT-PRINCIPAL':''})).status,401);
+ assert.equal((await exam('POST',{action:'complete',ticketId:cssIds[3]},{'X-MS-CLIENT-PRINCIPAL':second})).status,409);
+ assert.equal((await exam('POST','{')).status,400);
+ assert.equal((await exam('POST','x'.repeat(50001))).status,413);
+ assert.equal(JSON.parse((await request()).body).version,2,'Exam history must not alter course progress');
  const unavailable=createServer({env,production:true,progressStore:{read:()=>{throw new Error('secret connection string');},close:async()=>{}}});
  response=await inject(unavailable.listeners('request')[0],{path:'/api/progress',headers});assert.equal(response.status,503);assert(!response.body.includes('secret'));
  const disabled=createServer({env:{},production:true});response=await inject(disabled.listeners('request')[0],{path:'/api/account',headers});assert.equal(JSON.parse(response.body).enabled,false);

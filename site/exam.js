@@ -2,7 +2,7 @@
   'use strict';
   const engine=window.TW_EXAM_SESSION,exercises=window.TW_EXAM.exercises;
   const byId=new Map(exercises.map(item=>[item.id,item]));
-  const storageKey='tw-infoid26-exam-simulation-v2';
+  let storageKey='tw-infoid26-exam-simulation-v3';
   const esc=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   const pre=value=>'<pre><code>'+esc(value)+'</code></pre>';
   const clock=seconds=>Math.floor(seconds/60).toString().padStart(2,'0')+':'+(seconds%60).toString().padStart(2,'0');
@@ -18,9 +18,16 @@
     const keys=columns||Object.keys(rows[0]);
     return '<div class="exam-table-wrap"><table class="exam-table"><caption>'+esc(title)+'</caption><thead><tr>'+keys.map(key=>'<th scope="col">'+esc(key)+'</th>').join('')+'</tr></thead><tbody>'+rows.map(row=>'<tr>'+keys.map(key=>'<td>'+esc(row[key]===null?'NULL':typeof row[key]==='object'?JSON.stringify(row[key]):row[key])+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';
   }
-  function context(task){
+  function instructions(task){
+    const requirements=task.requirements||[];
+    const format=value=>esc(value).replace(/`([^`]+)`/g,'<code>$1</code>');
+    return (requirements.length?'<ul class="exercise-requirements">'+requirements.map(value=>'<li>'+format(value)+'</li>').join('')+'</ul>':'')+
+      (task.note?'<p class="exam-context-note">'+format(task.note)+'</p>':'');
+  }
+  function context(task,skipFixture=false){
     let out='';
-    if(task.fixture)out+='<details class="exam-context" open><summary>Fișierul HTML furnizat · doar citire</summary>'+pre(task.fixture)+'</details>';
+    if(task.fixture&&!skipFixture)out+='<details class="exam-context" open><summary>Pagina furnizată</summary><iframe class="ticket-preview" title="Fragmentul de proiect al biletului" sandbox srcdoc="'+esc(task.fixture)+'"></iframe></details>';
+    if(task.fixture&&!skipFixture)out+='<details class="exam-context"><summary>Fișierul HTML furnizat · doar citire</summary>'+pre(task.fixture)+'</details>';
     for(const item of task.tables||[])out+=table(item.rows,'Tabel inițial: '+item.name,item.columns);
     if(task.mode==='sql')out+=table(task.expectedResult||task.expected,'Rezultatul cerut');
     if(task.setup)out+='<details class="exam-context"><summary>SQL de pregătire · executat automat</summary>'+pre(task.setup)+'</details>';
@@ -45,6 +52,7 @@
     $('#stage-title').textContent='Proba '+(state.index+1)+' · '+stage().name;
     $('#simulation-stages').innerHTML=state.stages.map((item,index)=>'<li class="'+(index===state.index?'current':'')+'">'+esc(item.name)+(index<state.index?' ✓':'')+'</li>').join('');
     $('#draw-ticket').hidden=phase!=='ready';
+    $('#draw-ticket').textContent=state.index===3?'Deschide bonusul biletului':'Extrage bilet';
     $('#begin-stage').hidden=phase!=='preparation';
     $('#submit-stage').hidden=phase!=='working';
     $('#next-stage').hidden=phase!=='submitted';
@@ -61,7 +69,7 @@
     $('#phase-instructions').textContent=messages[phase];
     const preparing=phase==='preparation';
     $('#simulation-tasks').hidden=!preparing;
-    $('#simulation-tasks').innerHTML=preparing?'<h2>Biletul extras</h2>'+stage().ids.map((id,index)=>'<article class="ticket-prompt"><h3>Cerința '+(index+1)+'</h3><p>'+esc(byId.get(id).task.prompt)+'</p>'+context(byId.get(id).task).replace(/<details class="exam-context">/g,'<details class="exam-context" open>')+'</article>').join(''):'';
+    $('#simulation-tasks').innerHTML=preparing?'<h2>'+esc(stage().name)+' · Biletul '+stage().ticketNumber+'</h2>'+stage().ids.map((id,index)=>'<article class="ticket-prompt"><h3>Cerința '+(index+1)+'</h3><p>'+esc(byId.get(id).task.prompt)+'</p>'+instructions(byId.get(id).task)+context(byId.get(id).task,index>0&&byId.get(id).task.fixture===byId.get(stage().ids[0]).task.fixture)+'</article>').join(''):'';
     if(phase!=='working'){
       $('#exam-workspace').hidden=true;TW_EDITOR.clear();viewId='';
       if(phase==='submitted'){
@@ -97,7 +105,7 @@
     const file={html:'index.html',json:'data.json',css:'style.css',scss:'style.scss',dom:'app.js',js:'exercise.js',node:'exercise.js',express:'app.cjs',ejs:'page.ejs',sql:'query.sql'}[task.mode]||'answer.txt';
     const visual=['html','css','dom','ejs','scss'].includes(task.mode);
     const workspace=$('#exam-workspace');workspace.hidden=false;
-    workspace.innerHTML='<div class="exercise-heading"><div><span class="exam-tag">'+esc(stage().name)+' · Cerința '+(stage().ids.indexOf(id)+1)+'</span><h2>'+esc(item.title)+'</h2></div></div><p class="exam-prompt">'+esc(task.prompt)+'</p>'+
+    workspace.innerHTML='<div class="exercise-heading"><div><span class="exam-tag">'+esc(stage().name)+' · Cerința '+(stage().ids.indexOf(id)+1)+'</span><h2>'+esc(item.title)+'</h2></div></div><p class="exam-prompt">'+esc(task.prompt)+'</p>'+instructions(task)+
       '<p class="exam-context-note">Fișierele și datele de mai jos sunt furnizate automat. Modifici numai <code>'+esc(file)+'</code> în editor. '+(state.phase==='preparation'?'Editorul se activează când începi proba.':'')+'</p>'+
       '<details class="exam-context"><summary>Fișierele și datele furnizate</summary>'+context(task)+'</details>'+
       '<div class="exam-editor-grid"><div class="exam-editor-panel"><h3>'+esc(file)+(writable?' · editor':' · doar citire')+'</h3><textarea id="exam-code" aria-label="Codul răspunsului" spellcheck="false" '+(writable?'':'readonly')+'>'+esc(row.code)+'</textarea></div><div class="exam-editor-panel"><h3>Rezultat</h3><div id="exam-result" class="exam-result" role="status">'+(state.phase==='submitted'?resultHTML(stage().results[id],true):'În timpul probei poți rula codul. Verificarea cerințelor se afișează după predare.')+'</div><iframe id="exam-preview" title="Rezultatul codului" sandbox="allow-scripts" hidden></iframe></div></div>'+
@@ -144,6 +152,7 @@
       try{results[id]=await TW_RUNNER.check(byId.get(id).task,answers[id].code,cancel=>{cancelRun=cancel;});}
       catch(error){results[id]=[{label:'Verificare indisponibilă',passed:false,error:error.message}];}
     }
+    if(state===current&&state.index===index&&index<3)await history.complete(stage().ticketId);
     grading=false;cancelRun=null;
     if(state===current&&state.index===index&&engine.graded(state,results)){save();controls();showTask(state.selected,false);}
   }
@@ -194,9 +203,14 @@
     updateClock();
   }
   $('#start-simulation').onclick=start;
-  $('#draw-ticket').onclick=()=>{
-    try{engine.draw(state,exercises);save();controls();showTask(state.selected,true);}
-    catch(error){$('#simulation-status').textContent=error.message;}
+  $('#draw-ticket').onclick=async()=>{
+    const current=state,index=state.index,button=$('#draw-ticket');button.disabled=true;
+    try{
+      const ticketId=index===3?undefined:await history.draw(stage().category);
+      if(state!==current||state.index!==index||state.phase!=='ready')return;
+      engine.draw(state,exercises,Math.random,Date.now(),{ticketId});save();controls();showTask(state.selected,true);
+    }catch(error){$('#simulation-status').textContent=error.message;}
+    finally{button.disabled=false;}
   };
   $('#begin-stage').onclick=()=>{if(engine.begin(state)){save();controls();showTask(state.selected,true);}};
   $('#submit-stage').onclick=()=>{
@@ -212,10 +226,20 @@
     else window.scrollTo({top:0,behavior:'instant'});
   };
   $('#finish-attempt').onclick=finish;
+  const history=window.TW_EXAM_HISTORY.create({accountPromise:window.TW_ACCOUNTS.mountHeader({returnTo:'/examen',onLogout:save}),onStatus:text=>{const el=$('#account-header-status');el.textContent=text;el.hidden=!text;}});
+  $('#start-simulation').disabled=true;
+  void (async()=>{
+    try{
+      const user=await history.ready;
+      if(user)storageKey+=':account:'+user.id;
   try{
     const raw=localStorage.getItem(storageKey);
     if(raw){state=engine.restore(JSON.parse(raw),exercises);if(state.phase==='finished'){if(!completed()){finish();}else{$('#last-attempt').hidden=false;$('#last-attempt').onclick=()=>{report();window.scrollTo({top:0,behavior:'instant'});};}}else{controls();if(state.selected)showTask(state.selected,false);if(state.phase==='grading')gradeStage(true);else tick();}}
   }catch{state=null;warnStorage();}
-  void window.TW_ACCOUNTS.mountHeader({returnTo:'/examen',onLogout:save});
+
+      if(state)for(const part of state.stages)if(part.category!=='bonus'&&part.endedAt!==null)await history.complete(part.ticketId);
+      $('#start-simulation').disabled=false;
+    }catch(error){$('#account-header-status').hidden=false;$('#account-header-status').textContent=error.message;}
+  })();
   setInterval(tick,250);
 })();

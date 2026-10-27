@@ -18,135 +18,20 @@ def add(id, title, category, task=None, minutes=15, hint='', steps=None, answer=
     return item
 
 
-def build_exam(course):
+def server_objectives(course):
     items.clear()
     raw = Path('site/course.js').read_text(encoding='utf-8')
     course = json.loads(raw.split(' = ', 1)[1].rstrip().removesuffix(';'))
     byid = {l['id']:l for c in course['chapters'] for l in c['lessons']}
-    # Carefully bounded foundations: real, independently runnable exercises, linked
-    # back to their explanations. They are labelled as foundations, not full tickets.
-    groups = {
-        'css': ['css-basics', 'css-selectors-complete', 'css-layout', 'css-effects-complete', 'css-details', 'scss'],
-        'client': ['js-arrays', 'js-text', 'dom', 'json', 'storage'],
-        'server': ['node', 'node-files-complete', 'express', 'http-routing-complete', 'ejs'],
-        'sql': ['sql', 'sql-schema-complete', 'sql-queries-complete'],
-    }
-    for category, chapter_ids in groups.items():
-        for chapter_id in chapter_ids:
-            chapter = next(c for c in course['chapters'] if c['id'] == chapter_id)
-            eligible = [l for l in chapter['lessons'] if l['task']['mode'] != 'text']
-            for l in eligible[:4]:
-                add('exam-foundation-' + l['id'], l['title'], category, deepcopy(l['task']),
-                    minutes=8, hint=l['hint'], steps=l.get('walkthrough') or [l['intro'], l['explain']],
-                    rubric=[l['task']['prompt'], 'Explică de ce ai ales această soluție.'],
-                    lesson_id=l['id'], level='Fundamente')
-
-    for id in ['css-first-letter', 'css-fixed-viewport', 'css-scale-horizontal', 'scss-bootstrap',
-               'dulc-filter-dom', 'project-sort', 'project-json-error-page', 'project-pg-ejs-route']:
+    for id in ['project-json-error-page', 'project-pg-ejs-route']:
         l = byid[id]
-        category = 'css' if l['task']['mode'] in ('css', 'scss') else 'server' if l['task']['mode'] == 'express' else 'client'
-        add('exam-bridge-' + id, l['title'], category, deepcopy(l['task']), minutes=20 if category == 'server' else 15,
-            hint=l['hint'], steps=l.get('walkthrough') or [l['explain']], lesson_id=id,
-            rubric=['Rezolvă cerința fără erori.', 'Verifică și cazul opus.', 'Explică fiecare etapă.'])
+        add('exam-bridge-'+id, l['title'], 'server', deepcopy(l['task']),
+            hint=l['hint'], steps=l.get('walkthrough') or [l['explain']], rubric=[l['task']['prompt']])
+    for id in ['reason-query', 'reason-escape-empty']:
+        l = byid[id]
+        add('exam-transfer-'+id, l['title'], 'server', deepcopy(l['task']),
+            hint=l['hint'], steps=[l['reasoning']['explanation']], rubric=l['reasoning']['questions'])
 
-    welcome = '#welcome { display: inline-block; transition: transform 1s; }\n#welcome:hover { transform: scale(2); }'
-    add('exam-css-hover-transition', 'Text dublat gradual și revenire', 'css',
-        css('Doar prin CSS, fă textul Welcome să devină de două ori mai mare în o secundă la hover și să revină gradual când cursorul pleacă. Păstrează HTML-ul.',
-            welcome, '<h1><span id="welcome">Welcome</span></h1>',
-            [prop('#welcome', 'transition-duration', '1s'), prop('#welcome', 'display', 'inline-block'),
-             dict(kind='cssIncludes', value='#welcome:hover', label='Există starea hover.'),
-             dict(kind='cssIncludes', value='scale(2)', label='Mărirea este dublă.')]),
-        hint='Pune transition pe regula de bază, nu numai pe :hover.',
-        steps=['inline-block permite transformarea textului.', 'Regula de bază definește durata în ambele sensuri.', ':hover schimbă numai transform.'],
-        rubric=['Verifică trecerea în ambele sensuri în previzualizare.', 'Textul își păstrează forma și se dublează.'])
-
-    table = '<table id="hours"><thead><tr><th>Day</th><th>Morning</th><th>Break</th><th>Evening</th></tr></thead><tbody>' + ''.join('<tr><th>'+day+'</th><td>10-12</td><td>12-14</td><td>14-20</td></tr>' for day in ['Monday','Tuesday','Wednesday','Thursday']) + '</tbody></table>'
-    code = '#hours tbody tr:nth-child(-n+3) th:hover ~ td:nth-child(2),\n#hours tbody tr:nth-child(-n+3) th:hover ~ td:nth-child(4) {\n  background: blue;\n}'
-    add('exam-css-timetable', 'Hover numai pe zi și numai pe anumite coloane', 'css',
-        css('În primele trei rânduri ale tabelului, hover pe celula cu ziua colorează albastru numai Morning și Evening. Hover pe oră, pauză sau Thursday nu are efect. Nu modifica HTML-ul.', code, table,
-            [dict(kind='cssIncludes', value='th:hover', label='Starea este pe celula zilei.'),
-             dict(kind='cssIncludes', value='nth-child(-n+3)', label='Sunt restrânse primele trei rânduri.'),
-             dict(kind='cssIncludes', value='background:blue', label='Este definit albastrul.')]),
-        hint='~ selectează frații ulteriori ai celulei cu ziua.',
-        steps=['Limitează rândurile în tbody.', 'Aplică :hover pe th, nu pe tr.', 'Selectează celulele 2 și 4 dintre frații ulteriori.'],
-        rubric=['Verifică manual toate cele patru zile.', 'Pauza și ziua rămân necolorate.', 'Hover pe altă celulă nu produce efect.'])
-
-    grid = '#topics { display: grid; grid-template-rows: repeat(3, auto); grid-auto-flow: column; counter-reset: topic; }\n#topics li { counter-increment: topic; }\n#topics li::after { content: " (" counter(topic) ")"; }'
-    add('exam-css-columns-counter', 'Două coloane și numere generate prin CSS', 'css',
-        css('Aranjează cele șase elemente în două coloane, primele trei pe coloana stângă. După fiecare text generează numărul între paranteze prin CSS, fără tabel sau numere scrise în HTML.', grid,
-            '<ol id="topics">'+''.join('<li>'+name+'</li>' for name in ['HTML','CSS','JavaScript','Node','EJS','SQL'])+'</ol>',
-            [prop('#topics', 'grid-auto-flow', 'column'), dict(kind='cssIncludes', value='counter-increment:topic', label='Numerotarea folosește contor.'), dict(kind='pseudo', selector='#topics li', pseudo='::after', name='content', includes='counter', label='Numărul este generat în pseudo-element.')]),
-        hint='Trei rânduri și grid-auto-flow: column păstrează primele trei elemente pe aceeași coloană.',
-        steps=['Definește cele trei rânduri.', 'Lasă Grid să umple coloana înainte de următoarea.', 'Resetează contorul, incrementează-l și afișează-l în ::after.'],
-        rubric=['Ordinea vizuală este 1–3 la stânga și 4–6 la dreapta.', 'Numerotarea este generată, nu adăugată în HTML.'])
-
-    desc_fixture = '<label>Description <input id="description"></label><button id="filter">Filter</button><article id="first" data-description="Blue paper notebook">Notebook</article><article id="second" data-description="Black ink pen">Pen</article>'
-    desc = '''document.querySelector("#filter").onclick = function () {
-  const term = document.querySelector("#description").value.trim().toLowerCase();
-  for (const card of document.querySelectorAll("article")) {
-    const description = card.dataset.description.toLowerCase();
-    card.hidden = !description.includes(term);
-  }
-};'''
-    add('exam-client-description', 'Un filtru nou pentru descriere', 'client',
-        dom('La click pe Filter păstrează articolele a căror descriere conține termenul introdus, fără diferențe de majuscule și ignorând spațiile de la capete. Termenul gol afișează tot.', desc, desc_fixture,
-            [prop('#first','display','block'), prop('#second','display','none')],
-            [dict(type='fill', selector='#description', value=' BLUE '), dict(type='click', selector='#filter')],
-            variants=[dict(label='Filtru gol', actions=[dict(type='click', selector='#filter')], tests=[prop('#first','display','block'), prop('#second','display','block')]),
-                      dict(label='Altă descriere', actions=[dict(type='fill', selector='#description', value='ink'),dict(type='click',selector='#filter')],tests=[prop('#first','display','none'),prop('#second','display','block')])]),
-        hint='dataset.description citește data-description. Șirul gol este inclus în orice text.',
-        steps=['Citește termenul la click.', 'Normalizează termenul și descrierea la fel.', 'Schimbă hidden pentru fiecare articol.'],
-        rubric=['Nu confunda textul numelui cu descrierea.', 'Filtrul gol și literele mari funcționează.'])
-
-    slider_fixture = '<input id="price" type="range" min="0" max="100" value="0"><output id="value"></output><p id="previous"></p>'
-    slider = '''const slider = document.querySelector("#price");
-const output = document.querySelector("#value");
-const previous = Number(localStorage.getItem("priceChanges") || "0");
-document.querySelector("#previous").textContent = "Previous changes: " + previous;
-function updateValue() {
-  const value = Number(slider.value);
-  output.textContent = slider.value;
-  output.style.fontWeight = "bold";
-  output.style.color = value > (Number(slider.min) + Number(slider.max)) / 2 ? "red" : "black";
-}
-updateValue();
-slider.addEventListener("input", function () {
-  const total = Number(localStorage.getItem("priceChanges") || "0");
-  localStorage.setItem("priceChanges", String(total + 1));
-  updateValue();
-});'''
-    add('exam-client-slider-storage', 'Slider, culoare și contor după reîncărcare', 'client',
-        dom('Afișează valoarea sliderului îngroșat, roșie peste mijloc și neagră în rest. La fiecare input crește priceChanges în localStorage. Paragraful Previous changes afișează doar valoarea citită la încărcare, fără actualizare în timp ce muți sliderul.',slider,slider_fixture,
-            [exact('#value','90'),prop('#value','font-weight','700'),prop('#value','color','rgb(255, 0, 0)'),exact('#previous','Previous changes: 3'),dict(kind='storage',key='priceChanges',value='5',label='Două evenimente au incrementat contorul.')],
-            [dict(type='fill',selector='#price',value='40'),dict(type='fill',selector='#price',value='90')],
-            storage={'priceChanges':'3'},
-            variants=[dict(label='După reîncărcare',storage={'priceChanges':'5'},actions=[],tests=[exact('#previous','Previous changes: 5'),prop('#value','color','rgb(0, 0, 0)')])]),
-        minutes=15, hint='Citește contorul o dată pentru paragraf. La input salvează separat noua valoare.',
-        steps=['Citirea inițială actualizează paragraful.', 'updateValue schimbă numai output.', 'Evenimentul input incrementează stocarea virtuală.'],
-        rubric=['La prima vizită contorul pornește de la zero.', 'Valoarea salvată se schimbă, paragraful rămâne fix.', 'Reîncărcarea citește noul total.'])
-
-    radio_fixture = '<fieldset>'+''.join('<label><input type="radio" name="productType" value="'+x+'"'+(' checked' if x=='all' else '')+'>'+x+'</label>' for x in ['books','stationery','accessories','all'])+'</fieldset><input type="radio" name="other" checked><button id="filter">Filter</button><article id="book" data-type="books">Book</article><article id="pen" data-type="stationery">Pen</article>'
-    radio = '''const saved = localStorage.getItem("productType");
-for (const option of document.querySelectorAll('input[name="productType"]')) {
-  if (option.value === saved) option.parentElement.style.border = "2px solid blue";
-}
-document.querySelector("#filter").onclick = function () {
-  const selected = document.querySelector('input[name="productType"]:checked').value;
-  localStorage.setItem("productType", selected);
-  for (const card of document.querySelectorAll("article")) {
-    card.hidden = selected !== "all" && card.dataset.type !== selected;
-  }
-};'''
-    add('exam-client-radio-storage','Grup radio, filtrare și ultima opțiune','client',
-        dom('La Filter afișează tipul selectat sau toate articolele pentru all. Salvează alegerea sub productType. La încărcare marchează cu border albastru eticheta opțiunii salvate. Nu schimba grupul radio other.',radio,radio_fixture,
-            [prop('#book','display','none'),prop('#pen','display','block'),count('input[name="other"]:checked'),dict(kind='storage',key='productType',value='stationery',label='Alegerea este salvată.')],
-            [dict(type='check',selector='input[value="stationery"]',checked=True),dict(type='click',selector='#filter')],
-            variants=[dict(label='Opțiune salvată',storage={'productType':'books'},actions=[],tests=[prop('input[value="books"]','display','inline-block'),prop('label:has(input[value="books"])','border-top-color','rgb(0, 0, 255)')])]),
-        hint='Folosește același name numai pentru cele patru opțiuni de produse.',
-        steps=['Citește preferința la încărcare.', 'La click citește opțiunea :checked.', 'Aplică condiția și salvează alegerea.'],
-        rubric=['Grupurile nu se influențează.', 'all afișează toate articolele.', 'Marcajul se face la încărcare.'])
-
-    # Boundary-driven server tasks, with all JSON and EJS files supplied.
     gallery_files = {
         'gallery.json':json.dumps({'images':[{'name':'First','periods':['start']},{'name':'Middle','periods':['middle']},{'name':'Last','periods':['end']},{'name':'Always','periods':['always']},{'name':'Hidden'}]}),
         'views/gallery.ejs':'<h1>Gallery</h1><ul><% for (const image of images) { %><li><%= image.name %></li><% } %></ul>'}
@@ -240,81 +125,11 @@ module.exports = app;'''
         steps=['Citește timpul la fiecare cerere.', 'Calculează perioada.', 'Creează directorul numai pe ruta cerută.', 'Păstrează fragmentele comune.'],
         rubric=['Formatul include zerouri.', 'Timestamp-ul are secunde.', 'Pagina păstrează antetul și subsolul.'])
 
-    # Transfer tasks are available to the random simulation without publishing a bank.
-    for chapter in course['chapters']:
-        for l in chapter['lessons']:
-            if not l.get('challenge'):
-                continue
-            mode = l['task']['mode']
-            if mode not in ('css','scss','dom','js','node','express','ejs','sql'):
-                continue
-            category = 'css' if mode in ('css','scss') else 'server' if mode in ('node','express','ejs') else 'sql' if mode == 'sql' else 'client'
-            item = add('exam-transfer-' + l['id'], l['title'].removeprefix('Provocare: '), category,
-                       deepcopy(l['task']), minutes=20 if category=='server' else 15,
-                       hint=l['hint'], steps=[l['reasoning']['explanation'],l['reasoning']['counterexample']],
-                       rubric=l['reasoning']['questions'], lesson_id=l['id'], level='Raționament')
-            item['reasoning'] = deepcopy(l['reasoning'])
+    return items
 
-    # Reuse the course's independently runnable contracts, with stable exam IDs.
-    # A lesson already represented by a foundation/transfer ticket is not copied twice.
-    represented = {item.get('lessonId') for item in items}
-    supported = {'html','css','scss','js','json','dom','node','express','ejs','sql'}
-    for chapter in course['chapters']:
-        for lesson in chapter['lessons']:
-            if lesson['id'] in represented or lesson['task']['mode'] not in supported:
-                continue
-            mode = lesson['task']['mode']
-            category = ('css' if mode in ('html','css','scss') else
-                        'server' if mode in ('node','express','ejs') else
-                        'sql' if mode == 'sql' else 'client')
-            item = add('exam-curriculum-' + lesson['id'], lesson['title'], category,
-                       deepcopy(lesson['task']), minutes=20 if category == 'server' else 15,
-                       hint=lesson['hint'], steps=lesson.get('walkthrough') or [lesson['explain']],
-                       rubric=[lesson['task']['prompt'], 'Explică alegerea și verifică un caz diferit.'],
-                       lesson_id=lesson['id'], level='Bilet practic')
-            if lesson.get('reasoning'):
-                item['reasoning'] = deepcopy(lesson['reasoning'])
-            represented.add(lesson['id'])
-    lesson_chapters = {lesson['id']:chapter for chapter in course['chapters'] for lesson in chapter['lessons']}
-    for item in items:
-        if item.get('task'):
-            mode = item['task']['mode']
-            item['category'] = ('css' if mode in ('html','css','scss') else 'server' if mode in ('node','express','ejs') else 'sql' if mode == 'sql' else 'client')
-        chapter = lesson_chapters.get(item.get('lessonId'))
-        if chapter:
-            item.update(chapterId=chapter['id'], chapterTitle=chapter['title'])
 
-    # Oral rehearsals model the explanation, not a keyword-scored text quiz.
-    oral = [
-        ('html-tag','Ce exprimă un tag HTML?','Explică diferența dintre element, tag de deschidere, conținut și tag de închidere. Dă un exemplu cu p.','Un element precum <p>Hello</p> marchează un paragraf: <p> deschide, Hello este conținutul și </p> închide. Există și elemente fără tag final, de exemplu img.',['Identifică p.','Explică textul vizibil.','Menționează elementele fără închidere.'],'html-tags'),
-        ('html-validate','Validează HTML în direct','Descrie pașii pentru validarea fișierului și remedierea erorilor.','Deschid validatorul HTML înainte de prezentare, încarc fișierul sau lipesc sursa, citesc prima eroare cu linia indicată, corectez cauza și validez din nou. Un afișaj aparent corect în browser nu dovedește validitatea.',['Validator deschis.','Fișierul corect.','Corectare și reverificare.'],'validation-html'),
-        ('css-variable','Variabilă CSS și utilizarea ei','Arată unde declari o variabilă CSS și unde o folosești.','Declar --accent: navy în :root și folosesc color: var(--accent) pe selectorul dorit. Proprietățile personalizate se moștenesc și participă la cascadă; variabila Sass este evaluată la compilare.',['Declarație.','var().','Diferență față de Sass.'],'css-variables'),
-        ('css-swap','Inversează vizual două secțiuni','Cum schimbi ordinea vizuală a secțiunilor prin CSS?','În containerul Grid schimb grid-template-areas sau coordonatele grid-row; în Flexbox pot folosi order. Ordinea din HTML și de citire rămâne aceeași, deci verific și accesibilitatea.',['Containerul potrivit.','Proprietate concretă.','Ordine DOM versus vizuală.'],'css-grid-areas'),
-        ('css-selector','Descompune un selector combinat','Explică #hours tbody tr:nth-child(-n+3) th:hover ~ td:nth-child(4).','#hours identifică tabelul; spațiile cer descendenți; tbody restrânge corpul tabelului; nth-child(-n+3) păstrează primele trei rânduri; th:hover cere cursorul pe zi; ~ alege frați ulteriori; td:nth-child(4) cere a patra celulă din rând.',['Fiecare segment.','Rolul ~.','Poziții numărate de la 1.'],'css-scale-horizontal'),
-        ('css-fixed','Link la 100px față de viewport','Cum poziționezi linkul în stânga, la 100px de sus?','Selectez linkul și aplic position: fixed; top: 100px; left: 0. În pagina simplă referința este viewport-ul. Verific dacă vreun strămoș transformat schimbă blocul de referință.',['fixed.','top și left.','Referință corectă.'],'css-fixed-viewport'),
-        ('bootstrap-h1','H1 implicit de 40px','Cum personalizezi Bootstrap fără a rescrie manual h1 după compilare?','În SCSS atribui $h1-font-size: 40px înaintea importului Bootstrap. Pentru exact 40px pe toate lățimile dezactivez RFS în acest exercițiu. Compilez apoi în CSS și încarc CSS-ul generat.',['Variabilă înainte de import.','Compilare.','CSS încărcat.'],'scss-bootstrap'),
-        ('css-tabs','Taburi centrate față de iframe','Cum centrezi grupul de taburi față de iframe?','Pun taburile și iframe-ul într-un container comun de aceeași lățime. Grupul taburilor primește display:flex și justify-content:center; iframe-ul are width:100%. Centrarea se raportează astfel la aceeași zonă.',['Container comun.','Flex și justify-content.','Aceeași lățime.'],'css-flex'),
-        ('node-error','Adaugă o eroare personalizată','Descrie traseul de la condiția invalidă până la pagina erorii.','Adaug intrarea în JSON-ul erorilor, aleg identificatorul în validarea parametrilor, setez statusul HTTP și transmit datele către template-ul comun. return încheie ruta după trimiterea răspunsului.',['Intrare JSON.','Condiție.','Status, render și return.'],'project-json-error-page'),
-        ('ejs-shared','Imagine comună tuturor paginilor','Cum adaugi același fragment EJS fără a duplica markup-ul imaginii?','Creez un partial cu img și îl includ în footer-ul comun, iar paginile includ footer-ul. Folosesc <%- include(...) %> pentru HTML-ul controlat al fragmentului. URL-ul imaginii este unul public, nu o cale locală de pe PC.',['Partial.','Include comun.','URL de resursă.'],'ejs-include'),
-        ('json-gallery','Explică citirea galeriei rând cu rând','Ce fac readFileSync, utf8, JSON.parse și filter?','readFileSync primește calea și citește textul când specific utf8. JSON.parse transformă textul JSON în obiect JavaScript. Accesez vectorul de imagini, apoi filter creează o listă nouă pe baza condiției. Transmit rezultatul template-ului.',['Text versus obiect.','Proprietatea vectorului.','Filtrare și render.'],'node-json-file'),
-        ('scss-compile','Când se compilează SCSS?','Distinge compilarea manuală, watch și compilarea la pornire.','Browserul nu execută SCSS. O comandă manuală compilează o dată. --watch urmărește schimbările și recompilă. Un script de pornire poate compila înainte să pornească serverul, numai dacă a fost configurat explicit. nodemon repornește Node și nu înlocuiește automat Sass watch.',['CSS rezultat.','Trei situații.','Rolul nodemon.'],'scss-compile'),
-        ('pg-list','Rută nouă cu nume din PostgreSQL','Explică cerere → SQL → rânduri → EJS → HTML.','Adaug app.get pentru cale, execut SELECT name cu pool.query și await, transmit result.rows ca products către render, apoi parcurg vectorul în EJS pentru li. Tratez și tabelul gol și eroarea de interogare.',['result.rows.','render.','Buclă EJS și erori.'],'project-pg-ejs-route'),
-        ('client-sort','Explică comparatorul rând cu rând','Cum sortezi numeric după preț, apoi după nume, în ambele sensuri?','Copiez vectorul, convertesc prețurile cu Number și scad al doilea preț din primul, first-second. Dacă diferența este zero, compar numele normalizate cu localeCompare. Înmulțesc rezultatul cu sign. sort modifică vectorul, deci copia protejează intrarea.',['Comparator negativ/zero/pozitiv.','Preț numeric.','Criteriu secundar și sign.'],'project-sort'),
-        ('client-description','Adaugă filtrarea descrierii','Ce modifici în date, template și script?','Asigur câmpul description în datele primite, îl afișez sau îl expun într-un data attribute în EJS, adaug input text și citesc valoarea la filtrare. Normalizez ambele texte și verific includes. Combin rezultatul cu filtrele existente.',['Date.','EJS și control.','Condiție combinată.'],'project-filter'),
-        ('storage-reload','Salvare versus afișare la reîncărcare','De ce contorul salvat poate diferi de cel afișat în paragraf?','La încărcare citesc totalul și actualizez paragraful o dată. În eveniment incrementez numai valoarea salvată. La următoarea încărcare, paragraful va citi totalul nou. getItem întoarce text sau null, deci convertesc numeric.',['Două momente distincte.','Text în stocare.','Cazul primei vizite.'],'storage-model'),
-        ('callback-return','De ce return din callback nu returnează din solve?','Arată cine apelează callback-ul și ce funcție încheie return.','Callback-ul rulează separat când operația termină. return încheie acea funcție, nu funcția exterioară deja întoarsă. Pentru rezultat asincron returnez o promisiune pe care o îndeplinesc cu resolve și o resping cu reject.',['Funcție exterioară versus callback.','Ordine.','Promise.'],'node-read-callback'),
-        ('nodemon','De ce pornești cu nodemon?','Explică fișierul de intrare, scriptul și reluarea după salvare.','Instalez nodemon ca dependență de dezvoltare și definesc dev: nodemon app.js în scripts din package.json. npm run dev pornește aplicația și repornește Node la schimbări. Reîncarc pagina separat. Ctrl+C oprește procesul.',['Instalare locală.','Script.','Browser versus server.'],'express-nodemon'),
-        ('sql-order','SELECT și ordinea rândurilor','De ce ordinea din tabel nu garantează ordinea rezultatului?','SELECT alege coloanele, FROM sursa, WHERE filtrează și ORDER BY stabilește ordinea rezultatului. Fără ORDER BY, SQL nu garantează ordinea rândurilor. Nu confund filtrarea cu ștergerea.',['Rolul clauzelor.','Ordine explicită.','Datele originale rămân.'],'sql-order'),
-        ('pg-params','Parametri SQL versus concatenare','Cum trimiți un tip de produs în query în siguranță?','Validez tipul față de opțiunile acceptate și folosesc WHERE type = $1 cu vectorul [type] ca al doilea argument query. Valorile nu se concatenează în SQL; numele coloanelor nu pot fi înlocuite astfel cu parametri de valori.',['Validare.','$1 și vector.','Valori versus identificatori.'],'sql-parameters'),
-        ('ejs-escape','<%= versus <%-','Ce se întâmplă cu un nume de produs care conține taguri?','<%= îl escapează și îl afișează ca text, prevenind interpretarea ca markup. <%- inserează HTML neescapat și îl rezerv fragmentelor controlate precum include. Nu îl folosesc pe text furnizat de utilizator.',['Escapare.','Partial de încredere.','Text necontrolat.'],'ejs-escape'),
-        ('radio','De ce grupurile radio au name diferit?','Ce determină exclusivitatea opțiunilor?','Butoanele radio cu același name și același proprietar de formular formează un grup exclusiv. Aleg un name comun numai opțiunilor filtrului de tip, diferit de celelalte grupuri. citesc :checked la aplicarea filtrului.',['name.','Separarea grupurilor.','Citirea opțiunii.'],'project-filter'),
-        ('timestamp','Timestamp în secunde','Cum construiești numele directorului din ora curentă?','Date.now() sau getTime() oferă milisecunde de la epocă. Math.floor(timestamp / 1000) produce numărul întreg de secunde. Construiesc calea în directorul temp și creez directorul numai când ruta o cere.',['Milisecunde.','Împărțire și floor.','Locul și momentul creării.'],'node-mkdir-sync'),
-        ('periods','Intervalele [0,20), [20,40), [40,60)','Cum tratezi minutele 20 și 40 fără goluri?','Folosesc minute < 20 pentru început, else if minute < 40 pentru mijloc, altfel final. Minutul 20 intră în mijloc, iar 40 în final. Verific separat always și lipsa proprietății de perioade.',['Limite.','else if.','Date absente.'],'js-if'),
-    ]
-    for id,title,prompt,answer,rubric,lesson_id in oral:
-        item=add('exam-oral-'+id,title,'oral',minutes=2,hint='Spune ce fișier deschizi, de ce și ce efect are fiecare linie.',answer=answer,rubric=rubric,lesson_id=lesson_id,level='Prezentare orală')
-        item['prompt']=prompt
-    output = dict(version=1,sourceLabel='Exerciții de antrenament din programa cursului.',
-                  exercises=items)
+def build_exam(course):
+    from exam_tickets import build_tickets
+    output = build_tickets(server_objectives(course))
     Path('site/exam-data.js').write_text('window.TW_EXAM = '+json.dumps(output,ensure_ascii=False,indent=2)+';\n',encoding='utf-8')
-    print(len(items),'exam exercises;',sum('task' in x for x in items),'with editor and checks')
+    print(len(output['tickets']), 'complete exam tickets;', len(output['exercises']), 'checked objectives')

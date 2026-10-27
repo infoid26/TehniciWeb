@@ -12,7 +12,7 @@
 .exam-section h2 { font-size:29px; margin:10px 0 16px; }
 .exam-section>p { max-width:850px; line-height:1.8; color:var(--muted); }
 .exam-source { border-left:3px solid var(--accent); padding-left:18px; font-size:14px; }
-.rules-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; margin:28px 0; }
+.rules-grid { display:grid; grid-template-columns:minmax(0,1fr); gap:24px; margin:28px 0; }
 .rule-card { background:var(--paper); border:1px solid var(--line); border-radius:18px; padding:28px; min-width:0; }
 .rule-card h3 { font-size:23px; margin:18px 0; }
 .rule-card p,.rule-details p { font-size:14px; color:var(--muted); line-height:1.85; }
@@ -108,3 +108,5 @@
 
 #simulation-intro > .exam-actions { justify-content:center; }
 #start-simulation { font-size:22px; padding:16px 32px; }
+
+.ticket-preview{display:block;width:100%;height:360px;border:0;background:white;border-radius:8px}

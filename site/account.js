@@ -46,16 +46,18 @@
     if(!controls)return;
     const message=text=>{if(status){status.textContent=text;status.hidden=!text;}};
     const unavailable=text=>{renderControls(controls,{enabled:false});message(text);};
-    if(location.protocol==='file:'){unavailable('Conectarea cu Microsoft este disponibilă pe site-ul public.');return;}
+    if(location.protocol==='file:'){unavailable('Conectarea cu Microsoft este disponibilă pe site-ul public.');return {enabled:false,user:null};}
     try{
       const response=await fetch('/api/account',{credentials:'same-origin',cache:'no-store',redirect:'error',signal:AbortSignal.timeout(10000)});
       const account=await response.json();
       if(!response.ok){const error=new Error(account.error||'Conectarea nu este disponibilă momentan.');error.status=response.status;throw error;}
       renderControls(controls,{user:account.user,enabled:account.enabled,returnTo,onLogout});
       message(account.enabled?'':'Conectarea cu Microsoft este disponibilă pe site-ul public.');
+      return account;
     }catch(error){
       if(error.status===403){controls.replaceChildren();signOutControl(controls,'Schimbă contul Microsoft',onLogout);message(error.message);}
-      else unavailable('Conectarea nu este disponibilă momentan. Poți continua simularea.');
+      else unavailable('Nu pot verifica starea contului. Reîncarcă pagina pentru a continua.');
+      return {unavailable:true};
     }
   }
 

@@ -56,7 +56,9 @@ export function createServer(options={}) {
   let tasksPromise;
   const lessons=()=>tasksPromise??=(async()=>{const context={window:{}};vm.runInNewContext(await fs.readFile(path.join(root,'site/course.js'),'utf8'),context);vm.runInNewContext(await fs.readFile(path.join(root,'site/exam-data.js'),'utf8'),context);return new Map([...context.window.TW_COURSE.chapters.flatMap(c=>c.lessons),...context.window.TW_EXAM.exercises.filter(e=>e.task)].map(l=>[l.id,JSON.parse(JSON.stringify(l))]));})();
   const progressStore=options.progressStore||createProgressStore(progressDatabaseSettings(env));
-  const accountHandler=createAccountHandler({env,lessons,store:progressStore});
+  let ticketsPromise;
+  const tickets=()=>ticketsPromise??=(async()=>{const context={window:{}};vm.runInNewContext(await fs.readFile(path.join(root,'site/exam-data.js'),'utf8'),context);return JSON.parse(JSON.stringify(context.window.TW_EXAM.tickets));})();
+  const accountHandler=createAccountHandler({env,lessons,tickets,store:progressStore});
   const json=(res,status,value)=>{res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});res.end(JSON.stringify(value));};
   const server=http.createServer(async (req,res) => {
     try {

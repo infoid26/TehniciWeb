@@ -6,7 +6,7 @@ course=json.loads(Path('site/course.js').read_text(encoding='utf8').split(' = ',
 chapters=course['chapters']
 total=sum(len(c['lessons']) for c in chapters)
 exam=json.loads(Path('site/exam-data.js').read_text(encoding='utf-8').split(' = ',1)[1].rstrip(';\n'))
-exam_total=sum('task' in item for item in exam['exercises'])
+exam_total=len(exam['tickets'])
 
 Path('README.md').write_text(f'''# Tehnici Web · INFO ID 26
 
@@ -20,7 +20,7 @@ Traseul introduce bazele înaintea aplicațiilor: sintaxă și exemple mici, apo
 
 Exemplele de integrare arată pregătirea Node.js, PostgreSQL și publicarea unei aplicații proprii. Pașii marcați Terminal sunt opționali și explică fișierele pe care le creezi pe calculator. Nu presupun accesul la repository-ul platformei. [Proiect Website](https://tw.infoid26.ro/project/) rămâne în română și nu este o condiție pentru curs.
 
-[Pregătire Examen](https://tw.infoid26.ro/examen) oferă {exam_total} de cerințe executabile din materia cursului. Extragerea distribuie biletele între capitole, apoi alege exercițiul. Simularea se desfășoară direct în browser: pregătire fără editor, cerințe parcurse consecutiv, cronometru vizibil și verificare la predare. Fiecare pas îl înlocuiește pe cel anterior. Nu sunt necesare instalări. Rezolvările apar la final; progresul simulării este separat de progresul cursului.
+[Simulare Examen](https://tw.infoid26.ro/examen) oferă {exam_total} de bilete complete: 120 CSS, 120 Node + EJS și 92 BD + JavaScript client. Fiecare bilet are două cerințe stabilite, cu date și fișiere furnizate; bonusul continuă biletul de BD + JavaScript client. Biletele combină obiective practice; unele cerințe apar în mai multe bilete, în combinații diferite. În cont, biletele predate sunt salvate separat de progresul lecțiilor și excluse de la extragerile următoare, inclusiv pe alt dispozitiv. La epuizarea unei categorii nu se repetă automat biletele. Simularea are pregătire de 5 minute, editor în browser, cronometru comun probei și rezultate numai după terminarea examenului. Progresul simulării este separat de progresul cursului.
 
 Materia include HTML, formulare, media, MathML, CSS, responsive, animații, JavaScript, expresii regulate, date calendaristice, DOM, stocare, JSON, SCSS, Node, HTTP, Express, EJS și PostgreSQL. SQL include crearea tabelelor și tipurilor, constrângeri, chei străine, vectori, filtrare, agregare, relații între tabele și modificarea datelor.
 

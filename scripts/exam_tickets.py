@@ -26,11 +26,11 @@ def build_tickets(server_objectives):
     start = page.index('<section id="orar">')
     timetable = page[start:page.index('</section>', start)+10]
     # The original rowspan structure is retained; nth-child indexes differ per row.
-    base_style = '<style>body{font:16px Arial;padding:16px;color:#171923;background:white}table{border-collapse:collapse}td,th{border:1px solid #777;padding:8px}#words{display:flex;gap:8px}#words p{background:#456;color:white;padding:12px}#topics{list-style:none;padding:0}#topics li{padding:6px}.product{padding:12px;border:1px solid #aaa}#products{display:grid;gap:12px}</style>'
-    common = base_style+'<h1><span id="welcome">Bine ați venit</span></h1>'+timetable+'''
+    base_style = '<style>body{font:16px Arial;padding:16px;color:#e6e9f2;background:#10141f;color-scheme:dark}a{color:#b8adff}input,button,fieldset{color:inherit;background:#1b2232;border:1px solid #566079;border-radius:6px}button{padding:8px 14px}fieldset{margin:12px 0}label{margin-right:12px}#menu{padding:12px;background:#1b2232;border:1px solid #566079;border-radius:8px;margin-bottom:16px}#menu a{margin:0 8px}table{border-collapse:collapse}td,th{border:1px solid #566079;padding:8px}#words{display:flex;gap:8px}#words p{background:#456;color:white;padding:12px}#topics{list-style:none;padding:0}#topics li{padding:6px}.product{padding:12px;border:1px solid #566079}#products{display:grid;gap:12px}</style>'
+    common = base_style+'<nav id="menu" aria-label="Meniul paginii"><strong>Meniu:</strong> <a href="#orar">Orar</a><a href="#products">Produse</a></nav><h1><span id="welcome">Bine ați venit</span></h1>'+timetable+'''
 <p>Vă mulțumim că ne vizitați site-ul!</p><div id="words"><p>Plăcere</p><p>Bunătate</p><p>Prospețime</p><p>Pasiune</p><p>Sinceritate</p></div>
 <ol id="topics"><li>Ciocolată</li><li>Frișcă</li><li>Fructe</li><li>Dulceață</li><li>Înghețată</li><li>Regrete</li></ol>
-<nav id="menu"><a href="#orar">Orar</a><a href="#products">Produse</a></nav>
+
 <div id="products"><article class="product"><h2>Tort</h2><p class="price">80 lei</p></article><article class="product"><h2>Tartă</h2><p class="price">20 lei</p></article><article class="product"><h2>Ecler</h2><p class="price">12 lei</p></article></div>
 <a id="back" href="#welcome">Sus</a><div id="video"><nav><a href="#">Video 1</a><a href="#">Video 2</a></nav><iframe title="Video" src="about:blank"></iframe></div>'''
     def style_task(key, title, prompt, solution, tests, **extra):
@@ -52,7 +52,7 @@ def build_tickets(server_objectives):
     responsive = style_task('responsive','Catalog adaptabil','Pentru #products folosește Grid cu trei coloane egale de la 800px inclusiv, două între 500 și 799px și una sub 500px. Spațiul dintre produse este 12px. Fără modificarea HTML-ului.',
         '#products{display:grid;grid-template-columns:1fr;gap:12px}@media(min-width:500px){#products{grid-template-columns:repeat(2,1fr)}}@media(min-width:800px){#products{grid-template-columns:repeat(3,1fr)}}',
         [dict(kind='columns',selector='#products',count=3,viewport=900,label='Trei coloane la 900px'),dict(kind='columns',selector='#products',count=2,viewport=650,label='Două coloane la 650px'),dict(kind='columns',selector='#products',count=1,viewport=420,label='O coloană la 420px')])
-    fixed = style_task('fixed','Legătură fixă și meniu','Fixează #back la 100px de marginea de sus și 0px de stânga ferestrei, inclusiv când derulezi. Meniul #menu este Flex cu legături centrate și spațiu 16px între ele.',
+    fixed = style_task('fixed','Legătură fixă și meniu','Fixează #back la 100px de marginea de sus și 0px de stânga ferestrei, inclusiv când derulezi. În partea de sus a paginii furnizate, meniul este elementul nav cu id menu și legăturile Orar și Produse. Așază conținutul lui pe un rând folosind Flex, centrează-l pe orizontală și lasă 16px între elemente.',
         '#back{position:fixed;top:100px;left:0}#menu{display:flex;justify-content:center;gap:16px}',[prop('#back','position','fixed'),prop('#back','top','100px'),prop('#menu','justify-content','center'),prop('#menu','gap','16px')])
     cards = style_task('cards','Preț la hover și efect reversibil','Prețul .price din fiecare .product are opacity:0. La hover numai pe cardul respectiv apare cu opacity:1, gradual în 0.5 secunde. Cardul primește atunci contur outline solid blue de 2px, fără schimbarea dimensiunilor. Ieșirea ascunde din nou prețul gradual.',
         '.product .price{opacity:0;transition:opacity .5s}.product:hover .price{opacity:1}.product:hover{outline:2px solid blue}',
@@ -79,6 +79,7 @@ def build_tickets(server_objectives):
         item=deepcopy(source[key]);item.pop('lessonId',None);item['level']='Bilet practic';exercises.append(item)
     offers = next(x for x in exercises if x['id']=='exam-server-offers-time')['task']
     offers['prompt']='Completează fragmentul EJS al paginii principale: imediat după orarul furnizat afișează ofertele în ul, într-o secțiune cu id offers. Data fără oră apare roșie în time, cu luna în română din vectorul months; datetime păstrează valoarea ISO completă. Textul apare în dreapta datei. Dacă include Atentie (case-sensitive), îngroașă întregul text. Datele sunt citite din JSON și transmise template-ului.'
+    offers['fixture']=base_style+timetable
     offers['starter']=timetable+'\n<!-- Add the offers below the timetable. -->\n'
     offers['solution']=timetable+'\n<section id="offers">'+offers['solution']+'</section>'
     offers['data']['months']=['ianuarie','februarie','martie','aprilie','mai','iunie','iulie','august','septembrie','octombrie','noiembrie','decembrie']
@@ -155,4 +156,8 @@ def build_tickets(server_objectives):
 
         bonus=objective(key+'-bonus',title+' — memorarea opțiunii','bonus',bonus_task)
         ticket('client',number,title,[api,client],bonus)
+    from exam_fragments import focus_fragments
+    focus_fragments(exercises,common,base_style)
+    from exam_starters import prepare_starters
+    prepare_starters(exercises,base_style)
     return dict(version=2,sourceLabel='Bilete practice pe categorii.',tickets=tickets,exercises=exercises)

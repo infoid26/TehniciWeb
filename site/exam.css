@@ -109,4 +109,23 @@
 #simulation-intro > .exam-actions { justify-content:center; }
 #start-simulation { font-size:22px; padding:16px 32px; }
 
-.ticket-preview{display:block;width:100%;height:360px;border:0;background:white;border-radius:8px}
+.ticket-preview{display:block;width:100%;height:360px;border:0;background:#10141f;color-scheme:dark;border-radius:8px}
+
+/* A plain numbered exam ticket, kept readable in the site's dark theme. */
+#simulation-tasks { display:block; }
+.ticket-sheet { width:100%; max-width:940px; margin:24px auto; padding:32px 38px; border:1px solid #465064; border-radius:3px; background:#191f2b; color:#edf0f7; font-family:Arial,sans-serif; }
+.ticket-sheet-heading { padding-bottom:18px; border-bottom:1px solid #465064; }
+.ticket-sheet-heading h2 { margin:0; font-size:22px; line-height:1.5; font-weight:700; letter-spacing:0; }
+.ticket-sheet-heading h2 span { white-space:nowrap; }
+.ticket-requirements { list-style:none; counter-reset:ticket-question; padding:0; margin:26px 0 0; }
+.ticket-requirements li { display:flex; gap:12px; margin:0 0 26px; line-height:1.8; font-size:16px; }
+.ticket-requirements>li::before { content:counter(list-item) ")"; flex:0 0 24px; font-weight:700; }
+.ticket-requirements>li>div { min-width:0; }
+.ticket-requirements p { margin:0; line-height:1.8; }
+.ticket-requirements>li:last-child { margin-bottom:0; }
+.ticket-requirements .exercise-requirements { margin:12px 0 0; }
+.ticket-requirements .exercise-requirements li { display:list-item; margin:6px 0; }
+.ticket-materials { max-width:940px; margin:0 auto; }
+.ticket-material { margin:14px 0; border:1px solid var(--line); padding:16px; border-radius:10px; }
+.ticket-material>summary { cursor:pointer; color:var(--muted); font-size:14px; font-weight:600; }
+@media(max-width:650px){.ticket-sheet{padding:22px 18px}.ticket-sheet-heading h2{font-size:19px}.ticket-requirements li{font-size:15px;gap:6px}}

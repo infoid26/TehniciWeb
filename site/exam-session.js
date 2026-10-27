@@ -82,6 +82,8 @@
       }
       for(const id of stage.ids){
         if(typeof stage.answers?.[id]?.code!=='string'||typeof stage.answers[id].explanation!=='string')throw new Error('Răspuns salvat invalid.');
+        const task=exercises.find(item=>item.id===id).task;
+        if(index<3&&stage.endedAt===null&&task.previousStarters?.includes(stage.answers[id].code))stage.answers[id].code=task.starter;
       }
       if(stage.deadline!==null&&(!Number.isFinite(stage.deadline)||stage.deadline<0))throw new Error('Cronometru salvat invalid.');
     }

@@ -41,6 +41,12 @@
     if(task.requests)out+='<details class="exam-context"><summary>Cereri folosite pentru testare</summary>'+pre(task.requests.map(request=>(request.method||'GET')+' '+request.path).join('\n'))+'</details>';
     return out;
   }
+  function ticketHeading(){
+    return '<header class="ticket-sheet-heading"><h2>Biletul nr. '+stage().ticketNumber+' — '+esc(stage().name)+' <span>('+Math.round(stage().seconds/60)+' min)</span></h2></header>';
+  }
+  function ticketSheet(ids){
+    return '<article class="ticket-sheet" aria-label="Bilet de examen">'+ticketHeading()+'<ol class="ticket-requirements">'+ids.map(id=>'<li><div><p>'+esc(byId.get(id).task.prompt)+'</p>'+instructions(byId.get(id).task)+'</div></li>').join('')+'</ol></article>';
+  }
   function stage(){return state.stages[state.index];}
   function controls(){
     const phase=state.phase;
@@ -69,7 +75,10 @@
     $('#phase-instructions').textContent=messages[phase];
     const preparing=phase==='preparation';
     $('#simulation-tasks').hidden=!preparing;
-    $('#simulation-tasks').innerHTML=preparing?'<h2>'+esc(stage().name)+' · Biletul '+stage().ticketNumber+'</h2>'+stage().ids.map((id,index)=>'<article class="ticket-prompt"><h3>Cerința '+(index+1)+'</h3><p>'+esc(byId.get(id).task.prompt)+'</p>'+instructions(byId.get(id).task)+context(byId.get(id).task,index>0&&byId.get(id).task.fixture===byId.get(stage().ids[0]).task.fixture)+'</article>').join(''):'';
+    $('#simulation-tasks').innerHTML=preparing?ticketSheet(stage().ids)+'<div class="ticket-materials">'+stage().ids.map((id,index)=>{
+      const task=byId.get(id).task,content=context(task,index>0&&task.fixture===byId.get(stage().ids[0]).task.fixture);
+      return content?'<details class="ticket-material"><summary>Fragment și fișiere — cerința '+(index+1)+'</summary>'+content+'</details>':'';
+    }).join('')+'</div>':'';
     if(phase!=='working'){
       $('#exam-workspace').hidden=true;TW_EDITOR.clear();viewId='';
       if(phase==='submitted'){
@@ -105,7 +114,7 @@
     const file={html:'index.html',json:'data.json',css:'style.css',scss:'style.scss',dom:'app.js',js:'exercise.js',node:'exercise.js',express:'app.cjs',ejs:'page.ejs',sql:'query.sql'}[task.mode]||'answer.txt';
     const visual=['html','css','dom','ejs','scss'].includes(task.mode);
     const workspace=$('#exam-workspace');workspace.hidden=false;
-    workspace.innerHTML='<div class="exercise-heading"><div><span class="exam-tag">'+esc(stage().name)+' · Cerința '+(stage().ids.indexOf(id)+1)+'</span><h2>'+esc(item.title)+'</h2></div></div><p class="exam-prompt">'+esc(task.prompt)+'</p>'+instructions(task)+
+    workspace.innerHTML='<article class="ticket-sheet">'+ticketHeading()+'<ol class="ticket-requirements" start="'+(stage().ids.indexOf(id)+1)+'"><li><div><p>'+esc(task.prompt)+'</p>'+instructions(task)+'</div></li></ol></article>'+
       '<p class="exam-context-note">Fișierele și datele de mai jos sunt furnizate automat. Modifici numai <code>'+esc(file)+'</code> în editor. '+(state.phase==='preparation'?'Editorul se activează când începi proba.':'')+'</p>'+
       '<details class="exam-context"><summary>Fișierele și datele furnizate</summary>'+context(task)+'</details>'+
       '<div class="exam-editor-grid"><div class="exam-editor-panel"><h3>'+esc(file)+(writable?' · editor':' · doar citire')+'</h3><textarea id="exam-code" aria-label="Codul răspunsului" spellcheck="false" '+(writable?'':'readonly')+'>'+esc(row.code)+'</textarea></div><div class="exam-editor-panel"><h3>Rezultat</h3><div id="exam-result" class="exam-result" role="status">'+(state.phase==='submitted'?resultHTML(stage().results[id],true):'În timpul probei poți rula codul. Verificarea cerințelor se afișează după predare.')+'</div><iframe id="exam-preview" title="Rezultatul codului" sandbox="allow-scripts" hidden></iframe></div></div>'+

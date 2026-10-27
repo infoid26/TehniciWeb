@@ -51,15 +51,16 @@ console.log('PASS: account isolation, cross-device history, submission-only comp
 const examSource=await fs.readFile('site/exam.js','utf8');
 const examData=await fs.readFile('site/exam-data.js','utf8');
 const sessionSource=await fs.readFile('site/exam-session.js','utf8');
-const nodes=new Map(),uiStorage=new Map();let resolveDraw;
+const nodes=new Map(),uiStorage=new Map(),uiEvents=new Map();let resolveDraw;const previewFrames=[];
 const element=()=>({hidden:false,disabled:false,innerHTML:'',textContent:'',value:'',classList:{add(){},remove(){},toggle(){}},addEventListener(){}});
 const query=selector=>{if(!nodes.has(selector))nodes.set(selector,element());return nodes.get(selector);};
 const ui={
  window:{
+  addEventListener:(name,handler)=>uiEvents.set(name,handler),
   TW_ACCOUNTS:{mountHeader:async()=>({user:{id:'signed-user'}})},
   TW_EXAM_HISTORY:{create:()=>({ready:Promise.resolve({id:'signed-user'}),draw:()=>new Promise(resolve=>{resolveDraw=resolve;}),complete:async()=>{}})}
  },
- document:{querySelector:query,body:element()},
+ document:{querySelector:query,querySelectorAll:()=>previewFrames,body:element()},
  localStorage:{getItem:key=>uiStorage.get(key)||null,setItem:(key,value)=>uiStorage.set(key,value),removeItem:key=>uiStorage.delete(key)},
  TW_EDITOR:{clear(){},mount(){}},setInterval(){}
 };
@@ -79,4 +80,19 @@ const nextDraw=query('#draw-ticket').onclick();resolveDraw('css-120');await next
 const saved=JSON.parse(uiStorage.get('tw-infoid26-exam-simulation-v3:account:signed-user'));
 assert.equal(saved.stages[0].ticketId,'css-120','UI must use the ticket selected by the server');
 assert.equal(saved.stages[0].deadline-saved.stages[0].preparedAt,300000);
-console.log('PASS: shipped exam UI scopes saved attempts to the account, uses server-selected tickets, starts preparation after drawing and ignores cancelled asynchronous draws.');
+const ticketHTML=query('#simulation-tasks').innerHTML;
+assert.deepEqual([...ticketHTML.matchAll(/class="ticket-number">(\d+\))/g)].map(match=>match[1]),['1)','2)'],'Question numbers are explicit, independent of CSS counters');
+const secondQuestion=ticketHTML.indexOf('class="ticket-number">2)');
+assert(ticketHTML.indexOf('class="ticket-example"')<secondQuestion,'Each example immediately follows its own requirement');
+assert(!ticketHTML.includes('ticket-material')&&!ticketHTML.includes('Pagina furnizată'),'No repeated material panels');
+assert.equal([...ticketHTML.matchAll(/class="ticket-source"/g)].length,1,'The welcome animation needs no redundant HTML source');
+query('#begin-stage').onclick();query('#submit-stage').onclick();
+assert.deepEqual([...query('#exam-workspace').innerHTML.matchAll(/class="ticket-number">(\d+\))/g)].map(match=>match[1]),['2)'],'Second question keeps its number while working');
+const frameWindow={},preview={dataset:{ticketPreview:'ticket-css-focus'},contentWindow:frameWindow,style:{},getBoundingClientRect:()=>({height:360})};previewFrames.push(preview);
+const message=uiEvents.get('message');
+message({source:{},data:{type:'tw-ticket-size',id:'ticket-css-focus',height:90}});assert.equal(preview.style.height,undefined,'Ignore sizing messages from unrelated frames');
+message({source:frameWindow,data:{type:'tw-ticket-size',id:'ticket-css-focus',height:90}});assert.equal(preview.style.height,'90px','Compact examples must shrink to their content');
+query('#finish-attempt').onclick();query('#start-simulation').onclick();
+const drawBadge=query('#draw-ticket').onclick();resolveDraw('css-117');await drawBadge;
+assert(query('#simulation-tasks').innerHTML.includes('„Tort”'),'Badge statement names the product and requested result');
+console.log('PASS: shipped exam UI; account-scoped attempts; safe asynchronous draw; 1)/2) numbering; illustrations beneath each question; conditional HTML source; content-sized frames; clear badge statement.');

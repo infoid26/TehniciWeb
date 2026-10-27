@@ -3967,7 +3967,10 @@ window.TW_EXAM = {
         "previousStarters": [
           "",
           "body {\n  font:16px Arial;\n  padding:16px;\n  color:#e6e9f2;\n  background:#10141f;\n  color-scheme:dark;\n}\n\na {\n  color:#b8adff;\n}\n\ninput,button,fieldset {\n  color:inherit;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:6px;\n}\n\nbutton {\n  padding:8px 14px;\n}\n\nfieldset {\n  margin:12px 0;\n}\n\nlabel {\n  margin-right:12px;\n}\n\n#menu {\n  padding:12px;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:8px;\n  margin-bottom:16px;\n}\n\n#menu a {\n  margin:0 8px;\n}\n\ntable {\n  border-collapse:collapse;\n}\n\ntd,th {\n  border:1px solid #566079;\n  padding:8px;\n}\n\n#words {\n  display:flex;\n  gap:8px;\n}\n\n#words p {\n  background:#456;\n  color:white;\n  padding:12px;\n}\n\n#topics {\n  list-style:none;\n  padding:0;\n}\n\n#topics li {\n  padding:6px;\n}\n\n.product {\n  padding:12px;\n  border:1px solid #566079;\n}\n\n#products {\n  display:grid;\n  gap:12px;\n}\n\n/* Add or change the rules required by the ticket below. */\n"
-        ]
+        ],
+        "exampleLabel": "Exemplu de rezultat",
+        "previewHeight": 100,
+        "exampleCss": "#welcome{display:inline-block;transition:transform 1s}#welcome:hover{transform:scale(2)}\n#welcome{transform:scale(2);transform-origin:left top}"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -4013,7 +4016,10 @@ window.TW_EXAM = {
         "previousStarters": [
           "",
           "body {\n  font:16px Arial;\n  padding:16px;\n  color:#e6e9f2;\n  background:#10141f;\n  color-scheme:dark;\n}\n\na {\n  color:#b8adff;\n}\n\ninput,button,fieldset {\n  color:inherit;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:6px;\n}\n\nbutton {\n  padding:8px 14px;\n}\n\nfieldset {\n  margin:12px 0;\n}\n\nlabel {\n  margin-right:12px;\n}\n\n#menu {\n  padding:12px;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:8px;\n  margin-bottom:16px;\n}\n\n#menu a {\n  margin:0 8px;\n}\n\ntable {\n  border-collapse:collapse;\n}\n\ntd,th {\n  border:1px solid #566079;\n  padding:8px;\n}\n\n#words {\n  display:flex;\n  gap:8px;\n}\n\n#words p {\n  background:#456;\n  color:white;\n  padding:12px;\n}\n\n#topics {\n  list-style:none;\n  padding:0;\n}\n\n#topics li {\n  padding:6px;\n}\n\n.product {\n  padding:12px;\n  border:1px solid #566079;\n}\n\n#products {\n  display:grid;\n  gap:12px;\n}\n\n/* Add or change the rules required by the ticket below. */\n"
-        ]
+        ],
+        "exampleLabel": "Exemplu de rezultat",
+        "previewHeight": 160,
+        "exampleCss": "#topics{display:grid;grid-template-rows:repeat(3,auto);grid-auto-flow:column;counter-reset:item}#topics li{counter-increment:item}#topics li::after{content:\" (\" counter(item) \")\"}"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -4143,7 +4149,11 @@ window.TW_EXAM = {
         "previousStarters": [
           "",
           "body {\n  font:16px Arial;\n  padding:16px;\n  color:#e6e9f2;\n  background:#10141f;\n  color-scheme:dark;\n}\n\na {\n  color:#b8adff;\n}\n\ninput,button,fieldset {\n  color:inherit;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:6px;\n}\n\nbutton {\n  padding:8px 14px;\n}\n\nfieldset {\n  margin:12px 0;\n}\n\nlabel {\n  margin-right:12px;\n}\n\n#menu {\n  padding:12px;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:8px;\n  margin-bottom:16px;\n}\n\n#menu a {\n  margin:0 8px;\n}\n\ntable {\n  border-collapse:collapse;\n}\n\ntd,th {\n  border:1px solid #566079;\n  padding:8px;\n}\n\n#words {\n  display:flex;\n  gap:8px;\n}\n\n#words p {\n  background:#456;\n  color:white;\n  padding:12px;\n}\n\n#topics {\n  list-style:none;\n  padding:0;\n}\n\n#topics li {\n  padding:6px;\n}\n\n.product {\n  padding:12px;\n  border:1px solid #566079;\n}\n\n#products {\n  display:grid;\n  gap:12px;\n}\n\n/* Add or change the rules required by the ticket below. */\n"
-        ]
+        ],
+        "exampleLabel": "Exemplu de rezultat",
+        "previewHeight": 420,
+        "exampleCss": "#tab-orar tbody tr:first-child td:nth-child(3):hover ~ td:nth-child(4),#tab-orar tbody tr:first-child td:nth-child(3):hover ~ td:nth-child(6),#tab-orar tbody tr:nth-child(n+2):nth-child(-n+3) td:nth-child(2):hover ~ td:nth-child(3),#tab-orar tbody tr:nth-child(n+2):nth-child(-n+3) td:nth-child(2):hover ~ td:nth-child(5){background-color:blue}\n#tab-orar tbody tr:nth-child(2) td:nth-child(3){background-color:rgb(0, 0, 255)!important}\n#tab-orar tbody tr:nth-child(2) td:nth-child(5){background-color:rgb(0, 0, 255)!important}\n#tab-orar tbody tr:nth-child(2) td:nth-child(4){background-color:rgba(0, 0, 0, 0)!important}",
+        "referenceHtml": "<section id=\"orar\">\n<h2>Orar</h2>\n<table id=\"tab-orar\">\n<thead>\n<tr>\n<th>Cod</th>\n<th>Perioadă</th>\n<th>Zi</th>\n<th>Interval dimineata</th>\n<th>Pauza de masa</th>\n<th>Interval seară</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>\n</td>\n<td rowspan=\"5\">Zile<br/>Lucrătoare</td>\n<td>Luni</td>\n<td>10-12</td>\n<td>12-14</td>\n<td>14-20</td>\n</tr>\n<tr>\n<td>\n</td>\n<td>Marti</td>\n<td>9-12</td>\n<td>12-14</td>\n<td>14-21</td>\n</tr>\n<tr>\n<td>\n</td>\n<td>Miercuri</td>\n<td>9-11</td>\n<td>11-13</td>\n<td>14-21</td>\n</tr>\n<tr>\n<td>\n</td>\n<td>Joi</td>\n<td>9-11</td>\n<td>11-13</td>\n<td>14-21</td>\n</tr>\n<tr>\n<td>\n</td>\n<td>Vineri</td>\n<td>9-12</td>\n<td>12-14</td>\n<td>14-19</td>\n</tr>\n<tr>\n<td>\n</td>\n<td rowspan=\"2\">Weekend</td>\n<td>Sambata</td>\n<td>10-12</td>\n<td>12-13</td>\n<td>13-16</td>\n</tr>\n<tr>\n<td>\n</td>\n<td>Duminica</td>\n<td>10-14</td>\n<td>-</td>\n<td>inchis</td>\n</tr>\n</tbody>\n</table>\n<p>\n<strong>Atentie!!!</strong> in prima zi a lunii facem inventar.</p>\n</section>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -4203,7 +4213,10 @@ window.TW_EXAM = {
         "previousStarters": [
           "",
           "body {\n  font:16px Arial;\n  padding:16px;\n  color:#e6e9f2;\n  background:#10141f;\n  color-scheme:dark;\n}\n\na {\n  color:#b8adff;\n}\n\ninput,button,fieldset {\n  color:inherit;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:6px;\n}\n\nbutton {\n  padding:8px 14px;\n}\n\nfieldset {\n  margin:12px 0;\n}\n\nlabel {\n  margin-right:12px;\n}\n\n#menu {\n  padding:12px;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:8px;\n  margin-bottom:16px;\n}\n\n#menu a {\n  margin:0 8px;\n}\n\ntable {\n  border-collapse:collapse;\n}\n\ntd,th {\n  border:1px solid #566079;\n  padding:8px;\n}\n\n#words {\n  display:flex;\n  gap:8px;\n}\n\n#words p {\n  background:#456;\n  color:white;\n  padding:12px;\n}\n\n#topics {\n  list-style:none;\n  padding:0;\n}\n\n#topics li {\n  padding:6px;\n}\n\n.product {\n  padding:12px;\n  border:1px solid #566079;\n}\n\n#products {\n  display:grid;\n  gap:12px;\n}\n\n/* Add or change the rules required by the ticket below. */\n"
-        ]
+        ],
+        "exampleLabel": "Exemplu de rezultat",
+        "previewHeight": 110,
+        "exampleCss": "#words p{font-size:16px;border-radius:0 0 16px 16px}#words p:nth-child(even){transform:scaleX(.5)}#words p::first-letter{font-size:32px}"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -4255,7 +4268,10 @@ window.TW_EXAM = {
         "previousStarters": [
           "",
           "body {\n  font:16px Arial;\n  padding:16px;\n  color:#e6e9f2;\n  background:#10141f;\n  color-scheme:dark;\n}\n\na {\n  color:#b8adff;\n}\n\ninput,button,fieldset {\n  color:inherit;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:6px;\n}\n\nbutton {\n  padding:8px 14px;\n}\n\nfieldset {\n  margin:12px 0;\n}\n\nlabel {\n  margin-right:12px;\n}\n\n#menu {\n  padding:12px;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:8px;\n  margin-bottom:16px;\n}\n\n#menu a {\n  margin:0 8px;\n}\n\ntable {\n  border-collapse:collapse;\n}\n\ntd,th {\n  border:1px solid #566079;\n  padding:8px;\n}\n\n#words {\n  display:flex;\n  gap:8px;\n}\n\n#words p {\n  background:#456;\n  color:white;\n  padding:12px;\n}\n\n#topics {\n  list-style:none;\n  padding:0;\n}\n\n#topics li {\n  padding:6px;\n}\n\n.product {\n  padding:12px;\n  border:1px solid #566079;\n}\n\n#products {\n  display:grid;\n  gap:12px;\n}\n\n/* Add or change the rules required by the ticket below. */\n"
-        ]
+        ],
+        "exampleLabel": "Exemplu de rezultat",
+        "previewHeight": 200,
+        "exampleCss": "#products{display:grid;grid-template-columns:1fr;gap:12px}@media(min-width:500px){#products{grid-template-columns:repeat(2,1fr)}}@media(min-width:800px){#products{grid-template-columns:repeat(3,1fr)}}"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -4275,7 +4291,7 @@ window.TW_EXAM = {
       "level": "Bilet practic",
       "task": {
         "mode": "css",
-        "prompt": "Fixează #back la 100px de marginea de sus și 0px de stânga ferestrei, inclusiv când derulezi. În partea de sus a paginii furnizate, meniul este elementul nav cu id menu și legăturile Orar și Produse. Așază conținutul lui pe un rând folosind Flex, centrează-l pe orizontală și lasă 16px între elemente.",
+        "prompt": "În fragmentul de mai jos există meniul cu legăturile „Orar” și „Produse” și legătura „Sus” (#back). Modificați CSS-ul astfel încât „Sus” să rămână la 100px de partea de sus și la 0px de marginea stângă a ferestrei, inclusiv la derulare. Așezați elementele meniului #menu pe un rând, centrate pe orizontală, cu 16px între ele.",
         "solution": "#back{position:fixed;top:100px;left:0}#menu{display:flex;justify-content:center;gap:16px}",
         "fixture": "<style>body{font:16px Arial;padding:16px;color:#e6e9f2;background:#10141f;color-scheme:dark}a{color:#b8adff}#menu{padding:12px;background:#1b2232;border:1px solid #566079;border-radius:8px;margin-bottom:16px}#menu a{margin:0 8px}</style>\n<nav id=\"menu\" aria-label=\"Meniul paginii\"><strong>Meniu:</strong> <a href=\"#orar\">Orar</a><a href=\"#products\">Produse</a></nav>\n<a id=\"back\" href=\"#welcome\">Sus</a>",
         "tests": [
@@ -4314,7 +4330,10 @@ window.TW_EXAM = {
         "previousStarters": [
           "",
           "body {\n  font:16px Arial;\n  padding:16px;\n  color:#e6e9f2;\n  background:#10141f;\n  color-scheme:dark;\n}\n\na {\n  color:#b8adff;\n}\n\ninput,button,fieldset {\n  color:inherit;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:6px;\n}\n\nbutton {\n  padding:8px 14px;\n}\n\nfieldset {\n  margin:12px 0;\n}\n\nlabel {\n  margin-right:12px;\n}\n\n#menu {\n  padding:12px;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:8px;\n  margin-bottom:16px;\n}\n\n#menu a {\n  margin:0 8px;\n}\n\ntable {\n  border-collapse:collapse;\n}\n\ntd,th {\n  border:1px solid #566079;\n  padding:8px;\n}\n\n#words {\n  display:flex;\n  gap:8px;\n}\n\n#words p {\n  background:#456;\n  color:white;\n  padding:12px;\n}\n\n#topics {\n  list-style:none;\n  padding:0;\n}\n\n#topics li {\n  padding:6px;\n}\n\n.product {\n  padding:12px;\n  border:1px solid #566079;\n}\n\n#products {\n  display:grid;\n  gap:12px;\n}\n\n/* Add or change the rules required by the ticket below. */\n"
-        ]
+        ],
+        "exampleLabel": "Exemplu de rezultat",
+        "previewHeight": 150,
+        "exampleCss": "#back{position:fixed;top:100px;left:0}#menu{display:flex;justify-content:center;gap:16px}"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -4381,7 +4400,10 @@ window.TW_EXAM = {
         "previousStarters": [
           "",
           "body {\n  font:16px Arial;\n  padding:16px;\n  color:#e6e9f2;\n  background:#10141f;\n  color-scheme:dark;\n}\n\na {\n  color:#b8adff;\n}\n\ninput,button,fieldset {\n  color:inherit;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:6px;\n}\n\nbutton {\n  padding:8px 14px;\n}\n\nfieldset {\n  margin:12px 0;\n}\n\nlabel {\n  margin-right:12px;\n}\n\n#menu {\n  padding:12px;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:8px;\n  margin-bottom:16px;\n}\n\n#menu a {\n  margin:0 8px;\n}\n\ntable {\n  border-collapse:collapse;\n}\n\ntd,th {\n  border:1px solid #566079;\n  padding:8px;\n}\n\n#words {\n  display:flex;\n  gap:8px;\n}\n\n#words p {\n  background:#456;\n  color:white;\n  padding:12px;\n}\n\n#topics {\n  list-style:none;\n  padding:0;\n}\n\n#topics li {\n  padding:6px;\n}\n\n.product {\n  padding:12px;\n  border:1px solid #566079;\n}\n\n#products {\n  display:grid;\n  gap:12px;\n}\n\n/* Add or change the rules required by the ticket below. */\n"
-        ]
+        ],
+        "exampleLabel": "Exemplu de rezultat",
+        "previewHeight": 480,
+        "exampleCss": ".product .price{opacity:0;transition:opacity .5s}.product:hover .price{opacity:1}.product:hover{outline:2px solid blue}\n.product:first-child .price{opacity:1!important}\n.product:first-child{outline-width:2px!important}"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -4440,7 +4462,10 @@ window.TW_EXAM = {
         "previousStarters": [
           "",
           "body {\n  font:16px Arial;\n  padding:16px;\n  color:#e6e9f2;\n  background:#10141f;\n  color-scheme:dark;\n}\n\na {\n  color:#b8adff;\n}\n\ninput,button,fieldset {\n  color:inherit;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:6px;\n}\n\nbutton {\n  padding:8px 14px;\n}\n\nfieldset {\n  margin:12px 0;\n}\n\nlabel {\n  margin-right:12px;\n}\n\n#menu {\n  padding:12px;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:8px;\n  margin-bottom:16px;\n}\n\n#menu a {\n  margin:0 8px;\n}\n\ntable {\n  border-collapse:collapse;\n}\n\ntd,th {\n  border:1px solid #566079;\n  padding:8px;\n}\n\n#words {\n  display:flex;\n  gap:8px;\n}\n\n#words p {\n  background:#456;\n  color:white;\n  padding:12px;\n}\n\n#topics {\n  list-style:none;\n  padding:0;\n}\n\n#topics li {\n  padding:6px;\n}\n\n.product {\n  padding:12px;\n  border:1px solid #566079;\n}\n\n#products {\n  display:grid;\n  gap:12px;\n}\n\n/* Add or change the rules required by the ticket below. */\n"
-        ]
+        ],
+        "exampleLabel": "Exemplu de rezultat",
+        "previewHeight": 230,
+        "exampleCss": "#video{width:560px;max-width:100%}#video iframe{width:100%}#video nav{display:flex;justify-content:center;gap:12px}"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -4481,7 +4506,10 @@ window.TW_EXAM = {
         "previousStarters": [
           "",
           "body {\n  font:16px Arial;\n  padding:16px;\n  color:#e6e9f2;\n  background:#10141f;\n  color-scheme:dark;\n}\n\na {\n  color:#b8adff;\n}\n\ninput,button,fieldset {\n  color:inherit;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:6px;\n}\n\nbutton {\n  padding:8px 14px;\n}\n\nfieldset {\n  margin:12px 0;\n}\n\nlabel {\n  margin-right:12px;\n}\n\n#menu {\n  padding:12px;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:8px;\n  margin-bottom:16px;\n}\n\n#menu a {\n  margin:0 8px;\n}\n\ntable {\n  border-collapse:collapse;\n}\n\ntd,th {\n  border:1px solid #566079;\n  padding:8px;\n}\n\n#words {\n  display:flex;\n  gap:8px;\n}\n\n#words p {\n  background:#456;\n  color:white;\n  padding:12px;\n}\n\n#topics {\n  list-style:none;\n  padding:0;\n}\n\n#topics li {\n  padding:6px;\n}\n\n.product {\n  padding:12px;\n  border:1px solid #566079;\n}\n\n#products {\n  display:grid;\n  gap:12px;\n}\n\n/* Add or change the rules required by the ticket below. */\n"
-        ]
+        ],
+        "exampleLabel": "Exemplu la imprimare",
+        "previewHeight": 450,
+        "exampleCss": "@media print{#menu,#back,#video{display:none!important}#products{display:block}body{color:black;background:white}}\n#menu,#back,#video{display:none!important}#products{display:block}body{color:black;background:white}"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -4529,7 +4557,10 @@ window.TW_EXAM = {
         "previousStarters": [
           "",
           "body {\n  font:16px Arial;\n  padding:16px;\n  color:#e6e9f2;\n  background:#10141f;\n  color-scheme:dark;\n}\n\na {\n  color:#b8adff;\n}\n\ninput,button,fieldset {\n  color:inherit;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:6px;\n}\n\nbutton {\n  padding:8px 14px;\n}\n\nfieldset {\n  margin:12px 0;\n}\n\nlabel {\n  margin-right:12px;\n}\n\n#menu {\n  padding:12px;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:8px;\n  margin-bottom:16px;\n}\n\n#menu a {\n  margin:0 8px;\n}\n\ntable {\n  border-collapse:collapse;\n}\n\ntd,th {\n  border:1px solid #566079;\n  padding:8px;\n}\n\n#words {\n  display:flex;\n  gap:8px;\n}\n\n#words p {\n  background:#456;\n  color:white;\n  padding:12px;\n}\n\n#topics {\n  list-style:none;\n  padding:0;\n}\n\n#topics li {\n  padding:6px;\n}\n\n.product {\n  padding:12px;\n  border:1px solid #566079;\n}\n\n#products {\n  display:grid;\n  gap:12px;\n}\n\n/* Add or change the rules required by the ticket below. */\n"
-        ]
+        ],
+        "exampleLabel": "Exemplu de rezultat",
+        "previewHeight": 110,
+        "exampleCss": "#menu a{padding:8px 16px;text-decoration:none}#menu a:focus-visible{outline:3px solid blue;outline-offset:4px}\n#menu a:first-of-type{outline:3px solid blue;outline-offset:4px}"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -4588,7 +4619,10 @@ window.TW_EXAM = {
         "previousStarters": [
           "",
           "body {\n  font:16px Arial;\n  padding:16px;\n  color:#e6e9f2;\n  background:#10141f;\n  color-scheme:dark;\n}\n\na {\n  color:#b8adff;\n}\n\ninput,button,fieldset {\n  color:inherit;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:6px;\n}\n\nbutton {\n  padding:8px 14px;\n}\n\nfieldset {\n  margin:12px 0;\n}\n\nlabel {\n  margin-right:12px;\n}\n\n#menu {\n  padding:12px;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:8px;\n  margin-bottom:16px;\n}\n\n#menu a {\n  margin:0 8px;\n}\n\ntable {\n  border-collapse:collapse;\n}\n\ntd,th {\n  border:1px solid #566079;\n  padding:8px;\n}\n\n#words {\n  display:flex;\n  gap:8px;\n}\n\n#words p {\n  background:#456;\n  color:white;\n  padding:12px;\n}\n\n#topics {\n  list-style:none;\n  padding:0;\n}\n\n#topics li {\n  padding:6px;\n}\n\n.product {\n  padding:12px;\n  border:1px solid #566079;\n}\n\n#products {\n  display:grid;\n  gap:12px;\n}\n\n/* Add or change the rules required by the ticket below. */\n"
-        ]
+        ],
+        "exampleLabel": "Exemplu de rezultat",
+        "previewHeight": 540,
+        "exampleCss": "#menu{position:sticky;top:0;z-index:10;background:white}.product{padding:16px;box-sizing:border-box}"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -4640,7 +4674,10 @@ window.TW_EXAM = {
         "previousStarters": [
           "",
           "body {\n  font:16px Arial;\n  padding:16px;\n  color:#e6e9f2;\n  background:#10141f;\n  color-scheme:dark;\n}\n\na {\n  color:#b8adff;\n}\n\ninput,button,fieldset {\n  color:inherit;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:6px;\n}\n\nbutton {\n  padding:8px 14px;\n}\n\nfieldset {\n  margin:12px 0;\n}\n\nlabel {\n  margin-right:12px;\n}\n\n#menu {\n  padding:12px;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:8px;\n  margin-bottom:16px;\n}\n\n#menu a {\n  margin:0 8px;\n}\n\ntable {\n  border-collapse:collapse;\n}\n\ntd,th {\n  border:1px solid #566079;\n  padding:8px;\n}\n\n#words {\n  display:flex;\n  gap:8px;\n}\n\n#words p {\n  background:#456;\n  color:white;\n  padding:12px;\n}\n\n#topics {\n  list-style:none;\n  padding:0;\n}\n\n#topics li {\n  padding:6px;\n}\n\n.product {\n  padding:12px;\n  border:1px solid #566079;\n}\n\n#products {\n  display:grid;\n  gap:12px;\n}\n\n/* Add or change the rules required by the ticket below. */\n"
-        ]
+        ],
+        "exampleLabel": "Exemplu de rezultat",
+        "previewHeight": 420,
+        "exampleCss": "#tab-orar{border-collapse:collapse}#tab-orar tbody tr:nth-child(even){background:#eee}#tab-orar tbody tr:nth-child(odd){background:white}#tab-orar thead{background:navy;color:white}#tab-orar td,#tab-orar th{padding:8px}"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -4660,7 +4697,7 @@ window.TW_EXAM = {
       "level": "Bilet practic",
       "task": {
         "mode": "css",
-        "prompt": "Numai primul produs primește textul Nou în ::before. Cardul devine position:relative, iar eticheta este absolute la top:0 și right:0, cu fundal navy și text alb. Fără element HTML nou.",
+        "prompt": "În catalogul de mai jos, modificați doar CSS-ul astfel încât primul produs, „Tort”, să primească eticheta „Nou” în colțul din dreapta sus al propriului card, ca în exemplu. Eticheta are fundal navy și text alb; celelalte două produse nu primesc etichetă. Generați textul prin ::before, fără să adăugați elemente HTML. Poziționați eticheta față de card, nu față de fereastra browserului.",
         "solution": ".product:first-child{position:relative}.product:first-child::before{content:\"Nou\";position:absolute;top:0;right:0;background:navy;color:white}",
         "fixture": "<style>body{font:16px Arial;padding:16px;color:#e6e9f2;background:#10141f;color-scheme:dark}.product{padding:12px;border:1px solid #566079}#products{display:grid;gap:12px}</style>\n<div id=\"products\"><article class=\"product\"><h2>Tort</h2><p class=\"price\">80 lei</p></article><article class=\"product\"><h2>Tartă</h2><p class=\"price\">20 lei</p></article><article class=\"product\"><h2>Ecler</h2><p class=\"price\">12 lei</p></article></div>",
         "tests": [
@@ -4686,7 +4723,11 @@ window.TW_EXAM = {
         "previousStarters": [
           "",
           "body {\n  font:16px Arial;\n  padding:16px;\n  color:#e6e9f2;\n  background:#10141f;\n  color-scheme:dark;\n}\n\na {\n  color:#b8adff;\n}\n\ninput,button,fieldset {\n  color:inherit;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:6px;\n}\n\nbutton {\n  padding:8px 14px;\n}\n\nfieldset {\n  margin:12px 0;\n}\n\nlabel {\n  margin-right:12px;\n}\n\n#menu {\n  padding:12px;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:8px;\n  margin-bottom:16px;\n}\n\n#menu a {\n  margin:0 8px;\n}\n\ntable {\n  border-collapse:collapse;\n}\n\ntd,th {\n  border:1px solid #566079;\n  padding:8px;\n}\n\n#words {\n  display:flex;\n  gap:8px;\n}\n\n#words p {\n  background:#456;\n  color:white;\n  padding:12px;\n}\n\n#topics {\n  list-style:none;\n  padding:0;\n}\n\n#topics li {\n  padding:6px;\n}\n\n.product {\n  padding:12px;\n  border:1px solid #566079;\n}\n\n#products {\n  display:grid;\n  gap:12px;\n}\n\n/* Add or change the rules required by the ticket below. */\n"
-        ]
+        ],
+        "exampleLabel": "Exemplu de rezultat",
+        "previewHeight": 480,
+        "exampleCss": ".product:first-child{position:relative}.product:first-child::before{content:\"Nou\";position:absolute;top:0;right:0;background:navy;color:white}",
+        "referenceHtml": "<div id=\"products\">\n<article class=\"product\">\n<h2>Tort</h2>\n<p class=\"price\">80 lei</p>\n</article>\n<article class=\"product\">\n<h2>Tartă</h2>\n<p class=\"price\">20 lei</p>\n</article>\n<article class=\"product\">\n<h2>Ecler</h2>\n<p class=\"price\">12 lei</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -4740,7 +4781,11 @@ window.TW_EXAM = {
         "previousStarters": [
           "",
           "body {\n  font:16px Arial;\n  padding:16px;\n  color:#e6e9f2;\n  background:#10141f;\n  color-scheme:dark;\n}\n\na {\n  color:#b8adff;\n}\n\ninput,button,fieldset {\n  color:inherit;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:6px;\n}\n\nbutton {\n  padding:8px 14px;\n}\n\nfieldset {\n  margin:12px 0;\n}\n\nlabel {\n  margin-right:12px;\n}\n\n#menu {\n  padding:12px;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:8px;\n  margin-bottom:16px;\n}\n\n#menu a {\n  margin:0 8px;\n}\n\ntable {\n  border-collapse:collapse;\n}\n\ntd,th {\n  border:1px solid #566079;\n  padding:8px;\n}\n\n#words {\n  display:flex;\n  gap:8px;\n}\n\n#words p {\n  background:#456;\n  color:white;\n  padding:12px;\n}\n\n#topics {\n  list-style:none;\n  padding:0;\n}\n\n#topics li {\n  padding:6px;\n}\n\n.product {\n  padding:12px;\n  border:1px solid #566079;\n}\n\n#products {\n  display:grid;\n  gap:12px;\n}\n\n/* Add or change the rules required by the ticket below. */\n"
-        ]
+        ],
+        "exampleLabel": "Exemplu de rezultat",
+        "previewHeight": 200,
+        "exampleCss": "#products{display:flex;flex-direction:column}.product:last-child{order:-1}@media(min-width:800px){#products{flex-direction:row}}",
+        "referenceHtml": "<div id=\"products\">\n<article class=\"product\">\n<h2>Tort</h2>\n<p class=\"price\">80 lei</p>\n</article>\n<article class=\"product\">\n<h2>Tartă</h2>\n<p class=\"price\">20 lei</p>\n</article>\n<article class=\"product\">\n<h2>Ecler</h2>\n<p class=\"price\">12 lei</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -4790,7 +4835,11 @@ window.TW_EXAM = {
         "previousStarters": [
           "",
           "body {\n  font:16px Arial;\n  padding:16px;\n  color:#e6e9f2;\n  background:#10141f;\n  color-scheme:dark;\n}\n\na {\n  color:#b8adff;\n}\n\ninput,button,fieldset {\n  color:inherit;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:6px;\n}\n\nbutton {\n  padding:8px 14px;\n}\n\nfieldset {\n  margin:12px 0;\n}\n\nlabel {\n  margin-right:12px;\n}\n\n#menu {\n  padding:12px;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:8px;\n  margin-bottom:16px;\n}\n\n#menu a {\n  margin:0 8px;\n}\n\ntable {\n  border-collapse:collapse;\n}\n\ntd,th {\n  border:1px solid #566079;\n  padding:8px;\n}\n\n#words {\n  display:flex;\n  gap:8px;\n}\n\n#words p {\n  background:#456;\n  color:white;\n  padding:12px;\n}\n\n#topics {\n  list-style:none;\n  padding:0;\n}\n\n#topics li {\n  padding:6px;\n}\n\n.product {\n  padding:12px;\n  border:1px solid #566079;\n}\n\n#products {\n  display:grid;\n  gap:12px;\n}\n\n/* Add or change the rules required by the ticket below. */\n"
-        ]
+        ],
+        "exampleLabel": "Exemplu de rezultat",
+        "previewHeight": 550,
+        "exampleCss": ":root{--accent:navy;--card-gap:20px}.product h2{color:var(--accent)}#menu{background:var(--accent);color:white}#products{gap:var(--card-gap)}",
+        "referenceHtml": "<nav id=\"menu\" aria-label=\"Meniul paginii\">\n<strong>Meniu:</strong>\n<a href=\"#orar\">Orar</a>\n<a href=\"#products\">Produse</a>\n</nav>\n<div id=\"products\">\n<article class=\"product\">\n<h2>Tort</h2>\n<p class=\"price\">80 lei</p>\n</article>\n<article class=\"product\">\n<h2>Tartă</h2>\n<p class=\"price\">20 lei</p>\n</article>\n<article class=\"product\">\n<h2>Ecler</h2>\n<p class=\"price\">12 lei</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -4810,7 +4859,7 @@ window.TW_EXAM = {
       "level": "Bilet practic",
       "task": {
         "mode": "css",
-        "prompt": "Animează #welcome continuu: în 2 secunde opacity trece de la 1 la 0.4 și înapoi prin alternate. Numește animația welcomePulse, cu timing linear și infinite. Nu aplica efectul întregului h1.",
+        "prompt": "Faceți ca textul „Bine ați venit” de mai jos să devină treptat mai transparent, de la opacity: 1 la 0.4, apoi să revină la opacitatea inițială. Fiecare trecere durează 2 secunde, este liniară și se repetă continuu, alternând sensul. Numiți animația welcomePulse și aplicați-o numai elementului #welcome, nu întregului h1.",
         "solution": "@keyframes welcomePulse{from{opacity:1}to{opacity:.4}}#welcome{animation:welcomePulse 2s linear infinite alternate}",
         "fixture": "<style>body{font:16px Arial;padding:16px;color:#e6e9f2;background:#10141f;color-scheme:dark}</style>\n<h1><span id=\"welcome\">Bine ați venit</span></h1>",
         "tests": [
@@ -4849,7 +4898,10 @@ window.TW_EXAM = {
         "previousStarters": [
           "",
           "body {\n  font:16px Arial;\n  padding:16px;\n  color:#e6e9f2;\n  background:#10141f;\n  color-scheme:dark;\n}\n\na {\n  color:#b8adff;\n}\n\ninput,button,fieldset {\n  color:inherit;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:6px;\n}\n\nbutton {\n  padding:8px 14px;\n}\n\nfieldset {\n  margin:12px 0;\n}\n\nlabel {\n  margin-right:12px;\n}\n\n#menu {\n  padding:12px;\n  background:#1b2232;\n  border:1px solid #566079;\n  border-radius:8px;\n  margin-bottom:16px;\n}\n\n#menu a {\n  margin:0 8px;\n}\n\ntable {\n  border-collapse:collapse;\n}\n\ntd,th {\n  border:1px solid #566079;\n  padding:8px;\n}\n\n#words {\n  display:flex;\n  gap:8px;\n}\n\n#words p {\n  background:#456;\n  color:white;\n  padding:12px;\n}\n\n#topics {\n  list-style:none;\n  padding:0;\n}\n\n#topics li {\n  padding:6px;\n}\n\n.product {\n  padding:12px;\n  border:1px solid #566079;\n}\n\n#products {\n  display:grid;\n  gap:12px;\n}\n\n/* Add or change the rules required by the ticket below. */\n"
-        ]
+        ],
+        "exampleLabel": "Exemplu de rezultat",
+        "previewHeight": 100,
+        "exampleCss": "@keyframes welcomePulse{from{opacity:1}to{opacity:.4}}#welcome{animation:welcomePulse 2s linear infinite alternate}"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -5020,7 +5072,9 @@ window.TW_EXAM = {
         "contextLabel": "oferte.json — date furnizate template-ului",
         "previousStarters": [
           "<section id=\"orar\">\n                <h2>Orar</h2>\n                <table id=\"tab-orar\">\n                    <thead>\n\n                        <tr>\n                            <th>Cod</th>\n                            <th>Perioadă</th>\n                            <th>Zi</th>\n                            <th>Interval dimineata</th>\n                            <th>Pauza de masa</th>\n                            <th>Interval seară</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr>\n                            <td></td>\n                            <td rowspan=\"5\">Zile<br/>Lucrătoare</td>\n                            <td>Luni</td>\n                            <td>10-12</td>\n                            <td>12-14</td>\n                            <td>14-20</td>\n                        </tr>\n                        <tr>\n                            <td></td>\n                            \n                            <td>Marti</td>\n                            <td>9-12</td>\n                            <td>12-14</td>\n                            <td>14-21</td>\n                        </tr>\n                        <tr>\n                            <td></td>\n                            \n                            <td>Miercuri</td>\n                            <td>9-11</td>\n                            <td>11-13</td>\n                            <td>14-21</td>\n                        </tr>\n                        <tr>\n                            <td></td>\n                            \n                            <td>Joi</td>\n                            <td>9-11</td>\n                            <td>11-13</td>\n                            <td>14-21</td>\n                        </tr>\n                        <tr>\n                            <td></td>\n                            \n                            <td>Vineri</td>\n                            <td>9-12</td>\n                            <td>12-14</td>\n                            <td>14-19</td>\n                        </tr>\n                        <tr>\n                            <td></td>\n                            <td rowspan=\"2\">Weekend</td>\n                            <td>Sambata</td>\n                            <td>10-12</td>\n                            <td>12-13</td>\n                            <td>13-16</td>\n                        </tr>\n                        <tr>\n                            <td></td>\n                            <td>Duminica</td>\n                            <td>10-14</td>\n                            <td>-</td>\n                            <td>inchis</td>\n                        </tr>\n                    </tbody>\n                </table> \n                <p><strong>Atentie!!!</strong> in prima zi a lunii facem inventar.</p>\n            </section>\n<!-- Add the offers below the timetable. -->\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220
       }
     },
     {
@@ -6193,7 +6247,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie\">cofetarie</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie\">patiserie</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"gelaterie\">gelaterie</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -6297,7 +6354,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-bonus"
+        "id": "ticket-client-type-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie\">cofetarie</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie\">patiserie</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"gelaterie\">gelaterie</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -6614,7 +6674,10 @@ window.TW_EXAM = {
         "id": "ticket-client-price-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15\">15</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8\">8</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -6718,7 +6781,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-price-bonus"
+        "id": "ticket-client-price-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15\">15</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8\">8</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -7024,7 +7090,10 @@ window.TW_EXAM = {
         "id": "ticket-client-weight-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150\">150</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800\">800</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -7128,7 +7197,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-weight-bonus"
+        "id": "ticket-client-weight-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150\">150</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800\">800</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -7434,7 +7506,10 @@ window.TW_EXAM = {
         "id": "ticket-client-stock-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Stoc minim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"3\">3</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8\">8</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -7538,7 +7613,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-stock-bonus"
+        "id": "ticket-client-stock-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Stoc minim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"3\">3</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8\">8</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -7833,7 +7911,10 @@ window.TW_EXAM = {
         "id": "ticket-client-description-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Text în descriere</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"CREMA\">CREMA</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"fructe\">fructe</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -7937,7 +8018,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-description-bonus"
+        "id": "ticket-client-description-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Text în descriere</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"CREMA\">CREMA</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"fructe\">fructe</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -8243,7 +8327,10 @@ window.TW_EXAM = {
         "id": "ticket-client-allergen-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"gluten\">gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"lapte\">lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -8347,7 +8434,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-allergen-bonus"
+        "id": "ticket-client-allergen-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"gluten\">gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"lapte\">lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -8653,7 +8743,10 @@ window.TW_EXAM = {
         "id": "ticket-client-promo-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"true\">true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"false\">false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -8757,7 +8850,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-promo-bonus"
+        "id": "ticket-client-promo-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"true\">true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"false\">false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -9052,7 +9148,10 @@ window.TW_EXAM = {
         "id": "ticket-client-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"S\">S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"T\">T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -9156,7 +9255,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-name-bonus"
+        "id": "ticket-client-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"S\">S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"T\">T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -9451,7 +9553,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-price-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Preț maxim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|15\">cofetarie|15</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|8\">patiserie|8</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -9555,7 +9660,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-price-bonus"
+        "id": "ticket-client-type-price-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Preț maxim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|15\">cofetarie|15</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|8\">patiserie|8</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -9850,7 +9958,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-weight-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Gramaj minim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|150\">cofetarie|150</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|800\">patiserie|800</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -9954,7 +10065,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-weight-bonus"
+        "id": "ticket-client-type-weight-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Gramaj minim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|150\">cofetarie|150</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|800\">patiserie|800</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -10249,7 +10363,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-stock-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Stoc minim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|3\">cofetarie|3</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|8\">patiserie|8</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -10353,7 +10470,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-stock-bonus"
+        "id": "ticket-client-type-stock-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Stoc minim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|3\">cofetarie|3</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|8\">patiserie|8</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -10648,7 +10768,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-description-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Text în descriere</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|CREMA\">cofetarie|CREMA</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|fructe\">patiserie|fructe</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -10752,7 +10875,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-description-bonus"
+        "id": "ticket-client-type-description-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Text în descriere</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|CREMA\">cofetarie|CREMA</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|fructe\">patiserie|fructe</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -11047,7 +11173,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-allergen-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|gluten\">cofetarie|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|lapte\">patiserie|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -11151,7 +11280,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-allergen-bonus"
+        "id": "ticket-client-type-allergen-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|gluten\">cofetarie|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|lapte\">patiserie|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -11446,7 +11578,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-promo-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|true\">cofetarie|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|false\">patiserie|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -11550,7 +11685,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-promo-bonus"
+        "id": "ticket-client-type-promo-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|true\">cofetarie|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|false\">patiserie|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -11833,7 +11971,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|S\">cofetarie|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|T\">patiserie|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -11937,7 +12078,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-name-bonus"
+        "id": "ticket-client-type-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|S\">cofetarie|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|T\">patiserie|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -12232,7 +12376,10 @@ window.TW_EXAM = {
         "id": "ticket-client-price-weight-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Gramaj minim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|150\">15|150</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|800\">8|800</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -12336,7 +12483,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-price-weight-bonus"
+        "id": "ticket-client-price-weight-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Gramaj minim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|150\">15|150</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|800\">8|800</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -12631,7 +12781,10 @@ window.TW_EXAM = {
         "id": "ticket-client-price-stock-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Stoc minim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|3\">15|3</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|8\">8|8</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -12735,7 +12888,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-price-stock-bonus"
+        "id": "ticket-client-price-stock-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Stoc minim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|3\">15|3</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|8\">8|8</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -13030,7 +13186,10 @@ window.TW_EXAM = {
         "id": "ticket-client-price-description-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Text în descriere</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|CREMA\">15|CREMA</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|fructe\">8|fructe</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -13134,7 +13293,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-price-description-bonus"
+        "id": "ticket-client-price-description-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Text în descriere</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|CREMA\">15|CREMA</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|fructe\">8|fructe</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -13429,7 +13591,10 @@ window.TW_EXAM = {
         "id": "ticket-client-price-allergen-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|gluten\">15|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|lapte\">8|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -13533,7 +13698,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-price-allergen-bonus"
+        "id": "ticket-client-price-allergen-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|gluten\">15|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|lapte\">8|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -13828,7 +13996,10 @@ window.TW_EXAM = {
         "id": "ticket-client-price-promo-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|true\">15|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|false\">8|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -13932,7 +14103,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-price-promo-bonus"
+        "id": "ticket-client-price-promo-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|true\">15|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|false\">8|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -14227,7 +14401,10 @@ window.TW_EXAM = {
         "id": "ticket-client-price-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|S\">15|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|T\">8|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -14331,7 +14508,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-price-name-bonus"
+        "id": "ticket-client-price-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|S\">15|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|T\">8|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -14637,7 +14817,10 @@ window.TW_EXAM = {
         "id": "ticket-client-weight-stock-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Stoc minim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|3\">150|3</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|8\">800|8</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -14741,7 +14924,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-weight-stock-bonus"
+        "id": "ticket-client-weight-stock-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Stoc minim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|3\">150|3</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|8\">800|8</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -15024,7 +15210,10 @@ window.TW_EXAM = {
         "id": "ticket-client-weight-description-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Text în descriere</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|CREMA\">150|CREMA</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|fructe\">800|fructe</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -15128,7 +15317,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-weight-description-bonus"
+        "id": "ticket-client-weight-description-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Text în descriere</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|CREMA\">150|CREMA</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|fructe\">800|fructe</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -15434,7 +15626,10 @@ window.TW_EXAM = {
         "id": "ticket-client-weight-allergen-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|gluten\">150|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|lapte\">800|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -15538,7 +15733,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-weight-allergen-bonus"
+        "id": "ticket-client-weight-allergen-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|gluten\">150|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|lapte\">800|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -15844,7 +16042,10 @@ window.TW_EXAM = {
         "id": "ticket-client-weight-promo-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|true\">150|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|false\">800|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -15948,7 +16149,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-weight-promo-bonus"
+        "id": "ticket-client-weight-promo-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|true\">150|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|false\">800|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -16243,7 +16447,10 @@ window.TW_EXAM = {
         "id": "ticket-client-weight-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|S\">150|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|T\">800|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -16347,7 +16554,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-weight-name-bonus"
+        "id": "ticket-client-weight-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|S\">150|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|T\">800|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -16630,7 +16840,10 @@ window.TW_EXAM = {
         "id": "ticket-client-stock-description-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Stoc minim + Text în descriere</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"3|CREMA\">3|CREMA</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|fructe\">8|fructe</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -16734,7 +16947,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-stock-description-bonus"
+        "id": "ticket-client-stock-description-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Stoc minim + Text în descriere</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"3|CREMA\">3|CREMA</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|fructe\">8|fructe</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -17040,7 +17256,10 @@ window.TW_EXAM = {
         "id": "ticket-client-stock-allergen-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Stoc minim + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"3|gluten\">3|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|lapte\">8|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -17144,7 +17363,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-stock-allergen-bonus"
+        "id": "ticket-client-stock-allergen-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Stoc minim + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"3|gluten\">3|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|lapte\">8|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -17450,7 +17672,10 @@ window.TW_EXAM = {
         "id": "ticket-client-stock-promo-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Stoc minim + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"3|true\">3|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|false\">8|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -17554,7 +17779,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-stock-promo-bonus"
+        "id": "ticket-client-stock-promo-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Stoc minim + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"3|true\">3|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|false\">8|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -17849,7 +18077,10 @@ window.TW_EXAM = {
         "id": "ticket-client-stock-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Stoc minim + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"3|S\">3|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|T\">8|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -17953,7 +18184,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-stock-name-bonus"
+        "id": "ticket-client-stock-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Stoc minim + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"3|S\">3|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|T\">8|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -18236,7 +18470,10 @@ window.TW_EXAM = {
         "id": "ticket-client-description-allergen-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Text în descriere + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"CREMA|gluten\">CREMA|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"fructe|lapte\">fructe|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -18340,7 +18577,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-description-allergen-bonus"
+        "id": "ticket-client-description-allergen-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Text în descriere + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"CREMA|gluten\">CREMA|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"fructe|lapte\">fructe|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -18623,7 +18863,10 @@ window.TW_EXAM = {
         "id": "ticket-client-description-promo-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Text în descriere + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"CREMA|true\">CREMA|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"fructe|false\">fructe|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -18727,7 +18970,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-description-promo-bonus"
+        "id": "ticket-client-description-promo-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Text în descriere + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"CREMA|true\">CREMA|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"fructe|false\">fructe|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -19010,7 +19256,10 @@ window.TW_EXAM = {
         "id": "ticket-client-description-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Text în descriere + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"CREMA|S\">CREMA|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"fructe|T\">fructe|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -19114,7 +19363,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-description-name-bonus"
+        "id": "ticket-client-description-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Text în descriere + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"CREMA|S\">CREMA|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"fructe|T\">fructe|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -19420,7 +19672,10 @@ window.TW_EXAM = {
         "id": "ticket-client-allergen-promo-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Excluderea unui alergen + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"gluten|true\">gluten|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"lapte|false\">lapte|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -19524,7 +19779,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-allergen-promo-bonus"
+        "id": "ticket-client-allergen-promo-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Excluderea unui alergen + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"gluten|true\">gluten|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"lapte|false\">lapte|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -19819,7 +20077,10 @@ window.TW_EXAM = {
         "id": "ticket-client-allergen-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Excluderea unui alergen + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"gluten|S\">gluten|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"lapte|T\">lapte|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -19923,7 +20184,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-allergen-name-bonus"
+        "id": "ticket-client-allergen-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Excluderea unui alergen + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"gluten|S\">gluten|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"lapte|T\">lapte|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -20218,7 +20482,10 @@ window.TW_EXAM = {
         "id": "ticket-client-promo-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Produse la promoție + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"true|S\">true|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"false|T\">false|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -20322,7 +20589,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-promo-name-bonus"
+        "id": "ticket-client-promo-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Produse la promoție + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"true|S\">true|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"false|T\">false|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -20605,7 +20875,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-price-weight-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Preț maxim + Gramaj minim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|15|150\">cofetarie|15|150</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|8|800\">patiserie|8|800</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -20709,7 +20982,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-price-weight-bonus"
+        "id": "ticket-client-type-price-weight-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Preț maxim + Gramaj minim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|15|150\">cofetarie|15|150</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|8|800\">patiserie|8|800</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -20992,7 +21268,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-price-stock-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Preț maxim + Stoc minim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|15|3\">cofetarie|15|3</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|8|8\">patiserie|8|8</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -21096,7 +21375,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-price-stock-bonus"
+        "id": "ticket-client-type-price-stock-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Preț maxim + Stoc minim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|15|3\">cofetarie|15|3</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|8|8\">patiserie|8|8</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -21391,7 +21673,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-price-description-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Preț maxim + Text în descriere</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|15|CREMA\">cofetarie|15|CREMA</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|8|fructe\">patiserie|8|fructe</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -21495,7 +21780,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-price-description-bonus"
+        "id": "ticket-client-type-price-description-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Preț maxim + Text în descriere</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|15|CREMA\">cofetarie|15|CREMA</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|8|fructe\">patiserie|8|fructe</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -21778,7 +22066,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-price-allergen-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Preț maxim + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|15|gluten\">cofetarie|15|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|8|lapte\">patiserie|8|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -21882,7 +22173,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-price-allergen-bonus"
+        "id": "ticket-client-type-price-allergen-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Preț maxim + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|15|gluten\">cofetarie|15|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|8|lapte\">patiserie|8|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -22165,7 +22459,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-price-promo-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Preț maxim + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|15|true\">cofetarie|15|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|8|false\">patiserie|8|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -22269,7 +22566,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-price-promo-bonus"
+        "id": "ticket-client-type-price-promo-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Preț maxim + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|15|true\">cofetarie|15|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|8|false\">patiserie|8|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -22552,7 +22852,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-price-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Preț maxim + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|15|S\">cofetarie|15|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|8|T\">patiserie|8|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -22656,7 +22959,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-price-name-bonus"
+        "id": "ticket-client-type-price-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Preț maxim + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|15|S\">cofetarie|15|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|8|T\">patiserie|8|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -22951,7 +23257,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-weight-stock-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Gramaj minim + Stoc minim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|150|3\">cofetarie|150|3</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|800|8\">patiserie|800|8</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -23055,7 +23364,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-weight-stock-bonus"
+        "id": "ticket-client-type-weight-stock-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Gramaj minim + Stoc minim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|150|3\">cofetarie|150|3</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|800|8\">patiserie|800|8</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -23338,7 +23650,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-weight-description-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Gramaj minim + Text în descriere</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|150|CREMA\">cofetarie|150|CREMA</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|800|fructe\">patiserie|800|fructe</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -23442,7 +23757,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-weight-description-bonus"
+        "id": "ticket-client-type-weight-description-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Gramaj minim + Text în descriere</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|150|CREMA\">cofetarie|150|CREMA</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|800|fructe\">patiserie|800|fructe</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -23737,7 +24055,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-weight-allergen-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Gramaj minim + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|150|gluten\">cofetarie|150|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|800|lapte\">patiserie|800|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -23841,7 +24162,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-weight-allergen-bonus"
+        "id": "ticket-client-type-weight-allergen-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Gramaj minim + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|150|gluten\">cofetarie|150|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|800|lapte\">patiserie|800|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -24136,7 +24460,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-weight-promo-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Gramaj minim + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|150|true\">cofetarie|150|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|800|false\">patiserie|800|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -24240,7 +24567,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-weight-promo-bonus"
+        "id": "ticket-client-type-weight-promo-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Gramaj minim + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|150|true\">cofetarie|150|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|800|false\">patiserie|800|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -24523,7 +24853,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-weight-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Gramaj minim + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|150|S\">cofetarie|150|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|800|T\">patiserie|800|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -24627,7 +24960,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-weight-name-bonus"
+        "id": "ticket-client-type-weight-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Gramaj minim + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|150|S\">cofetarie|150|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|800|T\">patiserie|800|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -24910,7 +25246,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-stock-description-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Stoc minim + Text în descriere</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|3|CREMA\">cofetarie|3|CREMA</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|8|fructe\">patiserie|8|fructe</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -25014,7 +25353,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-stock-description-bonus"
+        "id": "ticket-client-type-stock-description-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Stoc minim + Text în descriere</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|3|CREMA\">cofetarie|3|CREMA</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|8|fructe\">patiserie|8|fructe</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -25309,7 +25651,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-stock-allergen-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Stoc minim + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|3|gluten\">cofetarie|3|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|8|lapte\">patiserie|8|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -25413,7 +25758,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-stock-allergen-bonus"
+        "id": "ticket-client-type-stock-allergen-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Stoc minim + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|3|gluten\">cofetarie|3|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|8|lapte\">patiserie|8|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -25708,7 +26056,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-stock-promo-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Stoc minim + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|3|true\">cofetarie|3|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|8|false\">patiserie|8|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -25812,7 +26163,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-stock-promo-bonus"
+        "id": "ticket-client-type-stock-promo-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Stoc minim + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|3|true\">cofetarie|3|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|8|false\">patiserie|8|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -26095,7 +26449,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-stock-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Stoc minim + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|3|S\">cofetarie|3|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|8|T\">patiserie|8|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -26199,7 +26556,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-stock-name-bonus"
+        "id": "ticket-client-type-stock-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Stoc minim + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|3|S\">cofetarie|3|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|8|T\">patiserie|8|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -26482,7 +26842,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-description-allergen-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Text în descriere + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|CREMA|gluten\">cofetarie|CREMA|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|fructe|lapte\">patiserie|fructe|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -26586,7 +26949,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-description-allergen-bonus"
+        "id": "ticket-client-type-description-allergen-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Text în descriere + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|CREMA|gluten\">cofetarie|CREMA|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|fructe|lapte\">patiserie|fructe|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -26869,7 +27235,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-description-promo-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Text în descriere + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|CREMA|true\">cofetarie|CREMA|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|fructe|false\">patiserie|fructe|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -26973,7 +27342,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-description-promo-bonus"
+        "id": "ticket-client-type-description-promo-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Text în descriere + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|CREMA|true\">cofetarie|CREMA|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|fructe|false\">patiserie|fructe|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -27256,7 +27628,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-description-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Text în descriere + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|CREMA|S\">cofetarie|CREMA|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|fructe|T\">patiserie|fructe|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -27360,7 +27735,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-description-name-bonus"
+        "id": "ticket-client-type-description-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Text în descriere + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|CREMA|S\">cofetarie|CREMA|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|fructe|T\">patiserie|fructe|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -27655,7 +28033,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-allergen-promo-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Excluderea unui alergen + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|gluten|true\">cofetarie|gluten|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|lapte|false\">patiserie|lapte|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -27759,7 +28140,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-allergen-promo-bonus"
+        "id": "ticket-client-type-allergen-promo-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Excluderea unui alergen + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|gluten|true\">cofetarie|gluten|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|lapte|false\">patiserie|lapte|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -28042,7 +28426,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-allergen-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Excluderea unui alergen + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|gluten|S\">cofetarie|gluten|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|lapte|T\">patiserie|lapte|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -28146,7 +28533,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-allergen-name-bonus"
+        "id": "ticket-client-type-allergen-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Excluderea unui alergen + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|gluten|S\">cofetarie|gluten|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|lapte|T\">patiserie|lapte|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -28429,7 +28819,10 @@ window.TW_EXAM = {
         "id": "ticket-client-type-promo-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Produse la promoție + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|true|S\">cofetarie|true|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|false|T\">patiserie|false|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -28533,7 +28926,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-type-promo-name-bonus"
+        "id": "ticket-client-type-promo-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Tipul produsului + Produse la promoție + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"cofetarie|true|S\">cofetarie|true|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"patiserie|false|T\">patiserie|false|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -28828,7 +29224,10 @@ window.TW_EXAM = {
         "id": "ticket-client-price-weight-stock-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Gramaj minim + Stoc minim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|150|3\">15|150|3</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|800|8\">8|800|8</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -28932,7 +29331,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-price-weight-stock-bonus"
+        "id": "ticket-client-price-weight-stock-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Gramaj minim + Stoc minim</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|150|3\">15|150|3</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|800|8\">8|800|8</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -29215,7 +29617,10 @@ window.TW_EXAM = {
         "id": "ticket-client-price-weight-description-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Gramaj minim + Text în descriere</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|150|CREMA\">15|150|CREMA</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|800|fructe\">8|800|fructe</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -29319,7 +29724,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-price-weight-description-bonus"
+        "id": "ticket-client-price-weight-description-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Gramaj minim + Text în descriere</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|150|CREMA\">15|150|CREMA</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|800|fructe\">8|800|fructe</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -29614,7 +30022,10 @@ window.TW_EXAM = {
         "id": "ticket-client-price-weight-allergen-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Gramaj minim + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|150|gluten\">15|150|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|800|lapte\">8|800|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -29718,7 +30129,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-price-weight-allergen-bonus"
+        "id": "ticket-client-price-weight-allergen-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Gramaj minim + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|150|gluten\">15|150|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|800|lapte\">8|800|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -30013,7 +30427,10 @@ window.TW_EXAM = {
         "id": "ticket-client-price-weight-promo-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Gramaj minim + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|150|true\">15|150|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|800|false\">8|800|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -30117,7 +30534,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-price-weight-promo-bonus"
+        "id": "ticket-client-price-weight-promo-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Gramaj minim + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|150|true\">15|150|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|800|false\">8|800|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -30412,7 +30832,10 @@ window.TW_EXAM = {
         "id": "ticket-client-price-weight-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Gramaj minim + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|150|S\">15|150|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|800|T\">8|800|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -30516,7 +30939,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-price-weight-name-bonus"
+        "id": "ticket-client-price-weight-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Gramaj minim + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|150|S\">15|150|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|800|T\">8|800|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -30799,7 +31225,10 @@ window.TW_EXAM = {
         "id": "ticket-client-price-stock-description-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Stoc minim + Text în descriere</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|3|CREMA\">15|3|CREMA</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|8|fructe\">8|8|fructe</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -30903,7 +31332,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-price-stock-description-bonus"
+        "id": "ticket-client-price-stock-description-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Stoc minim + Text în descriere</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|3|CREMA\">15|3|CREMA</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|8|fructe\">8|8|fructe</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -31198,7 +31630,10 @@ window.TW_EXAM = {
         "id": "ticket-client-price-stock-allergen-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Stoc minim + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|3|gluten\">15|3|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|8|lapte\">8|8|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -31302,7 +31737,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-price-stock-allergen-bonus"
+        "id": "ticket-client-price-stock-allergen-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Stoc minim + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|3|gluten\">15|3|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|8|lapte\">8|8|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -31597,7 +32035,10 @@ window.TW_EXAM = {
         "id": "ticket-client-price-stock-promo-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Stoc minim + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|3|true\">15|3|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|8|false\">8|8|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -31701,7 +32142,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-price-stock-promo-bonus"
+        "id": "ticket-client-price-stock-promo-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Stoc minim + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|3|true\">15|3|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|8|false\">8|8|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -31996,7 +32440,10 @@ window.TW_EXAM = {
         "id": "ticket-client-price-stock-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Stoc minim + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|3|S\">15|3|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|8|T\">8|8|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -32100,7 +32547,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-price-stock-name-bonus"
+        "id": "ticket-client-price-stock-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Stoc minim + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|3|S\">15|3|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|8|T\">8|8|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -32383,7 +32833,10 @@ window.TW_EXAM = {
         "id": "ticket-client-price-description-allergen-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Text în descriere + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|CREMA|gluten\">15|CREMA|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|fructe|lapte\">8|fructe|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -32487,7 +32940,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-price-description-allergen-bonus"
+        "id": "ticket-client-price-description-allergen-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Text în descriere + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|CREMA|gluten\">15|CREMA|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|fructe|lapte\">8|fructe|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -32770,7 +33226,10 @@ window.TW_EXAM = {
         "id": "ticket-client-price-description-promo-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Text în descriere + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|CREMA|true\">15|CREMA|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|fructe|false\">8|fructe|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -32874,7 +33333,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-price-description-promo-bonus"
+        "id": "ticket-client-price-description-promo-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Text în descriere + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|CREMA|true\">15|CREMA|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|fructe|false\">8|fructe|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -33157,7 +33619,10 @@ window.TW_EXAM = {
         "id": "ticket-client-price-description-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Text în descriere + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|CREMA|S\">15|CREMA|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|fructe|T\">8|fructe|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -33261,7 +33726,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-price-description-name-bonus"
+        "id": "ticket-client-price-description-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Text în descriere + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|CREMA|S\">15|CREMA|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|fructe|T\">8|fructe|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -33556,7 +34024,10 @@ window.TW_EXAM = {
         "id": "ticket-client-price-allergen-promo-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Excluderea unui alergen + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|gluten|true\">15|gluten|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|lapte|false\">8|lapte|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -33660,7 +34131,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-price-allergen-promo-bonus"
+        "id": "ticket-client-price-allergen-promo-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Excluderea unui alergen + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|gluten|true\">15|gluten|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|lapte|false\">8|lapte|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -33955,7 +34429,10 @@ window.TW_EXAM = {
         "id": "ticket-client-price-allergen-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Excluderea unui alergen + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|gluten|S\">15|gluten|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|lapte|T\">8|lapte|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -34059,7 +34536,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-price-allergen-name-bonus"
+        "id": "ticket-client-price-allergen-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Excluderea unui alergen + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|gluten|S\">15|gluten|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|lapte|T\">8|lapte|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -34354,7 +34834,10 @@ window.TW_EXAM = {
         "id": "ticket-client-price-promo-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Produse la promoție + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|true|S\">15|true|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|false|T\">8|false|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -34458,7 +34941,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-price-promo-name-bonus"
+        "id": "ticket-client-price-promo-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Preț maxim + Produse la promoție + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"15|true|S\">15|true|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|false|T\">8|false|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -34741,7 +35227,10 @@ window.TW_EXAM = {
         "id": "ticket-client-weight-stock-description-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Stoc minim + Text în descriere</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|3|CREMA\">150|3|CREMA</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|8|fructe\">800|8|fructe</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -34845,7 +35334,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-weight-stock-description-bonus"
+        "id": "ticket-client-weight-stock-description-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Stoc minim + Text în descriere</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|3|CREMA\">150|3|CREMA</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|8|fructe\">800|8|fructe</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -35151,7 +35643,10 @@ window.TW_EXAM = {
         "id": "ticket-client-weight-stock-allergen-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Stoc minim + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|3|gluten\">150|3|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|8|lapte\">800|8|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -35255,7 +35750,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-weight-stock-allergen-bonus"
+        "id": "ticket-client-weight-stock-allergen-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Stoc minim + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|3|gluten\">150|3|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|8|lapte\">800|8|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -35561,7 +36059,10 @@ window.TW_EXAM = {
         "id": "ticket-client-weight-stock-promo-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Stoc minim + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|3|true\">150|3|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|8|false\">800|8|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -35665,7 +36166,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-weight-stock-promo-bonus"
+        "id": "ticket-client-weight-stock-promo-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Stoc minim + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|3|true\">150|3|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|8|false\">800|8|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -35960,7 +36464,10 @@ window.TW_EXAM = {
         "id": "ticket-client-weight-stock-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Stoc minim + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|3|S\">150|3|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|8|T\">800|8|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -36064,7 +36571,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-weight-stock-name-bonus"
+        "id": "ticket-client-weight-stock-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Stoc minim + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|3|S\">150|3|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|8|T\">800|8|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -36347,7 +36857,10 @@ window.TW_EXAM = {
         "id": "ticket-client-weight-description-allergen-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Text în descriere + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|CREMA|gluten\">150|CREMA|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|fructe|lapte\">800|fructe|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -36451,7 +36964,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-weight-description-allergen-bonus"
+        "id": "ticket-client-weight-description-allergen-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Text în descriere + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|CREMA|gluten\">150|CREMA|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|fructe|lapte\">800|fructe|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -36734,7 +37250,10 @@ window.TW_EXAM = {
         "id": "ticket-client-weight-description-promo-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Text în descriere + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|CREMA|true\">150|CREMA|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|fructe|false\">800|fructe|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -36838,7 +37357,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-weight-description-promo-bonus"
+        "id": "ticket-client-weight-description-promo-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Text în descriere + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|CREMA|true\">150|CREMA|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|fructe|false\">800|fructe|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -37121,7 +37643,10 @@ window.TW_EXAM = {
         "id": "ticket-client-weight-description-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Text în descriere + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|CREMA|S\">150|CREMA|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|fructe|T\">800|fructe|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -37225,7 +37750,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-weight-description-name-bonus"
+        "id": "ticket-client-weight-description-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Text în descriere + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|CREMA|S\">150|CREMA|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|fructe|T\">800|fructe|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -37531,7 +38059,10 @@ window.TW_EXAM = {
         "id": "ticket-client-weight-allergen-promo-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Excluderea unui alergen + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|gluten|true\">150|gluten|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|lapte|false\">800|lapte|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -37635,7 +38166,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-weight-allergen-promo-bonus"
+        "id": "ticket-client-weight-allergen-promo-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Excluderea unui alergen + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|gluten|true\">150|gluten|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|lapte|false\">800|lapte|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -37930,7 +38464,10 @@ window.TW_EXAM = {
         "id": "ticket-client-weight-allergen-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Excluderea unui alergen + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|gluten|S\">150|gluten|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|lapte|T\">800|lapte|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -38034,7 +38571,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-weight-allergen-name-bonus"
+        "id": "ticket-client-weight-allergen-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Excluderea unui alergen + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|gluten|S\">150|gluten|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|lapte|T\">800|lapte|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -38329,7 +38869,10 @@ window.TW_EXAM = {
         "id": "ticket-client-weight-promo-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Produse la promoție + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|true|S\">150|true|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|false|T\">800|false|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -38433,7 +38976,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-weight-promo-name-bonus"
+        "id": "ticket-client-weight-promo-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Gramaj minim + Produse la promoție + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"150|true|S\">150|true|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"800|false|T\">800|false|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -38716,7 +39262,10 @@ window.TW_EXAM = {
         "id": "ticket-client-stock-description-allergen-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Stoc minim + Text în descriere + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"3|CREMA|gluten\">3|CREMA|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|fructe|lapte\">8|fructe|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -38820,7 +39369,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-stock-description-allergen-bonus"
+        "id": "ticket-client-stock-description-allergen-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Stoc minim + Text în descriere + Excluderea unui alergen</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"3|CREMA|gluten\">3|CREMA|gluten</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|fructe|lapte\">8|fructe|lapte</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -39103,7 +39655,10 @@ window.TW_EXAM = {
         "id": "ticket-client-stock-description-promo-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Stoc minim + Text în descriere + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"3|CREMA|true\">3|CREMA|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|fructe|false\">8|fructe|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -39207,7 +39762,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-stock-description-promo-bonus"
+        "id": "ticket-client-stock-description-promo-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Stoc minim + Text în descriere + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"3|CREMA|true\">3|CREMA|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|fructe|false\">8|fructe|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -39490,7 +40048,10 @@ window.TW_EXAM = {
         "id": "ticket-client-stock-description-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Stoc minim + Text în descriere + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"3|CREMA|S\">3|CREMA|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|fructe|T\">8|fructe|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -39594,7 +40155,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-stock-description-name-bonus"
+        "id": "ticket-client-stock-description-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Stoc minim + Text în descriere + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"3|CREMA|S\">3|CREMA|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|fructe|T\">8|fructe|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -39900,7 +40464,10 @@ window.TW_EXAM = {
         "id": "ticket-client-stock-allergen-promo-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Stoc minim + Excluderea unui alergen + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"3|gluten|true\">3|gluten|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|lapte|false\">8|lapte|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -40004,7 +40571,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-stock-allergen-promo-bonus"
+        "id": "ticket-client-stock-allergen-promo-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Stoc minim + Excluderea unui alergen + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"3|gluten|true\">3|gluten|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|lapte|false\">8|lapte|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -40299,7 +40869,10 @@ window.TW_EXAM = {
         "id": "ticket-client-stock-allergen-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Stoc minim + Excluderea unui alergen + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"3|gluten|S\">3|gluten|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|lapte|T\">8|lapte|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -40403,7 +40976,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-stock-allergen-name-bonus"
+        "id": "ticket-client-stock-allergen-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Stoc minim + Excluderea unui alergen + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"3|gluten|S\">3|gluten|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|lapte|T\">8|lapte|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -40698,7 +41274,10 @@ window.TW_EXAM = {
         "id": "ticket-client-stock-promo-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Stoc minim + Produse la promoție + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"3|true|S\">3|true|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|false|T\">8|false|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -40802,7 +41381,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-stock-promo-name-bonus"
+        "id": "ticket-client-stock-promo-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Stoc minim + Produse la promoție + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"3|true|S\">3|true|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"8|false|T\">8|false|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -41085,7 +41667,10 @@ window.TW_EXAM = {
         "id": "ticket-client-description-allergen-promo-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Text în descriere + Excluderea unui alergen + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"CREMA|gluten|true\">CREMA|gluten|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"fructe|lapte|false\">fructe|lapte|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -41189,7 +41774,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-description-allergen-promo-bonus"
+        "id": "ticket-client-description-allergen-promo-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Text în descriere + Excluderea unui alergen + Produse la promoție</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"CREMA|gluten|true\">CREMA|gluten|true</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"fructe|lapte|false\">fructe|lapte|false</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -41472,7 +42060,10 @@ window.TW_EXAM = {
         "id": "ticket-client-description-allergen-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Text în descriere + Excluderea unui alergen + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"CREMA|gluten|S\">CREMA|gluten|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"fructe|lapte|T\">fructe|lapte|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -41576,7 +42167,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-description-allergen-name-bonus"
+        "id": "ticket-client-description-allergen-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Text în descriere + Excluderea unui alergen + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"CREMA|gluten|S\">CREMA|gluten|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"fructe|lapte|T\">fructe|lapte|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -41859,7 +42453,10 @@ window.TW_EXAM = {
         "id": "ticket-client-description-promo-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Text în descriere + Produse la promoție + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"CREMA|true|S\">CREMA|true|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"fructe|false|T\">fructe|false|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -41963,7 +42560,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-description-promo-name-bonus"
+        "id": "ticket-client-description-promo-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Text în descriere + Produse la promoție + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"CREMA|true|S\">CREMA|true|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"fructe|false|T\">fructe|false|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -42258,7 +42858,10 @@ window.TW_EXAM = {
         "id": "ticket-client-allergen-promo-name-dom",
         "previousStarters": [
           "const products=[{\"id\": 1, \"name\": \"Tort\", \"type\": \"cofetarie\", \"price\": 80, \"weight\": 800, \"stock\": 5, \"description\": \"ciocolata neagra\", \"allergen\": \"lapte\", \"promo\": true}, {\"id\": 2, \"name\": \"Corn\", \"type\": \"patiserie\", \"price\": 8, \"weight\": 100, \"stock\": 0, \"description\": \"unt proaspat\", \"allergen\": \"gluten\", \"promo\": false}, {\"id\": 3, \"name\": \"Sorbet\", \"type\": \"gelaterie\", \"price\": 15, \"weight\": 150, \"stock\": 8, \"description\": \"fructe de padure\", \"allergen\": \"none\", \"promo\": true}, {\"id\": 4, \"name\": \"Ecler\", \"type\": \"cofetarie\", \"price\": 12, \"weight\": 120, \"stock\": 2, \"description\": \"crema de vanilie\", \"allergen\": \"gluten\", \"promo\": false}];\n// Complete the filter handler.\n"
-        ]
+        ],
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Excluderea unui alergen + Produse la promoție + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"gluten|true|S\">gluten|true|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"lapte|false|T\">lapte|false|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [
@@ -42362,7 +42965,10 @@ window.TW_EXAM = {
             ]
           }
         ],
-        "id": "ticket-client-allergen-promo-name-bonus"
+        "id": "ticket-client-allergen-promo-name-bonus",
+        "exampleLabel": "Fragmentul paginii",
+        "previewHeight": 220,
+        "referenceHtml": "<label>Caută după nume <input id=\"search\">\n</label>\n<fieldset id=\"choices\">\n<legend>Excluderea unui alergen + Produse la promoție + Începutul numelui</legend>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"all\" checked>all</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"gluten|true|S\">gluten|true|S</label>\n<label>\n<input type=\"radio\" name=\"catalog-filter\" value=\"lapte|false|T\">lapte|false|T</label>\n</fieldset>\n<label>\n<input type=\"radio\" name=\"other\" checked>Alt grup</label>\n<button id=\"filter\">Filtrează</button>\n<p id=\"count\">\n</p>\n<div id=\"catalog\">\n<article class=\"product\" data-id=\"1\">\n<h2>Tort</h2>\n<p>cofetarie</p>\n</article>\n<article class=\"product\" data-id=\"2\">\n<h2>Corn</h2>\n<p>patiserie</p>\n</article>\n<article class=\"product\" data-id=\"3\">\n<h2>Sorbet</h2>\n<p>gelaterie</p>\n</article>\n<article class=\"product\" data-id=\"4\">\n<h2>Ecler</h2>\n<p>cofetarie</p>\n</article>\n</div>"
       },
       "hint": "Verifică fiecare cerință, inclusiv cazurile în care efectul nu trebuie să apară.",
       "steps": [

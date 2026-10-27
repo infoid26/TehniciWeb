@@ -160,4 +160,6 @@ def build_tickets(server_objectives):
     focus_fragments(exercises,common,base_style)
     from exam_starters import prepare_starters
     prepare_starters(exercises,base_style)
+    from exam_presentation import prepare_presentation
+    prepare_presentation(exercises)
     return dict(version=2,sourceLabel='Bilete practice pe categorii.',tickets=tickets,exercises=exercises)

@@ -24,10 +24,8 @@
     return (requirements.length?'<ul class="exercise-requirements">'+requirements.map(value=>'<li>'+format(value)+'</li>').join('')+'</ul>':'')+
       (task.note?'<p class="exam-context-note">'+format(task.note)+'</p>':'');
   }
-  function context(task,skipFixture=false){
+  function context(task){
     let out='';
-    if(task.fixture&&!skipFixture)out+='<details class="exam-context" open><summary>Pagina furnizată</summary><iframe class="ticket-preview" title="Fragmentul de proiect al biletului" sandbox srcdoc="'+esc(task.fixture)+'"></iframe></details>';
-    if(task.fixture&&!skipFixture)out+='<details class="exam-context"><summary>Fișierul HTML furnizat · doar citire</summary>'+pre(task.fixture)+'</details>';
     for(const item of task.tables||[])out+=table(item.rows,'Tabel inițial: '+item.name,item.columns);
     if(task.mode==='sql')out+=table(task.expectedResult||task.expected,'Rezultatul cerut');
     if(task.setup)out+='<details class="exam-context"><summary>SQL de pregătire · executat automat</summary>'+pre(task.setup)+'</details>';
@@ -44,8 +42,31 @@
   function ticketHeading(){
     return '<header class="ticket-sheet-heading"><h2>Biletul nr. '+stage().ticketNumber+' — '+esc(stage().name)+' <span>('+Math.round(stage().seconds/60)+' min)</span></h2></header>';
   }
+  function exampleSource(task){
+    const id=JSON.stringify(task.id);
+    const resize='const sendSize=()=>{let bottom=document.body.getBoundingClientRect().height;for(const el of document.body.querySelectorAll("*")){if(el.tagName!=="SCRIPT"&&el.tagName!=="STYLE")bottom=Math.max(bottom,el.getBoundingClientRect().bottom);}parent.postMessage({type:"tw-ticket-size",id:'+id+',height:Math.ceil(bottom+8)},"*");};new ResizeObserver(()=>requestAnimationFrame(sendSize)).observe(document.body);addEventListener("load",sendSize);addEventListener("resize",sendSize);requestAnimationFrame(sendSize);';
+    return '<!doctype html><html lang="ro"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src &#39;none&#39;; style-src &#39;unsafe-inline&#39;; script-src &#39;nonce-tw-preview&#39;; frame-src about:; base-uri &#39;none&#39;; form-action &#39;none&#39;"><style>html,body{margin:0;min-height:0}html{overflow:hidden;background:#191f2b}body{font:16px/1.6 Arial,sans-serif;color:#edf0f7;padding:12px;box-sizing:border-box}*{box-sizing:border-box}</style></head><body>'+task.fixture+'<style>body{background:#191f2b}'+(task.exampleCss||'')+'</style><script nonce="tw-preview">'+resize+'</script></body></html>';
+  }
+  function example(task){
+    if(!task.fixture)return '';
+    return '<figure class="ticket-example"><figcaption>'+esc(task.exampleLabel||'Fragmentul paginii')+'</figcaption><iframe class="ticket-preview" data-ticket-preview="'+esc(task.id)+'" title="'+esc(task.exampleLabel||'Fragmentul paginii')+'" sandbox="allow-scripts" style="height:'+(task.previewHeight||180)+'px" srcdoc="'+esc(exampleSource(task))+'"></iframe></figure>';
+  }
+  window.addEventListener?.('message',event=>{
+    if(event.data?.type!=='tw-ticket-size'||!Number.isFinite(event.data.height))return;
+    for(const frame of document.querySelectorAll('[data-ticket-preview]')){
+      if(event.source===frame.contentWindow&&event.data.id===frame.dataset.ticketPreview){
+        const height=Math.max(32,Math.min(2400,event.data.height));
+        if(Math.abs(frame.getBoundingClientRect().height-height)>1)frame.style.height=height+'px';
+      }
+    }
+  });
+  function ticketQuestion(id,index){
+    const task=byId.get(id).task;
+    const source=task.referenceHtml?'<details class="ticket-source"><summary>Structura HTML — clasele și identificatorii elementelor</summary>'+pre(task.referenceHtml)+'</details>':'';
+    return '<li><span class="ticket-number">'+(index+1)+')</span><div class="ticket-question"><p>'+esc(task.prompt)+'</p>'+instructions(task)+example(task)+source+context(task)+'</div></li>';
+  }
   function ticketSheet(ids){
-    return '<article class="ticket-sheet" aria-label="Bilet de examen">'+ticketHeading()+'<ol class="ticket-requirements">'+ids.map(id=>'<li><div><p>'+esc(byId.get(id).task.prompt)+'</p>'+instructions(byId.get(id).task)+'</div></li>').join('')+'</ol></article>';
+    return '<article class="ticket-sheet" aria-label="Bilet de examen">'+ticketHeading()+'<ol class="ticket-requirements">'+ids.map(id=>ticketQuestion(id,stage().ids.indexOf(id))).join('')+'</ol></article>';
   }
   function stage(){return state.stages[state.index];}
   function controls(){
@@ -75,10 +96,7 @@
     $('#phase-instructions').textContent=messages[phase];
     const preparing=phase==='preparation';
     $('#simulation-tasks').hidden=!preparing;
-    $('#simulation-tasks').innerHTML=preparing?ticketSheet(stage().ids)+'<div class="ticket-materials">'+stage().ids.map((id,index)=>{
-      const task=byId.get(id).task,content=context(task,index>0&&task.fixture===byId.get(stage().ids[0]).task.fixture);
-      return content?'<details class="ticket-material"><summary>Fragment și fișiere — cerința '+(index+1)+'</summary>'+content+'</details>':'';
-    }).join('')+'</div>':'';
+    $('#simulation-tasks').innerHTML=preparing?ticketSheet(stage().ids):'';
     if(phase!=='working'){
       $('#exam-workspace').hidden=true;TW_EDITOR.clear();viewId='';
       if(phase==='submitted'){
@@ -114,9 +132,8 @@
     const file={html:'index.html',json:'data.json',css:'style.css',scss:'style.scss',dom:'app.js',js:'exercise.js',node:'exercise.js',express:'app.cjs',ejs:'page.ejs',sql:'query.sql'}[task.mode]||'answer.txt';
     const visual=['html','css','dom','ejs','scss'].includes(task.mode);
     const workspace=$('#exam-workspace');workspace.hidden=false;
-    workspace.innerHTML='<article class="ticket-sheet">'+ticketHeading()+'<ol class="ticket-requirements" start="'+(stage().ids.indexOf(id)+1)+'"><li><div><p>'+esc(task.prompt)+'</p>'+instructions(task)+'</div></li></ol></article>'+
-      '<p class="exam-context-note">Fișierele și datele de mai jos sunt furnizate automat. Modifici numai <code>'+esc(file)+'</code> în editor. '+(state.phase==='preparation'?'Editorul se activează când începi proba.':'')+'</p>'+
-      '<details class="exam-context"><summary>Fișierele și datele furnizate</summary>'+context(task)+'</details>'+
+    workspace.innerHTML=ticketSheet([id])+
+      '<p class="exam-context-note">Completează codul existent în <code>'+esc(file)+'</code>.</p>'+
       '<div class="exam-editor-grid"><div class="exam-editor-panel"><h3>'+esc(file)+(writable?' · editor':' · doar citire')+'</h3><textarea id="exam-code" aria-label="Codul răspunsului" spellcheck="false" '+(writable?'':'readonly')+'>'+esc(row.code)+'</textarea></div><div class="exam-editor-panel"><h3>Rezultat</h3><div id="exam-result" class="exam-result" role="status">'+(state.phase==='submitted'?resultHTML(stage().results[id],true):'În timpul probei poți rula codul. Verificarea cerințelor se afișează după predare.')+'</div><iframe id="exam-preview" title="Rezultatul codului" sandbox="allow-scripts" hidden></iframe></div></div>'+
       '<div class="exam-actions">'+(writable?'<button id="run-code" class="secondary">'+(visual?'Previzualizează':'Rulează codul')+'</button><button id="stop-code" class="secondary" hidden>Oprește rularea</button>':'')+'<span id="run-status" role="status"></span></div>'+
       '<label for="exam-explanation">Explică alegerea: de ce această soluție și ce caz ar descoperi o variantă greșită?</label><textarea id="exam-explanation" class="exam-oral" '+(writable?'':'readonly')+'>'+esc(row.explanation)+'</textarea>'+

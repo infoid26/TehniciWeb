@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node scripts/serve.mjs",
     "setup:project-db": "node scripts/setup_project_db.mjs",
-    "check": "node scripts/check.mjs",
+    "check": "node scripts/check.mjs && node scripts/check_html_metadata.mjs",
     "check:browser": "node scripts/check_complete.mjs",
     "build:course": "python scripts/build_course.py",
     "build:editor": "node scripts/build_editor.mjs",

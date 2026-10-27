@@ -126,12 +126,14 @@
   }
   async function checkWeb(task, code, onCancel) {
     const results = [];
-    const rawTests=task.tests.filter(t=>t.kind.startsWith('source'));
+    // HTML attributes describe the submitted markup, including resources that
+    // the isolated preview removes. DOM exercises still check the runtime result.
+    const rawTests=task.tests.filter(t=>t.kind.startsWith('source')||(task.mode==='html'&&t.kind==='attr'));
     if(rawTests.length){
       const raw=new DOMParser().parseFromString(code,'text/html');
-      for(const test of rawTests){const el=raw.querySelector(test.selector);results.push({label:test.label,passed:test.kind==='sourceAttr'?!!el&&el.getAttribute(test.name)===test.value:!!el&&el.textContent.trim()===test.value});}
+      for(const test of rawTests){const el=raw.querySelector(test.selector);results.push({label:test.label,passed:['sourceAttr','attr'].includes(test.kind)?!!el&&el.getAttribute(test.name)===test.value:!!el&&el.textContent.trim()===test.value});}
     }
-    const frameTests=task.tests.filter(t=>!t.kind.startsWith('source'));
+    const frameTests=task.tests.filter(t=>!rawTests.includes(t));
     const widths = [...new Set(frameTests.map(t => t.viewport || 800))];
     for (const width of widths) {
       const group = frameTests.filter(t => (t.viewport || 800) === width);

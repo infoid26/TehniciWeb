@@ -105,13 +105,23 @@
     if (step === 0 && l.syntaxNotes?.length) body += `<h3>Construcțiile din acest fragment</h3><div class="syntax-notes">${l.syntaxNotes.map(note=>`<details class="help-details"><summary><code>${esc(note.token)}</code></summary><p>${rich(note.explanation)}</p><a class="text-link" href="#lectie/${note.lesson}/0">Explicație și exercițiu →</a></details>`).join('')}</div>`;
     if (l.relatedLessons?.length && step < 2) body += `<h3>Explicații și exerciții practice</h3><div class="source-lesson-links">${l.relatedLessons.map(id=>byId.has(id)?`<a class="secondary" href="#lectie/${id}/0">${esc(byId.get(id).title)}</a>`:'').join('')}</div>`;
     window.TW_EDITOR?.clear();
-    main.innerHTML = `<a class="text-link" href="#acasa">← Înapoi la traseu</a><section class="player"><header class="player-head"><div><div class="eyebrow">${esc(l.chapter.title.split(' · ')[0])} · ${esc(stepNames[step])}</div><h1>${esc(l.title)}</h1></div><span class="step-count">${step+1} / 5</span></header><div class="step-nav" aria-label="Pașii lecției">${stepNames.map((name,i) => i <= step ? `<a href="#lectie/${l.id}/${i}" class="${i===step?'active':'complete'}" aria-label="${esc(name)}" ${i===step?'aria-current="step"':''}></a>` : '<span></span>').join('')}</div><article class="screen ${step===3?'wide':''}">${body}</article><div class="player-controls"><a class="secondary" href="${step>0 ? `#lectie/${l.id}/${step-1}` : '#acasa'}">← ${step>0?'Înapoi':'Traseu'}</a>${step===4 ? `<a class="button" href="${nextLesson ? `#lectie/${nextLesson.id}/${startStep(nextLesson)}` : '#acasa'}">${nextLesson?'Lecția următoare':'Înapoi la traseu'} →</a>` : `<button id="continue" class="primary" ${canContinue?'':'disabled'}>${step===3?'Finalizează lecția':'Continuă'} →</button>`}</div></section>`;
-    document.querySelector('#continue')?.addEventListener('click',() => { location.hash = `lectie/${l.id}/${step+1}`; });
+    main.innerHTML = `<a class="text-link" href="#acasa">← Înapoi la traseu</a><section class="player"><header class="player-head"><div><div class="eyebrow">${esc(l.chapter.title.split(' · ')[0])} · ${esc(stepNames[step])}</div><h1>${esc(l.title)}</h1></div><span class="step-count">${step+1} / 5</span></header><div class="step-nav" aria-label="Pașii lecției">${stepNames.map((name,i) => i <= step ? `<a href="#lectie/${l.id}/${i}" class="${i===step?'active':'complete'}" aria-label="${esc(name)}" ${i===step?'aria-current="step"':''}></a>` : '<span></span>').join('')}</div><article class="screen ${step===3?'wide':''}">${body}</article><div class="player-controls"><a class="secondary" href="${step>0 ? `#lectie/${l.id}/${step-1}` : '#acasa'}">← ${step>0?'Înapoi':'Traseu'}</a>${step===4 ? `<a class="button" href="${nextLesson ? `#lectie/${nextLesson.id}/${startStep(nextLesson)}` : '#acasa'}">${nextLesson?'Lecția următoare':'Înapoi la traseu'} →</a>` : `<button id="continue" class="primary" ${canContinue?'':'hidden disabled'}>${step===3?'Finalizează lecția':'Continuă'} →</button>`}</div></section>`;
+    document.querySelector('#continue')?.addEventListener('click',() => {
+      if ((step === 2 && !quizDone(l)) || (step === 3 && !codeDone(l))) return;
+      location.hash = `lectie/${l.id}/${step+1}`;
+    });
     if (step === 2) document.querySelectorAll('[data-answer]').forEach(b => b.addEventListener('click',() => answer(l,Number(b.dataset.answer),b)));
     if (step === 3) bindTask(l);
     document.title = `${l.title} · Tehnici Web`;
   }
+  function updateContinue(allowed) {
+    const button = document.querySelector('#continue');
+    if (!button) return;
+    button.hidden = !allowed;
+    button.disabled = !allowed;
+  }
   function answer(l,index,button) {
+    if (quizDone(l)) return;
     const feedback = document.querySelector('#quiz-feedback');
     document.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('wrong'));
     if (index !== l.quiz.correct) {
@@ -127,7 +137,7 @@
     document.querySelectorAll('.quiz-option').forEach(b => { b.disabled = true; });
     feedback.className = 'feedback good';
     feedback.textContent = `Corect. ${l.quiz.explanation}`;
-    document.querySelector('#continue').disabled = false;
+    updateContinue(true);
   }
   function dataTableHTML(rows,caption,columns) {
     if(!Array.isArray(rows))return '';
@@ -206,7 +216,7 @@
       save();
       updateLines();
       updateProgress();
-      document.querySelector('#continue').disabled = true;
+      updateContinue(false);
       const status = document.querySelector('#task-status');
       status.className = 'feedback';
       status.textContent = 'Cod modificat. Apasă Verifică pentru noua versiune.';
@@ -245,7 +255,7 @@
     r.verified = null;
     save();
     updateProgress();
-    document.querySelector('#continue').disabled = true;
+    updateContinue(false);
     running = true;
     button.disabled = true;
     stop.hidden = false;
@@ -264,7 +274,7 @@
     r.verified = passed ? code : null;
     save();
     updateProgress();
-    document.querySelector('#continue').disabled = !passed;
+    updateContinue(passed);
   }
   function download(filename,content,type) {
     const url = URL.createObjectURL(new Blob([content],{type}));

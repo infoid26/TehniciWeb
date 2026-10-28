@@ -1,4 +1,3 @@
-"""Make all learning tasks usable without the teacher's files or a previous screen."""
 from course_model import chapters,html,exact,attr,count
 
 def requirements(test):

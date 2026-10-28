@@ -24,7 +24,6 @@ const identity=(email,overrides)=>accountIdentity({'x-ms-client-principal':princ
 assert.equal(identity('STUDENT@S.UNIBUC.RO').email,'student@s.unibuc.ro');
 assert.equal(identity('teacher@unibuc.ro').id,tenant+':'+object);
 assert.equal(identity('teacher@unibuc.ro').name,'teacher@unibuc.ro');
-assert.equal(identity(undefined,{claims:[{typ:'tid',val:tenant},{typ:'oid',val:object},{typ:'preferred_username',val:'student@s.unibuc.ro'},{typ:'name',val:'Ionuț Axinte'}]}).name,'Ionuț Axinte');
 for(const email of ['someone@gmail.com','student@s.unibuc.ro.attacker.test','student@sub.unibuc.ro','student@s.unibuc.ro\n','name#EXT#@unibuc.ro','student@@s.unibuc.ro'])assert.throws(()=>identity(email));
 assert.equal(accountIdentity({'x-ms-client-principal-name':'student@s.unibuc.ro'},settings),null);
 assert.throws(()=>accountSettings({...env,WEBSITE_AUTH_ENABLED:'false'}));
@@ -152,7 +151,7 @@ try{
 const clientSource=await fs.readFile('site/account.js','utf8');
 const empty=()=>({version:2,records:{},resume:''});
 const copy=value=>JSON.parse(JSON.stringify(value));
-function clientFixture({email='student@s.unibuc.ro',name='Ionuț Axinte',id=tenant+':'+object,storage=new Map(),api,anonymous=false}={}){
+function clientFixture({email='student@s.unibuc.ro',id=tenant+':'+object,storage=new Map(),api,anonymous=false}={}){
  const elements=new Map();
  const element=()=>({children:[],textContent:'',hidden:false,listeners:{},append(el){this.children.push(el);},replaceChildren(){this.children=[];},addEventListener(type,fn){this.listeners[type]=fn;}});
  for(const id of ['#account-panel','#account-controls','#account-status','#account-actions'])elements.set(id,element());
@@ -161,7 +160,7 @@ function clientFixture({email='student@s.unibuc.ro',name='Ionuț Axinte',id=tena
   localStorage:{getItem:key=>storage.get(key)??null,setItem:(key,value)=>storage.set(key,value)},location:{protocol:'https:'},AbortSignal,console,confirm:()=>true,
   setTimeout:fn=>{timers.set(++timerId,fn);return timerId;},clearTimeout:id=>timers.delete(id),
   fetch:async(path,options)=>{
-    const result=path==='/api/account'?{status:200,value:{enabled:true,user:anonymous?null:{id,email,name}}}:await api(path,options);
+    const result=path==='/api/account'?{status:200,value:{enabled:true,user:anonymous?null:{id,email}}}:await api(path,options);
     return {ok:result.status<400,status:result.status,json:async()=>copy(result.value)};
   }});
  vm.runInContext(clientSource,context);
@@ -178,7 +177,6 @@ const api=async(path,options)=>{
  remote={version:remote.version+1,progress:copy(body.progress)};return {status:200,value:remote};
 };
 const first=clientFixture({api});await first.controller.start();
-assert(logoutButton(first).children.some(child=>child.textContent==='Ionuț Axinte'));
 assert.equal(logoutButton(first).type,'submit');assert(logoutButton(first).children.some(child=>child.textContent==='Logout'));
 assert.equal(logoutForm(first).method,'post');
 const logoutClient=clientFixture({api});await logoutClient.controller.start();

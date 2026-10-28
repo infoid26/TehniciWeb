@@ -80,7 +80,7 @@ if(require.main===module){
   createApp().then(app=>{
     const parent=express();parent.get('/',(req,res)=>res.redirect('/project/'));parent.use('/project',app);
     const port=Number(process.env.PORT||8089);
-    const server=parent.listen(port,process.env.HOST||'127.0.0.1',()=>console.log('Dulcelind: http://127.0.0.1:'+port+'/project/'));
+    const server=parent.listen(port,process.env.HOST||'127.0.0.1',()=>console.log('Dulcelind server started'));
     const stop=()=>server.close(async()=>{await app.locals.close();process.exit(0);});
     process.once('SIGINT',stop);process.once('SIGTERM',stop);
   }).catch(error=>{console.error(error);process.exitCode=1;});

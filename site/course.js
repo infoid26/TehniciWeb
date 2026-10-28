@@ -42710,7 +42710,7 @@ window.TW_COURSE = {
           "id": "dulc-first-server",
           "title": "Pornește primul server",
           "intro": "Creează app.js și verifică Express înainte de a conecta baza.",
-          "example": "const express=require(\"express\");\nconst app=express();\napp.get(\"/\",(req,res)=>res.send(\"Demo Catalog\"));\napp.listen(8090,\"127.0.0.1\");\n// Terminal: node app.js\n// Browser: http://127.0.0.1:8090/",
+          "example": "const express=require(\"express\");\nconst app=express();\napp.get(\"/\",(req,res)=>res.send(\"Demo Catalog\"));\napp.listen(8090,\"127.0.0.1\");\n// Terminal: node app.js",
           "explain": "Lasă terminalul deschis; Ctrl+C oprește procesul. EADDRINUSE înseamnă port ocupat: identifică procesul tău sau schimbă portul și URL-ul.",
           "points": [
             "Exercițiul de mai jos se verifică în spațiul de lucru din browser.",
@@ -42733,7 +42733,7 @@ window.TW_COURSE = {
             "starter": "",
             "id": "dulc-first-server",
             "revision": 3,
-            "contextCode": "const express=require(\"express\");\nconst app=express();\napp.get(\"/\",(req,res)=>res.send(\"Demo Catalog\"));\napp.listen(8090,\"127.0.0.1\");\n// Terminal: node app.js\n// Browser: http://127.0.0.1:8090/",
+            "contextCode": "const express=require(\"express\");\nconst app=express();\napp.get(\"/\",(req,res)=>res.send(\"Demo Catalog\"));\napp.listen(8090,\"127.0.0.1\");\n// Terminal: node app.js",
             "contextLabel": "Comenzile sau configurația de analizat"
           },
           "hint": "Lasă terminalul deschis; Ctrl+C oprește procesul. EADDRINUSE înseamnă port ocupat: identifică procesul tău sau schimbă portul și URL-ul.",

@@ -104,7 +104,6 @@ def build_tickets(server_objectives):
     specs=[('type','Tipul produsului','p.type===choice','type=$1','cofetarie'),('price','Preț maxim','p.price<=Number(choice)','price<=$1','15'),('weight','Gramaj minim','p.weight>=Number(choice)','weight>=$1','150'),('stock','Stoc minim','p.stock>=Number(choice)','stock>=$1','3'),('description','Text în descriere','p.description.toLowerCase().includes(choice.toLowerCase())',"description ILIKE '%' || $1 || '%'",'CREMA'),('allergen','Excluderea unui alergen','p.allergen!==choice','allergen<>$1','gluten'),('promo','Produse la promoție','String(p.promo)===choice','promo=$1','true'),('name','Începutul numelui','p.name.toLowerCase().startsWith(choice.toLowerCase())',"name ILIKE $1 || '%'",'S')]
     base_specs=list(specs)
     groups=list(combinations(base_specs,2))+list(combinations(base_specs,3))
-    # Complementary pairs cover each criterion 14 times. Preserve the first 92 IDs.
     extra_groups=[]
     for triple in list(combinations(range(1,len(base_specs)),3))[:14]:
         first=(0,)+triple

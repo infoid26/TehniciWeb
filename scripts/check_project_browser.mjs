@@ -4,16 +4,15 @@ import path from 'node:path';
 import {createRequire} from 'node:module';
 import {createServer,closeProject} from './serve.mjs';
 const require=createRequire(import.meta.url);
-let playwright;try{playwright=require('playwright');}catch{playwright=require('C:/Users/Axi/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');}
+const playwright=require('playwright');
 await fs.mkdir('.audit/dulcelind',{recursive:true});
 process.env.TEMP=path.resolve('.audit/dulcelind');process.env.TMP=process.env.TEMP;
 const server=createServer({env:{}});await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
-const base='http://127.0.0.1:'+server.address().port;
+const base=`http://${server.address().address}:${server.address().port}`;
 let browser;
 try{
-  browser=await playwright.chromium.launch({headless:true,executablePath:process.platform==='win32'?'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe':undefined});
+  browser=await playwright.chromium.launch({headless:true});
   const page=await browser.newPage({viewport:{width:1440,height:1000}});
-  // External fonts, icon CDN and YouTube remain original external dependencies.
   await page.route('**/*',route=>route.request().url().startsWith(base)?route.continue():route.abort());
   const errors=[],missing=[];
   page.on('pageerror',e=>errors.push(e.message));

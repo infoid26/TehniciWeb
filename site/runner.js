@@ -231,7 +231,7 @@
       return Array.isArray(result)?result:result.results;
     }
     if(['node','express'].includes(task.mode)){
-      if(location.protocol==='file:')return [{label:'Laborator local',passed:false,error:'Pornește serverul cu node scripts/serve.mjs și deschide http://127.0.0.1:8088 pentru acest exercițiu.'}];
+      if(location.protocol==='file:')return [{label:'Laborator local',passed:false,error:'Deschide cursul de pe site pentru acest exercițiu.'}];
       const controller=new AbortController();onCancel?.(()=>controller.abort());
       try{
         const response=await fetch('/api/check',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:task.id,code}),signal:controller.signal});

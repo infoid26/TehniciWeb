@@ -7,7 +7,6 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../project
 const scss=path.join(root,'resurse/scss');
 for(const file of await fs.readdir(scss)){
   if(!file.endsWith('.scss'))continue;
-  // Keep the teacher's distributed Bootstrap CSS byte-for-byte unless explicitly rebuilding it.
   if(file==='customizare_bootstrap.scss'&&!process.argv.includes('--styles'))continue;
   const input=(await fs.readFile(path.join(scss,file),'utf8')).replaceAll('../../node_modules/','');
   const result=sass.compileString(input,{url:pathToFileURL(path.join(scss,file)),loadPaths:[path.resolve(root,'../node_modules')],silenceDeprecations:['import','global-builtin','color-functions','if-function']});

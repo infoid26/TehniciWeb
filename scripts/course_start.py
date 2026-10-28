@@ -7,7 +7,7 @@ lesson(c,'start-file','Un fișier are nume și extensie','Un fișier este un doc
  'sweet-corner/\n  index.html\n  style.css\n  app.js','Vom folosi `index.html` pentru conținut, `style.css` pentru aspect și `app.js` pentru comportament. Toate numele fișierelor din traseu sunt în engleză.',
  q('Care este numele corect al fișierului paginii principale?','index.html','index.html.txt','index.css.html.txt'),text('Scrie numele fișierului HTML principal.','index.html'))
 lesson(c,'start-folder','Foldere și căi relative','Un folder grupează fișiere. O cale spune unde se află un fișier. Într-un site folosim `/` între segmente, inclusiv când lucrăm pe Windows.',
- 'public/\n  css/\n    site.css\n  images/\n    cake.svg','Din rădăcina proiectului, calea către stil este `public/css/site.css`. Nu este nevoie să scrii o cale personală precum C:\\Users în codul site-ului.',
+ 'public/\n  css/\n    site.css\n  images/\n    cake.svg','Din rădăcina proiectului, calea către stil este `public/css/site.css`.',
  q('Ce separă segmentele unei căi URL?','/','O virgulă','Caracterul @'),text('Scrie calea imaginii cake.svg din structura afișată.','public/images/cake.svg'))
 lesson(c,'start-save','Salvare și reîncărcare','Editorul schimbă un fișier, iar browserul arată o versiune a paginii. Într-un proiect local salvezi cu `Ctrl+S`, apoi reîncarci browserul. Aici editorul salvează automat progresul, iar butonul de previzualizare actualizează rezultatul.',
  '<p>First version</p>\n<!-- Change the text, save, then reload. -->','Nu confunda salvarea cu verificarea. Poți salva un cod care conține greșeli; testele verifică separat cerința.',

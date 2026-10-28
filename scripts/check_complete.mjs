@@ -7,13 +7,11 @@ const require=createRequire(import.meta.url);
 await fs.mkdir('.audit/browser-temp',{recursive:true});
 process.env.TEMP=path.resolve('.audit/browser-temp');
 process.env.TMP=process.env.TEMP;
-let playwright;
-try { playwright=require('playwright'); }
-catch { playwright=require('C:/Users/Axi/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright'); }
+const playwright=require('playwright');
 const server=createServer();
 await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
-const url=`http://127.0.0.1:${server.address().port}`;
-const browser=await playwright.chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true});
+const url=`http://${server.address().address}:${server.address().port}`;
+const browser=await playwright.chromium.launch({headless:true});
 try {
  const page=await browser.newPage({viewport:{width:1440,height:1000}});
  const errors=[];page.on('pageerror',e=>errors.push(e.message));

@@ -62,7 +62,7 @@ export function createServer(options={}) {
   const json=(res,status,value)=>{res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});res.end(JSON.stringify(value));};
   const server=http.createServer(async (req,res) => {
     try {
-      const pathname = decodeURIComponent(new URL(req.url,'http://localhost').pathname);
+      const pathname = decodeURIComponent(new URL(req.url,'https://tw.infoid26.ro').pathname);
       if(await accountHandler(req,res,pathname))return;
       if(pathname==='/api/health'&&req.method==='GET'){json(res,200,{status:'ok',service:'tehnici-web',labs:evaluatorUrl?'remote':production?'not-configured':'development'});return;}
       if(pathname==='/project' || pathname.startsWith('/project/')) {

@@ -2,7 +2,7 @@
 
 394 de construcții extrase din materialele didactice; 871 de lecții active.
 
-Această verificare caută elemente HTML/MathML, apeluri de metode și declarații CSS în exemplele, soluțiile și fișierele furnizate de lecțiile active. Fișierele originale nu sunt incluse în platformă.
+Această verificare caută elemente HTML/MathML, apeluri de metode și declarații CSS în exemplele, soluțiile și fișierele furnizate de lecțiile active.
 
 Este o verificare a prezenței sintaxei, nu o dovadă automată a calității explicațiilor sau a funcționării în fiecare browser. Programa este în [CURRICULUM.md](CURRICULUM.md).
 

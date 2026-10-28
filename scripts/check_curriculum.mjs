@@ -32,7 +32,7 @@ await fs.writeFile('.audit/curriculum-syntax.json',JSON.stringify({lessonCount:l
 assert.equal(missing.length,0,'Syntax without an active example/exercise: '+missing.map(x=>x.kind+' '+x.token).join(', '));
 const byId=new Map(learning.map(l=>[l.id,l]));
 const lines=['# Sintaxa materialelor și lecțiile active','',`${tokens.size} de construcții extrase din materialele didactice; ${learning.length} de lecții active.`,
- '', 'Această verificare caută elemente HTML/MathML, apeluri de metode și declarații CSS în exemplele, soluțiile și fișierele furnizate de lecțiile active. Fișierele originale nu sunt incluse în platformă.',
+ '', 'Această verificare caută elemente HTML/MathML, apeluri de metode și declarații CSS în exemplele, soluțiile și fișierele furnizate de lecțiile active.',
  '', 'Este o verificare a prezenței sintaxei, nu o dovadă automată a calității explicațiilor sau a funcționării în fiecare browser. Programa este în [CURRICULUM.md](CURRICULUM.md).',
  '', 'Sunt excluse ieșirile generate ale bibliotecilor, copiile identice, numele de variabile folosite ca substituenți, greșelile intenționate din exemplele de validare și potrivirile care sunt adrese web sau text explicativ. Construcțiile istorice apar în lecții care explică și alternativa modernă.',
  '', '| Tip | Construcție | Lecții active |','| --- | --- | --- |'];

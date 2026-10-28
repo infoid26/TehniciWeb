@@ -32,7 +32,7 @@ for(const chapter of course.chapters)for(const lesson of chapter.lessons) {
 }
 const folder=course.chapters.flatMap(c=>c.lessons).find(l=>l.id==='start-folder');
 assert.equal(folder.task.mode,'html');assert(folder.task.contextCode.includes('images/'));
-console.log(`PASS: ${count} independent learning tasks render with self-contained data and PA help above the editor. No original source readings are published.`);
+console.log(`PASS: ${count} independent learning tasks render with self-contained data and help above the editor.`);
 
 const sqlIntro=course.chapters.flatMap(c=>c.lessons).find(l=>l.id==='sql-select');
 context.sqlIntro=sqlIntro;

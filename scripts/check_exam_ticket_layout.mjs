@@ -3,9 +3,9 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
 const require=createRequire(import.meta.url);
-let playwright;try{playwright=require('playwright');}catch{playwright=require('C:/Users/Axi/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');}
+const playwright=require('playwright');
 const root=process.cwd();await fs.mkdir('.audit/browser-temp',{recursive:true});
-const browser=await playwright.chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true,env:{...process.env,TEMP:path.resolve('.audit/browser-temp'),TMP:path.resolve('.audit/browser-temp')}});
+const browser=await playwright.chromium.launch({headless:true,env:{...process.env,TEMP:path.resolve('.audit/browser-temp'),TMP:path.resolve('.audit/browser-temp')}});
 try{
  const page=await browser.newPage({viewport:{width:1280,height:1100}}),errors=[];
  page.on('pageerror',error=>errors.push(error.message));
